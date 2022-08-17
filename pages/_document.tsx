@@ -10,8 +10,8 @@ class MyDocument extends Document {
         return (
             <Html lang="ru">
                 <Head>
-                <title>Disco code1</title>
-                <link rel="icon" href="/2favicon.ico" />
+                <title>Disco code</title>
+                <link rel="icon" href="/favicon.ico" />
                 </Head>
                 <body>
                     <Main />
