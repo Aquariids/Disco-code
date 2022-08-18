@@ -1,9 +1,12 @@
 import type { NextPage } from 'next';
+import { withLayout } from '../layout/Layout';
 
-const Home: NextPage = ():JSX.Element => {
+const Home: NextPage = (): JSX.Element => {
   return (
-  <></>
+    <>
+
+    </>
   );
 };
 
-export default Home;
+export default withLayout(Home);
