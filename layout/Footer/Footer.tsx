@@ -1,11 +1,15 @@
 import React from 'react';
 import { FooterProps } from './Footer.props';
+import s from './Footer.module.css';
+import cn from 'classnames';
+const { footer } = s;
 
-const Footer = ({...props}:FooterProps):JSX.Element => {
+const Footer = ({ className, ...props }: FooterProps): JSX.Element => {
     return (
-        <div {...props}>
-            footer
-        </div>
+        <footer className={cn(className, footer)} {...props}>
+            <div>Компонент с документацией</div>
+            <div>Сообщество</div>
+        </footer>
     );
 };
 

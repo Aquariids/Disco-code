@@ -1,0 +1,11 @@
+.footer {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 40px;
+    background: rosybrown;
+    padding: 15px 20px;
+    align-self: end;
+
+    justify-content: right;
+    text-align: right;
+}
