@@ -6,7 +6,13 @@ const {sidebar,menu} = s;
 const Sidebar = ({ className, ...props}:SidebarProps):JSX.Element => {
     return (
         <div className={sidebar} {...props}>
-            <div className={menu}> <div>mfpdsfmsds</div></div>
+            <div className={menu}> <div> Это сайдбар</div></div>
+            <div className={menu}> <div> Это сайдбар</div></div>
+            <div className={menu}> <div> Это сайдбар</div></div>
+            <div className={menu}> <div> Это сайдбар</div></div>
+            <div className={menu}> <div> Это сайдбар</div></div>
+            <div className={menu}> <div> Это сайдбар</div></div>
+
 
         </div>
     );

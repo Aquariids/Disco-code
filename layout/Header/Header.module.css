@@ -1,4 +1,6 @@
 .header {
+    overflow: hidden;
+    top: 0;
     position: fixed;
     display: grid;
     background: rgb(98, 95, 95);

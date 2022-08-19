@@ -5,7 +5,7 @@
     background: rosybrown;
     padding: 15px 20px;
     align-self: end;
-
+    z-index: 2;
     justify-content: right;
     text-align: right;
 }

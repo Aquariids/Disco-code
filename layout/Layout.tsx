@@ -5,17 +5,22 @@ import { LayoutProps } from "./Layout.props";
 import Sidebar from "./Sidebar/Sidebar";
 import s from './Layout.module.css';
 
-const {wrapper,header,sidebar,footer,body} = s;
+const {wrapper,header,sidebar,footer,body,btn,content} = s;
 const Layout = ({children}: LayoutProps): JSX.Element => {
     return (
+        <>
         <div className={wrapper}>
-            <Header className={header} /><br/>
+            <Header className={header} />
                 <Sidebar className={sidebar} />
                 <div className={body}>
                     {children}
                 </div>
+
             <Footer className={footer}/>
+            <div className={content}> <button className={btn}></button></div>
+
         </div>
+</>
     );
 };
 

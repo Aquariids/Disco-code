@@ -1,23 +1,26 @@
 .sidebar {
-    display: flex;
+    display: grid;
     justify-content: center;
     margin-top: 50px;
     position:fixed;
     z-index: 1;
-    width: 250px;
     background-color: transparent;
     color: #000;
+    width: 20%;
 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 630px) {
     .sidebar {
-        display: none;
+        opacity: 0;
+        transition: all 0.2s;
+
     }
 }
 
 
-.menuj {
+.menu {
+
     display:grid;
 
     text-align: center;
