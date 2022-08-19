@@ -1,14 +1,28 @@
 .sidebar {
+    display: grid;
+    justify-content: center;
     margin-top: 50px;
     position:fixed;
-    top:0;
-    bottom:0;
-    left:0;
-    width: 150px; 
     z-index: 1;
-    padding:10px;
-    background-color: #a09b9b;
-    color: #ffffff;
-    border-right:1px solid rgb(99, 99, 99);
+    background-color: transparent;
+    color: #000;
+    width: 20%;
 
+}
+
+@media (max-width: 630px) {
+    .sidebar {
+        opacity: 0;
+        transition: all 0.2s;
+
+    }
+}
+
+
+.menu {
+
+    display:grid;
+
+    text-align: center;
+    align-items: center;
 }
