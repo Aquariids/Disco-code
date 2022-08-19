@@ -1,16 +1,15 @@
 .wrapper {
     display: grid;
-    grid-template-columns: auto 230px minmax(320px, 1200px) auto;
+    grid-template-columns: auto 250px minmax(320px, 1200px) auto;
     min-height: 100vh;
     grid-template-areas: 
-    ". header header ."
-    " sidebar body body body"
+    "header header header header"
+    ". sidebar body ."
     " footer footer footer footer ";
 }
 
 
 .header {
-    margin-bottom: 10px;
     grid-area: header;
 }
 
@@ -19,9 +18,8 @@
 }
 
 .body {
-    padding: 10px;
-    margin-top: 10px;
-    margin-left: 150px;
+    margin-top: 25px;
+    margin-bottom: 25px;
     grid-area: body;
 }
 
