@@ -10,7 +10,7 @@
 }
 
 .content {
-    display: none;
+    opacity: 0;
    position: fixed;
    width: 100%;
    height: 100%;
@@ -57,7 +57,12 @@
         "footer";
     }
 .content {
-    display: block;
+    opacity: 1;
+}
+
+.footer {
+    text-align: center;
+    align-items: center;
 }
     
 }
