@@ -12,3 +12,9 @@
     border-right:1px solid rgb(99, 99, 99);
 
 }
+
+@media (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+}
