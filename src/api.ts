@@ -13,10 +13,11 @@ export const getSlugs = (): string[] => {
     return paths.map(path => {
         const parts = path.split("/");
         const fileName = parts[parts.length - 1];
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const [slug, _ext] = fileName.split(".");
         return slug;
-    })
-}
+    });
+};
 export const getAllPosts = () => {
     const posts = getSlugs().map(slug => getPostFromSlug(slug)).sort((a, b) => {
         if (a.meta.date > b.meta.date) return 1;

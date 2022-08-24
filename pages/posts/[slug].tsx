@@ -14,9 +14,12 @@ interface MSXPost {
     meta: PostMeta
 }
 
+interface IProps extends Record<string,unknown> {
+post:MSXPost
+}
 
 
-const PostPage = ({ post }: {post:MSXPost}): JSX.Element => {
+const PostPage:NextPage<IProps> = ({ post }: {post:MSXPost}): JSX.Element => {
 
     return (
       <div>
