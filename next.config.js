@@ -4,4 +4,6 @@ const nextConfig = {
   swcMinify: true,
 }
 
-module.exports = nextConfig
+// eslint-disable-next-line no-undef
+module.exports = nextConfig;
+
