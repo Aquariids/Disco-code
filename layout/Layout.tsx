@@ -5,20 +5,21 @@ import { LayoutProps } from "./Layout.props";
 import Sidebar from "./Sidebar/Sidebar";
 import s from './Layout.module.css';
 
+
 const {wrapper,header,sidebar,footer,body,btn,content} = s;
-const Layout = ({children}: LayoutProps): JSX.Element => {
+const Layout = ({children,...props}: LayoutProps): JSX.Element => {
+    const {posts}:any = props;
     return (
         <>
         <div className={wrapper}>
             <Header className={header} />
-                <Sidebar className={sidebar} />
+                <Sidebar posts={posts} className={sidebar} />
                 <div className={body}>
-                    {children}
+                {children}
                 </div>
 
             <Footer className={footer}/>
-            <div className={content}> <button className={btn}></button></div>
-
+            {/* <div className={content}> <button className={btn}></button></div> */}
         </div>
 </>
     );
@@ -26,8 +27,10 @@ const Layout = ({children}: LayoutProps): JSX.Element => {
 
 export const withLayout = <T extends Record<string, unknown>>(Component: FunctionComponent<T>) => {
     return function withLayoutComponent(props: T): JSX.Element {
+        
         return (
-            <Layout>
+            <Layout {...props}>
+                
                 <Component {...props} />
             </Layout>
         );
