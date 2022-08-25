@@ -34,7 +34,6 @@
 
 
 .body {
-    position: relative;
     grid-area: body;
 }
 
@@ -42,9 +41,8 @@
     grid-area: footer;
 }
 
-
-.container {
-    display: grid;
+.content h1 {
+    margin-top: 0;
 }
 
 @media (max-width: 625px) {

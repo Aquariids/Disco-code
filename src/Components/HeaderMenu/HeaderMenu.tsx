@@ -4,12 +4,14 @@ import { HeaderProps } from './Header.props';
 
 const {header,nav,link,content,logo,github} = s;
 
-const HeaderMenu = ({className,...props}:HeaderProps):JSX.e => {
+const HeaderMenu = ({...props}:HeaderProps):JSX.Element => {
     return (
             <header className={header} {...props}>
             <div className={content}>
             <a className={logo}> <span>DiscoCode</span> </a>
             <nav className={nav}>
+            <a className={link}  href='#'>javaScript</a>
+            <a className={link}  href='#'>javaScript</a>
             <a className={link}  href='#'>javaScript</a>
             <a className={link}  href='#'>javaScript</a>
             <a className={link}  href='#'>javaScript</a>

@@ -12,7 +12,7 @@ const Sidebar = ({className, ...props}:SidebarProps):JSX.Element => {
 
     return (
         <div className={sidebar} {...props}>
-            как же я заебался
+            <div className={menu}>Как же я устал</div>
             {/* <div>
             {posts.map((post) => (<li key={Math.random()}>
                 <div><Link href={`posts/${post.slug}`}>{post.title}</Link></div>

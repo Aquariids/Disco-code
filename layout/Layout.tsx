@@ -4,10 +4,9 @@ import Header from "./Header/Header";
 import { LayoutProps } from "./Layout.props";
 import Sidebar from "./Sidebar/Sidebar";
 import s from './Layout.module.css';
-import HeaderMenu from "../src/Components/HeaderMenu/HeaderMenu";
-
-
-const {wrapper,header,sidebar,footer,body,btn,container} = s;
+import MdxStyle from './MdxContent.module.css';
+const {content} = MdxStyle;
+const {wrapper,header,sidebar,footer,body,btn} = s;
 const Layout = ({children,...props}: LayoutProps): JSX.Element => {
     return (
         <>
@@ -15,7 +14,8 @@ const Layout = ({children,...props}: LayoutProps): JSX.Element => {
         <Header className={header} />
         <Sidebar className={sidebar} />
                 <div className={body}>
-                    {children}
+                    <div className={content}>                    {children}
+</div>
             </div>
             <Footer className={footer}/>
             {/* <div className={content}> <button className={btn}></button></div> */}
