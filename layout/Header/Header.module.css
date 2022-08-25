@@ -1,30 +1,9 @@
 .header {
+    background-color: #20232a;
     position: fixed;
-    display: grid;
-    background: rgb(98, 95, 95);
-    z-index: 2;
     width: 100%;
     height: 50px;
-    padding: 0 20px;
-    grid-template-columns: 1fr auto auto;
-    gap: 40px;
-    display: flex;
-    align-items: center;
-
-
+    display: grid;
 
 }
 
-.nav {
-}
-.link {
-    padding: 10px;
-}
-
-.content {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    flex-direction: row;
-
-}

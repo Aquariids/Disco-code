@@ -3,8 +3,6 @@ import fs from "fs";
 import { sync } from "glob";
 import matter from "gray-matter";
 
-
-
 const POSTS_PATH = path.join(process.cwd(), "posts");
 
 export const getSlugs = (): string[] => {
@@ -54,7 +52,7 @@ export const getPostFromSlug = (slug: string): Post => {
             slug,
             excerpt: data.excerpt ?? "",
             title: data.title ?? slug,
-            date: data.date,
+            date: data.date ?? new Date(),
         },
     };
 

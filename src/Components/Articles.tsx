@@ -1,16 +1,24 @@
 import React from 'react';
 import Link from 'next/link';
 import { PostMeta } from '../api';
+import Header from '../../layout/Header/Header';
+import s from './Articles.module.css'
+import HeaderMenu from './HeaderMenu/HeaderMenu';
 const Articles = ({ posts }: { posts: PostMeta[] }) => {
-    return <ul>
+    return <div>
 
+        <div className={s.articles}>
 
-        <div>
             {posts.map((post) => (<li key={Math.random()}>
+
                 <div><Link href={`posts/${post.slug}`}>{post.title}</Link></div>
+
+                <div>{post.date}</div>
             </li>))}
         </div>
-    </ul>;
+    </div>
+
+
 };
 
 export default Articles;

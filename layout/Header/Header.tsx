@@ -1,23 +1,17 @@
 import React from 'react';
+import HeaderMenu from '../../src/Components/HeaderMenu/HeaderMenu';
 import { HeaderProps } from './Header.props';
 import s from './Header.module.css';
 
-const {header,nav,link,content} = s;
-
-const Header = ({className, ...props}:HeaderProps):JSX.Element => {
+const Header = ({...props}):JSX.Element => {
     return (
-        <header className={header} {...props}>
-            <div className={content}>
-            <nav className={nav}>
-                <a className={link}  href='#'>javaScript</a>
-                <a className={link}  href='#'>javaScript</a>
-                <a className={link}  href='#'>javaScript</a>
-            </nav>
-                <div>все остальное</div>
-            
-            </div>
-           
-        </header>
+             <div className={s.header}>
+                <div className="content">
+                <HeaderMenu/>
+
+                </div>
+             </div>
+       
     );
 };
 

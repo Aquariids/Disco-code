@@ -6,13 +6,13 @@ import Link from 'next/link';
 import { getAllPosts } from '../../src/api';
 
 const {sidebar,menu} = s;
-const Sidebar = ({ posts, className, ...props}:SidebarProps):JSX.Element => {
+const Sidebar = ({className, ...props}:SidebarProps):JSX.Element => {
 
 
 
     return (
         <div className={sidebar} {...props}>
-
+            как же я заебался
             {/* <div>
             {posts.map((post) => (<li key={Math.random()}>
                 <div><Link href={`posts/${post.slug}`}>{post.title}</Link></div>
