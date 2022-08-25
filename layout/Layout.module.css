@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 20% minmax(320px, 1180px) 20%;
     min-height: 100vh;
+    gap:50px;
     grid-template-rows: 50px 1fr 50px;
     grid-template-areas: 
     "header header header"
@@ -34,8 +35,6 @@
 
 .body {
     position: relative;
-    padding: 0 20px;
-    margin-bottom: 40px;
     grid-area: body;
 }
 

@@ -2,10 +2,11 @@
     display: grid;
     grid-template-columns: 1fr auto auto;
     gap: 40px;
-    background: rosybrown;
+    background: #20232a;
     padding: 15px 20px;
     align-self: end;
     z-index: 2;
     justify-content: right;
     text-align: right;
+    color: #ffff;
 }

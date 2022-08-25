@@ -8,7 +8,6 @@ const Header = ({...props}):JSX.Element => {
              <div className={s.header}>
                 <div className="content">
                 <HeaderMenu/>
-
                 </div>
              </div>
        

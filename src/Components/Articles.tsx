@@ -9,12 +9,11 @@ const Articles = ({ posts }: { posts: PostMeta[] }) => {
 
         <div className={s.articles}>
 
-            {posts.map((post) => (<li key={Math.random()}>
+            {posts.map((post) => (<li style={{listStyleType:'none'}} key={Math.random()}>
 
-                <div><Link href={`posts/${post.slug}`}>{post.title}</Link></div>
+                <div style={{fontSize:'19px', fontWeight: 400}}><Link href={`posts/${post.slug}`}>{post.title}</Link></div>
 
-                <div>{post.date}</div>
-            </li>))}
+                </li>))}
         </div>
     </div>
 
