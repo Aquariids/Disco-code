@@ -2,7 +2,7 @@ import path from "path";
 import * as fs from 'fs';
 import { sync } from "glob";
 import matter from "gray-matter";
-import { POSTS_PATHJS } from "../../src/paths";
+const POSTS_PATHJS = path.join(process.cwd(), `posts/js`);
 
 export const getSlugs = (): string[] => {
     const paths = sync(`${POSTS_PATHJS}/*.mdx`);
