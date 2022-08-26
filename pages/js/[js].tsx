@@ -7,7 +7,7 @@ import rehypeHighlight from 'rehype-highlight';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import Head from 'next/head';
 import "highlight.js/styles/atom-one-dark.css";
-import { getAllPosts, getPostFromSlug, getSlugs, PostMeta } from '../api/jsApi';
+import {getPostFromSlug, getSlugs, PostMeta } from '../api/jsApi';
 
 interface MSXPost {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
@@ -53,12 +53,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
         
     });
-    const posts = getAllPosts()
-    .slice(0,9)
-    .map(post => post.meta);
+    
 
-
-    return { props: { post: { source: mdxSource, meta }, posts } };
+    return { props: { post: { source: mdxSource, meta } } };
 
 };
 
