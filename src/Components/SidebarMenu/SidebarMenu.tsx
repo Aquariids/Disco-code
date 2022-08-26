@@ -9,7 +9,6 @@ const {posts} = useContext(AppContext);
 
 
 const pathname = router.pathname; 
-console.log("(👍≖‿‿≖)👍 ✿ file: SidebarMenu.tsx ✿ line 13 ✿ SidebarMenu ✿ pathname", pathname)
 if(router.asPath === '/') {
     return (
         

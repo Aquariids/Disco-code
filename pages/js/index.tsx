@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next';
 import React from 'react';
 import { withLayout } from '../../layout/Layout';
-import { getAllPosts } from './api';
+import { getAllPosts } from '../api/jsApi';
 
 
 

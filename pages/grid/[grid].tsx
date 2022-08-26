@@ -7,7 +7,7 @@ import rehypeHighlight from 'rehype-highlight';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import Head from 'next/head';
 import "highlight.js/styles/atom-one-dark.css";
-import { getAllPosts, getPostFromSlug, getSlugs, PostMeta } from './api';
+import { getAllPosts, getPostFromSlug, getSlugs, PostMeta } from '../api/gridApi';
 
 interface MSXPost {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
