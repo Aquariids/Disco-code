@@ -1,8 +1,6 @@
 import s from './HeaderMenu.module.css';
 import { HeaderProps } from './Header.props';
 import Link from 'next/link';
-import { useRouter } from "next/router";
-
 
 
 const { header, nav, link, content, logo, github } = s;
