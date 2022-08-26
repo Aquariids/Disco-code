@@ -7,32 +7,36 @@ import rehypeHighlight from 'rehype-highlight';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import Head from 'next/head';
 import "highlight.js/styles/atom-one-dark.css";
-import { getPostFromSlug, getSlugs, PostMeta } from '../../src/api';
+import { getAllPosts, getPostFromSlug, getSlugs, PostMeta } from '../../src/api';
 
 interface MSXPost {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
     meta: PostMeta
 }
 
-interface IProps extends Record<string,unknown> {
-post:MSXPost
+interface IProps extends Record<string, unknown> {
+    posts: MSXPost
 }
 
 
-const PostPage:NextPage<IProps> = ({ post }: {post:MSXPost}): JSX.Element => {
+const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => {
+
 
     return (
-      <div>
-        <Head>
-            <title>ssss</title>
-        </Head>
-        <h1>{post.meta.title}</h1>
-        <MDXRemote {...post.source}/>
-      </div>
+        <div>
+            <Head>
+                <title>posts</title>
+            </Head>
+            <h1>{post.meta.title}</h1>
+            <MDXRemote {...post.source} />
+        </div>
     );
-  };
-  
-  
+};
+
+
+
+
+
 export default withLayout(PostPage);
 
 
@@ -44,17 +48,23 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         mdxOptions: {
             rehypePlugins: [
                 rehypeSlug,
-                [rehypeAutolinkHeadings, {behavior:"wrap"}],
+                [rehypeAutolinkHeadings, { behavior: "wrap" }],
                 rehypeHighlight
             ]
         }
+
+        
     });
+    const posts = getAllPosts()
+    .slice(0,9)
+    .map(post => post.meta);
 
 
-
-    return { props: { post: { source: mdxSource, meta } } };
+    return { props: { post: { source: mdxSource, meta }, posts } };
 
 };
+
+
 
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -65,6 +75,5 @@ export const getStaticPaths: GetStaticPaths = async () => {
         fallback: false
     };
 };
-
 
 

@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 
-export interface LayoutProps  {
+export interface LayoutProps    {
     children: ReactNode;
+    posts:any;  
 }
