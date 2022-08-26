@@ -3,14 +3,14 @@ import HeaderMenu from '../../src/Components/HeaderMenu/HeaderMenu';
 import { HeaderProps } from './Header.props';
 import s from './Header.module.css';
 
-const Header = ({...props}):JSX.Element => {
+const Header = ({ ...props }): JSX.Element => {
     return (
-             <div className={s.header}>
-                <div className="content">
-                <HeaderMenu/>
-                </div>
-             </div>
-       
+        <div {...props} className={s.header}>
+            <div className="content">
+                <HeaderMenu />
+            </div>
+        </div>
+
     );
 };
 

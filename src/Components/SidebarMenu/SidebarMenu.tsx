@@ -8,7 +8,8 @@ const SidebarMenu = ():JSX.Element => {
 const {posts} = useContext(AppContext);
 
 
-
+const pathname = router.pathname; 
+console.log("(👍≖‿‿≖)👍 ✿ file: SidebarMenu.tsx ✿ line 13 ✿ SidebarMenu ✿ pathname", pathname)
 if(router.asPath === '/') {
     return (
         
@@ -17,7 +18,7 @@ if(router.asPath === '/') {
 
 { posts && posts.map((post) => (<li style={{listStyleType:'none',}} key={Math.random()}>
 
-<div  style={{fontSize:'19px', fontWeight: 400}}><Link href={`posts/${post.slug}`}>{post.title}</Link></div>
+<div  style={{fontSize:'19px', fontWeight: 400}}><Link href={`/${post.slug}`}>{post.title}</Link></div>
     
 </li>))}
         </div>
@@ -30,7 +31,7 @@ if(router.asPath === '/') {
 
 { posts && posts.map((post) => (<li style={{listStyleType:'none',}} key={Math.random()}>
 
-<div  style={{fontSize:'19px', fontWeight: 400}}><Link href={`${post.slug}`}>{post.title}</Link></div>
+<div  style={{fontSize:'19px', fontWeight: 400}}><Link href={`${pathname}/${post.slug}`}>{post.title}</Link></div>
     
 </li>))}
 

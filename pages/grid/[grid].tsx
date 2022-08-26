@@ -7,16 +7,13 @@ import rehypeHighlight from 'rehype-highlight';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import Head from 'next/head';
 import "highlight.js/styles/atom-one-dark.css";
-import { getAllPosts, getPostFromSlug, getSlugs, PostMeta } from '../../src/api';
+import { getAllPosts, getPostFromSlug, getSlugs, PostMeta } from './api';
 
 interface MSXPost {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
     meta: PostMeta
 }
 
-interface IProps extends Record<string, unknown> {
-    posts: MSXPost
-}
 
 
 const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => {
@@ -24,8 +21,9 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
 
     return (
         <div>
+            
             <Head>
-                <title>posts</title>
+                <title>Grid</title>
             </Head>
             <h1>{post.meta.title}</h1>
             <MDXRemote {...post.source} />
@@ -42,8 +40,8 @@ export default withLayout(PostPage);
 
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const { slug } = params as { slug: string };
-    const { content, meta } = getPostFromSlug(slug);
+    const { grid } = params as { grid: string };
+    const { content, meta } = getPostFromSlug(grid);
     const mdxSource = await serialize(content, {
         mdxOptions: {
             rehypePlugins: [
@@ -68,7 +66,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const paths = getSlugs().map(slug => ({ params: { slug } }));
+    const paths = getSlugs().map(grid => ({ params: { grid } }));
 
     return {
         paths,

@@ -1,27 +1,30 @@
 .sidebar {
-    display: grid;
-    justify-content: center;
-    margin-top: 50px;
-    position:fixed;
-    z-index: 1;
-    background-color: transparent;
-    color: #000;
-    width: 20%;
+	position: fixed;
+	z-index: 1;
 
+	display: grid;
+	justify-content: center;
+
+	width: 20%;
+	margin-top: 50px;
+
+	color: #000;
+	background-color: transparent;
 }
 
 @media (max-width: 630px) {
-    .sidebar {
-        display: none;
-        transition: all 0.2s;
+	.sidebar {
+		display: none;
 
-    }
+		transition: all 0.2s;
+	}
 }
 
-
 .menu {
-    margin-top: 50px;
-    display:grid;
-    text-align: center;
-    align-items: center;
+	display: grid;
+	align-items: center;
+
+	margin-top: 50px;
+
+	text-align: center;
 }
