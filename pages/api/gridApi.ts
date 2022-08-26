@@ -2,7 +2,7 @@ import path from "path";
 import fs from "fs";
 import { sync } from "glob";
 import matter from "gray-matter";
-export const POSTS_PATHGRID = path.join(process.cwd(), `posts/grid`);
+export const POSTS_PATHGRID = path.join(process.cwd(), `GridPosts`);
 
 export const getSlugs = (): string[] => {
     const paths = sync(`${POSTS_PATHGRID}/*.mdx`);
