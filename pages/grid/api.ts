@@ -2,11 +2,10 @@ import path from "path";
 import fs from "fs";
 import { sync } from "glob";
 import matter from "gray-matter";
-
-const POSTS_PATH = path.join(process.cwd(), "posts");
+import {POSTS_PATHGRID} from '../../src/paths';
 
 export const getSlugs = (): string[] => {
-    const paths = sync(`${POSTS_PATH}/*.mdx`);
+    const paths = sync(`${POSTS_PATHGRID}/*.mdx`);
 
     return paths.map(path => {
         const parts = path.split("/");
@@ -21,6 +20,7 @@ export const getAllPosts = () => {
         if (a.meta.date > b.meta.date) return 1;
         if (a.meta.date < b.meta.date) return -1;
         return 0;
+
 
     }).reverse();
     return posts;
@@ -41,7 +41,7 @@ export interface PostMeta {
 
 }
 export const getPostFromSlug = (slug: string): Post => {
-    const postPath = path.join(POSTS_PATH, `${slug}.mdx`);
+    const postPath = path.join(POSTS_PATHGRID, `${slug}.mdx`);
     const source = fs.readFileSync(postPath);
 
     const { content, data } = matter(source);

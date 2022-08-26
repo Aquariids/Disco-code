@@ -1,24 +1,12 @@
 import React, { useContext } from 'react';
 import Link from 'next/link';
-import { PostMeta } from '../api';
-import Header from '../../layout/Header/Header';
-import s from './Articles.module.css'
-import HeaderMenu from './HeaderMenu/HeaderMenu';
+import s from './Articles.module.css';
 import { AppContext } from '../../context/app.context';
 const Articles = () => {
 
-    const {posts} = useContext(AppContext);
 
-    return <div>
+    return <div className={s.articles}>
 
-        <div className={s.articles}>
-
-            {posts.map((post) => (<li style={{listStyleType:'none'}} key={Math.random()}>
-
-                <div style={{fontSize:'19px', fontWeight: 400}}><Link href={`posts/${post.slug}`}>{post.title}</Link></div>
-                    
-                </li>))}
-        </div>
     </div>
 
 

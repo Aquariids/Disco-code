@@ -1,61 +1,63 @@
 .wrapper {
-    display: grid;
-    grid-template-columns: 20% minmax(320px, 1180px) 20%;
-    min-height: 100vh;
-    gap:50px;
-    grid-template-rows: 50px 1fr 50px;
-    grid-template-areas: 
-    "header header header"
-    "sidebar body ."
-    "footer footer footer";
-}
+	display: grid;
+	grid-template-columns: 20% minmax(320px, 1180px) 20%;
 
+	min-height: 100vh;
+	gap: 50px;
+	grid-template-rows: 50px 1fr 50px;
+	/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
+	grid-template-areas:
+		"header header header"
+		"sidebar body ."
+		"footer footer footer";
+}
 
 .btn {
+	position: absolute;
+	right: 0;
+	bottom: 0;
 
-    margin-bottom: 55px;
-    margin-right: 20px;
-    position: absolute;
-    border-radius: 100%;
-    right: 0;
-    bottom: 0;
-    width: 75px;
-    background-color: black;
-    height: 75px;
+	width: 75px;
+	height: 75px;
+	margin-right: 20px;
+
+	margin-bottom: 55px;
+
+	border-radius: 100%;
+	background-color: black;
 }
+
 .header {
-    position: absolute;
-    grid-area: header;
+	position: absolute;
+	grid-area: header;
 }
 
 .sidebar {
-    grid-area: sidebar;
+	grid-area: sidebar;
 }
-
 
 .body {
-    grid-area: body;
+	grid-area: body;
 }
 
 .footer {
-    grid-area: footer;
+	grid-area: footer;
 }
-
 
 @media (max-width: 625px) {
-    .wrapper {
-        grid-template-columns: minmax(320px, 1fr);
-        grid-template-rows: 50px;
-        grid-template-areas: 
-        "header"
-        "body"
-        "footer";
-        
-    }
+	.wrapper {
+		grid-template-columns: minmax(320px, 1fr);
+		grid-template-rows: 50px;
+		/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
+		grid-template-areas:
+			"header"
+			"body"
+			"footer";
+	}
 
-.footer {
-    text-align: center;
-    align-items: center;
-}
-    
+	.footer {
+		align-items: center;
+
+		text-align: center;
+	}
 }
