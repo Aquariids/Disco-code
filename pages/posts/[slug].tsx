@@ -19,7 +19,7 @@ interface IProps extends Record<string, unknown> {
 }
 
 
-const PostPage: NextPage<any> = ({ post }: { post: MSXPost }): JSX.Element => {
+const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => {
 
 
     return (

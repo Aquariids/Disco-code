@@ -15,7 +15,7 @@ if(router.asPath === '/') {
         <div className={s.menu}>
             
 
-{ posts && posts.map((post:any) => (<li style={{listStyleType:'none',}} key={Math.random()}>
+{ posts && posts.map((post) => (<li style={{listStyleType:'none',}} key={Math.random()}>
 
 <div  style={{fontSize:'19px', fontWeight: 400}}><Link href={`posts/${post.slug}`}>{post.title}</Link></div>
     
@@ -28,12 +28,15 @@ if(router.asPath === '/') {
         <div className={s.menu}>
             
 
-{ posts && posts.map((post:any) => (<li style={{listStyleType:'none',}} key={Math.random()}>
+{ posts && posts.map((post) => (<li style={{listStyleType:'none',}} key={Math.random()}>
 
 <div  style={{fontSize:'19px', fontWeight: 400}}><Link href={`${post.slug}`}>{post.title}</Link></div>
     
 </li>))}
+
         </div>
+
+
     );
 }
     

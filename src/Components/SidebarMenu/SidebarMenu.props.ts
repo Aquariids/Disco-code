@@ -1,3 +1,11 @@
+import IPost from "../../../interface/IPost";
+
 export interface ISidebarMenu {
-    link:string[];
+    posts:IPost;
+    slug: string,
+    date:string,
+    excerpt:string,
+    title:string
+
+
 }
