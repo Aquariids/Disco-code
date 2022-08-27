@@ -1,11 +1,10 @@
 import path from "path";
-import * as fs from 'fs';
+import fs from "fs";
 import { sync } from "glob";
 import matter from "gray-matter";
-const POSTS_PATHJS = path.join(process.cwd(), `JsPosts`);
 
-export const getSlugs = (): string[] => {
-    const paths = sync(`${POSTS_PATHJS}/*.mdx`);
+export const getSlugs = (url: string): string[] => {
+    const paths = sync(`${url}/*.mdx`);
 
     return paths.map(path => {
         const parts = path.split("/");
@@ -15,8 +14,8 @@ export const getSlugs = (): string[] => {
         return slug;
     });
 };
-export const getAllPosts = () => {
-    const posts = getSlugs().map(slug => getPostFromSlug(slug)).sort((a, b) => {
+export const getAllPosts = (url:string) => {
+    const posts = getSlugs(url).map(slug => getPostFromSlug(slug,url)).sort((a, b) => {
         if (a.meta.date > b.meta.date) return 1;
         if (a.meta.date < b.meta.date) return -1;
         return 0;
@@ -40,8 +39,8 @@ export interface PostMeta {
     title: string
 
 }
-export const getPostFromSlug = (slug: string): Post => {
-    const postPath = path.join(POSTS_PATHJS, `${slug}.mdx`);
+export const getPostFromSlug = (slug: string,url: string): Post => {
+    const postPath = path.join(url, `${slug}.mdx`);
     const source = fs.readFileSync(postPath);
 
     const { content, data } = matter(source);

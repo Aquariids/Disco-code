@@ -1,7 +1,8 @@
 import type { GetStaticProps, NextPage } from 'next';
 import React from 'react';
 import { withLayout } from '../../layout/Layout';
-import { getAllPosts } from '../api/gridApi';
+import { getAllPosts } from '../api/api';
+import { POSTS_PATH_GRID } from '../api/paths';
 
 
 
@@ -22,7 +23,7 @@ export default withLayout(Home);
 
 export const getStaticProps: GetStaticProps = async () => {
 
-  const posts = getAllPosts()
+  const posts = getAllPosts(POSTS_PATH_GRID)
   .slice(0,9)
   .map(post => post.meta);
 
