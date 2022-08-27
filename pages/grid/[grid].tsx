@@ -41,7 +41,6 @@ export default withLayout(PostPage);
 
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    console.log("(👍≖‿‿≖)👍 ✿ file: [grid].tsx ✿ line 44 ✿ constgetStaticProps:GetStaticProps= ✿ params", params)
     const { grid } = params as { grid: string };
     const { content, meta } = getPostFromSlug(grid, POSTS_PATH_GRID);
     const mdxSource = await serialize(content, {

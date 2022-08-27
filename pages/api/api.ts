@@ -36,7 +36,8 @@ export interface PostMeta {
     slug: string;
     excerpt: string;
     date: string;
-    title: string
+    title: string;
+    id:string;
 
 }
 export const getPostFromSlug = (slug: string,url: string): Post => {
@@ -52,6 +53,7 @@ export const getPostFromSlug = (slug: string,url: string): Post => {
             excerpt: data.excerpt ?? "",
             title: data.title ?? slug,
             date: data.date ?? new Date(),
+            id: data.id ?? "",
         },
     };
 
