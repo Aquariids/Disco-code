@@ -16,8 +16,10 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
             <div className={content}>
                 <div className={logo}> <span className={link} > <Link href={'/'}>DiscoCode</Link> </span> </div>
                 <nav className={nav}>
-                    <span className={link}><Link className={link} href='/js'>javaScript</Link></span>
-                    <span className={link}><Link className={link} href='/grid'>Grid</Link></span>
+                    <span className={link}><Link  href='/js'>JavaScript</Link></span>
+                    <span className={link}><Link  href='/grid'>Grid</Link></span>
+                    <span className={link}><Link  href='/ts'>TypeScript</Link></span>
+
                 </nav>
 
 
