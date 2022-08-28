@@ -1,3 +1,10 @@
 .articles {
 	display: grid;
+	justify-content: space-around;
+	flex-direction: column;
+}
+
+
+.link {
+
 }
