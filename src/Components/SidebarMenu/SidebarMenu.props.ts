@@ -4,7 +4,8 @@ export interface ISidebarMenu {
     date:string,
     excerpt:string,
     title:string,
-    id:string
+    id:string,
+    active:string;
 
 
 }

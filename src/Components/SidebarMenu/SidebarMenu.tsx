@@ -1,40 +1,37 @@
 import Link from 'next/link';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AppContext } from '../../../context/app.context';
 import { useRouter } from "next/router";
 import s from './SidebarMenu.module.css';
 import { ImenuList } from './SidebarMenu.props';
 
+
+
 const SidebarMenu = (): JSX.Element => {
 
-    const menuList: ImenuList[] = [
-        { name: 'Базовый javaScript', id: 'basic_js' }
-    ];
     const router = useRouter();
-    const { posts, setMenu } = useContext(AppContext);
+    const { posts } = useContext(AppContext);
+    console.log("(👍≖‿‿≖)👍 ✿ file: SidebarMenu.tsx ✿ line 14 ✿ SidebarMenu ✿ posts", posts)
+
+    
     const pathname = router.asPath;
+    console.log("(👍≖‿‿≖)👍 ✿ file: SidebarMenu.tsx ✿ line 18 ✿ SidebarMenu ✿ pathname", pathname)
 
+    
+    // const slug = ({path}:any):string => {
+    //     return path.replace();
+    // };
+    const buildMenu = ():JSX.Element => {
 
-    // const buildMenu = () => {
-    //     return(
-    //         <>
-    //             {menuList.map(menu=>(
-    //                 <div key={Math.random()}>
-    //                     <a href=''>
-    //                     </a>
-    //                 </div>
-    //             ))}
-    //         </>
-    //     );
-    // }
-    if (pathname.length > 5) {
+        if (pathname.length > 5) {
         return (
             <div className={s.menu}>
                 {posts && posts.map((post) => (
-                        
-                        <li style={{ listStyleType: 'none', }} key={Math.random()}>
-                        <div style={{ fontSize: '19px', fontWeight: 400 }}><Link href={`${post.slug}`}>{post.title}</Link></div>
-                    </li>
+                        <ul key={Math.random()}>
+                        <li className={pathname === post.active ? `${s.active}`: `${s.link}`}>
+                            <Link href={`${post.slug}`}>{post.title}</Link>
+                        </li>
+                    </ul>
                     ))}
 
             </div>
@@ -44,17 +41,29 @@ const SidebarMenu = (): JSX.Element => {
         return (
 
             <div className={s.menu}>
-                {posts && posts.map((post) => (<li style={{ listStyleType: 'none', }} key={Math.random()}>
-
-                    <div style={{ fontSize: '19px', fontWeight: 400 }}><Link href={`${pathname}/${post.slug}`}>{post.title}</Link>
-                    </div>
-
-                </li>))}
+                {posts && posts.map((post) => (
+                        <ul key={Math.random()}>
+                        <li className={pathname === post.active ? `${s.active}`: `${s.link}`}>
+                            <Link href={`${pathname}/${post.slug}`}>{post.title}</Link>
+                        </li>
+                    </ul>
+                    ))}
                 
             </div>
 
         );
     }
+        
+    };
+
+
+    return(
+        <>
+                {buildMenu()}
+        </>
+    );
+    
+    
 
 };
 

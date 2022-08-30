@@ -43,3 +43,22 @@
   
   /* Изменение цвета фона кнопки раскрывающегося списка при отображении содержимого раскрывающегося списка */
   .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+
+  .link {
+	font-size: 19px;
+	line-height: 19px;
+	font-weight: 400;
+	list-style-type: none;
+
+  }
+
+
+  .active {
+	font-size: 19px;
+	line-height: 19px;
+	list-style-type: none;
+	font-size: '19px';
+	font-weight: bold;
+  }
