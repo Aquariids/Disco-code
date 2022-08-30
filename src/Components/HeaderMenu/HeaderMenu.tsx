@@ -1,5 +1,5 @@
 import s from './HeaderMenu.module.css';
-import { HeaderProps } from './Header.props';
+import { HeaderProps } from './HeaderMenu.props';
 import Link from 'next/link';
 
 

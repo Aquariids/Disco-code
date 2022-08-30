@@ -21,6 +21,7 @@ const Home: NextPage = (): JSX.Element => {
 
 export default withLayout(Home);
 
+
 export const getStaticProps: GetStaticProps = async () => {
 
   const posts = getAllPosts(POSTS_PATH_JS)
@@ -33,4 +34,6 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   };
 };
+
+
 

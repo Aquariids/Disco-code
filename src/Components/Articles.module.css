@@ -1,10 +1,32 @@
 .articles {
 	display: grid;
-	justify-content: space-around;
-	flex-direction: column;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 25px;
+	padding: 10px;
 }
 
 
-.link {
+@media (width:300px) and (width:415px) {
+	.articles {
+		grid-template-columns: repeat(auto-fit, minmax(150px, auto));
 
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+	}
+	
 }
+
+@media (max-width:895px) {
+	.articles {
+		align-items: center;
+		justify-content: center;
+		grid-template-columns: repeat(2, 1fr);
+   		grid-template-rows: repeat(2, 1fr);
+		
+	}
+	
+}
+
+
+

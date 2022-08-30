@@ -19,8 +19,8 @@ export const AppContextProvider = ({posts,children}:IAppContext & {children: Rea
     const [menuState,setMenuState] = useState<ISidebarMenu[]>(posts);
     const setMenu = (newMenu:ISidebarMenu[]) => {
         setMenuState(newMenu);
-    }
+    };
     return <AppContext.Provider value={{posts: menuState,setMenu}}>
         {children }
         </AppContext.Provider>;
-}
+};

@@ -9,6 +9,7 @@ import Head from 'next/head';
 import "highlight.js/styles/atom-one-dark.css";
 import { getAllPosts, getPostFromSlug, getSlugs, PostMeta } from '../api/api';
 import { POSTS_PATH_JS } from '../api/paths';
+import Link from 'next/link';
 
 interface MSXPost {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
@@ -22,12 +23,14 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
 
     return (
         <div>
-
             <Head>
                 <title>posts</title>
             </Head>
             <h1>{post.meta.title}</h1>
             <MDXRemote {...post.source} />
+            <Link href={post.meta.next}> след страница </Link>
+            <Link href={post.meta.prev}> пред страница </Link>
+
         </div>
     );
 };
@@ -42,7 +45,6 @@ export default withLayout(PostPage);
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const { js } = params as { js: string };
-    console.log("(👍≖‿‿≖)👍 ✿ file: [js].tsx ✿ line 45 ✿ constgetStaticProps:GetStaticProps= ✿ js", js)
     const { content, meta } = getPostFromSlug(js,POSTS_PATH_JS);
     const mdxSource = await serialize(content, {
         mdxOptions: {

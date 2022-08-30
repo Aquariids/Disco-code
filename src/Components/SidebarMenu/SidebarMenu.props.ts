@@ -8,3 +8,8 @@ export interface ISidebarMenu {
 
 
 }
+
+export interface ImenuList {
+    name:string,
+    id:string,
+}

@@ -7,7 +7,7 @@ import s from './Layout.module.css';
 import MdxStyle from './MdxContent.module.css';
 import { AppContextProvider, IAppContext } from "../context/app.context";
 const { content } = MdxStyle;
-const { wrapper, header, sidebar, footer, body, btn } = s;
+const { wrapper, header, sidebar, footer, body,} = s;
 const Layout = ({children, }: LayoutProps): JSX.Element => {
 
 
@@ -19,7 +19,8 @@ const Layout = ({children, }: LayoutProps): JSX.Element => {
                 <Header className={header} />
                 <Sidebar className={sidebar}/>
                 <div className={body}>
-                    <div className={content}>                        {children}
+                    <div className={content}>                   
+                        {children}
 </div>
                 </div>
                 <Footer className={footer} />
