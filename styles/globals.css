@@ -50,9 +50,22 @@ a {
 	color: red;
 }
 
+.img img {
+	max-width: 100%;
+	height: auto;
+}
+
 .img {
+	display: grid;
+ 	grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
+
+}
+
+.container-img {
 	display: flex;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
 	margin: 50px 0;
 }
+
+

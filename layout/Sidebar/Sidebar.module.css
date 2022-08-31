@@ -1,30 +1,18 @@
 .sidebar {
 	position: fixed;
 	z-index: 1;
-
-	display: grid;
-	justify-content: center;
-
 	width: 20%;
-	margin-top: 50px;
-
+	margin-top: 30px;
 	color: #000;
 	background-color: transparent;
+	justify-content: center;
+	align-items: center;
 }
 
-@media (max-width: 630px) {
+@media (max-width: 750px) {
 	.sidebar {
 		display: none;
 
 		transition: all 0.2s;
 	}
-}
-
-.menu {
-	display: grid;
-	align-items: center;
-
-	margin-top: 50px;
-
-	text-align: center;
 }

@@ -6,8 +6,7 @@ import Sidebar from "./Sidebar/Sidebar";
 import s from './Layout.module.css';
 import MdxStyle from './MdxContent.module.css';
 import { AppContextProvider, IAppContext } from "../context/app.context";
-const { content } = MdxStyle;
-const { wrapper, header, sidebar, footer, body,} = s;
+const { wrapper, header, sidebar, footer, body, content} = s;
 const Layout = ({children, }: LayoutProps): JSX.Element => {
 
 
