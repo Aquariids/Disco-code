@@ -1,5 +1,5 @@
 ---
-title: 'Консоль разработчика и общение с пользователем'
+title: 'Консоль разработчика и методы браузера'
 id: '1'
 excerpt: 'test'
 prev: ''
@@ -14,23 +14,22 @@ next: '/js/basic'
 <div className = 'miniTag'> [confirm](#confirm) </div>
 
 
-
-
-
-
 ## Консоль разработчика ##
 
 Консоль нужна для отлова ошибок и для разных тестов, если в коде есть ошибки, все они будут видны в консоли разработчика.
 При нажатии пкм на странице "Посмотреть код" или если набрать комбинацию клавиш ctrl + shift + i. (По крайней мере в chrome и opera такая комбинация работает).
 Так мы откроем инспектор кода на вкладке Console(в случае с "Посмотреть код" мы будем на вкладке Elements, Console будет правее).<br/>
-![alt text](../../public/images/Content/Js/console.png)<br/>
+
+<div className='img'> ![alt text](https://github.com/Aquariids/Disco-code/blob/main/public/images/Content/Js/console.png?raw=true) </div>
+
 В инспекторе кода много чего интересного, но сейчас только о Console.
-Вам очень часто придется работать с консолью, один из методов для консоли это `console.log()` - этот метод просто выводит информацию в консоль.
+Нам очень часто придется работать с консолью, один из методов для консоли `console.log()` - этот метод просто выводит информацию в консоль.
 
 ```javaScript
 console.log('Hello world') // Выведет в консоль Hello world
 ```
-![console.log](../../public/images/Content/Js/hello.png)<br/>
+<div className='img'> ![alt text](https://github.com/Aquariids/Disco-code/blob/main/public/images/Content/Js/hello.png?raw=true) </div>
+
 Так же будем использовать `console.dir()` - этот метод отображает список свойств указанного JavaScript объекта. Сейчас важно запомнить только `console.log()`
 
 ## Методы для общения с пользователем ##
@@ -40,7 +39,8 @@ console.log('Hello world') // Выведет в консоль Hello world
 ```javaScript
 alert('Hello world')
 ```
-![alert](../../public/images/Content/Js/alert.png)<br/>
+<div className='img'> ![alert](https://github.com/Aquariids/Disco-code/blob/main/public/images/Content/Js/alert.png?raw=true)</div>
+
 ### prompt() ###
 - Позволяет получить ответ от пользователя, то что пользователь введет в поле ввода, будет присвоено в переменную в которую поместим метод. Принимает в себя два аргумента. Первый - это title, второй - текст который будет сразу внутри поля ввода. Обычно вторым аргументом ставят просто пустые кавычки `' '`.  Для примера я ввел 111.
 ```javaScript
@@ -48,7 +48,8 @@ let res = prompt('Привет','111');
 // Как раз можно воспользоваться методом консоли и посмотреть что ввели.
 console.log(res); // в консоли появится содержимое переменной res, а это будет то, что мы введем в поле.
 ```
-![prompt](../../public/images/Content/Js/prompt.png)<br/>
+<div className='img'> ![alt text](https://github.com/Aquariids/Disco-code/blob/main/public/images/Content/Js/prompt.png?raw=true) </div>
+
 ### confirm() ###
 -  Показывает модальное окно с сообщением и ждёт, пока пользователь нажмёт ok или Отмена. Возвращает `true`, если нажать ok, и `false`, если нажата кнопка «Отмена» или Esc.
 ```javaScript
@@ -56,4 +57,4 @@ let result = confirm('Ты за аниме?');
 
 console.log(result) // true или false
 ```
-![confirm](../../public/images/Content/Js/confirm.png)<br/>
+<div className='img'> ![alt text](https://github.com/Aquariids/Disco-code/blob/main/public/images/Content/Js/confirm.png?raw=true) </div>
