@@ -27,3 +27,25 @@ a {
 		background: black;
 	}
 }
+
+
+.tag {
+	text-decoration:underline;
+	color: blue;
+}
+
+.tag:active {
+	color: red;
+}
+
+.miniTag {
+	font-size: 14px;
+	text-decoration:underline;
+	color: blue;
+	display: inline;
+	margin-right: 5px;
+}
+
+.miniTag:active {
+	color: red;
+}

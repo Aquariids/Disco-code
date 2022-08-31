@@ -15,7 +15,7 @@ const Card = ({text,color,url}:ICard) => {
             <div className={body}>
             <div className={bg}></div>
             <div className={footer}>
-                <div className={title}> {text}</div>
+                <div className={title}>{text}</div>
             </div>
             </div>
         </div>

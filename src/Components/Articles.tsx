@@ -7,6 +7,12 @@ const Articles = () => {
     return <div className={s.articles}>
     <Card text={'JavaScript'} color={'yellow'} url={'/js/basic'}/>
     <Card text={'TypeScript'} color={'blue'} url={'/ts/basic'}/>
+    <Card text={'TypeScript'} color={'blue'} url={'/ts/basic'}/>
+    <Card text={'TypeScript'} color={'blue'} url={'/ts/basic'}/>
+
+    <Card text={'TypeScript'} color={'blue'} url={'/ts/basic'}/>
+
+
 
     </div>;
 

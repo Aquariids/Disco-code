@@ -6,23 +6,25 @@
 }
 
 
-@media (width:300px) and (width:415px) {
-	.articles {
-		grid-template-columns: repeat(auto-fit, minmax(150px, auto));
 
-		justify-content: center;
-		flex-direction: column;
+
+@media (max-width:925px) {
+	.articles {
 		align-items: center;
+		justify-content: center;
+
+		grid-template-columns: 200px 200px;
+		
 	}
 	
 }
 
-@media (max-width:895px) {
+@media (max-width:500px) {
 	.articles {
 		align-items: center;
 		justify-content: center;
-		grid-template-columns: repeat(2, 1fr);
-   		grid-template-rows: repeat(2, 1fr);
+
+		grid-template-columns: 200px;
 		
 	}
 	
