@@ -5,10 +5,8 @@ const Articles = () => {
 
 
     return <div className={s.articles}>
-                    <Card text={'JavaScript'} color={'yellow'} url={'/js'}/>
-    <Card text={'JavaScript'} color={'yellow'} url={'/js'}/>
-    <Card text={'JavaScript'} color={'yellow'} url={'/js'}/>
-    <Card text={'TypeScript'} color={'blue'} url={'/ts'}/>
+    <Card text={'JavaScript'} color={'yellow'} url={'/js/basic'}/>
+    <Card text={'TypeScript'} color={'blue'} url={'/ts/basic'}/>
 
     </div>;
 

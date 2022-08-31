@@ -16,8 +16,8 @@ export const getSlugs = (url: string): string[] => {
 };
 export const getAllPosts = (url:string) => {
     const posts = getSlugs(url).map(slug => getPostFromSlug(slug,url)).sort((a, b) => {
-        if (a.meta.date > b.meta.date) return 1;
-        if (a.meta.date < b.meta.date) return -1;
+        if (a.meta.id > b.meta.id) return -1;
+        if (a.meta.id < b.meta.id) return 1;
         return 0;
 
 
@@ -35,12 +35,10 @@ interface Post {
 export interface PostMeta {
     slug: string;
     excerpt: string;
-    date: string;
     title: string;
     id:string;
     prev: string;
     next:string;
-    active: string;
 
 }
 export const getPostFromSlug = (slug: string,url: string): Post => {
@@ -53,10 +51,8 @@ export const getPostFromSlug = (slug: string,url: string): Post => {
         content,
         meta: {
             slug,
-            active: data.active ?? "",
             excerpt: data.excerpt ?? "",
             title: data.title ?? slug,
-            date: data.date ?? new Date(),
             id: data.id ?? "",
             prev: data.prev ?? "",
             next: data.next ?? "",
