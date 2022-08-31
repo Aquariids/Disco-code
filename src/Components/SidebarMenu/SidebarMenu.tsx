@@ -11,16 +11,14 @@ const SidebarMenu = (): JSX.Element => {
 
     const router = useRouter();
     const { posts } = useContext(AppContext);
-    console.log("(👍≖‿‿≖)👍 ✿ file: SidebarMenu.tsx ✿ line 14 ✿ SidebarMenu ✿ posts", posts)
 
     
     const pathname = router.asPath;
-    console.log("(👍≖‿‿≖)👍 ✿ file: SidebarMenu.tsx ✿ line 18 ✿ SidebarMenu ✿ pathname", pathname)
 
-    
-    // const slug = ({path}:any):string => {
-    //     return path.replace();
-    // };
+    const newPathName = pathname.replace('js','js');
+    console.log("(👍≖‿‿≖)👍 ✿ file: SidebarMenu.tsx ✿ line 19 ✿ SidebarMenu ✿ newPathName", newPathName == pathname)
+    console.log("(👍≖‿‿≖)👍 ✿ file: SidebarMenu.tsx ✿ line 1q s9 ✿ SidebarMenu ✿ newPathName", pathname)
+
     const buildMenu = ():JSX.Element => {
 
         if (pathname.length > 5) {
@@ -28,7 +26,7 @@ const SidebarMenu = (): JSX.Element => {
             <div className={s.menu}>
                 {posts && posts.map((post) => (
                         <ul key={Math.random()}>
-                        <li className={pathname === post.active ? `${s.active}`: `${s.link}`}>
+                        <li className={pathname.replace(post.slug,'') + post.slug == pathname ? `${s.active}`: `${s.link}`}>
                             <Link href={`${post.slug}`}>{post.title}</Link>
                         </li>
                     </ul>

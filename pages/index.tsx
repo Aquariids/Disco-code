@@ -3,8 +3,6 @@ import { withLayout } from '../layout/Layout';
 import React from 'react';
 import Articles from '../src/Components/Articles';
 
-
-
 const Home: NextPage = (): JSX.Element => {
 
   return (
@@ -20,5 +18,6 @@ const Home: NextPage = (): JSX.Element => {
 
 
 
-export default withLayout(Home);
 
+
+export default withLayout(Home);
