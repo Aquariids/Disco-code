@@ -11,14 +11,7 @@ const SidebarMenu = (): JSX.Element => {
 
     const router = useRouter();
     const { posts } = useContext(AppContext);
-
-    
     const pathname = router.asPath;
-
-    const newPathName = pathname.replace('js','js');
-    console.log("(👍≖‿‿≖)👍 ✿ file: SidebarMenu.tsx ✿ line 19 ✿ SidebarMenu ✿ newPathName", newPathName == pathname)
-    console.log("(👍≖‿‿≖)👍 ✿ file: SidebarMenu.tsx ✿ line 1q s9 ✿ SidebarMenu ✿ newPathName", pathname)
-
     const buildMenu = ():JSX.Element => {
 
         if (pathname.length > 5) {
