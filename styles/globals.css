@@ -3,6 +3,7 @@ html {
 	margin-right: calc(-1 *(100vw - 100%));
 }
 body {
+	font-size: 17px;
 	margin: 0;
 	padding: 0;
 
@@ -20,36 +21,24 @@ a {
 	box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-	html {
-		color-scheme: dark;
-	}
-
-	body {
-		color: white;
-		background: black;
-	}
-}
-
 
 .tag {
-	text-decoration:underline;
 	color: blue;
+	font-size: 16px;
 }
 
-.tag:active {
+.tag:hover {
 	color: red;
 }
 
 .miniTag {
 	font-size: 14px;
-	text-decoration:underline;
 	color: blue;
 	display: inline;
 	margin-right: 5px;
 }
 
-.miniTag:active {
+.miniTag:hover {
 	color: red;
 }
 
@@ -71,4 +60,6 @@ a {
 	margin: 50px 0;
 }
 
-
+pre{
+	font-size: 14px;
+}

@@ -48,7 +48,6 @@
 	margin-top: 0;
 }
 
-
 @media (max-width: 745px) {
 	.wrapper {
 		grid-template-columns: minmax(320px, 1fr);
