@@ -39,6 +39,8 @@ export interface PostMeta {
     id:string;
     prev: string;
     next:string;
+    category?: string;
+    titleCategory?:string;
 
 }
 export const getPostFromSlug = (slug: string,url: string): Post => {
@@ -56,6 +58,8 @@ export const getPostFromSlug = (slug: string,url: string): Post => {
             id: data.id ?? "",
             prev: data.prev ?? "",
             next: data.next ?? "",
+            category: data.category ?? "none",
+            titleCategory: data.titleCategory ?? ""
         },
     };
 

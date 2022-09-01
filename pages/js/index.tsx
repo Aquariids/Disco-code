@@ -6,22 +6,6 @@ import { POSTS_PATH_JS } from '../api/paths';
 
 
 
-
-const Home: NextPage = (): JSX.Element => {
-
-  return (
-    <div>
-    </div>
-  );
-};
-
-
-
-
-
-export default withLayout(Home);
-
-
 export const getStaticProps: GetStaticProps = async () => {
 
   const posts = getAllPosts(POSTS_PATH_JS)
@@ -34,6 +18,25 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   };
 };
+
+
+const Home: NextPage = ({posts}): JSX.Element => {
+
+  return (
+    <div>
+      {posts && posts.map(post => <div>{post.title}</div>)}
+    </div>
+  );
+};
+
+
+
+
+
+export default withLayout(Home);
+
+
+
 
 
 

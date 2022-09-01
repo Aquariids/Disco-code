@@ -1,49 +1,26 @@
 .menu {
-	margin-top: 30px;
+	margin-top: 15px; 
 }
 
+.firstMenu {
+  margin-top: 60px;
+}
 
-/* Кнопка выпадающего списка */
-.dropbtn {
-	background-color: #4CAF50;
-	color: white;
-	padding: 16px;
-	font-size: 16px;
-	border: none;
-  }
-  
-  /* Контейнер <div> - необходим для размещения выпадающего содержимого */
-  .dropdown {
-	position: relative;
-	display: inline-block;
-  }
-  
-  /* Выпадающее содержимое (скрыто по умолчанию) */
-  .dropdownContent {
-	display: none;
-	position: absolute;
-	background-color: #f1f1f1;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  }
-  
-  /* Ссылки внутри выпадающего списка */
-  .dropdownContent li {
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-  }
-  
-  /* Изменение цвета выпадающих ссылок при наведении курсора */
-  .dropdownContent a:hover {background-color: #ddd;}
-  
-  /* Показать выпадающее меню при наведении курсора */
-  .dropdown:hover .dropdownContent {display: block;}
-  
-  /* Изменение цвета фона кнопки раскрывающегося списка при отображении содержимого раскрывающегося списка */
-  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+.firstMenu button {
+  cursor: pointer;
+  color: rgb(109, 109, 109);
+  line-height: 15px;
+  padding-left: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+}
 
+.firstMenu button:hover {
+  color: black;
+}
 
 
   .link {
@@ -51,14 +28,64 @@
 	line-height: 16px;
 	font-weight: 400;
 	list-style-type: none;
-
   }
 
+  .link:hover {
+	color: rgb(137, 137, 137);
+  
+  }
 
   .active {
+
 	font-size: 15px;
 	line-height: 16px;
 	list-style-type: none;
 	font-size: '19px';
 	font-weight: bold;
+
+  }
+
+  .titleCategoru {
+  }
+
+ 
+
+  .dropbtn {
+	background-color: #3498DB;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+  }
+  
+  /* Кнопка выпадающего меню при наведении и фокусировке */
+  .dropbtn:hover, .dropbtn:focus {
+	background-color: #2980B9;
+  }
+  
+  /* Контейнер <div> - необходим для размещения выпадающего содержимого */
+
+  
+  /* Выпадающее содержимое (скрыто по умолчанию) */
+  .dropdownContent {
+	display: show;
+  }
+  
+  /* Ссылки внутри выпадающего списка */
+ 
+  /* Изменение цвета выпадающих ссылок при наведении курсора */
+  .dropdown-content a:hover {background-color: #ddd}
+  
+  /* Показать выпадающее меню (используйте JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка) */
+  .show {
+    margin-top: 10px;
+    display:block;
+  }
+  .hide {
+    width: 0;
+    padding: 0;
+    margin: 0px;
+    display: none;
+
   }

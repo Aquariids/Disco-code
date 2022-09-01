@@ -21,25 +21,39 @@ a {
 	box-sizing: border-box;
 }
 
+/* @media (prefers-color-scheme: dark) {
+	html {
+		color-scheme: dark;
+	}
 
+	body {
+		color: white;
+		background: black;
+	}
+	
+} */
+
+
+
+/* body markdown files*/
 .tag {
-	color: blue;
+	color: rgb(244, 96, 224);
 	font-size: 16px;
 }
 
 .tag:hover {
-	color: red;
+	color: rgb(94, 28, 85);
 }
 
 .miniTag {
 	font-size: 14px;
-	color: blue;
+	color: rgb(244, 96, 224);
 	display: inline;
 	margin-right: 5px;
 }
 
 .miniTag:hover {
-	color: red;
+	color: rgb(94, 28, 85);
 }
 
 .img img {
