@@ -20,17 +20,14 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 
-const Home: NextPage = ({posts}): JSX.Element => {
+const Home: NextPage = (): JSX.Element => {
 
   return (
     <div>
-      {posts && posts.map(post => <div>{post.title}</div>)}
+      {/* {posts && posts.map(post => <div>{post.title}</div>)} */}
     </div>
   );
 };
-
-
-
 
 
 export default withLayout(Home);

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import s from './Articles.module.css';
 import Card from './Card/Card';
 const Articles = () => {

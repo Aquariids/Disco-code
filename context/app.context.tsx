@@ -1,10 +1,10 @@
 import { createContext, ReactNode, useState } from "react";
-import { ISidebarMenu } from "../src/Components/SidebarMenu/SidebarMenu.props";
+import { PostMeta } from "../pages/api/api";
 
 
 export interface IAppContext {
-    posts:ISidebarMenu[]
-    setMenu?: (newMenu:ISidebarMenu[]) => void
+    posts:PostMeta[]
+    setMenu?: (newMenu:PostMeta[]) => void
 }
 
 
@@ -16,8 +16,8 @@ export const AppContext = createContext<IAppContext>({posts:[]});
 
 export const AppContextProvider = ({posts,children}:IAppContext & {children: ReactNode}):JSX.Element => {
 
-    const [menuState,setMenuState] = useState<ISidebarMenu[]>(posts);
-    const setMenu = (newMenu:ISidebarMenu[]) => {
+    const [menuState,setMenuState] = useState<PostMeta[]>(posts);
+    const setMenu = (newMenu:PostMeta[]) => {
         setMenuState(newMenu);
     };
     return <AppContext.Provider value={{posts: menuState,setMenu}}>

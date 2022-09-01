@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { AppContext } from '../../../context/app.context';
 import { useRouter } from "next/router";
 import s from './SidebarMenu.module.css';
@@ -7,13 +7,13 @@ import { PostMeta } from '../../../pages/api/api';
 
 
 
-const SidebarMenu = (): JSX.Element => {
+const SidebarMenu = ():JSX.Element  => {
 
     const router = useRouter();
     const { posts } = useContext(AppContext);
     const pathname = router.asPath;
 
-    const buildFirstMenuJs = (menu: any): JSX.Element => {
+    const buildFirstMenuJs = (menu:(post:PostMeta,category:string)=> JSX.Element): JSX.Element => {
         return (
             <nav className={s.firstMenu}>
                 <div>
@@ -40,12 +40,12 @@ const SidebarMenu = (): JSX.Element => {
         );
     };
 
-    const buildFirstMenuGrid = (menu: any): JSX.Element => {
+    const buildFirstMenuGrid = (menu:(post:PostMeta,category:string)=> JSX.Element): JSX.Element => {
         return (
             <div className={s.firstMenu}>
-                {posts && posts.map((post, index) => (
-                    <li key={index}>
-                        {menu(post, 'grid', index)}
+                {posts && posts.map((post) => (
+                    <li>
+                        {menu(post, 'grid')}
                     </li>
 
                 ))}
