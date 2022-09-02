@@ -6,7 +6,8 @@
   margin-top: 60px;
 }
 
-.navMenu button {
+.button {
+
   cursor: pointer;
   color: rgb(109, 109, 109);
   line-height: 15px;
@@ -18,6 +19,13 @@
   border: none;
 }
 
+.j {
+  display: block;
+}
+
+.activeBtn {
+  color: black;
+}
 .navMenu button:hover {
   color: black;
 }
