@@ -43,9 +43,9 @@ const SidebarMenu = ():JSX.Element  => {
     const buildMenuGrid = (menu:(post:PostMeta,category:string,index:number)=> JSX.Element): JSX.Element => {
         return (
             <div className={s.navMenu}>
-                {posts && posts.map((post) => (
+                {posts && posts.map((post,index) => (
                     <>
-                        {menu(post, 'grid')}
+                        {menu(post, 'grid',index)}
                     </>
 
                 ))}
