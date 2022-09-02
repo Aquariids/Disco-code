@@ -24,6 +24,7 @@
 
 
   .link {
+  display: inline-block;
 	font-size: 15px;
 	line-height: 16px;
 	font-weight: 400;
@@ -36,11 +37,10 @@
   }
 
   .active {
-
 	font-size: 15px;
 	line-height: 16px;
 	list-style-type: none;
-	font-size: '19px';
+	font-size: 15px;
 	font-weight: bold;
 
   }

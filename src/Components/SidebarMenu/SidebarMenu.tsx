@@ -20,9 +20,9 @@ const SidebarMenu = ():JSX.Element  => {
                     <button>Базовый javaScript</button>
                     <ul className={s.listMenu}>
                         {posts && posts.map((post, index) => (
-                            <> 
+                            <React.Fragment key={index}>
                                 {menu(post, 'basicjs',index)}
-                            </>
+                            </React.Fragment>
                         ))}
                     </ul>
                 </div>
@@ -30,9 +30,9 @@ const SidebarMenu = ():JSX.Element  => {
                     <button>Продвинутый javaScript</button>
                     <ul className={s.listMenu}>
                         {posts && posts.map((post, index) => (
-                            <>
+                            <React.Fragment key={index}>
                                 {menu(post, 'none',index)}
-                            </>
+                            </React.Fragment>
                         ))}
                     </ul>
                 </div>
@@ -44,9 +44,9 @@ const SidebarMenu = ():JSX.Element  => {
         return (
             <div className={s.navMenu}>
                 {posts && posts.map((post,index) => (
-                    <>
+                    <React.Fragment key={index}>
                         {menu(post, 'grid',index)}
-                    </>
+                    </React.Fragment>
 
                 ))}
             </div>
@@ -61,7 +61,7 @@ const SidebarMenu = ():JSX.Element  => {
                                 [s.link]:pathname.replace(post.slug, '') + post.slug !== pathname,
                                 [s.show]: post.category == category,
                                 [s.hide]: post.category !== category,
-                            })} key={index}>
+                            })} >
                         <Link className={cn('lox')} href={`${post.slug}`}>{post.title}</Link>
                         </li>
 
