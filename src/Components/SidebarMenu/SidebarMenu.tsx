@@ -4,7 +4,7 @@ import { AppContext } from '../../../context/app.context';
 import { useRouter } from "next/router";
 import s from './SidebarMenu.module.css';
 import { PostMeta } from '../../../pages/api/api';
-
+import cn from 'classnames';
 
 
 const SidebarMenu = ():JSX.Element  => {
@@ -13,26 +13,26 @@ const SidebarMenu = ():JSX.Element  => {
     const { posts } = useContext(AppContext);
     const pathname = router.asPath;
 
-    const buildFirstMenuJs = (menu:(post:PostMeta,category:string)=> JSX.Element): JSX.Element => {
+    const buildMenuJs = (menu:(post:PostMeta,category:string,index:number)=> JSX.Element): JSX.Element => {
         return (
-            <nav className={s.firstMenu}>
+            <nav className={s.navMenu}>
                 <div>
                     <button>Базовый javaScript</button>
-                    <ul className={s.menu}>
+                    <ul className={s.listMenu}>
                         {posts && posts.map((post, index) => (
-                            <li className={pathname.replace(post.slug, '') + post.slug == pathname ? `${s.active}` : `${s.link}`} key={index}> 
-                                {menu(post, 'basicjs')}
-                            </li>
+                            <> 
+                                {menu(post, 'basicjs',index)}
+                            </>
                         ))}
                     </ul>
                 </div>
                 <div>
                     <button>Продвинутый javaScript</button>
-                    <ul className={s.menu}>
+                    <ul className={s.listMenu}>
                         {posts && posts.map((post, index) => (
-                            <li className={pathname.replace(post.slug, '') + post.slug == pathname ? `${s.active}` : `${s.link}`} key={index}>
-                                {menu(post, 'none')}
-                            </li>
+                            <>
+                                {menu(post, 'none',index)}
+                            </>
                         ))}
                     </ul>
                 </div>
@@ -40,24 +40,30 @@ const SidebarMenu = ():JSX.Element  => {
         );
     };
 
-    const buildFirstMenuGrid = (menu:(post:PostMeta,category:string)=> JSX.Element): JSX.Element => {
+    const buildMenuGrid = (menu:(post:PostMeta,category:string,index:number)=> JSX.Element): JSX.Element => {
         return (
-            <div className={s.firstMenu}>
+            <div className={s.navMenu}>
                 {posts && posts.map((post) => (
-                    <li>
+                    <>
                         {menu(post, 'grid')}
-                    </li>
+                    </>
 
                 ))}
             </div>
         );
     };
-    const buildLink = (post: PostMeta, category: string): JSX.Element => {
+    const buildLink = (post: PostMeta, category: string,index:number): JSX.Element => {
         if (pathname.length > 5) {
             return (
-                <span className={post.category == category ? `${s.show}` : `${s.hide}`} >
-                        <Link href={`${post.slug}`}>{post.title}</Link>
-                </span>
+                            <li 
+                            className={cn({
+                                [s.active]: pathname.replace(post.slug, '') + post.slug == pathname,
+                                [s.link]:pathname.replace(post.slug, '') + post.slug !== pathname,
+                                [s.show]: post.category == category,
+                                [s.hide]: post.category !== category,
+                            })} key={index}>
+                        <Link className={cn('lox')} href={`${post.slug}`}>{post.title}</Link>
+                        </li>
 
             );
         } else {
@@ -72,7 +78,7 @@ const SidebarMenu = ():JSX.Element  => {
     if (router.pathname === '/js/[js]') {
         return (
             <>
-                {buildFirstMenuJs(buildLink)}
+                {buildMenuJs(buildLink)}
             </>
         );
     }
@@ -80,7 +86,7 @@ const SidebarMenu = ():JSX.Element  => {
     if (router.pathname === '/grid/[grid]') {
         return (
             <>
-                {buildFirstMenuGrid(buildLink)}
+                {buildMenuGrid(buildLink)}
             </>
         );
     }

@@ -37,6 +37,7 @@ a {
 
 /* body markdown files*/
 .tag {
+	display: inline-block;
 	color: rgb(244, 96, 224);
 	font-size: 16px;
 }

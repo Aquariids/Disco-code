@@ -1,12 +1,12 @@
-.menu {
+.listMenu {
 	margin-top: 15px; 
 }
 
-.firstMenu {
+.navMenu {
   margin-top: 60px;
 }
 
-.firstMenu button {
+.navMenu button {
   cursor: pointer;
   color: rgb(109, 109, 109);
   line-height: 15px;
@@ -18,7 +18,7 @@
   border: none;
 }
 
-.firstMenu button:hover {
+.navMenu button:hover {
   color: black;
 }
 
@@ -45,8 +45,7 @@
 
   }
 
-  .titleCategoru {
-  }
+
 
  
 
