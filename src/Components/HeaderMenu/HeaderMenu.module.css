@@ -1,5 +1,4 @@
 .header {
-	position: relative;
 	z-index: 100;
 
 	display: grid;
@@ -8,22 +7,21 @@
 	height: 50px;
 
 	color: #FFF;
-	gap: 50px;
+	gap: 30px;
 	grid-template-columns: 20% minmax(auto, 1180px) 20%;
 	grid-template-areas: ". header .";
 }
 
 .content {
-	position: relative;
 
 	display: flex;
-
+	align-items: center;
 	justify-content: space-between;
 	grid-area: header;
 }
 
 .link {
-	padding: 0 15px;
+	padding-left: 15px;
 }
 
 .link:hover {
@@ -42,4 +40,36 @@
 	.logo span {
 		display: none;
 	}
+}
+
+
+.btn {
+	width:100%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.btn button {
+	font-size: 15px;
+	cursor: pointer;
+	background-color: transparent;
+	color: #FFF;
+	border: none;
+}
+
+.github {
+	font-size: 13px;
+	padding: 0;
+}
+
+.logo::before {
+	content: 'logo';
+	display: block;
+}
+
+.logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 }

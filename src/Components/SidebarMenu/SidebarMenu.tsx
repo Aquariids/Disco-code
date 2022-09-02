@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AppContext } from '../../../context/app.context';
 import { useRouter } from "next/router";
 import s from './SidebarMenu.module.css';
@@ -7,24 +7,38 @@ import { PostMeta } from '../../../pages/api/api';
 import cn from 'classnames';
 
 
-const SidebarMenu = ():JSX.Element  => {
+const SidebarMenu = (): JSX.Element => {
+    const [dropdownState, setDropdownState] = useState({ open: false });
+    const handleDropdownClick = () => {
+        setDropdownState({ open: !dropdownState.open }); 
+    };
 
     const router = useRouter();
     const { posts } = useContext(AppContext);
     const pathname = router.asPath;
 
-    const buildMenuJs = (menu:(post:PostMeta,category:string)=> JSX.Element): JSX.Element => {
+    const buildMenuJs = (menu: (post: PostMeta, category: string) => JSX.Element): JSX.Element => {
+    
         return (
             <nav className={s.navMenu}>
                 <div>
-                    <button>Базовый javaScript</button>
-                    <ul className={s.listMenu}>
+                    <button
+                        type="button"
+                        className={s.button}
+                        onClick={handleDropdownClick}
+                    >Базовый javaScript</button>
+                    {dropdownState.open && (
+                        <div className={s.dropdown}>
+                            <ul className={s.listMenu}>
                         {posts && posts.map((post, index) => (
                             <React.Fragment key={index}>
                                 {menu(post, 'basicjs')}
                             </React.Fragment>
                         ))}
                     </ul>
+                        </div>
+                    )}
+                
                 </div>
                 <div>
                     <button>Продвинутый javaScript</button>
@@ -40,10 +54,10 @@ const SidebarMenu = ():JSX.Element  => {
         );
     };
 
-    const buildMenuGrid = (menu:(post:PostMeta,category:string)=> JSX.Element): JSX.Element => {
+    const buildMenuGrid = (menu: (post: PostMeta, category: string) => JSX.Element): JSX.Element => {
         return (
             <div className={s.navMenu}>
-                {posts && posts.map((post,index) => (
+                {posts && posts.map((post, index) => (
                     <React.Fragment key={index}>
                         {menu(post, 'grid')}
                     </React.Fragment>
@@ -54,16 +68,17 @@ const SidebarMenu = ():JSX.Element  => {
     };
     const buildLink = (post: PostMeta, category: string): JSX.Element => {
         if (pathname.length > 5) {
+            
             return (
-                            <li 
-                            className={cn({
-                                [s.active]: pathname.replace(post.slug, '') + post.slug == pathname,
-                                [s.link]:pathname.replace(post.slug, '') + post.slug !== pathname,
-                                [s.show]: post.category == category,
-                                [s.hide]: post.category !== category,
-                            })} >
-                        <Link className={cn('lox')} href={`${post.slug}`}>{post.title}</Link>
-                        </li>
+                <li
+                    className={cn({
+                        [s.active]: pathname.replace(post.slug, '') + post.slug == pathname,
+                        [s.link]: pathname.replace(post.slug, '') + post.slug !== pathname,
+                        [s.show]: post.category == category,
+                        [s.hide]: post.category !== category,
+                    })} >
+                    <Link className={cn('lox')} href={`${post.slug}`}>{post.title}</Link>
+                </li>
 
             );
         } else {

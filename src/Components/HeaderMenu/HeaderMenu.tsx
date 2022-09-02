@@ -15,14 +15,7 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
         <header className={header} {...props}>
             <div className={content}>
                 <div className={logo}> <span className={link} > <Link href={'/'}>DiscoCode</Link> </span> </div>
-                <nav className={nav}>
-                    <span className={link}><Link  href='/js'>JavaScript</Link></span>
-                    <span className={link}><Link  href='/grid'>Grid</Link></span>
-                    <span className={link}><Link  href='/ts'>TypeScript</Link></span>
-
-                </nav>
-
-
+                <div className={s.btn}><button> Выбрать тему </button></div>
                 <div className={github}><a className={link} target={"_blank"} href={'https://github.com/Aquariids/Disco-code'}>Github</a></div>
             </div>
 
