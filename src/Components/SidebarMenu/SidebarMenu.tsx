@@ -13,7 +13,7 @@ const SidebarMenu = ():JSX.Element  => {
     const { posts } = useContext(AppContext);
     const pathname = router.asPath;
 
-    const buildMenuJs = (menu:(post:PostMeta,category:string,index:number)=> JSX.Element): JSX.Element => {
+    const buildMenuJs = (menu:(post:PostMeta,category:string)=> JSX.Element): JSX.Element => {
         return (
             <nav className={s.navMenu}>
                 <div>
@@ -21,7 +21,7 @@ const SidebarMenu = ():JSX.Element  => {
                     <ul className={s.listMenu}>
                         {posts && posts.map((post, index) => (
                             <React.Fragment key={index}>
-                                {menu(post, 'basicjs',index)}
+                                {menu(post, 'basicjs')}
                             </React.Fragment>
                         ))}
                     </ul>
@@ -31,7 +31,7 @@ const SidebarMenu = ():JSX.Element  => {
                     <ul className={s.listMenu}>
                         {posts && posts.map((post, index) => (
                             <React.Fragment key={index}>
-                                {menu(post, 'none',index)}
+                                {menu(post, 'none')}
                             </React.Fragment>
                         ))}
                     </ul>
@@ -40,19 +40,19 @@ const SidebarMenu = ():JSX.Element  => {
         );
     };
 
-    const buildMenuGrid = (menu:(post:PostMeta,category:string,index:number)=> JSX.Element): JSX.Element => {
+    const buildMenuGrid = (menu:(post:PostMeta,category:string)=> JSX.Element): JSX.Element => {
         return (
             <div className={s.navMenu}>
                 {posts && posts.map((post,index) => (
                     <React.Fragment key={index}>
-                        {menu(post, 'grid',index)}
+                        {menu(post, 'grid')}
                     </React.Fragment>
 
                 ))}
             </div>
         );
     };
-    const buildLink = (post: PostMeta, category: string,index:number): JSX.Element => {
+    const buildLink = (post: PostMeta, category: string): JSX.Element => {
         if (pathname.length > 5) {
             return (
                             <li 
