@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import s from './SidebarMenu.module.css';
 import Menu from './Menu/Menu';
-import MenuAdvanced from "./Menu/MenuAdvanced";
 
 const SidebarMenu = (): JSX.Element => {
     const router = useRouter();
@@ -10,13 +9,12 @@ const SidebarMenu = (): JSX.Element => {
         return (
             <nav className={s.navMenu}>
                 <Menu title="Базовый JavaScript" category='basicjs' />
-                <MenuAdvanced title="Продвинутый JavaScript" category='advancedjs'/>
-
+                <Menu title="Продвинутый JavaScript" category='advancedjs' />
             </nav>
         );
     }
 
-    if (router.pathname === '/grid/[grid]') {
+    if (router.pathname.startsWith('/grid')) {
         return (
             <>
             <nav className={s.navMenu}>

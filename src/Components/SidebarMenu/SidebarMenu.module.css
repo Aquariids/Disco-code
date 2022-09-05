@@ -51,11 +51,7 @@
 	font-size: 15px;
 	font-weight: bold;
 
-  }
-
-
-
- 
+  } 
 
   .dropbtn {
 	background-color: #3498DB;
@@ -66,25 +62,11 @@
 	cursor: pointer;
   }
   
-  /* Кнопка выпадающего меню при наведении и фокусировке */
-  .dropbtn:hover, .dropbtn:focus {
-	background-color: #2980B9;
-  }
-  
-  /* Контейнер <div> - необходим для размещения выпадающего содержимого */
 
   
-  /* Выпадающее содержимое (скрыто по умолчанию) */
   .dropdownContent {
 	display: show;
   }
-  
-  /* Ссылки внутри выпадающего списка */
- 
-  /* Изменение цвета выпадающих ссылок при наведении курсора */
-  .dropdown-content a:hover {background-color: #ddd}
-  
-  /* Показать выпадающее меню (используйте JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка) */
   .show {
     margin-top: 10px;
     display:block;

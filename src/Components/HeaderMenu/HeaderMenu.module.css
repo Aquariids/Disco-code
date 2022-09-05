@@ -13,10 +13,9 @@
 }
 
 .content {
-
+	text-align: center;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
 	grid-area: header;
 }
 
@@ -40,8 +39,20 @@
 	.logo span {
 		display: none;
 	}
+	.content {
+		margin-left: 50px;
+		margin-right: 50px;
+	}
 }
 
+
+.nav {
+	font-size: 16px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
 
 .btn {
 	width:100%;
@@ -51,11 +62,11 @@
 
 .btn button {
 	font-size: 15px;
-	cursor: pointer;
 	background-color: transparent;
 	color: #FFF;
 	border: none;
 }
+
 
 .github {
 	font-size: 13px;
@@ -73,3 +84,39 @@
 	align-items: center;
 
 }
+
+
+.dropdown {
+    position: relative;
+    display: block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown_content {
+	border-bottom: 1px solid;
+	margin: 0;
+    display: none;
+    position: absolute;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+	padding: 20px 0 0 0;
+}
+
+
+/* Links inside the dropdown */
+.dropdown_content li {
+    color: black;
+    text-decoration: none;
+    display: block;
+	background-color: #fff;
+
+}
+
+/* Change color of dropdown links on hover */
+.dropdown_content :hover {color: gray;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown_content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */

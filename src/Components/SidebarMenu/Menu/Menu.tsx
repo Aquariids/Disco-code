@@ -15,7 +15,7 @@ const Menu = ({title,category,...props}:IMenu): JSX.Element => {
     const { posts } = useContext(AppContext); 
 
   
-    const [isOpen, setOpen] = useState(router.pathname.startsWith('/js/basicjs') == true? true: false);
+    const [isOpen, setOpen] = useState(router.pathname.startsWith(`/js/${category}`) == true? true: false);
 
     const handleToggle = () => {
         setOpen(!isOpen);
