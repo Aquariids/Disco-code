@@ -4,7 +4,7 @@ const Articles = () => {
 
 
     return <div className={s.articles}>
-    <Card text={'JavaScript'} color={'yellow'} url={'/js/basic'}/>
+    <Card text={'JavaScript'} color={'yellow'} url={'/js/basicjs/BrowserMethodsAndConsole'}/>
     <Card text={'TypeScript'} color={'blue'} url={'/ts/basic'}/>
     <Card text={'TypeScript'} color={'blue'} url={'/ts/basic'}/>
     <Card text={'TypeScript'} color={'blue'} url={'/ts/basic'}/>
