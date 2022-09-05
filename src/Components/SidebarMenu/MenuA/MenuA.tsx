@@ -18,7 +18,7 @@ const Menu = ({title,category,active,...props}:IMenu): JSX.Element => {
     console.log("(👍≖‿‿≖)👍 ✿ file: Menu.tsx ✿ line 19 ✿ Menu ✿ active", active)
 
   
-    const [isOpen, setOpen] = useState(router.pathname.startsWith('/js/basicjs') == true? true: false);
+    const [isOpen, setOpen] = useState(router.pathname.startsWith('/js/advancedjs') == true? true: false);
 
     const handleToggle = () => {
         setOpen(!isOpen);

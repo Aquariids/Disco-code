@@ -1,5 +1,5 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { withLayout } from '../../layout/Layout';
+import { withLayout } from '../../../layout/Layout';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import rehypeSlug from 'rehype-slug';
@@ -7,8 +7,8 @@ import rehypeHighlight from 'rehype-highlight';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import Head from 'next/head';
 import "highlight.js/styles/atom-one-dark.css";
-import { getAllPosts, getPostFromSlug, getSlugs, PostMeta } from '../api/api';
-import { POSTS_PATH_JS } from '../api/paths';
+import { getAllPosts, getPostFromSlug, getSlugs, PostMeta } from '../../api/api';
+import { POSTS_PATH_JS } from '../../api/paths';
 import Link from 'next/link';
 
 interface MSXPost {

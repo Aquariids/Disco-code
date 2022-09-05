@@ -8,7 +8,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import Head from 'next/head';
 import "highlight.js/styles/atom-one-dark.css";
 import { getAllPosts, getPostFromSlug, getSlugs, PostMeta } from '../../api/api';
-import { POSTS_PATH_BASICJS } from '../../api/paths';
+import { POSTS_PATH_JS } from '../../api/paths';
 import Link from 'next/link';
 
 interface MSXPost {
@@ -45,7 +45,7 @@ export default withLayout(PostPage);
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const { js } = params as { js: string };
-    const { content, meta } = getPostFromSlug(js,POSTS_PATH_BASICJS);
+    const { content, meta } = getPostFromSlug(js,POSTS_PATH_JS);
     const mdxSource = await serialize(content, {
         mdxOptions: {
             rehypePlugins: [
@@ -59,10 +59,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     });
 
 
-    const postsBasicjs = getAllPosts(POSTS_PATH_BASICJS)
+    const posts = getAllPosts(POSTS_PATH_JS)
         .slice(0, 9)
         .map(post => post.meta);
-    return { props: { post: { source: mdxSource, meta }, postsBasicjs } };
+    return { props: { post: { source: mdxSource, meta }, posts } };
 
 };
 
@@ -70,7 +70,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const paths = getSlugs(POSTS_PATH_BASICJS).map(js => ({ params: { js } }));
+    const paths = getSlugs(POSTS_PATH_JS).map(js => ({ params: { js } }));
 
     return {
         paths,
