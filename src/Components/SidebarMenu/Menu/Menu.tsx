@@ -8,14 +8,11 @@ import { useRouter } from 'next/router';
 
 
 
-const Menu = ({title,category,active,...props}:IMenu): JSX.Element => {
+const Menu = ({title,category,...props}:IMenu): JSX.Element => {
   
     const router = useRouter();
     const pathname = router.asPath;
     const { posts } = useContext(AppContext); 
-
-   
-    console.log("(👍≖‿‿≖)👍 ✿ file: Menu.tsx ✿ line 19 ✿ Menu ✿ active", active)
 
   
     const [isOpen, setOpen] = useState(router.pathname.startsWith('/js/basicjs') == true? true: false);

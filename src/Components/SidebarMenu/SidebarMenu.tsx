@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import s from './SidebarMenu.module.css';
 import Menu from './Menu/Menu';
-import MenuA from "./MenuA/MenuA";
+import MenuAdvanced from "./Menu/MenuAdvanced";
 
 const SidebarMenu = (): JSX.Element => {
     const router = useRouter();
@@ -10,7 +10,7 @@ const SidebarMenu = (): JSX.Element => {
         return (
             <nav className={s.navMenu}>
                 <Menu title="Базовый JavaScript" category='basicjs' />
-                <MenuA title="Продвинутый JavaScript" category='advancedjs'/>
+                <MenuAdvanced title="Продвинутый JavaScript" category='advancedjs'/>
 
             </nav>
         );
