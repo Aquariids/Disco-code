@@ -5,7 +5,7 @@
 	align-items: center;
 
 	height: 50px;
-
+	justify-content: center;
 	color: #FFF;
 	gap: 30px;
 	grid-template-columns: 20% minmax(auto, 1180px) 20%;
