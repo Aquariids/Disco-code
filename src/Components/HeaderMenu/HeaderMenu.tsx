@@ -12,7 +12,7 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
 
 
     return (
-        <header className={header} {...props}>
+        <div className={header} {...props}>
             <div className={content}>
                 <div className={logo}> <span className={link} > <Link href={'/'}>DiscoCode</Link> </span> </div>
 
@@ -32,7 +32,7 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
             </div>
       
 
-        </header>
+        </div>
     );
 };
 

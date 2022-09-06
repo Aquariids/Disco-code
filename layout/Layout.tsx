@@ -4,7 +4,6 @@ import Header from "./Header/Header";
 import { LayoutProps } from "./Layout.props";
 import Sidebar from "./Sidebar/Sidebar";
 import s from './Layout.module.css';
-import MdxStyle from './MdxContent.module.css';
 import { AppContextProvider, IAppContext } from "../context/app.context";
 const { wrapper, header, sidebar, footer, body, content} = s;
 const Layout = ({children, }: LayoutProps): JSX.Element => {
@@ -20,7 +19,7 @@ const Layout = ({children, }: LayoutProps): JSX.Element => {
                 <div className={body}>
                     <div className={content}>                   
                         {children}
-</div>
+                    </div>
                 </div>
                 <Footer className={footer} />
                 {/* <div className={content}> <button className={btn}></button></div> */}

@@ -3,6 +3,7 @@ html {
 	margin-right: calc(-1 *(100vw - 100%));
 }
 body {
+	position: relative;
 	font-size: 17px;
 	margin: 0;
 	padding: 0;

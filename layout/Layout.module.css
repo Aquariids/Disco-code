@@ -1,7 +1,6 @@
 .wrapper {
 	display: grid;
 	grid-template-columns: 20% minmax(320px, 1180px) 20%;
-
 	min-height: 100vh;
 	gap: 30px;
 	grid-template-rows: 50px 1fr 50px;
@@ -10,7 +9,10 @@
 		"header header header"
 		"sidebar body ."
 		"footer footer footer";
+
+	
 }
+
 
 .btn {
 	position: absolute;
@@ -28,7 +30,7 @@
 }
 
 .header {
-	position: absolute;
+
 	grid-area: header;
 }
 
@@ -41,6 +43,9 @@
 }
 
 .footer {
+	grid-column-start: 1;
+    grid-column-end: 4;
+
 	grid-area: footer;
 }
 
