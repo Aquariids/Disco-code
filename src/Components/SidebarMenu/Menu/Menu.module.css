@@ -1,31 +1,17 @@
 .listMenu {
-	margin-top: 15px;
+  margin-top: 0;
+  display: grid;
+  padding-right: 10px;
+  padding-left: 20px;
 }
 
 .navMenu {
   margin-top: 60px;
 }
 
-.button {
 
-  cursor: pointer;
-  color: rgb(109, 109, 109);
-  line-height: 15px;
-  padding-left: 20px;
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  background: transparent;
-  border: none;
-}
 
-.j {
-  display: block;
-}
 
-.activeBtn {
-  color: black;
-}
 .navMenu button:hover {
   color: black;
 }
@@ -39,7 +25,7 @@
 	list-style-type: none;
   }
 
-  .link:hover {
+  .listMenu .link a:hover {
 	color: rgb(137, 137, 137);
   
   }
@@ -55,36 +41,12 @@
 
 
 
- 
 
-  .dropbtn {
-	background-color: #3498DB;
-	color: white;
-	padding: 16px;
-	font-size: 16px;
-	border: none;
-	cursor: pointer;
-  }
-  
-  /* Кнопка выпадающего меню при наведении и фокусировке */
-  .dropbtn:hover, .dropbtn:focus {
-	background-color: #2980B9;
-  }
-  
-  /* Контейнер <div> - необходим для размещения выпадающего содержимого */
-
-  
-  /* Выпадающее содержимое (скрыто по умолчанию) */
   .dropdownContent {
 	display: show;
   }
   
-  /* Ссылки внутри выпадающего списка */
- 
-  /* Изменение цвета выпадающих ссылок при наведении курсора */
-  .dropdown-content a:hover {background-color: #ddd}
-  
-  /* Показать выпадающее меню (используйте JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка) */
+
   .show {
     margin-top: 10px;
     display:block;

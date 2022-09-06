@@ -5,6 +5,7 @@ import s from './Menu.module.css';
 import cn from 'classnames';
 import { IMenu } from './Menu.props';
 import { useRouter } from 'next/router';
+import Button from '../../UI/Button/Button';
 
 
 
@@ -23,13 +24,10 @@ const Menu = ({title,category,...props}:IMenu): JSX.Element => {
     
     return (
         <div {...props}>
-            <button
-                type="button"
-                className={cn(s.button, {
-                    [s.activeBtn]: isOpen === true,
-                })}
+            <Button
+                arrow= {isOpen === true? 'down': 'right'}
                 onClick={handleToggle}
-            >{title}</button>
+            >{title}</Button>
             {isOpen && (<ul className={s.listMenu}>
                 {posts && posts.map((post,index) => (
                     <li 

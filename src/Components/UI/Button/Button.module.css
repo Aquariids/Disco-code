@@ -1,0 +1,46 @@
+
+.button {
+    position: relative;
+    cursor: pointer;
+    color: rgb(109, 109, 109);
+    line-height: 15px;
+    padding-right: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: transparent;
+    border: none;
+    font-weight: bold;
+  }
+
+  .active {
+    color: black;
+  }
+
+
+
+  .arrow {
+    position: absolute;
+    display: inline-block;
+    margin-left: 10px;
+  }
+
+  .arrow svg {
+    
+    fill: rgb(109, 109, 109);
+  }
+
+  .down svg {
+    fill: rgb(0, 0, 0);
+    display: inline-block;
+    transform: rotate(90deg);
+    transition: all .2;
+  }
+
+
+  @media (max-width:970px) {
+    .button {
+        width: 150px;
+    }
+    
+  }

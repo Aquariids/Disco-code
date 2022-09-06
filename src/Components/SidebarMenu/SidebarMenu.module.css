@@ -6,26 +6,6 @@
   margin-top: 45px;
 }
 
-.button {
-
-  cursor: pointer;
-  color: rgb(109, 109, 109);
-  line-height: 15px;
-  padding-left: 20px;
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  background: transparent;
-  border: none;
-}
-
-.j {
-  display: block;
-}
-
-.activeBtn {
-  color: black;
-}
 .navMenu button:hover {
   color: black;
 }
@@ -78,3 +58,5 @@
     display: none;
 
   }
+
+
