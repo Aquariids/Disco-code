@@ -1,62 +1,61 @@
-.listMenu {
-	margin-top: 15px; 
-}
 
 .navMenu {
-  margin-top: 45px;
+	margin-top: 15px;
 }
 
 .navMenu button:hover {
-  color: black;
+	color: black;
 }
 
+.link {
+	display: inline-block;
 
-  .link {
-  display: inline-block;
+	list-style-type: none;
+
 	font-size: 15px;
-	line-height: 16px;
 	font-weight: 400;
-	list-style-type: none;
-  }
-
-  .link:hover {
-	color: rgb(137, 137, 137);
-  
-  }
-
-  .active {
-	font-size: 15px;
 	line-height: 16px;
+}
+
+.link:hover {
+	color: rgb(137 137 137);
+}
+
+.active {
 	list-style-type: none;
+
+	font-size: 15px;
 	font-size: 15px;
 	font-weight: bold;
+	line-height: 16px;
+}
 
-  } 
-
-  .dropbtn {
-	background-color: #3498DB;
-	color: white;
+.dropbtn {
 	padding: 16px;
-	font-size: 16px;
-	border: none;
+
 	cursor: pointer;
-  }
-  
 
-  
-  .dropdownContent {
+	color: white;
+	border: none;
+	background-color: #3498DB;
+
+	font-size: 16px;
+}
+
+.dropdownContent {
 	display: show;
-  }
-  .show {
-    margin-top: 10px;
-    display:block;
-  }
-  .hide {
-    width: 0;
-    padding: 0;
-    margin: 0px;
-    display: none;
+}
 
-  }
+.show {
+	display: block;
 
+	margin-top: 10px;
+}
 
+.hide {
+	display: none;
+
+	width: 0;
+	margin: 0;
+	padding: 0;
+}

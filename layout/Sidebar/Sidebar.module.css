@@ -1,13 +1,16 @@
 .sidebar {
-	display: grid;
 	position: fixed;
 	z-index: 1000;
+
+	display: grid;
+	justify-content: left;
+
 	width: 20%;
 	height: 100%;
 	margin-top: 50px;
-	justify-content: left;
+
 	color: #000;
-	background-color:#f7f7f7;
+	background-color: #F7F7F7;
 	box-shadow: 0 0 1px 0;
 }
 
@@ -24,5 +27,3 @@
 		justify-content: center;
 	}
 }
-
-	

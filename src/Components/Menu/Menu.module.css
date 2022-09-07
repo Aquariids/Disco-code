@@ -1,88 +1,84 @@
 .listMenu {
-  justify-content: left;
-  margin-top: 0;
-  display: grid;
-  padding-right: 10px;
-  padding-left: 25px;
+	display: grid;
+	justify-content: left;
+
+	margin-top: 0;
+	padding-right: 10px;
+	padding-left: 25px;
 }
 
 .content {
-  margin-right: 50px;
-  
+	margin-right: 50px;
 }
 
 .btn {
-  display: grid;
-  justify-content: left;
+	display: grid;
+	justify-content: left;
 }
+
 .navMenu {
-  margin-top: 60px;
+	margin-top: 60px;
 }
-
-
-
 
 .navMenu button:hover {
-  color: black;
+	color: black;
 }
 
+.link {
+	display: inline-block;
 
-  .link {
-  display: inline-block;
+	list-style-type: none;
+
 	font-size: 15px;
-	line-height: 16px;
 	font-weight: 400;
-	list-style-type: none;
-  }
-
-  .listMenu .link a:hover {
-	color: rgb(137, 137, 137);
-  
-  }
-
-  .active {
-	font-size: 15px;
 	line-height: 16px;
+}
+
+.listMenu .link a:hover {
+	color: rgb(137 137 137);
+}
+
+.active {
 	list-style-type: none;
+
 	font-size: 15px;
 	font-weight: bold;
+	line-height: 16px;
+}
 
-  }
-
-
-
-
-  .dropdownContent {
+.dropdownContent {
 	display: show;
-  }
-  
+}
 
-  .show {
-    margin-top: 10px;
-    display:block;
-  }
-  .hide {
-    width: 0;
-    padding: 0;
-    margin: 0px;
-    display: none;
+.show {
+	display: block;
 
-  }
+	margin-top: 10px;
+}
 
+.hide {
+	display: none;
 
+	width: 0;
+	margin: 0;
+	padding: 0;
+}
 
-  .nonLink {
-    display: none;
-  }
+.nonLink {
+	display: none;
+}
 
-  .title {
-    margin-top: 30px;
-    color: rgb(109, 109, 109);
-    line-height: 15px;
-    padding-right: 10px;
-    padding-left: 20px; 
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
+.title {
+	margin-top: 30px;
+	padding-right: 10px;
+	padding-left: 20px;
+
+	text-transform: uppercase;
+
+	color: rgb(109 109 109);
+
+	font-size: 14px;
+	font-weight: 700;
+	font-weight: bold;
+	line-height: 15px;
+}

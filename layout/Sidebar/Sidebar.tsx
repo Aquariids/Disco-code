@@ -4,7 +4,8 @@ import s from './Sidebar.module.css';
 import SidebarMenu from '../../src/Components/SidebarMenu/SidebarMenu';
 import { useRouter } from 'next/router';
 
-const {sidebar,menu} = s;
+const {sidebar} = s;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Sidebar = ({className, ...props}:SidebarProps):JSX.Element => {
     const router = useRouter(); 
     if(router.route.length < 5){

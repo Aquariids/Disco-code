@@ -1,19 +1,22 @@
 .container {
-    display: flex;
-    width: 180px;
-    height: 180px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5%;
-    font-size: 25px;
-    cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 180px;
+	height: 180px;
+
+	cursor: pointer;
+
+	border-radius: 5%;
+
+	font-size: 25px;
 }
 
-
 .yellow {
-    background-color: yellow;
+	background-color: yellow;
 }
 
 .blue {
-    background-color: rgb(0, 140, 255);
+	background-color: rgb(0 140 255);
 }

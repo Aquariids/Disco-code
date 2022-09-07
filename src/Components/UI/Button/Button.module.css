@@ -1,58 +1,57 @@
-
 .button {
-    margin-top: 30px;
-    position: relative;
-    cursor: pointer;
-    color: rgb(109, 109, 109);
-    line-height: 15px;
-    padding-right: 10px;
-    padding-left: 20px; 
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    background: transparent;
-    border: none;
-    font-weight: bold;
-  }
+	position: relative;
 
-  .active {
-    color: black;
-  }
+	margin-top: 30px;
+	padding-right: 10px;
+	padding-left: 20px;
 
+	cursor: pointer;
+	text-transform: uppercase;
 
+	color: rgb(109 109 109);
+	border: none;
+	background: transparent;
 
-  .arrow {
-    position: absolute;
-    display: inline-block;
-    margin-left: 10px;
+	font-size: 14px;
+	font-weight: 700;
+	font-weight: bold;
+	line-height: 15px;
+}
 
-  }
+.active {
+	color: black;
+}
 
+.arrow {
+	position: absolute;
 
-  .arrow svg {
-    transform: rotate(270deg);
+	display: inline-block;
 
-    fill: rgb(109, 109, 109);
-  }
+	margin-left: 10px;
+}
 
-  .down svg {
-    fill: rgb(0, 0, 0);
-    display: inline-block;
-    transform: rotate(90deg);
-    transition: all .2;
-  }
+.arrow svg {
+	transform: rotate(270deg);
 
+	fill: rgb(109 109 109);
+}
 
+.down svg {
+	display: inline-block;
 
-  @media (max-width:1250px) {
-    .button {
-        width: 200px;
-    }
-    
-  }
-  @media (max-width:970px) {
-    .button {
-        width: 150px;
-    }
-    
-  }
+	transition: all 0.2;
+	transform: rotate(90deg);
+	fill: rgb(0 0 0);
+}
+
+@media (max-width: 1250px) {
+	.button {
+		width: 200px;
+	}
+}
+
+@media (max-width: 970px) {
+	.button {
+		width: 150px;
+	}
+}

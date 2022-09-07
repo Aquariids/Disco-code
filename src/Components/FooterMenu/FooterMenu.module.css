@@ -1,29 +1,29 @@
-
 .footer {
-	font-size: 15px;
 	display: grid;
 	align-items: center;
-	gap: 30px;
-	height: 50px;
-	text-align: right;
 	justify-content: center;
+
+	height: 50px;
+
+	text-align: right;
+
 	color: #FFF;
+
+	font-size: 15px;
+	gap: 30px;
 	grid-template-columns: 20% minmax(auto, 1180px) 20%;
 	grid-template-areas: ". footer .";
-
 }
-
 
 .content {
 	grid-area: footer;
+
 	display: flex;
 	align-items: center;
 	justify-content: right;
 	gap: 30px;
-
 }
 
 .doc {
-padding-right: 15px;
-
+	padding-right: 15px;
 }
