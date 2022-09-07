@@ -1,6 +1,8 @@
 import type { GetStaticProps, NextPage } from 'next';
 import React from 'react';
 import { withLayout } from '../../layout/Layout';
+import Menu from '../../src/Components/Menu/Menu';
+import s from './jsmenu.module.css';
 import { getAllPosts } from '../api/api';
 import { POSTS_PATH_JS } from '../api/paths';
 
@@ -23,8 +25,9 @@ export const getStaticProps: GetStaticProps = async () => {
 const Home: NextPage = (): JSX.Element => {
 
   return (
-    <div>
-      {/* {posts && posts.map(post => <div>{post.title}</div>)} */}
+    <div className={s.menu}>
+      <Menu title="Базовый JavaScript" category='basicjs'/>
+      <Menu title="Продвинутый JavaScript" category='advancedjs'/>
     </div>
   );
 };

@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 const {sidebar,menu} = s;
 const Sidebar = ({className, ...props}:SidebarProps):JSX.Element => {
     const router = useRouter(); 
-    if(router.route === '/'){
+    if(router.route.length < 5){
         return(
             <></>
         );

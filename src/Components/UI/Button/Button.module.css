@@ -1,10 +1,12 @@
 
 .button {
+    margin-top: 30px;
     position: relative;
     cursor: pointer;
     color: rgb(109, 109, 109);
     line-height: 15px;
     padding-right: 10px;
+    padding-left: 20px; 
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
@@ -23,10 +25,13 @@
     position: absolute;
     display: inline-block;
     margin-left: 10px;
+
   }
 
+
   .arrow svg {
-    
+    transform: rotate(270deg);
+
     fill: rgb(109, 109, 109);
   }
 
@@ -38,6 +43,13 @@
   }
 
 
+
+  @media (max-width:1250px) {
+    .button {
+        width: 200px;
+    }
+    
+  }
   @media (max-width:970px) {
     .button {
         width: 150px;
