@@ -88,11 +88,31 @@
 
 @media (max-width:1315px) {
 	.listMenu {
-		grid-template-columns: 100px;
+		grid-template-columns: 200px;
 	}
-
 	.btn {
 		justify-content: center;
 	}
 	
+
+}
+
+@media (max-width:1145px) {
+	.listMenu {
+		grid-template-columns: 150px;
+		margin-left: 10px;
+		margin-right: 10px;
+
+
+	}
+	
+
+}
+
+@media (max-width:890px) {
+	.listMenu {
+		grid-template-columns: 100px;
+	}
+	
+
 }
