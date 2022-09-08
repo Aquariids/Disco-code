@@ -3,10 +3,7 @@
 	align-items: center;
 	justify-content: center;
 
-	height: 50px;
-
 	text-align: right;
-
 	color: #FFF;
 
 	font-size: 15px;
@@ -17,7 +14,6 @@
 
 .content {
 	grid-area: footer;
-
 	display: flex;
 	align-items: center;
 	justify-content: right;

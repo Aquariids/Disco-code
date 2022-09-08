@@ -29,7 +29,7 @@
 	color: rgb(0 187 255);
 }
 
-@media (max-width: 625px) {
+@media (max-width: 700px) {
 	.header {
 		grid-template-columns: minmax(320px, 1fr);
 		grid-template-rows: 50px;

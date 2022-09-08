@@ -3,7 +3,7 @@
 	margin-top: 30px;
 	padding-right: 10px;
 	padding-left: 20px;
-
+	line-height: 18px;
 	cursor: pointer;
 	text-transform: uppercase;
 
@@ -14,7 +14,6 @@
 	font-size: 14px;
 	font-weight: 700;
 	font-weight: bold;
-	line-height: 15px;
 }
 
 .active {
@@ -43,14 +42,10 @@
 	fill: rgb(0 0 0);
 }
 
-@media (max-width: 1250px) {
-	.button {
-		width: 200px;
-	}
-}
-
-@media (max-width: 1075px) {
+@media (max-width: 1275px) {
 	.button {
 		width: 150px;
 	}
 }
+
+

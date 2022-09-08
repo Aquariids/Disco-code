@@ -1,7 +1,7 @@
 .listMenu {
 	display: grid;
 	justify-content: left;
-
+	grid-template-columns: 1fr;
 	margin-top: 0;
 	padding-right: 10px;
 	padding-left: 25px;
@@ -84,3 +84,11 @@
 }
 
 
+
+
+@media (max-width:1275px) {
+	.listMenu {
+		grid-template-columns: 100px;
+	}
+	
+}

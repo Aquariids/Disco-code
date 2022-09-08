@@ -14,6 +14,7 @@ const Menu = ({title,category, dropdown, ...props}:IMenu): JSX.Element => {
     const router = useRouter();
     const pathname = router.asPath;
     const { posts } = useContext(AppContext); 
+    console.log("(👍≖‿‿≖)👍 ✿ file: Menu.tsx ✿ line 17 ✿ Menu ✿ posts", posts)
 
   
     const [isOpen, setOpen] = useState(router.pathname.startsWith(`/js/${category}`) == true? true: false);
