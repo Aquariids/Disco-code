@@ -11,7 +11,7 @@
 	border: none;
 	background: transparent;
 
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: 700;
 	font-weight: bold;
 }
@@ -42,9 +42,10 @@
 	fill: rgb(0 0 0);
 }
 
-@media (max-width: 1275px) {
+@media (max-width: 1315px) {
 	.button {
 		width: 150px;
+		padding:0;
 	}
 }
 

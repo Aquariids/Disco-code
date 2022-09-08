@@ -86,9 +86,13 @@
 
 
 
-@media (max-width:1275px) {
+@media (max-width:1315px) {
 	.listMenu {
 		grid-template-columns: 100px;
+	}
+
+	.btn {
+		justify-content: center;
 	}
 	
 }
