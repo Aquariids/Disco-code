@@ -22,8 +22,11 @@
 	}
 }
 
-@media (max-width: 970px) {
+
+@media (max-width: 1100px) {
 	.sidebar {
-		justify-content: center;
+	justify-content: center;
 	}
 }
+
+

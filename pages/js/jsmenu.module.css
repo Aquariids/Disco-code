@@ -6,10 +6,16 @@
 	gap: 30px;
 }
 
+.body {
+	width: 100%;
+	display: grid;
+	justify-content: center;
+}
 @media (max-width: 700px) {
 	.menu {
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr;
 		gap: 15px;
 	}
+
 }
