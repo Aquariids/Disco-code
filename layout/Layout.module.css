@@ -5,7 +5,7 @@
 	min-height: 100vh;
 	grid-template-columns: 20% minmax(320px, 1180px) 20%;
 	gap: 30px;
-	grid-template-rows: auto  auto auto;
+	grid-template-rows: 50px 1fr;
 	/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
 	grid-template-areas:
 		"header header header"
@@ -42,12 +42,11 @@
 }
 
 .footer {
-
 	grid-area: footer;
 }
 
 .content h1 {
-	margin-top: 50px;
+	margin-top: 0;
 }
 
 @media (max-width: 700px) {
