@@ -52,7 +52,6 @@
 @media (max-width: 700px) {
 	.wrapper {
 		grid-template-columns: minmax(320px, 1fr);
-		grid-template-rows: 50px;
 		/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
 		grid-template-areas:
 			"header"
@@ -62,8 +61,8 @@
 
 	.footer {
 		align-items: center;
-
 		text-align: center;
+
 	}
 
 	.content {
