@@ -30,8 +30,8 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
             <MDXRemote {...post.source} />
             <div className={s.footer}>
 
-                <Link href={post.meta.prev}> пред страница </Link>
-                <Link href={post.meta.next}> след страница </Link>
+                <Link href={post.meta.prev}>{post.meta.prev === 'none'?' ':'Предыдущая страница'}</Link>
+                <Link href={post.meta.next}> Следующая страница </Link>
 
             </div>
 

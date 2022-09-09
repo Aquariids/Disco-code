@@ -24,6 +24,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Home: NextPage = (): JSX.Element => {
 
+  
   return (
   <div className={s.index}>
         <h2>Содержание</h2>
