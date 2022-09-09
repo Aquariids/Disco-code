@@ -8,11 +8,7 @@ const Articles = () => {
     <Card text={'TypeScript'} color={'blue'} url={'/ts/basic'}/>
     <Card text={'TypeScript'} color={'blue'} url={'/ts/basic'}/>
     <Card text={'TypeScript'} color={'blue'} url={'/ts/basic'}/>
-
     <Card text={'TypeScript'} color={'blue'} url={'/ts/basic'}/>
-
-
-
     </div>;
 
 

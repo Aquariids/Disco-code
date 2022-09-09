@@ -1,7 +1,22 @@
+
+.index {
+	text-align: center;
+}
+
+.index span {
+	font-size: 14px;
+}
+.index h2 {
+	margin-bottom: 10px;
+	margin-top: 0;
+}
+
+
 .menu {
+	margin-top: 50px;
 	display: grid;
-	grid-template-columns: 1fr 1fr auto;
-	grid-template-rows: 1fr 1fr auto;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
 
 	gap: 30px;
 }
@@ -19,6 +34,12 @@
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr;
 		gap: 15px;
+	}
+	.index h2 {
+		display: none;
+	}
+	.index span {
+		display: none;
 	}
 
 }

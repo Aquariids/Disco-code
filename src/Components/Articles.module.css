@@ -2,9 +2,11 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	gap: 25px;
-
 	padding: 10px;
+	grid-template-rows: 200px 200px;
+	
 }
+
 
 @media (max-width: 925px) {
 	.articles {

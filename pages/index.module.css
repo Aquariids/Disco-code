@@ -1,0 +1,17 @@
+.body {
+    text-align: center;
+}
+
+.body h1 {
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.body h1 span {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
