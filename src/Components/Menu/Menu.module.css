@@ -16,13 +16,13 @@
 	align-items: center;
 	gap: 10px;
 	justify-content: center;
+	width:400px
 
 }
 
 .index_btn {
 	display: grid;
 	justify-content: center;
-	width: 300px;
 }
 .content {
 	margin-right: 20px;
@@ -138,21 +138,21 @@
 
 
 
-@media (max-width:1145px) {
-	.index_list_menu {
-		margin-left: 10px;
-
-
-	}
-	
-
-}
 
 
 	@media (max-width:1045px) {
 		.index_list_menu {
 			grid-template-columns: 1fr;
 			justify-content: center;
+	
+		}
+		
+		
+	}
+
+	@media (max-width:860px) {
+		.index_list_menu {
+			width: 300px;
 	
 		}
 		
