@@ -3,7 +3,7 @@
 	z-index: 1000;
 
 	display: grid;
-	justify-content: left;
+	justify-content: center;
 	width: 20%;
 	height: 100%;
 	margin-top: 50px;
@@ -26,5 +26,4 @@
 	justify-content: center;
 	}
 }
-
 

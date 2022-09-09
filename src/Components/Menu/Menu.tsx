@@ -9,7 +9,7 @@ import { AppContext } from '../../../context/app.context';
 
 
 
-const Menu = ({title,category, dropdown, ...props}:IMenu): JSX.Element => {
+const Menu = ({title,category, dropdown,...props}:IMenu): JSX.Element => {
   
     const router = useRouter();
     const pathname = router.asPath;
@@ -53,11 +53,11 @@ const Menu = ({title,category, dropdown, ...props}:IMenu): JSX.Element => {
     } else {
         return (
             <div className={s.content} {...props}>
-                <div className={s.btn}>
+                <div className={s.index_btn}>
                 <h4 className={s.title}
                 >{title}</h4>
                 </div>
-                    <ul className={s.listMenu}>
+                    <ul className={s.index_list_menu}>
                     {posts && posts.map((post,index) => (
                         <li 
                         key={index}
