@@ -16,7 +16,7 @@
 	align-items: center;
 	gap: 10px;
 	justify-content: center;
-	width:400px
+	width:400px;
 
 }
 
@@ -44,7 +44,7 @@
 
 .link {
 	display: inline-block;
-
+	
 	list-style-type: none;
 
 	font-size: 15px;
@@ -55,6 +55,11 @@
 .listMenu .link a:hover {
 	color: rgb(137 137 137);
 }
+
+.index_list_menu .link a:hover {
+	color: rgb(137 137 137);
+}
+
 
 .active {
 	list-style-type: none;

@@ -1,4 +1,5 @@
 import type { GetStaticProps, NextPage } from 'next';
+import { Head } from 'next/document';
 import React from 'react';
 import { withLayout } from '../../../layout/Layout';
 import { getAllPosts } from '../../api/api';
@@ -24,7 +25,6 @@ const Home: NextPage = (): JSX.Element => {
 
   return (
     <div>
-      {/* {posts && posts.map(post => <div>{post.title}</div>)} */}
     </div>
   );
 };

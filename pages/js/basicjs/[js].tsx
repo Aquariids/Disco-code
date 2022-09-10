@@ -6,11 +6,13 @@ import rehypeSlug from 'rehype-slug';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import Head from 'next/head';
-import "highlight.js/styles/atom-one-dark.css";
+import "highlight.js/styles/a11y-dark.css";
+
 import { getAllPosts, getPostFromSlug, getSlugs, PostMeta } from '../../api/api';
 import { POSTS_PATH_JS } from '../../api/paths';
 import Link from 'next/link';
 import s from './js.module.css';
+import MobileButton from '../../../src/Components/MobileButton/MobileButton';
 interface MSXPost {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
     meta: PostMeta
@@ -22,19 +24,19 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
 
 
     return (
-        <div>
+        <div className={s.content}>
             <Head>
-                <title>posts</title>
+                <title>{post.meta.title}</title>
             </Head>
             <h1>{post.meta.title}</h1>
             <MDXRemote {...post.source} />
             <div className={s.footer}>
-
+                <Link href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/${post.meta.slug}.mdx`}> Редактировать страницу </Link>
                 <Link href={post.meta.prev}>{post.meta.prev === 'none'?' ':'Предыдущая страница'}</Link>
                 <Link href={post.meta.next}> Следующая страница </Link>
 
             </div>
-
+            <MobileButton/>
         </div>
     );
 };

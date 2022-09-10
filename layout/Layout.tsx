@@ -22,7 +22,6 @@ const Layout = ({children, }: LayoutProps): JSX.Element => {
                     </div>
                 </div>
                 <Footer className={footer} />
-                {/* <div className={content}> <button className={btn}></button></div> */}
             </div>
         </>
     );

@@ -13,21 +13,6 @@
 		"footer footer footer";
 }
 
-.btn {
-	position: absolute;
-	right: 0;
-	bottom: 0;
-
-	width: 75px;
-	height: 75px;
-	margin-right: 20px;
-
-	margin-bottom: 55px;
-
-	border-radius: 100%;
-	background-color: black;
-}
-
 .header {
 
 	grid-area: header;
