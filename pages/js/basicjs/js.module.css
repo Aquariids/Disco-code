@@ -1,8 +1,38 @@
 .footer {
+    color: rgb(244 96 224);
     display: flex;
     justify-content: space-between;
+
+}
+
+.footer a:hover {
+    color: rgb(141, 38, 127);
+    box-shadow: 0 0.7px 0 0;
+
+}
+
+
+.footer a {
+    box-shadow: 0 0.3px 0 0;
+
+
 }
 
 .content {
     position: relative;
+}
+
+.edit {
+    display: flex;
+    justify-content: right;
+    margin-top: 80px;
+    margin-bottom: 150px
+}
+.edit a {
+    color: rgb(77, 77, 77);
+    box-shadow: 0 0.2px 0 0;
+}
+
+.edit a:hover {
+    box-shadow: 0 0.7px 0 0;
 }
