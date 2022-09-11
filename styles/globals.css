@@ -1,4 +1,7 @@
 @import './variables.css';
+@import './tag_js.css';
+@import './tag_ts.css';
+
 
 html {
 	overflow-x: hidden;
@@ -39,43 +42,7 @@ a {
 } */
 
 /* body markdown files */
-.tag_js {
-	text-shadow: var(--js_shadow_links_pages);
-	display: inline-block;
-	color:var(--js_color_links_pages);
-	font-size: 16px;
-}
 
-.tag_js:hover {
-	text-shadow: var(--js_shadow_links_pages);
-	color: var(--js_hover_color_links_pages);
-	transition: all 0.1s;
-
-}
-
-.mini_tag_js {
-	text-shadow: var(--js_shadow_links_pages);
-
-	transition: all 0.1s;
-
-	display: inline;
-
-	margin-right: 5px;
-	color:var(--js_color_links_pages);
-
-	/* color: rgb(244 96 224); */
-
-	font-size: 14px;
-}
-
-.mini_tag_js:hover {
-	text-shadow: var(--js_shadow_links_pages);
-
-	color: var(--js_hover_color_links_pages);
-
-	/* color: rgb(141, 38, 127); */
-
-}
 
 .img img {
 	max-width: 100%;

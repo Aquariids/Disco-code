@@ -3,4 +3,5 @@ export interface IMenu extends  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>
     title:string,
     category:string,
     dropdown?:boolean,
+    page?:string;
 }

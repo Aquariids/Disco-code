@@ -39,8 +39,8 @@ const Home: NextPage = (): JSX.Element => {
     <div className={s.body}>
     <div className={s.menu}>
       
-      <Menu title="Базовый JavaScript" category='basicjs'/>
-      <Menu title="Продвинутый JavaScript" category='advancedjs'/>
+      <Menu title="Базовый JavaScript" category='basicjs' page='js'/>
+      <Menu title="Продвинутый JavaScript" category='advancedjs' page='js'/>
     </div>
     </div>
     </div>

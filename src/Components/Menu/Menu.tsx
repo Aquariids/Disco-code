@@ -9,14 +9,13 @@ import { AppContext } from '../../../context/app.context';
 
 
 
-const Menu = ({title,category, dropdown,...props}:IMenu): JSX.Element => {
+const Menu = ({title,category, dropdown, page, ...props}:IMenu): JSX.Element => {
   
     const router = useRouter();
     const pathname = router.asPath;
-    console.log("(👍≖‿‿≖)👍 ✿ file: Menu.tsx ✿ line 16 ✿ Menu ✿ router", router)
     const { posts } = useContext(AppContext); 
 
-    const [isOpen, setOpen] = useState(router.pathname.startsWith(`/js/${category}` || `/grid/${category}`) == true? true: false);
+    const [isOpen, setOpen] = useState(router.pathname.startsWith(`/${page}/${category}`) == true? true: false);
 
     const handleToggle = () => {
         setOpen(!isOpen);
@@ -37,15 +36,14 @@ const Menu = ({title,category, dropdown,...props}:IMenu): JSX.Element => {
                         <li 
                         key={index}
                             className={cn({
-                                [s.activejs]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/js'),
+                                [s.active_js]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/js'),
+                                [s.active_ts]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/ts'),
                                 [s.link]: pathname.replace(post.slug, '') + post.slug !== pathname,
                                 [s.show]: post.category == category,
                                 [s.hide]: post.category !== category,
                             })} >
 
-                                {router.pathname.startsWith('/grid')?<Link href={`/grid/${post.slug}`}>{post.title}</Link>:''}
-                                {router.pathname.startsWith('/js')?<Link href={`/js/${post.category}/${post.slug}`}>{post.title}</Link>:''}
-
+                                {router.pathname.startsWith(`/${page}`)?<Link href={`/${page}/${post.category}/${post.slug}`}>{post.title}</Link>:''}
                             
                         </li>
                     ))}
@@ -69,8 +67,8 @@ const Menu = ({title,category, dropdown,...props}:IMenu): JSX.Element => {
                                 [s.show]: post.category == category,
                                 [s.hide]: post.category !== category,
                             })} >
-                                <Link href={`/js/${post.category}/${post.slug}`}>{post.title}</Link>
-                            
+                                {router.pathname.startsWith(`/${page}`)?<Link href={`/${page}/${post.category}/${post.slug}`}>{post.title}</Link>:''}
+
                         </li>
                     ))}
                 </ul>

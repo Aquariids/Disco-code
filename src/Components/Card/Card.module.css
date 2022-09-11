@@ -26,5 +26,11 @@
 
 .blue {
 	color: #fff;
-	background-color:#3178c6;
+	background-color:var(--ts_color_links_pages);
+}
+
+.blue:hover {
+	color: rgb(198, 228, 255);
+	background-color:var(--ts_hover_color_links_pages);
+
 }

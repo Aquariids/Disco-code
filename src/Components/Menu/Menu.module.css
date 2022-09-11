@@ -1,4 +1,3 @@
-@import '/variables.css';
 
 .listMenu {
 	display: grid;
@@ -73,19 +72,31 @@
 }
 
 
-.activejs {
+.active_js {
 	list-style-type: none;
 	font-size: 15px;
 	color:var(--js_color_links_pages);
-	text-shadow: var(--js_shadow_links_pages);
 
 
 	line-height: 16px;
 }
 
-.activejs a:hover {
-	text-shadow: var(--js_shadow_links_pages);
-	color: var(--js_hover_color_links_pages);
+.active_js a:hover {
+	color: #bd8224;
+
+
+}
+
+.active_ts {
+	list-style-type: none;
+	font-size: 15px;
+	color:var(--ts_color_links_pages);
+
+	line-height: 16px;
+}
+
+.active_ts a:hover {
+	color:var(--ts_hover_color_links_pages);
 
 
 }

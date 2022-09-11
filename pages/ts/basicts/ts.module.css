@@ -1,6 +1,8 @@
 
+
+
 .footer {
-    color:var(--js_color_links_pages);
+    color:var(--ts_color_links_pages);
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
@@ -9,7 +11,7 @@
 
 .footer a:hover {
 
-    color: var(--js_hover_color_links_pages);
+    color: var(--ts_hover_color_links_pages);
     box-shadow: 0 0.7px 0 0;
 
 }

@@ -14,7 +14,7 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
         <div className={header} {...props}>
             <div className={content}>
                 <div className={logo}>
-                    <img style={{width:'30px'}} src='/qq.png'/>
+                    <Link href={'/'}><img style={{width:'30px',cursor:'pointer'}} src='/qq.png'/></Link>
                     <span className={link} > <Link href={'/'}>DiscoCode</Link> </span> </div>
 
                 <div className={s.nav}>
@@ -22,7 +22,7 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
                 <div className={s.btn}><button> Выбрать тему </button></div>
                     <ul className={s.dropdown_content}>
                         <li className={s.links}><Link href={'/js'}><span className={s.js}>JavaScript</span></Link></li>
-                        <li className={s.links}><Link href={'js/'}><span className={s.ts}>TypeScript</span></Link></li>
+                        <li className={s.links}><Link href={'/ts'}><span className={s.ts}>TypeScript</span></Link></li>
                         <li className={s.links}><Link href={'js/'}>React</Link></li>
                         <li className={s.links}><Link href={'js'}>NextJs</Link></li>
 
@@ -31,7 +31,7 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
                 <div className={github}><a className={link} target={"_blank"} href={'https://github.com/Aquariids/Disco-code'}>Github</a></div>
             </div>
             </div>
-      
+
 
         </div>
     );
