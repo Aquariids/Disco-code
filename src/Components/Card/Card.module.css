@@ -14,9 +14,15 @@
 }
 
 .yellow {
-	background-color: yellow;
+	background-color:#f7df1e;
+	
+}
+
+.yellow:hover {
+	background-color: #dec71b;
 }
 
 .blue {
-	background-color: rgb(0 140 255);
+	color: #fff;
+	background-color:#3178c6;
 }

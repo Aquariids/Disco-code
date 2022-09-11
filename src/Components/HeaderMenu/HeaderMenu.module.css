@@ -143,4 +143,23 @@
     opacity:1;
  }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
+
+
+.js {
+	cursor: pointer;
+	color: #f7df1e;
+}
+
+.js:hover {
+	color: #8d7e10;
+
+}
+
+.ts {
+	cursor: pointer;
+	color:#3178c6;
+}
+
+.ts:hover {
+	color:#1a426c;
+}
