@@ -147,11 +147,11 @@
 
 .js {
 	cursor: pointer;
-	color: #f7df1e;
+	color: var(--js_color_links_pages);
 }
 
 .js:hover {
-	color: #8d7e10;
+	color: var(--js_hover_color_links_pages);
 
 }
 

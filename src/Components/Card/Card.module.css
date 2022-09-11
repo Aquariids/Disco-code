@@ -11,15 +11,17 @@
 	border-radius: 5%;
 
 	font-size: 25px;
+	transition: .2s;
 }
 
 .yellow {
-	background-color:#f7df1e;
+	background-color:var(--js_color_links_pages);
 	
 }
 
 .yellow:hover {
-	background-color: #dec71b;
+	background-color: var(--js_hover_color_links_pages);
+	color: #fff;
 }
 
 .blue {

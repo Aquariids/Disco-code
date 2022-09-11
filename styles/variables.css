@@ -1,5 +1,5 @@
 :root {
-    --js_color_links_pages:#e3cc1c;
-    --js_hover_color_links_pages:#bba817;
-    --js_shadow_links_pages: 0px 0px 1px #dec71b;
+    --js_color_links_pages:#e9a12c;
+    --js_hover_color_links_pages:#f44336;
+    --js_shadow_links_pages: 0px 0px 0px;
 }
