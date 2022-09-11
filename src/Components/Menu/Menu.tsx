@@ -13,11 +13,10 @@ const Menu = ({title,category, dropdown,...props}:IMenu): JSX.Element => {
   
     const router = useRouter();
     const pathname = router.asPath;
+    console.log("(👍≖‿‿≖)👍 ✿ file: Menu.tsx ✿ line 16 ✿ Menu ✿ router", router)
     const { posts } = useContext(AppContext); 
-    console.log("(👍≖‿‿≖)👍 ✿ file: Menu.tsx ✿ line 17 ✿ Menu ✿ posts", posts)
 
-  
-    const [isOpen, setOpen] = useState(router.pathname.startsWith(`/js/${category}`) == true? true: false);
+    const [isOpen, setOpen] = useState(router.pathname.startsWith(`/js/${category}` || `/grid/${category}`) == true? true: false);
 
     const handleToggle = () => {
         setOpen(!isOpen);
@@ -38,12 +37,15 @@ const Menu = ({title,category, dropdown,...props}:IMenu): JSX.Element => {
                         <li 
                         key={index}
                             className={cn({
-                                [s.active]: pathname.replace(post.slug, '') + post.slug === pathname,
+                                [s.activejs]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/js'),
                                 [s.link]: pathname.replace(post.slug, '') + post.slug !== pathname,
                                 [s.show]: post.category == category,
                                 [s.hide]: post.category !== category,
                             })} >
-                                <Link href={`/js/${post.category}/${post.slug}`}>{post.title}</Link>
+
+                                {router.pathname.startsWith('/grid')?<Link href={`/grid/${post.slug}`}>{post.title}</Link>:''}
+                                {router.pathname.startsWith('/js')?<Link href={`/js/${post.category}/${post.slug}`}>{post.title}</Link>:''}
+
                             
                         </li>
                     ))}

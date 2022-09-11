@@ -1,10 +1,13 @@
+@import '/variables.css';
+
 .listMenu {
 	display: grid;
 	justify-content: left;
-	grid-template-columns: 220px;
+	grid-template-columns: 250px;
 	margin-top: 0;
 	padding-right: 10px;
 	padding-left: 25px;
+	width: 300px;
 }
 
 
@@ -29,8 +32,10 @@
 	width: 325px;
 	display: grid;
 	justify-content: center;
+
 }
 .btn {
+	width: 300px;
 	display: grid;
 	justify-content: left;
 }
@@ -68,17 +73,20 @@
 }
 
 
-.active {
+.activejs {
 	list-style-type: none;
-
 	font-size: 15px;
-	color: rgb(244 96 224);
+	color:var(--js_color_links_pages);
+	text-shadow: var(--js_shadow_links_pages);
+
 
 	line-height: 16px;
 }
 
-.active a:hover {
-	color: rgb(94 28 85);
+.activejs a:hover {
+	text-shadow: var(--js_shadow_links_pages);
+	color: var(--js_hover_color_links_pages);
+
 
 }
 
@@ -128,6 +136,7 @@
 		justify-content: center;
 	}
 	.btn {
+		margin: 0 auto;
 		justify-content: center;
 	}
 	
@@ -136,19 +145,25 @@
 
 @media (max-width:1145px) {
 	.listMenu {
-		grid-template-columns: 150px;
+		grid-template-columns: 170px;
+		width: 180px;
 		margin-left: 10px;
 		margin-right: 10px;
 
-
 	}
+
+	.btn {
+		width: 200px;
+	}
+
+
 	
 
 }
 
 @media (max-width:890px) {
 	.listMenu {
-		grid-template-columns: 100px;
+		grid-template-columns: 150px;
 	}
 	
 
@@ -202,6 +217,10 @@
 			justify-content: center;
 			width:400px;
 		
+		}
+
+		.index_btn {
+			width: 400px;
 		}
 		
 	}

@@ -1,3 +1,5 @@
+@import './variables.css';
+
 html {
 	overflow-x: hidden;
 
@@ -37,34 +39,41 @@ a {
 } */
 
 /* body markdown files */
-.tag {
+.tag_js {
+	text-shadow: var(--js_shadow_links_pages);
 	display: inline-block;
-
-	color: rgb(244 96 224);
-
+	color:var(--js_color_links_pages);
 	font-size: 16px;
 }
 
-.tag:hover {
-	color: rgb(94 28 85);
+.tag_js:hover {
+	text-shadow: var(--js_shadow_links_pages);
+	color: var(--js_hover_color_links_pages);
 	transition: all 0.1s;
 
 }
 
-.miniTag {
+.mini_tag_js {
+	text-shadow: var(--js_shadow_links_pages);
+
 	transition: all 0.1s;
 
 	display: inline;
 
 	margin-right: 5px;
+	color:var(--js_color_links_pages);
 
-	color: rgb(244 96 224);
+	/* color: rgb(244 96 224); */
 
 	font-size: 14px;
 }
 
-.miniTag:hover {
-	color: rgb(141, 38, 127);
+.mini_tag_js:hover {
+	text-shadow: var(--js_shadow_links_pages);
+
+	color: var(--js_hover_color_links_pages);
+
+	/* color: rgb(141, 38, 127); */
 
 }
 

@@ -1,5 +1,8 @@
+@import '/variables.css';
+
 .footer {
-    color: rgb(244 96 224);
+    text-shadow: var(--js_shadow_links_pages);
+    color:var(--js_color_links_pages);
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
@@ -7,7 +10,9 @@
 }
 
 .footer a:hover {
-    color: rgb(141, 38, 127);
+    text-shadow: var(--js_shadow_links_pages);
+
+    color: var(--js_hover_color_links_pages);
     box-shadow: 0 0.7px 0 0;
 
 }
@@ -19,9 +24,6 @@
 
 }
 
-.content {
-    position: relative;
-}
 
 .edit {
     display: flex;
