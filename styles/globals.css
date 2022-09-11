@@ -47,9 +47,13 @@ a {
 
 .tag:hover {
 	color: rgb(94 28 85);
+	transition: all 0.1s;
+
 }
 
 .miniTag {
+	transition: all 0.1s;
+
 	display: inline;
 
 	margin-right: 5px;

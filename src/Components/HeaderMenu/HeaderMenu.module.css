@@ -13,19 +13,25 @@
 	grid-template-areas: ". header .";
 }
 
+
+
 .content {
 	display: flex;
 	align-items: center;
-
+	
 	text-align: center;
 	grid-area: header;
 }
 
 .link {
+	transition: all 0.1s;
+
 	padding-left: 10px;
 }
 
 .link:hover {
+	transition: all 0.1s;
+
 	color: rgb(255, 140, 240);
 
 }
@@ -60,6 +66,7 @@
 }
 
 .btn {
+	
 	display: flex;
 	justify-content: flex-end;
 
@@ -67,6 +74,7 @@
 }
 
 .btn button {
+	
 	color: #FFF;
 	border: none;
 	background-color: transparent;
@@ -92,24 +100,27 @@
 
 .dropdown {
 	position: relative;
-
 	display: block;
 }
 
-/* Dropdown Content (Hidden by Default) */
+
 .dropdown_content {
+
 	position: absolute;
 	z-index: 1;
-
-	display: none;
-
+	visibility:hidden;
+	opacity: 0;
+	transition:visibility 0.2s linear,opacity 0.2s linear;
 	min-width: 100%;
 	margin: 0;
 	padding: 20px 0 0;
-
 	border-bottom: 1px solid;
 	box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
+
 }
+
+
+
 
 /* Links inside the dropdown */
 .dropdown_content li {
@@ -122,9 +133,14 @@
 }
 
 /* Change color of dropdown links on hover */
-.dropdown_content :hover { color: gray; }
+.dropdown_content :hover { color: gray;
+	transition: all 0.1s;
+ }
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown_content { display: block; }
+.dropdown:hover .dropdown_content { 
+	visibility:visible;
+    opacity:1;
+ }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */

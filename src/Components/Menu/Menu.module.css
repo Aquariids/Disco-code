@@ -44,7 +44,7 @@
 
 .link {
 	display: inline-block;
-	transition: all 0.2s;
+	transition: all 0.1s;
 
 	list-style-type: none;
 
@@ -54,10 +54,14 @@
 }
 
 .listMenu .link a:hover {
+	transition: all 0.1s;
+
 	color: rgb(137 137 137);
 }
 
 .index_list_menu .link a:hover {
+	transition: all 0.1s;
+
 	color: rgb(137 137 137);
 }
 
