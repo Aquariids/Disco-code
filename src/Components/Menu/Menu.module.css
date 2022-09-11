@@ -75,7 +75,7 @@
 	line-height: 16px;
 }
 
-.active:hover {
+.active a:hover {
 	color: rgb(94 28 85);
 
 }
