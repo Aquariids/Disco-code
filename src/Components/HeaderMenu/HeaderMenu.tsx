@@ -14,7 +14,9 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
     return (
         <div className={header} {...props}>
             <div className={content}>
-                <div className={logo}> <span className={link} > <Link href={'/'}>DiscoCode</Link> </span> </div>
+                <div className={logo}>
+                    <img style={{width:'30px'}} src='/qq.png'/>
+                    <span className={link} > <Link href={'/'}>DiscoCode</Link> </span> </div>
 
                 <div className={s.nav}>
             <div className={s.dropdown}>

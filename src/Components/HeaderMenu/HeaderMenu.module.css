@@ -22,7 +22,7 @@
 }
 
 .link {
-	padding-left: 15px;
+	padding-left: 10px;
 }
 
 .link:hover {
@@ -80,17 +80,15 @@
 	font-size: 13px;
 }
 
-.logo::before {
-	display: block;
 
-	content: "logo";
-}
 
 .logo {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
+
+
 
 .dropdown {
 	position: relative;

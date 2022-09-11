@@ -31,6 +31,7 @@ const Home: NextPage = (): JSX.Element => {
     <Head>
       <title>Содержание</title>
     </Head>
+
         <h2>Содержание</h2>
         <span>Здесь собраны все мои записи по JavaScript.</span> <br/>
         <span>Разборы базовых алгоритмов и даже немного задач</span>
