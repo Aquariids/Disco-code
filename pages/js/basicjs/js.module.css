@@ -2,6 +2,7 @@
     color: rgb(244 96 224);
     display: flex;
     justify-content: space-between;
+    margin-bottom: 50px;
 
 }
 
@@ -26,7 +27,7 @@
     display: flex;
     justify-content: right;
     margin-top: 80px;
-    margin-bottom: 150px
+    margin-bottom: 100px
 }
 .edit a {
     color: rgb(77, 77, 77);
