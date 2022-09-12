@@ -56,8 +56,8 @@ export const getPostFromSlug = (slug: string,url: string): Post => {
             excerpt: data.excerpt ?? "",
             title: data.title ?? slug,
             id: data.id ?? "",
-            prev: data.prev ?? "",
-            next: data.next ?? "",
+            prev: data.prev ?? 'none',
+            next: data.next ?? 'none',
             category: data.category ?? "none",
             titleCategory: data.titleCategory ?? ""
         },

@@ -84,8 +84,24 @@
 
 .github {
 	padding: 0;
-
 	font-size: 13px;
+}
+
+.github a {
+	display: flex;
+	align-items: center;
+	padding-right: 4px;
+
+}
+.github a img {
+	margin-left: 5px;
+}
+
+.github:active {
+	padding-top: 4px;
+	padding-bottom: 4px;
+	background-color: rgba(128, 128, 128, 0.365);
+	border-radius: 50px;
 }
 
 
@@ -162,4 +178,22 @@
 
 .ts:hover {
 	color:#1a426c;
+}
+
+.react {
+	cursor: pointer;
+	color: var(--react_color_links_pages);
+}
+
+.react:hover {
+	color: var(--react_hover_color_links_pages);
+}
+
+.next {
+	cursor: pointer;
+	color: var(--next_color_links_pages);
+}
+
+.next:hover {
+	color: var(--next_hover_color_links_pages);
 }

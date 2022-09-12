@@ -14,23 +14,46 @@
 	transition: .2s;
 }
 
-.yellow {
+.js {
 	background-color:var(--js_color_links_pages);
 	
 }
 
-.yellow:hover {
+.js:hover {
 	background-color: var(--js_hover_color_links_pages);
 	color: #fff;
 }
 
-.blue {
+.ts {
 	color: #fff;
 	background-color:var(--ts_color_links_pages);
 }
 
-.blue:hover {
+.ts:hover {
 	color: rgb(198, 228, 255);
 	background-color:var(--ts_hover_color_links_pages);
 
+}
+
+.next {
+	background-color: var(--next_color_links_pages);
+	color: #fff;
+
+
+}
+
+.next:hover {
+	background-color: rgb(49, 49, 49);
+	color: var(--next_hover_color_links_pages);
+}
+
+
+.react {
+	background-color: #61dafb;
+	color: #000;
+}
+
+.react:hover {
+	color: #fff;
+	background-color: #41e1ed;
 }

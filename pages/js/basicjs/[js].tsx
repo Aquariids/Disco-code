@@ -21,7 +21,7 @@ interface MSXPost {
 
 
 const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => {
-
+    
 
     return (
         <div className={s.content}>
@@ -33,8 +33,9 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
             <div className={s.edit}><a target='_blank' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{width:'32px',paddingLeft:'5px'}} src='/edit.svg'/></div>
             <div className={s.footer}>
                 <Link href={post.meta.prev}>{post.meta.prev === 'none'?' ':'Предыдущая страница'}</Link>
-                <Link href={post.meta.next}> Следующая страница </Link>
+                <Link href={post.meta.next}>{post.meta.next === 'none'?' ':'Следующая страница'}</Link>
             </div>
+
         </div>
     );
 };

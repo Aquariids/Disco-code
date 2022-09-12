@@ -1,6 +1,10 @@
 @import './variables.css';
-@import './tag_js.css';
-@import './tag_ts.css';
+@import './markdown.css';
+@import './tags/tag_js.css';
+@import './tags/tag_ts.css';
+@import './tags/tag_next.css';
+@import './tags/tag_react.css';
+
 
 
 html {
@@ -41,32 +45,3 @@ a {
 
 } */
 
-/* body markdown files */
-
-
-.img img {
-	max-width: 100%;
-	height: auto;
-}
-
-.img {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
-}
-
-.container-img {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	margin: 50px 0;
-}
-
-pre {
-	font-size: 14px;
-}
-
-
-code {
-	border-radius: 10px;
-}

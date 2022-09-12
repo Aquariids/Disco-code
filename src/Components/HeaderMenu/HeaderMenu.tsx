@@ -23,12 +23,12 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
                     <ul className={s.dropdown_content}>
                         <li className={s.links}><Link href={'/js'}><span className={s.js}>JavaScript</span></Link></li>
                         <li className={s.links}><Link href={'/ts'}><span className={s.ts}>TypeScript</span></Link></li>
-                        <li className={s.links}><Link href={'js/'}>React</Link></li>
-                        <li className={s.links}><Link href={'js'}>NextJs</Link></li>
+                        <li className={s.links}><Link href={'/react'}><span className={s.react}>React</span></Link></li>
+                        <li className={s.links}><Link href={'/next'}><span className={s.next}>Next.js</span></Link></li>
 
                     </ul>
                 </div>
-                <div className={github}><a className={link} target={"_blank"} href={'https://github.com/Aquariids/Disco-code'}>Github</a></div>
+                <div className={github}><a className={link} target={"_blank"} href={'https://github.com/Aquariids/Disco-code'}>Github <img style={{width:'15px'}} src='./link.svg'/></a></div>
             </div>
             </div>
 

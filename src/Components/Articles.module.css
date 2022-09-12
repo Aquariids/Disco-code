@@ -1,8 +1,6 @@
 .articles {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	gap: 25px;
-	padding: 10px;
 	grid-template-rows: 200px 200px;
 	
 }
@@ -10,6 +8,7 @@
 
 @media (max-width: 925px) {
 	.articles {
+		margin-top: -35px;
 		align-items: center;
 		justify-content: center;
 
@@ -21,7 +20,8 @@
 	.articles {
 		align-items: center;
 		justify-content: center;
-
+		gap: 20px;
 		grid-template-columns: 200px;
+		grid-template-rows: repeat(4, 200px);
 	}
 }

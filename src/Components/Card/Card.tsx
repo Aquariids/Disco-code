@@ -3,13 +3,16 @@ import s from './Card.module.css';
 import cn from 'classnames';
 import { ICard } from './Card.props';
 import Link from 'next/link';
-const {body,footer,container,bg,title,yellow,blue} = s;
+const {body,footer,container,bg,title,js,ts,next,react} = s;
 const Card = ({text,color,url}:ICard) => {
     return (
         <Link href={url}>
         <div className={cn(container, {
-            [yellow]: color === 'yellow',
-            [blue]: color === 'blue',
+            [js]: color === 'js',
+            [ts]: color === 'ts',
+            [next]: color === 'next',
+            [react]: color === 'react',
+
 
         })} >
             <div className={body}>
