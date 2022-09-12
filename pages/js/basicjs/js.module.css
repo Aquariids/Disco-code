@@ -1,12 +1,4 @@
 
-.footer {
-    color:var(--js_color_links_pages);
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 50px;
-
-}
-
 .footer a:hover {
 
     color: var(--js_hover_color_links_pages);
@@ -20,16 +12,6 @@
 
 
 }
-
-
-.edit {
-    display: flex;
-    justify-content: right;
-    margin-top: 80px;
-    margin-bottom: 100px
-}
-
-
 
 .edit a {
     color: rgb(77, 77, 77);

@@ -7,7 +7,7 @@ import rehypeHighlight from 'rehype-highlight';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import Head from 'next/head';
 import "highlight.js/styles/a11y-dark.css";
-
+import cn from 'classnames';
 import { getAllPosts, getPostFromSlug, getSlugs, PostMeta } from '../../api/api';
 import { POSTS_PATH_JS } from '../../api/paths';
 import Link from 'next/link';
@@ -30,8 +30,8 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
             </Head>
             <h1>{post.meta.title}</h1>
             <MDXRemote {...post.source} />
-            <div className={s.edit}><a target='_blank' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{width:'32px',paddingLeft:'5px'}} src='/edit.svg'/></div>
-            <div className={s.footer}>
+            <div className={cn(s.edit, 'page_edit')}><a target='_blank' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{width:'32px',paddingLeft:'5px'}} src='/edit.svg'/></div>
+            <div className={cn(s.footer, 'page_footer')}>
                 <Link href={post.meta.prev}>{post.meta.prev === 'none'?' ':'Предыдущая страница'}</Link>
                 <Link href={post.meta.next}>{post.meta.next === 'none'?' ':'Следующая страница'}</Link>
             </div>

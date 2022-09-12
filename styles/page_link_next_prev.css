@@ -1,0 +1,15 @@
+.page_footer {
+    color:var(--js_color_links_pages);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+}
+
+
+.page_edit {
+    display: flex;
+    justify-content: right;
+    margin-top: 80px;
+    margin-bottom: 100px
+}

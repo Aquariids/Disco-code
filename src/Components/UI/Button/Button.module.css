@@ -40,7 +40,7 @@
 	fill: rgb(0 0 0);
 }
 
-@media (max-width: 1315px) {
+@media (max-width: 1155px) {
 	.button {
 		white-space: normal;
 		width: 150px;
