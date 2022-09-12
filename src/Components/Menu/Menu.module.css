@@ -34,6 +34,7 @@
 
 }
 .btn {
+	width:300px;
 	display: grid;
 	justify-content: left;
 }
@@ -156,19 +157,18 @@
 
 }
 
-@media (max-width:1155px) {
+@media (max-width:1255px) {
 	.listMenu {
 		justify-content:center;
 		grid-template-columns: 170px;
 		width: 180px;
-		margin-left: 10px;
 		margin-right: 10px;
 
 	}
 	.btn {
 		margin: 0 auto;
 		width: 200px;
-		margin-right: 20px;
+		padding-right: 5px;
 		justify-content: center;
 	}
 	
