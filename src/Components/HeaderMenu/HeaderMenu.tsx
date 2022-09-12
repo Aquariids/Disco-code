@@ -28,7 +28,7 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
 
                     </ul>
                 </div>
-                <div className={github}><a className={link} target={"_blank"} href={'https://github.com/Aquariids/Disco-code'}>Github <img style={{width:'15px'}} src='./link.svg'/></a></div>
+                <div className={github}><a className={link} target={"_blank"} href={'https://github.com/Aquariids/Disco-code'}>Github <img style={{width:'15px'}} src='/link.svg'/></a></div>
             </div>
             </div>
 
