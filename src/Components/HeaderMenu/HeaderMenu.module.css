@@ -36,7 +36,7 @@
 
 }
 
-@media (max-width: 700px) {
+@media (max-width: 850px) {
 	.header {
 		grid-template-columns: minmax(320px, 1fr);
 		grid-template-rows: 50px;
@@ -54,6 +54,10 @@
 		margin-left: 50px;
 	}
 }
+
+
+
+
 
 .nav {
 	display: flex;
@@ -196,4 +200,11 @@
 
 .next:hover {
 	color: var(--next_hover_color_links_pages);
+}
+
+
+@media (max-width: 450px) {
+	.btn {
+		display: none;
+	}
 }
