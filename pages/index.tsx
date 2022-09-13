@@ -5,6 +5,7 @@ import Articles from '../src/Components/Articles';
 import s from './index.module.css'
 const Home: NextPage = (): JSX.Element => {
 
+
   return (
     <div className={s.body}>
 
@@ -12,6 +13,8 @@ const Home: NextPage = (): JSX.Element => {
   <span>Уроки и записи на самые разные темы!</span> </h1>
 
 <Articles/>    
+
+
 
     </div>
   );

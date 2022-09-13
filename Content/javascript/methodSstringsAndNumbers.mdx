@@ -1,0 +1,137 @@
+---
+title: 'Методы строк и чисел'
+id: 11
+prev: '/js/basicjs/objects'
+next: '/js/basicjs/arrays'
+category: 'basicjs'
+---
+
+#### Теги
+<div className = 'tag_js'>[Свойство length](#свойство-length)</div><br/> 
+<div className = 'tag_js'>[Методы строк:](#методы-строк)</div> 
+<div className = 'mini_tag_js'>[toUpperCase и toLowerCase,](#touppercase--и-tolowercase)</div>
+<div className = 'mini_tag_js'>[indexOf,](#indexof)</div>
+<div className = 'mini_tag_js'>[slice,](#slice)</div>
+<div className = 'mini_tag_js'>[substring,](#substring)</div>
+<div className = 'mini_tag_js'>[substr.](#substr)</div><br/>
+<div className = 'tag_js'>[Методы чисел:](#методы-чисел)</div> 
+<div className = 'mini_tag_js'>[Math.round,](#mathround)</div>
+<div className = 'mini_tag_js'>[Math.floor,](#mathfloor)</div>
+<div className = 'mini_tag_js'>[Math.abs,](#mathabs)</div>
+<div className = 'mini_tag_js'>[parseInt,](#parseint)</div>
+<div className = 'mini_tag_js'>[parseFloat.](#parseFloat)</div>
+
+<h5> Интересные ссылки </h5>
+<div className = 'mini_tag_js'>[Почему мы можем использовать метод на строке, если это примитив?](#)</div><br/> 
+<div className = 'mini_tag_js'>[Методы строк на MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String)</div><br/> 
+<div className = 'mini_tag_js'>[Методы чисел на MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number) </div>
+
+## Свойство length ##
+Отдельно выделю свойство `length`, которое позволяет узнать количество элементов у массива или строки.
+```javaScript
+const test = 'text';
+const arr = [1,4,5,6,7];
+console.log(test.length); // 4 буквы = 4 элемента
+console.log(arr.length); // 5 Так же можем узнать кол элементов в массиве
+```
+[Более подробно о length в статье про массивы](https://github.com/Aquariids/MyJS/blob/main/app/Programming/Basic%20js/Arrays%20and%20Destructuring.md#-length-%D0%B2-%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D0%B0%D1%85-).
+## Методы строк ##
+
+### toUpperCase( ) и toLowerCase( ) ###
+`toUpperCase( )` - переводит строку в верхний регистр
+```javaScript
+const text = 'привет';
+
+console.log(text.toUpperCase()); // ПРИВЕТ
+```
+`toLowerCase()` - Переводит текст в нижний регистр.
+```javaScript
+const text = 'ПРИВЕТ';
+
+console.log(text.toLowerCase()); // привет
+```
+### indexOf( ) ###
+`indexof()` - позволяет увидеть есть ли искомое значение и позволяет увидеть индекс с которого оно начинается. Принимает два аргумента, первый искомый элемент, а второй с какого индекса начинать поиск. Если и
+```javaScript
+let fruit = 'Some fruit';
+console.log(fruit.indexOf('fruit')); // возвращает 5, так как fruit начинается с 5 индекса.
+```
+Можно указать даже пробел, можно одну букву, можно часть строки и тд. Но если указывать одну букву, а у вас их там много, то выводить он будет самую первую, которую найдет.
+Просто юзайте часть строки или же узнавайте есть ли ваше искомое там вообще.
+
+### slice( ) ###
+`slice()` - возвращает(вырезает) часть строки. Принимает два аргумента: 1 - это с какой позиции вырезаем, а 2 - где вырезание заканчивается.
+```javaScript
+const logg = 'Hello world';
+
+console.log(logg.slice(6,11)); // world
+
+//  Во втором аргументе мы указываем то, что не включается. (До кого-то момента, но не включая!)
+//  Если мы там обрежем с 6 по 10, то будет worl, 6 - это w, а 10 - это d, но он не включает в себя d.
+console.log(logg.slice(6,10)); // worl
+
+// если мы укажем один аргумент, то мы просто указываем с чего вырезать и до конца
+console.log(logg.slice(6)); // world
+
+// так же можем использовать отрицательные значения и тогда счет будет начинаться с конца строки
+console.log(logg.slice(-5)); // world
+console.log(logg.slice(-11,-6)); // Hello
+```
+
+### substring( ) ###
+`substring()` - работает как slice, но нельзя использовать отрицательные числа и можно задавать первый аргумент больше чем второй(бесполезная функция).
+```javaScript
+const logg = 'Hello world';
+
+console.log(logg.substring(6,11)); // world
+console.log(logg.substring(11,6)); // world
+```
+
+### substr( ) ###
+`substr()` - Этот метод просто вырезает то количество символов которое мы укажем. В первом аругменте мы указывает откуда, а во втором количество которое вырезаем (длину)
+```javaScript
+const logg = 'Hello world';
+
+console.log(logg.substr(6,5)); // world
+// с 6 символа вырезать 5 символов, выходит world
+```
+## Методы чисел ##
+В js для работы с числами есть своя мини библиотека, которая существует прямо внутри javaScript, внутри браузера.
+Если написать в консоли `Math`, то сразу увидим все методы, там всякие математические операции.<br/>
+### Math.round( ) ###
+`Math.round()` - округляет до ближайшего целого числа
+```javaScript
+const num = 12.2;
+
+console.log(Math.round(num)); // 12
+```
+
+### Math.floor( ) ###
+`Math.floor()` - обрезает все после точки.
+```javaScript
+const num = 12.9;
+
+console.log(Math.floor(num)); // 12
+```
+### Math.abs( ) ###
+`Math.abs()` - Этот метод возвращает абсолютное значение числа, то есть иными словами - если число не отрицательное,
+то его и возвращает, а если отрицательное - отбрасывает знак минус.
+Передача нечисловой строки или `undefined` вернет `NaN`. Передача `null` вернет `0`.
+ ```javaScript
+console.log(Math.abs(-2)); // 2
+console.log(Math.abs(2)); // 2
+console.log(Math.abs(null)); // 0
+console.log(Math.abs("string")); // NaN
+console.log(Math.abs()); // NaN
+```
+### parseInt( ) ###
+`parseInt()` - Принимает строку в качестве аргумента и возвращает целое число в соответствии с указанным основанием системы счисления во втором аргументе.
+```javaScript
+// Например число 250 в шестнадцатеричной системе счисления.
+console.log(parseInt('FA',16)); // 250
+```
+### parseFloat( ) ###
+`pasreFloat()` - принимает строку из которой нам нужно выделить десятичное число.(Возвращает с плавющей точкой)
+```javaScript
+console.log(parseFloat('3.14какие-нибудь не цифровые знаки')); // 3.14
+```

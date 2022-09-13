@@ -12,7 +12,6 @@ import Head from 'next/head';
 export const getStaticProps: GetStaticProps = async () => {
 
   const posts = getAllPosts(POSTS_PATH_JS)
-  .slice(0,9)
   .map(post => post.meta);
 
   return {

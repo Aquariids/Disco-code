@@ -64,7 +64,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     );
 
     const posts = getAllPosts(POSTS_PATH_TS)
-        .slice(0, 9)
         .map((post) => post.meta);
 
 

@@ -19,6 +19,8 @@
 	width:325px;
 	margin-left: 20px;
 	margin-right: 20px;
+	white-space: nowrap;
+
 
 }
 
@@ -187,7 +189,7 @@
 
 @media (max-width:860px) {
 	.listMenu {
-		grid-template-columns: 120px;
+		grid-template-columns: 120px;;
 
 	}
 

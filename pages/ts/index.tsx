@@ -41,7 +41,6 @@ export default withLayout(Home);
 export const getStaticProps: GetStaticProps = async () => {
 
   const posts = getAllPosts(POSTS_PATH_TS)
-  .slice(0,9)
   .map(post => post.meta);
 
   return {

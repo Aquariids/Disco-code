@@ -16,8 +16,7 @@ export const getSlugs = (url: string): string[] => {
 };
 export const getAllPosts = (url:string) => {
     const posts = getSlugs(url).map(slug => getPostFromSlug(slug,url));
-    
-return posts;
+    return posts;
 };
 
 
@@ -29,13 +28,11 @@ interface Post {
 
 export interface PostMeta {
     slug: string;
-    excerpt: string;
     title: string;
     id:number;
-    prev: string;
-    next:string;
+    prev?: string;
+    next?:string;
     category?: string;
-    titleCategory?:string;
 
 }
 export const getPostFromSlug = (slug: string,url: string): Post => {
@@ -48,13 +45,11 @@ export const getPostFromSlug = (slug: string,url: string): Post => {
         content,
         meta: {
             slug,
-            excerpt: data.excerpt ?? "",
             title: data.title ?? slug,
             id: data.id ?? "",
             prev: data.prev ?? 'none',
             next: data.next ?? 'none',
             category: data.category ?? "none",
-            titleCategory: data.titleCategory ?? ""
         },
     };
 

@@ -60,7 +60,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 
     const posts = getAllPosts(POSTS_PATH_JS)
-        .slice(0, 9)
         .map(post => post.meta);
     return { props: { post: { source: mdxSource, meta }, posts } };
 
