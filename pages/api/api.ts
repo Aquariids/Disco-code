@@ -30,8 +30,8 @@ export interface PostMeta {
     slug: string;
     title: string;
     id:number;
-    prev?: string;
-    next?:string;
+    prev: string;
+    next:string;
     category?: string;
 
 }
