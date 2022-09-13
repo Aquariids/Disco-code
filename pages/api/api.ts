@@ -15,14 +15,9 @@ export const getSlugs = (url: string): string[] => {
     });
 };
 export const getAllPosts = (url:string) => {
-    const posts = getSlugs(url).map(slug => getPostFromSlug(slug,url)).sort((a, b) => {
-        if (a.meta.id > b.meta.id) return -1;
-        if (a.meta.id < b.meta.id) return 1;
-        return 0;
-
-
-    }).reverse();
-    return posts;
+    const posts = getSlugs(url).map(slug => getPostFromSlug(slug,url));
+    
+return posts;
 };
 
 
@@ -36,7 +31,7 @@ export interface PostMeta {
     slug: string;
     excerpt: string;
     title: string;
-    id:string;
+    id:number;
     prev: string;
     next:string;
     category?: string;

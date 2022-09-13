@@ -10,10 +10,11 @@ import { AppContext } from '../../../context/app.context';
 
 
 const Menu = ({title,category, dropdown, page, ...props}:IMenu): JSX.Element => {
-  
     const router = useRouter();
     const pathname = router.asPath;
     const { posts } = useContext(AppContext); 
+    posts.sort((a,b) => a.id - b.id);
+    
 
     const [isOpen, setOpen] = useState(router.pathname.startsWith(`/${page}/${category}`) == true? true: false);
 
@@ -33,6 +34,7 @@ const Menu = ({title,category, dropdown, page, ...props}:IMenu): JSX.Element => 
                 </div>
                 {isOpen && (<ul className={s.listMenu}>
                     {posts && posts.map((post,index) => (
+                        
                         <li 
                         key={index}
                             className={cn({
