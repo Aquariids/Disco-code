@@ -1,14 +1,4 @@
 
-
-
-.footer {
-    color:var(--ts_color_links_pages);
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 50px;
-
-}
-
 .footer a:hover {
 
     color: var(--ts_hover_color_links_pages);
@@ -23,16 +13,6 @@
 
 }
 
-
-.edit {
-    display: flex;
-    justify-content: right;
-    margin-top: 80px;
-    margin-bottom: 100px
-}
-
-
-
 .edit a {
     color: rgb(77, 77, 77);
     box-shadow: 0 0.2px 0 0;
@@ -41,3 +21,4 @@
 .edit a:hover {
     box-shadow: 0 0.7px 0 0;
 }
+

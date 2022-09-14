@@ -20,7 +20,9 @@
     display: flex;
     justify-content: right;
     margin-top: 80px;
-    margin-bottom: 100px
+    margin-bottom: 100px;
+    white-space: nowrap;
+    font-size: 16px;
 }
 
 
