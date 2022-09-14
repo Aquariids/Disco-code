@@ -6,14 +6,18 @@ import Sidebar from "./Sidebar/Sidebar";
 import s from './Layout.module.css';
 import { AppContextProvider, IAppContext } from "../context/app.context";
 const { wrapper, header, sidebar, footer, body, content} = s;
+import cn from 'classnames';
+import { useRouter } from "next/router";
 const Layout = ({children, }: LayoutProps): JSX.Element => {
-
-
     
+    const router = useRouter();
+    console.log("(👍≖‿‿≖)👍 ✿ file: Layout.tsx ✿ line 13 ✿ Layout ✿ router", router)
     
     return (
         <>
-            <div className={wrapper}>
+            <div className={cn(wrapper,{
+                [s.wrapper2]: router.asPath.length > 18
+            })}>
                 <Header className={header} />
                 <Sidebar className={sidebar}/>
                 <div className={body}>

@@ -11,6 +11,10 @@
     width: 190px;
 }
 
+.a_none {
+    text-decoration: none;
+}
+
 .page_edit {
     display: flex;
     justify-content: right;
@@ -19,7 +23,7 @@
 }
 
 
-@media (max-width:800px) {
+@media (max-width:550px) {
     .page_footer {
         flex-direction: column;
 
@@ -33,13 +37,3 @@
     
 }
 
-@media (max-width:700px) {
-
-.page_footer{
-    justify-content: space-between;
-    flex-direction: row;
-}
-
-
-
-}

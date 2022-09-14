@@ -54,3 +54,38 @@
 		margin: 0 50px;
 	}
 }
+
+.wrapper2 {
+		grid-template-columns: 20% minmax(320px, 1180px) 20%;
+
+	}
+
+	@media (max-width:985px) {
+		.wrapper2 {
+			grid-template-columns: 20% minmax(320px, 1180px);
+
+		}
+
+		
+	}
+
+	@media (max-width: 750px) {
+		.wrapper2 {
+			grid-template-columns: minmax(320px, 1fr);
+			/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
+			grid-template-areas:
+				"header"
+				"body"
+				"footer";
+		}
+	
+		.footer {
+			align-items: center;
+			text-align: center;
+	
+		}
+	
+		.content {
+			margin: 0 50px;
+		}
+	}
