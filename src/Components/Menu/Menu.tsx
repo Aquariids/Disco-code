@@ -42,6 +42,7 @@ const Menu = ({title,category, dropdown, page, ...props}:IMenu): JSX.Element => 
                             className={cn({
                                 [s.active_js]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/js'),
                                 [s.active_ts]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/ts'),
+                                [s.active_react]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/react'),
                                 [s.link]: pathname.replace(post.slug, '') + post.slug !== pathname,
                                 [s.show]: post.category == category,
                                 [s.hide]: post.category !== category,

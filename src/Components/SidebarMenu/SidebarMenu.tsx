@@ -20,6 +20,13 @@ const SidebarMenu = (): JSX.Element => {
             </nav>
         );
     }
+    if (router.pathname.startsWith('/react')) {
+        return (
+            <nav className={s.navMenu}>
+                <Menu title="Базовые темы react" category='basicreact' dropdown={true} page='react'/>
+            </nav>
+        );
+    }
     else {
         return (
             <></>

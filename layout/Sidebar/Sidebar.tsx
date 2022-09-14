@@ -8,8 +8,9 @@ const {sidebar} = s;
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Sidebar = ({className, ...props}:SidebarProps):JSX.Element => {
     const router = useRouter(); 
-    console.log("(👍≖‿‿≖)👍 ✿ file: Sidebar.tsx ✿ line 11 ✿ Sidebar ✿ router", router)
-    if(router.route.length < 12){
+    const asPath = router.asPath;
+    
+    if(asPath.length < 18){
         return(
             <></>
         );

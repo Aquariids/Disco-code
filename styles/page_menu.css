@@ -1,18 +1,18 @@
 
-.index {
+.page_content {
 	text-align: center;
 }
 
-.index span {
+.page_content span {
 	font-size: 14px;
 }
-.index h2 {
+.page_content h2 {
 	margin-bottom: 10px;
 	margin-top: 0;
 }
 
 
-.menu {
+.page_menu {
 	margin-top: 50px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -21,13 +21,18 @@
 	gap: 30px;
 }
 
+.page_menu button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
-.body {
+.page_body {
 	display: flex;
 	justify-content: center;
 }
 @media (max-width: 700px) {
-	.menu {
+	.page_menu {
 		justify-content: center;
 		display: flex;
 		flex-direction: column;
@@ -35,10 +40,10 @@
 		grid-template-rows: 1fr;
 		gap: 15px;
 	}
-	.index h2 {
+	.page_content h2 {
 		display: none;
 	}
-	.index span {
+	.page_content span {
 		display: none;
 	}
 
