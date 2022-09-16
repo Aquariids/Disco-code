@@ -12,6 +12,7 @@ import { POSTS_PATH_REACT } from '../../api/paths';
 import Link from 'next/link';
 import cn from 'classnames';
 import s from './react.module.css';
+import MobileButton from '../../../src/Components/UI/MobileButton/MobileButton';
 interface MSXPost {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
     meta: PostMeta
@@ -20,7 +21,6 @@ interface MSXPost {
 
 
 const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => {
-
 
     return (
         <div>
@@ -34,6 +34,7 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
             <Link href={post.meta.prev}>{post.meta.prev === 'none'?<span></span>:'Предыдущая страница'}</Link>
             <Link href={post.meta.next}>{post.meta.next === 'none'?'':'Следующая страница'}</Link>
         </div>
+        <MobileButton path='/react'/>
 
     </div>
     );

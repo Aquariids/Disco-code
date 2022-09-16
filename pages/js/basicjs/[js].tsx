@@ -13,8 +13,6 @@ import { POSTS_PATH_JS } from '../../api/paths';
 import Link from 'next/link';
 import s from './js.module.css';
 import MobileButton from '../../../src/Components/UI/MobileButton/MobileButton';
-import { useState, useTransition } from 'react';
-import { useRouter } from 'next/router';
 interface MSXPost {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
     meta: PostMeta
@@ -25,9 +23,6 @@ interface MSXPost {
 
 
 const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => {
-
-    const router = useRouter();
-    const [mobileActive, setMobileActive] = useState(router.asPath);
     
     return (
         <div>
@@ -41,7 +36,7 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
                 <Link href={post.meta.prev}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая страница'}</Link>
                 <Link href={post.meta.next}>{post.meta.next === 'none' ? '' : 'Следующая страница'}</Link>
             </div>
-            <MobileButton mobileActive={mobileActive}/>
+            <MobileButton path='/js'/>
 
         </div>
     );
