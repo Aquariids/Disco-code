@@ -8,9 +8,6 @@ import { AppContextProvider, IAppContext } from "../context/app.context";
 const { wrapper, header, sidebar, footer, body, content} = s;
 import cn from 'classnames';
 import { useRouter } from "next/router";
-import ModalMenu from "../src/Components/Modal/ModalMenu";
-import MobileButton from "../src/Components/UI/MobileButton/MobileButton";
-import Menu from "../src/Components/Menu/Menu";
 const Layout = ({children, }: LayoutProps): JSX.Element => {
 
     const router = useRouter();
@@ -25,12 +22,6 @@ const Layout = ({children, }: LayoutProps): JSX.Element => {
                 <Sidebar className={sidebar} />
                 <div className={body}>
                     <div className={content}>  
-                    {/* <div className={cn(s.menu, {
-                        [s.showmenu]: mobileActive === true
-                    })}>
-                    <Menu title="Базовый JavaScript" category='basicjs' page='js'/>
-                    <Menu title="Продвинутый JavaScript" category='advancedjs' page='js'/>
-                    </div> */}
                         {children}
                     </div>
                 </div>
