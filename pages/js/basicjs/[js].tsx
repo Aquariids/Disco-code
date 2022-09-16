@@ -31,14 +31,17 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
             <Head>
                 <title>{post.meta.title}</title>
             </Head>
-            <h1>{post.meta.title}</h1>
             <AnimatePresence>
+
                 <motion.div
+                    transition={{ type: "spring", stiffness: 65 }}
                     key={router.asPath}
-                    initial={{ x: 300, opacity: 0 }}
+                    initial={{ x: 50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     id="page-transition-container"
                 >
+                    <h1>{post.meta.title}</h1>
+
                     <MDXRemote  {...post.source} />
                 </motion.div>
             </AnimatePresence>
