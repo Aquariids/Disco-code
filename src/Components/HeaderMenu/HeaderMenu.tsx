@@ -3,6 +3,9 @@ import { HeaderProps } from './HeaderMenu.props';
 import Link from 'next/link';
 import cn from 'classnames';
 import { useRouter } from 'next/router';
+import JsLogo from './js_logo.svg';
+import ReactLogo from './react_logo.svg';
+import Logo from '../UI/Logo/Logo';
 const { header,link, content, logo, github } = s;
 
 
@@ -17,7 +20,8 @@ const router = useRouter();
         })} {...props}>
             <div className={content}>
                 <div className={logo}>
-                    <Link href={'/'}><img style={{width:'40px',cursor:'pointer'}} src='/logo.png'/></Link>
+                    <Logo />
+                    {/* <Link href={'/'}><img style={{width:'40px',cursor:'pointer'}} src='/js_logo.svg'/></Link> */}
                     <span className={link} > <Link href={'/'}>DiscoCode</Link> </span> </div>
 
                 <div className={s.nav}>
