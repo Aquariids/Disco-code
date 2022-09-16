@@ -1,36 +1,51 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-const logo = () => {
+import s from './Logo.module.css';
+import cn from 'classnames';
+import { AnimatePresence, motion } from 'framer-motion';
+import { logoProps } from './Logo.props';
+
+const logo = ({ path, src }: logoProps): JSX.Element => {
 
     const router = useRouter();
-    if(router.route.startsWith('/js')) {
+    console.log("(👍≖‿‿≖)👍 ✿ file: logo.tsx ✿ line 10 ✿ logo ✿ router", router)
+    if (router.pathname === path) {
         return (
-            <Link href={'/'}><img style={{width:'40px',cursor:'pointer', borderRadius:'10px'}} src='/logo/js_logo.svg'/></Link> 
+            <AnimatePresence>
+                <motion.div className={s.logo}
+                    key={router.pathname}
+                    initial={{ x: -100, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: 0, opacity: 1 }}
+                >
+                    <Link href={'/'}><img style={{ width: '40px', cursor: 'pointer', borderRadius: '10px' }} src={src} /></Link>
+                </motion.div>
+            </AnimatePresence>
         );
-    }
-    if(router.route.startsWith('/react')) {
+    } else if (router.asPath.startsWith(path)) {
         return (
-            <Link href={'/'}><img style={{width:'40px',cursor:'pointer'}} src='/logo/react_logo.svg'/></Link>
+            <Link href={'/'}><img style={{ width: '40px', cursor: 'pointer' }} src={src} /></Link>
         );
-    }
-    if(router.route.startsWith('/ts')) {
+    } else {
+
         return (
-            <Link href={'/'}><img style={{width:'40px',cursor:'pointer', borderRadius:'10px'}} src='/logo/ts_logo.svg'/></Link> 
-        );
-    }
-    if(router.route.startsWith('/next')) {
-        return (
-            <Link href={'/'}><img style={{width:'40px',cursor:'pointer'}} src='/logo/nextjs_logo.svg'/></Link>
-        );
-    } 
-    else {
-        return (
-            
-            <Link href={'/'}><img style={{width:'40px',cursor:'pointer'}} src='/logo/disco.svg'/></Link>
+            <AnimatePresence>
+                <motion.div className={s.logo}
+                    key={router.pathname}
+                    initial={{ x: -100, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: 0, opacity: 1 }}
+                >
+                    <Link href={'/'}><img style={{ width: '40px', cursor: 'pointer' }} src={src} /></Link>
+                </motion.div>
+            </AnimatePresence>
 
         );
+
     }
+
+
 };
 
 export default logo;

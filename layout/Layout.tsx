@@ -8,6 +8,7 @@ import { AppContextProvider, IAppContext } from "../context/app.context";
 const { wrapper, header, sidebar, footer, body, content} = s;
 import cn from 'classnames';
 import { useRouter } from "next/router";
+import { AnimatePresence, motion } from "framer-motion";
 const Layout = ({children, }: LayoutProps): JSX.Element => {
 
     const router = useRouter();
@@ -21,8 +22,8 @@ const Layout = ({children, }: LayoutProps): JSX.Element => {
                 <Header className={header} />
                 <Sidebar className={sidebar} />
                 <div className={body}>
-                    <div className={content}>  
-                        {children}
+                    <div className={content}> 
+                {children}
                     </div>
                 </div>
                 <Footer className={footer} />
@@ -38,9 +39,12 @@ export const withLayout = <T extends Record<string, unknown>& IAppContext>(Compo
     return function withLayoutComponent(props: T): JSX.Element {
 
         return (
+
                 <AppContextProvider posts={props.posts}>
                 <Layout {...props}>
+
                     <Component {...props} />
+
                 </Layout>
                 </AppContextProvider>
         );
