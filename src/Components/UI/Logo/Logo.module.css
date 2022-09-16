@@ -1,0 +1,5 @@
+.logo {
+    display: flex;
+    justify-content: center;
+    transition: 0.1s;
+}

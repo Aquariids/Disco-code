@@ -13,6 +13,8 @@ import { POSTS_PATH_JS } from '../../api/paths';
 import Link from 'next/link';
 import s from './js.module.css';
 import MobileButton from '../../../src/Components/UI/MobileButton/MobileButton';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 interface MSXPost {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
     meta: PostMeta
@@ -23,20 +25,30 @@ interface MSXPost {
 
 
 const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => {
-    
+    const router = useRouter();
     return (
         <div>
             <Head>
                 <title>{post.meta.title}</title>
             </Head>
             <h1>{post.meta.title}</h1>
-            <MDXRemote  {...post.source} />
+            <AnimatePresence>
+                <motion.div
+                    key={router.asPath}
+                    initial={{ x: 300, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    id="page-transition-container"
+                >
+                    <MDXRemote  {...post.source} />
+                </motion.div>
+            </AnimatePresence>
+
             <div className={cn(s.edit, 'page_edit')}><a target='_blank' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{ width: '30px', paddingLeft: '5px' }} src='/edit.svg' /></div>
             <div className={cn(s.footer, 'page_footer')}>
                 <Link href={post.meta.prev}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая страница'}</Link>
                 <Link href={post.meta.next}>{post.meta.next === 'none' ? '' : 'Следующая страница'}</Link>
             </div>
-            <MobileButton path='/js'/>
+            <MobileButton path='/js' />
 
         </div>
     );

@@ -6,6 +6,7 @@ import s from './pageJs.module.css';
 import { getAllPosts } from '../api/api';
 import { POSTS_PATH_JS } from '../api/paths';
 import Head from 'next/head';
+import { motion } from 'framer-motion';
 
 
 
@@ -25,6 +26,8 @@ const Home: NextPage = (): JSX.Element => {
 
 
   return (
+    <motion.div exit={{opacity:0}}> 
+
   <div className='page_content'>
     <Head>
       <title>Содержание</title>
@@ -42,6 +45,7 @@ const Home: NextPage = (): JSX.Element => {
     </div>
     </div>
     </div>
+    </motion.div>
   );
 };
 

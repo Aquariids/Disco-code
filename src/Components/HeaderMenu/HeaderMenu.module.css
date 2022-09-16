@@ -11,6 +11,8 @@
 	gap: 30px;
 	grid-template-columns: 20% minmax(auto, 1180px) 20%;
 	grid-template-areas: ". header .";
+	overflow-x: hidden;
+	margin-right: calc(-1 *(100vw - 100%));
 }
 
 .header2 {
