@@ -2,7 +2,6 @@ import s from './FooterMenu.module.css';
 import { FooterProps } from './FooterMenu.props';
 import cn from 'classnames';
 import { useRouter } from 'next/router';
-import Menu from '../Menu/Menu';
 
 const { footer, content,doc } = s;
 

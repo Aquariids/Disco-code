@@ -1,9 +1,8 @@
 import { useRouter } from "next/router";
 import s from './SidebarMenu.module.css';
 import Menu from '../Menu/Menu';
-import { ISidebarMenu } from "./SidebarMenu.props";
 
-const SidebarMenu = (): JSX.Element => {
+const SidebarMenu = ():JSX.Element => {
     const router = useRouter();
     if (router.pathname.startsWith('/js')) {
         return (

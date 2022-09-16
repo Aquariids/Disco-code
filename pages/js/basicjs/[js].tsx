@@ -15,7 +15,6 @@ import s from './js.module.css';
 import MobileButton from '../../../src/Components/UI/MobileButton/MobileButton';
 import { useState, useTransition } from 'react';
 import { useRouter } from 'next/router';
-import ModalMenu from '../../../src/Components/Modal/ModalMenu';
 interface MSXPost {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
     meta: PostMeta

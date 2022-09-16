@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, Dispatch, HTMLAttributes, SetStateAction } from "react";
+import { DetailedHTMLProps, HTMLAttributes, } from "react";
 export interface ISidebarMenu extends  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 
 }
