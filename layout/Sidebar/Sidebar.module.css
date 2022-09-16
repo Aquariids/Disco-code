@@ -1,6 +1,6 @@
 .sidebar {
 	position: fixed;
-	z-index: 1000;
+	z-index: 200;
 
 	display: grid;
 	justify-content: center;
@@ -27,3 +27,10 @@
 	}
 }
 
+
+.mobileBar {
+	justify-content: center;
+	white-space: nowrap;
+	display: grid;
+	width: 100%;
+}

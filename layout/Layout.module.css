@@ -11,8 +11,13 @@
 		"header header header"
 		"sidebar body ."
 		"footer footer footer";
+
 }
 
+
+.mobileSidebar {
+	width: 100%;
+}
 .header {
 
 	grid-area: header;
@@ -26,6 +31,10 @@
 	grid-area: body;
 }
 
+.content {
+	position: relative;
+
+}
 .footer {
 	grid-area: footer;
 }
@@ -53,6 +62,26 @@
 	.content {
 		margin: 0 30px;
 	}
+}
+
+.menu {
+	display: none;
+}
+
+
+.showmenu {
+	justify-content: center;
+	z-index: 200;
+	background-color: #fff;
+	position: fixed;
+	opacity: 1;
+	visibility:visible;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transition: all .3s;
+	display: grid;
 }
 
 .wrapper2 {

@@ -13,6 +13,19 @@
 	grid-template-areas: ". header .";
 }
 
+.header2 {
+	grid-template-columns: 20% minmax(auto, 1180px) 20%;
+
+}
+
+@media (max-width:985px) {
+
+	.header2 {
+		grid-template-columns: 20% minmax(auto, 1180px);
+
+	}
+}
+
 
 
 .content {
@@ -36,7 +49,7 @@
 
 }
 
-@media (max-width: 850px) {
+@media (max-width: 750px) {
 	.header {
 		grid-template-columns: minmax(320px, 1fr);
 		grid-template-rows: 50px;

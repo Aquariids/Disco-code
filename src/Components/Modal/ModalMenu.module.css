@@ -1,0 +1,23 @@
+.modal { 
+    position: fixed;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 100000000000000;
+    display: none;
+}
+
+
+
+.modal_content {
+    display: grid;
+    grid-template-columns: 1;
+    justify-content: center;
+}
+
+
+.modal_active {
+    display: block;
+}

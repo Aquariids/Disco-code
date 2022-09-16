@@ -12,7 +12,10 @@ import { getAllPosts, getPostFromSlug, getSlugs, PostMeta } from '../../api/api'
 import { POSTS_PATH_JS } from '../../api/paths';
 import Link from 'next/link';
 import s from './js.module.css';
-import MobileButton from '../../../src/Components/MobileButton/MobileButton';
+import MobileButton from '../../../src/Components/UI/MobileButton/MobileButton';
+import { useState, useTransition } from 'react';
+import { useRouter } from 'next/router';
+import ModalMenu from '../../../src/Components/Modal/ModalMenu';
 interface MSXPost {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
     meta: PostMeta
@@ -20,21 +23,26 @@ interface MSXPost {
 
 
 
-const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => {
-        
 
+
+const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => {
+
+    const router = useRouter();
+    const [mobileActive, setMobileActive] = useState(router.asPath);
+    
     return (
         <div>
             <Head>
                 <title>{post.meta.title}</title>
             </Head>
             <h1>{post.meta.title}</h1>
-            <MDXRemote {...post.source} />
-            <div className={cn(s.edit, 'page_edit')}><a target='_blank' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{width:'30px',paddingLeft:'5px'}} src='/edit.svg'/></div>
+            <MDXRemote  {...post.source} />
+            <div className={cn(s.edit, 'page_edit')}><a target='_blank' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{ width: '30px', paddingLeft: '5px' }} src='/edit.svg' /></div>
             <div className={cn(s.footer, 'page_footer')}>
-                <Link href={post.meta.prev}>{post.meta.prev === 'none'?<span></span>:'Предыдущая страница'}</Link>
-                <Link href={post.meta.next}>{post.meta.next === 'none'?'':'Следующая страница'}</Link>
+                <Link href={post.meta.prev}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая страница'}</Link>
+                <Link href={post.meta.next}>{post.meta.next === 'none' ? '' : 'Следующая страница'}</Link>
             </div>
+            <MobileButton mobileActive={mobileActive}/>
 
         </div>
     );
@@ -58,7 +66,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
                 [rehypeAutolinkHeadings, { behavior: "wrap" }],
                 rehypeHighlight
             ]
-        }   
+        }
 
 
     });

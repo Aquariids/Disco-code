@@ -12,6 +12,20 @@
 	grid-template-areas: ". footer .";
 }
 
+
+.footer2 {
+	grid-template-columns: 20% minmax(auto, 1180px) 20%;
+
+}
+
+
+@media (max-width:985px) {
+	.footer2 {
+		grid-template-columns: 20% minmax(auto, 1180px);
+	
+	}
+	
+}
 .content {
 	grid-area: footer;
 	display: flex;

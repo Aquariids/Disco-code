@@ -1,17 +1,20 @@
 import s from './HeaderMenu.module.css';
 import { HeaderProps } from './HeaderMenu.props';
 import Link from 'next/link';
-
+import cn from 'classnames';
+import { useRouter } from 'next/router';
 const { header,link, content, logo, github } = s;
 
 
 
 const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
-
+const router = useRouter();
 
 
     return (
-        <div className={header} {...props}>
+        <div className={cn(header, {
+            [s.header2]: router.asPath.length > 18
+        })} {...props}>
             <div className={content}>
                 <div className={logo}>
                     <Link href={'/'}><img style={{width:'30px',cursor:'pointer'}} src='/qq.png'/></Link>

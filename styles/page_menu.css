@@ -27,6 +27,13 @@
 	align-items: center;
 }
 
+@media (max-width:700px) {
+	.page_menu {
+		margin-top: -50px;
+	}
+	
+}
+
 .page_body {
 	display: flex;
 	justify-content: center;

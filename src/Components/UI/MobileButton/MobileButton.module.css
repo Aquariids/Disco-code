@@ -1,0 +1,27 @@
+.btn {
+	z-index: 300;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	display: none;
+	width: 65px;
+	height: 65px;
+	margin-right: 20px;
+	margin-bottom: 55px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	box-shadow: rgb(0 0 0 / 30%) 0px 0px 20px;
+	border-radius: 100%;
+	background-color: rgb(32, 35, 42);
+}
+
+
+@media (max-width:750px) {
+	.btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+
+	}
+	
+}

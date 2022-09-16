@@ -6,11 +6,11 @@ import s from './pageJs.module.css';
 import { getAllPosts } from '../api/api';
 import { POSTS_PATH_JS } from '../api/paths';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 
 
 export const getStaticProps: GetStaticProps = async () => {
-
   const posts = getAllPosts(POSTS_PATH_JS)
   .map(post => post.meta);
 
@@ -24,7 +24,9 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Home: NextPage = (): JSX.Element => {
 
-  
+  const router = useRouter();
+  console.log("(👍≖‿‿≖)👍 ✿ file: index.tsx ✿ line 28 ✿ router", router)
+
   return (
   <div className='page_content'>
     <Head>

@@ -21,3 +21,14 @@
 .edit a:hover {
     box-shadow: 0 0.7px 0 0;
 }
+
+
+
+
+.contnet {
+    position: relative;
+}
+
+.markdown {
+    position: relative;
+}

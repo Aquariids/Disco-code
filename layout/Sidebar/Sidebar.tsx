@@ -3,6 +3,7 @@ import { SidebarProps } from './Sidebar.props';
 import s from './Sidebar.module.css';
 import SidebarMenu from '../../src/Components/SidebarMenu/SidebarMenu';
 import { useRouter } from 'next/router';
+import cn from 'classnames';
 
 const {sidebar} = s;
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
