@@ -17,7 +17,7 @@ const router = useRouter();
         })} {...props}>
             <div className={content}>
                 <div className={logo}>
-                    <Link href={'/'}><img style={{width:'45px',cursor:'pointer'}} src='/logo.png'/></Link>
+                    <Link href={'/'}><img style={{width:'40px',cursor:'pointer'}} src='/logo.png'/></Link>
                     <span className={link} > <Link href={'/'}>DiscoCode</Link> </span> </div>
 
                 <div className={s.nav}>

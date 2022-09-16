@@ -1,5 +1,4 @@
 .page_footer {
-    color:var(--js_color_links_pages);
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
@@ -10,7 +9,9 @@
 
 .page_footer a {
     width: 190px;
+
 }
+
 
 .a_none {
     text-decoration: none;

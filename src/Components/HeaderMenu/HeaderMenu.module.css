@@ -45,7 +45,7 @@
 .link:hover {
 	transition: all 0.1s;
 
-	color: rgb(255, 140, 240);
+	color: var(--next_hover_color_links_pages);
 
 }
 

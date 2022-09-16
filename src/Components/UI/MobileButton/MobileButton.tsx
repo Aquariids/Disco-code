@@ -8,7 +8,6 @@ const MobileButton = ({path,...props}:MobileButtonProps) => {
     return (
         <button {...props} className={s.btn}>
             {<Link href={path}><img style={{width:'30px'}} src='/menu_icon.svg'/></Link> }
-
         </button>
     );
 };

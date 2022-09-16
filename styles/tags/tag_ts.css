@@ -5,7 +5,7 @@
 }
 
 .tag_ts:hover {
-	color: var(--js_hover_color_links_pages);
+	color: var(--ts_hover_color_links_pages);
 	transition: all 0.1s;
 
 }

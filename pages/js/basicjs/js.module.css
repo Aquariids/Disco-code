@@ -1,16 +1,34 @@
 
 .footer a:hover {
-
     color: var(--js_hover_color_links_pages);
     box-shadow: 0 0.7px 0 0;
 
 }
 
+.footer a:focus {
+    color: var(--js_color_links_pages);
+
+}
 
 .footer a {
-    box-shadow: 0 0.3px 0 0;
+    color:var(--js_color_links_pages);;
+}
 
 
+.footer a {
+    box-shadow: 0px 0.3px 0px 0px;
+
+
+}
+
+@media (max-width:500px ) {
+
+    .footer a {
+        border-bottom: 1px solid var(--js_color_links_pages);
+        box-shadow: 0px 0px 0px 0px;
+
+    }
+    
 }
 
 .edit a {
