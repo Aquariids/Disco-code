@@ -6,35 +6,6 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 
 
-export function Loading():any {
-  const router = useRouter();
-  const [loading,setLoading] = useState(false);
-
-  useEffect(() => {
-    const handleStart = () => setLoading(true);
-    const handleComplete = () => setLoading(false);
-
-
-    
-    router.events.on('routeChangeStart',handleStart);
-    router.events.on('routeChangeComplete',handleComplete);
-    router.events.on('routeChangeError',handleComplete);
-
-
-    return () => {
-      router.events.off('routeChangeStart',handleStart);
-      router.events.off('routeChangeComplete',handleComplete);
-      router.events.off('routeChangeError',handleComplete);
-  
-    };
-  });
-
-  return loading && (
-<span className = {'loader'} >
-</span>
-  );
-}
-
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 const router = useRouter();
   return(
