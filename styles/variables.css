@@ -1,14 +1,17 @@
 :root {
-    /* js */
-    --js_color_links_pages:#e9a12c;
-    --js_hover_color_links_pages:#f44336;
-    /* ts */
-    --ts_color_links_pages:#3178c6;
-    --ts_hover_color_links_pages:#3147c6;
-    /* react */
-    --react_color_links_pages:#61dafb;
-    --react_hover_color_links_pages:#00ffee;
-    /* next */
-    --next_color_links_pages:#000;
-    --next_hover_color_links_pages:gray;
+	/* js */
+	--js_color_links_pages: #E9A12C;
+	--js_hover_color_links_pages: #F44336;
+
+	/* ts */
+	--ts_color_links_pages: #3178C6;
+	--ts_hover_color_links_pages: #3147C6;
+
+	/* react */
+	--react_color_links_pages: #61DAFB;
+	--react_hover_color_links_pages: #0FE;
+
+	/* next */
+	--next_color_links_pages: #000;
+	--next_hover_color_links_pages: gray;
 }

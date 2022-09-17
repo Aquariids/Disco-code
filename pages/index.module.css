@@ -1,17 +1,18 @@
 .body {
-    text-align: center;
+	text-align: center;
 }
 
 .body h1 {
-    margin-bottom: 100px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	margin-bottom: 100px;
 }
 
 .body h1 span {
-    margin-top: 10px;
-    font-size: 20px;
-    font-weight: 400;
-}
+	margin-top: 10px;
 
+	font-size: 20px;
+	font-weight: 400;
+}

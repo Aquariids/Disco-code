@@ -1,29 +1,29 @@
 .tag_js {
 	display: inline-block;
-	color:var(--js_color_links_pages);
+
+	color: var(--js_color_links_pages);
+
 	font-size: 16px;
 }
 
 .tag_js:hover {
-	color: var(--js_hover_color_links_pages);
 	transition: all 0.1s;
 
+	color: var(--js_hover_color_links_pages);
 }
 
 .mini_tag_js {
-
-	transition: all 0.1s;
-
 	display: inline;
 
 	margin-right: 5px;
-	color:var(--js_color_links_pages);
+
+	transition: all 0.1s;
+
+	color: var(--js_color_links_pages);
 
 	font-size: 14px;
 }
 
 .mini_tag_js:hover {
-
 	color: var(--js_hover_color_links_pages);
-
 }
