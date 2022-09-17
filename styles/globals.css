@@ -9,6 +9,10 @@
 @import "./loader.css";
 
 
+.pp {
+	position: relative;
+}
+
 
 html {
 	overflow-x: hidden;
@@ -17,6 +21,7 @@ html {
 }
 
 body {
+
 	margin: 0;
 	padding: 0;
 

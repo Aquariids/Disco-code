@@ -44,11 +44,7 @@ const router = useRouter();
             </div>
             </div>
     
-            {router.asPath.length < 18?<Loading/>:''}
-            {router.asPath.startsWith('/js')?<Loading/>:''}
-
-            
-
+            {router.asPath.length < 18?<Loading mdx ='loader'/>:''}
         </div>
     );
 };

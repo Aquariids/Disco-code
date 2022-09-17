@@ -5,12 +5,15 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 
-export function Loading():any {
+interface Iload {
+mdx:string
+}
+export function Loading({mdx}:Iload):any {
   const router = useRouter();
   const [loading,setLoading] = useState(false);
 
   useEffect(() => {
-    const handleStart = () => setTimeout( () => {setLoading(true);},1000);
+    const handleStart = (url:string) => (url !== router.route) && setTimeout( () => {setLoading(true);},500);
     const handleComplete = () => setLoading(false);
     router.events.on('routeChangeStart',handleStart);
     router.events.on('routeChangeComplete',handleComplete);
@@ -26,7 +29,7 @@ export function Loading():any {
   });
 
   return loading && (
-<span className= 'loader'>
+<span className = {mdx} >
 </span>
   );
 }
