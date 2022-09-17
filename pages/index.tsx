@@ -4,11 +4,8 @@ import React from 'react';
 import Articles from '../src/Components/Articles';
 import s from './index.module.css'
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 const Home: NextPage = (): JSX.Element => {
 
-const router = useRouter()
-  console.log("(👍≖‿‿≖)👍 ✿ file: index.tsx ✿ line 11 ✿ router", router)
   return (
     <div className={s.body}>
       <Head>
@@ -25,10 +22,6 @@ const router = useRouter()
     </div>
   );
 };
-
-
-
-
 
 
 

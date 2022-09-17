@@ -4,15 +4,13 @@ import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
-import cn from 'classnames';
 
 export function Loading():any {
   const router = useRouter();
-  console.log("(👍≖‿‿≖)👍 ✿ file: _app.tsx ✿ line 11 ✿ Loading ✿ router", router)
   const [loading,setLoading] = useState(false);
 
   useEffect(() => {
-    const handleStart = (url:string) => (url !== router.route) && setTimeout( () => {setLoading(true);},1000);
+    const handleStart = (url:string) => (url !== router.asPath) && setTimeout( () => {setLoading(true);},1000);
     const handleComplete = () => setLoading(false);
     router.events.on('routeChangeStart',handleStart);
     router.events.on('routeChangeComplete',handleComplete);
@@ -28,10 +26,7 @@ export function Loading():any {
   });
 
   return loading && (
-<span className={cn('loader',{
-  ['loader1']: loading === true,
-
-})}>
+<span className= 'loader'>
 </span>
   );
 }

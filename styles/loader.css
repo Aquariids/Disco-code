@@ -3,7 +3,6 @@
 	right: 0;
 
 	display: inline-block;
-	opacity: 0;
 	box-sizing: border-box;
 	width: 30px;
 	height: 30px;
@@ -16,9 +15,7 @@
 	border-radius: 50%;
 }
 
-.loader1 {
-	opacity: 1;
-}
+
 
 @keyframes rotation {
 	0% {

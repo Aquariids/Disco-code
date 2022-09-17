@@ -2,14 +2,12 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 import s from './Logo.module.css';
-import cn from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
 import { logoProps } from './Logo.props';
 
 const logo = ({ path, src }: logoProps): JSX.Element => {
 
     const router = useRouter();
-    console.log("(👍≖‿‿≖)👍 ✿ file: logo.tsx ✿ line 10 ✿ logo ✿ router", router)
     if (router.pathname === path) {
         return (
             <AnimatePresence>
