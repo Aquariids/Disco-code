@@ -26,7 +26,6 @@ const Home: NextPage = (): JSX.Element => {
 
 
   return (
-    <motion.div exit={{opacity:0}}> 
 
   <div className='page_content'>
     <Head>
@@ -45,7 +44,6 @@ const Home: NextPage = (): JSX.Element => {
     </div>
     </div>
     </div>
-    </motion.div>
   );
 };
 
