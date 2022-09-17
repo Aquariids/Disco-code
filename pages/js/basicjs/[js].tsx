@@ -31,7 +31,6 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
             <Head>
                 <title>{post.meta.title}</title>
             </Head>
-            <AnimatePresence>
                 <motion.div
                     transition={{ type: "spring", stiffness: 65 }}
                     key={router.asPath}
@@ -41,8 +40,6 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
                 >
                     <h1>{post.meta.title}</h1>
                     <MDXRemote  {...post.source} />
-                </motion.div>
-            </AnimatePresence>
 
             <div className={cn(s.edit, 'page_edit')}><a target='_blank' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{ width: '30px', paddingLeft: '5px' }} src='/edit.svg' /></div>
             <div className={cn(s.footer, 'page_footer')}>
@@ -50,6 +47,7 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
                 <Link href={post.meta.next}>{post.meta.next === 'none' ? '' : 'Следующая страница'}</Link>
             </div>
             <MobileButton path='/js' />
+            </motion.div>
 
         </div>
     );

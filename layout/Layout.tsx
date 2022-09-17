@@ -38,7 +38,6 @@ export const withLayout = <T extends Record<string, unknown>& IAppContext>(Compo
     return function withLayoutComponent(props: T): JSX.Element {
 
         return (
-
                 <AppContextProvider posts={props.posts}>
                 <Layout {...props}>
                     <Component {...props} />

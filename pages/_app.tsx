@@ -6,50 +6,54 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import NProgress from 'nprogress';
 import cn from 'classnames';
-export function  Loading():any  {
+import { AnimatePresence, motion } from 'framer-motion';
+export function Loading(): any {
 
   const router = useRouter();
-  const [loading,setLoading] = useState(false);
- 
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
-      // const handleStart =  (url:string) =>   (url !== router.asPath) && setLoading(true);
-      // const handleComplete =  (url:string) =>  (url === router.asPath) && setLoading(false);
-      router.events.on('routeChangeStart',(url) => {
-        setTimeout(()=> {
-          NProgress.start();
-            setLoading(true);
-        }, 2000)
-            
+    // const handleStart =  (url:string) =>   (url !== router.asPath) && setLoading(true);
+    // const handleComplete =  (url:string) =>  (url === router.asPath) && setLoading(false);
+    router.events.on('routeChangeStart', (url) => {
+      setTimeout(() => {
+        NProgress.start();
+        setLoading(true);
+      }, 2000)
 
 
-      });
-      router.events.on('routeChangeComplete',(url) => {
-          NProgress.done();
-          setTimeout(()=> {
-            setLoading(false);
-          },2500)
-      });
-  
+
+    });
+    router.events.on('routeChangeComplete', (url) => {
+      NProgress.done();
+      setTimeout(() => {
+        setLoading(false);
+      }, 2500)
+    });
+
   });
 
   return loading && (
     <>
-    <span className = {'loader'}> </span>
+      <span className={'loader'}> </span>
     </>
-      
+
   );
 }
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-const router = useRouter();
-  return(
-<>
-  <Head>
-  <meta name="viewport" content="width=device-width; initial-scale=1"/>
-  </Head>
+  const router = useRouter();
+  return (
 
- <Component {...pageProps} key={router.pathname} />
-</>
+    <AnimatePresence>  
+      <Head>
+        <meta name="viewport" content="width=device-width; initial-scale=1" />
+      </Head>
+
+      <Component {...pageProps} key={router.pathname} />
+    </AnimatePresence>
+
+
 
   );
 }
