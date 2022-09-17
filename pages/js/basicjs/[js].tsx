@@ -31,6 +31,8 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
             <Head>
                 <title>{post.meta.title}</title>
             </Head>
+            <AnimatePresence>  
+
                 <motion.div
                     transition={{ type: "spring", stiffness: 65 }}
                     key={router.asPath}
@@ -48,6 +50,8 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
             </div>
             <MobileButton path='/js' />
             </motion.div>
+            </AnimatePresence>  
+
 
         </div>
     );

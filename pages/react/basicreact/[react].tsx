@@ -29,6 +29,7 @@ const router = useRouter();
         <Head>
             <title>{post.meta.title}</title>
         </Head>
+        <AnimatePresence>
                 <motion.div
                     transition={{ type: "spring", stiffness: 65 }}
                     key={router.asPath}
@@ -45,6 +46,7 @@ const router = useRouter();
         </div>
         <MobileButton path='/react'/>
         </motion.div>
+        </AnimatePresence>
 
     </div>
     );

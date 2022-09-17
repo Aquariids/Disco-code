@@ -5,8 +5,6 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import NProgress from 'nprogress';
-import cn from 'classnames';
-import { AnimatePresence, motion } from 'framer-motion';
 export function Loading(): any {
 
   const router = useRouter();
@@ -44,14 +42,13 @@ export function Loading(): any {
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const router = useRouter();
   return (
-
-    <AnimatePresence>  
+    <>
       <Head>
         <meta name="viewport" content="width=device-width; initial-scale=1" />
       </Head>
 
-      <Component {...pageProps} key={router.pathname} />
-    </AnimatePresence>
+      <Component {...pageProps} key={router.pathname} /></>
+
 
 
 
