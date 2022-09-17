@@ -5,14 +5,13 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 
-export function Loading():any {
+export function  Loading():any  {
   const router = useRouter();
   const [loading,setLoading] = useState(false);
  
   useEffect(() => {
-      const handleStart = (url:string) => (url !== router.asPath) && setTimeout(()=> {setLoading(true);},1000);
-      const handleComplete = (url:string) => (url === router.asPath) && setLoading(false);
-      (router.asPath.startsWith('/js/basicjs')? setTimeout(() => {setLoading(false)},5000):'');
+      const handleStart =  (url:string) =>   (url !== router.asPath) && setTimeout(()=> {setLoading(true);},1000);
+      const handleComplete =  (url:string) =>  (url === router.asPath) && setLoading(false);
 
 
       router.events.on('routeChangeStart',handleStart);

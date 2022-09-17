@@ -39,9 +39,7 @@ const router = useRouter();
             </div>
             </div>
     
-            {/* {router.asPath.length < 18? <Loading/>:''} */}
-            <Loading/>
-            
+            {router.asPath.length < 18? <Loading/>:''}            
             
         </div>
     );
