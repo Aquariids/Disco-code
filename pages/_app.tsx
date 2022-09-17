@@ -12,7 +12,7 @@ export function Loading():any {
 
   useEffect(() => {
     const handleStart = (url:string) => (url !== router.asPath) && setTimeout(() => {setLoading(true);},1000);
-    const handleComplete = (url:string) => (url === router.asPath) && setTimeout(() => {setLoading(false);},500);
+    const handleComplete = (url:string) => (url === router.asPath) && setTimeout(() => {setLoading(false);});
     router.events.on('routeChangeStart',handleStart);
     router.events.on('routeChangeComplete',handleComplete);
     router.events.on('routeChangeError',handleComplete);
@@ -27,8 +27,8 @@ export function Loading():any {
   });
 
   return loading && (
-<span className={cn('loader', {
-  ['endLoader']: loading == false
+<span className={cn('loader',{
+  ['loader1']: loading === true
 })}>
 </span>
   );
