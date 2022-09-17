@@ -1,18 +1,22 @@
 .button {
 	position: relative;
+
+	max-width: 250px;
 	margin-top: 30px;
-	margin-left: 20px;
 	margin-right: 20px;
-	line-height: 18px;
+	margin-left: 20px;
+
 	cursor: pointer;
-	text-transform: uppercase;
 	white-space: nowrap;
+	text-transform: uppercase;
+
 	color: rgb(109 109 109);
 	border: none;
 	background: transparent;
+
 	font-size: 15px;
-	max-width: 250px;
 	font-weight: bold;
+	line-height: 18px;
 }
 
 .active {
@@ -21,10 +25,12 @@
 
 .arrow {
 	position: absolute;
-	max-width: 50px;
+
 	display: inline-block;
-	margin-left: 10px;
+
+	max-width: 50px;
 	margin-right: 10px;
+	margin-left: 10px;
 }
 
 .arrow svg {
@@ -42,10 +48,9 @@
 
 @media (max-width: 1155px) {
 	.button {
-		white-space: normal;
 		width: 150px;
-		padding:0;
+		padding: 0;
+
+		white-space: normal;
 	}
 }
-
-

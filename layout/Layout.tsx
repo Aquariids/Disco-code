@@ -9,6 +9,7 @@ const { wrapper, header, sidebar, footer, body, content} = s;
 import cn from 'classnames';
 import { useRouter } from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
+import { Loading } from "../pages/_app";
 const Layout = ({children, }: LayoutProps): JSX.Element => {
 
     const router = useRouter();
@@ -42,9 +43,7 @@ export const withLayout = <T extends Record<string, unknown>& IAppContext>(Compo
 
                 <AppContextProvider posts={props.posts}>
                 <Layout {...props}>
-
                     <Component {...props} />
-
                 </Layout>
                 </AppContextProvider>
         );

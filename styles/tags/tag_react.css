@@ -1,29 +1,29 @@
 .tag_react {
 	display: inline-block;
-	color:var(--react_color_links_pages);
+
+	color: var(--react_color_links_pages);
+
 	font-size: 16px;
 }
 
 .tag_react:hover {
-	color: var(--react_hover_color_links_pages);
 	transition: all 0.1s;
 
+	color: var(--react_hover_color_links_pages);
 }
 
 .mini_tag_react {
-
-	transition: all 0.1s;
-
 	display: inline;
 
 	margin-right: 5px;
-	color:var(--react_color_links_pages);
+
+	transition: all 0.1s;
+
+	color: var(--react_color_links_pages);
 
 	font-size: 14px;
 }
 
 .mini_tag_react:hover {
-
 	color: var(--react_hover_color_links_pages);
-
 }

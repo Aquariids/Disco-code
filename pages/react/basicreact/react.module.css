@@ -1,55 +1,45 @@
-
 .footer {
-    color:var(--react_color_links_pages);
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 50px;
+	display: flex;
+	justify-content: space-between;
 
+	margin-bottom: 50px;
+
+	color: var(--react_color_links_pages);
 }
 
 .footer a:hover {
-
-    color: var(--react_hover_color_links_pages);
-    box-shadow: 0 0.7px 0 0;
-
+	color: var(--react_hover_color_links_pages);
+	box-shadow: 0 0.7px 0 0;
 }
 
 .footer a:focus {
-    color: var(--react_color_links_pages);
-
+	color: var(--react_color_links_pages);
 }
 
 .footer a {
-    box-shadow: 0 0.3px 0 0;
-
-
+	box-shadow: 0 0.3px 0 0;
 }
-
 
 .edit {
-    display: flex;
-    justify-content: right;
-    margin-top: 80px;
-    margin-bottom: 100px
+	display: flex;
+	justify-content: right;
+
+	margin-top: 80px;
+	margin-bottom: 100px;
 }
 
-
-
 .edit a {
-    color: rgb(77, 77, 77);
-    box-shadow: 0 0.2px 0 0;
+	color: rgb(77 77 77);
+	box-shadow: 0 0.2px 0 0;
 }
 
 .edit a:hover {
-    box-shadow: 0 0.7px 0 0;
+	box-shadow: 0 0.7px 0 0;
 }
 
-@media (max-width:500px ) {
-
-    .footer a {
-        border-bottom: 1px solid var(--react_color_links_pages);
-        box-shadow: 0px 0px 0px 0px;
-
-    }
-    
+@media (max-width: 500px) {
+	.footer a {
+		border-bottom: 1px solid var(--react_color_links_pages);
+		box-shadow: 0 0 0 0;
+	}
 }

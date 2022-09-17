@@ -1,29 +1,29 @@
 .tag_ts {
 	display: inline-block;
-	color:var(--ts_color_links_pages);
+
+	color: var(--ts_color_links_pages);
+
 	font-size: 16px;
 }
 
 .tag_ts:hover {
-	color: var(--ts_hover_color_links_pages);
 	transition: all 0.1s;
 
+	color: var(--ts_hover_color_links_pages);
 }
 
 .mini_tag_ts {
-
-	transition: all 0.1s;
-
 	display: inline;
 
 	margin-right: 5px;
-	color:var(--ts_color_links_pages);
+
+	transition: all 0.1s;
+
+	color: var(--ts_color_links_pages);
 
 	font-size: 14px;
 }
 
 .mini_tag_ts:hover {
-
 	color: var(--ts_hover_color_links_pages);
-
 }

@@ -5,6 +5,7 @@ import cn from 'classnames';
 import { useRouter } from 'next/router';
 
 import Logo from '../UI/Logo/Logo';
+import { Loading } from '../../../pages/_app';
 const { header,link, content, logo, github } = s;
 
 
@@ -42,7 +43,8 @@ const router = useRouter();
                 <div className={github}><a className={link} target={"_blank"} href={'https://github.com/Aquariids/Disco-code'}>Github <img style={{width:'15px'}} src='/link.svg'/></a></div>
             </div>
             </div>
-
+    
+            <Loading/>
 
         </div>
     );

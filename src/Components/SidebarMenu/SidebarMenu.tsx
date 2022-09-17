@@ -6,7 +6,7 @@ const SidebarMenu = ():JSX.Element => {
     const router = useRouter();
     if (router.pathname.startsWith('/js')) {
         return (
-            <nav className={s.navMenu}>
+            <nav className={s.nav_menu}>
                 <Menu title="Базовый JavaScript" category='basicjs' dropdown={true}  page='js' />
                 {/* <Menu title="Продвинутый JavaScript" category='advancedjs' dropdown ={true} /> */}
             </nav>
@@ -15,14 +15,14 @@ const SidebarMenu = ():JSX.Element => {
 
     if (router.pathname.startsWith('/ts')) {
         return (
-            <nav className={s.navMenu}>
+            <nav className={s.nav_menu}>
                 <Menu title="TypeScript" category='basicts' dropdown={true} page='ts'/>
             </nav>
         );
     }
     if (router.pathname.startsWith('/react')) {
         return (
-            <nav className={s.navMenu}>
+            <nav className={s.nav_menu}>
                 <Menu title="Базовые темы react" category='basicreact' dropdown={true} page='react'/>
             </nav>
         );
