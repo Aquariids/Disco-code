@@ -15,6 +15,7 @@ import s from './js.module.css';
 import MobileButton from '../../../src/Components/UI/MobileButton/MobileButton';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/router';
+import { Loading } from '../../_app';
 interface MSXPost {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
     meta: PostMeta
@@ -28,6 +29,8 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
     const router = useRouter();
     return (
         <div>
+                        <Loading/>
+
             <Head>
                 <title>{post.meta.title}</title>
             </Head>
