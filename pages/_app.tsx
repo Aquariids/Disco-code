@@ -34,7 +34,7 @@ export function  Loading():any  {
 
   return loading && (
     <>
-    {loading === true?<span className = {'loader'}> </span>: <span></span>}
+    <span className = {'loader'}> </span>
     </>
       
   );
