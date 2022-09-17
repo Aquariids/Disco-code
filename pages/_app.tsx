@@ -13,8 +13,8 @@ export function Loading({mdx}:Iload):any {
   const [loading,setLoading] = useState(false);
 
   useEffect(() => {
-    const handleStart = (url:string) => (url !== router.asPath) && setTimeout( () => {setLoading(true);},500);
-    const handleComplete = (url:string) => (url === router.asPath) && setTimeout( () => {setLoading(false);});
+    const handleStart = (url:any) => (url !== router.asPath) && setTimeout( () => {setLoading(true);},1000);
+    const handleComplete = (url:any) => (url === router.asPath) && setTimeout( () => {setLoading(false);});
     router.events.on('routeChangeStart',handleStart);
     router.events.on('routeChangeComplete',handleComplete);
     router.events.on('routeChangeError',handleComplete);
