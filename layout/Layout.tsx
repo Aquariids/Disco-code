@@ -23,6 +23,7 @@ const Layout = ({children, }: LayoutProps): JSX.Element => {
                 <Header className={header} />
                 <Sidebar className={sidebar} />
                 <div className={body}>
+                <Loading mdx ='loader'/>
                     <div className={content}> 
                 {children}
                     </div>

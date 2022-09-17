@@ -24,9 +24,6 @@ const router = useRouter();
                     {router.asPath.startsWith('/ts')? <Logo path='/ts' src='/logo/ts_logo.svg'/>:''}
                     {router.asPath.startsWith('/react')? <Logo path='/react' src='/logo/react_logo.svg'/>:''}
                     {router.pathname === '/'? <Logo path='/' src='/logo/disco.svg'/>:''}
-
-
-                    {/* <Link href={'/'}><img style={{width:'40px',cursor:'pointer'}} src='/js_logo.svg'/></Link> */}
                     <span className={link} > <Link href={'/'}>DiscoCode</Link> </span> </div>
 
                 <div className={s.nav}>
@@ -44,7 +41,7 @@ const router = useRouter();
             </div>
             </div>
     
-            {router.asPath.length < 18?<Loading mdx ='loader'/>:''}
+            {/* {router.asPath.length < 18?<Loading mdx ='loader'/>:''} */}
         </div>
     );
 };

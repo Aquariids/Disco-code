@@ -32,7 +32,6 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
             <Head>
                 <title>{post.meta.title}</title>
             </Head>
-            <Loading mdx = 'loaderMd'/>
             <AnimatePresence>
                 <motion.div
                     transition={{ type: "spring", stiffness: 65 }}
@@ -41,7 +40,6 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
                     animate={{ x: 0, opacity: 1 }}
                     id="page-transition-container"
                 >
-
                     <h1>{post.meta.title}</h1>
                     <MDXRemote  {...post.source} />
                 </motion.div>
