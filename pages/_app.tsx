@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import NProgress from 'nprogress';
+import cn from 'classnames';
 export function  Loading():any  {
   const [load,setLoad] = useState(false);
 
@@ -15,23 +16,27 @@ export function  Loading():any  {
       // const handleStart =  (url:string) =>   (url !== router.asPath) && setLoading(true);
       // const handleComplete =  (url:string) =>  (url === router.asPath) && setLoading(false);
       router.events.on('routeChangeStart',(url) => {
-        setTimeout(()=> {
-          NProgress.start();
-          setLoading(true);
+          setTimeout(()=> {
+            NProgress.start();
+            setLoading(true);
+          },1000)
 
-        },1000)
 
       });
       router.events.on('routeChangeComplete',(url) => {
-        NProgress.done();
-        setLoading(false);
+        setTimeout(()=> {
+          NProgress.done();
+          setLoading(false);
+        },1000);
       });
   
   });
 
   return loading && (
-<span className = {'loader'} >
-</span>
+    <>
+    {loading === true?<span className = {'loader'}> </span>: <span></span>}
+    </>
+      
   );
 }
 
