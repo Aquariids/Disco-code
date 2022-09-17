@@ -15,16 +15,19 @@ export function  Loading():any  {
       // const handleStart =  (url:string) =>   (url !== router.asPath) && setLoading(true);
       // const handleComplete =  (url:string) =>  (url === router.asPath) && setLoading(false);
       router.events.on('routeChangeStart',(url) => {
-          setTimeout(()=> {
-            NProgress.start();
+        setTimeout(()=> {
+          NProgress.start();
             setLoading(true);
-          },1000)
+        }, 2000)
+            
 
 
       });
       router.events.on('routeChangeComplete',(url) => {
           NProgress.done();
-          setLoading(false);
+          setTimeout(()=> {
+            setLoading(false);
+          },2500)
       });
   
   });
