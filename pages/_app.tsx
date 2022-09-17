@@ -8,10 +8,11 @@ import cn from 'classnames';
 
 export function Loading():any {
   const router = useRouter();
+  console.log("(👍≖‿‿≖)👍 ✿ file: _app.tsx ✿ line 11 ✿ Loading ✿ router", router)
   const [loading,setLoading] = useState(false);
 
   useEffect(() => {
-    const handleStart = (url:string) => (url !== router.asPath) && setTimeout( () => {setLoading(true);},1500);
+    const handleStart = (url:string) => (url !== router.route) && setTimeout( () => {setLoading(true);},1000);
     const handleComplete = () => setLoading(false);
     router.events.on('routeChangeStart',handleStart);
     router.events.on('routeChangeComplete',handleComplete);
