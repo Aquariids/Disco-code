@@ -6,7 +6,7 @@ import rehypeSlug from 'rehype-slug';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import Head from 'next/head';
-import "highlight.js/styles/atom-one-dark.css";
+import "highlight.js/styles/mono-blue.css";
 import { getAllPosts, getPostFromSlug, getSlugs, PostMeta } from '../../api/api';
 import { POSTS_PATH_TS } from '../../api/paths';
 import Link from 'next/link';
