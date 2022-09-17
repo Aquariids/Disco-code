@@ -19,7 +19,7 @@ export function  Loading():any  {
           setTimeout(()=> {
             NProgress.start();
             setLoading(true);
-          },150)
+          },250)
 
 
       });
