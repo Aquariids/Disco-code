@@ -11,7 +11,7 @@ export function Loading():any {
 
   useEffect(() => {
     const handleStart = (url:string) => (url !== router.asPath) && setTimeout(() => {setLoading(true);},1000);
-    const handleComplete = (url:string) => (url === router.asPath) && setTimeout(() => {setLoading(false);});
+    const handleComplete = (url:string) => (url === router.asPath) && setLoading(false);
     router.events.on('routeChangeStart',handleStart);
     router.events.on('routeChangeComplete',handleComplete);
     router.events.on('routeChangeError',handleComplete);
