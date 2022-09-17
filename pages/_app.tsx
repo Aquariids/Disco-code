@@ -7,10 +7,9 @@ import { useEffect, useState } from 'react';
 import NProgress from 'nprogress';
 import cn from 'classnames';
 export function  Loading():any  {
-  const [load,setLoad] = useState(false);
 
   const router = useRouter();
-  const [loading,setLoading] = useState(load);
+  const [loading,setLoading] = useState(false);
  
   useEffect(() => {
       // const handleStart =  (url:string) =>   (url !== router.asPath) && setLoading(true);
@@ -19,15 +18,13 @@ export function  Loading():any  {
           setTimeout(()=> {
             NProgress.start();
             setLoading(true);
-          },250)
+          },1000)
 
 
       });
       router.events.on('routeChangeComplete',(url) => {
-        setTimeout(()=> {
           NProgress.done();
           setLoading(false);
-        },100);
       });
   
   });
