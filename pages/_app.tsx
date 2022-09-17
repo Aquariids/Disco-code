@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
+import cn from 'classnames';
 
 export function Loading():any {
   const router = useRouter();
@@ -26,7 +27,9 @@ export function Loading():any {
   });
 
   return loading && (
-<span className="loader">
+<span className={cn('loader', {
+  ['endLoader']: loading == false
+})}>
 </span>
   );
 }

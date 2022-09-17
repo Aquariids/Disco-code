@@ -8,6 +8,11 @@
 @import "./page_menu.css";
 @import "./loader.css";
 
+
+
+.endLoader {
+	display: none;
+}
 html {
 	overflow-x: hidden;
 
