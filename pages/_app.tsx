@@ -11,7 +11,7 @@ export function Loading():any {
   const [loading,setLoading] = useState(false);
 
   useEffect(() => {
-    const handleStart = (url:string) => (url !== router.asPath) && setTimeout( () => {setLoading(true);},1500);
+    const handleStart = (url:string) => (url !== router.asPath) && setTimeout( () => {setLoading(true);},1000);
     const handleComplete = () => setLoading(false);
     router.events.on('routeChangeStart',handleStart);
     router.events.on('routeChangeComplete',handleComplete);
@@ -26,7 +26,7 @@ export function Loading():any {
     };
   });
 
-  return loading && (
+  return (
 <span className={cn('loader',{
   ['loader1']: loading === true,
 
