@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
-export function Loading(): false | JSX.Element {
+export function Loading(): any {
 
   const router = useRouter();
   const [loading, setLoading] = useState(false);
