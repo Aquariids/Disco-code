@@ -13,15 +13,25 @@
 	border-radius: 5%;
 
 	font-size: 25px;
+
+	
 }
 
+
+.container:hover {
+	-webkit-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	transform: scale(1.05);
+}
 .js {
 	background-color: var(--js_color_links_pages);
 }
 
 .js:hover {
+	box-shadow: 0 0 5px var(--js_hover_color_links_pages);
 	color: #FFF;
 	background-color: var(--js_hover_color_links_pages);
+	
 }
 
 .ts {
@@ -30,6 +40,7 @@
 }
 
 .ts:hover {
+	box-shadow: 0 0 5px var(--ts_hover_color_links_pages);
 	color: rgb(198 228 255);
 	background-color: var(--ts_hover_color_links_pages);
 }
@@ -40,6 +51,8 @@
 }
 
 .next:hover {
+	box-shadow: 0 0 5px var(--next_hover_color_links_pages);;
+
 	color: var(--next_hover_color_links_pages);
 	background-color: rgb(49 49 49);
 }
@@ -52,4 +65,6 @@
 .react:hover {
 	color: #FFF;
 	background-color: #41E1ED;
+	box-shadow: 0 0 10px  var(--react_hover_color_links_pages);
+
 }

@@ -12,7 +12,7 @@ const logo = ({ path, src }: logoProps): JSX.Element => {
         return (
             <AnimatePresence>
                 <motion.div className={s.logo}
-                    transition={{ type: "spring", stiffness: 75 }}
+                    transition={{ type: "spring", stiffness: 100 }}
                     key={router.pathname}
                     initial={{ x: -65, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
@@ -24,7 +24,7 @@ const logo = ({ path, src }: logoProps): JSX.Element => {
         );
     } else if (router.asPath.startsWith(path)) {
         return (
-            <Link href={'/'}><img style={{ width: '40px', cursor: 'pointer' }} src={src} /></Link>
+            <Link href={'/'}><img style={{ width: '40px', cursor: 'pointer',borderRadius: '10px' }} src={src} /></Link>
         );
     } else {
         return (
