@@ -38,7 +38,8 @@ const router = useRouter();
                 <div className={github}><a className={link} target={"_blank"} href={'https://github.com/Aquariids/Disco-code'}>Github <img style={{width:'15px'}} src='/link.svg'/></a></div>
             </div>
             </div>
-            {router.asPath.length < 18? <Loading/>:''}            
+            {/* {router.asPath.length < 18? <Loading/>:''}             */}
+            <Loading/>
         </div>
     );
 };

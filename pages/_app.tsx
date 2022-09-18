@@ -11,23 +11,30 @@ export function Loading(): any {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // const handleStart =  (url:string) =>   (url !== router.asPath) && setLoading(true);
-    // const handleComplete =  (url:string) =>  (url === router.asPath) && setLoading(false);
-    router.events.on('routeChangeStart', (url) => {
-      setTimeout(() => {
-        NProgress.start();
-        setLoading(true);
-      }, 2000)
+    const handleStart =  (url:string) =>   (url !== router.asPath) && setTimeout(() => {setLoading(true); NProgress.start();});
+    const handleComplete =  (url:string) =>  (url === router.asPath) &&  setTimeout(() => {setLoading(false); NProgress.done();});
 
+  router.events.on('routeChangeStart', () => {
+    console.log('началось');
+    
+  }
+  );
 
+  router.events.on('routeChangeComplete', () => {
+    console.log('закончилось');
+    
+  }
+  );
+  // router.events.on('routeChangeError',handleComplete);
 
-    });
-    router.events.on('routeChangeComplete', (url) => {
-      NProgress.done();
-      setTimeout(() => {
-        setLoading(false);
-      }, 2500)
-    });
+  return () => {
+    router.events.off('routeChangeStart',handleStart);
+    router.events.off('routeChangeComplete',handleComplete);
+    router.events.off('routeChangeError',handleComplete);
+  
+  };
+   
+
 
   });
 
