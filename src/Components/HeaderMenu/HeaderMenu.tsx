@@ -14,7 +14,7 @@ const router = useRouter();
 
     return (
         <div className={cn(header, {
-            [s.header2]: router.asPath.length > 18
+            [s.header2]: router.asPath.length > 18 
         })} {...props}>
             <div className={content}>
                 <div className={logo}>
