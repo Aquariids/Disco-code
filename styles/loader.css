@@ -1,18 +1,16 @@
 .loader {
 	position: absolute;
 	right: 0;
-
+	opacity: 0;
 	display: inline-block;
 	box-sizing: border-box;
 	width: 30px;
 	height: 30px;
 	margin-right: 100px;
-
-	animation: rotation 1s linear infinite;
-
 	border-top: 3px solid #FFF;
 	border-right: 3px solid transparent;
 	border-radius: 50%;
+	
 }
 
 
@@ -40,14 +38,21 @@
 
 
 
-
+.fadeInTop {
+	animation: rotation 1s linear infinite;
+    animation-delay: 1.5s; /* Задержка */
+    animation-fill-mode: forwards;
+   }
 
 @keyframes rotation {
 	0% {
+		opacity: 1;
 		transform: rotate(0deg);
 	}
 
+
 	100% {
+		opacity: 1;
 		transform: rotate(360deg);
 	}
 }

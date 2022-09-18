@@ -11,21 +11,13 @@ export function Loading(): any {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const handleStart =  (url:string) =>   (url !== router.asPath) && setTimeout(() => {setLoading(true); NProgress.start();});
-    const handleComplete =  (url:string) =>  (url === router.asPath) &&  setTimeout(() => {setLoading(false); NProgress.done();});
+    const handleStart =  (url:string) =>   (url !== router.asPath) && setLoading(true);
+    const handleComplete =  (url:string) =>  (url === router.asPath) &&  setLoading(false);
 
-  router.events.on('routeChangeStart', () => {
-    console.log('началось');
-    
-  }
-  );
+  router.events.on('routeChangeStart', handleStart);
+  router.events.on('routeChangeComplete', handleComplete);
+  router.events.on('routeChangeError',handleComplete);
 
-  router.events.on('routeChangeComplete', () => {
-    console.log('закончилось');
-    
-  }
-  );
-  // router.events.on('routeChangeError',handleComplete);
 
   return () => {
     router.events.off('routeChangeStart',handleStart);
@@ -40,7 +32,7 @@ export function Loading(): any {
 
   return loading && (
     <>
-      <span className={'loader'}> </span>
+      <span className={'loader fadeInTop'}> </span>
     </>
 
   );
