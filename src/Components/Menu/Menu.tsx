@@ -12,7 +12,9 @@ const Menu = ({title,category, dropdown, page,  ...props}:IMenu): JSX.Element =>
 
     const router = useRouter();
     const pathname = router.asPath;
-    const { posts } = useContext(AppContext); 
+    const { posts } = useContext(AppContext);
+    posts && posts.sort((a,b) => a.id - b.id);
+
 
     const [isOpen, setOpen] = useState(router.pathname.startsWith(`/${page}/${category}`) == true? true: false);
 
@@ -20,9 +22,7 @@ const Menu = ({title,category, dropdown, page,  ...props}:IMenu): JSX.Element =>
         setOpen(!isOpen);
     };
     
-
     if(dropdown === true) {
-        posts.sort((a,b) => a.id - b.id);
 
         return (
             <div className={s.content} {...props}>
@@ -56,9 +56,9 @@ const Menu = ({title,category, dropdown, page,  ...props}:IMenu): JSX.Element =>
     }  
 
     else {
-        posts.sort((a,b) => a.id - b.id);
 
         return (
+
             <div className={s.content} {...props}>
                 <div className={s.index_btn}>
                 <h4 className={s.title}
@@ -82,6 +82,7 @@ const Menu = ({title,category, dropdown, page,  ...props}:IMenu): JSX.Element =>
             </div>
         );
     }
+
     
 };
 
