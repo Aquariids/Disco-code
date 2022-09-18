@@ -4,8 +4,7 @@ import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
-import NProgress from 'nprogress';
-export function Loading(): any {
+export function Loading(): false | JSX.Element {
 
   const router = useRouter();
   const [loading, setLoading] = useState(false);
@@ -25,7 +24,6 @@ export function Loading(): any {
     router.events.off('routeChangeError',handleComplete);
   
   };
-   
 
 
   });

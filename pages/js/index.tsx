@@ -6,9 +6,6 @@ import s from './pageJs.module.css';
 import { getAllPosts } from '../api/api';
 import { POSTS_PATH_JS } from '../api/paths';
 import Head from 'next/head';
-import { motion } from 'framer-motion';
-
-
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = getAllPosts(POSTS_PATH_JS)
