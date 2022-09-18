@@ -5,7 +5,7 @@ import cn from 'classnames';
 import { useRouter } from 'next/router';
 
 import Logo from '../UI/Logo/Logo';
-import { Loading } from '../../../pages/_app';
+import { Loading } from '../Loading/Loading';
 const { header,link, content, logo, github } = s;
 
 const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {

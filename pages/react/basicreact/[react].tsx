@@ -42,8 +42,10 @@ const router = useRouter();
                 >
                     <h1>{post.meta.title}</h1>
                     <MDXRemote  {...post.source} />
-        <div className={cn(s.edit, 'page_edit')}><a target='_blank' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/react/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{width:'30px',paddingLeft:'5px'}} src='/edit.svg'/></div>
-        <div className={cn(s.footer, 'page_footer')}>
+	
+
+        <div className={cn(s.edit,'page_edit')}><a target='_blank' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/react/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{width:'30px',paddingLeft:'5px'}} src='/edit.svg'/></div>
+        <div className={cn(s.footer,'page_footer')}>
             <Link href={post.meta.prev}>{post.meta.prev === 'none'?<span></span>:'Предыдущая страница'}</Link>
             <Link href={post.meta.next}>{post.meta.next === 'none'?'':'Следующая страница'}</Link>
         </div>
