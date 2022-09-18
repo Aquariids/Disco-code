@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import { withLayout } from '../layout/Layout';
 import React from 'react';
 import Articles from '../src/Components/Articles';
-import s from './index.module.css'
+import s from './index.module.css';
 import Head from 'next/head';
 const Home: NextPage = (): JSX.Element => {
   return (
