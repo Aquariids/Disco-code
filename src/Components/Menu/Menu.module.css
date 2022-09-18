@@ -81,9 +81,18 @@
 	line-height: 16px;
 }
 
-.active_js a:hover {
-	color: #BD8224;
+.active_js a {
+	pointer-events: none;
+	
 }
+
+.active_js:hover {
+	cursor: pointer;
+	color: var(--js_hover_color_links_pages);
+
+}
+
+
 
 .active_ts {
 	list-style-type: none;
@@ -95,8 +104,14 @@
 	line-height: 16px;
 }
 
-.active_ts a:hover {
+.active_ts:hover {
+	cursor: pointer;
 	color: var(--ts_hover_color_links_pages);
+}
+
+.active_ts a {
+	pointer-events: none;
+
 }
 
 .active_react {
@@ -110,9 +125,14 @@
 }
 
 .active_react:hover {
+	cursor: pointer;
 	color: var(--react_hover_color_links_pages);
 }
 
+.active_react a {
+	pointer-events: none;
+
+}
 .dropdownContent {
 	display: show;
 }
