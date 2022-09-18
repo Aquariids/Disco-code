@@ -121,6 +121,10 @@
 	justify-content: center;
 }
 
+.logo span {
+	margin-left: 2px;
+}
+
 .dropdown {
 	position: relative;
 
