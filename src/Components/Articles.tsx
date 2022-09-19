@@ -1,12 +1,12 @@
 import { AnimatePresence, motion } from "framer-motion";
-  import s from "./Articles.module.css";
+import s from "./Articles.module.css";
 import Card from "./Card/Card";
 const Articles = () => {
   return (
     <div className={s.articles}>
       <AnimatePresence>
         <motion.div
-          key={1}
+        key={1}
           initial={{ scale: 0 }}
           animate={{ rotate: 360, scale: 1 }}
           transition={{
@@ -18,8 +18,7 @@ const Articles = () => {
           <Card text={"JavaScript"} color={"js"} url={"/js"} />
         </motion.div>
         <motion.div
-          key={2}
-
+        key={2}
           initial={{ scale: 0 }}
           animate={{ rotate: 360, scale: 1 }}
           transition={{
@@ -31,8 +30,7 @@ const Articles = () => {
           <Card text={"React"} color={"react"} url={"/react"} />
         </motion.div>
         <motion.div
-          key={3}
-
+        key={3}
           initial={{ scale: 0 }}
           animate={{ rotate: 360, scale: 1 }}
           transition={{
@@ -45,8 +43,7 @@ const Articles = () => {
         </motion.div>
 
         <motion.div
-          key={4}
-
+        key={4}
           initial={{ scale: 0 }}
           animate={{ rotate: 360, scale: 1 }}
           transition={{
