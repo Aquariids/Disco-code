@@ -31,7 +31,7 @@ const Home: NextPage = (): JSX.Element => {
         <meta property='og:title' content='Уроки по javascript' />
         <meta property='og:description' content={'Уроки и разбор разных тем по javascript'} />
         <meta property='og:type' content={'article'} />
-        <meta property='og:image' content='/logo/js_logo.svg'/>
+        <meta property='og:image' content='https://raw.githubusercontent.com/Aquariids/Disco-code/91abf99b99049a711e1652de6ee18373c4804b3b/public/logo/js_logo.svg'/>
 
 
       </Head>
