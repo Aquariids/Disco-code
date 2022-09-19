@@ -34,7 +34,7 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
                 <meta property='og:title' content={post.meta.title}/>
                 <meta property='og:description' content={'Уроки и разбор разных тем по javascript'}/>
                 <meta property='og:type' content={'article'}/>
-                <meta property='og:image' content='/meta/meta_js.jpg'/>
+                <meta property='og:image' content='https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:JavaScript-logo.png'/>
 
 
 
