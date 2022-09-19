@@ -3,10 +3,7 @@
 	align-items: center;
 	justify-content: center;
 
-	height: 50px;
-
 	text-align: right;
-
 	color: #FFF;
 
 	font-size: 15px;
@@ -26,10 +23,9 @@
 }
 
 .content {
+	flex-direction: column;
 	grid-area: footer;
-
 	display: flex;
-	align-items: center;
 	justify-content: right;
 	gap: 30px;
 }
@@ -41,7 +37,6 @@
 @media (max-width: 850px) {
 	.footer {
 		grid-template-columns: minmax(320px, 1fr);
-		grid-template-rows: 50px;
 
 		/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
 		grid-template-areas: "footer";

@@ -1,7 +1,7 @@
 .wrapper {
+	position: relative;
 	display: grid;
 	justify-content: center;
-
 	min-height: 100vh;
 	grid-template-columns: 20% minmax(320px, 1180px) 20%;
 	gap: 30px;

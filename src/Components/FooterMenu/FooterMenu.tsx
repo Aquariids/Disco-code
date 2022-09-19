@@ -18,11 +18,13 @@ const router = useRouter();
             <div className={s.navigation}>
             </div>
             <div className={content}>
-                <div>телеграм</div>
-                <div className={doc}>
-                    github
-                </div>
-                
+                <ul style={{listStyleType:'none'}}>
+                    <li>ссылка</li>
+                    <li>ссылка</li>
+                    <li>ссылка</li>
+                    <li>ссылка</li>
+                </ul>
+               
             </div>
         </div>
 
