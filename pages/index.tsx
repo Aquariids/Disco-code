@@ -12,9 +12,9 @@ const Home: NextPage = (): JSX.Element => {
       <Head>
         <title>DiscoCode</title>
       </Head>
-
-      <h1>  DiscoCode
-        <span>Уроки и записи на самые разные темы!</span> </h1>
+   
+      <h1>  Disco <span className={s.code}>Code</span></h1>
+      <p className={s.text}>Уроки и записи на самые разные темы!</p>
 
       <Articles />
 

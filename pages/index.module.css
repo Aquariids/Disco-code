@@ -4,16 +4,23 @@
 }
 
 .body h1 {
+	font-size: 45px;
 	display: flex;
-	flex-direction: column;
+	margin-bottom: 0;
 	justify-content: center;
 
-	margin-bottom: 100px;
+	
 }
 
-.body h1 span {
-	margin-top: 10px;
+.code {
+	color: rgba(0, 0, 0, 0.521);
+	
 
+}
+
+.text {
+	margin-top: 0;
+	margin-bottom: 80px;
 	font-size: 20px;
 	font-weight: 400;
 }
