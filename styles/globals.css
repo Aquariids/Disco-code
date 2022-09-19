@@ -14,10 +14,36 @@ html {
 	background-image: url(/manga.svg);
 	background-position: bottom right;
 	background-repeat: no-repeat;
-	background-size: 60%;
+	background-size: 85%;
 	margin-right: calc(-1 *(100vw - 100%));
 }
 
+
+@media (max-width:1000px) {
+
+	html {
+		background-size:  60em;
+	}
+	
+}
+
+
+@media (max-width:850px) {
+
+	html {
+		background-size:  contain;
+	}
+	
+}
+
+@media (max-width:750px) {
+
+	html {
+		
+		background-size:  0;
+	}
+	
+}
 
 body {
 	position: relative;
