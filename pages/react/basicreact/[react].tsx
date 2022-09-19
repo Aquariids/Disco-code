@@ -31,6 +31,11 @@ const router = useRouter();
         <div>
         <Head>
             <title>{post.meta.title}</title>
+            <meta name='description' content={'Уроки по react, reactjs, react статьи,'}/>
+            <meta property='og:title' content={post.meta.title}/>
+            <meta property='og:description' content={'Уроки и разбор разных тем по javascript'}/>
+            <meta property='og:type' content={'article'}/>
+
         </Head>
         <AnimatePresence>
                 <motion.div

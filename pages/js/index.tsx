@@ -9,7 +9,7 @@ import Head from 'next/head';
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = getAllPosts(POSTS_PATH_JS)
-  .map(post => post.meta);
+    .map(post => post.meta);
 
   return {
     props: {
@@ -24,25 +24,30 @@ const Home: NextPage = (): JSX.Element => {
 
   return (
 
-  <div className='page_content'>
-    <Head>
-      <title>Содержание</title>
-    </Head>
+    <div className='page_content'>
+      <Head>
+        <title>Содержание</title>
+        <meta name='description' content={'Уроки по javascript, задачи, алгоритмы.js статьи,'} />
+        <meta property='og:title' content='Уроки по javascript' />
+        <meta property='og:description' content={'Уроки и разбор разных тем по javascript'} />
+        <meta property='og:type' content={'article'} />
 
-        <h2>Содержание</h2>
-        <span>Здесь собраны все мои записи по <code className={s.js}>JavaScript</code>.</span> <br/>
-        <span>Разборы базовых алгоритмов и даже немного задач</span>
+      </Head>
 
-    <div className='page_body'>
-    <div className='page_menu'>
-      
-      <Menu title="Базовый JavaScript" category='basicjs' page='js'/>
-      <Menu title="Продвинутый JavaScript" category='advancedjs' page='js'/>
-      <Menu title="Алгоритмы" category='advancedjs' page='js'/>
-      <Menu title="Простенькие задачи" category='advancedjs' page='js'/>
+      <h2>Содержание</h2>
+      <span>Здесь собраны все мои записи по <code className={s.js}>JavaScript</code>.</span> <br />
+      <span>Разборы базовых алгоритмов и даже немного задач</span>
 
-    </div>
-    </div>
+      <div className='page_body'>
+        <div className='page_menu'>
+
+          <Menu title="Базовый JavaScript" category='basicjs' page='js' />
+          <Menu title="Продвинутый JavaScript" category='advancedjs' page='js' />
+          <Menu title="Алгоритмы" category='advancedjs' page='js' />
+          <Menu title="Простенькие задачи" category='advancedjs' page='js' />
+
+        </div>
+      </div>
     </div>
   );
 };

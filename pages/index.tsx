@@ -10,7 +10,9 @@ const Home: NextPage = (): JSX.Element => {
     <div className={s.body}>
 
       <Head>
-        <title>DiscoCode</title>
+        <title>DiscoCode - уроки по javascript</title>
+        <meta name='description' content={'Уроки по typescript,ts,уроки по javaScript,js, уроки по react,reactjs,next,next.js,nextjs статьи,'}/>
+
       </Head>
    
       <h1>  Disco <span className={s.code}>Code</span></h1>

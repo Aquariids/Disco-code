@@ -25,6 +25,7 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
         <div>
             <Head>
                 <title>{post.meta.title}</title>
+                
             </Head>
             <h1>{post.meta.title}</h1>
             <MDXRemote {...post.source} />

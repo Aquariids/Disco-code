@@ -29,6 +29,11 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
         <div>
         <Head>
             <title>{post.meta.title}</title>
+            <meta name='description' content={'Уроки по typescript, ts статьи,'}/>
+            <meta property='og:title' content={post.meta.title}/>
+            <meta property='og:description' content={'Уроки и разбор разных тем по typescript'}/>
+            <meta property='og:type' content={'article'}/>
+
         </Head>
             <AnimatePresence>
                 <motion.div

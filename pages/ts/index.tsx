@@ -15,6 +15,11 @@ const Home: NextPage = (): JSX.Element => {
     <div className='page_content'>
     <Head>
       <title>Содержание</title>
+      <meta name='description' content={'Уроки по typescript, ts статьи,'}/>
+      <meta property='og:title' content='Уроки по typescript'/>
+      <meta property='og:description' content={'Уроки и разбор разных тем по javascript'}/>
+      <meta property='og:type' content={'article'}/>
+
     </Head>
 
         <h2>Содержание</h2>
