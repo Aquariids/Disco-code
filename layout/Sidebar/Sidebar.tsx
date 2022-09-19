@@ -9,8 +9,13 @@ const {sidebar} = s;
 const Sidebar = ({className, ...props}:SidebarProps):JSX.Element => {
     const router = useRouter(); 
     const r = router.pathname;
+    console.log(router.pathname.length);
+    console.log(router);
+    
 
-    if(r === '/js' || r === '/' || r === '/ts' || r === '/react' || r === '/next' ){
+    const errorPaths = r === '/js/basicjs' || r === '/' || r === '/ts/basicts' || r === '/react/basicreact' || r === '/next'; 
+
+    if(r.length < 16 || errorPaths){
         return(
             <></>
         );
