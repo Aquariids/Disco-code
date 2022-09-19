@@ -13,7 +13,7 @@
 	display: flex;
 	flex-direction: column;
 
-	width: 325px;
+	width: 365px;
 	margin: 0;
 	margin-right: 20px;
 	margin-left: 20px;
@@ -67,7 +67,6 @@
 
 .index_list_menu .link a:hover {
 	transition: all 0.1s;
-
 	color: rgb(137 137 137);
 }
 

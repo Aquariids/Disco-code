@@ -24,6 +24,8 @@ const Home: NextPage = (): JSX.Element => {
       <div className='page_body'>
         <div className='page_menu'>
           <Menu title=" Базовые темы react" category='basicreact' page='react' />
+          <Menu title=" Продвинутые темы react" category='.' page='react' />
+
         </div>
       </div>
     </div>
