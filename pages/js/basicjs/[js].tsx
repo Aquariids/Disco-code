@@ -48,9 +48,10 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
                 <Link href={post.meta.prev}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая страница'}</Link>
                 <Link href={post.meta.next}>{post.meta.next === 'none' ? '' : 'Следующая страница'}</Link>
             </div>
+            <MobileButton path='/js' />
+
             </motion.div>
             </AnimatePresence>  
-            <MobileButton path='/js' />
 
 
 

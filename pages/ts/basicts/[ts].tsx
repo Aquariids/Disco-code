@@ -47,10 +47,10 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
 
         </div>
 
+        <MobileButton path='/ts'/>
 
         </motion.div>
         </AnimatePresence>
-        <MobileButton path='/ts'/>
 
     </div>
     );
