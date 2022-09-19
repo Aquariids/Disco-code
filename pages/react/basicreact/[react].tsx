@@ -49,9 +49,10 @@ const router = useRouter();
             <Link href={post.meta.prev}>{post.meta.prev === 'none'?<span></span>:'Предыдущая страница'}</Link>
             <Link href={post.meta.next}>{post.meta.next === 'none'?'':'Следующая страница'}</Link>
         </div>
-        <MobileButton path='/react'/>
         </motion.div>
         </AnimatePresence>
+        <MobileButton path='/react'/>
+
 
     </div>
     );
