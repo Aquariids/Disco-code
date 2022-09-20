@@ -15,6 +15,7 @@ const Home: NextPage = (): JSX.Element => {
     <div className='page_content'>
       <Head>
         <title>Содержание</title>
+        <meta name="yandex-verification" content="a99ae512e4f1c330" />
         <meta name='description' content={'Уроки по react, reactjs, react статьи,'}/>
         <meta property='og:title' content='Уроки по react'/>
         <meta property='og:description' content={'Уроки и разбор разных тем по javascript'}/>
