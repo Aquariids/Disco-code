@@ -23,7 +23,10 @@ const Home: NextPage = (): JSX.Element => {
 
       </Head>
       <h1>  Disco <span className={s.code}>Code</span></h1>
-      <p className={s.text}>Уроки и записи на самые разные темы!</p>
+      <p className={s.text}>Уроки и записи на самые разные темы!<br/>
+      <small> P.S. Сайт все еще в разарботке</small>
+        </p>
+
 
       <Articles />
 
