@@ -5,7 +5,7 @@
 	min-height: 100vh;
 	grid-template-columns: 20% minmax(320px, 1180px) 20%;
 	gap: 30px;
-	grid-template-rows: 50px 1fr;
+	grid-template-rows: 60px 1fr;
 	/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
 	grid-template-areas:
 		"header header header"
