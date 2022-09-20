@@ -21,8 +21,8 @@ const router = useRouter();
                 <h3> Документация </h3>
                 <ul style={{listStyleType:'none'}}>
                     <li><Link href={'/js/basicjs/browserMethodsAndConsole'}>Базовый javaScript</Link></li>
-                    <li>Продвинутый javaScript</li>
-                    <li>Алгоритмы на JavaScript</li>
+                    <li><Link href={'/js/basicjs/browserMethodsAndConsole'}>Продвинутый javaScript</Link></li>
+                    <li><Link href={'/js/basicjs/browserMethodsAndConsole'}>Алгоритмы javaScript</Link></li>
                     <li><Link href={'/react/basicreact/ReactSinglePageApp'}> Базовый React </Link></li>
                     <li><Link href={'/ts/basicts/installation'}>Работа с typescript</Link></li>
                 </ul>

@@ -80,6 +80,8 @@
 	}
 
 	.content {
+		gap: 0px;
+
 		margin-right: 50px;
 		margin-left: 50px;
 	}
@@ -106,15 +108,9 @@
 		padding-left: 0;
 	}
 
-	.social {
-		justify-content: center;
-		text-align: center;
-	}
-
-	.nav {
-		justify-content: center;
+	.content ul>li>a {
 		display: flex;
-		text-align: center;
-		flex-direction: column;
+		justify-content: center;
+		
 	}
 }
