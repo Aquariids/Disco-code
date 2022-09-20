@@ -2,8 +2,9 @@ import s from './FooterMenu.module.css';
 import { FooterProps } from './FooterMenu.props';
 import cn from 'classnames';
 import { useRouter } from 'next/router';
-
-const { footer, content,doc } = s;
+import Link from 'next/link';
+import LinkA from '../../../public/link.svg';
+const { footer, content, } = s;
 
 
 
@@ -15,16 +16,29 @@ const router = useRouter();
         <div className={cn(footer, {
             [s.footer2]: router.asPath.length > 18
         })} {...props}>
-            <div className={s.navigation}>
-            </div>
             <div className={content}>
+                <div className={s.nav}>
+                <h3> Документация </h3>
                 <ul style={{listStyleType:'none'}}>
-                    <li>ссылка</li>
-                    <li>ссылка</li>
-                    <li>ссылка</li>
-                    <li>ссылка</li>
+                    <li><Link href={'/js/basicjs/browserMethodsAndConsole'}>Базовый javaScript</Link></li>
+                    <li>Продвинутый javaScript</li>
+                    <li>Алгоритмы на JavaScript</li>
+                    <li><Link href={'/react/basicreact/ReactSinglePageApp'}> Базовый React </Link></li>
+                    <li><Link href={'/ts/basicts/installation'}>Работа с typescript</Link></li>
                 </ul>
-               
+                </div>
+
+                <div className={s.social}>
+                <h3> Где меня найти </h3>
+                <ul style={{listStyleType:'none'}}>
+                        <li><a className={s.link}  href="mailto:favoritePonyville@gmail.com">FavoritePonyville@gmail.com <LinkA/> </a></li>
+                        <li><a className={s.link} target={"_blank"} href={'https://github.com/Aquariids/Disco-code'}>Github <LinkA/> </a></li>
+                        <li><a className={s.link} target={"_blank"} href={'https://t.me/Aquariida'}>Телеграм <LinkA/> </a></li>
+
+                </ul>
+
+            </div>
+                
             </div>
         </div>
 

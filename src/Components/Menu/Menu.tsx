@@ -28,7 +28,7 @@ const Menu = ({title,category, dropdown, page,  ...props}:IMenu): JSX.Element =>
             <div className={s.content} {...props}>
                 <div className={s.btn}>
                 <Button
-                    arrow= {isOpen === true? 'down': 'right'}
+                    arrow= {isOpen === true? 'down': 'up'}
                     onClick={handleToggle}
                 >{title}</Button>
                 </div>

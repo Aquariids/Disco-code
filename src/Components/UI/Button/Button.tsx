@@ -4,7 +4,7 @@ import cn from 'classnames';
 import s from './Button.module.css';
 import ArrowIcon from './arrow.svg';
 
-const Button = ({children,arrow = 'right',...props}:ButtonProps) => {
+const Button = ({children,arrow = 'up',...props}:ButtonProps) => {
     return (
         <button {...props}  className={cn(s.button, {
             [s.active]: arrow === 'down',
