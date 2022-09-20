@@ -30,6 +30,7 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
         <div className='pp'>
             <Head>
                 <title>{post.meta.title}</title>
+                <meta name="google-site-verification" content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY" />
                 <meta name="yandex-verification" content="a99ae512e4f1c330" />
                 <meta name='description' content={'Уроки по javascript, задачи, алгоритмы.js статьи,'}/>
                 <meta property='og:title' content={post.meta.title}/>
