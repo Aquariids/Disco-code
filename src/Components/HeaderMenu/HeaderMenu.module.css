@@ -4,7 +4,7 @@
 	display: grid;
 	align-items: center;
 	justify-content: center;
-	height: 50px;
+	height: 60px;
 	margin-right: calc(-1 *(100vw - 100%));
 	color: #FFF;
 	gap: 30px;
@@ -43,7 +43,7 @@
 @media (max-width: 750px) {
 	.header {
 		grid-template-columns: minmax(320px, 1fr);
-		grid-template-rows: 50px;
+		grid-template-rows: 60px;
 
 		/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
 		grid-template-areas: "header";
@@ -109,7 +109,7 @@
 }
 
 .logo span {
-	margin-left: 2px;
+	margin-left: 4px;
 }
 
 .dropdown {
@@ -123,7 +123,7 @@
 	visibility: hidden;
 	min-width: 100%;
 	margin: 0;
-	padding: 20px 0 0;
+	padding: 30px 0 0;
 	transition: visibility 0.2s linear, opacity 0.2s linear;
 	opacity: 0;
 	border-bottom: 1px solid;

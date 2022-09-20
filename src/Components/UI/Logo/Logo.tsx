@@ -18,13 +18,13 @@ const logo = ({ path, src }: logoProps): JSX.Element => {
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ x: 0, opacity: 1 }}
                 >
-                    <Link href={'/'}><img style={{ width: '40px', cursor: 'pointer', borderRadius: '10px' }} src={src} /></Link>
+                    <Link href={'/'}><img style={{ width: '52px', cursor: 'pointer', borderRadius: '15px' }} src={src} /></Link>
                 </motion.div>
             </AnimatePresence>
         );
     } else if (router.asPath.startsWith(path)) {
         return (
-            <Link href={'/'}><img style={{ width: '40px', cursor: 'pointer',borderRadius: '10px' }} src={src} /></Link>
+            <Link href={'/'}><img style={{ width: '50px', cursor: 'pointer',borderRadius: '15px' }} src={src} /></Link>
         );
     } else {
         return (
