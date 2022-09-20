@@ -49,6 +49,12 @@
 
 }
 
+.content ul>li> a:hover {
+	color: var(	--next_hover_color_links_pages);
+
+
+}
+
 
 .content ul>li>a> svg {
 	margin-left: 5px;
