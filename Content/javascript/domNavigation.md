@@ -1,5 +1,10 @@
-
-
+---
+title: 'Навигация по DOM. Что такое узлы?'
+id: 17
+prev: '/js/basicjs/copyingObjectsAndArray'
+next: '/js/basicjs/bac'
+category: 'basicjs'
+---
 [Навигация по DOM - что такое узлы?](#navigations)<br>
 [Методы получения узлов Родителей, детей, соседей](#uzelMethods)<br>
 ## Навигация по DOM дереву и узлам. ##
