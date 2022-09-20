@@ -12,7 +12,7 @@ const logo = ({ path, src }: logoProps): JSX.Element => {
         return (
             <AnimatePresence>
                 <motion.div className={s.logo}
-                    transition={{ type: "spring", stiffness: 100 }}
+                    transition={{ type: "spring", stiffness: 85 }}
                     key={router.pathname}
                     initial={{ x: -65, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
