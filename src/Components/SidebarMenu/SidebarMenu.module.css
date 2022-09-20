@@ -11,9 +11,7 @@
 
 .link {
 	display: inline-block;
-
 	list-style-type: none;
-
 	font-size: 15px;
 	font-weight: 400;
 	line-height: 16px;
@@ -25,7 +23,6 @@
 
 .active {
 	list-style-type: none;
-
 	font-size: 15px;
 	font-size: 15px;
 	font-weight: bold;
@@ -34,13 +31,10 @@
 
 .dropbtn {
 	padding: 16px;
-
 	cursor: pointer;
-
 	color: white;
 	border: none;
 	background-color: #3498DB;
-
 	font-size: 16px;
 }
 
@@ -50,13 +44,11 @@
 
 .show {
 	display: block;
-
 	margin-top: 10px;
 }
 
 .hide {
 	display: none;
-
 	width: 0;
 	margin: 0;
 	padding: 0;

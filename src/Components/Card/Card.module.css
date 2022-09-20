@@ -2,27 +2,21 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
 	width: 180px;
 	height: 180px;
 	margin: 0 auto;
-
 	cursor: pointer;
 	transition: 0.2s;
-
 	border-radius: 5%;
-
 	font-size: 25px;
-
-	
 }
-
 
 .container:hover {
-	-webkit-transform: scale(1.05);
-	-ms-transform: scale(1.05);
+	transform: scale(1.05);
+	transform: scale(1.05);
 	transform: scale(1.05);
 }
+
 .js {
 	background-color: var(--js_color_links_pages);
 }
@@ -31,7 +25,6 @@
 	box-shadow: 0 0 5px var(--js_hover_color_links_pages);
 	color: #FFF;
 	background-color: var(--js_hover_color_links_pages);
-	
 }
 
 .ts {
@@ -51,8 +44,7 @@
 }
 
 .next:hover {
-	box-shadow: 0 0 5px var(--next_hover_color_links_pages);;
-
+	box-shadow: 0 0 5px var(--next_hover_color_links_pages);
 	color: var(--next_hover_color_links_pages);
 	background-color: rgb(49 49 49);
 }
@@ -66,5 +58,4 @@
 	color: #FFF;
 	background-color: #41E1ED;
 	box-shadow: 0 0 10px  var(--react_hover_color_links_pages);
-
 }

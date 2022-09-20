@@ -1,19 +1,15 @@
 .button {
 	position: relative;
-
 	max-width: 250px;
 	margin-top: 30px;
 	margin-right: 20px;
 	margin-left: 20px;
-
 	cursor: pointer;
 	white-space: nowrap;
 	text-transform: uppercase;
-
 	color: rgb(109 109 109);
 	border: none;
 	background: transparent;
-
 	font-size: 15px;
 	font-weight: bold;
 	line-height: 18px;
@@ -25,9 +21,7 @@
 
 .arrow {
 	position: absolute;
-
 	display: inline-block;
-
 	max-width: 50px;
 	margin-right: 10px;
 	margin-left: 10px;
@@ -40,7 +34,6 @@
 
 .down svg {
 	display: inline-block;
-
 	transition: all 0.2;
 	transform: rotate(90deg);
 	fill: rgb(0 0 0);
@@ -50,7 +43,6 @@
 	.button {
 		width: 150px;
 		padding: 0;
-
 		white-space: normal;
 	}
 }

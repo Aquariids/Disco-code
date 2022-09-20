@@ -8,7 +8,6 @@
 @import "./page_menu.css";
 @import "./loader.css";
 
-
 html {
 	overflow-x: hidden;
 	background-image: url(/manga.svg);
@@ -18,28 +17,20 @@ html {
 	margin-right: calc(-1 *(100vw - 100%));
 }
 
-
-@media (max-width:1200px) {
-
+@media (max-width: 1200px) {
 	html {
-		background-size:  60em;
+		background-size: 60em;
 	}
-	
 }
 
-
-@media (max-width:985px) {
-
+@media (max-width: 985px) {
 	html {
-		
-		background-size:  0;
+		background-size: 0;
 	}
-	
 }
 
 body {
 	position: relative;
-
 	margin: 0;
 	padding: 0;
 
@@ -51,7 +42,6 @@ body {
 
 a {
 	text-decoration: none;
-
 	color: inherit;
 }
 

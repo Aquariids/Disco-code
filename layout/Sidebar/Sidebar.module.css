@@ -1,14 +1,11 @@
 .sidebar {
 	position: fixed;
 	z-index: 200;
-
 	display: grid;
 	justify-content: center;
-
 	width: 20%;
 	height: 100%;
 	margin-top: 50px;
-
 	color: #000;
 	background-color: #F7F7F7;
 	box-shadow: 0 0 1px 0;
@@ -17,7 +14,6 @@
 @media (max-width: 750px) {
 	.sidebar {
 		display: none;
-
 		transition: all 0.2s;
 	}
 }
@@ -31,8 +27,6 @@
 .mobileBar {
 	display: grid;
 	justify-content: center;
-
 	width: 100%;
-
 	white-space: nowrap;
 }

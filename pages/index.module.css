@@ -1,6 +1,5 @@
 .body {
 	text-align: center;
-	
 }
 
 .body h1 {
@@ -8,14 +7,10 @@
 	display: flex;
 	margin-bottom: 0;
 	justify-content: center;
-
-	
 }
 
 .code {
-	color: rgba(0, 0, 0, 0.521);
-	
-
+	color: rgb(0 0 0 / 52.1%);
 }
 
 .text {

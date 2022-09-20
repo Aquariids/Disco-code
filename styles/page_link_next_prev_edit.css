@@ -1,9 +1,7 @@
 .page_footer {
 	display: flex;
 	justify-content: space-between;
-
 	margin-bottom: 50px;
-
 	white-space: nowrap;
 }
 
@@ -18,12 +16,9 @@
 .page_edit {
 	display: flex;
 	justify-content: right;
-
 	margin-top: 80px;
 	margin-bottom: 100px;
-
 	white-space: nowrap;
-
 	font-size: 16px;
 }
 
@@ -34,7 +29,6 @@
 
 	.page_edit {
 		justify-content: left;
-
 		margin-top: 50px;
 		margin-bottom: 60px;
 	}

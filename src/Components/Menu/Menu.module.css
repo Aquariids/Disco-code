@@ -1,7 +1,6 @@
 .listMenu {
 	display: grid;
 	justify-content: left;
-
 	width: 300px;
 	margin-top: 0;
 	padding-right: 10px;
@@ -12,12 +11,10 @@
 .index_list_menu {
 	display: flex;
 	flex-direction: column;
-
 	margin: 0;
 	margin-right: 20px;
 	margin-left: 20px;
 	padding: 0;
-
 	white-space: nowrap;
 	gap: 10px;
 }
@@ -34,7 +31,6 @@
 .btn {
 	display: grid;
 	justify-content: left;
-
 	width: 300px;
 }
 
@@ -48,11 +44,8 @@
 
 .link {
 	display: inline-block;
-
 	list-style-type: none;
-
 	transition: all 0.1s;
-
 	font-size: 15px;
 	font-weight: 400;
 	line-height: 16px;
@@ -60,7 +53,6 @@
 
 .listMenu .link a:hover {
 	transition: all 0.1s;
-
 	color: rgb(137 137 137);
 }
 
@@ -71,34 +63,24 @@
 
 .active_js {
 	list-style-type: none;
-
 	color: var(--js_color_links_pages);
-
 	font-size: 15px;
-
 	line-height: 16px;
 }
 
 .active_js a {
 	pointer-events: none;
-	
 }
 
 .active_js:hover {
 	cursor: pointer;
 	color: var(--js_hover_color_links_pages);
-
 }
-
-
 
 .active_ts {
 	list-style-type: none;
-
 	color: var(--ts_color_links_pages);
-
 	font-size: 15px;
-
 	line-height: 16px;
 }
 
@@ -109,16 +91,12 @@
 
 .active_ts a {
 	pointer-events: none;
-
 }
 
 .active_react {
 	list-style-type: none;
-
 	color: var(--react_color_links_pages);
-
 	font-size: 15px;
-
 	line-height: 16px;
 }
 
@@ -129,21 +107,19 @@
 
 .active_react a {
 	pointer-events: none;
-
 }
+
 .dropdownContent {
 	display: show;
 }
 
 .show {
 	display: block;
-
 	margin-top: 10px;
 }
 
 .hide {
 	display: none;
-
 	width: 0;
 	margin: 0;
 	padding: 0;
@@ -157,11 +133,8 @@
 	margin-top: 30px;
 	padding-right: 10px;
 	padding-left: 20px;
-
 	text-transform: uppercase;
-
 	color: rgb(109 109 109);
-
 	font-size: 14px;
 	font-weight: 700;
 	font-weight: bold;
@@ -171,7 +144,6 @@
 @media (max-width: 1315px) {
 	.listMenu {
 		grid-template-columns: 225px;
-
 		padding-left: 40px;
 	}
 
@@ -184,14 +156,12 @@
 	.listMenu {
 		justify-content: center;
 		grid-template-columns: 170px;
-
 		width: 180px;
 		margin-right: 10px;
 	}
 
 	.btn {
 		justify-content: center;
-
 		width: 200px;
 		margin: 0 auto;
 	}
@@ -212,7 +182,6 @@
 @media (max-width: 1045px) {
 	.index_list_menu {
 		grid-template-columns: 1fr;
-
 		justify-content: center;
 	}
 }
@@ -239,7 +208,6 @@
 		align-items: center;
 		flex-direction: column;
 		justify-content: center;
-
 		width: 400px;
 		margin: 0;
 		padding: 0;

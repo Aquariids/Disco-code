@@ -8,9 +8,7 @@
 	.articles {
 		align-items: center;
 		justify-content: center;
-
 		margin-top: -35px;
-
 		grid-template-columns: 200px 200px;
 	}
 }

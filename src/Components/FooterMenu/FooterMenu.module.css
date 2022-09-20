@@ -2,10 +2,8 @@
 	display: grid;
 	align-items: center;
 	justify-content: center;
-
 	text-align: right;
 	color: #FFF;
-
 	font-size: 15px;
 	gap: 30px;
 	grid-template-columns: 20% minmax(auto, 1180px) 20%;
