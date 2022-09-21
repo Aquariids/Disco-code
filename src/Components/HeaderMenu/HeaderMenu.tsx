@@ -21,9 +21,9 @@ const router = useRouter();
                 <div className={logo}>
                 <AnimatePresence>
                 <motion.div className={s.logo}
-                    transition={{ type: "spring", stiffness: 80 }}
+                    transition={{ type: "spring", stiffness: 135 }}
                     key={router.pathname}
-                    initial={{ x: -65, opacity: 0 }}
+                    initial={{ x: -40, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                 >
                     {router.asPath.startsWith('/js')? <Logo path='/js' src='/logo/js_logo.svg'/>:''}
