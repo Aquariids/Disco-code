@@ -23,7 +23,6 @@ const Menu = ({title,category, dropdown, page,  ...props}:IMenu): JSX.Element =>
     };
     
     if(dropdown === true) {
-
         return (
             <div className={s.content} {...props}>
                 <div className={s.btn}>

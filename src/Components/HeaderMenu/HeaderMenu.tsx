@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 
 import Logo from '../UI/Logo/Logo';
 import { Loading } from '../Loading/Loading';
+import { AnimatePresence, motion } from 'framer-motion';
 const { header,link, content, logo, github } = s;
 
 const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
@@ -18,11 +19,21 @@ const router = useRouter();
         })} {...props}>
             <div className={content}>
                 <div className={logo}>
+                <AnimatePresence>
+                <motion.div className={s.logo}
+                    transition={{ type: "spring", stiffness: 80 }}
+                    key={router.pathname}
+                    initial={{ x: -65, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                >
                     {router.asPath.startsWith('/js')? <Logo path='/js' src='/logo/js_logo.svg'/>:''}
                     {router.asPath.startsWith('/ts')? <Logo path='/ts' src='/logo/ts_logo.svg'/>:''}
                     {router.asPath.startsWith('/react')? <Logo path='/react' src='/logo/react_logo.svg'/>:''}
                     {router.pathname === '/'? <Logo path='/' src='/logo/disco.png'/>:''}
-                    <span className={link} > <Link href={'/'}> DiscoCode</Link> </span> </div>
+                    </motion.div>
+            </AnimatePresence>
+            <span className={link} > <Link href={'/'}> DiscoCode</Link> </span> </div>
+
 
                 <div className={s.nav}>
             <div className={s.dropdown}>
