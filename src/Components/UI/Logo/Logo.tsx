@@ -12,9 +12,9 @@ const logo = ({ path, src }: logoProps): JSX.Element => {
         return (
             <AnimatePresence>
                 <motion.div className={s.logo}
-                    transition={{ type: "spring", stiffness: 150 }}
+                    transition={{ type: "spring", stiffness: 40 }}
                     key={router.pathname}
-                    initial={{ x: -40, opacity: 0 }}
+                    initial={{ x: -30, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                 >
                     <Link href={'/'}><img style={{ width: '52px', cursor: 'pointer', borderRadius: '15px' }} src={src} /></Link>
