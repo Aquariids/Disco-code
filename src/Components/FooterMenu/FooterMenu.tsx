@@ -18,7 +18,7 @@ const router = useRouter();
         })} {...props}>
             <div className={content}>
                 <div className={s.nav}>
-                <h3> Документация </h3>
+                <h3> Навигация по сайту </h3>
                 <ul style={{listStyleType:'none'}}>
                     <li><Link href={'/js/basicjs/browserMethodsAndConsole'}>Базовый javaScript</Link></li>
                     <li><Link href={'/js/basicjs/browserMethodsAndConsole'}>Продвинутый javaScript</Link></li>
