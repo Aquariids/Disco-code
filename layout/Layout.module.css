@@ -3,7 +3,7 @@
 	display: grid;
 	justify-content: center;
 	min-height: 100vh;
-	grid-template-columns: 20% minmax(320px, 1180px) 20%;
+	grid-template-columns: 21% minmax(320px, 1180px) 20%;
 	gap: 30px;
 	grid-template-rows: 60px 1fr;
 	/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
@@ -81,12 +81,12 @@
 }
 
 .wrapper2 {
-	grid-template-columns: 20% minmax(320px, 1180px) 20%;
+	grid-template-columns: 22% minmax(320px, 1180px) 20%;
 }
 
 @media (max-width: 985px) {
 	.wrapper2 {
-		grid-template-columns: 20% minmax(320px, 1180px);
+		grid-template-columns: 22% minmax(320px, 1180px);
 	}
 }
 

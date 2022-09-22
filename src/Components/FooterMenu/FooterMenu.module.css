@@ -6,19 +6,19 @@
 	color: #FFF;
 	font-size: 15px;
 	gap: 30px;
-	grid-template-columns: 20% minmax(auto, 1180px) 20%;
+	grid-template-columns: 21% minmax(auto, 1180px) 20%;
 	grid-template-areas: ". footer .";
 }
 
 
 
 .footer2 {
-	grid-template-columns: 20% minmax(auto, 1180px) 20%;
+	grid-template-columns: 21% minmax(auto, 1180px) 20%;
 }
 
 @media (max-width: 985px) {
 	.footer2 {
-		grid-template-columns: 20% minmax(auto, 1180px);
+		grid-template-columns: 21% minmax(auto, 1180px);
 	}
 }
 
@@ -71,7 +71,7 @@
 	margin-bottom: 0;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 785px) {
 	.footer {
 		grid-template-columns: minmax(320px, 1fr);
 

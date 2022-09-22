@@ -2,8 +2,8 @@
 	position: relative;
 	max-width: 250px;
 	margin-top: 30px;
-	margin-right: 20px;
 	margin-left: 20px;
+	padding-right: 17px;
 	cursor: pointer;
 	white-space: nowrap;
 	text-transform: uppercase;
@@ -39,10 +39,23 @@
 	fill: rgb(0 0 0);
 }
 
-@media (max-width: 1155px) {
+
+
+@media (max-width: 1200px) {
 	.button {
 		width: 150px;
 		padding: 0;
 		white-space: normal;
 	}
 }
+
+
+
+
+
+@media (max-width: 1290px) {
+	.button {
+		margin-left: 0px;
+	}
+}
+

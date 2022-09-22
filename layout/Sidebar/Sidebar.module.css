@@ -3,7 +3,7 @@
 	z-index: 200;
 	display: grid;
 	justify-content: center;
-	width: 20%;
+	width: 21%;
 	height: 100%;
 	margin-top: 60px;
 	color: #000;
@@ -13,7 +13,9 @@
 
 }
 
-@media (max-width: 750px) {
+
+
+@media (max-width: 785px) {
 	.sidebar {
 		display: none;
 		transition: all 0.2s;
