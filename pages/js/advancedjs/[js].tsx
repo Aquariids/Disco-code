@@ -7,10 +7,14 @@ import rehypeHighlight from 'rehype-highlight';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import Head from 'next/head';
 import "highlight.js/styles/a11y-dark.css";
+import cn from 'classnames';
 import { getAllPosts, getPostFromSlug, getSlugs, PostMeta } from '../../api/api';
 import { POSTS_PATH_JS } from '../../api/paths';
 import Link from 'next/link';
-
+import s from './js.module.css';
+import MobileButton from '../../../src/Components/UI/MobileButton/MobileButton';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 interface MSXPost {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
     meta: PostMeta
@@ -18,19 +22,47 @@ interface MSXPost {
 
 
 
+
+
 const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => {
-
-
+    const router = useRouter();
     return (
-        <div>
+        <div className='pp'>
             <Head>
                 <title>{post.meta.title}</title>
-                
+                <meta name="google-site-verification" content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY" />
+                <meta name="yandex-verification" content="a99ae512e4f1c330" />
+                <meta name='description' content={'Уроки по javascript, задачи, алгоритмы.js статьи,'}/>
+                <meta property='og:title' content={post.meta.title}/>
+                <meta property='og:description' content={'Уроки и разбор разных тем по javascript'}/>
+                <meta property='og:type' content={'article'}/>
+                <meta property='og:image' content='https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:JavaScript-logo.png'/>
+
+
             </Head>
-            <h1>{post.meta.title}</h1>
-            <MDXRemote {...post.source} />
-            <Link href={post.meta.next}> след страница </Link>
-            <Link href={post.meta.prev}> пред страница </Link>
+            <AnimatePresence>  
+
+                <motion.div
+                    transition={{ type: "spring", stiffness: 65 }}
+                    key={router.asPath}
+                    initial={{ x: 50, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    id="page-transition-container"
+                >
+                    <h1>{post.meta.title}</h1>
+                    <MDXRemote  {...post.source} />
+
+            <div className={cn(s.edit, 'page_edit')}><a target='_blank' rel ='noopener' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{ width: '30px', paddingLeft: '5px' }} src='/edit.svg' /></div>
+            <div className={cn(s.footer, 'page_footer')}>
+                <Link href={post.meta.prev}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая страница'}</Link>
+                <Link href={post.meta.next}>{post.meta.next === 'none' ? '' : 'Следующая страница'}</Link>
+            </div>
+            <MobileButton path='/js' />
+
+            </motion.div>
+            </AnimatePresence>  
+
+
 
         </div>
     );
@@ -46,7 +78,7 @@ export default withLayout(PostPage);
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const { js } = params as { js: string };
-    const { content, meta } = getPostFromSlug(js,POSTS_PATH_JS);
+    const { content, meta } = getPostFromSlug(js, POSTS_PATH_JS);
     const mdxSource = await serialize(content, {
         mdxOptions: {
             rehypePlugins: [

@@ -3,6 +3,14 @@
 	width: 100%;
 	height: 100%;
 	margin-top: 15px;
+	height: 90%;
+	overflow: auto;
+}
+
+
+.nav_menu::-webkit-scrollbar {
+	width: 0;
+	height: 0;
 }
 
 .nav_menu button:hover {

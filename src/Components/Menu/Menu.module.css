@@ -8,6 +8,8 @@
 	grid-template-columns: 250px;
 }
 
+
+
 .index_list_menu {
 	display: flex;
 	flex-direction: column;
@@ -49,6 +51,7 @@
 	font-size: 15px;
 	font-weight: 400;
 	line-height: 16px;
+
 }
 
 .listMenu .link a:hover {

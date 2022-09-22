@@ -8,7 +8,7 @@ const SidebarMenu = ():JSX.Element => {
         return (
             <nav className={s.nav_menu}>
                 <Menu title="Базовый JavaScript" category='basicjs' dropdown={true}  page='js' />
-                {/* <Menu title="Продвинутый JavaScript" category='advancedjs' dropdown ={true} /> */}
+                <Menu title="Продвинутый JavaScript" category='advancedjs' dropdown ={true} page='js' />
             </nav>
         );
     }
