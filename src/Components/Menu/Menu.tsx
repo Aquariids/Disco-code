@@ -8,7 +8,7 @@ import Button from '../UI/Button/Button';
 import { AppContext } from '../../../context/app.context';
 
 
-const Menu = ({title,category, dropdown, page,  ...props}:IMenu): JSX.Element => {
+const Menu = ({title,category, dropdown, page, mobile,  ...props}:IMenu): JSX.Element => {
 
     const router = useRouter();
     const pathname = router.asPath;
@@ -54,6 +54,11 @@ const Menu = ({title,category, dropdown, page,  ...props}:IMenu): JSX.Element =>
         );
     }  
 
+    else if (mobile === true) {
+        return(
+            <></>
+        );
+    }
     else {
 
         return (

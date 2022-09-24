@@ -15,6 +15,7 @@ import s from './js.module.css';
 import MobileButton from '../../../src/Components/UI/MobileButton/MobileButton';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 interface MSXPost {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
     meta: PostMeta
@@ -25,6 +26,10 @@ interface MSXPost {
 
 
 const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => {
+
+
+    const [mobile, setMobile] = useState(false);
+    
     const router = useRouter();
     return (
         <div className='pp'>
@@ -54,13 +59,24 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
                 >
                     <h1>{post.meta.title}</h1>
                     <MDXRemote  {...post.source} />
-
+                <div className={cn(s.modal, {
+                    [s.modal2]: mobile === true
+                })}>
+                    <ul>
+                        <li>Привет тупой дед, хахах</li>
+                        <li>Привет тупой дед, хахах</li>
+                        <li>Привет тупой дед, хахах</li>
+                        <li>Привет тупой дед, хахах</li>
+                        <li>Привет тупой дед, хахах</li>
+                        <li>Привет тупой дед, хахах</li>
+                    </ul>
+                </div>
             <div className={cn(s.edit, 'page_edit')}><a target='_blank' rel ='noopener' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{ width: '30px', paddingLeft: '5px' }} src='/edit.svg' /></div>
             <div className={cn(s.footer, 'page_footer')}>
                 <Link href={post.meta.prev}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая страница'}</Link>
                 <Link href={post.meta.next}>{post.meta.next === 'none' ? '' : 'Следующая страница'}</Link>
             </div>
-            <MobileButton path='/js' />
+            <MobileButton mobile={mobile} setMobile={setMobile} path='/js' />
 
             </motion.div>
             </AnimatePresence>  

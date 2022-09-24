@@ -4,8 +4,8 @@
 	right: 0;
 	bottom: 0;
 	display: none;
-	width: 65px;
-	height: 65px;
+	width: 70px;
+	height: 70px;
 	margin-right: 20px;
 	margin-bottom: 55px;
 	border: 1px solid rgb(255 255 255 / 10%);
@@ -14,11 +14,17 @@
 	box-shadow: rgb(0 0 0 / 30%) 0 0 20px;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 785px) {
 	.btn {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		cursor: pointer;
 	}
+}
+
+.svg {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

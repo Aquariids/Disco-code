@@ -4,4 +4,5 @@ export interface IMenu extends  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>
     category:string,
     dropdown?:boolean,
     page?:string;
+    mobile?:boolean;
 }
