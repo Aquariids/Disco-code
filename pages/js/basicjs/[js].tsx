@@ -34,7 +34,7 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
     const [mobile, setMobile] = useState(false);
 
     const router = useRouter();
-    if(width <= 785) {
+    if(width && (width <= 785)) {
         return (
             <div className='pp'>
                 <Head>
