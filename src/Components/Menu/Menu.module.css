@@ -242,3 +242,23 @@
 		width: 400px;
 	}
 }
+
+
+
+
+.mobile_content {
+	display: flex;
+	flex-direction: column;
+
+}
+
+.mobile_list {
+	margin: 0;
+	padding: 0;
+}
+
+.mobile_list li {
+	margin-top: 0;
+	padding: 8px 0;
+}
+
