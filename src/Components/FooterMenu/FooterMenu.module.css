@@ -6,19 +6,19 @@
 	color: #FFF;
 	font-size: 15px;
 	gap: 30px;
-	grid-template-columns: 21% minmax(auto, 1180px) 20%;
+	grid-template-columns: var(--grid_columns_wrapper);
 	grid-template-areas: ". footer .";
 }
 
 
 
 .footer2 {
-	grid-template-columns: 21% minmax(auto, 1180px) 20%;
+	grid-template-columns: var(--grid_columns_wrapper);
 }
 
 @media (max-width: 985px) {
 	.footer2 {
-		grid-template-columns: 21% minmax(auto, 1180px);
+		grid-template-columns: var(--grid_columns_wrapper_mobile);
 	}
 }
 

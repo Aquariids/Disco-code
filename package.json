@@ -22,7 +22,9 @@
     "react-yandex-metrika": "^2.6.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-highlight": "^5.0.2",
-    "rehype-slug": "^5.0.1"
+    "rehype-slug": "^5.0.1",
+    "sass": "^1.55.0",
+    "scss": "^0.2.4"
   },
   "devDependencies": {
     "@types/glob": "^7.2.0",
