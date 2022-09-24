@@ -38,6 +38,7 @@
 }
 .modal {
 	opacity: 0;
+	visibility: hidden;
 	justify-content: center;
 	display: flex;
 	text-align: center;
@@ -58,6 +59,7 @@
 }
 
 .modal2 {
+	visibility: visible;
 	opacity: 1;
 	display: grid;
 	flex-direction: column;
