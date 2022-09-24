@@ -53,12 +53,13 @@
 	z-index: 200;
 	background-color: #fff;
 	overflow: scroll;
-
+	display: none;
 	transition: all 0.5s;
 
 }
 
 .modal2 {
+	display: block;
 	visibility: visible;
 	opacity: 1;
 	display: grid;
