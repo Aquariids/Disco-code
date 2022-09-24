@@ -5,6 +5,6 @@ export interface IMenu extends  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>
     dropdown?:boolean,
     page?:string;
     mobile?:boolean;
-    setMobile:any;
-    mobileTrue: boolean;
+    setMobile?:any;
+    mobileTrue?: boolean;
 }
