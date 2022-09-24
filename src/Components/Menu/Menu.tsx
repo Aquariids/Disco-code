@@ -8,7 +8,7 @@ import Button from '../UI/Button/Button';
 import { AppContext } from '../../../context/app.context';
 
 
-const Menu = ({title,category, dropdown, page,  ...props}:IMenu): JSX.Element => {
+const Menu = ({title,category, dropdown, page, mobile, setMobile,mobileTrue,  ...props}:IMenu): JSX.Element => {
 
     const router = useRouter();
     const pathname = router.asPath;
@@ -22,6 +22,9 @@ const Menu = ({title,category, dropdown, page,  ...props}:IMenu): JSX.Element =>
         setOpen(!isOpen);
     };
     
+    const mob = () => {
+        setMobile(!mobileTrue)
+    }
     if(dropdown === true) {
         return (
             <div className={s.content} {...props}>
@@ -54,6 +57,36 @@ const Menu = ({title,category, dropdown, page,  ...props}:IMenu): JSX.Element =>
         );
     }  
 
+    else if (mobile === true) {
+        return(
+            <div className={s.mobile_content} {...props}>
+                <div>
+                <h4 className={s.title}
+                >{title}</h4>
+                </div>
+                <ul className={s.mobile_list}>
+                    {posts && posts.map((post,index) => (
+                        
+                        <li 
+                        onClick={mob}
+                        key={index}
+                            className={cn({
+                                [s.active_js]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/js'),
+                                [s.active_ts]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/ts'),
+                                [s.active_react]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/react'),
+                                [s.link]: pathname.replace(post.slug, '') + post.slug !== pathname,
+                                [s.show]: post.category == category,
+                                [s.hide]: post.category !== category,
+                            })} >
+
+                                {router.pathname.startsWith(`/${page}`)?<Link  href={`/${page}/${post.category}/${post.slug}`}>{post.title}</Link>:''}
+                            
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        );
+    }
     else {
 
         return (

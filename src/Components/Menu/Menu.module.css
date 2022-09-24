@@ -211,7 +211,8 @@
 
 @media (max-width: 860px) {
 	.index_list_menu {
-		width: 300px;
+		width:355px;
+		white-space: normal;
 	}
 }
 
@@ -225,7 +226,7 @@
 	}
 }
 
-@media (max-width: 700px) {
+@media (max-width: 785px) {
 	.index_list_menu {
 		display: flex;
 		align-items: center;
@@ -241,3 +242,23 @@
 		width: 400px;
 	}
 }
+
+
+
+
+.mobile_content {
+	display: flex;
+	flex-direction: column;
+
+}
+
+.mobile_list {
+	margin: 0;
+	padding: 0;
+}
+
+.mobile_list li {
+	margin-top: 0;
+	padding: 8px 0;
+}
+

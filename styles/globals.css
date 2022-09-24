@@ -8,6 +8,8 @@
 @import "./page_menu.css";
 @import "./loader.css";
 
+
+
 html {
 	overflow-x: hidden;
 	background-image: url(/manga.svg);

@@ -20,6 +20,8 @@
 	color: black;
 }
 
+
+
 .link {
 	display: inline-block;
 	list-style-type: none;
@@ -63,4 +65,8 @@
 	width: 0;
 	margin: 0;
 	padding: 0;
+}
+
+.basicJsBtn {
+	margin-top: 25px;
 }
