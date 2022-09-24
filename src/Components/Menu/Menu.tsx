@@ -6,6 +6,7 @@ import { IMenu } from './Menu.props';
 import { useRouter } from 'next/router';
 import Button from '../UI/Button/Button';
 import { AppContext } from '../../../context/app.context';
+import { Loading } from '../Loading/Loading';
 
 
 const Menu = ({title,category, dropdown, page, mobile, setMobile,mobileTrue,  ...props}:IMenu): JSX.Element => {
@@ -23,8 +24,10 @@ const Menu = ({title,category, dropdown, page, mobile, setMobile,mobileTrue,  ..
     };
     
     const mob = () => {
-        setMobile(!mobileTrue)
-    }
+        router.events.on('routeChangeComplete', ()=> {
+                setMobile(!mobileTrue);
+        });
+    };
     if(dropdown === true) {
         return (
             <div className={s.content} {...props}>
@@ -58,6 +61,8 @@ const Menu = ({title,category, dropdown, page, mobile, setMobile,mobileTrue,  ..
     }  
 
     else if (mobile === true) {
+
+       
         return(
             <div className={s.mobile_content} {...props}>
                 <div>

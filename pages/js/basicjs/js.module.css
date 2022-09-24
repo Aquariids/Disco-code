@@ -54,11 +54,11 @@
 	background-color: #fff;
 	overflow: scroll;
 
-	transition: all 0.5s;
-
 }
 
 .modal2 {
+	transition: all 0.4s;
+
 	visibility: visible;
 	opacity: 1;
 	display: grid;
