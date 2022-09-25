@@ -7,11 +7,10 @@
 	height: 90%;
 	overflow-y: auto;
 	overflow-x:hidden;
-
-
 }
 
 .nav_menu::-webkit-scrollbar {
+	display: none;
 	opacity: 0;
 	background: transparent;  
 	width: 0;
