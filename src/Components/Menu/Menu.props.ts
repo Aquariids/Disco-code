@@ -11,6 +11,6 @@ export interface IMenu extends  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>
 
 export interface mobileMenuProps {
     setMobile?:any;
-    mobileMenu?:boolean;
+    mobile?:boolean;
 
 }
