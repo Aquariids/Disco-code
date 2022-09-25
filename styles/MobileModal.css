@@ -1,12 +1,13 @@
-
 .page {
 	position: relative;
 }
+
 .modal {
+	display: grid;
 	opacity: 0;
+	flex-direction: column;
 	visibility: hidden;
 	justify-content: center;
-	display: flex;
 	text-align: center;
 	align-items: center;
 	right: 0;
@@ -15,20 +16,31 @@
 	top: 0;
 	position: fixed;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	z-index: 200;
+	overflow-y: auto;
+
 	background-color: #fff;
-	overflow: scroll;
-
-}
-
-.modaltrue {
-	transition: all 0.4s;
-
-	visibility: visible;
-	opacity: 1;
-	display: grid;
-	flex-direction: column;
+	transition: all 0.5s;
 	grid-template-columns: auto;
     grid-template-rows: auto auto auto;
+}
+
+
+
+.modaltrue {
+
+	transition: all 0.5s;
+	visibility: visible;
+	opacity: 1;
+	
+}
+
+
+.bg {
+	z-index: 195;
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	background-color: #fff;
 }
