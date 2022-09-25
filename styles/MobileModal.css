@@ -15,7 +15,7 @@
 	top: 0;
 	position: fixed;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	z-index: 200;
 	background-color: #fff;
 	overflow: scroll;
@@ -24,7 +24,6 @@
 
 .modaltrue {
 	transition: all 0.4s;
-
 	visibility: visible;
 	opacity: 1;
 	display: grid;
