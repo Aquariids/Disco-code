@@ -5,7 +5,7 @@
 	position: absolute;
 	margin-top: 15px;
 	height: 90%;
-	overflow: scroll;
+	overflow-y: auto;
 	overflow-x:hidden;
 
 
