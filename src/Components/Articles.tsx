@@ -8,11 +8,11 @@ const Articles = () => {
         <motion.div
         key={1}
           initial={{ scale: 0 }}
-          animate={{ rotate: 360, scale: 1 }}
+          animate={{ scale: 1 }}
           transition={{
             type: "spring",
             stiffness: 260,
-            damping: 40,
+            damping: 30,
           }}
         >
           <Card text={"JavaScript"} color={"js"} url={"/js"} />
@@ -20,11 +20,11 @@ const Articles = () => {
         <motion.div
         key={2}
           initial={{ scale: 0 }}
-          animate={{ rotate: 360, scale: 1 }}
+          animate={{  scale: 1 }}
           transition={{
             type: "spring",
             stiffness: 260,
-            damping: 40,
+            damping: 30,
           }}
         >
           <Card text={"React"} color={"react"} url={"/react"} />
@@ -32,11 +32,11 @@ const Articles = () => {
         <motion.div
         key={3}
           initial={{ scale: 0 }}
-          animate={{ rotate: 360, scale: 1 }}
+          animate={{  scale: 1 }}
           transition={{
             type: "spring",
             stiffness: 260,
-            damping: 40,
+            damping: 30,
           }}
         >
           <Card text={"TypeScript"} color={"ts"} url={"/ts"} />
@@ -45,11 +45,11 @@ const Articles = () => {
         <motion.div
         key={4}
           initial={{ scale: 0 }}
-          animate={{ rotate: 360, scale: 1 }}
+          animate={{  scale: 1 }}
           transition={{
             type: "spring",
             stiffness: 260,
-            damping: 40,
+            damping: 30,
           }}
         >
           <Card text={"Next.js"} color={"next"} url={"/next"} />
