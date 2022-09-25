@@ -6,10 +6,9 @@ import { IMenu } from './Menu.props';
 import { useRouter } from 'next/router';
 import Button from '../UI/Button/Button';
 import { AppContext } from '../../../context/app.context';
-import { Loading } from '../Loading/Loading';
 
 
-const Menu = ({title,category, dropdown, page, mobile, setMobile,mobileTrue,  ...props}:IMenu): JSX.Element => {
+const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,  ...props}:IMenu): JSX.Element => {
 
     const router = useRouter();
     const pathname = router.asPath;
@@ -60,7 +59,7 @@ const Menu = ({title,category, dropdown, page, mobile, setMobile,mobileTrue,  ..
         );
     }  
 
-    else if (mobile === true) {
+    else if (mobileMenu === true) {
 
        
         return(

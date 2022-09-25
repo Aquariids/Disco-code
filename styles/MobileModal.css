@@ -1,0 +1,34 @@
+
+.page {
+	position: relative;
+}
+.modal {
+	opacity: 0;
+	visibility: hidden;
+	justify-content: center;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 200;
+	background-color: #fff;
+	overflow: scroll;
+
+}
+
+.modaltrue {
+	transition: all 0.4s;
+
+	visibility: visible;
+	opacity: 1;
+	display: grid;
+	flex-direction: column;
+	grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+}
