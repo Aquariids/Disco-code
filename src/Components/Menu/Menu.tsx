@@ -70,7 +70,6 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                 </div>
                 <ul className={s.mobile_list}>
                     {posts && posts.map((post,index) => (
-                        
                         <li 
                         onClick={mob}
                         key={index}

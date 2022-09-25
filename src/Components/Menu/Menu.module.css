@@ -71,6 +71,8 @@
 	line-height: 16px;
 }
 
+
+
 .active_js a {
 	pointer-events: none;
 }
@@ -246,14 +248,8 @@
 
 
 
-.mobile_content {
-	display: flex;
-	flex-direction: column;
-
-}
-
 .mobile_list {
-	margin: 0;
+	margin-left: 20px;
 	padding: 0;
 }
 

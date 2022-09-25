@@ -36,7 +36,7 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
     const router = useRouter();
     if (width && (width <= 785)) {
         return (
-            <div className='pp'>
+            <div className='page'>
                 <Head>
                     <title>{post.meta.title}</title>
                     <meta name="google-site-verification" content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY" />
