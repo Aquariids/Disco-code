@@ -52,7 +52,9 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
                 <div className={cn('modal', {
                     ['modaltrue']: mobile === true
                 })}>
-                    <MenuTs setMobile={setMobile} mobile={mobile} />
+                    <div className='bg'>
+                        <MenuTs setMobile={setMobile} mobile={mobile} />
+                    </div>
                 </div>
                 <div className={cn(s.edit, 'page_edit')}><a target='_blank' rel='noopener' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{ width: '30px', paddingLeft: '5px' }} src='/edit.svg' /></div>
                 <div className={cn(s.footer, 'page_footer')}>

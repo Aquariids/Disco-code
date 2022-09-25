@@ -40,7 +40,6 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
                 <Head>
                     <title>{post.meta.title}</title>
                     <meta name="google-site-verification" content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY" />
-
                     <meta name="yandex-verification" content="a99ae512e4f1c330" />
                     <meta name='description' content={'Уроки по react, reactjs, react статьи,'} />
                     <meta property='og:title' content={post.meta.title} />
@@ -54,7 +53,10 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
                 <div className={cn('modal', {
                     ['modaltrue']: mobile === true
                 })}>
-                    <MenuReact setMobile={setMobile} mobile={mobile} />
+                    <div className='bg'>
+
+                        <MenuReact setMobile={setMobile} mobile={mobile} />
+                    </div>
                 </div>
                 <div className={cn(s.edit, 'page_edit')}><a target='_blank' rel='noopener' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{ width: '30px', paddingLeft: '5px' }} src='/edit.svg' /></div>
                 <div className={cn(s.footer, 'page_footer')}>
@@ -72,7 +74,6 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
                     <title>{post.meta.title}</title>
 
                     <meta name="google-site-verification" content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY" />
-
                     <meta name="yandex-verification" content="a99ae512e4f1c330" />
                     <meta name='description' content={'Уроки по react, reactjs, react статьи,'} />
                     <meta property='og:title' content={post.meta.title} />
