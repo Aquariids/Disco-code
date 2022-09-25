@@ -5,11 +5,12 @@ export interface IMenu extends  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>
     dropdown?:boolean,
     page?:string;
     mobileMenu?:boolean;
-    setMobile?:Dispatch<SetStateAction<boolean>>;
+    setMobile?:any;
     mobileTrue?: boolean;
 }
 
 export interface mobileMenuProps {
-    setMobile?:Dispatch<SetStateAction<boolean>>;
-    mobile?:boolean;
+    setMobile?:any;
+    mobileMenu?:boolean;
+
 }
