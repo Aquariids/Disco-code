@@ -12,21 +12,17 @@
 }
 
 .nav_menu::-webkit-scrollbar {
+	opacity: 0;
 	background: transparent;  
-
 	width: 0;
 	height: 0;
 }
 .nav_menu {
-	background: transparent;  
-
 	-ms-overflow-style:none;
 }
 
 
 .nav_menu {
-	background: transparent;  
-
 	overflow: -moz-scrollbars-none;
 	}
 
