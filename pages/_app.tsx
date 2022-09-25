@@ -12,7 +12,7 @@ Router.events.on('routeChangeComplete', (url:string)=> {
 export async function getServerSideProps({ req, res }:any) {
   res.setHeader(
     'Cache-Control',
-    'public, s-maxage=15, stale-while-revalidate=59'
+    'public, s-maxage=10, stale-while-revalidate=59'
   );
 
   return {
@@ -20,9 +20,9 @@ export async function getServerSideProps({ req, res }:any) {
   };
 }
 
-export function reportWebVitals(metric: any) {
-  console.log(metric);
-}
+// export function reportWebVitals(metric: any) {
+//   console.log(metric);
+// }
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const router = useRouter();
