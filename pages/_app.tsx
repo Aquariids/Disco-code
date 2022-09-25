@@ -9,6 +9,21 @@ Router.events.on('routeChangeComplete', (url:string)=> {
   ym('hit',url);
 });
 
+export async function getServerSideProps({ req, res }:any) {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59'
+  );
+
+  return {
+    props: {},
+  };
+}
+
+export function reportWebVitals(metric: any) {
+  console.log(metric);
+}
+
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const router = useRouter();
 
