@@ -6,15 +6,27 @@
 	margin-top: 15px;
 	height: 90%;
 	overflow: scroll;
+	overflow-x:hidden;
 
 
 }
-
 
 .nav_menu::-webkit-scrollbar {
 	width: 0;
 	height: 0;
 }
+.nav_menu {
+	-ms-overflow-style:none;
+}
+
+
+.nav_menu {
+	overflow: -moz-scrollbars-none;
+	}
+
+
+
+
 
 .nav_menu button:hover {
 	color: black;
