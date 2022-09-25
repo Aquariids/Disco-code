@@ -18,55 +18,91 @@ import s from './react.module.css';
 import MobileButton from '../../../src/Components/UI/MobileButton/MobileButton';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/router';
+import useWindowDimensions from '../../../src/hooks/UseWindowDimensions';
+import { useState } from 'react';
+import MenuReact from '../../../src/Components/Menu/MenuReact/MenuReact';
 interface MSXPost {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
     meta: PostMeta
 }
 
 
-
 const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => {
-const router = useRouter();
-    return (
-        <div>
-        <Head>
-            <title>{post.meta.title}</title>
-            <meta name="google-site-verification" content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY" />
 
-            <meta name="yandex-verification" content="a99ae512e4f1c330" />
-            <meta name='description' content={'Уроки по react, reactjs, react статьи,'}/>
-            <meta property='og:title' content={post.meta.title}/>
-            <meta property='og:description' content={'Уроки и разбор разных тем по javascript'}/>
-            <meta property='og:type' content={'article'}/>
+    const { height, width } = useWindowDimensions();
 
-        </Head>
-        <AnimatePresence>
-                <motion.div
-                    transition={{ type: "spring", stiffness: 65 }}
-                    key={router.asPath}
-                    initial={{ x: 50, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    id="page-transition-container"
-                >
-                    <h1>{post.meta.title}</h1>
-                    <MDXRemote  {...post.source} />
-	
+    const [mobile, setMobile] = useState(false);
 
-        <div className={cn(s.edit,'page_edit')}><a target='_blank' rel ='noopener' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/react/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{width:'30px',paddingLeft:'5px'}} src='/edit.svg'/></div>
-        <div className={cn(s.footer,'page_footer')}>
-            <Link href={post.meta.prev}>{post.meta.prev === 'none'?<span></span>:'Предыдущая страница'}</Link>
-            <Link href={post.meta.next}>{post.meta.next === 'none'?'':'Следующая страница'}</Link>
-        </div>
-        <MobileButton path='/react'/>
+    const router = useRouter();
+    if (width && (width <= 785)) {
+        return (
+            <div className='pp'>
+                <Head>
+                    <title>{post.meta.title}</title>
+                    <meta name="google-site-verification" content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY" />
 
-        </motion.div>
-        </AnimatePresence>
+                    <meta name="yandex-verification" content="a99ae512e4f1c330" />
+                    <meta name='description' content={'Уроки по react, reactjs, react статьи,'} />
+                    <meta property='og:title' content={post.meta.title} />
+                    <meta property='og:description' content={'Уроки и разбор разных тем по javascript'} />
+                    <meta property='og:type' content={'article'} />
+                </Head>
 
+                <h1>{post.meta.title}</h1>
+                <MDXRemote  {...post.source} />
 
-    </div>
-    );
+                <div className={cn('modal', {
+                    ['modaltrue']: mobile === true
+                })}>
+                    <MenuReact setMobile={setMobile} mobile={mobile} />
+                </div>
+                <div className={cn(s.edit, 'page_edit')}><a target='_blank' rel='noopener' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{ width: '30px', paddingLeft: '5px' }} src='/edit.svg' /></div>
+                <div className={cn(s.footer, 'page_footer')}>
+                    <Link href={post.meta.prev}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая страница'}</Link>
+                    <Link href={post.meta.next}>{post.meta.next === 'none' ? '' : 'Следующая страница'}</Link>
+                </div>
+                <MobileButton mobile={mobile} setMobile={setMobile} />
+            </div>
+        );
+
+    } else {
+        return (
+            <div className='page'>
+                <Head>
+                    <title>{post.meta.title}</title>
+
+                    <meta name="google-site-verification" content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY" />
+
+                    <meta name="yandex-verification" content="a99ae512e4f1c330" />
+                    <meta name='description' content={'Уроки по react, reactjs, react статьи,'} />
+                    <meta property='og:title' content={post.meta.title} />
+                    <meta property='og:description' content={'Уроки и разбор разных тем по javascript'} />
+                    <meta property='og:type' content={'article'} />
+
+                </Head>
+                <AnimatePresence>
+
+                    <motion.div
+                        transition={{ type: "spring", stiffness: 65 }}
+                        key={router.asPath}
+                        initial={{ x: 50, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        id="page-transition-container"
+                    >
+                        <h1>{post.meta.title}</h1>
+                        <MDXRemote  {...post.source} />
+                        <div className={cn(s.edit, 'page_edit')}><a target='_blank' rel='noopener' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{ width: '30px', paddingLeft: '5px' }} src='/edit.svg' /></div>
+                        <div className={cn(s.footer, 'page_footer')}>
+                            <Link href={post.meta.prev}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая страница'}</Link>
+                            <Link href={post.meta.next}>{post.meta.next === 'none' ? '' : 'Следующая страница'}</Link>
+                        </div>
+                    </motion.div>
+                </AnimatePresence>
+
+            </div>
+        );
+    }
 };
-
 
 
 
