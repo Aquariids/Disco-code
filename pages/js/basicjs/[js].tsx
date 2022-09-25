@@ -46,16 +46,18 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
                     <meta property='og:description' content={'Уроки и разбор разных тем по javascript'} />
                     <meta property='og:type' content={'article'} />
                     <meta property='og:image' content='https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:JavaScript-logo.png' />
+                    <meta property="og:image:width" content="1200" />
+                    <meta property="og:image:height" content="630" />
                 </Head>
 
-                    <h1>{post.meta.title}</h1>
-                    <MDXRemote  {...post.source} />
+                <h1>{post.meta.title}</h1>
+                <MDXRemote  {...post.source} />
 
                 <div className={cn('modal', {
                     ['modaltrue']: mobile === true
                 })}>
                     <div className='bg'>
-                    <MenuJs setMobile={setMobile} mobile={mobile}/>
+                        <MenuJs setMobile={setMobile} mobile={mobile} />
                     </div>
                 </div>
                 <div className={cn(s.edit, 'page_edit')}><a target='_blank' rel='noopener' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{ width: '30px', paddingLeft: '5px' }} src='/edit.svg' /></div>
@@ -79,6 +81,8 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
                     <meta property='og:description' content={'Уроки и разбор разных тем по javascript'} />
                     <meta property='og:type' content={'article'} />
                     <meta property='og:image' content='https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:JavaScript-logo.png' />
+                    <meta property="og:image:width" content="510" />
+                    <meta property="og:image:height" content="228" />
 
                 </Head>
                 <AnimatePresence>
