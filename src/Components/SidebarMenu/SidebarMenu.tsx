@@ -11,6 +11,7 @@ const SidebarMenu = ():JSX.Element => {
                 <Menu title="Базовый JavaScript" category='basicjs' dropdown={true}  page='js' />
                 </div>
                 <Menu title="Продвинутый JavaScript" category='advancedjs' dropdown ={true} page='js' />
+                <Menu title="Алгоритмы" category='algorithmsjs' dropdown ={true} page='js' />
 
             </nav>
         );
