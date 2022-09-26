@@ -18,6 +18,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import useWindowDimensions from '../../../src/hooks/UseWindowDimensions';
 import MenuJs from '../../../src/Components/Menu/MenuJs/MenuJs';
+import AnimationContainer from '../../../src/Components/AnimationContainer/AnimationContainer';
 interface MSXPost {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
     meta: PostMeta
@@ -86,24 +87,18 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
                     <meta property="og:image:height" content="228" />
 
                 </Head>
-                <AnimatePresence>
+                <AnimationContainer>
 
-                    <motion.div
-                        transition={{ type: "spring", stiffness: 65 }}
-                        key={router.asPath}
-                        initial={{ x: 50, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        id="page-transition-container"
-                    >
-                        <h1>{post.meta.title}</h1>
-                        <MDXRemote  {...post.source} />
-                        <div className={cn(s.edit, 'page_edit')}><a target='_blank' rel='noopener' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{ width: '30px', paddingLeft: '5px' }} src='/edit.svg' /></div>
-                        <div className={cn(s.footer, 'page_footer')}>
-                            <Link href={post.meta.prev}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая страница'}</Link>
-                            <Link href={post.meta.next}>{post.meta.next === 'none' ? '' : 'Следующая страница'}</Link>
-                        </div>
-                    </motion.div>
-                </AnimatePresence>
+                    <h1>{post.meta.title}</h1>
+                    <MDXRemote  {...post.source} />
+                    <div className={cn(s.edit, 'page_edit')}><a target='_blank' rel='noopener' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{ width: '30px', paddingLeft: '5px' }} src='/edit.svg' /></div>
+                    <div className={cn(s.footer, 'page_footer')}>
+                        <Link href={post.meta.prev}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая страница'}</Link>
+                        <Link href={post.meta.next}>{post.meta.next === 'none' ? '' : 'Следующая страница'}</Link>
+                    </div>
+                </AnimationContainer>
+
+
 
             </div>
         );
