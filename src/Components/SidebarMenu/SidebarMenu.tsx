@@ -3,6 +3,7 @@ import s from './SidebarMenu.module.css';
 import Menu from '../Menu/Menu';
 import MenuJs from "../Menu/MenuJs/MenuJs";
 import MenuTs from "../Menu/MenuTs/MenuTs";
+import MenuReact from "../Menu/MenuReact/MenuReact";
 
 const SidebarMenu = ():JSX.Element => {
     const router = useRouter();
@@ -24,7 +25,7 @@ const SidebarMenu = ():JSX.Element => {
     if (router.pathname.startsWith('/react')) {
         return (
             <nav className={s.nav_menu}>
-                <Menu title="Базовые темы react" category='basicreact' dropdown={true} page='react'/>
+                <MenuReact sideBarMenuActive={true} mobileMenuActive={false}/>
             </nav>
         );
     }

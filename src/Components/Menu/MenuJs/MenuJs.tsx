@@ -13,7 +13,7 @@ const MenuJs = ({ setMobile, mobile, mobileMenuActive, sideBarMenuActive }: mobi
                 <Menu title="Простенькие задачи" category='.' page='js' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
             </>
         );
-    }  if (sideBarMenuActive === true) {
+    } if (sideBarMenuActive === true) {
         return (
             <>
                 <Menu title="Базовый JavaScript" category='basicjs' dropdown={true} page='js' />
@@ -25,7 +25,9 @@ const MenuJs = ({ setMobile, mobile, mobileMenuActive, sideBarMenuActive }: mobi
     } else {
         return (
             <>
-                <Menu title="Базовый JavaScript" category='basicjs' page='js' />
+                <div className='indent'>
+                    <Menu title="Базовый JavaScript" category='basicjs' page='js' />
+                </div>
                 <Menu title="Продвинутый JavaScript" category='advancedjs' page='js' />
                 <Menu title="Алгоритмы" category='algorithmsjs' page='js' />
                 <Menu title="Простенькие задачи" category='/' page='js' />

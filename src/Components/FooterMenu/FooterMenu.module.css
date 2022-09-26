@@ -114,3 +114,12 @@
 		
 	}
 }
+
+
+@media (max-width: 315px) {
+	.footer {
+		width: 275px;
+
+	}
+	
+}

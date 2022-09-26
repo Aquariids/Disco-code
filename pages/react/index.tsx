@@ -3,6 +3,7 @@ import Head from 'next/head';
 import React from 'react';
 import { withLayout } from '../../layout/Layout';
 import Menu from '../../src/Components/Menu/Menu';
+import MenuReact from '../../src/Components/Menu/MenuReact/MenuReact';
 import { getAllPosts } from '../api/api';
 import { POSTS_PATH_REACT } from '../api/paths';
 import s from './pageReact.module.css';
@@ -28,13 +29,9 @@ const Home: NextPage = (): JSX.Element => {
 
       <h2>Содержание</h2>
       <span>Здесь собраны все мои записи по <code className={s.react}>React</code></span> <br />
-
-
       <div className='page_body'>
         <div className='page_menu'>
-          <Menu title=" Базовые темы react" category='basicreact' page='react' />
-          <Menu title=" Продвинутые темы react" category='.' page='react' />
-
+          <MenuReact sideBarMenuActive={false} mobileMenuActive={false}/>
         </div>
       </div>
     </div>

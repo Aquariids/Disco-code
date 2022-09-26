@@ -12,6 +12,7 @@
 
 
 html {
+	padding-right: 16px;
 	scroll-behavior: smooth;
 	overflow-x: hidden;
 	background-image: url(/manga.svg);
@@ -55,7 +56,7 @@ a {
 	box-sizing: border-box;
 }
 
-/* @media (prefers-color-scheme: dark) {
+ /* @media (prefers-color-scheme: dark) {
 	html {
 		color-scheme: dark;
 	}
@@ -63,6 +64,8 @@ a {
 	body {
 		color: white;
 		background: black;
-	}
+	} 
 
-} */
+} 
+
+*/

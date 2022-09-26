@@ -215,18 +215,10 @@
 	.index_list_menu {
 		width:355px;
 		white-space: normal;
+		padding-left: 16px;
 	}
 }
 
-@media (max-width: 320px) {
-	.index_list_menu {
-		display: grid;
-		align-items: center;
-		justify-content: center;
-		grid-template-columns: 200px;
-		gap: 5px;
-	}
-}
 
 @media (max-width: 785px) {
 	.index_list_menu {
@@ -241,7 +233,31 @@
 	}
 
 	.index_btn {
+		margin-top: 15px;
 		width: 400px;
+	}
+}
+
+@media (max-width: 415px) {
+	.index_list_menu {
+		width: 300px;
+		gap: 5px;
+		white-space: normal;
+	}
+
+	.index_btn {
+		width: 300px;
+	}
+}
+
+@media (max-width: 320px) {
+	.index_list_menu {
+		width: 150px;
+		white-space: normal;
+	}
+
+	.index_btn {
+		width: 150px;
 	}
 }
 
@@ -260,15 +276,5 @@
 
 
 
-@media (max-width: 425px) {
 
-	.index_list_menu {
-		margin-left: 100px;
-		justify-content: center;
-		flex-direction: column;
-		width: 200px;
-		grid-template-columns: 100px;
-		white-space: normal;
-	}
-	
-}
+
