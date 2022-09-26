@@ -1,7 +1,7 @@
 import React from 'react';
 import Menu from '../Menu';
 import { mobileMenuProps } from '../Menu.props';
-
+import s from '../Menu.module.css';
 const MenuJs = ({ setMobile, mobile, mobileMenuActive, sideBarMenuActive }: mobileMenuProps): JSX.Element => {
 
     if (mobileMenuActive === true) {
@@ -19,7 +19,6 @@ const MenuJs = ({ setMobile, mobile, mobileMenuActive, sideBarMenuActive }: mobi
                 <Menu title="Базовый JavaScript" category='basicjs' dropdown={true} page='js' />
                 <Menu title="Продвинутый JavaScript" category='advancedjs' dropdown={true} page='js' />
                 <Menu title="Алгоритмы" category='algorithmsjs' dropdown={true} page='js' />
-
             </>
         );
     } else {
