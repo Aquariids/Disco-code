@@ -2,9 +2,10 @@
 title: 'События '
 id: 20
 prev: '/js/basicjs/OOPAndPrototype'
-next: '/js/basicjs/s'
+next: '/js/basicjs/mobileEvents'
 category: 'basicjs'
 ---
+
 #### Теги
 <div className='tag_js'>[Событие и обработчик события](#событие-и-обработчик-события)</div> <br/>
 <div className='tag_js'>[Записываем обработчик события. Устаревшие способы](#записываем-обработчик-события-устаревшие-способы)</div> 
@@ -75,7 +76,8 @@ btn.addEventListener('click', () => {
 });
 // События в js выполняются в порядке очереди!
 ```
-![hello serega and dima](https://github.com/Aquariids/Js-Ts-React-etc../blob/main/JavaScript/img/%D0%91%D0%B5%D0%B7%D1%8B%D0%BC%D1%8F%D0%BD%D0%BD%D1%8B%D0%B9.png)<br/>
+
+<div className='container-img'> <span className="img"> ![alt text](/images/Content/Js/addEventListener.png) </span></div>
 
 ## Объект event ##
 Иногда нам нужно получать данные о том элементе с которым мы взаимодействуем, для этого у нас есть специальный объект `event`, этот объект передается как аргумент в колбек функцию (называть можем как угодно, но обычно это `event` или `e`).
@@ -127,15 +129,19 @@ overlay.addEventListener('click', showElement);
 btn.addEventListener('click', showElement);
 ```
 При нажатии на кнопку мы получим такую картину:
-![всплытие](https://github.com/Aquariids/Js-Ts-React-etc../blob/main/JavaScript/img/%D0%B2%D1%81%D0%BF%D0%BB%D1%8B%D1%82%D0%B8%D0%B5.png)<br/>
+
+<div className='container-img'> <span className="img"> ![alt text](/images/Content/Js/EventBubbling.png) </span></div>
+
 Сначала обработчик срабатывает на элементе вложеннее, а после по иерархии вверх, в нашем случае кнопка и `div` в котором она находится - это и называется всплытие событий.
 Мы можем немного изменить такое поведение с помощью свойства `currentTurget`.<br/>
 ### currentTarget ###
-`currentTarget` -  используется, когда один и тот же обработчик события присваивается нескольким элементам ( `target` используем сам элемент, а `currentTarget` - его родителя)
+`currentTarget` -  используется, когда один и тот же обработчик события присваивается нескольким элементам ( `target` использует сам элемент, а `currentTarget` - его родителя)
 Если в коде выше мы поменяем `target` на `currentTarget`, то получим более наглядный пример.
-![всплытие два](https://github.com/Aquariids/Js-Ts-React-etc../blob/main/JavaScript/img/%D0%B2%D1%81%D0%BF%D0%BB%D1%8B%D1%82%D0%B8%D0%B5%20%D0%B4%D0%B2%D0%B0.png)<br/>
+
+<div className='container-img'> <span className="img"> ![alt text](/images/Content/Js/currentTarget.png) </span></div>
+
 Теперь мы наглядно получаем вторым элементом родителя.
- ## Отмена стандартного поведения браузера preventDefault()
+## Отмена стандартного поведения браузера preventDefault()
 
 `preventDefault()` - это метод у объекта события, нашего `event`, он отменяет стандартное поведение браузера.
 ```javaScript
