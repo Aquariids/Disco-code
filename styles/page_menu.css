@@ -32,7 +32,7 @@
 }
 
 .page_body {
-	display: flex;
+	display: grid;
 	justify-content: center;
 }
 

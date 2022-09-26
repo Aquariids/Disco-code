@@ -258,3 +258,17 @@
 	padding: 8px 0;
 }
 
+
+
+@media (max-width: 425px) {
+
+	.index_list_menu {
+		margin-left: 100px;
+		justify-content: center;
+		flex-direction: column;
+		width: 200px;
+		grid-template-columns: 100px;
+		white-space: normal;
+	}
+	
+}

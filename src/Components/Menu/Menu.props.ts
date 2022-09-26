@@ -12,5 +12,7 @@ export interface IMenu extends  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>
 export interface mobileMenuProps {
     setMobile?:any;
     mobile?:boolean;
+    mobileMenuActive:boolean;
+    sideBarMenuActive:boolean;
 
 }

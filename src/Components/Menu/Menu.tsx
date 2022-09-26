@@ -96,8 +96,9 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
 
             <div className={s.content} {...props}>
                 <div className={s.index_btn}>
-                <h4 className={s.title}
-                >{title}</h4>
+                <Button
+                    arrow= 'none'
+                >{title}</Button>
                 </div>
                     <ul className={s.index_list_menu}>
                     {posts && posts.map((post,index) => (

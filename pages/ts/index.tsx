@@ -7,6 +7,7 @@ import { getAllPosts } from '../api/api';
 import { POSTS_PATH_TS } from '../api/paths';
 import cn from 'classnames';
 import s from './pageTs.module.css';
+import MenuTs from '../../src/Components/Menu/MenuTs/MenuTs';
 
 
 const Home: NextPage = (): JSX.Element => {
@@ -16,13 +17,11 @@ const Home: NextPage = (): JSX.Element => {
     <Head>
       <title>Содержание</title>
       <meta name="google-site-verification" content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY" />
-
       <meta name="yandex-verification" content="a99ae512e4f1c330" />
       <meta name='description' content={'Уроки по typescript, ts статьи,'}/>
       <meta property='og:title' content='Уроки по typescript'/>
       <meta property='og:description' content={'Уроки и разбор разных тем по javascript'}/>
       <meta property='og:type' content={'article'}/>
-
     </Head>
 
         <h2>Содержание</h2>
@@ -31,8 +30,7 @@ const Home: NextPage = (): JSX.Element => {
     <div className='page_body'>
     <div className={cn(s.page,'page_menu')}>
 
-      <Menu title=" Работа с typeScript" category='basicts' page='ts'/>
-      <Menu title="Фиксы некоторых ошибок" category='/' page='ts'/>
+      <MenuTs sideBarMenuActive={false} mobileMenuActive={false}/>
 
     </div>
     </div>

@@ -6,6 +6,7 @@ import s from './pageJs.module.css';
 import { getAllPosts } from '../api/api';
 import { POSTS_PATH_JS } from '../api/paths';
 import Head from 'next/head';
+import MenuJs from '../../src/Components/Menu/MenuJs/MenuJs';
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = getAllPosts(POSTS_PATH_JS)
@@ -46,10 +47,7 @@ const Home: NextPage = (): JSX.Element => {
       <div className='page_body'>
         <div className='page_menu'>
 
-          <Menu title="Базовый JavaScript" category='basicjs' page='js' />
-          <Menu title="Продвинутый JavaScript" category='advancedjs' page='js' />
-          <Menu title="Алгоритмы" category='algorithmsjs' page='js' />
-          <Menu title="Простенькие задачи" category='.' page='js' />
+            <MenuJs sideBarMenuActive={false} mobileMenuActive={false}/>
 
         </div>
       </div>

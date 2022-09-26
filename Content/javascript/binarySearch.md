@@ -5,6 +5,16 @@ next: '/js/algorithmsjs/s'
 category: 'algorithmsjs'
 ---
 
+#### Теги
+<div className = 'tag_js'>[Показываю все и сразу](#показываю-все-и-сразу)</div>  <br/>
+<div className = 'tag_js'>[Разбираем по итерациям. Ищем 4 в массиве:](#далее-я-объясню-для-таких-чайников-как-я)</div>  <br/>
+<div className = 'mini_tag_js'>[первая итерация]()</div> 
+<div className = 'mini_tag_js'>[вторая итерация]()</div> 
+<div className = 'mini_tag_js'>[третья итерация]()</div> 
+
+
+
+## Показываю все и сразу ##
 
 В бинарном поиске мы используем дробление отсортированного массива на половины.<br/>
 ```javaScript

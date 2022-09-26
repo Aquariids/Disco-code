@@ -1,18 +1,15 @@
 import { useRouter } from "next/router";
 import s from './SidebarMenu.module.css';
 import Menu from '../Menu/Menu';
+import MenuJs from "../Menu/MenuJs/MenuJs";
+import MenuTs from "../Menu/MenuTs/MenuTs";
 
 const SidebarMenu = ():JSX.Element => {
     const router = useRouter();
     if (router.pathname.startsWith('/js')) {
         return (
             <nav className={s.nav_menu}>
-                <div className={s.basicJsBtn}>
-                <Menu title="Базовый JavaScript" category='basicjs' dropdown={true}  page='js' />
-                </div>
-                <Menu title="Продвинутый JavaScript" category='advancedjs' dropdown ={true} page='js' />
-                <Menu title="Алгоритмы" category='algorithmsjs' dropdown ={true} page='js' />
-
+                <MenuJs mobileMenuActive={false} sideBarMenuActive= {true}/>
             </nav>
         );
     }
@@ -20,7 +17,7 @@ const SidebarMenu = ():JSX.Element => {
     if (router.pathname.startsWith('/ts')) {
         return (
             <nav className={s.nav_menu}>
-                <Menu title="TypeScript" category='basicts' dropdown={true} page='ts'/>
+                <MenuTs sideBarMenuActive={true} mobileMenuActive={false}/>
             </nav>
         );
     }

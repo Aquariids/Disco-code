@@ -1,6 +1,6 @@
 .button {
 	position: relative;
-	max-width: 250px;
+	max-width: 335px;
 	margin-left: 20px;
 	padding-top: 15px;
 	padding-right: 17px;
@@ -44,9 +44,8 @@
 
 @media (max-width: 1200px) {
 	.button {
-		width: 150px;
 		padding: 0;
-		white-space: normal;
+		/* white-space: normal; */
 	}
 }
 

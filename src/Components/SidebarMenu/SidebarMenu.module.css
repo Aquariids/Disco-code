@@ -8,9 +8,11 @@
 	overflow-y: auto;
 	overflow-x:hidden;
 	scrollbar-width: none;
+
 }
 
 .nav_menu::-webkit-scrollbar {
+
 	display: none;
 	opacity: 0;
 	background: transparent;  
@@ -78,6 +80,6 @@
 	padding: 0;
 }
 
-.basicJsBtn {
+/* .basicJsBtn {
 	margin-top: 25px;
-}
+} */

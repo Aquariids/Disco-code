@@ -12,7 +12,7 @@
 
 
 html {
-
+	scroll-behavior: smooth;
 	overflow-x: hidden;
 	background-image: url(/manga.svg);
 	background-position: bottom right;
@@ -34,6 +34,7 @@ html {
 }
 
 body {
+	
 	
 	position: relative;
 	margin: 0;
