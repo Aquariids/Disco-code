@@ -27,7 +27,9 @@
 	grid-area: footer;
 	display: flex;
 	justify-content: right;
+	grid-template-columns: 1fr 1fr;
 	gap: 30px;
+	margin-bottom: 25px;
 }
 
 .content h3 {
@@ -62,6 +64,7 @@
 
 }
 .social {
+	margin-bottom: 20px;
 	flex-direction: column;
 	display: flex;
 	justify-content:right;
@@ -73,8 +76,8 @@
 
 @media (max-width: 785px) {
 	.footer {
-		grid-template-columns: minmax(320px, 1fr);
-
+		grid-template-columns: 500px;
+		justify-content: center;
 		/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
 		grid-template-areas: "footer";
 	}
@@ -116,6 +119,34 @@
 }
 
 
+
+.copyright {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	font-size: 13px;
+	color: #999;
+	margin-left: 5px;
+	margin-bottom: 5px;
+}
+
+.copyright span {
+	margin-top: 25px;
+
+}
+
+@media (max-width:785px) {
+	.copyright {
+			justify-content: center;
+	}
+}
+
+@media (max-width:765px) {
+	.copyright {
+		right: 0;
+		margin-right: 25px;
+	}
+}
 @media (max-width: 315px) {
 	.footer {
 		width: 275px;

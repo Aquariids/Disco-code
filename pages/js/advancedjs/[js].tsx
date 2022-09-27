@@ -95,8 +95,6 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
                     </div>
                 </AnimationContainer>
 
-
-
             </div>
         );
     }
