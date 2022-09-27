@@ -22,7 +22,7 @@ const router = useRouter();
                     {router.asPath.startsWith('/ts')? <Logo path='/ts' src='/logo/ts_logo.svg'/>:''}
                     {router.asPath.startsWith('/react')? <Logo path='/react' src='/logo/react_logo.svg'/>:''}
                     {router.pathname === '/'? <Logo path='/' src='/logo/disco.png'/>:''}
-                    <span className={link} > <Link href={'/'}> DiscoCode</Link> </span> </div>
+                    <span className={link} > <Link href={'/'}>DiscoCode</Link> </span> </div>
 
                 <div className={s.nav}>
             <div className={s.dropdown}>

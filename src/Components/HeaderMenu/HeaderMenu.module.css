@@ -153,6 +153,9 @@
 	visibility: visible;
 	opacity: 1;
 }
+.links {
+	font-size: 18px;
+}
 
 .js {
 	cursor: pointer;
