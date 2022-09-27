@@ -76,7 +76,7 @@
 
 @media (max-width: 785px) {
 	.footer {
-		grid-template-columns: 500px;
+		grid-template-columns: 550px;
 		justify-content: center;
 		/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
 		grid-template-areas: "footer";
@@ -94,7 +94,7 @@
 @media (max-width: 555px) {
 	.footer {
 		text-align: center;
-		grid-template-columns: minmax(320px);
+		grid-template-columns: minmax(320px, 1fr);
 		justify-content: center;
 		align-items: center;
 		/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
