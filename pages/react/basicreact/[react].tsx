@@ -6,20 +6,15 @@ import rehypeSlug from 'rehype-slug';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import Head from 'next/head';
-// import "highlight.js/styles/panda-syntax-dark.css";
 import "highlight.js/styles/nord.css";
-
-
+import cn from 'classnames';
 import { getAllPosts, getPostFromSlug, getSlugs, PostMeta } from '../../api/api';
 import { POSTS_PATH_REACT } from '../../api/paths';
 import Link from 'next/link';
-import cn from 'classnames';
 import s from './react.module.css';
 import MobileButton from '../../../src/Components/UI/MobileButton/MobileButton';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useRouter } from 'next/router';
-import useWindowDimensions from '../../../src/hooks/UseWindowDimensions';
 import { useState } from 'react';
+import useWindowDimensions from '../../../src/hooks/UseWindowDimensions';
 import MenuReact from '../../../src/Components/Menu/MenuReact/MenuReact';
 import AnimationContainer from '../../../src/Components/AnimationContainer/AnimationContainer';
 interface MSXPost {
@@ -34,7 +29,6 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
 
     const [mobile, setMobile] = useState(false);
 
-    const router = useRouter();
     if (width && (width <= 785)) {
         return (
             <div className='page'>

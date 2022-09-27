@@ -13,8 +13,6 @@ import { POSTS_PATH_JS } from '../../api/paths';
 import Link from 'next/link';
 import s from './js.module.css';
 import MobileButton from '../../../src/Components/UI/MobileButton/MobileButton';
-import { AnimatePresence, motion, useScroll } from 'framer-motion';
-import { useRouter } from 'next/router';
 import { useState } from 'react';
 import useWindowDimensions from '../../../src/hooks/UseWindowDimensions';
 import MenuJs from '../../../src/Components/Menu/MenuJs/MenuJs';
@@ -33,7 +31,6 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
     const { height, width } = useWindowDimensions();
 
     const [mobile, setMobile] = useState(false);
-    const { scrollYProgress } = useScroll();
     if (width && (width <= 785)) {
         return (
             <div className='page'>

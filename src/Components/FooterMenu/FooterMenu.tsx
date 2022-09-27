@@ -22,7 +22,7 @@ const router = useRouter();
                 <ul style={{listStyleType:'none'}}>
                     <li><Link href={'/js/basicjs/browserMethodsAndConsole'}>Базовый javaScript</Link></li>
                     <li><Link href={'/js/advancedjs/json'}>Продвинутый javaScript</Link></li>
-                    <li><Link href={'/js/basicjs/browserMethodsAndConsole'}>Алгоритмы javaScript</Link></li>
+                    <li><Link href={'/js/algorithmsjs/binarySearch'}>Алгоритмы javaScript</Link></li>
                     <li><Link href={'/react/basicreact/ReactSinglePageApp'}> Базовый React </Link></li>
                     <li><Link href={'/ts/basicts/installation'}>Работа с typescript</Link></li>
                 </ul>

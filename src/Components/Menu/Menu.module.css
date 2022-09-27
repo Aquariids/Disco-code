@@ -25,6 +25,9 @@
 	display: flex;
 }
 
+.content {
+}
+
 .index_btn {
 	display: grid;
 	justify-content: center;
