@@ -3,7 +3,7 @@
 }
 
 .modal {
-	margin-top:50px;
+	margin-top:60px;
 	display: grid;
 	opacity: 0;
 	flex-direction: column;
