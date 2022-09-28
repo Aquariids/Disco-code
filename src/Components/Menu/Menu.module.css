@@ -13,7 +13,6 @@
 .index_list_menu {
 	display: flex;
 	flex-direction: column;
-	margin: 0;
 	margin-right: 20px;
 	margin-left: 20px;
 	padding: 0;

@@ -12,10 +12,11 @@
 }
 
 .page_menu {
+	margin-bottom: 50px;
 	display: grid;
 	margin-top: 50px;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
+	grid-template-rows: 1fr;
 	gap: 30px;
 }
 
