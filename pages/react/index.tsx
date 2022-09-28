@@ -2,7 +2,6 @@ import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import React from 'react';
 import { withLayout } from '../../layout/Layout';
-import Menu from '../../src/Components/Menu/Menu';
 import MenuReact from '../../src/Components/Menu/MenuReact/MenuReact';
 import { getAllPosts } from '../api/api';
 import { POSTS_PATH_REACT } from '../api/paths';
