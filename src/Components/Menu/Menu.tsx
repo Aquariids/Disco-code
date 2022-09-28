@@ -61,7 +61,6 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
 
     else if (mobileMenu === true) {
 
-       
         return(
             <div className={s.mobile_content} {...props}>
                 <div>

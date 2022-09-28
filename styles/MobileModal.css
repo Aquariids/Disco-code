@@ -3,12 +3,12 @@
 }
 
 .modal {
+	margin-top:50px;
 	display: grid;
 	opacity: 0;
 	flex-direction: column;
 	visibility: hidden;
 	justify-content: left;
-	align-items: center;
 	right: 0;
 	left: 0;
 	bottom: 0;
@@ -21,8 +21,6 @@
 
 	background-color: #fff;
 	transition: all 0.3s;
-	grid-template-columns: auto;
-    grid-template-rows: auto auto auto;
 }
 
 

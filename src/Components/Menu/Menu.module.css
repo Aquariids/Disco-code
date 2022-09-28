@@ -138,8 +138,9 @@
 }
 
 .title {
-	margin-top: 30px;
+	margin-top: 25px;
 	padding-right: 10px;
+	margin-bottom: 0;
 	padding-left: 20px;
 	text-transform: uppercase;
 	color: rgb(109 109 109);
@@ -148,7 +149,10 @@
 	font-weight: bold;
 	line-height: 15px;
 	white-space: nowrap;
+	
 }
+
+
 
 @media (max-width: 1315px) {
 	.listMenu {
@@ -259,6 +263,7 @@
 
 .mobile_list li {
 	margin-top: 0;
-	padding: 8px 0;
+	padding: 5px 0;
+	line-height: 1.1;
 }
 
