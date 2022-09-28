@@ -44,6 +44,7 @@
 
 @media (max-width: 785px) {
 	.wrapper {
+		gap: 0;
 		grid-template-columns: minmax(320px, 1fr);
 		/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
 		grid-template-areas:
