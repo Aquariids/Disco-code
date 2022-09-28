@@ -20,7 +20,7 @@
 	overflow-y: auto;
 	scroll-behavior:smooth;
 	background-color: #fff;
-	transition: all 0.3s;
+	transition: all 0.4s;
 }
 
 
@@ -28,7 +28,7 @@
 .modaltrue {
 	overflow-y: auto;
 	scroll-behavior:smooth;
-	transition: all 0.3s;
+	transition: all 1s;
 	visibility: visible;
 	opacity: 1;
 	
