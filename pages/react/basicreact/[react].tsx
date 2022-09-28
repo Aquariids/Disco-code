@@ -25,11 +25,9 @@ interface MSXPost {
 
 const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => {
 
-    const { height, width } = useWindowDimensions();
 
     const [mobile, setMobile] = useState(false);
 
-    if (width && (width <= 785)) {
         return (
             <div className='page'>
                 <Head>
@@ -42,14 +40,17 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
                     <meta property='og:type' content={'article'} />
                 </Head>
 
-                <h1>{post.meta.title}</h1>
-                <MDXRemote  {...post.source} />
-
+                { mobile === true ? <><h1>{post.meta.title}</h1>
+                <MDXRemote  {...post.source} /></> :
+                <AnimationContainer>
+                    <h1>{post.meta.title}</h1>
+                    <MDXRemote  {...post.source} />
+                </AnimationContainer>
+            }
                 <div className={cn('modal', {
                     ['modaltrue']: mobile === true
                 })}>
                     <div className='bg'>
-
                         <MenuReact sideBarMenuActive={false} mobileMenuActive={true} setMobile={setMobile} mobile={mobile} />
                     </div>
                 </div>
@@ -62,36 +63,7 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
             </div>
         );
 
-    } else {
-        return (
-            <div className='page'>
-                <Head>
-                    <title>{post.meta.title}</title>
-
-                    <meta name="google-site-verification" content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY" />
-                    <meta name="yandex-verification" content="a99ae512e4f1c330" />
-                    <meta name='description' content={'Уроки по react, reactjs, react статьи,'} />
-                    <meta property='og:title' content={post.meta.title} />
-                    <meta property='og:description' content={'Уроки и разбор разных тем по javascript'} />
-                    <meta property='og:type' content={'article'} />
-
-                </Head>
-                <AnimationContainer>
-                    <h1>{post.meta.title}</h1>
-                    <MDXRemote  {...post.source} />
-                    <div className={cn(s.edit, 'page_edit')}><a target='_blank' rel='noopener' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{ width: '30px', paddingLeft: '5px' }} src='/edit.svg' /></div>
-                    <div className={cn(s.footer, 'page_footer')}>
-                        <Link href={post.meta.prev}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая страница'}</Link>
-                        <Link href={post.meta.next}>{post.meta.next === 'none' ? '' : 'Следующая страница'}</Link>
-                    </div>
-                </AnimationContainer>
-
-
-
-            </div>
-        );
-    }
-};
+    };
 
 
 
