@@ -10,7 +10,7 @@ Router.events.on('routeChangeComplete', (url:string)=> {
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export async function getServerSideProps({ res }:any) {
+export async function getServerSideProps({ req, res }:any) {
   res.setHeader(
     'Cache-Control',
     'public, s-maxage=10, stale-while-revalidate=59'
