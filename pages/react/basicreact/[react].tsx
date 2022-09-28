@@ -14,7 +14,6 @@ import Link from 'next/link';
 import s from './react.module.css';
 import MobileButton from '../../../src/Components/UI/MobileButton/MobileButton';
 import { useState } from 'react';
-import useWindowDimensions from '../../../src/hooks/UseWindowDimensions';
 import MenuReact from '../../../src/Components/Menu/MenuReact/MenuReact';
 import AnimationContainer from '../../../src/Components/AnimationContainer/AnimationContainer';
 interface MSXPost {
