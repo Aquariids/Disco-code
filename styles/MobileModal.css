@@ -15,12 +15,12 @@
 	top: 0;
 	position: fixed;
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	z-index: 200;
 	overflow-y: auto;
 
 	background-color: #fff;
-	transition: all 0.5s;
+	transition: all 0.3s;
 	grid-template-columns: auto;
     grid-template-rows: auto auto auto;
 }
@@ -29,18 +29,10 @@
 
 .modaltrue {
 
-	transition: all 0.5s;
+	transition: all 0.3s;
 	visibility: visible;
 	opacity: 1;
 	
 }
 
 
-.bg {
-	margin-top: 120px;
-	z-index: 195;
-	width: 100%;
-	height: 100vh;
-	position: absolute;
-	background-color: #fff;
-}
