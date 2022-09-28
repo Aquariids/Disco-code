@@ -26,6 +26,7 @@
 }
 
 .index_btn {
+	margin-top: 25px;
 	display: grid;
 	justify-content: center;
 }
@@ -223,15 +224,7 @@
 	}
 }
 
-@media (max-width: 320px) {
-	.index_list_menu {
-		display: grid;
-		align-items: center;
-		justify-content: center;
-		grid-template-columns: 200px;
-		gap: 5px;
-	}
-}
+
 
 @media (max-width: 785px) {
 	.index_list_menu {
@@ -242,7 +235,7 @@
 		width: 400px;
 		margin: 0;
 		padding: 0;
-		gap: 10px;
+		gap: 5px;
 	}
 
 	.index_btn {
@@ -250,8 +243,22 @@
 	}
 }
 
+@media (max-width: 400px) {
+	.index_list_menu {
+		width: 250px;
+		white-space: normal;
+		gap: 5px;
+		margin: 0 auto;
+	}
+}
 
 
+
+@media (max-width: 300px) {
+	.index_list_menu {
+		width: 200px;
+	}
+}
 
 .mobile_list {
 	margin-left: 20px;
