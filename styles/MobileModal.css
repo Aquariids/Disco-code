@@ -18,7 +18,7 @@
 	height: 100%;
 	z-index: 200;
 	overflow-y: auto;
-
+	scroll-behavior:smooth;
 	background-color: #fff;
 	transition: all 0.3s;
 }
@@ -26,7 +26,8 @@
 
 
 .modaltrue {
-
+	overflow-y: auto;
+	scroll-behavior:smooth;
 	transition: all 0.3s;
 	visibility: visible;
 	opacity: 1;
