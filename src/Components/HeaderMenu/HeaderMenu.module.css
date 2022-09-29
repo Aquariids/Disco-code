@@ -123,15 +123,13 @@
 
 .dropdown_content {
 	position: absolute;
-	z-index: 1;
 	visibility: hidden;
 	min-width: 100%;
 	margin: 0;
 	padding: 30px 0 0;
+	transition: visibility 0.2s linear, opacity 0.2s linear;
 	opacity: 0;
 	border-bottom: 1px solid;
-	transition: visibility 0.2s linear, opacity 0.2s linear;
-
 	box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
 }
 
@@ -151,8 +149,6 @@
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown_content {
-	transition: visibility 0.2s linear, opacity 0.2s linear;
-
 	visibility: visible;
 	opacity: 1;
 }
