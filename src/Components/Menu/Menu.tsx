@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, {useContext,useState } from 'react';
+import React, {useCallback, useContext,useEffect,useLayoutEffect,useRef,useState } from 'react';
 import s from './Menu.module.css';
 import cn from 'classnames';
 import { IMenu } from './Menu.props';
@@ -9,6 +9,8 @@ import { AppContext } from '../../../context/app.context';
 
 
 const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,  ...props}:IMenu): JSX.Element => {
+
+
     const router = useRouter();
     const pathname = router.asPath;
     const { posts } = useContext(AppContext);
@@ -40,7 +42,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                         
                         <li 
                         key={index}
-                            className={cn({
+                            className={cn('scroll', {
                                 [s.active_js]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/js'),
                                 [s.active_ts]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/ts'),
                                 [s.active_react]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/react'),

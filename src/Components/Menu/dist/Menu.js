@@ -50,7 +50,7 @@ var Menu = function (_a) {
                 react_1["default"].createElement(Button_1["default"], { arrow: isOpen === true ? 'down' : 'up', onClick: handleToggle }, title)),
             isOpen && (react_1["default"].createElement("ul", { className: Menu_module_css_1["default"].listMenu }, posts && posts.map(function (post, index) {
                 var _a;
-                return (react_1["default"].createElement("li", { key: index, className: classnames_1["default"]((_a = {},
+                return (react_1["default"].createElement("li", { key: index, className: classnames_1["default"]('scroll', (_a = {},
                         _a[Menu_module_css_1["default"].active_js] = pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/js'),
                         _a[Menu_module_css_1["default"].active_ts] = pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/ts'),
                         _a[Menu_module_css_1["default"].active_react] = pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/react'),
