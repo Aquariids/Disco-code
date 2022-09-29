@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useContext,useState } from 'react';
+import React, {useContext,useState } from 'react';
 import s from './Menu.module.css';
 import cn from 'classnames';
 import { IMenu } from './Menu.props';
@@ -9,7 +9,6 @@ import { AppContext } from '../../../context/app.context';
 
 
 const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,  ...props}:IMenu): JSX.Element => {
-
     const router = useRouter();
     const pathname = router.asPath;
     const { posts } = useContext(AppContext);
