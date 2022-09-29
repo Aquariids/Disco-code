@@ -155,18 +155,21 @@
 	.listMenu {
 		grid-template-columns: 240px;
 
+
 	}
 }
 
 @media (max-width: 1290px) {
 	.listMenu {
-		margin-left: -20px;
+		padding-left: 10px;
 
 	}
 }
 
 @media (max-width: 1215px) {
-	.listMenu {
+	.listMenu {	 
+		padding-left: 0;
+
 		margin-left: 30px;
 
 	}
