@@ -1,17 +1,16 @@
 .btn {
 	position: fixed;
 	z-index: 300;
-	right: 0;
-	bottom: 0;
+	right: 20px;
+	bottom: 44px;
 	display: none;
-	width: 70px;
-	height: 70px;
-	margin-right: 20px;
-	margin-bottom: 55px;
+	width: 60px;
+	height: 60px;
 	border: 1px solid rgb(255 255 255 / 10%);
-	border-radius: 100%;
+	border-radius: 50%;
 	background-color: rgb(32 35 42);
 	box-shadow: rgb(0 0 0 / 30%) 0 0 20px;
+	
 }
 
 @media (max-width: 785px) {
@@ -23,8 +22,60 @@
 	}
 }
 
+
+
+
+
+.contentBtn {
+	padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .svg {
 	display: flex;
-	justify-content: center;
-	align-items: center;
+    height: 30px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+}
+
+.arrowTop svg {
+	transform: translate(1px, 0px) rotate(-90deg);
+    transition: -webkit-transform 0.2s ease 0s, transform 0.2s ease 0s;
+}
+
+.arrowDown svg {
+	transform: translate(1px, 0px) rotate(90deg);
+    transition: -webkit-transform 0.2s ease 0s, transform 0.2s ease 0s;
+}
+	
+
+.arrowTopTrue svg {
+	transform: translate(1px, 12px) rotate(-90deg);
+    transition: -webkit-transform 0.2s ease 0s, transform 0.2s ease 0s;
+}
+
+.arrowDownTrue svg {
+	transform: translate(1px, -12px) rotate(90deg);
+    transition: -webkit-transform 0.2s ease 0s, transform 0.2s ease 0s;
+}
+
+.arrows {
+    display: flex;
+	align-self: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+
+	
+}
+
+
+
+@keyframes change_fill {
+    0% { fill: #49549E; }
+    75% { fill: #1bceb1; }
+    100% { fill: #1bce4f; }
 }

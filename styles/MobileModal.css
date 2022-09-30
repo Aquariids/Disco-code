@@ -28,7 +28,7 @@
 .modaltrue {
 	overflow-y: auto;
 	scroll-behavior:smooth;
-	transition: all 0.8s;
+	transition: all 0.7s;
 	visibility: visible;
 	opacity: 1;
 	

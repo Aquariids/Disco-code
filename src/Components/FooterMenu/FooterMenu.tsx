@@ -31,7 +31,7 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
 
                     <div className={s.social}>
                         <h3> Где меня найти </h3>
-                        <ul style={{ listStyleType: 'none' }}>
+                        <ul className={s.socialList} style={{ listStyleType: 'none' }}>
                             <li><a className={s.link} href="mailto:favoritePonyville@gmail.com">FavoritePonyville@gmail.com <LinkA /> </a></li>
                             <li><a className={s.link} target={"_blank"} href={'https://github.com/Aquariids/Disco-code'}>Github <LinkA /> </a></li>
                             <li><a className={s.link} target={"_blank"} href={'https://t.me/Aquariida'}>Телеграм <LinkA /> </a></li>
