@@ -42,23 +42,23 @@
 }
 
 .arrowTop svg {
-	transform: translate(1px, 0px) rotate(-90deg);
+	transform: translate(0px, 0px) rotate(-90deg);
     transition: -webkit-transform 0.2s ease 0s, transform 0.2s ease 0s;
 }
 
 .arrowDown svg {
-	transform: translate(1px, 0px) rotate(90deg);
+	transform: translate(0px, 0px) rotate(90deg);
     transition: -webkit-transform 0.2s ease 0s, transform 0.2s ease 0s;
 }
 	
 
 .arrowTopTrue svg {
-	transform: translate(1px, 12px) rotate(-90deg);
+	transform: translate(0px, 12px) rotate(-90deg);
     transition: -webkit-transform 0.2s ease 0s, transform 0.2s ease 0s;
 }
 
 .arrowDownTrue svg {
-	transform: translate(1px, -12px) rotate(90deg);
+	transform: translate(0px, -12px) rotate(90deg);
     transition: -webkit-transform 0.2s ease 0s, transform 0.2s ease 0s;
 }
 
