@@ -34,6 +34,7 @@
 }
 
 .svg {
+	margin: 0;
 	display: flex;
     height: 30px;
     -webkit-box-orient: horizontal;
@@ -42,6 +43,7 @@
 }
 
 .arrowTop svg {
+	margin-top: 2px;
 	transform: translate(0px, 0px) rotate(-90deg);
     transition: -webkit-transform 0.2s ease 0s, transform 0.4s ease 0s;
 }
@@ -72,12 +74,4 @@
     flex-direction: column;
 
 	
-}
-
-
-
-@keyframes change_fill {
-    0% { fill: #49549E; }
-    75% { fill: #1bceb1; }
-    100% { fill: #1bce4f; }
 }
