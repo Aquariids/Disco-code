@@ -5,6 +5,19 @@ import Articles from '../src/Components/Articles';
 import s from './index.module.css';
 import Head from 'next/head';
 
+
+
+export async function getServerSideProps({ req, res }:any) {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59'
+  );
+
+  return {
+    props: {},
+  };
+}
+
 const Home: NextPage = (): JSX.Element => {
 
   return (
