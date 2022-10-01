@@ -66,7 +66,7 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
                     <Link href={post.meta.next}>{post.meta.next === 'none' ? '' : 'Следующая страница'}</Link>
                 </div>
             </div>
-            <MobileButton mobile={mobile} setMobile={setMobile} path='/js' />
+            <MobileButton mobile={mobile} setMobile={setMobile} />
         </>
     );
 
