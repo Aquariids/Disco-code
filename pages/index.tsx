@@ -17,7 +17,7 @@ const Home: NextPage = (): JSX.Element => {
         <meta name="yandex-verification" content="a99ae512e4f1c330" />
         <meta name='description' content={'Здесь вы можете найти разборы разных тем на  javaScript, typeScript, reactjs, nextjs'}/>
         <meta property='og:title' content='Уроки и разборы разных тем по  javascript, typescript, react, nextjs' />
-        <meta property='og:description' content={'Уроки и разбор разных тем по javascript, typescript, react, nextjs'} />
+        <meta property='og:description' content={'Здесь вы можете найти статьи на  разные темы по javaScript, typeScript, reactjs, nextjs'} />
         <meta property='og:type' content={'article'} />
 
 
