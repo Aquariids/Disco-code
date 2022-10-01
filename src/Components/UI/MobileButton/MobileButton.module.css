@@ -73,3 +73,15 @@
 
 	
 }
+
+
+.arrowsJs svg {
+	fill: var(--js_color_links_pages);
+}
+.arrowsReact svg {
+	fill: var(--react_color_links_pages);
+}
+
+.arrowsTs svg {
+	fill: var(--ts_color_links_pages);
+}
