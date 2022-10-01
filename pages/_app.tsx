@@ -4,14 +4,13 @@ import Head from 'next/head';
 import ym from 'react-yandex-metrika';
 import {YMInitializer} from 'react-yandex-metrika';
 import Router, { useRouter } from 'next/router';
-import { Loading } from '../src/Components/Loading/Loading';
 Router.events.on('routeChangeComplete', (url:string)=> {
   if(typeof window !== 'undefined')
   ym('hit',url);
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export async function getServerSideProps({ req, res }:any) {
+export async function getServerSideProps({ res }:any) {
   res.setHeader(
     'Cache-Control',
     'public, s-maxage=10, stale-while-revalidate=59'
