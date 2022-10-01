@@ -1,9 +1,15 @@
 ---
-title: 'Установка react и понятие single page application'
+title: 'Create react app, single page application'
 id: 0
 next: '/react/basicreact/JSXIndexjsApp'
 category: 'basicreact'
 ---
+
+#### Теги
+
+<div className = 'tag_react'>[Что такое react](#react)</div> <br/>
+<div className = 'tag_react'>[что такое single page application](#single-page-application)</div> <br/>
+<div className = 'tag_react'>[Создаем react проект](#create-react-app)</div> <br/>
 
 
 ## REACT ##
@@ -16,3 +22,14 @@ REACT - это библиотека для создания пользовате
 На классических multi page application нужно создавать несколько html файлов, и каждый из них подгружать это сулит большими размерами файлов и постоянной перезагрузкой страницы.
 Single page в свою очередь единожды загружает html файл -  `index.html` внутрь которого монтируется компонента app с помощью бибилиотеки [ReactDOM и метода render](#).
 Так мы формируем всё приложение на javaScript использовав всего один html файл. Вся верстка создается с помощью [JSX](#) который в свою очередь будет компилироваться в обычный JavaScript язык.
+
+## Create react app ##
+Для создания нового `react` проекта нужно ввести:
+```javaScript
+npx create-react-app my-app
+```
+Для запуска проекта:
+```javaScript
+npm start
+```
+
