@@ -45,24 +45,22 @@
 .arrowTop svg {
 	margin-top: 2px;
 	transform: translate(0px, 0px) rotate(-90deg);
-    transition: -webkit-transform 0.2s ease 0s, transform 0.4s ease 0s;
+    transition: -webkit-transform 0.2s ease 0s, transform 0.7s ease 0s;
 }
 
 .arrowDown svg {
 	transform: translate(0px, 0px) rotate(90deg);
-    transition: -webkit-transform 0.2s ease 0s, transform 0.4s ease 0s;
+    transition: -webkit-transform 0.2s ease 0s, transform 0.7s ease 0s;
 }
 	
 
 .arrowTopTrue svg {
 	transform: translate(0px, 12px) rotate(-90deg);
-	transition: -webkit-transform 0.2s ease 0s, transform 0.7s ease 0s;
 
 }
 
 .arrowDownTrue svg {
 	transform: translate(0px, -12px) rotate(90deg);
-	transition: -webkit-transform 0.2s ease 0s, transform 0.7s ease 0s;
 
 }
 
