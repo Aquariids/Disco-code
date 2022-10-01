@@ -15,7 +15,7 @@ const Home: NextPage = (): JSX.Element => {
         <title>DiscoCode - уроки по javascript, typescript, react, nextjs</title>
         <meta name="google-site-verification" content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY" />
         <meta name="yandex-verification" content="a99ae512e4f1c330" />
-        <meta name='description' content={'Здесь вы можете найти разборы разных тем на  javaScript, typeScript, reactjs, nextjs'}/>
+        <meta name='description' content={'Здесь вы можете найти статьи на  разные темы по javaScript, typeScript, reactjs, nextjs'}/>
         <meta property='og:title' content='Уроки и разборы разных тем по  javascript, typescript, react, nextjs' />
         <meta property='og:description' content={'Здесь вы можете найти статьи на  разные темы по javaScript, typeScript, reactjs, nextjs'} />
         <meta property='og:type' content={'article'} />
