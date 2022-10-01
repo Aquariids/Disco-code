@@ -22,9 +22,7 @@ export async function getServerSideProps({ req, res }:any) {
   };
 }
 
-// export function reportWebVitals(metric: any) {
-//   console.log(metric);
-// }
+
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const router = useRouter();
