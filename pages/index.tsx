@@ -7,7 +7,17 @@ import Head from 'next/head';
 
 
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function getServerSideProps({ res }:any) {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59'
+  );
 
+  return {
+    props: {},
+  };
+}
 
 const Home: NextPage = (): JSX.Element => {
 
