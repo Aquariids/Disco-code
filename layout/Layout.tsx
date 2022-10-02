@@ -10,9 +10,6 @@ import cn from 'classnames';
 import { useRouter } from "next/router";
 import ListMobileMenu from "../src/Components/mobileModalMenu/ListMobileMenu/ListMobileMenu";
 const Layout = ({ children, }: LayoutProps): JSX.Element => {
-    // const javascriptPath =
-
-
     const router = useRouter();
     return (
         <>
