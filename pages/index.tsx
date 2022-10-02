@@ -21,8 +21,6 @@ const Home: NextPage = (): JSX.Element => {
         <meta property='og:title' content='Здесь вы можете найти статьи и уроки на  разные темы по javaScript, typeScript, reactjs, nextjs' />
         <meta property='og:description' content='Здесь вы можете найти статьи на  разные темы по javaScript, typeScript, reactjs, nextjs' />
         <meta property='og:type' content='article' />
-
-
       </Head>
       <h1> &lt;Disco <span className={s.code}>Code/&gt;</span></h1>
       <p className={s.text}>Уроки и записи на самые разные темы!<br/>

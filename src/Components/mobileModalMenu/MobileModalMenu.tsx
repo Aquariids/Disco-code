@@ -5,7 +5,7 @@ import cn from 'classnames';
 import MenuTs from '../Menu/MenuTs/MenuTs';
 import MenuReact from '../Menu/MenuReact/MenuReact';
 import { mobileModalMenuProps } from './MobileModalMenu.props';
-
+import s from './MobileModalMenu.module.css';
 
 const mobileModalMenu = ({js,ts,react}:mobileModalMenuProps) => {
 
@@ -14,10 +14,9 @@ const mobileModalMenu = ({js,ts,react}:mobileModalMenuProps) => {
     return (
         <>
             
-            <div className={cn('modal', {
-                ['modaltrue']: mobile === true
+            <div className={cn(s.modal, {
+                [s.modaltrue]: mobile === true
             })}>
-                
                 {js === 'js'? <MenuJs sideBarMenuActive={false} mobileMenuActive={true} setMobile={setMobile} mobile={mobile}/>:<></>}
                 {ts === 'ts'? <MenuTs sideBarMenuActive={false} mobileMenuActive={true} setMobile={setMobile} mobile={mobile}/>:<></>}
                 {react === 'react'? <MenuReact sideBarMenuActive={false} mobileMenuActive={true} setMobile={setMobile} mobile={mobile}/>:<></>}

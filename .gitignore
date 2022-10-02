@@ -13,7 +13,10 @@
 /out/
 # production
 /build
+# да откуда взялись эти dist!!! aaaaaaaaaaaaaaaa
 */dist
+/src/*/dist
+/src/Components/*/dist
 
 
 # misc
