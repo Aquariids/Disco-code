@@ -12,6 +12,18 @@ Router.events.on('routeChangeComplete', (url:string)=> {
 
 
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function getServerSideProps({ res }:any) {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59'
+  );
+
+  return {
+    props: {},
+  };
+}
+
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const router = useRouter();
