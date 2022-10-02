@@ -12,9 +12,6 @@ import { POSTS_PATH_TS } from '../../api/paths';
 import Link from 'next/link';
 import s from './ts.module.css';
 import cn from 'classnames';
-import MobileButton from '../../../src/Components/UI/MobileButton/MobileButton';
-import MenuTs from '../../../src/Components/Menu/MenuTs/MenuTs';
-import { useState } from 'react';
 import AnimationContainer from '../../../src/Components/AnimationContainer/AnimationContainer';
 
 
@@ -26,7 +23,6 @@ interface MSXPost {
 const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => {
 
 
-    const [mobile, setMobile] = useState(false);
 
     return (
         <div className='page'>
@@ -39,26 +35,16 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
                 <meta property='og:description' content={'Уроки и разбор разных тем по typescript'} />
                 <meta property='og:type' content={'article'} />
             </Head>
-            {mobile === true ? <><h1>{post.meta.title}</h1>
-                <MDXRemote  {...post.source} /></> :
                 <AnimationContainer>
                     <h1>{post.meta.title}</h1>
                     <MDXRemote  {...post.source} />
                 </AnimationContainer>
-            }
-            <div className={cn('modal', {
-                ['modaltrue']: mobile === true
-            })}>
-                <div className='bg'>
-                    <MenuTs sideBarMenuActive={false} mobileMenuActive={true} setMobile={setMobile} mobile={mobile} />
-                </div>
-            </div>
+            
             <div className={cn(s.edit, 'page_edit')}><a target='_blank' rel='noopener' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/typescript/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{ width: '30px', paddingLeft: '5px' }} src='/edit.svg' /></div>
             <div className={cn(s.footer, 'page_footer')}>
                 <Link href={post.meta.prev}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая страница'}</Link>
                 <Link href={post.meta.next}>{post.meta.next === 'none' ? '' : 'Следующая страница'}</Link>
             </div>
-            <MobileButton mobile={mobile} setMobile={setMobile} />
         </div>
     );
 
