@@ -1,7 +1,6 @@
 import React from 'react';
 import Menu from '../Menu';
 import { mobileMenuProps } from '../Menu.props';
-import s from '../Menu.module.css';
 const MenuJs = ({ setMobile, mobile, mobileMenuActive, sideBarMenuActive }: mobileMenuProps): JSX.Element => {
 
     if (mobileMenuActive === true) {
@@ -24,9 +23,7 @@ const MenuJs = ({ setMobile, mobile, mobileMenuActive, sideBarMenuActive }: mobi
     } else {
         return (
             <>
-                <div className='indent'>
-                    <Menu title="Базовый JavaScript" category='basicjs' page='js' />
-                </div>
+                <Menu title="Базовый JavaScript" category='basicjs' page='js' />
                 <Menu title="Продвинутый JavaScript" category='advancedjs' page='js' />
                 <Menu title="Алгоритмы" category='algorithmsjs' page='js' />
                 <Menu title="Простенькие задачи" category='/' page='js' />
