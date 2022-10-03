@@ -14,7 +14,7 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
 
     return (
         <div className={cn(header, {
-            [s.header2]: router.asPath.length > 18
+            [s.header2]: router.asPath.length > 6
         })} {...props}>
             <div className={content}>
                 <div className={logo}>

@@ -11,11 +11,12 @@ const { footer, content, } = s;
 const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
 
     const router = useRouter();
+    console.log("(👍≖‿‿≖)👍 ✿ file: FooterMenu.tsx ✿ line 14 ✿ FooterMenu ✿ router", router)
 
     return (
         <>
             <div className={cn(footer, {
-                [s.footer2]: router.asPath.length > 18
+                [s.footer2]: router.asPath.length > 6
             })} {...props}>
                 <div className={content}>
                     <div className={s.nav}>

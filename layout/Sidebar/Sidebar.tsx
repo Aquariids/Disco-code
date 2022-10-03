@@ -13,7 +13,7 @@ const Sidebar = ({className, ...props}:SidebarProps):JSX.Element => {
 
     const errorPaths = r === '/js/basicjs' || r === '/' || r === '/ts/basicts' || r === '/react/basicreact' || r === '/next'; 
 
-    if(r.length < 16 || errorPaths){
+    if(r.length < 7 || errorPaths){
         return(
             <></>
         );

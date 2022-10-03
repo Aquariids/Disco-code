@@ -16,6 +16,7 @@
 # да откуда взялись эти dist!!! aaaaaaaaaaaaaaaa
 */dist
 /src/*/dist
+/layout/*/dist
 /src/Components/*/dist
 
 
