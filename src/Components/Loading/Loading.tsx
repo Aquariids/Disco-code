@@ -1,5 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import cn from 'classnames';
+import s from './Loading.module.css';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export  function Loading(): any {
@@ -28,7 +30,7 @@ export  function Loading(): any {
 
     return loading && (
         <>
-            <span className={'loader fadeInTop'}> </span>
+            <span className={cn(s.loader,s.fadeInTop)}> </span>
         </>
 
     );
