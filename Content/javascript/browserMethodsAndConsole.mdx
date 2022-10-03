@@ -19,7 +19,7 @@ category: 'basicjs'
 При нажатии пкм на странице "Посмотреть код" или если набрать комбинацию клавиш ctrl + shift + i. (По крайней мере в chrome и opera такая комбинация работает).
 Так мы откроем инспектор кода на вкладке Console(в случае с "Посмотреть код" мы будем на вкладке Elements, Console будет правее).<br/>
 
-<div className='container-img'> <span className="img"> ![alt text](/images/Content/Js/console.png) </span></div>
+<div className='container-img'> <span className="img"> ![console.log](/images/Content/Js/console.png) </span></div>
 
 В инспекторе кода много чего интересного, но сейчас только о Console.
 Нам очень часто придется работать с консолью, один из методов для консоли `console.log()` - этот метод просто выводит информацию в консоль.
@@ -27,7 +27,7 @@ category: 'basicjs'
 ```javaScript
 console.log('Hello world') // Выведет в консоль Hello world
 ```
-<div className='container-img'> <span className="img"> ![alt text](/images/Content/Js/hello.png) </span>  </div>
+<div className='container-img'> <span className="img"> ![console.log](/images/Content/Js/hello.png) </span>  </div>
 
 Так же будем использовать `console.dir()` - этот метод отображает список свойств указанного JavaScript объекта. Сейчас важно запомнить только `console.log()`
 
@@ -38,7 +38,7 @@ console.log('Hello world') // Выведет в консоль Hello world
 ```javaScript
 alert('Hello world')
 ```
-<div className='container-img'> <span className="img"> ![alt text](/images/Content/Js/alert.png) </span></div>
+<div className='container-img'> <span className="img"> ![alert](/images/Content/Js/alert.png) </span></div>
 
 ### prompt() ###
 - Позволяет получить ответ от пользователя, то что пользователь введет в поле ввода, будет присвоено в переменную в которую поместим метод. Принимает в себя два аргумента. Первый - это title, второй - текст который будет сразу внутри поля ввода. Обычно вторым аргументом ставят просто пустые кавычки `' '`.  Для примера я ввел 111.
@@ -47,7 +47,7 @@ let res = prompt('Привет','111');
 // Как раз можно воспользоваться методом консоли и посмотреть что ввели.
 console.log(res); // в консоли появится содержимое переменной res, а это будет то, что мы введем в поле.
 ```
-<div className='container-img'> <span className="img"> ![alt text](/images/Content/Js/prompt.png) </span></div>
+<div className='container-img'> <span className="img"> ![prompt](/images/Content/Js/prompt.png) </span></div>
 
 ### confirm() ###
 -  Показывает модальное окно с сообщением и ждёт, пока пользователь нажмёт ok или Отмена. Возвращает `true`, если нажать ok, и `false`, если нажата кнопка «Отмена» или Esc.
@@ -56,4 +56,4 @@ let result = confirm('Ты за аниме?');
 
 console.log(result) // true или false
 ```
-<div className='container-img'> <span className="img"> ![alt text](/images/Content/Js/confirm.png) </span> </div>
+<div className='container-img'> <span className="img"> ![confirm](/images/Content/Js/confirm.png) </span> </div>

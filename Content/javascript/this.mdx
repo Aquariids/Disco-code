@@ -47,7 +47,9 @@ function showThis (){
 
 showThis(); // получим объект window
 ```
-![window](https://github.com/Aquariids/Js-Ts-React-etc../blob/main/JavaScript/img/windowThis.png)<br/>
+
+<div className='container-img'> <span className="img"> ![this](/images/Content/Js/windowThis.png) </span></div>
+
 А что если внутри функции будет еще функция с `this`?
 ```javaScript
 "use strict"
@@ -86,8 +88,8 @@ const obj = { // Объект
 obj.sum()
 ```
 Важно понимать, что функция внутри метода не является методом.<br/>
-![thisInObject](https://github.com/Aquariids/Js-Ts-React-etc../blob/main/JavaScript/img/thisInObject.png)<br/>
 
+<div className='container-img'> <span className="img"> ![thisInObject](/images/Content/Js/thisInObject.png) </span></div>
 
 ###  this в конструкторах и классах ###
 `this` в конструкторах и классах - это новый экземпляр объекта.
@@ -112,8 +114,8 @@ console.log(ivan);
 ```
 Немного рассказываю, что происходит. Мы создаем переменную `ivan`, в нее помещаем наш конструктор и указываем свойства. Внутри конструктора под `this` подставляется наш `ivan`
 И ему записываются свойства(значения из аргументов в функции) ivan.name = name. ivan.age = age и так далее, мы таким образом конструируем объект. Когда мы создадим dima, вместо this уже подставится dima и так далее.<br/>
-![ivan](https://github.com/Aquariids/Js-Ts-React-etc../blob/main/JavaScript/img/ivanThis.png)<br/>
 
+<div className='container-img'> <span className="img"> ![thisInClasses](/images/Content/Js/ivanThis.png) </span></div>
 
 ### this в событии с обычной функцией ###
 Если обработчик с обычной функцией, то `this` как и `event.target` будет сам элемент события.
@@ -173,7 +175,9 @@ f1.call(us, 'anime');// просто вызываем у функции мето
 // далее передаем объект, а после аргументы для функции.
 ```
 Как видим контекст объект и мы можем использовать его свойства внутри функции с аргументами.
-![call()](https://github.com/Aquariids/Js-Ts-React-etc../blob/main/JavaScript/img/call.png)<br/>
+
+<div className='container-img'> <span className="img"> ![call](/images/Content/Js/call.png) </span></div>
+
 ### apply() ###
 Оба  метода делают одно и тоже, но у них разный синтаксис.
 ```javaScript
