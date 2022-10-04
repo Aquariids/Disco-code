@@ -37,6 +37,11 @@
 	max-width: 250px;
 }
 
+
+.mobile_btn {
+	margin-left: 20px;
+}
+
 .navMenu {
 	margin-top: 60px;
 }
@@ -255,7 +260,11 @@
 	}
 
 	
+
+	
 }
+
+
 
 @media (max-width: 400px) {
 	.index_list_menu {
