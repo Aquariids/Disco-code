@@ -28,7 +28,7 @@
 .index_btn {
 	margin-top: 25px;
 	display: grid;
-	justify-content: center;
+	justify-content: left;
 }
 
 .btn {
@@ -136,10 +136,10 @@
 }
 
 .title {
+	margin-right: 20px;
+	margin-left: 20px;
 	margin-top: 25px;
-	/* padding-right: 10px; */
 	margin-bottom: 0;
-	/* padding-left: 20px; */
 	text-transform: uppercase;
 	color: rgb(109 109 109);
 	font-size: 14px;
@@ -223,9 +223,15 @@
 
 @media (max-width: 860px) {
 	.index_list_menu {
-		width:350px;
-		white-space: normal;
+		margin-right: 0px;
+		margin-left: 0px;
+		/* white-space: normal; */
 	}
+
+.title {
+	margin-left: 0;
+	margin-right: 0;
+}
 }
 
 
@@ -243,8 +249,12 @@
 	}
 
 	.index_btn {
+		margin-bottom: 10px;
+		justify-content: center;
 		width: 400px;
 	}
+
+	
 }
 
 @media (max-width: 400px) {
