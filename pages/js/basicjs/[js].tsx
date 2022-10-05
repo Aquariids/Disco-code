@@ -45,8 +45,7 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
 
                 <AnimationContainer>
                     <div className='mdTitle'>
-                    <h1>{post.meta.title}</h1>
-
+                        <h1>{post.meta.title}</h1>
                     </div>
                     <MDXRemote  {...post.source} />
 
@@ -55,7 +54,6 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
                     <div className={cn(s.footer, 'page_footer')}>
                         <Link href={post.meta.prev}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая страница'}</Link>
                         <Link href={post.meta.next}>{post.meta.next === 'none' ? <span></span> : 'Следующая страница'}</Link>
-
                     </div>
                 </AnimationContainer>
 
