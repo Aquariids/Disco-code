@@ -11,7 +11,7 @@ import cn from 'classnames';
 import { getAllPosts, getPostFromSlug, getSlugs, PostMeta } from '../../api/api';
 import { POSTS_PATH_JS } from '../../api/paths';
 import Link from 'next/link';
-import s from './js.module.css';
+import s from '../pageJs.module.css';
 import AnimationContainer from '../../../src/Components/AnimationContainer/AnimationContainer';
 interface MSXPost {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
