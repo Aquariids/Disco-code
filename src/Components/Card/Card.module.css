@@ -7,12 +7,17 @@
 	transition: 0.2s;
 	border-radius: 3%;
 	font-size: 25px;
-	/* background-position: top right;
-	background-repeat: no-repeat;
-	background-size: 85%;
-	background-image: url(/reactBg.png); */
+	
 }
 
+/* .reactbg {
+		background-position: top;
+		background-repeat: no-repeat;
+		background-size: 70%;
+		background-position-y: -30%;
+		background-position-x:100%;
+		background-image: url(/reactBg.png);
+} */
 .container:hover {
 	transform: scale(1.05);
 	transform: scale(1.05);
@@ -81,6 +86,15 @@
 	background-color: #41E1ED;
 	box-shadow: 0 0 10px  var(--react_hover_color_links_pages);
 }
+@media (max-width:500px) {
+	.container {
+		width: 100%;
+	}
+
+	
+	
+}
+
 
 
 @media (max-width:400px) {

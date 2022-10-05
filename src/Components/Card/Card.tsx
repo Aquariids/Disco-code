@@ -13,6 +13,7 @@ const Card = ({ title,text, color, url }: ICard) => {
                 [ts]: color === 'ts',
                 [next]: color === 'next',
                 [react]: color === 'react',
+                [s.reactbg]: color === 'react'
 
 
             })} >
