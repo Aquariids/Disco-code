@@ -37,7 +37,6 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
 
             <AnimationContainer>
                 <div className='mdTitle'>
-
                     <h1>{post.meta.title}</h1>
                 </div>
                 <MDXRemote  {...post.source} />

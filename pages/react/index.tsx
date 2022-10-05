@@ -22,8 +22,6 @@ const Home: NextPage = (): JSX.Element => {
         <meta property='og:title' content='Уроки по react'/>
         <meta property='og:description' content={'Уроки и разбор разных тем по javascript'}/>
         <meta property='og:type' content={'article'}/>
-
-
       </Head>
 
       <h2>Содержание</h2>

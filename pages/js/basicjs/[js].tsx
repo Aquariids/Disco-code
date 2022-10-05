@@ -67,10 +67,7 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
 
 
 
-
-
 export default withLayout(PostPage);
-
 
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
