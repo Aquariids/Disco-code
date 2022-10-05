@@ -16,15 +16,14 @@
 	.loader {
 		left: 0;
 		margin-right: 0;
-		margin-left: 50px;
+		margin-left: 30px;
 	}
 }
 
-@media (max-width: 750px) {
+@media (max-width: 785px) {
 	.loader {
-		left: 0;
-		width: 20px;
-		height: 20px;
+		width: 15px;
+		height: 15px;
 		margin-right: 0;
 		margin-left: 10px;
 	}
