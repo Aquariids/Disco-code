@@ -22,13 +22,17 @@ const Home: NextPage = (): JSX.Element => {
         <meta property='og:description' content='Здесь вы можете найти статьи на  разные темы по javaScript, typeScript, reactjs, nextjs' />
         <meta property='og:type' content='article' />
       </Head>
+      <div className={s.menu}>
       <h1> &lt;Disco <span className={s.code}>Code/&gt;</span></h1>
-      <p className={s.text}>Уроки и записи на самые разные темы!<br/>
-      <small> P.S. Сайт все еще в разаработке</small>
-        </p>
+      <div className={s.text}>
+        <h4>О сайте</h4>
+        Данный сайт является местом где я выкладываю все, что изучил, изучаю и просто пишу о разных технологиях программирования. Здесь будут выкладываться различные руководства и учебные материалы, статьи и примеры.<br/>
+        </div>
+      </div>
 
-
+    <h3 className={s.titleBlock}> Выбирайте нужный блок и все</h3>
       <Articles />
+
 
 
     </div>

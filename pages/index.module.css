@@ -15,8 +15,33 @@
 }
 
 .text {
+	
+	margin-left: 15px;
+	margin-right: 15px;
+	text-align: left;
 	margin-top: 0;
 	margin-bottom: 80px;
 	font-size: 20px;
 	font-weight: 400;
+}
+
+@media (max-width:785px) {
+	.text {
+		font-size: 15px;
+
+	}
+	
+}
+
+.menu {
+
+	justify-content: left;
+	margin-top: 100px;
+	display:grid;
+	grid-template-columns:  1fr;
+}
+
+.titleBlock {
+	color: gray;
+	padding-bottom: 50px;
 }
