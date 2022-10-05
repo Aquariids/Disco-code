@@ -29,3 +29,49 @@ code {
 }
 
 
+
+@media (max-width:785px) {
+	.mdHead {
+		padding-right: 30px;
+		padding-left: 30px;
+		margin-left: calc(-50vw + 50%);
+		width: 100vw;
+		background-color: #20232A;
+		padding-bottom: 15px;
+		margin-bottom: 30px;
+		
+	}
+	.mdHead h4 {
+		padding-top: 15px;
+		margin: 0;
+		color: #fff;
+		
+	}
+
+	.mdHead h5 {
+		padding-top: 15px;
+		margin: 0;
+		color: #fff;
+		
+	}
+
+
+	.mdTitle {
+		padding-top: 30px;
+		padding-left: 30px;
+		padding-right: 30px;
+		margin-left: calc(-50vw + 50%);
+		width: 100vw;
+		color: #fff;
+		background-color: #20232A;
+		padding-bottom: 15px;
+	
+	}
+
+	.mdTitle h1 {
+		margin: 0;
+	}
+
+	
+}
+

@@ -6,26 +6,15 @@
 	display: none;
 	width: 60px;
 	height: 60px;
-	border: 1px solid rgb(255 255 255 / 10%);
+	border: 1px solid rgb(255 255 255 / 25%);
 	border-radius: 50%;
 	background-color: rgb(32 35 42);
-	box-shadow: rgb(0 0 0 / 30%) 0 0 20px;
+	box-shadow: rgb(0 0 0 / 35%) 0 0 20px;
+
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 -webkit-tap-highlight-color: transparent;
 	
 }
-
-@media (max-width: 785px) {
-	.btn {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		cursor: pointer;
-	}
-}
-
-
-
 
 
 .contentBtn {
@@ -78,7 +67,7 @@
 
 
 .arrowsJs svg {
-	fill: var(--js_color_links_pages);
+	fill: var(--js_color_links_pages_mobile);
 }
 .arrowsReact svg {
 	fill: var(--react_color_links_pages);
@@ -86,4 +75,13 @@
 
 .arrowsTs svg {
 	fill: var(--ts_color_links_pages);
+}
+
+@media (max-width: 785px) {
+	.btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+	}
 }
