@@ -13,7 +13,7 @@ import { POSTS_PATH_JS } from '../../api/paths';
 import Link from 'next/link';
 import s from '../pageJs.module.css';
 
-import AnimationContainer from '../../../src/Components/AnimationContainer/AnimationContainer';
+import AnimationContainer from '../../../src/Components/AnimationContainers/AnimationContainer';
 interface MSXPost {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
     meta: PostMeta

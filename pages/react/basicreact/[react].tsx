@@ -12,7 +12,7 @@ import { getAllPosts, getPostFromSlug, getSlugs, PostMeta } from '../../api/api'
 import { POSTS_PATH_REACT } from '../../api/paths';
 import Link from 'next/link';
 import s from './react.module.css';
-import AnimationContainer from '../../../src/Components/AnimationContainer/AnimationContainer';
+import AnimationContainer from '../../../src/Components/AnimationContainers/AnimationContainer';
 interface MSXPost {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
     meta: PostMeta

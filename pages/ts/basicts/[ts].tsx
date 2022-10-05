@@ -12,7 +12,7 @@ import { POSTS_PATH_TS } from '../../api/paths';
 import Link from 'next/link';
 import s from './ts.module.css';
 import cn from 'classnames';
-import AnimationContainer from '../../../src/Components/AnimationContainer/AnimationContainer';
+import AnimationContainer from '../../../src/Components/AnimationContainers/AnimationContainer';
 
 
 interface MSXPost {

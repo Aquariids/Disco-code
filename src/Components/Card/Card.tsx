@@ -3,8 +3,8 @@ import cn from 'classnames';
 import { ICard } from './Card.props';
 import s from './Card.module.css';
 import Link from 'next/link';
-const { body, footer, container, bg, title, js, ts, next, react } = s;
-const Card = ({ text, color, url }: ICard) => {
+const { body, footer, container, bg,  js, ts, next, react } = s;
+const Card = ({ title,text, color, url }: ICard) => {
     return (
 
         <Link href={url}>
@@ -17,9 +17,11 @@ const Card = ({ text, color, url }: ICard) => {
 
             })} >
                 <div className={body}>
-                    <div className={bg}></div>
+                    <div className={bg}>
+                    <div className={s.title}>{title}</div>
+                    </div>
                     <div className={footer}>
-                        <div className={title}>{text}</div>
+                        <div className={s.text}>{text}</div>
                     </div>
                 </div>
             </div>

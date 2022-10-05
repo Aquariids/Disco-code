@@ -22,15 +22,25 @@ const Home: NextPage = (): JSX.Element => {
         <meta property='og:description' content='Здесь вы можете найти статьи на  разные темы по javaScript, typeScript, reactjs, nextjs' />
         <meta property='og:type' content='article' />
       </Head>
+      <div className={s.logoTitle}>
+      <h1> &lt;Disco <span className={s.code}>Code/&gt;</span> </h1>
+      <span className={s.subtitle}> В серость под диско</span>
+      </div>
+      
+      
       <div className={s.menu}>
-      <h1> &lt;Disco <span className={s.code}>Code/&gt;</span></h1>
+      
       <div className={s.text}>
-        <h4>О сайте</h4>
-        Данный сайт является местом где я выкладываю все, что изучил, изучаю и просто пишу о разных технологиях программирования. Здесь будут выкладываться различные руководства и учебные материалы, статьи и примеры.<br/>
+        <div className={s.title}>О сайте</div>
+        Этот сайт является местом где я выкладываю все, что изучил, изучаю и просто пишу о разных интересных мне технологиях в программировании. Здесь будут выкладываться различные руководства и учебные материалы, статьи и примеры.<br/>
+        </div>
+
+        <div className={s.text}>
+        <div className={s.title}>Всем привет</div>
+          В данных мной материалах, мои суждения и выводы могут быть ошибочны. Я лишь начинающий свой путь в серости программирования маленький человек.
         </div>
       </div>
 
-    <h3 className={s.titleBlock}> Выбирайте нужный блок и все</h3>
       <Articles />
 
 

@@ -3,3 +3,4 @@ export interface mobileModalMenuProps {
     js?:'js',
     react?:'react';
 }
+
