@@ -166,3 +166,22 @@ margin: 0 auto;
 	}
 	
 }
+
+
+@media (max-width:335px) {
+	.copyright {
+	font-size: 11px;
+	
+	}
+	.content  {
+		font-size: 13px;
+	}
+	.content a {
+		font-size: 13px;
+	}
+
+	.content a svg {
+		width: 15px;
+	}
+	
+}

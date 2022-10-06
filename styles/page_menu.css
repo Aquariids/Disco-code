@@ -6,6 +6,7 @@
 
 .page_content h2 {
 	font-size: 35px;
+	margin-bottom: 0;
 }
 
 .page_content span {
@@ -15,6 +16,7 @@
 
 
 .page_menu {
+
 	margin-bottom: 50px;
 	display: grid;
 	margin-top: 50px;
@@ -30,13 +32,9 @@
 }
 
 @media (max-width: 785px) {
-	.page_menu {
-		margin-top: -50px;
-	}
 
 	.page_content h2 {
 		margin-top: 50px;
-		margin-bottom: 50px;
 	}
 	
 }
