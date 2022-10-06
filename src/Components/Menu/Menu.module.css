@@ -75,7 +75,7 @@
 .index_list_menu {
 	width: 100%;
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(4, 1fr);
 	padding: 0;
 	gap: 15px;
 }
@@ -306,26 +306,29 @@
 	}
 }
 
-@media (max-width: 1115px) {
+@media (max-width: 1500px) {
 	.subCard {
 		width: 150px;
 	}
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1245px) {
 	.index_list_menu {
 		gap: 5px;
 	}
 	.subCard {
 		width: 130px;
 	}
+	.subCard a {
+		font-size: 14px;
+	}
 
 
 }
 
-@media (max-width: 800px) {
-	.subCard {
-		width: 125px;
+@media (max-width: 1155px) {
+	.index_list_menu {
+		grid-template-columns: repeat(3,1fr);
 	}
 
 
@@ -335,6 +338,7 @@
 
 	.index_list_menu {
 		gap: 30px;
+		
 	}
 	.subCard {
 		width: 100%;
