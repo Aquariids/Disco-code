@@ -55,7 +55,7 @@
 
 .subCardTs {
 	
-	background-color: var(--ts_color_links_pages_mobile);
+	background-color: var(--ts_color_links_pages);
 }
 .subCardTs:hover {
 	color: #fff;
