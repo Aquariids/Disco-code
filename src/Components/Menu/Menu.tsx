@@ -10,7 +10,11 @@ import { AppContext } from '../../../context/app.context';
 
 const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,  ...props}:IMenu): JSX.Element => {
 
+    const [fullMenu, setFullMenu] = useState(false);
 
+   const openFullMenu = () => {
+    setFullMenu(!fullMenu);
+   };
     const router = useRouter();
     const pathname = router.asPath;
     const { posts } = useContext(AppContext);
@@ -68,6 +72,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                 <h4 className={s.titleMobile}
                 >{title}</h4>
                 </div>
+                
                 <ul className={s.mobile_list}>
                     {posts && posts.map((post,index) => (
                         <li 
@@ -87,18 +92,33 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                         </li>
                     ))}
                 </ul>
-            </div>
+                </div>
+            
         );
     }
     else {
+        
+      
 
+                  
+        
         return (
-
+            <>
+            <div className={s.btnOpenContent}>
+            {/* <button onClick={openFullMenu}> Нажми еблан</button> */}
+            </div>
             <div className={s.content} {...props}>
                 <div className={s.index_btn}>
                 <h4 className={s.title}
                 >{title}</h4>
                 </div>
+                <div className={cn( {
+                    // [s.openAllContent]: fullMenu === true,
+                    // [s.closeAllContent]: fullMenu === false,
+                    // [s.allContent]: 
+
+                    
+                })}>
                     <ul className={s.index_list_menu}>
                     {posts && posts.map((post,index) => (
                         <li 
@@ -118,7 +138,12 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                         </li>
                     ))}
                 </ul>
+             
+                </div>
+                
             </div>
+            
+            </>
         );
     }
 

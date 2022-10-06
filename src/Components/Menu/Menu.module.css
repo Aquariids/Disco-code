@@ -8,6 +8,11 @@
 	margin-bottom: 0px;
 }
 
+.allContent {
+	overflow-y: hidden;
+
+}
+
 
 .subCard {
 	background-color: bisque;
@@ -62,6 +67,13 @@
 
 }
 
+.openAllContent {
+	height: 100%;
+}
+.closeAllContent {
+	height: 460px;
+	
+}
 .subCardTs {
 	
 	background-color: var(--ts_color_links_pages);
