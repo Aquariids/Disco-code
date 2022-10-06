@@ -24,7 +24,6 @@ const Home: NextPage = (): JSX.Element => {
     </Head>
 
         <h2>Содержание</h2>
-        <span>Здесь собраны все мои записи по <code className={s.ts}>typeScript</code>.</span> <br/>
 
     <div className='page_body'>
     <div className={cn(s.page,'page_menu')}>

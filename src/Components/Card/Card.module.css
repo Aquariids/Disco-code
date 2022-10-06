@@ -1,6 +1,5 @@
 .container {
 	display: flex;
-	width: 300px;
 	height: 275px;
 	margin: 0 auto;
 	cursor: pointer;
@@ -9,6 +8,7 @@
 	font-size: 25px;
 	
 }
+
 
 /* .reactbg {
 		background-position: top;
@@ -45,7 +45,7 @@
 }
 
 .js {
-	background-color: var(--js_color_links_pages);
+	background-color: var(--js_color_links_pages_mobile);
 }
 
 .js:hover {
@@ -86,15 +86,15 @@
 	background-color: #41E1ED;
 	box-shadow: 0 0 10px  var(--react_hover_color_links_pages);
 }
-@media (max-width:500px) {
+
+@media (max-width:785px) {
 	.container {
-		width: 100%;
+		width: 350px;
 	}
 
 	
 	
 }
-
 
 
 @media (max-width:400px) {

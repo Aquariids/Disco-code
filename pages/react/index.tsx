@@ -25,7 +25,6 @@ const Home: NextPage = (): JSX.Element => {
       </Head>
 
       <h2>Содержание</h2>
-      <span>Здесь собраны все мои записи по <code className={s.react}>React</code></span> <br />
       <div className='page_body'>
         <div className='page_menu'>
           <MenuReact sideBarMenuActive={false} mobileMenuActive={false}/>

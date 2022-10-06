@@ -52,14 +52,11 @@ const Home: NextPage = (): JSX.Element => {
         <meta property="og:tag" content="JavaScript, js" />
       </Head>
       <h2>Содержание</h2>
-      <span>
-        Здесь собраны все мои записи по <code className={s.js}>JavaScript</code>
-        .
-      </span>{" "}
-      <br />
-      <span>Разборы базовых алгоритмов и даже немного задач</span>
+
       <div className="page_body">
+
         <div className="page_menu">
+
           <MenuJs sideBarMenuActive={false} mobileMenuActive={false} />
         </div>
       </div>

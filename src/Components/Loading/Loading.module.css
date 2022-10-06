@@ -29,6 +29,15 @@
 	}
 }
 
+@media (max-width: 400px) {
+	.loader {
+		width: 10px;
+		height: 10px;
+		
+	}
+}
+
+
 .fadeInTop {
 	animation: rotation 1s linear infinite;
 	animation-delay: 1.5s; /* Задержка */

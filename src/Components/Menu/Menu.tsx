@@ -102,8 +102,12 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                     <ul className={s.index_list_menu}>
                     {posts && posts.map((post,index) => (
                         <li 
-                        key={index}
-                            className={cn({
+                            key={index}
+                            className={cn( s.subCard,{
+                                [s.subCardJs]: pathname.startsWith('/js'),
+                                [s.subCardTs]: pathname.startsWith('/ts'),
+                                [s.subCardReact]: pathname.startsWith('/react'),
+
                                 [s.active]: pathname.replace(post.slug, '') + post.slug === pathname,
                                 [s.link]: pathname.replace(post.slug, '') + post.slug !== pathname,
                                 [s.show]: post.category == category,

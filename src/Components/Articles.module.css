@@ -1,26 +1,19 @@
 .articles {
 	display: grid;
 	gap: 20px;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
 }
 
-@media (max-width: 1200px) {
-	.articles {
-		align-items: center;
-		justify-content: center;
-		
-		grid-template-columns: 1fr 1fr;
-	}
-}
-
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
 	.articles {
 		align-items: center;
 		justify-content: center;
 		grid-template-columns: 1fr;
-		grid-template-rows: repeat(4, 1fr);
 	}
 }
+
+
+
 
 
