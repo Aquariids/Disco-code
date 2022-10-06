@@ -1,20 +1,47 @@
 .container {
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 180px;
-	height: 180px;
+	width: 300px;
+	height: 275px;
 	margin: 0 auto;
 	cursor: pointer;
 	transition: 0.2s;
-	border-radius: 5%;
+	border-radius: 3%;
 	font-size: 25px;
+	
 }
 
+/* .reactbg {
+		background-position: top;
+		background-repeat: no-repeat;
+		background-size: 70%;
+		background-position-y: -30%;
+		background-position-x:100%;
+		background-image: url(/reactBg.png);
+} */
 .container:hover {
 	transform: scale(1.05);
 	transform: scale(1.05);
 	transform: scale(1.05);
+}
+
+.body {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	width: 100%;
+	}
+
+.bg {
+	display: flex;
+	margin-left: 10px;
+}
+
+.footer {
+	padding: 10px;
+	font-size: 16px;
+	display: flex;
+	text-align: left;
+
 }
 
 .js {
@@ -59,3 +86,29 @@
 	background-color: #41E1ED;
 	box-shadow: 0 0 10px  var(--react_hover_color_links_pages);
 }
+@media (max-width:500px) {
+	.container {
+		width: 100%;
+	}
+
+	
+	
+}
+
+
+
+@media (max-width:400px) {
+	.container {
+		width: 100vw;
+		margin-left: calc(-50vw + 50%);
+		padding: 30px;
+		border-radius: 0%;
+		font-size: 20px;
+	}
+
+	.footer {
+		font-size: 14px;
+	}
+	
+}
+
