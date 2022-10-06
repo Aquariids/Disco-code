@@ -203,15 +203,6 @@
 
 
 
-@media (max-width: 900px) {
-	
-
-	.subCard a {
-		font-size: 12px;
-	}
-
-}
-
 @media (max-width: 450px) {
 	.subCard {
 		text-align: left;
