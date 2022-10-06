@@ -10,6 +10,20 @@
 	grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
 }
 
+.imgLogo {
+	display: flex;
+	justify-content: right;
+
+}
+
+.container-imgLogo {
+
+	display: none;
+	align-items: center;
+	justify-content: right;
+
+	
+}
 
 .container-img {
 	display: flex;

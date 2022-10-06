@@ -58,7 +58,8 @@ const PostPage: NextPage<never> = ({
           />
           <meta property="og:site_name" content="DiscoCode" />
           <meta property="og:locale" content="ru_Ru" />
-
+          <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
           <meta property="og:author" content="Дмитрий черномашенцев" />
           <meta property="og:section" content="JavaScript" />
           <meta property="og:tag" content="JavaScript, js" />
