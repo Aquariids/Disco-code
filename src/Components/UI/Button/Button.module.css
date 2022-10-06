@@ -1,9 +1,6 @@
 .button {
 	position: relative;
-	max-width: 250px;
-	margin-left: 20px;
 	padding-top: 30px;
-	padding-right: 17px;
 	cursor: pointer;
 	white-space: nowrap;
 	text-transform: uppercase;
@@ -42,18 +39,23 @@
 
 
 
-@media (max-width: 1200px) {
+@media (max-width: 1215px) {
 	.button {
-		width: 150px;
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 1115px) {
+	.button {
+		font-size: 13px;
+	}
+}
+
+@media (max-width: 1040px) {
+	.button {
 		white-space: normal;
+		width: 150px;
 	}
 }
 
-
-@media (max-width: 1290px) {
-	.button {
-		margin-left: 0px;
-		padding-right: 0px;
-	}
-}
 

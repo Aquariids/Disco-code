@@ -8,7 +8,6 @@
 	overflow-y: auto;
 	overflow-x:hidden;
 	scrollbar-width: none;
-	padding-right: 18px;
 
 }
 
@@ -81,6 +80,3 @@
 	padding: 0;
 }
 
-/* .basicJsBtn {
-	margin-top: 25px;
-} */
