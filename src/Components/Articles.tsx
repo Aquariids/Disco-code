@@ -26,11 +26,11 @@ const Articles = () => {
 
       </AnimationContainerForCards>
       
-      <AnimationContainerForCards>
+      {/* <AnimationContainerForCards>
 
         <Card title={"Next.js"} text={"Я клоун"} color={"next"} url={"/next"} />
         
-      </AnimationContainerForCards>
+      </AnimationContainerForCards> */}
     </div>
   );
 };
