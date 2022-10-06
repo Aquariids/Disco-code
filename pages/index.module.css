@@ -20,6 +20,7 @@
 }
 
 .subtitle {
+	text-shadow: -3px 2px 3px  rgba(97, 97, 97, 0.801);
 	max-width: 100%;
 	display: inline-block;
 	font-weight: 400;
