@@ -20,10 +20,12 @@
 }
 
 .subtitle {
-	display: flex;
+	max-width: 100%;
+	display: inline-block;
 	font-weight: 400;
 	font-size: 14px;
-	justify-content: right;
+	text-align: right;
+	padding-right: 5px;
 	
 }
 
