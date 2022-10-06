@@ -65,7 +65,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
         return(
             <div className={s.mobile_content} {...props}>
                 <div className={s.mobile_btn}>
-                <h4 className={s.title}
+                <h4 className={s.titleMobile}
                 >{title}</h4>
                 </div>
                 <ul className={s.mobile_list}>

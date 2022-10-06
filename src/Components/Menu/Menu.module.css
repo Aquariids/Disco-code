@@ -12,14 +12,13 @@
 .subCard {
 	background-color: bisque;
 	border-radius: 5%;
-	
 	height: 120px;
 	width: 185px;
 	margin: 0 auto;
 
 }
 .subCard a {
-
+	color: rgba(0, 0, 0, 0.651);
 	padding-left: 5px;
 	padding-right: 5px;
 	justify-content: center;
@@ -27,13 +26,17 @@
 	display: flex;
 	width: 100%;
 	height: 100%;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.4;
+
 	
 }
 
 
 .subCardJs {
 	
-	background-color: var(--js_color_links_pages_mobile);
+	background-color: var(--js_color_links_pages);
 }
 .subCardJs:hover {
 	color: #fff;
@@ -41,6 +44,12 @@
 	background-color: var(--js_hover_color_links_pages);
 
 }
+.subCardJs a:hover {
+	color: #fff;
+
+
+}
+
 
 .subCardReact {
 	
@@ -85,7 +94,21 @@
 	justify-content: left;
 	max-width: 250px;
 }
-
+.titleMobile {
+	
+	
+	margin-right: 20px;
+	
+	margin-bottom: 0;
+	text-transform: uppercase;
+	color: rgb(109 109 109);
+	font-size: 15px;
+	font-weight: 700;
+	font-weight: bold;
+	line-height: 15px;
+	white-space: nowrap;
+	
+}
 
 .mobile_btn {
 	margin-left: 20px;
@@ -121,7 +144,7 @@
 .active_js {
 	list-style-type: none;
 	color: var(--js_color_links_pages);
-	font-size: 15px;
+	font-size: 14px;
 	line-height: 16px;
 }
 
@@ -146,7 +169,7 @@
 .active_ts {
 	list-style-type: none;
 	color: var(--ts_color_links_pages);
-	font-size: 15px;
+	font-size: 14px;
 	line-height: 16px;
 }
 
@@ -162,7 +185,7 @@
 .active_react {
 	list-style-type: none;
 	color: var(--react_color_links_pages);
-	font-size: 15px;
+	font-size: 14px;
 	line-height: 16px;
 }
 
