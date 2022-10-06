@@ -13,16 +13,14 @@
 .imgLogo {
 	display: flex;
 	justify-content: right;
+	margin-top: -70px;
 
 }
 
 .container-imgLogo {
-
 	display: none;
-	align-items: center;
 	justify-content: right;
-
-	
+		
 }
 
 .container-img {
