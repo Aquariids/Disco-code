@@ -175,6 +175,22 @@
 	
 }
 
+@media (max-width:830px) {
+
+	.subCard {
+		width: 95%;
+		
+	}
+
+	.subCard a {
+		font-size: 12.5px;
+	}
+
+	.index_list_menu {
+		grid-template-columns: 1fr;
+	}
+	
+}
 
 
 @media (max-width: 450px) {
