@@ -10,11 +10,11 @@ import { AppContext } from '../../../context/app.context';
 
 const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,  ...props}:IMenu): JSX.Element => {
 
-    const [fullMenu, setFullMenu] = useState(false);
+    // const [fullMenu, setFullMenu] = useState(false);
 
-   const openFullMenu = () => {
-    setFullMenu(!fullMenu);
-   };
+//    const openFullMenu = () => {
+//     setFullMenu(!fullMenu);
+//    };
     const router = useRouter();
     const pathname = router.asPath;
     const { posts } = useContext(AppContext);
@@ -98,9 +98,6 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
     }
     else {
         
-      
-
-                  
         
         return (
             <>
