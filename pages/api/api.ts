@@ -18,6 +18,7 @@ export const getSlugs = (url: string): string[] => {
 
 export const getAllPosts = (url:string) => {
     const posts = getSlugs(url).map(slug => getPostFromSlug(slug,url));
+
     return posts;
 };
 
@@ -38,11 +39,14 @@ export interface PostMeta {
 
 }
 export const getPostFromSlug = (slug: string,url: string): Post => {
+        console.log(url);
+        
     const postPath = path.join(url, `${slug}.mdx`);
+
     const source = fs.readFileSync(postPath);
 
     const { content, data } = matter(source);
-
+    // console.log(data);
     return {
         content,
         meta: {

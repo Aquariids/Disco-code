@@ -10,7 +10,6 @@ const Sidebar = ({className, ...props}:SidebarProps):JSX.Element => {
     const router = useRouter(); 
     const r = router.pathname;
     
-console.log(r.length);
 
     const errorPaths = r === '/js/basicjs' || r === '/' || r === '/ts/basicts' || r === '/react/basicreact' || r === '/next'; 
 

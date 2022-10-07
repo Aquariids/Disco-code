@@ -4,7 +4,6 @@ import s from "./Articles.module.css";
 import Card from "./Card/Card";
 const Articles = () => {
   const router = useRouter();
-  console.log(router);
 
   return (
     <div className={s.articles}>
