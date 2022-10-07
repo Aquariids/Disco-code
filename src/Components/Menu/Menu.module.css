@@ -234,7 +234,7 @@
 	list-style-type: none;
 	color: var(--js_color_links_pages);
 	font-size: 14px;
-	line-height: 16px;
+	line-height: 19px;
 }
 
 
@@ -251,7 +251,7 @@
 	list-style-type: none;
 	color: var(--ts_color_links_pages);
 	font-size: 14px;
-	line-height: 16px;
+	line-height: 19px;
 }
 
 .active_ts:hover {
@@ -267,7 +267,7 @@
 	list-style-type: none;
 	color: var(--react_color_links_pages);
 	font-size: 14px;
-	line-height: 16px;
+	line-height: 19px;
 }
 
 .active_react:hover {
