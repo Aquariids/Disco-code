@@ -15,7 +15,7 @@ const Layout = ({ children, }: LayoutProps): JSX.Element => {
         <>
 
             <div className={cn(wrapper, {
-                [s.wrapper2]: router.asPath.length > 6
+                [s.wrapper2]: router.asPath.length > 11
             })}>
                 <Header className={header} />
                 <Sidebar className={sidebar} />

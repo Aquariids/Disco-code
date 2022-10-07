@@ -3,7 +3,6 @@ import { HeaderProps } from './HeaderMenu.props';
 import Link from 'next/link';
 import cn from 'classnames';
 import { useRouter } from 'next/router';
-
 import Logo from '../UI/Logo/Logo';
 import { Loading } from '../Loading/Loading';
 const { header, link, content, logo, github } = s;
@@ -14,7 +13,7 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
 
     return (
         <div className={cn(header, {
-            [s.header2]: router.asPath.length > 6
+            [s.header2]: router.asPath.length > 11  
         })} {...props}>
             <div className={content}>
                 <div className={logo}>
