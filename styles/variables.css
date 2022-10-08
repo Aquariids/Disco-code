@@ -1,4 +1,8 @@
 :root {
+	/* main */
+
+	--main_color_links_pages:rgb(146, 94, 94);
+	--main_hover_color_links_pages:rgb(100, 51, 51);
 	/* js */
 	--js_color_links_pages: #E9A12C;
 	--js_hover_color_links_pages: #F44336;

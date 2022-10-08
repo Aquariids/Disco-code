@@ -16,7 +16,7 @@ const MenuTs = ({ setMobile, mobile, sideBarMenuActive, mobileMenuActive }: mobi
         return (
             <>
                 <Menu title="Стили написания" category='style' dropdown={true} page='paradigms' />
-                <Menu title="Парадигмы программирования" category='concepts' page='paradigms' />
+                <Menu title="Парадигмы " category='concepts' dropdown={true}  page='paradigms' />
 
             </>
         );

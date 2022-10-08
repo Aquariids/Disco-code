@@ -114,7 +114,6 @@
 	font-weight: 700;
 	font-weight: bold;
 	line-height: 15px;
-	white-space: nowrap;
 	border-radius: 5px;
 	
 }
@@ -230,67 +229,55 @@
 
 /* active links */
 
-.active_js {
+
+.active {
 	text-shadow: 0px 0px 0.5px rgba(0, 0, 0, 0.411);
 	font-weight: 500;
 	list-style-type: none;
-	color: var(--js_color_links_pages);
+	color:var(--main_color_links_pages);
 	font-size: 14px;
 	line-height: 19px;
 	padding-right: 5px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 
+
 }
 
-
-.active_js a {
+.active:hover {
+	color: var(--main_hover_color_links_pages);
+	cursor: pointer;
+} 
+.active a {
 	pointer-events: none;
+}
+.active_js {
+	color: var(--js_color_links_pages);
 }
 
 .active_js:hover {
-	cursor: pointer;
 	color: var(--js_hover_color_links_pages);
 }
 
 .active_ts {
-	padding-right: 5px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	text-shadow: 0px 0px 0.5px rgba(0, 0, 0, 0.411);
-	list-style-type: none;
+
 	color: var(--ts_color_links_pages);
-	font-size: 14px;
-	line-height: 19px;
 }
 
 .active_ts:hover {
-	cursor: pointer;
 	color: var(--ts_hover_color_links_pages);
 }
 
-.active_ts a {
-	pointer-events: none;
-}
+
 
 .active_react {
-	padding-right: 5px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	text-shadow: 0px 0px 0.5px rgba(0, 0, 0, 0.411);
-	list-style-type: none;
 	color: var(--react_color_links_pages);
-	font-size: 14px;
-	line-height: 19px;
+	
 }
 
 .active_react:hover {
-	cursor: pointer;
-	color: var(--react_hover_color_links_pages);
-}
 
-.active_react a {
-	pointer-events: none;
+	color: var(--react_hover_color_links_pages);
 }
 
 

@@ -3,6 +3,7 @@ import s from './SidebarMenu.module.css';
 import MenuJs from "../Menu/MenuJs/MenuJs";
 import MenuTs from "../Menu/MenuTs/MenuTs";
 import MenuReact from "../Menu/MenuReact/MenuReact";
+import MenuParadigms from "../Menu/MenuParadigms/MenuParadigms";
 
 const SidebarMenu = ():JSX.Element => {
 
@@ -27,6 +28,14 @@ const SidebarMenu = ():JSX.Element => {
         return (
             <nav className={s.nav_menu}>
                 <MenuReact sideBarMenuActive={true} mobileMenuActive={false}/>
+            </nav>
+        );
+    }
+
+    if (router.pathname.startsWith('/paradigms')) {
+        return (
+            <nav className={s.nav_menu}>
+                <MenuParadigms sideBarMenuActive={true} mobileMenuActive={false}/>
             </nav>
         );
     }
