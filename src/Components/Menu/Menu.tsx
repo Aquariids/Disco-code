@@ -80,6 +80,8 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                         onClick={mob}
                         key={index}
                             className={cn({
+                                [s.active]: pathname.replace(post.slug, '') + post.slug === pathname,
+
                                 [s.active_js]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/js'),
                                 [s.active_ts]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/ts'),
                                 [s.active_react]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/react'),
