@@ -26,14 +26,16 @@
 }
 
 .link {
-
+	text-shadow: 0px 0px 0.5px rgba(0, 0, 0, 0.411);
 	display: inline-block;
 	list-style-type: none;
 	transition: all 0.1s;
 	font-size: 14px;
-	font-weight: 400;
+	font-weight: 500;
 	line-height: 19px;
-	padding-right: 2px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 
 }
 
@@ -62,9 +64,7 @@
 		margin-left: 0px;
 	}
 
-	.listMenu {
-		margin-left: 0px;
-	}
+	
 }
 @media (max-width:1040px) {
 	.btn {
@@ -231,10 +231,16 @@
 /* active links */
 
 .active_js {
+	text-shadow: 0px 0px 0.5px rgba(0, 0, 0, 0.411);
+	font-weight: 500;
 	list-style-type: none;
 	color: var(--js_color_links_pages);
 	font-size: 14px;
 	line-height: 19px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+
 }
 
 
@@ -248,6 +254,10 @@
 }
 
 .active_ts {
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-shadow: 0px 0px 0.5px rgba(0, 0, 0, 0.411);
 	list-style-type: none;
 	color: var(--ts_color_links_pages);
 	font-size: 14px;
@@ -264,6 +274,10 @@
 }
 
 .active_react {
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-shadow: 0px 0px 0.5px rgba(0, 0, 0, 0.411);
 	list-style-type: none;
 	color: var(--react_color_links_pages);
 	font-size: 14px;
