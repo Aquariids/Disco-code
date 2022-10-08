@@ -27,7 +27,16 @@ const logo = ({ path, src }: logoProps): JSX.Element => {
         );
     } else {
         return (
-            <></>
+            <AnimatePresence>
+            <motion.div className={s.logo}
+                transition={{ type: "spring", stiffness: 50 }}
+                key={router.pathname}
+                initial={{ x: -10, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+            >
+                <Link href={'/'}><img style={{ width: '52px', height:'52px', cursor: 'pointer', borderRadius: '15px' }} src={src} /></Link>
+            </motion.div>
+        </AnimatePresence>
         );
 
     }

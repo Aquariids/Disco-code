@@ -1,12 +1,15 @@
 .container {
 	border: 1px solid rgba(153, 153, 153, 0.575);
 	display: flex;
+	max-width: 450px;
 	height: 275px;
 	margin: 0 auto;
 	cursor: pointer;
 	transition: 0.2s;
 	border-radius: 3%;
 	font-size: 25px;
+	background-color: rgba(0, 0, 0, 0.815);
+	color: #FFF;
 	box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.534);
 /* 
 	background-image: url(/takagi.png);
@@ -29,8 +32,20 @@
 	transform: scale(1.05);
 	transform: scale(1.05);
 	transform: scale(1.05);
+
+	transition: all 0.2s;
+	/* text-shadow: 2px 2px 5px  black; */
+	box-shadow: 0 0 5px #000;
+	background-color: rgba(0, 0, 0, 0.349);
+
+
+
 }
 .title {
+	padding-left: 10px;
+	padding-right: 10px;
+	display: grid;
+	grid-template-columns: 1fr;
 	font-weight: bold;
 }
 .body {
@@ -42,7 +57,6 @@
 
 .bg {
 	display: flex;
-	margin-left: 10px;
 }
 
 .footer {
@@ -103,6 +117,16 @@
 	box-shadow: 0 0 10px  var(--react_hover_color_links_pages);
 }
 
+
+@media (max-width:1195px) {
+	.title {
+		font-size: 22px;
+	}
+
+	
+	
+}
+
 @media (max-width:785px) {
 	.container {
 		width: 350px;
@@ -111,6 +135,7 @@
 	
 	
 }
+
 
 
 @media (max-width:400px) {

@@ -19,6 +19,13 @@ html {
 	margin-right: calc(-1 *(100vw - 100%));
 }
 
+@media (max-width: 1065px) {
+	html {
+		background-position-x: 127%;
+	}
+}
+
+
 @media (max-width: 1200px) {
 	html {
 		background-size: 60em;

@@ -15,15 +15,15 @@ const MenuTs = ({ setMobile, mobile, sideBarMenuActive, mobileMenuActive }: mobi
     if (sideBarMenuActive === true) {
         return (
             <>
-                <Menu title="TypeScript" category='basicts' dropdown={true} page='ts' />
+                <Menu title="Основы typeScript" category='basicts' dropdown={true} page='ts' />
             </>
         );
 
     } else {
         return (
             <>
-                <Menu title=" Работа с typeScript" category='basicts' page='ts' />
-                <Menu title="Фиксы некоторых ошибок" category='/' page='ts' />
+                <Menu title=" Основы typeScript" category='basicts' page='ts' />
+                {/* <Menu title="Фиксы некоторых ошибок" category='/' page='ts' /> */}
             </>
         );
     }

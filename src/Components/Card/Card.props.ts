@@ -1,5 +1,5 @@
 export interface ICard {
-    color:string;
+    color?:string;
     text:string;
     url:string;
     title:string;
