@@ -5,7 +5,6 @@ import { withLayout } from '../../layout/Layout';
 import MenuReact from '../../src/Components/Menu/MenuReact/MenuReact';
 import { getAllPosts } from '../api/api';
 import { POSTS_PATH_REACT } from '../api/paths';
-import s from './pageReact.module.css';
 
 
 

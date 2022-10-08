@@ -1,7 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
 import React from "react";
 import { withLayout } from "../../layout/Layout";
-import s from "./pageJs.module.css";
 import { getAllPosts } from "../api/api";
 import { POSTS_PATH_JS } from "../api/paths";
 import Head from "next/head";
