@@ -34,7 +34,7 @@
 	transform: scale(1.05);
 
 	transition: all 0.2s;
-	/* text-shadow: 2px 2px 5px  black; */
+	text-shadow: 2px 2px 5px  black;
 	box-shadow: 0 0 5px #000;
 	background-color: rgba(0, 0, 0, 0.349);
 
