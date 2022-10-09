@@ -31,12 +31,4 @@
 }
 
 
-@media (max-width:785px) {
-	.tag_main {
-		color: var(--main_color_links_pages_mobile);
-	}
-	.mini_tag_main {
-		color: var(--main_color_links_pages_mobile);
-	}
-	
-}
+
