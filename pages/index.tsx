@@ -23,7 +23,7 @@ const Home: NextPage = (): JSX.Element => {
         />
         <meta
           property="og:title"
-          content="Документация на понятном языке. Добро пожаловать в серость.  "
+          content="Добро пожаловать в серость под диско. Документация на понятном языке.  "
         />
         <meta property="og:type" content="website" />
         <meta
