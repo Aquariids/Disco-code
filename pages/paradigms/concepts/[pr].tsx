@@ -44,7 +44,6 @@ const PostPage: NextPage<never> = ({
           name="description"
           content={"Функциональное программирование, ООП, стили написания кода."}
         />
-        <meta property="og:title" content="Парадигмы программирования" />
         <meta
           property="og:description"
           content={"Функциональное программирование, ООП, стили написания кода."}
