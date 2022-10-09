@@ -125,6 +125,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getSlugs(POSTS_PATH_JS).map((js) => ({ params: { js } }));
 
+  
   return {
     paths,
     fallback: false,

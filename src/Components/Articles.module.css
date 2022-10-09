@@ -1,5 +1,6 @@
 .articles {
 	display: grid;
+	justify-content: center;
 	gap: 30px;
 	grid-template-columns: repeat(2, minmax(245px,450px));
 	grid-template-rows: 1fr 1fr;
