@@ -1,0 +1,129 @@
+
+
+Здесь буду записывать свои костыли, что бы потом мог хотя бы разобраться сам.
+
+
+
+## Api ##
+
+### Файл paths.ts ###
+Здесь у меня хранятся пути до контента `mdx` файлов.
+```javaScript
+import path from "path"; //  используется для работы с путями файлов
+export const POSTS_PATH_JS = path.join(process.cwd(), `/Content/javascript`);
+export const POSTS_PATH_TS = path.join(process.cwd(), `/Content/typescript`);
+export const POSTS_PATH_NEXT = path.join(process.cwd(), `/Content/nextjs`);
+export const POSTS_PATH_REACT = path.join(process.cwd(), `/Content/react`);
+export const POSTS_PATH_PARADIGMS = path.join(process.cwd(), `/Content/paradigms`);
+
+```
+`process.cwd()` - Этот метод возвращается текущий рабочий каталог.
+Все это мутные штуки из `node js`. Подробно в этом разбираться мне тяжело, но суть именно такая, что таким образом мы полностью получаем путь к нашим файлам, вместе с рабочим каталогом<br/>
+Например:<br/>
+ С методом `process.cwd()`
+
+```javaScript
+export const POSTS_PATH_REACT = path.join(process.cwd(), `/Content/react`);
+console.log(POSTS_PATH_REACT); // D:\WEb\Disco-code\Content\react
+```
+Без метода
+```javaScript
+export const POSTS_PATH_REACT = path.join(`/Content/react`); 
+
+console.log(POSTS_PATH_REACT); // \Content\react
+```
+### Сам api.ts файл ###
+
+#### Импорты в api.ts ####
+
+
+```javaScript
+import path from "path"; // используется для работы с путями файлов
+import fs from "fs"; // используетс для чтения файлов
+import { sync } from "glob"; // с помощью этой функции мы получаем все наши mdx файлы по url
+import matter from "gray-matter"; // об этом будет ниже.
+```
+
+### Функция getSlugs ###
+```javaSCript
+export const getSlugs = (url: string): string[] => {
+    // в url передается путь до mdx файлов, именно те переменные, что мы разбирали выше из файла paths.ts
+
+    const paths = sync(`${url}/*.mdx`); // здесь мы получаем весе наши пути до каждого файла
+    // метод sync возвращает нам их в массиве
+
+    return paths.map(path => { // перебираем этот массив
+        const parts = path.split("/"); // разбиваем весь путь на составляющие
+        // Таким образом мы получаем имя конкретно файла, без остального пути.
+        // например мы разбили путь на составляющие у нас такой массив [ 'D:', 'WEb', 'Disco-code', 'Content', 'docs', 'sitedocument.mdx' ]
+        // в этом массиве 6 элементов, наше название файла всегда последнее, и так как счет идет от 0, мы отнимаем parts.length - 1, и получаем индекс последнего элемента.
+      
+        const fileName = parts[parts.length - 1]; //  последний элемент  массива наш fileName
+    
+        const [slug, _ext] = fileName.split("."); // теперь разбиваем название файла например  sitedocument.mdx стало [sitedocument,mdx]
+        // в Slug у нас имя файла, в _ext расширение - .mdx
+        return slug; // возвращаем имя файла
+    });
+};
+
+```
+
+
+### Функция getPostFromSlug ###
+
+```javaScript
+// в нее передаем url из paths.ts и при использовании getStaticPaths и getSlugs мы будем получать наш slug об этом уже на самих страницах.
+export const getPostFromSlug = (slug: string,url: string): Post => {
+        
+    const postPath = path.join(url, `${slug}.mdx`); // из пути и имени создаем полный путь к файлу
+
+    const source = fs.readFileSync(postPath); // тут мы читаем все наши файлы и получаем весь наш контент из mdx файла в байтах
+    // если добавить опцию в виде стандарта для кодировки, то тогда получим нормальный текст, Для этого добавляем опцию fs.readFileSync(postPath,{encoding:'utf8'}) 
+    
+    const { content, data } = matter(source); // я использую метод matter, поэтому мне не нужно добавлять кодировку выше. 
+    // Этот метод так же позволяет нам отделить контент от данных что записанны в начале mdx файла.
+    // Например вот начало одной из страниц .mdx:
+     /* Это все будет в переменной data.
+        ---  
+        title: 'Анимация с помощью setInterval'
+        id: 24 
+        prev: '/js/basicjs/setIntervalAndMore'
+        next: '/js/basicjs/date'
+        category: 'basicjs'
+        --- 
+        Все что ниже это наш основной контент, он будет в переменной content.
+
+     */
+
+    return {
+        content, // возвращаем весь контент
+        meta: {  // вовращаем объект с нашими мета скажем так тегами
+            slug, // возвращаем так же имя файла, поможет в работе в будущем
+            title: data.title ?? slug, // свойство title, если в data.title нет, то подставляем название файла
+            id: data.id ?? "", // свойство с id
+            prev: data.prev ?? 'none', // свойство с пред страницей
+            next: data.next ?? 'none', // свойство со след страницей
+            category: data.category ?? "none", // и категория
+        },
+    };
+
+};
+
+```
+### Функция getAllPosts  ###
+Тут мы совмещаем предыдущие функции и получаем массив со всеми постами, вместе с контентом и тегами в начале каждого mdx файла.
+```javaScript
+
+export const getAllPosts = (url:string) => {
+    // получаем массив с именами файлов, перебираем их и используем нашу функцию на каждом, в итоге получаем массив со всем контентом
+    const posts = getSlugs(url).map(slug => getPostFromSlug(slug,url));
+
+    return posts;
+};
+
+```
+
+
+## Как мы работаем с api на страницах ##
+
+Продолжение следует....

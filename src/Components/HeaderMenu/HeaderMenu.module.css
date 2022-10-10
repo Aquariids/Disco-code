@@ -161,6 +161,11 @@
 	color: var(--js_color_links_pages);
 }
 
+.mainLinks {
+	cursor: pointer;
+	color: var(--main_color_links_pages);
+}
+
 .js:hover {
 	color: var(--js_hover_color_links_pages);
 }

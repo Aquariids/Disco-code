@@ -75,6 +75,14 @@
 	margin-bottom: 0;
 }
 
+
+.doc {
+	margin-bottom: -70px;
+	color: #999;
+	margin-left: 25px;
+	font-size: 12px;
+}
+
 @media (max-width: 785px) {
 	.footer {
 		grid-template-columns: 550px;
@@ -88,6 +96,9 @@
 
 		margin-right: 50px;
 		margin-left: 50px;
+	}
+	.doc {
+		margin-bottom: 0px;
 	}
 }
 

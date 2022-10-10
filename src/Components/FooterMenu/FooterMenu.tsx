@@ -25,7 +25,8 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
                             <li><Link href={'/js/advancedjs/hoisting'}>Продвинутый javaScript</Link></li>
                             <li><Link href={'/js/algorithmsjs/binarySearch'}>Алгоритмы javaScript</Link></li>
                             <li><Link href={'/react/basicreact/ReactSinglePageApp'}> Базовый React </Link></li>
-                            <li><Link href={'/ts/basicts/installation'}>Работа с typescript</Link></li>
+                            <li><Link href={'/ts/basicts/installation'}>Основы typescript</Link></li>
+                        
                         </ul>
                     </div>
 
@@ -43,9 +44,13 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
                 </div>
                 
             </div>
+            <span className={s.doc}>
+                <Link href={'/docs/sitedocument'}>Документация по сайту</Link>
+            </span>
             <div className={s.copyright}>
                 <span >{`© 2022 - ${format(new Date(), 'yyyy')} Дмитрий Черномашенцев`}</span>
             </div>
+           
             
         </>
 

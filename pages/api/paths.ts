@@ -4,5 +4,5 @@ export const POSTS_PATH_TS = path.join(process.cwd(), `/Content/typescript`);
 export const POSTS_PATH_NEXT = path.join(process.cwd(), `/Content/nextjs`);
 export const POSTS_PATH_REACT = path.join(process.cwd(), `/Content/react`);
 export const POSTS_PATH_PARADIGMS = path.join(process.cwd(), `/Content/paradigms`);
-
+export const POSTS_PATH_DOCS = path.join(process.cwd(), `/Content/docs`);
 

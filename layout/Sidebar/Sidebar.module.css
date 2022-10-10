@@ -34,3 +34,25 @@
 	width: 100%;
 	white-space: nowrap;
 }
+
+
+
+.docs {
+	list-style-type:circle;
+	margin-top: 100px;
+	margin-left: 10px;
+	display: flex;
+	flex-direction: column;
+	grid-template-columns: 1fr;
+}
+.docsTitle {
+
+}
+
+
+@media (max-width:785px) {
+	.docs {
+		display: none;
+	}
+	
+}

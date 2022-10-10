@@ -18,7 +18,8 @@ export const getSlugs = (url: string): string[] => {
 
 export const getAllPosts = (url:string) => {
     const posts = getSlugs(url).map(slug => getPostFromSlug(slug,url));
-
+    console.log(posts);
+    
     return posts;
 };
 
@@ -46,7 +47,6 @@ export const getPostFromSlug = (slug: string,url: string): Post => {
     const source = fs.readFileSync(postPath);
 
     const { content, data } = matter(source);
-    // console.log(data);
     return {
         content,
         meta: {
