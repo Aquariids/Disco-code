@@ -77,10 +77,8 @@
 
 
 .doc {
-	margin-bottom: -70px;
 	color: #999;
 	margin-left: 25px;
-	font-size: 12px;
 }
 
 @media (max-width: 785px) {
@@ -97,9 +95,14 @@
 		margin-right: 50px;
 		margin-left: 50px;
 	}
-	.doc {
-		margin-bottom: 0px;
+	.copyright {
+		justify-content: center;
+		flex-direction: column;
 	}
+	.doc {
+		margin-left: 0px;
+	}
+	
 }
 
 
@@ -135,8 +138,8 @@
 
 .copyright {
 	white-space: nowrap;
-	display: grid;
-	justify-content: right;
+	display: flex;
+	justify-content: space-between;
 	height: 100%;
 	font-size: 13px;
 	color: #999;
@@ -146,9 +149,6 @@
 
 }
 
-.copyright span {
-margin: 0 auto;
-}
 
 
 
@@ -181,7 +181,7 @@ margin: 0 auto;
 
 @media (max-width:335px) {
 	.copyright {
-	font-size: 11px;
+	font-size: 9px;
 	
 	}
 	.content  {

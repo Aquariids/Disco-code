@@ -44,11 +44,12 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
                 </div>
                 
             </div>
-            <span className={s.doc}>
-                <Link href={'/docs/sitedocument'}>Документация по сайту</Link>
-            </span>
+           
             <div className={s.copyright}>
-                <span >{`© 2022 - ${format(new Date(), 'yyyy')} Дмитрий Черномашенцев`}</span>
+            <span className={s.doc}><Link href={'/docs/sitedocument'}>Документация по сайту</Link></span>
+                <span >
+              
+                    {`© 2022 - ${format(new Date(), 'yyyy')} Дмитрий Черномашенцев`}</span>
             </div>
            
             
