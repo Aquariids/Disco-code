@@ -77,8 +77,15 @@
 
 
 .doc {
+	transition: 0.7s;
+	opacity:0;
 	color: #999;
 	margin-left: 25px;
+}
+
+.doc:hover {
+	transition: 0.7s;
+	opacity: 1;
 }
 
 @media (max-width: 785px) {
