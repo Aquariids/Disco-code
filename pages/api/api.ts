@@ -40,7 +40,6 @@ export interface PostMeta {
 
 }
 export const getPostFromSlug = (slug: string,url: string): Post => {
-        console.log(url);
         
     const postPath = path.join(url, `${slug}.mdx`);
 

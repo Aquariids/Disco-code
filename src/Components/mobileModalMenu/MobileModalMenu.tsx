@@ -6,8 +6,9 @@ import MenuTs from '../Menu/MenuTs/MenuTs';
 import MenuReact from '../Menu/MenuReact/MenuReact';
 import { mobileModalMenuProps } from './MobileModalMenu.props';
 import s from './MobileModalMenu.module.css';
+import MenuParadigms from '../Menu/MenuParadigms/MenuParadigms';
 
-const mobileModalMenu = ({js,ts,react}:mobileModalMenuProps) => {
+const mobileModalMenu = ({js,ts,react,paradigms}:mobileModalMenuProps) => {
 
     const [mobile, setMobile] = useState(false);
 
@@ -20,6 +21,8 @@ const mobileModalMenu = ({js,ts,react}:mobileModalMenuProps) => {
                 {js === 'js'? <MenuJs sideBarMenuActive={false} mobileMenuActive={true} setMobile={setMobile} mobile={mobile}/>:<></>}
                 {ts === 'ts'? <MenuTs sideBarMenuActive={false} mobileMenuActive={true} setMobile={setMobile} mobile={mobile}/>:<></>}
                 {react === 'react'? <MenuReact sideBarMenuActive={false} mobileMenuActive={true} setMobile={setMobile} mobile={mobile}/>:<></>}
+                {paradigms === 'paradigms'? <MenuParadigms sideBarMenuActive={false} mobileMenuActive={true} setMobile={setMobile} mobile={mobile}/>:<></>}
+
 
             </div>
 

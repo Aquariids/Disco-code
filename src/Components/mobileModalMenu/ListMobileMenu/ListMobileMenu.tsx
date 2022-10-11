@@ -12,6 +12,8 @@ const ListMobileMenu = () => {
                 {router.asPath.startsWith('/js/algorithmsjs')?<MobileModalMenu js="js"/>:<></>}
                 {router.asPath.startsWith('/ts/basicts')?<MobileModalMenu ts="ts"/>:<></>}
                 {router.asPath.startsWith('/react/basicreact')?<MobileModalMenu react="react"/>:<></>} 
+                {router.asPath.startsWith('/paradigms/style')?<MobileModalMenu paradigms="paradigms"/>:<></>} 
+
         </>
     );
 };

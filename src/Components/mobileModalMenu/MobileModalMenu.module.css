@@ -9,6 +9,8 @@
 	flex-direction: column;
 	visibility: hidden;
 	justify-content: left;
+	grid-template-columns: 1fr;
+	grid-template-rows: 0.2fr;
 	right: 0;
 	left: 0;
 	bottom: 0;
