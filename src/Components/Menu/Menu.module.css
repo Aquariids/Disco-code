@@ -26,12 +26,12 @@
 }
 
 .link {
-	text-shadow: 0px 0px 0.5px rgba(0, 0, 0, 0.411);
+	text-shadow: 0.2px 0.2px 0.2px rgba(0, 0, 0, 0.411);
 	display: inline-block;
 	list-style-type: none;
 	transition: all 0.1s;
 	font-size: 14px;
-	font-weight: 500;
+	font-weight: 400;
 	line-height: 19px;
 	padding-right: 5px;
 	padding-left: 5px;
@@ -232,14 +232,14 @@
 
 
 .active {
-	text-shadow: 0px 0px 0.5px rgba(0, 0, 0, 0.411);
 	font-weight: 500;
 	list-style-type: none;
 	color:var(--main_color_links_pages);
 	font-size: 14px;
 	line-height: 19px;
-	
-	padding-bottom: 10px;
+	padding-left: 2px;
+	margin-bottom: 10px;
+	margin-top: 10px;
 
 }
 
