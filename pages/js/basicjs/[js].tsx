@@ -1,7 +1,7 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { withLayout } from "../../../layout/Layout";
 import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { MDXRemote } from "next-mdx-remote";
 import rehypeSlug from "rehype-slug";
 import rehypeHighlight from "rehype-highlight";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
@@ -12,23 +12,16 @@ import {
   getAllPosts,
   getPostFromSlug,
   getSlugs,
-  PostMeta,
+  MDXPost,
 } from "../../api/api";
 import { POSTS_PATH_JS } from "../../api/paths";
 import Link from "next/link";
 import s from "../pageJs.module.css";
 import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
 
-interface MSXPost {
-  source: MDXRemoteSerializeResult<Record<string, unknown>>;
-  meta: PostMeta;
-}
 
-const PostPage: NextPage<never> = ({
-  post,
-}: {
-  post: MSXPost;
-}): JSX.Element => {
+
+const PostPage: NextPage<never> = ({ post,}: MDXPost): JSX.Element => {
   return (
     <>
       <div className="page">
@@ -59,7 +52,7 @@ const PostPage: NextPage<never> = ({
           <meta property="og:site_name" content="DiscoCode" />
           <meta property="og:locale" content="ru_Ru" />
           <meta property="og:image:width" content="1200" />
-                <meta property="og:image:height" content="630" />
+          <meta property="og:image:height" content="630" />
           <meta property="og:author" content="Дмитрий черномашенцев" />
           <meta property="og:section" content="JavaScript" />
           <meta property="og:tag" content="JavaScript, js" />
@@ -125,7 +118,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getSlugs(POSTS_PATH_JS).map((js) => ({ params: { js } }));
 
-  
   return {
     paths,
     fallback: false,

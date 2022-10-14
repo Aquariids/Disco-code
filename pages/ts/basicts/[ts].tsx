@@ -1,13 +1,13 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { withLayout } from '../../../layout/Layout';
 import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { MDXRemote } from 'next-mdx-remote';
 import rehypeSlug from 'rehype-slug';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import Head from 'next/head';
 import "highlight.js/styles/mono-blue.css";
-import { getAllPosts, getPostFromSlug, getSlugs, PostMeta } from '../../api/api';
+import { getAllPosts, getPostFromSlug, getSlugs, MDXPost } from '../../api/api';
 import { POSTS_PATH_TS } from '../../api/paths';
 import Link from 'next/link';
 import s from './ts.module.css';
@@ -15,12 +15,8 @@ import cn from 'classnames';
 import AnimationContainer from '../../../src/Components/AnimationContainers/AnimationContainer';
 
 
-interface MSXPost {
-    source: MDXRemoteSerializeResult<Record<string, unknown>>
-    meta: PostMeta
-}
 
-const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => {
+const PostPage: NextPage<never> = ({ post }: MDXPost): JSX.Element => {
 
 
 
