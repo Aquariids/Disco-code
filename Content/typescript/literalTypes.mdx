@@ -1,0 +1,40 @@
+---
+title: 'Литеральные типы'
+id: '3'
+prev: '/ts/interfacesAndTypes'
+next: '/ts/EnumsAndTypeNever'
+category: 'basicts'
+---
+Глянем сразу на примере что это такое:
+```ts
+let b = 'hi';
+```
+Если мы глянем на переменную, ее тип будет `string`
+
+<div className='container-img'> <span className="img"> ![alt text](/images/Content/ts/literalType1.png) </span></div>
+
+Но мы можем задать по сути кастомный тип, например вот так:
+```ts
+let b:'hello' = 'hello';
+```
+Теперь переменная `b` может принимать только `'hello'`, и ничего больше.
+
+<div className='container-img'> <span className="img"> ![alt text](/images/Content/ts/literalType2.png) </span></div>
+
+Теперь посмотрим как это можно применить на практике
+```ts
+type CardinalDirection = 'North' | 'East' | 'South' | 'West'; // у нас есть тип с литеральными значениями
+
+function move(distance: number, direction: CardinalDirection) {
+    return console.log(` I walk ${distance == 1 ? `${distance} meter`: `${distance} meters`} ${direction}`);
+  }
+
+move(2,'West'); // I walk 2 meters West
+move(3 '') // // Здесь мы ничего не можем указать, кроме указанных нами типов
+
+```
+Ide нам сразу подсказывает, что мы можем указать.
+
+<div className='container-img'> <span className="img"> ![alt text](/images/Content/ts/literalType3.png) </span></div>
+
+Вот и все, мы просто создаем свое определенное строковое фиксированное значение, которое является нашим типом. 

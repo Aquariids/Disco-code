@@ -1,0 +1,185 @@
+---
+title: 'Enums и тип never'
+id: '4'
+prev: '/ts/literalTypes'
+category: 'basicts'
+---
+
+
+<div className='mdHead'>
+
+#### Теги
+
+<div className = 'tag_ts'>[Enums:](#enums)</div>
+<div className = 'mini_tag_ts'> [числовые enums,](#числовые-enums)</div> 
+<div className = 'mini_tag_ts'> [строковые enums,](#строковые-enums)</div> 
+<div className = 'mini_tag_ts'> [гетерогенные enums,](#гетерогенные-enums)</div> 
+<div className = 'mini_tag_ts'> [расчитывыемые enums.](#расчитывыемые-enums)</div> <br/>
+<div className = 'tag_ts'>[Получение строкового значения enum](#получение-строкового-значения-enum)</div> <br/>
+<div className = 'tag_ts'>[Использование const enum](#использование-const-enum)</div> <br/>
+<div className = 'tag_ts'>[Тип never](#never)</div>
+
+</div>
+
+## Enums ##
+
+`Enums` полезно использовать когда мы хотим ограничить область значений той или иной переменной. По аналогии с `литеральными типами` мы можем задать набор значений, которые будет принимать в себя переменная с данным типом `enum`. Это удобнее обычных литеральных типов.
+### Числовые enums ###
+```ts
+enum Direction {
+  Up, // автоматически тип Up будет 0 
+  Down, // Down тип 1
+  Left, // тип 2
+  Right // тип 3
+}
+```
+Это числовое предаставление `enums`, по умолчанию они называются числовые `enums`.<br/>
+Мы так же можем сами установить последовательность.
+```ts
+enum Direction {
+  Up = 1, // меняем на 1
+  Down, // Down тип 2
+  Left, // тип 3
+  Right // тип 4
+}
+
+```
+### Строковые enums ###
+Со строковыми `enums` нам нужно будет каждому установить свое результирующее значение.
+```ts
+enum Direction {
+  Up = 'Up', 
+  Down = 'Down', 
+  Left = 'Left',
+  Right = 'Right'
+}
+```
+### Гетерогенные enums ###
+Это просто смесь строковых значений и числовых.
+```ts
+enum Desicion {
+  Yes = 1,
+  No = 'No'
+}
+``` 
+### Расчитывыемые enums ###
+Мы можем рассчитать значение в `enum`.
+```ts
+enum Desicion {
+  Yes = 1,
+  No = calcEnum() // вызываем нашу функцию расчета
+}
+
+function calcEnum () { // создаем функцию которая расчитывает
+  return 0;
+}
+```
+Такой вариант может осуществляться только с числовым типом.
+## Получение строкового значения enum ##
+```ts
+enum Test {
+  A
+}
+
+let test = Test.A; // поместили в test значение A
+
+console.log(test); // A по умолчанию 0
+
+// что бы получить само имя, можно сделать так.
+let nameA = Test[test]; // мы как бы по индексу получили имя.
+console.log(nameA); // A
+```
+## Использование const enum ##
+Если мы собираемся использовать `enum` как константу, то можно объявлять такой `enum` через `const`
+```ts
+enum Test {
+  A
+}
+
+let oneEnum = Test.A;
+```
+Выше мы объявили просто `enum`, давайте скомпилируем его и посмотрим, что будет в `js` файле:
+```ts
+// А тут мрак функциональный
+var Test;
+(function (Test) {
+    Test[Test["A"] = 0] = "A";
+})(Test || (Test = {}));
+let oneEnum = Test.A;
+```
+Теперь посмотрим на `const enum`
+```ts
+const enum Test2 {
+  B
+}
+
+let twoEnum = Test2.B;
+```
+Скомпилируем:
+```ts
+let twoEnum = 0 /* B */;
+```
+Намного легче и проще читается, да? Поэтому если `enum` используется только как константа то лучше использовать `const enum`
+## never ##
+`never` - это примитивный тип данных, ложное логическое утверждение.Служит для указания того, что какие-либо операции никогда не будут выполнены.<br/>
+
+Мы знаем, что функция которая ничего не возвращает, возвращает `void`, однако, если функция выбрасывает ошибку, то она будет возвращать `never`.<br/>
+`never` можно указать, функции либо с ошибкой, либо если она никогда не сможет выполнить что либо, например бесконечный цикл.
+```ts
+function hi ():never {
+  hi()
+}
+```
+Если же убрать бесконечную рекурсию, то мы получим ошибку, так как это уже функция которая ничего не возвращает, а значит ее тип будет `void`.
+```ts
+function hi ():void {
+  
+}
+```
+Или ошибка:
+```ts
+function error(message: string): never {
+  throw new Error(message);
+}
+```
+То есть это все то, что не должно выполниться. <br/>
+Где это можно использовать? например с `enum` или `type`.
+```ts
+type AdminAction = 'CREATE' | 'ACTIVATE'; // если тут добавить еще значение, то будет ошибка
+
+function doAction (action:AdminAction) {
+  switch(action) {
+    case 'CREATE':
+      return "CREATED"
+    case 'ACTIVATE':
+      return 'ACTIVATED'
+    default:
+      const a: never = action;  // вот тут будет ошибка
+      throw new Error (`НЕ ПОНЯЛ ЧТО ТУТ ${a}`)
+  }
+    
+}
+```
+Это нам помогает заметить ошибку, если мы в `type` добавим третье значение и уберем `never`, то ничего не будет подсвеченно.<br/>
+Тот же пример с `enum`
+```ts
+enum AdminAction {
+    CREATE = "CREATE",
+    ACTIVATE = "ACTIVATE",
+};
+
+function doAction(action: AdminAction) {
+    switch (action) {
+        case AdminAction.CREATE:
+            return "CREATED"
+        case AdminAction.ACTIVATE:
+            return 'ACTIVATED'
+        default:
+            const a: never = action;
+            throw new Error(`НЕ ПОНЯЛ ЧТО ТУТ ${a}`)
+    }
+
+}
+
+```
+ 
