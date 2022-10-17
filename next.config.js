@@ -19,7 +19,9 @@ module.exports = {
 				titleProp: true,
 			},
 			test: /\.svg$/,
+			
 		});
+		
 
 		return config;
 	},

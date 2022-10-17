@@ -1,3 +1,32 @@
-.ts {
+.footer a:hover {
+	color: var(--ts_hover_color_links_pages);
+	box-shadow: 0 0.7px 0 0;
+}
+
+.footer a:focus {
 	color: var(--ts_color_links_pages);
+}
+
+.footer {
+	color: var(--ts_color_links_pages);
+}
+
+.footer a {
+	box-shadow: 0 0.3px 0 0;
+}
+
+@media (max-width: 500px) {
+	.footer a {
+		border-bottom: 1px solid var(--ts_color_links_pages);
+		box-shadow: 0 0 0 0;
+	}
+}
+
+.edit a {
+	color: rgb(77 77 77);
+	box-shadow: 0 0.2px 0 0;
+}
+
+.edit a:hover {
+	box-shadow: 0 0.7px 0 0;
 }

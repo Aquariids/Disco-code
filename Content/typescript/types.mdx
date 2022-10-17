@@ -1,34 +1,40 @@
 ---
 title: 'Типы данных'
 id: '1'
-prev: '/ts/installation'
-next: '/ts/interfacesAndTypes'
+prev: '/ts/basicts/installation'
+next: '/ts/basicts/interfacesAndTypes'
 category: 'basicts'
 ---
 
 <div className = 'mdHead'>
-
 #### Теги
 
-<div className = 'tag_ts'>[Базовые типы в typeScript:]()</div>  
-<div className = 'mini_tag_ts'> [number,]()</div> 
-<div className = 'mini_tag_ts'> [string,]()</div> 
-<div className = 'mini_tag_ts'> [boolean.]()</div> <br/>
-<div className = 'tag_ts'>[Если не указывать тип данных:]()</div>  
-<div className = 'mini_tag_ts'> [any,]()</div>
-<div className = 'mini_tag_ts'> [null и undefined.]()</div> <br/>
-<div className = 'tag_ts'>[Массивы:]()</div>  
-<div className = 'mini_tag_ts'> [string,]()</div>
-<div className = 'mini_tag_ts'> [number.]()</div> <br/>
-<div className = 'tag_ts'>[Типизация функций:]()</div>  
-<div className = 'mini_tag_ts'> [аргументы.]()</div> 
-<div className = 'mini_tag_ts'> [тип возвращаемого функцией,]()</div>
-<div className = 'mini_tag_ts'> [void,]()</div> <br/>
-<div className = 'tag_ts'>[Знак | (union тип)]()</div>  <br/>
-<div className = 'tag_ts'>[Объекты]()</div>  <br/>
-<div className = 'tag_ts'>[Знак ?]()</div>  <br/>
-<div className = 'tag_ts'>[Проверка на тип:]()</div>  
-<div className = 'mini_tag_ts'> [isArray]()</div>
+<div className = 'tag_ts'>[Базовые типы в typeScript:](#базовые-типы-в-typescript)</div>
+<div className = 'mini_tag_ts'>[number,](#number)</div> 
+<div className = 'mini_tag_ts'>[string,](#string)</div> 
+<div className = 'mini_tag_ts'>[boolean.](#boolean)</div> <br/>
+<div className = 'tag_ts'>[Если не указывать тип данных:](#если-не-указывать-тип-данных)</div>
+<div className = 'mini_tag_ts'>[any,](#any)</div> 
+<div className = 'mini_tag_ts'>[null и undefined.](#null-и-undefined)</div> <br/>
+<div className = 'tag_ts'>[Массивы:](#массивы)</div>
+<div className = 'mini_tag_ts'>[string,](#string-array)</div> 
+<div className = 'mini_tag_ts'>[number,](#number-array)</div> <br/>
+<div className = 'tag_ts'>[Типизация функций:](#типизация-функций)</div>
+<div className = 'mini_tag_ts'>[аргументы,](#аргументы)</div> 
+<div className = 'mini_tag_ts'>[тип возвращаемого функцией,](#тип-возвращаемого-функцией)</div> 
+<div className = 'mini_tag_ts'>[void.](#void)</div> <br/>
+<div className = 'tag_ts'>[Знак | (union тип)](#знак--union-тип)</div> <br/>
+<div className = 'tag_ts'>[Объекты](#объекты)</div> <br/>
+<div className = 'tag_ts'>[Знак ?](#знак-)</div> <br/>
+<div className = 'tag_ts'>[Проверка на тип:](#проверка-на-тип)</div>
+<div className = 'mini_tag_ts'>[isArray.](#isarray)</div> 
+
+
+
+
+
+
+
 
 
 </div>
@@ -86,11 +92,11 @@ b = 1; // Ошибок нет.
 И так далее.
 ## Массивы ##
 Синтаксис такой же как и был, но добавляем две скобки `const arr:string[]` 
-### string ###
+### string array ###
 ```ts
 const arr:string[] = ['hi','br/o']; // массив только из строк 
 ```
-### number ###
+### number array ###
 Тоже самое и для чисел.
 ```ts
 const arr:number[] = [1,2,3,4,5];
@@ -165,7 +171,7 @@ function countCoord (coord: {lat:number, long?:number}) {
 }
 ```
 По сути этот знак, это короткая запись `тип который указали | undefined`.<br/>
-Вот что мы увидим, если наведем на наш аргумент<br/>
+Вот что мы увидим, если наведем на наш аргумент
 
 <div className='container-img'> <span className="img"> ![types](/images/Content/ts/types.png) </span></div>
 

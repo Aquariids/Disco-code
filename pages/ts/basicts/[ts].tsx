@@ -10,7 +10,7 @@ import "highlight.js/styles/mono-blue.css";
 import { getAllPosts, getPostFromSlug, getSlugs, MDXPost } from '../../api/api';
 import { POSTS_PATH_TS } from '../../api/paths';
 import Link from 'next/link';
-import s from './ts.module.css';
+import s from './../pageTs.module.css';
 import cn from 'classnames';
 import AnimationContainer from '../../../src/Components/AnimationContainers/AnimationContainer';
 
