@@ -38,5 +38,10 @@
 	.mini_tag_js {
 		color: var(--js_color_links_pages_mobile);
 	}
+	.link_js {
+		color: var(--js_color_links_pages_mobile)
+	}
+	
+	
 	
 }

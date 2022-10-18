@@ -34,12 +34,14 @@
 }
 
 .arrowTop svg {
+	fill: var(--main_color_links_pages);
 	margin-top: 2px;
 	transform: translate(0px, 0px) rotate(-90deg);
     transition: -webkit-transform 0.2s ease 0s, transform 0.6s ease 0s;
 }
 
 .arrowDown svg {
+	fill: var(--main_color_links_pages);
 	transform: translate(0px, 0px) rotate(90deg);
     transition: -webkit-transform 0.2s ease 0s, transform 0.6s ease 0s;
 }
