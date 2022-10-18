@@ -23,6 +23,7 @@
 }
 
 .link_js {
+	box-shadow: 0 0.5px 0 0;
 	color: var(--js_color_links_pages)
 }
 

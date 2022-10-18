@@ -91,8 +91,8 @@ console.log(bg);
 <div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/getElementById.png) </span></div>
 
 ### getElementsByTagName() ###
-getElementsByTagName() - получаем <span className = 'link_js'>[псевдомассив](/js/basicjs/arrays#псевдомассивы) </span> по тегу (Даже если будет один элемент, мы все равно получим псевдомассив)
-```javaScript
+getElementsByTagName() - получаем <a href="https://discocode.ru/js/basicjs/arrays#%D0%BF%D1%81%D0%B5%D0%B2%D0%B4%D0%BE%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D1%8B" className = 'link_js'>псевдомассив</a> по тегу (Даже если будет один элемент, мы все равно получим псевдомассив)
+```javaScript   
 const btns = document.getElementsByTagName('button');
 console.log(btns); 
 ```
@@ -118,7 +118,7 @@ console.log(className);
 
 
 ##  Современные способы получения элементов DOM  ###
-До этого мы получали html коллекции(HTMLCollection), c querySelectorAll мы будем получать NodeList. Это все псевдомассивы, но разница в том, что у NodeList есть метод forEach и еще пара методов. Их все можно узнать с помощью console.dir( ). [О том как это сделать мы поговрим ниже](#elementsPage). Напомню, что псевдомассив - это тоже самое, что и обычный массив, но только не имеющий методов обычного массива.
+До этого мы получали html коллекции(HTMLCollection), c querySelectorAll мы будем получать NodeList. Это все псевдомассивы, но разница в том, что у NodeList есть метод forEach и еще пара методов. Их все можно узнать с помощью console.dir(). Напомню, что псевдомассив - это тоже самое, что и обычный массив, но только не имеющий методов обычного массива.
 ###  querySelectorAll() ###
 `querySelectorAll()` - позволяет получать псевдомассив за счет селекторов css
 
