@@ -15,9 +15,14 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
 //    const openFullMenu = () => {
 //     setFullMenu(!fullMenu);
 //    };
+
+
     const router = useRouter();
-    const pathname = router.asPath;
+    const pathname = router.asPath.split('#')[0]; // если мы переходим по ссылке с якорем куда то, к статье какой нибудь, то активная ссылка будет немного ломаться, поэтому если есть якорь мы его убираем.
+    
     const { posts } = useContext(AppContext);
+    console.log();
+    
     posts && posts.sort((a,b) => a.id - b.id);
 
 
@@ -46,12 +51,11 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                         
                         <li 
                         key={index}
-                            className={cn( {
+                            className={cn(s.link, {
                                 [s.active]: pathname.replace(post.slug, '') + post.slug === pathname,
                                 [s.active_js]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/js'),
                                 [s.active_ts]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/ts'),
                                 [s.active_react]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/react'),
-                                [s.link]: pathname.replace(post.slug, '') + post.slug !== pathname,
                                 [s.show]: post.category == category,
                                 [s.hide]: post.category !== category,
                             })} >
@@ -79,13 +83,12 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                         <li 
                         onClick={mob}
                         key={index}
-                            className={cn({
+                            className={cn(s.link,{
                                 [s.active]: pathname.replace(post.slug, '') + post.slug === pathname,
 
                                 [s.active_js]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/js'),
                                 [s.active_ts]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/ts'),
                                 [s.active_react]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/react'),
-                                [s.link]: pathname.replace(post.slug, '') + post.slug !== pathname,
                                 [s.show]: post.category == category,
                                 [s.hide]: post.category !== category,
                             })} >
@@ -123,13 +126,12 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                     {posts && posts.map((post,index) => (
                         <li 
                             key={index}
-                            className={cn( s.subCard,{
+                            className={cn( s.link,s.subCard,{
                                 [s.subCardJs]: pathname.startsWith('/js'),
                                 [s.subCardTs]: pathname.startsWith('/ts'),
                                 [s.subCardReact]: pathname.startsWith('/react'),
 
                                 [s.active]: pathname.replace(post.slug, '') + post.slug === pathname,
-                                [s.link]: pathname.replace(post.slug, '') + post.slug !== pathname,
                                 [s.show]: post.category == category,
                                 [s.hide]: post.category !== category,
                             })} >
