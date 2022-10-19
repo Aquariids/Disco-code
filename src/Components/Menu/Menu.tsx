@@ -21,7 +21,6 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
     const pathname = router.asPath.split('#')[0]; // если мы переходим по ссылке с якорем куда то, к статье какой нибудь, то активная ссылка будет немного ломаться, поэтому если есть якорь мы его убираем.
     
     const { posts } = useContext(AppContext);
-    console.log();
     
     posts && posts.sort((a,b) => a.id - b.id);
 
