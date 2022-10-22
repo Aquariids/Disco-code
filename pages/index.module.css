@@ -19,8 +19,16 @@
 	background-position: bottom right;
 	background-repeat: no-repeat;
 	background-size: contain;
-	background-position-y:10px ;
+	background-position-y:10px ; 
 }
+
+.index_img {
+	right: 0;
+	bottom: 0;
+	position: absolute;
+	width: 23%;
+}
+
 
 
 

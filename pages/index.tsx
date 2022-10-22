@@ -53,11 +53,8 @@ const Home: NextPage = (): JSX.Element => {
         <meta property="og:site_name" content="DiscoCode" />
         <meta property="og:locale" content="ru_Ru"></meta>
       </Head>
-      <Loading/>
 
       <div className={s.index_meta_content}>
-
-
       <div className={s.logoTitle}>
         <h1>
           {" "}
