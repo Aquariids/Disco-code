@@ -219,7 +219,7 @@ color: #000000;
 @media (max-width:985px) {
 
 	.index_meta_content {
-		background-image: url('');
+		background-image: none;
 	}
 
 	.subtitle {
