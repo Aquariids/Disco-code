@@ -7,11 +7,6 @@
 
 
 .index_meta_content {
-	background-image: url(/bgCard.png);
-	background-position: bottom right;
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position-y:10px ;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -19,7 +14,13 @@
 	width: 100vw;
 	margin-left: calc(-50vw + 50%);
 	background-color: #000000;
+	background-image: url(/index-min.png);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position-y:10px ;
 }
+
 
 
 .btnScroll {
@@ -112,6 +113,22 @@ color: #000000;
 		margin-bottom: 60px;
 	}
 	
+	
+}
+
+@media (max-width:1600px) {
+
+	.allText {
+		margin-top: 25px;
+		margin-bottom: 25px;
+	}
+
+	.articles {
+		padding-top: 25px;
+		padding-bottom: 50px;
+	}
+	
+	
 }
 
 @media (max-width:1470px) {
@@ -119,6 +136,11 @@ color: #000000;
 	.allText {
 		margin-bottom: 50px;
 	}
+	.text {
+		font-size: 16px;
+
+	}
+
 	
 }
 
@@ -128,20 +150,20 @@ color: #000000;
 	.allText {
 		display: flex;
 		flex-direction: column;
-	}
-	.allText {
-		margin-top: 50px;
+		margin-top: 10px;
 		margin-bottom: 10px;
 	}
 	.articles {
 		padding-top: 50px;
-		padding-bottom: 65px;
+		padding-bottom: 10px;
 	}
 
 	.title {
 		padding-top: 20px;
 		text-align: left;
 	}
+
+	
 	
 }
 
@@ -156,7 +178,7 @@ color: #000000;
 }
 
 @media (max-width:1000px) {
-.btnOnContent {
+.btnScroll {
 	display: none;
 }
 	.subtitle {

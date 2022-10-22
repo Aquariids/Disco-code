@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 import { withLayout } from "../layout/Layout";
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import Articles from "../src/Components/Articles";
 import s from "./index.module.css";
 import Head from "next/head";
-
+import { Loading } from "../src/Components/Loading/Loading";
 const Home: NextPage = (): JSX.Element => {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -50,6 +50,8 @@ const Home: NextPage = (): JSX.Element => {
         <meta property="og:site_name" content="DiscoCode" />
         <meta property="og:locale" content="ru_Ru"></meta>
       </Head>
+      <Loading/>
+
       <div className={s.index_meta_content}>
       <div className={s.logoTitle}>
         <h1>
