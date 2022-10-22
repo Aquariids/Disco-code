@@ -22,17 +22,20 @@
 }
 
 
-.btnOnContent {
+.btnScroll {
 	margin: 0 auto;
 	cursor: pointer;
 	border-radius: 5px;
 	width: 200px;
+	height: 40px;
 	background-color: #999;
 	color: #fff;
+	transition: all 0.3s;
 }
 
-.btnOnContent:hover {
-background-color: rgb(126, 125, 125);
+.btnScroll:hover {
+	transition: all 0.3s;
+background-color: rgb(243, 239, 239);
 color: #000000;
 }
 
@@ -51,7 +54,7 @@ color: #000000;
 }
 
 .subtitle {
-	margin-bottom: 50px;
+	margin-bottom: 25px;
 	color: #fff;
 	text-shadow: -3px 2px 3px  rgba(97, 97, 97, 0.801);
 	max-width: 100%;

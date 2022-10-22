@@ -57,7 +57,7 @@ const Home: NextPage = (): JSX.Element => {
           &lt;Disco <span className={s.code}>Code/&gt;</span>{" "}
         </h1>
         <span className={s.subtitle}> В серость под диско</span>
-        <button onClick={scrollToMyRef} className={s.btnOnContent}> Перейти к контенту</button>
+        <button onClick={scrollToMyRef} className={s.btnScroll}> Перейти к контенту</button>
 
       </div>
 
