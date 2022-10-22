@@ -92,6 +92,7 @@
 
 
 .index_btn {
+	margin-top:30px;
 	display: grid;
 	justify-content: center;
 	padding-bottom: 10px;
