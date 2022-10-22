@@ -22,7 +22,7 @@ const MenuReact = ({ setMobile, mobile, mobileMenuActive, sideBarMenuActive }: m
         return (
             <>
                 <Menu title=" Базовые темы react" category='basicreact' page='react' />
-                <Menu title=" Продвинутые темы react" category='.' page='react' />
+                {/* <Menu title=" Продвинутые темы react" category='.' page='react' /> */}
             </>
         );
     }
