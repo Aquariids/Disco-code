@@ -28,7 +28,10 @@
 	grid-template-rows: 1fr 1fr;
 }
 
+@media (max-width:785px) {
 
+	
+}
 .titlePage {
 	min-height: 100vh;
 }
@@ -256,7 +259,13 @@ color: #000000;
 		padding-top: 0px;
 	}
 	
-	
+	.container {
+		grid-template-rows: 0.5fr;
+	}
+
+	.allText {
+		margin-top: 50px;
+	}
 }
 
 
