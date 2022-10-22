@@ -1,13 +1,44 @@
 .body {
 	text-align: center;
-	margin-top: 25px;
 
 	
 	
 }
 
+
+.index_meta_content {
+	background-image: url(/bgCard.png);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position-y:10px ;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 45vh;
+	width: 100vw;
+	margin-left: calc(-50vw + 50%);
+	background-color: #000000;
+}
+
+
+.btnOnContent {
+	margin: 0 auto;
+	cursor: pointer;
+	border-radius: 5px;
+	width: 200px;
+	background-color: #999;
+	color: #fff;
+}
+
+.btnOnContent:hover {
+background-color: rgb(126, 125, 125);
+color: #000000;
+}
+
 .body h1 {
-	font-size: 50px;
+	color: #fff;
+	font-size: 60px;
 	display: flex;
 	margin-bottom: 0;
 	justify-content: center;
@@ -20,6 +51,8 @@
 }
 
 .subtitle {
+	margin-bottom: 50px;
+	color: #fff;
 	text-shadow: -3px 2px 3px  rgba(97, 97, 97, 0.801);
 	max-width: 100%;
 	display: inline-block;
@@ -32,35 +65,37 @@
 
 
 .code {
-	color: rgb(0 0 0 / 52.1%);
+	color: rgba(99, 99, 99, 0.521);
 }
 
 .title {
 	text-align: center;
 	margin-bottom: 15px;
 	font-size: 28px;
+	padding-top: 10px;
 }
 .text {
-	
 	line-height: 1.7;
 	margin-left: 10px;
 	margin-right: 15px;
 	text-align: left;
 	margin-top: 0;
-	margin-bottom: 80px;
 	font-size: 20px;
 	font-weight: 400;
 }
 
-
+.allText {
+	display: grid;
+	margin-top: 150px;
+	grid-template-columns:  1fr 1fr;
+	margin-bottom: 110px;
+}
 
 .menu {
+	display: grid;
+	justify-content: center;
+	align-items: center;
 	
-	justify-content: left;
-	margin-top: 100px;
-	display:grid;
-	grid-template-columns:  1fr 1fr;
-	grid-template-rows: auto auto;
 }
 
 .titleBlock {
@@ -70,7 +105,7 @@
 
 @media (max-width:1350px) {
 
-	.menu {
+	.allText {
 		display: flex;
 		flex-direction: column;
 	}
@@ -81,6 +116,29 @@
 	
 }
 
+@media (max-width:1250px) {
+
+	.index_meta_content {
+		background-size: 60%;
+		background-position: bottom right;
+
+	}
+	
+}
+
+
+@media (max-width:1000px) {
+
+	.index_meta_content {
+		background-image: url('');
+	}
+	
+}
+
+
+
+
+
 @media (max-width:785px) {
 	.text {
 		font-size: 16px;
@@ -88,6 +146,7 @@
 	}
 
 	.bgText {
+		margin-top: 10px;
 		border-radius: 5px;
 		padding: 5px;
 		background-color: rgba(153, 153, 153, 0.247);
@@ -96,9 +155,10 @@
 		padding: 5px;
 	}
 	
+	
 }
 
-@media (max-width:400px) {
+@media (max-width:500px) {
 	.body h1 {
 		font-size: 40px;
 		
@@ -107,6 +167,8 @@
 	.subtitle {
 		font-size: 12px;
 	}
+
+
 	
 }
 

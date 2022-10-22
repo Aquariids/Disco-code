@@ -16,7 +16,7 @@ html {
 	background-image: url(/manga.svg);
 	background-position: bottom right;
 	background-repeat: no-repeat;
-	background-size: 85%;
+	background-size: 73%;
 	margin-right: calc(-1 *(100vw - 100%));
 }
 

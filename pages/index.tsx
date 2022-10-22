@@ -1,11 +1,21 @@
 import type { NextPage } from "next";
 import { withLayout } from "../layout/Layout";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Articles from "../src/Components/Articles";
 import s from "./index.module.css";
 import Head from "next/head";
 
 const Home: NextPage = (): JSX.Element => {
+
+
+    const [count, setCount] = useState(0)
+
+    useEffect(() => {
+      alert(count);
+    });
+    
+    
+ 
   return (
     <div className={s.body}>
       <Head>
@@ -42,15 +52,20 @@ const Home: NextPage = (): JSX.Element => {
         <meta property="og:site_name" content="DiscoCode" />
         <meta property="og:locale" content="ru_Ru"></meta>
       </Head>
+      <div className={s.index_meta_content}>
       <div className={s.logoTitle}>
         <h1>
           {" "}
           &lt;Disco <span className={s.code}>Code/&gt;</span>{" "}
         </h1>
         <span className={s.subtitle}> В серость под диско</span>
+        <button  className={s.btnOnContent}> Перейти к контенту</button>
+
       </div>
 
-      <div className={s.menu}>
+      </div>
+         <div className={s.menu}>
+          <div className={s.allText}>
         <div className={s.bgText2}>
         <div className={s.text}>
           <div className={s.title}>О сайте</div>
@@ -68,9 +83,13 @@ const Home: NextPage = (): JSX.Element => {
           в серости программирования маленький человек.
         </div>
         </div>
+        </div>
+        <Articles />
       </div>
+    
+      
 
-      <Articles />
+     
     </div>
   );
 };

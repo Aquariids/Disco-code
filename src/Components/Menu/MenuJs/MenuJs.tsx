@@ -9,7 +9,7 @@ const MenuJs = ({ setMobile, mobile, mobileMenuActive, sideBarMenuActive }: mobi
                 <Menu title="Базовый JavaScript" category='basicjs' page='js' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
                 <Menu title="Продвинутый JavaScript" category='advancedjs' page='js' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
                 <Menu title="Алгоритмы" category='algorithmsjs' page='js' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
-                <Menu title="Простенькие задачи" category='.' page='js' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
+                {/* <Menu title="Простенькие задачи" category='.' page='js' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} /> */}
             </>
         );
     } if (sideBarMenuActive === true) {
@@ -26,7 +26,7 @@ const MenuJs = ({ setMobile, mobile, mobileMenuActive, sideBarMenuActive }: mobi
                 <Menu title="Базовый JavaScript" category='basicjs' page='js' />
                 <Menu title="Продвинутый JavaScript" category='advancedjs' page='js' />
                 <Menu title="Алгоритмы" category='algorithmsjs' page='js' />
-                <Menu title="Простенькие задачи" category='/' page='js' />
+                {/* <Menu title="Простенькие задачи" category='/' page='js' /> */}
             </>
         );
     }

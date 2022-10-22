@@ -4,7 +4,7 @@
 	justify-content: center;
 	min-height: 100vh;
 	grid-template-columns: var(--grid_columns_wrapper);
-	gap: 30px;
+	gap: 0px 30px;
 	grid-template-rows: 60px 1fr;
 	/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
 	grid-template-areas:
@@ -27,6 +27,7 @@
 }
 
 .body {
+
 	grid-area: body;
 }
 

@@ -126,26 +126,22 @@
 	visibility: hidden;
 	min-width: 100%;
 	margin: 0;
-	padding: 30px 0 0;
+	padding: 20px 0 0;
 	transition: visibility 0.2s linear, opacity 0.2s linear;
 	opacity: 0;
-	border-bottom: 1px solid;
-	box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
+
+
 }
 
 /* Links inside the dropdown */
 .dropdown_content li {
+	box-shadow: 0.5px 0.5px 1px rgba(112, 111, 111, 0.911);
 	display: block;
 	text-decoration: none;
 	color: black;
-	background-color: #FFF;
+	background-color: rgb(255, 255, 255);
 }
 
-/* Change color of dropdown links on hover */
-.dropdown_content :hover {
-	transition: all 0.1s;
-	color: gray;
-}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown_content {
