@@ -5,6 +5,9 @@ import Articles from "../src/Components/Articles";
 import s from "./index.module.css";
 import Head from "next/head";
 import { Loading } from "../src/Components/Loading/Loading";
+import { AnimatePresence, motion } from "framer-motion";
+import router from "next/router";
+import AnimationContainer from "../src/Components/AnimationContainers/AnimationContainer";
 const Home: NextPage = (): JSX.Element => {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -53,6 +56,10 @@ const Home: NextPage = (): JSX.Element => {
       <Loading/>
 
       <div className={s.index_meta_content}>
+      <AnimationContainer>
+      <img className={s.index_img} src="/index.png"/>
+      </AnimationContainer>
+
       <div className={s.logoTitle}>
         <h1>
           {" "}
