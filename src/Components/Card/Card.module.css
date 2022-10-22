@@ -1,8 +1,9 @@
 .container {
+
 	border: 1px solid rgba(153, 153, 153, 0.575);
 	display: flex;
 	max-width: 450px;
-	height: 275px;
+	min-height: 275px;
 	margin: 0 auto;
 	cursor: pointer;
 	transition: 0.2s;
@@ -131,7 +132,7 @@
 
 @media (max-width:785px) {
 	.container {
-		width: 350px;
+		min-width: 350px;
 	}
 
 	
@@ -142,7 +143,7 @@
 
 @media (max-width:400px) {
 	.container {
-		width: 100vw;
+		min-width: 100vw;
 		margin-left: calc(-50vw + 50%);
 		padding: 30px;
 		border-radius: 0%;

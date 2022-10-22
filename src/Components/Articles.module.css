@@ -5,6 +5,9 @@
 	grid-template-columns: repeat(2, minmax(245px,450px));
 	grid-template-rows: 1fr 1fr;
 	margin-bottom: 50px;
+	max-height: 50%;
+
+	
 }
 
 @media (max-width: 1000px) {

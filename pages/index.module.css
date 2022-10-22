@@ -1,5 +1,6 @@
 .body {
 	text-align: center;
+
 }
 
 
@@ -8,7 +9,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 45%;
+	min-height: 45vh;
 	width: 100vw;
 	margin-left: calc(-50vw + 50%);
 	background-color: #000000;
@@ -20,9 +21,16 @@
 
 }
 
+.container {
+	display: grid;
+	justify-content: center;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr;
+}
+
 
 .titlePage {
-	height: 100vh;
+	min-height: 100vh;
 }
 
 .articles {
@@ -34,7 +42,7 @@
 }
 
 
-.btnScroll {
+.btnScroll {	
 	margin: 0 auto;
 	cursor: pointer;
 	border-radius: 5px;
@@ -63,6 +71,8 @@ color: #000000;
 .logoTitle {
 	display: grid;
 	justify-content: center;
+	grid-template-columns: 1fr;
+	
 }
 
 .subtitle {
@@ -108,7 +118,9 @@ color: #000000;
 
 
 .menu {
-	height: 50%;
+	grid-template-rows: 525px;
+	padding-bottom: 20px;
+	min-height: 55vh;
 	display: grid;
 	justify-content: center;
 	align-items: center;

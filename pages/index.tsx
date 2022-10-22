@@ -50,6 +50,7 @@ console.log(h2ref);
         <meta property="og:site_name" content="DiscoCode" />
         <meta property="og:locale" content="ru_Ru"></meta>
       </Head>
+      <div className={s.container}>
     <div className={s.titlePage}>
       <div className={s.index_meta_content}>
       <div className={s.logoTitle}>
@@ -83,18 +84,19 @@ console.log(h2ref);
         </div>
         </div>
         </div>
+        
+      
         </div>
-       
+        
       </div>
     
+
       <div ref={h2ref} className={s.articles} >
         <h2> Категории </h2>
         <Articles   />
         </div>
 
-       
-
-     
+        </div>
     </div>
   );
 };
