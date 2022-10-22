@@ -58,7 +58,7 @@ console.log(h2ref);
           &lt;Disco <span className={s.code}>Code/&gt;</span>{" "}
         </h1>
         <span className={s.subtitle}> В серость под диско</span>
-        <button onClick={scrollToMyRef} className={s.btnScroll}> Перейти к материалам</button>
+        <button onClick={scrollToMyRef} className={s.btnScroll}> Перейти к урокам </button>
 
       </div>
 
@@ -88,7 +88,7 @@ console.log(h2ref);
       </div>
     
       <div ref={h2ref} className={s.articles} >
-        <h2> Материалы </h2>
+        <h2> Категории </h2>
         <Articles   />
         </div>
 
