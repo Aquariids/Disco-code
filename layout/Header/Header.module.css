@@ -10,3 +10,8 @@
 }
 
 
+@media (max-width:785px) {
+	.header {
+		box-shadow: none;
+}
+}

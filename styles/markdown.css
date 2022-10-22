@@ -2,7 +2,9 @@
 	max-width: 100%;
 	height: auto;
 }
-
+.mdTitle {
+	margin-top: 50px;
+}
 .img {
 	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
 	cursor: pointer;
@@ -76,6 +78,7 @@ code {
 
 
 	.mdTitle {
+		margin-top: 0px;
 		padding-top: 30px;
 		padding-left: 30px;
 		padding-right: 30px;
