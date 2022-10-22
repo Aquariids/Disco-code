@@ -23,7 +23,6 @@
 
 .titlePage {
 	height: 100vh;
-	margin-bottom: 25px;
 }
 
 .articles {
@@ -31,9 +30,7 @@
 }
 .articles h2 {
 	color: rgb(95, 95, 95);
-	margin-top: 25px;
 	margin-bottom: 50px;
-	padding-top: 10px;
 }
 
 
@@ -249,6 +246,16 @@ color: #000000;
 	
 	
 }
+
+
+@media (max-width:685px) {
+	.articles {
+		margin-top: 60px;
+	}
+	
+	
+}
+
 
 @media (max-width:500px) {
 

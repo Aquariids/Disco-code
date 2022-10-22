@@ -9,8 +9,9 @@ const Home: NextPage = (): JSX.Element => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const h2ref = useRef<number | any>(null);
 
-  const scrollToMyRef = () => {window.scrollTo(0, h2ref.current.scrollHeight + 180);};
+  const scrollToMyRef = () => {window.scrollTo(0, h2ref.current.offsetTop );};
 
+console.log(h2ref);
 
 
   return (
@@ -86,10 +87,11 @@ const Home: NextPage = (): JSX.Element => {
        
       </div>
     
-      <div className={s.articles} ref={h2ref}>
+      <div ref={h2ref} className={s.articles} >
         <h2> Материалы </h2>
         <Articles   />
         </div>
+
        
 
      
