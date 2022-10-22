@@ -7,7 +7,7 @@ const MenuTs = ({ setMobile, mobile, sideBarMenuActive, mobileMenuActive }: mobi
         return (
             <>
                 <Menu title=" Стили написания Кода" category='style' page='paradigms' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
-                <Menu title="Парадигмы программирования" category='concepts' page='paradigms' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
+                {/* <Menu title="Парадигмы программирования" category='concepts' page='paradigms' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} /> */}
             </>
         );
     }
@@ -16,7 +16,7 @@ const MenuTs = ({ setMobile, mobile, sideBarMenuActive, mobileMenuActive }: mobi
         return (
             <>
                 <Menu title="Стили написания" category='style' dropdown={true} page='paradigms' />
-                <Menu title="Парадигмы " category='concepts' dropdown={true}  page='paradigms' />
+                {/* <Menu title="Парадигмы " category='concepts' dropdown={true}  page='paradigms' /> */}
 
             </>
         );
@@ -25,7 +25,7 @@ const MenuTs = ({ setMobile, mobile, sideBarMenuActive, mobileMenuActive }: mobi
         return (
             <>
                 <Menu title=" Стили написания" category='style' page='paradigms' />
-                <Menu title="Парадигмы программирования" category='concepts' page='paradigms' />
+                {/* <Menu title="Парадигмы программирования" category='concepts' page='paradigms' /> */}
                 
             </>
         );

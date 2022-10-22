@@ -22,12 +22,6 @@
 	background-position-y:10px ; 
 }
 
-.index_img {
-	right: 0;
-	bottom: 0;
-	position: absolute;
-	width: 23%;
-}
 
 
 
@@ -101,10 +95,13 @@ color: #000000;
 
 .allText {
 	display: grid;
-	margin-top: 150px;
+	margin-top: 145px;
 	grid-template-columns:  1fr 1fr;
 	margin-bottom: 110px;
 }
+
+
+
 
 .menu {
 	display: grid;
@@ -116,6 +113,15 @@ color: #000000;
 .titleBlock {
 	color: gray;
 	padding-bottom: 50px;
+}
+
+@media (max-width:1800px) {
+
+	.allText {
+		margin-top: 60px;
+	}
+	
+	
 }
 
 @media (max-width:1670px) {
