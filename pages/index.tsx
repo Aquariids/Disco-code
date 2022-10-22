@@ -4,16 +4,12 @@ import React, { useRef } from "react";
 import Articles from "../src/Components/Articles";
 import s from "./index.module.css";
 import Head from "next/head";
-import { Loading } from "../src/Components/Loading/Loading";
-import { AnimatePresence, motion } from "framer-motion";
-import router from "next/router";
-import AnimationContainer from "../src/Components/AnimationContainers/AnimationContainer";
 const Home: NextPage = (): JSX.Element => {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const h2ref = useRef<number | any>(null);
 
-  const scrollToMyRef = () => {window.scrollTo(0, h2ref.current.scrollHeight -25);};
+  const scrollToMyRef = () => {window.scrollTo(0, h2ref.current.scrollHeight + 180);};
 
 
 
@@ -53,7 +49,7 @@ const Home: NextPage = (): JSX.Element => {
         <meta property="og:site_name" content="DiscoCode" />
         <meta property="og:locale" content="ru_Ru"></meta>
       </Head>
-
+    <div className={s.titlePage}>
       <div className={s.index_meta_content}>
       <div className={s.logoTitle}>
         <h1>
@@ -61,7 +57,7 @@ const Home: NextPage = (): JSX.Element => {
           &lt;Disco <span className={s.code}>Code/&gt;</span>{" "}
         </h1>
         <span className={s.subtitle}> В серость под диско</span>
-        <button onClick={scrollToMyRef} className={s.btnScroll}> Перейти к контенту</button>
+        <button onClick={scrollToMyRef} className={s.btnScroll}> Перейти к материалам</button>
 
       </div>
 
@@ -86,13 +82,15 @@ const Home: NextPage = (): JSX.Element => {
         </div>
         </div>
         </div>
-        <div className={s.articles} ref={h2ref}>
-        <Articles   />
         </div>
        
       </div>
     
-      
+      <div className={s.articles} ref={h2ref}>
+        <h2> Материалы </h2>
+        <Articles   />
+        </div>
+       
 
      
     </div>

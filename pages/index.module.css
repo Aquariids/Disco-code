@@ -1,8 +1,8 @@
 .body {
 	text-align: center;
-
-	
-	
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 0.6fr 0.6fr;
 }
 
 
@@ -11,21 +11,33 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 45vh;
+	height: 50%;
 	width: 100vw;
 	margin-left: calc(-50vw + 50%);
 	background-color: #000000;
 	background-image: url(/index.png);
-	background-position: bottom right;
+	
 	background-repeat: no-repeat;
-	background-size: contain;
-	background-position-y:10px ; 
+	background-size: 25%;
+	background-position: bottom right;
+
 }
 
 
+.titlePage {
+	height: 100vh;
+	margin-bottom: 25px;
+}
 
-
-
+.articles {
+	margin-bottom: 120px;
+}
+.articles h2 {
+	color: rgb(95, 95, 95);
+	margin-top: 25px;
+	margin-bottom: 50px;
+	padding-top: 10px;
+}
 
 
 .btnScroll {
@@ -95,15 +107,16 @@ color: #000000;
 
 .allText {
 	display: grid;
-	margin-top: 145px;
+
 	grid-template-columns:  1fr 1fr;
-	margin-bottom: 110px;
+	
 }
 
 
 
 
 .menu {
+	height: 50%;
 	display: grid;
 	justify-content: center;
 	align-items: center;
@@ -115,30 +128,10 @@ color: #000000;
 	padding-bottom: 50px;
 }
 
-@media (max-width:1800px) {
 
-	.allText {
-		margin-top: 60px;
-	}
-	
-	
-}
-
-@media (max-width:1670px) {
-
-	.allText {
-		margin-bottom: 60px;
-	}
-	
-	
-}
 
 @media (max-width:1600px) {
 
-	.allText {
-		margin-top: 25px;
-		margin-bottom: 25px;
-	}
 
 	.articles {
 		padding-top: 25px;
@@ -150,9 +143,7 @@ color: #000000;
 
 @media (max-width:1470px) {
 	
-	.allText {
-		margin-bottom: 50px;
-	}
+	
 	.text {
 		font-size: 16px;
 
@@ -186,18 +177,26 @@ color: #000000;
 
 @media (max-width:1250px) {
 
-	.index_img {
-		width: 28%;
-	}
 	.index_meta_content {
-		background-size: 60%;
-		background-position: bottom right;
+		background-size: 35%;
+		
+
+	}
+	
+}
+
+@media (max-width:1100px) {
+
+	.index_meta_content {
+		background-position-x: 105%;
+		
 
 	}
 	
 }
 
 @media (max-width:1000px) {
+	
 .btnScroll {
 	display: none;
 }
@@ -248,11 +247,16 @@ color: #000000;
 	.bgText2 {
 		padding: 5px;
 	}
+
+	.title {
+		padding-top: 0px;
+	}
 	
 	
 }
 
 @media (max-width:500px) {
+
 	.body h1 {
 		font-size: 40px;
 		
@@ -263,6 +267,13 @@ color: #000000;
 	}
 
 
+}
+
+
+@media (max-width:400px) {
+	.titlePage {
+		margin-bottom: 185px;
+	}
 	
 }
 

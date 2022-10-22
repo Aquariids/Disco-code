@@ -34,7 +34,7 @@
 	transform: scale(1.05);
 
 	transition: all 0.2s;
-	text-shadow: 2px 2px 5px  black;
+	text-shadow: 1px 1px 3px  black;
 	box-shadow: 0 0 5px #000;
 	background-color: rgba(0, 0, 0, 0.349);
 
@@ -73,8 +73,7 @@
 }
 
 .js:hover {
-	transition: all 0.2s;
-	text-shadow: 2px 2px 5px  black;
+
 	box-shadow: 0 0 5px var(--js_hover_color_links_pages);
 	color: #FFF;
 	background-color: var(--js_hover_color_links_pages);
@@ -88,8 +87,6 @@
 }
 
 .ts:hover {
-	transition: all 0.2s;
-	text-shadow: 2px 2px 5px  black;
 	box-shadow: 0 0 5px var(--ts_hover_color_links_pages);
 	color: rgb(198 228 255);
 	background-color: var(--ts_hover_color_links_pages);
@@ -116,8 +113,7 @@
 }
 
 .react:hover {
-	transition: all 0.2s;
-	text-shadow: 2px 2px 5px  black;
+	
 	color: #FFF;
 	background-color: #41E1ED;
 	box-shadow: 0 0 10px  var(--react_hover_color_links_pages);
