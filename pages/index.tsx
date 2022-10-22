@@ -1,21 +1,19 @@
 import type { NextPage } from "next";
 import { withLayout } from "../layout/Layout";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Articles from "../src/Components/Articles";
 import s from "./index.module.css";
 import Head from "next/head";
 
 const Home: NextPage = (): JSX.Element => {
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const h2ref = useRef<number | any>(null);
 
-    const [count, setCount] = useState(0)
+  const scrollToMyRef = () => {window.scrollTo(0, h2ref.current.scrollHeight -25);};
 
-    useEffect(() => {
-      alert(count);
-    });
-    
-    
- 
+
+
   return (
     <div className={s.body}>
       <Head>
@@ -59,16 +57,16 @@ const Home: NextPage = (): JSX.Element => {
           &lt;Disco <span className={s.code}>Code/&gt;</span>{" "}
         </h1>
         <span className={s.subtitle}> В серость под диско</span>
-        <button  className={s.btnOnContent}> Перейти к контенту</button>
+        <button onClick={scrollToMyRef} className={s.btnOnContent}> Перейти к контенту</button>
 
       </div>
 
       </div>
-         <div className={s.menu}>
+         <div  className={s.menu}>
           <div className={s.allText}>
         <div className={s.bgText2}>
-        <div className={s.text}>
-          <div className={s.title}>О сайте</div>
+        <div   className={s.text}>
+          <div  className={s.title}>О сайте</div>
           Этот сайт является местом где я выкладываю все, что изучил, изучаю и
           просто пишу о разных интересных мне технологиях в программировании.
           Здесь будут выкладываться различные руководства и учебные материалы,
@@ -84,7 +82,10 @@ const Home: NextPage = (): JSX.Element => {
         </div>
         </div>
         </div>
-        <Articles />
+        <div className={s.articles} ref={h2ref}>
+        <Articles   />
+        </div>
+       
       </div>
     
       
