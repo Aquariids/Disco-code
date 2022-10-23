@@ -35,7 +35,7 @@
 }
 
 .articles {
-	margin-bottom: 120px;
+	margin-bottom: 50px;
 }
 .articles h2 {
 	color: rgb(95, 95, 95);
@@ -244,13 +244,20 @@ color: #000000;
 
 	}
 
+	.articles {
+		margin-top: 50px;
+		margin-bottom: 0px;
+	}
+
 	.bgText {
+		
 		margin-top: 10px;
 		border-radius: 5px;
 		padding: 5px;
 		background-color: rgba(153, 153, 153, 0.247);
 	}
 	.bgText2 {
+		margin-bottom: 10px;
 		padding: 5px;
 	}
 
