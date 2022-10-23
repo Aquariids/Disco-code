@@ -258,20 +258,12 @@ color: #000000;
 		padding-top: 0px;
 	}
 
-
-	.allText {
-		margin-top: 50px;
-	}
-}
-
-
-@media (max-width:685px) {
-	.articles {
-		margin-top: 60px;
+	.container {
+		grid-template-rows: 0.9fr;
 	}
 	
-	
 }
+
 
 
 @media (max-width:500px) {
