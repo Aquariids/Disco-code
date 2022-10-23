@@ -25,15 +25,13 @@
 	display: grid;
 	justify-content: center;
 	grid-template-columns: 1fr;
-	grid-template-rows: 1fr 1fr;
+	grid-template-rows: 1fr;
 }
 
-@media (max-width:785px) {
 
-	
-}
 .titlePage {
 	min-height: 100vh;
+	
 }
 
 .articles {
@@ -51,7 +49,7 @@
 	border-radius: 5px;
 	width: 200px;
 	height: 40px;
-	background-color: #999;
+	background-color: var(--basic_color);
 	color: #fff;
 	transition: all 0.3s;
 }
@@ -98,7 +96,7 @@ color: #000000;
 
 .title {
 	text-align: center;
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 	font-size: 28px;
 }
 .text {
@@ -121,7 +119,7 @@ color: #000000;
 
 
 .menu {
-	grid-template-rows: 525px;
+	grid-template-rows: 1fr;
 	padding-bottom: 20px;
 	min-height: 55vh;
 	display: grid;
@@ -258,10 +256,7 @@ color: #000000;
 	.title {
 		padding-top: 0px;
 	}
-	
-	.container {
-		grid-template-rows: 0.5fr;
-	}
+
 
 	.allText {
 		margin-top: 50px;
