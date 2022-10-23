@@ -234,7 +234,6 @@
 
 
 .active {
-	font-weight: 500;
 	list-style-type: none;
 	color:var(--main_color_links_pages);
 	font-size: 14px;
