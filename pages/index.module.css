@@ -43,7 +43,8 @@
 }
 
 
-.btnScroll {	
+.btnScroll {
+	outline:none;	
 	margin: 0 auto;
 	cursor: pointer;
 	border-radius: 5px;
