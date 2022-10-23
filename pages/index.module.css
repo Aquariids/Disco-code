@@ -93,7 +93,7 @@ color: #000000;
 
 
 .code {
-	color: rgba(99, 99, 99, 0.521);
+	color: var(--basic_color);
 }
 
 .title {

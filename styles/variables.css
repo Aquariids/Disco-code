@@ -1,4 +1,5 @@
 :root {
+	--basic_color:#20232a;
 	/* main */
 
 	--main_color_links_pages:rgb(146, 94, 94);
@@ -21,7 +22,7 @@
 	--next_color_links_pages: #000;
 	--next_hover_color_links_pages: gray;
 
-	/* loyout */
+	/* layout */
 	
 	--grid_columns_wrapper: 21% minmax(320px, 1180px) 21%;
 	--grid_columns_wrapper_mobile: 21% minmax(320px, 1180px);

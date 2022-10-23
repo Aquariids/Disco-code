@@ -7,7 +7,7 @@
 	min-height: 100%;
 	margin-left: calc(-50vw + 50%);
 	grid-template-rows: 1fr;
-	background-color: #20232A;
+	background-color: var(--basic_color);
 
 }
 

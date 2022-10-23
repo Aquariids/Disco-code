@@ -23,7 +23,7 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
             return <Logo path='/react' src='/logo/react_logo.svg' />;
         }
          else {
-            return  <Logo path='/' src='/logo/disco.png' /> ;
+            return  <Logo path='/' src='/logo/disco.svg' /> ;
          }
     };
     return (
