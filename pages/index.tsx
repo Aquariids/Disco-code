@@ -36,7 +36,7 @@ console.log(h2ref);
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="DiscoCode - уроки по javascript, typescript, react, nextjs"
+          content="DiscoCode - Пишем о javaScript и разных технологиях в программировании"
         />
         <meta
           property="og:description"
