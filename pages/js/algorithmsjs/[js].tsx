@@ -86,7 +86,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
     const posts = getAllPosts(POSTS_PATH_JS)
         .map(post => post.meta);
-    return { props: { post: { source: mdxSource, meta }, posts } };
+    return { props: { post: { source: mdxSource, meta }, posts },revalidate: 10 };
 
 };
 

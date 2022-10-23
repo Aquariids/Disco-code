@@ -16,7 +16,7 @@ Router.events.on('routeChangeComplete', (url:string)=> {
 export async function getServerSideProps({ res }:any) {
   res.setHeader(
     'Cache-Control',
-    'public, s-maxage=60, stale-while-revalidate=59'
+    'public, s-maxage=15, stale-while-revalidate=59'
   );
 
   return {

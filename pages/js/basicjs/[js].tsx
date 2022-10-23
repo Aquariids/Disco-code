@@ -109,10 +109,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         rehypeHighlight,
       ],
     },
-  });
+   
+  }
+  );
 
   const posts = getAllPosts(POSTS_PATH_JS).map((post) => post.meta);
-  return { props: { post: { source: mdxSource, meta }, posts } };
+  return { props: { post: { source: mdxSource, meta }, posts },revalidate: 10 };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
