@@ -41,10 +41,10 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
                     <div className={s.dropdown}>
                         <div className={s.btn}><button> Выбрать тему </button></div>
                         <ul className={s.dropdown_content}>
-                            <li className={s.links}><Link href={'/js'}><span className={s.js}>JavaScript</span></Link></li>
-                            <li className={s.links}><Link href={'/react'}><span className={s.react}>React</span></Link></li>
-                            <li className={s.links}><Link href={'/ts'}><span className={s.ts}>TypeScript</span></Link></li>
-                            <li className={s.links}><Link href={'/paradigms'}><span className={s.mainLinks}>Парадигмы</span></Link></li>
+                            <li><Link href={'/js'}><span className={s.js}>JavaScript</span></Link></li>
+                            <li><Link href={'/react'}><span className={s.react}>React</span></Link></li>
+                            <li><Link href={'/ts'}><span className={s.ts}>TypeScript</span></Link></li>
+                            <li><Link href={'/paradigms'}><span className={s.mainLinks}>Парадигмы</span></Link></li>
                             {/* <li className={s.links}><Link href={'/next'}><span className={s.next}>Next.js</span></Link></li> */}
 
                         </ul>
