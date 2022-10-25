@@ -76,7 +76,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                         onClick={mob}
                         key={index}
                             className={cn(s.link,{
-                                [s.active]: pathname.replace(post.slug, '') + post.slug === pathname,
+                                ['active']: pathname.replace(post.slug, '') + post.slug === pathname,
 
                                 [s.active_js]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/js'),
                                 [s.active_ts]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/ts'),
@@ -116,7 +116,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                                 [s.subCardTs]: pathname.startsWith('/ts'),
                                 [s.subCardReact]: pathname.startsWith('/react'),
 
-                                [s.active]: pathname.replace(post.slug, '') + post.slug === pathname,
+                                ['active']: pathname.replace(post.slug, '') + post.slug === pathname,
                                 [s.hide]: post.category !== category,
                             })} >
                                 {router.pathname.startsWith(`/${page}`)?<Link href={`/${page}/${post.category}/${post.slug}`}>{post.title}</Link>:''}

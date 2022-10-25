@@ -233,10 +233,6 @@
 /* active links */
 
 
-
-.active a {
-	pointer-events: none;
-}
 .active_js {
 	color: var(--js_color_links_pages);
 }

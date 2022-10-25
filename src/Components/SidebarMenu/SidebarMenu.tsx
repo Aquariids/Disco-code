@@ -9,20 +9,22 @@ import { useEffect } from "react";
 const SidebarMenu = ():JSX.Element => {
 
     useEffect(()=> {
-    // eslint-disable-next-line prefer-const
-    let h:number = document.querySelector('.active')?.clientHeight;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const activeHeight:any = document.querySelector('.active')?.clientHeight;
 
-    let heightTop:number = document.querySelector('.active').offsetTop + h;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const activeLink:any = document.querySelector('.active');
+    const heightTop = activeLink?.offsetTop + activeHeight;
 
-    let menuHeight = document.querySelector('.nav_menu')?.clientHeight - 90;
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-explicit-any
+    const menuHeight:any = document.querySelector(`.${s.nav_menu}`)!.clientHeight - 89;
         if(heightTop < menuHeight) {
 
-            document.querySelector('.nav_menu')?.scrollBy( heightTop, 0)
+            document.querySelector(`.${s.nav_menu}`)?.scrollBy( heightTop, 0);
 
             
-            
         } else {
-            document.querySelector('.nav_menu')?.scrollBy(0,heightTop - menuHeight)
+            document.querySelector(`.${s.nav_menu}`)?.scrollBy(activeHeight,heightTop - menuHeight);
 
         }
     
@@ -32,7 +34,7 @@ const SidebarMenu = ():JSX.Element => {
     const router = useRouter();
     if (router.pathname.startsWith('/js')) {
         return (
-            <nav className={'nav_menu'}>
+            <nav className={s.nav_menu}>
                 <MenuJs sideBarMenuActive= {true} mobileMenuActive={false} />
             </nav>
         );
@@ -40,14 +42,14 @@ const SidebarMenu = ():JSX.Element => {
 
     if (router.pathname.startsWith('/ts')) {
         return (
-            <nav className={'nav_menu'}>
+            <nav className={s.nav_menu}>
                 <MenuTs sideBarMenuActive={true} mobileMenuActive={false}/>
             </nav>
         );
     }
     if (router.pathname.startsWith('/react')) {
         return (
-            <nav className={'nav_menu'}>
+            <nav className={s.nav_menu}>
                 <MenuReact sideBarMenuActive={true} mobileMenuActive={false}/>
             </nav>
         );
@@ -55,7 +57,7 @@ const SidebarMenu = ():JSX.Element => {
 
     if (router.pathname.startsWith('/paradigms')) {
         return (
-            <nav className={'nav_menu'}>
+            <nav className={s.nav_menu}>
                 <MenuParadigms sideBarMenuActive={true} mobileMenuActive={false}/>
             </nav>
         );

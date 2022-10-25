@@ -4,8 +4,6 @@ import React from "react";
 import { withLayout } from "../../layout/Layout";
 import { getAllPosts } from "../api/api";
 import { POSTS_PATH_TS } from "../api/paths";
-import cn from "classnames";
-import s from "./pageTs.module.css";
 import MenuTs from "../../src/Components/Menu/MenuTs/MenuTs";
 
 const Home: NextPage = (): JSX.Element => {
