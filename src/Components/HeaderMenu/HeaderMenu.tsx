@@ -9,7 +9,7 @@ const { header, link, content, logo, github } = s;
 
 const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
     const router = useRouter();
-
+    const r = router.asPath.length;
 
     const logoCreat = () => {
 
@@ -28,7 +28,7 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
     };
     return (
         <div className={cn(header, {
-            [s.header2]: router.asPath.length > 11  
+            [s.header2]: r >= 4
         })} {...props}>
             <div className={content}>
                 <div  className={logo}>

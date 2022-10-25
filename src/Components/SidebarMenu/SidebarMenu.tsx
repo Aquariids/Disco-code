@@ -12,7 +12,7 @@ const SidebarMenu = ():JSX.Element => {
     if (router.pathname.startsWith('/js')) {
         return (
             <nav className={s.nav_menu}>
-                <MenuJs mobileMenuActive={false} sideBarMenuActive= {true}/>
+                <MenuJs sideBarMenuActive= {true} mobileMenuActive={false} />
             </nav>
         );
     }

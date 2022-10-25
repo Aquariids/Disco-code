@@ -11,11 +11,12 @@ const { footer, content, } = s;
 const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
 
     const router = useRouter();
+    const r = router.asPath.length;
 
     return (
         <>
             <div className={cn(footer, {
-                [s.footer2]: router.asPath.length > 11
+                [s.footer2]: r >= 4
             })} {...props}>
                 <div className={content}>
                     <div className={s.nav}>
