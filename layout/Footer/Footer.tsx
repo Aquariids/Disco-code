@@ -3,7 +3,7 @@ import { FooterProps } from './Footer.props';
 import s from './Footer.module.css';
 import cn from 'classnames';
 import FooterMenu from '../../src/Components/FooterMenu/FooterMenu';
-const { footer,container } = s;
+const { footer } = s;
 
 const Footer = ({ className, ...props }: FooterProps): JSX.Element => {
     return (

@@ -3,8 +3,8 @@ import { SidebarProps } from './Sidebar.props';
 import s from './Sidebar.module.css';
 import SidebarMenu from '../../src/Components/SidebarMenu/SidebarMenu';
 import { useRouter } from 'next/router';
+import cn from 'classnames';
 
-const {sidebar} = s;
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Sidebar = ({className, ...props}:SidebarProps):JSX.Element => {
     const router = useRouter(); 
@@ -32,7 +32,7 @@ const Sidebar = ({className, ...props}:SidebarProps):JSX.Element => {
     } 
      else {
         return (
-            <div className={sidebar} {...props}>
+            <div className={cn(className, s.sidebar)} {...props}>
                 <SidebarMenu/>
                 </div>
                 
