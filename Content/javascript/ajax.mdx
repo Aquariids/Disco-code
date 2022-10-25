@@ -1,0 +1,184 @@
+---
+title: 'AJAX'
+id: 3
+prev: '/js/advancedjs/localStorage'
+category: 'advancedjs'
+---
+
+<div className = 'mdHead'>
+
+#### Теги
+<div className='tag_js'>[Что такое AJAX](#что-за-ajax-такой)</div><br/>
+<div className='tag_js'>[Get и Post запросы](#get-и-post---запросы)</div>
+<div className='mini_tag_js'>[get,](#get)</div>
+<div className='mini_tag_js'>[post.](#post)</div> <br/>
+<div className='tag_js'>[XMLHttpRequest](#не-современный-способ-ajax---xmlhttprequest)</div><br/>
+<div className='tag_js'>[Свойства и коды ответа http:](#свойства-и-коды-ответа-http)</div>
+<div className='mini_tag_js'>[зачения кодов в status,](#зачения-кодов-в-status)</div>
+<div className='mini_tag_js'>[readyState.](#readystate)</div> <br/>
+<div className='tag_js'>[События объекта XMLHttpRequest:](#события-объекта-xmlhttprequest)</div>
+<div className='mini_tag_js'>[readystatechange.](#readystatechange)</div>
+
+</div>
+
+
+##  Что за AJAX такой 
+`AJAX` — это аббревиатура, которая означает `Asynchronous Javascript and XML`. На самом деле, AJAX не является новой технологией, так как и `Javascript` и `XML` существуют уже довольно продолжительное время, а `AJAX` — это синтез обозначенных технологий. `AJAX` чаще всего ассоцириуется с термином `Web 2.0` и преподносится как новейшее `web` - приложение.<br/>
+При использовании `AJAX` нет необходимости обновлять каждый раз всю страницу, так как обновляется только ее конкретная часть. Это намного удобнее, так как не
+приходится долго ждать, и экономичнее, так как не все обладают безлимитным интернетом. Правда в этом случае, разработчику необходимо следить, чтобы пользователь был в курсе того, что происходит на странице. Это можно реализовать с использованием индикаторов загрузки, текстовых сообщений о том, что идёт обмен данными с сервером. Необходимо также понимать, что не все браузеры поддерживают `AJAX` "старые версии браузеров и текстовые браузеры". Плюс `javascript` может быть отключен пользователем.
+
+## Get и Post - запросы 
+
+### Get
+Get запрос - направлен на то, что бы получить какие то данные от сервера,
+в нашем случае мы будем получать курс валюты у нашего `current.json` бекенд части (сервер)
+get запросы показывают товары например в магазине на сайте.
+### Post
+Post - это постить запросы, например регистрация на сайте, мы вводим наши данные и постим их на сервер, или например когда загружаем
+файлы.
+
+## Не современный способ AJAX - XMLHttpRequest
+Нашим сервером будет файл <span  className = 'link_js'><a href="https://www.npmjs.com/package/json-server" target="_blank">current.json</a></span> из него мы будем получать курс доллара.
+```JSON
+
+{
+    "current":{
+        "usd":74
+    }
+}
+```
+У нас будет два инпута.
+```html
+<div class="calc">
+     <label for="rub">RUB</label>
+     <input id="rub" type="text">
+     <label for="usd">USD</label>
+     <input id="usd" type="text">
+</div>
+```
+
+<div className='container-img'> <span className="img"> ![console.log](/images/Content/Js/JSON.png) </span></div>
+
+Получаем элементы и погнали:
+```javaScript
+const inputRub = document.querySelector('#rub'),
+    inputUsd = document.querySelector('#usd');
+
+
+inputRub.addEventListener('input', () => { // событие input сробатывает когда в инпуте что-то меняется
+    const request = new XMLHttpRequest(); // создали экземпляр с нужными нам свойствами и методами
+    // XMLHttpRequest - это объект в которомд находятся свойства и методы.
+
+
+    // open(); - этот метод собирает настройки которые в будущем помогут сделать запрос. принимает в себя несколько аргументов.
+    request.open('GET', 'src/current.json'); // вызываем open() у нашего объекта. Внутрь попещаем аргументы:
+    /* 
+    1 - method: это тот который используется для запроса(get post и тд)
+    2 -  url: это путь к нашему сервевру. Путь у url строим относительно index.html.
+    3 - async: этот аргумент отвечает за асинхронность - в нем по умолчанию стоит true, можн опоставить false, но тогда это уже будет синхронный код
+    (синхронный код - идет по порядку, если какая то операция долго выполняется весь код будет ее ждать
+    асинхронный код рабоает обратным способом, он не блокирует код, так работают сет таймауты и интервалы 
+    AJAX запросы по умолчанию являются асинхронными.
+    4 - login - логин: некоторые запросы мы можем делать только имея пароль и логин 
+    5 - pass  - пароль
+    */
+    // Далее вызываем setRequestHeader() - устанавливает значения HTTP заголовков. Вызывается после open() но до send(). 
+    // далее send() -  //- отправляем наш запрос.  send: принимает в себя body - это данные которые уходят на сервер, но это в Post запросе в get этого нет, потому что мы получаем их. Поэтому send вызываем, но внутрь ничего не передаем.
+request.setRequestHeader('Content-type', 'application/json; charset=utf-8'); // говорим что есть опр тип - тут уже сам тип это наш json и далее кодировка, самая стандартная.
+request.send(); - просто вызваем.
+
+});
+```
+## Свойства и коды ответа http 
+В этих свойствах мы получаем ответ полсе запроса на сервер:
+1. status - показывает статус нашего запроса, это 404 - файла нет. 0, 200, 403 и тд. Все мы это видили в браузере
+2. statusText - это текстовое описание от сервера.
+3. response - это ответ от сервера, это то что нам ответил бекенд разработчик, то что мы должны использовать на клиенте.(у нас это json Объект)
+4. readyState - возвращает текущее состояние объекта, нашего запроса.
+
+### Зачения кодов в status:
+* Информационные 100 - 199
+* Успешные 200 - 299
+* Перенаправления 300 - 399
+* Клиентские ошибки 400 - 499
+* Серверные ошибки 500 - 599
+ 
+Коды http запросов легко гуглятся. Например код 404 - Not Found. Категория от 400 - 499 относятся к клиенским ошибкам, и тд..
+
+### readyState:
+readyState будет возвращать вот такие состояния, где цифры это значение, далее состояние и описание:
+
+```html
+0 - UNSENT: Объект был создан. Метод open() ещё не вызывался.
+```
+```html
+1 - OPENED: Метод open() был вызван.
+```
+```html
+2 - HEADERS_RECEIVED: Метод send() был вызван, доступны заголовки (headers) и статус.
+```
+```html
+3 - LOADING: Загрузка. responseText содержит частичные данные.
+```
+```html
+4 - DONE: Операция полностью завершена.
+```
+
+
+## События объекта XMLHttpRequest 
+
+
+
+### readystatechange
+`readystatechange`  - следит за свойством `readyState` о котором говорили выше.
+Например когда запрос изменится с `0` на `1` - сработает событие.
+Все это нам позволяет написать условие внутри нашего запроса, что мы писали выше.
+```javaScript
+request.addEventListener('readystatechange',()=>{  // вызываем событие readystatechange у объекта request.
+    if (request.readyState === 4 && request.status === 200) { // тут мы узнаем, если у нас 4 - операция завершена и статус 200 - это значит Ок - хорошо
+        // Так же чаше использует событие load оно срабатывает один раз когда запрос готов.
+        // мы удалем  request.readyState === 4 &&
+        // остовляя только request.status === 200, а cобытие меняем readystatechange на load
+        console.log(request.response); // выведем наш объект в консоль. Что бы наглядно увидеть, что это наш json 
+        const data = JSON.parse(request.response); // в data помещаем наш JSON объект и сразу парсим в обычный. он находится в response - ответ от сервера.
+        inputUsd.value = (+inputRub.value / data.current.usd).toFixed(2); // в инпут usd выводим инпут с рублем деленый на значение usd из нашего объекта
+        
+
+    }
+ else {
+        inputUsd.value = 'что-то пошло не так';
+ }
+});
+```
+Теперь все вместе без моих комментариев:
+```javaScript
+const inputRub = document.querySelector('#rub'),
+    inputUsd = document.querySelector('#usd');
+
+
+inputRub.addEventListener('input', () => {
+    const request = new XMLHttpRequest();
+
+    request.open('GET', 'src/current.json');
+
+    request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+    request.send();
+    request.addEventListener('readystatechange', () => {
+        if (request.readyState === 4 && request.status === 200) {
+            const data = JSON.parse(request.response);
+            console.log(request.response);
+            inputUsd.value = (+inputRub.value / data.current.usd).toFixed(2);
+
+
+        } else {
+            inputUsd.value = 'что-то пошло не так';
+        }
+    });
+});
+
+```
+И вот, что получаем:
+
+<div className='container-img'> <span className="img"> ![console.log](/images/Content/Js/XMLhttp.gif) </span></div>
+
+
