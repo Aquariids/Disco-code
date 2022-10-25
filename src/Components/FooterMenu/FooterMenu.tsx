@@ -27,6 +27,8 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
                             <li><Link href={'/js/algorithmsjs/binarySearch'}>Алгоритмы javaScript</Link></li>
                             <li><Link href={'/react/basicreact/ReactSinglePageApp'}> Базовый React </Link></li>
                             <li><Link href={'/ts/basicts/installation'}>Основы typescript</Link></li>
+                            <li><Link href={'/paradigms/style/imperativeAndDeclarative'}>Стили написания кода</Link></li>
+
                         
                         </ul>
                     </div>
