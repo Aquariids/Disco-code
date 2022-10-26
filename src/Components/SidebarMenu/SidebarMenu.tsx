@@ -18,17 +18,13 @@ const SidebarMenu = ():JSX.Element => {
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-explicit-any
     const menuHeight:any = document.querySelector(`.${s.nav_menu}`)!.clientHeight - 89;
-        if(heightTop < menuHeight) {
+        if(heightTop > menuHeight) {
 
-            document.querySelector(`.${s.nav_menu}`)?.scrollBy( heightTop, 0);
+            document.querySelector(`.${s.nav_menu}`)?.scrollBy(0,heightTop - menuHeight);
+
 
             
-        } else {
-            document.querySelector(`.${s.nav_menu}`)?.scrollBy(activeHeight,heightTop - menuHeight);
-
-        }
-    
-    
+        } 
     
   });
     const router = useRouter();
