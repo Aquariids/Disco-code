@@ -91,7 +91,6 @@ const Home: NextPage = (): JSX.Element => {
     
 
       <div ref={h2ref} className={s.articles} >
-        <h2> Категории </h2>
         <Articles   />
         </div>
 
