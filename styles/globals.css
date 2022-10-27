@@ -73,27 +73,3 @@ a {
 
 */
 
-/* active links Menu - засунул их сюда, что бы скролом можно было управлять */
-
-.active {
-	list-style-type: none;
-	color:var(--main_color_links_pages);
-	font-size: 14px;
-	line-height: 19px;
-	padding-left: 2px;
-	margin-bottom: 10px;
-	margin-top: 10px;
-
-}
-
-.active:hover {
-	color: var(--main_hover_color_links_pages);
-	cursor: pointer;
-} 
-
-
-
-
-.active a {
-	pointer-events: none;
-}

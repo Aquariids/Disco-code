@@ -10,10 +10,10 @@ const SidebarMenu = ():JSX.Element => {
 
     useEffect(()=> {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const activeHeight:any = document.querySelector('.active')?.clientHeight;
+    const activeHeight:any = document.querySelector('.active_scroll')?.clientHeight;
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const activeLink:any = document.querySelector('.active');
+    const activeLink:any = document.querySelector('.active_scroll');
     const heightTop = activeLink?.offsetTop + activeHeight;
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-explicit-any
@@ -22,8 +22,6 @@ const SidebarMenu = ():JSX.Element => {
 
             document.querySelector(`.${s.nav_menu}`)?.scrollBy(0,heightTop - menuHeight);
 
-
-            
         } 
     
   });

@@ -44,7 +44,8 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                         <li 
                         key={index}
                             className={cn(s.link, {
-                                ['active']: pathname.replace(post.slug, '') + post.slug === pathname,
+                                [s.active]: pathname.replace(post.slug, '') + post.slug === pathname,
+                                ['active_scroll']: pathname.replace(post.slug, '') + post.slug === pathname,
                                 [s.active_js]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/js'),
                                 [s.active_ts]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/ts'),
                                 [s.active_react]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/react'),
@@ -76,7 +77,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                         onClick={mob}
                         key={index}
                             className={cn(s.link,{
-                                ['active']: pathname.replace(post.slug, '') + post.slug === pathname,
+                                [s.active]: pathname.replace(post.slug, '') + post.slug === pathname,
 
                                 [s.active_js]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/js'),
                                 [s.active_ts]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/ts'),
@@ -115,8 +116,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                                 [s.subCardJs]: pathname.startsWith('/js'),
                                 [s.subCardTs]: pathname.startsWith('/ts'),
                                 [s.subCardReact]: pathname.startsWith('/react'),
-
-                                ['active']: pathname.replace(post.slug, '') + post.slug === pathname,
+                                [s.active]: pathname.replace(post.slug, '') + post.slug === pathname,
                                 [s.hide]: post.category !== category,
                             })} >
                                 {router.pathname.startsWith(`/${page}`)?<Link href={`/${page}/${post.category}/${post.slug}`}>{post.title}</Link>:''}
