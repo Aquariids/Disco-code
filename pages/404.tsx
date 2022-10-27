@@ -1,5 +1,5 @@
 import React from 'react';
-import { withLayout } from '../layout/Layout';
+import Header from '../layout/Header/Header';
 
 
 
@@ -7,17 +7,23 @@ const Error404 = (): JSX.Element => {
 
   return (
     <>
-    <div>
-    <h1 style={{fontSize:'50px'}}>Страница не найдена</h1>
-    <p style={{fontSize:'25px', color:'gray'}}>Мы не смогли найти то, что вы искали.</p>
-    <p>Пожалуйста, свяжитесь с владельцем сайта, с которого вы перешли по URL адресу, и дайте знать о сломанной ссылке.</p>
+    <Header/>
+    <div className='error404'>
+      <div className='body404'>
+      <h1>Страница не найдена</h1>
+      <p>Мы не смогли найти то, что вы искали.</p>
+      <span>Пожалуйста, свяжитесь с владельцем сайта, с которого вы перешли по URL адресу, и дайте знать о сломанной ссылке.</span>
+
+
+      </div>
+    
   </div>
   </>
   );
 };
 
 
-export default withLayout(Error404);
+export default Error404;
 
 
 
