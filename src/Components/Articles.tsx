@@ -50,7 +50,7 @@ const Articles = () => {
 
       <AnimationContainerForCards>
 
-        <Card title={"Next.js"} text={"Я клоун"} color={"next"} url={"/nextjs"} />
+        <Card title={"Next.js"} text={"Познакомимся с таким javaScript фреймворком как next.js. Узнаем, что это за рендеринг такой SSR и SSG и многое другое! "} color={"next"} url={"/nextjs"} />
         
       </AnimationContainerForCards>
     </div>
