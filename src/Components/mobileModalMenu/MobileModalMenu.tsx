@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import MenuJs from '../Menu/MenuJs/MenuJs';
 import MobileButton from '../UI/MobileButton/MobileButton';
 import cn from 'classnames';
@@ -10,7 +10,6 @@ import MenuParadigms from '../Menu/MenuParadigms/MenuParadigms';
 import MenuNextJs from '../Menu/MenuNextJs/MenuNextJs';
 
 const mobileModalMenu = ({js,ts,react,paradigms,nextJs}:mobileModalMenuProps) => {
-
     const [mobile, setMobile] = useState(false);
 
     return (

@@ -13,6 +13,7 @@ import Link from 'next/link';
 import s from './../pageTs.module.css';
 import cn from 'classnames';
 import AnimationContainer from '../../../src/Components/AnimationContainers/AnimationContainer';
+import ListMobileMenu from '../../../src/Components/mobileModalMenu/ListMobileMenu/ListMobileMenu';
 
 
 
@@ -36,6 +37,8 @@ const PostPage: NextPage<never> = ({ post }: MDXPost): JSX.Element => {
                     <h1>{post.meta.title}</h1>
                 </div>
                 <MDXRemote  {...post.source} />
+                <ListMobileMenu />
+
             </AnimationContainer>
 
             <div className={cn(s.edit, 'page_edit')}><a target='_blank' rel='noopener' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/typescript/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{ width: '30px', paddingLeft: '5px' }} src='/edit.svg' /></div>
