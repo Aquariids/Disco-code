@@ -11,31 +11,31 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
     const router = useRouter();
     const r = router.asPath.length;
 
-    const logoCreat = () => {
-
-        if(router.asPath.startsWith('/js')) {
-            return <Logo path='/js' src='/logo/js_logo.svg' />;
-        }
-        if(router.asPath.startsWith('/ts')) {
-            return <Logo path='/ts' src='/logo/ts_logo.svg' />;
-        }
-        if(router.asPath.startsWith('/react') ) {
-            return <Logo path='/react' src='/logo/react_logo.svg' />;
-        }
-        if(router.asPath.startsWith('/nextjs') ) {
-            return <Logo path='/nextjs' src='/logo/nextjs_logo.svg' />;
-        }
-         else {
-            return  <Logo path='/' src='/logo/disco.svg' /> ;
-         }
-    };
+    // const logoCreat = () => {
+    //     if(router.asPath.startsWith('/js')) {
+    //         return <Logo path='/js' src='/logo/js_logo.svg' />;
+    //     }
+    //     if(router.asPath.startsWith('/ts')) {
+    //         return <Logo path='/ts' src='/logo/ts_logo.svg' />;
+    //     }
+    //     if(router.asPath.startsWith('/react') ) {
+    //         return <Logo path='/react' src='/logo/react_logo.svg' />;
+    //     }
+    //     if(router.asPath.startsWith('/nextjs') ) {
+    //         return <Logo path='/nextjs' src='/logo/nextjs_logo.svg' />;
+    //     }
+    //      else {
+    //         return  <Logo path='/' src='/logo/disco.svg' /> ;
+    //      }
+    // };
     return (
         <div className={cn(header, {
             [s.header2]: r >= 4
         })} {...props}>
             <div className={content}>
                 <div  className={logo}>
-                        {logoCreat()}
+                <Logo src='/logo/disco.svg' />
+
                     <span className={link} > <Link href={'/'}>DiscoCode</Link> </span>
                     
                      </div>
