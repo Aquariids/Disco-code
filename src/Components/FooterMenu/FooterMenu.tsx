@@ -20,25 +20,23 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
             })} {...props}>
                 <div className={content}>
                     <div className={s.nav}>
-                        <h3> Навигация по сайту </h3>
-                        <ul style={{ listStyleType: 'none' }}>
-                            <li><Link href={'/js/basicjs/browserMethodsAndConsole'}>Базовый javaScript</Link></li>
-                            <li><Link href={'/js/advancedjs/hoisting'}>Продвинутый javaScript</Link></li>
-                            <li><Link href={'/js/algorithmsjs/binarySearch'}>Алгоритмы javaScript</Link></li>
-                            <li><Link href={'/react/basicreact/ReactSinglePageApp'}> Базовый React </Link></li>
-                            <li><Link href={'/ts/basicts/installation'}>Основы typescript</Link></li>
-                            <li><Link href={'/paradigms/style/imperativeAndDeclarative'}>Стили написания кода</Link></li>
-
-                        
+                        <h3 className={s.footer_heading}> Навигация по сайту </h3>
+                        <ul className={s.footer_nav_list} style={{ listStyleType: 'none' }}>
+                            <li className={s.footer_item}><Link href={'/js/basicjs/browserMethodsAndConsole'}>Базовый javaScript</Link></li>
+                            <li className={s.footer_item}><Link href={'/js/advancedjs/hoisting'}>Продвинутый javaScript</Link></li>
+                            <li className={s.footer_item}><Link href={'/js/algorithmsjs/binarySearch'}>Алгоритмы javaScript</Link></li>
+                            <li className={s.footer_item}><Link href={'/react/basicreact/ReactSinglePageApp'}> Базовый React </Link></li>
+                            <li className={s.footer_item}><Link href={'/ts/basicts/installation'}>Основы typescript</Link></li>
+                            <li className={s.footer_item}><Link href={'/paradigms/style/imperativeAndDeclarative'}>Стили написания кода</Link></li>
                         </ul>
                     </div>
 
                     <div className={s.social}>
-                        <h3> Где меня найти </h3>
-                        <ul className={s.socialList} style={{ listStyleType: 'none' }}>
-                            <li><a className={s.link} href="mailto:favoritePonyville@gmail.com">FavoritePonyville@gmail.com <LinkA /> </a></li>
-                            <li><a className={s.link} target={"_blank"} href={'https://github.com/Aquariids/Disco-code'}>Github <LinkA /> </a></li>
-                            <li><a className={s.link} target={"_blank"} href={'https://t.me/Aquariida'}>Телеграм <LinkA /> </a></li>
+                        <h3 className={s.footer_heading}> Где меня найти </h3>
+                        <ul className={s.footer_nav_list} style={{ listStyleType: 'none' }}>
+                            <li className={s.footer_item}><a href="mailto:favoritePonyville@gmail.com">FavoritePonyville@gmail.com  </a> <LinkA/></li>
+                            <li className={s.footer_item}><a target={"_blank"} href={'https://github.com/Aquariids/Disco-code'}>Github  </a> <LinkA /></li>
+                            <li className={s.footer_item}><a target={"_blank"} href={'https://t.me/Aquariida'}>Телеграм  </a> <LinkA /></li>
 
                         </ul>
                     </div>
