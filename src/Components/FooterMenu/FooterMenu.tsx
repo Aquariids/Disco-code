@@ -28,6 +28,8 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
                             <li className={s.footer_item}><Link href={'/react/basicreact/ReactSinglePageApp'}> Базовый React </Link></li>
                             <li className={s.footer_item}><Link href={'/ts/basicts/installation'}>Основы typescript</Link></li>
                             <li className={s.footer_item}><Link href={'/paradigms/style/imperativeAndDeclarative'}>Стили написания кода</Link></li>
+                            <li className={s.footer_item}><Link href={'/nextjs/basicnextjs/createNextApp'}>Начало работы с next.js</Link></li>
+
                         </ul>
                     </div>
 
