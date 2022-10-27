@@ -13,6 +13,8 @@ const ListMobileMenu = () => {
                 {router.asPath.startsWith('/ts/basicts')?<MobileModalMenu ts="ts"/>:<></>}
                 {router.asPath.startsWith('/react/basicreact')?<MobileModalMenu react="react"/>:<></>} 
                 {router.asPath.startsWith('/paradigms/style')?<MobileModalMenu paradigms="paradigms"/>:<></>} 
+                {router.asPath.startsWith('/nextjs/style')?<MobileModalMenu paradigms="paradigms"/>:<></>} 
+
 
         </>
     );

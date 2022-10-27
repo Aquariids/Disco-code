@@ -5,6 +5,7 @@ import MenuTs from "../Menu/MenuTs/MenuTs";
 import MenuReact from "../Menu/MenuReact/MenuReact";
 import MenuParadigms from "../Menu/MenuParadigms/MenuParadigms";
 import { useEffect } from "react";
+import MenuNextJs from "../Menu/MenuNextJs/MenuNextJs";
 
 const SidebarMenu = ():JSX.Element => {
 
@@ -53,6 +54,14 @@ const SidebarMenu = ():JSX.Element => {
         return (
             <nav className={s.nav_menu}>
                 <MenuParadigms sideBarMenuActive={true} mobileMenuActive={false}/>
+            </nav>
+        );
+    }
+
+    if (router.pathname.startsWith('/nextjs')) {
+        return (
+            <nav className={s.nav_menu}>
+                <MenuNextJs sideBarMenuActive={true} mobileMenuActive={false}/>
             </nav>
         );
     }

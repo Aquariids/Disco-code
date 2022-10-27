@@ -48,11 +48,11 @@ const Articles = () => {
         />
       </AnimationContainerForCards>
 
-      {/* <AnimationContainerForCards>
+      <AnimationContainerForCards>
 
-        <Card title={"Next.js"} text={"Я клоун"} color={"next"} url={"/next"} />
+        <Card title={"Next.js"} text={"Я клоун"} color={"next"} url={"/nextjs"} />
         
-      </AnimationContainerForCards> */}
+      </AnimationContainerForCards>
     </div>
   );
 };
