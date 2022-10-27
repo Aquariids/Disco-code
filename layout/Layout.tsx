@@ -8,7 +8,6 @@ import { AppContextProvider, IAppContext } from "../context/app.context";
 const { wrapper, header, sidebar, footer, body, content } = s;
 import cn from 'classnames';
 import { useRouter } from "next/router";
-import ListMobileMenu from "../src/Components/mobileModalMenu/ListMobileMenu/ListMobileMenu";
 const Layout = ({ children, }: LayoutProps): JSX.Element => {
     const r = useRouter().asPath.length;
     return (
@@ -22,7 +21,6 @@ const Layout = ({ children, }: LayoutProps): JSX.Element => {
                 <div className={body}>
                     <div className={content}>
                         {children}
-                        <ListMobileMenu />
                     </div>
                 </div>
                 <Footer className={footer} />

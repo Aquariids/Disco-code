@@ -17,6 +17,7 @@ import {
 } from "../../api/api";
 import { POSTS_PATH_PARADIGMS } from "../../api/paths";
 import Link from "next/link";
+import ListMobileMenu from "../../../src/Components/mobileModalMenu/ListMobileMenu/ListMobileMenu";
 
 
 const PostPage: NextPage<never> = ({
@@ -62,6 +63,8 @@ const PostPage: NextPage<never> = ({
             <h1>{post.meta.title}</h1>
           </div>
           <MDXRemote {...post.source} />
+          <ListMobileMenu />
+
 
           <div className={cn("mainEdit", "page_edit")}>
             <a
