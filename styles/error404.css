@@ -1,5 +1,6 @@
 
 .error404 {
+    position: relative;
 	display: grid;
 	justify-content: center;
 	min-height: 100vh;

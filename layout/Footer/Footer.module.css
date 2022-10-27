@@ -4,7 +4,6 @@
 	align-items: center;
 	position: absolute;
 	width: 100vw;
-	min-height: 100%;
 	margin-left: calc(-50vw + 50%);
 	grid-template-rows: 1fr;
 	background-color: var(--basic_color);
