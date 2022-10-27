@@ -4,7 +4,6 @@ import Head from 'next/head';
 import ym from 'react-yandex-metrika';
 import {YMInitializer} from 'react-yandex-metrika';
 import Router, { useRouter } from 'next/router';
-import ListMobileMenu from '../src/Components/mobileModalMenu/ListMobileMenu/ListMobileMenu';
 Router.events.on('routeChangeComplete', (url:string)=> {
   if(typeof window !== 'undefined')
   ym('hit',url);

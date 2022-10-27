@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import MenuJs from '../Menu/MenuJs/MenuJs';
 import MobileButton from '../UI/MobileButton/MobileButton';
 import cn from 'classnames';

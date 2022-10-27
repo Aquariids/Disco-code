@@ -5,7 +5,6 @@ import { getAllPosts } from "../api/api";
 import { POSTS_PATH_JS } from "../api/paths";
 import Head from "next/head";
 import MenuJs from "../../src/Components/Menu/MenuJs/MenuJs";
-import ListMobileMenu from "../../src/Components/mobileModalMenu/ListMobileMenu/ListMobileMenu";
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = getAllPosts(POSTS_PATH_JS).map((post) => post.meta);
