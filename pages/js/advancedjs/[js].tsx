@@ -14,6 +14,7 @@ import Link from 'next/link';
 import s from '../pageJs.module.css';
 
 import AnimationContainer from '../../../src/Components/AnimationContainers/AnimationContainer';
+import ListMobileMenu from '../../../src/Components/mobileModalMenu/ListMobileMenu/ListMobileMenu';
 
 
 
@@ -44,7 +45,10 @@ const PostPage: NextPage<never> = ({ post }: MDXPost): JSX.Element => {
                 <div className='mdTitle'>
                     <h1>{post.meta.title}</h1>
                 </div>
+                <ListMobileMenu />
+
                 <MDXRemote  {...post.source} />
+
 
 
 

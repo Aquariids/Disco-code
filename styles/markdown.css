@@ -11,6 +11,9 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
 }
+.mdHead {
+	margin-bottom: 55px;
+}
 
 .imgLogo {
 	display: flex;
@@ -60,6 +63,7 @@ code {
 		background-color: #20232A;
 		padding-bottom: 15px;
 		margin-bottom: 35px;
+		
 		
 	}
 	.mdHead h4 {
