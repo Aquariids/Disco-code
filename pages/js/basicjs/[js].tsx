@@ -76,8 +76,18 @@ const PostPage: NextPage<never> = ({ post,}: MDXPost): JSX.Element => {
             <img
               style={{ width: "30px", paddingLeft: "5px" }}
               src="/edit.svg"
-            />
+            />   
           </div>
+          {/* <div>
+          <div>
+            <a
+              target="_blank"
+              rel="noopener"
+              href={`https://telegram.me/share/url?url=https://discocode.ru/js/basicjs/${post.meta.slug}`}
+            >
+              Поделиться с друзьями
+              </a></div>
+          </div> */}
           <div className={cn(s.footer, "page_footer")}>
             <Link href={post.meta.prev}>
               {post.meta.prev === "none" ? (
@@ -89,7 +99,9 @@ const PostPage: NextPage<never> = ({ post,}: MDXPost): JSX.Element => {
             <Link href={post.meta.next}>
               {post.meta.next === "none" ? <span></span> : "Следующая страница"}
             </Link>
+            
           </div>
+          
         </AnimationContainer>
       </div>
     </>
@@ -104,9 +116,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [
-        rehypeSlug,
-        [rehypeAutolinkHeadings, { behavior: "wrap" }],
+        rehypeSlug, // добавляет заголовку id ввиде самого заголовка
+        [rehypeAutolinkHeadings, { behavior: "wrap" }], // внутрь заголовка добавляет тег а c id в виде имени заголовка
         rehypeHighlight,
+        
       ],
     },
    
