@@ -6,7 +6,9 @@ import rehypeSlug from "rehype-slug";
 import rehypeHighlight from "rehype-highlight";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import Head from "next/head";
-import "highlight.js/styles/a11y-dark.css";
+// import "highlight.js/styles/a11y-dark.css";
+import "highlight.js/styles/dark.css";
+
 import cn from "classnames";
 import {
   getAllPosts,
@@ -16,7 +18,6 @@ import {
 } from "../../api/api";
 import { POSTS_PATH_NEXTJS } from "../../api/paths";
 import Link from "next/link";
-import s from "../pageNextJs.module.css";
 import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
 import ListMobileMenu from "../../../src/Components/mobileModalMenu/ListMobileMenu/ListMobileMenu";
 
@@ -67,7 +68,7 @@ const PostPage: NextPage<never> = ({ post,}: MDXPost): JSX.Element => {
           <ListMobileMenu />
 
 
-          <div className={cn(s.edit, "page_edit")}>
+          <div className={cn('mainEdit', "page_edit")}>
             <a
               target="_blank"
               rel="noopener"
@@ -81,7 +82,7 @@ const PostPage: NextPage<never> = ({ post,}: MDXPost): JSX.Element => {
               src="/edit.svg"
             />
           </div>
-          <div className={cn(s.footer, "page_footer")}>
+          <div className={cn('mainFooter', "page_footer")}>
             <Link href={post.meta.prev}>
               {post.meta.prev === "none" ? (
                 <span></span>

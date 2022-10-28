@@ -287,6 +287,7 @@
 }
 
 
+
 @media (max-width:785px) {
 	.active_js {
 		color: var(--js_color_links_pages_mobile);

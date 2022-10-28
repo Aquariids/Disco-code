@@ -6,7 +6,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeHighlight from "rehype-highlight";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import Head from "next/head";
-import "highlight.js/styles/a11y-dark.css";
+import "highlight.js/styles/dark.css";
 import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
 import cn from "classnames";
 import {
