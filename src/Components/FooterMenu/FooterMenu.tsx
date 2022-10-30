@@ -22,13 +22,13 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
                     <div className={s.nav}>
                         <h3 className={s.footer_heading}> Навигация по сайту </h3>
                         <ul className={s.footer_nav_list} style={{ listStyleType: 'none' }}>
-                            <li className={s.footer_item}><Link href={'/js/basicjs/browserMethodsAndConsole'}>Базовый javaScript</Link></li>
-                            <li className={s.footer_item}><Link href={'/js/advancedjs/hoisting'}>Продвинутый javaScript</Link></li>
-                            <li className={s.footer_item}><Link href={'/js/algorithmsjs/binarySearch'}>Алгоритмы javaScript</Link></li>
-                            <li className={s.footer_item}><Link href={'/react/basicreact/ReactSinglePageApp'}> Базовый React </Link></li>
-                            <li className={s.footer_item}><Link href={'/ts/basicts/installation'}>Основы typescript</Link></li>
-                            <li className={s.footer_item}><Link href={'/paradigms/style/imperativeAndDeclarative'}>Стили написания кода</Link></li>
-                            <li className={s.footer_item}><Link href={'/nextjs/basicnextjs/createNextApp'}>Начало работы с next.js</Link></li>
+                            <li className={s.footer_item}><Link href={'/js/basic-js/browser-methods-and-console'}>Базовый javaScript</Link></li>
+                            <li className={s.footer_item}><Link href={'/js/advanced-js/hoisting'}>Продвинутый javaScript</Link></li>
+                            <li className={s.footer_item}><Link href={'/js/algorithms-js/binary-search'}>Алгоритмы javaScript</Link></li>
+                            <li className={s.footer_item}><Link href={'/react/basic-react/react-single-page-app'}> Базовый React </Link></li>
+                            <li className={s.footer_item}><Link href={'/ts/basic-ts/installation'}>Основы typescript</Link></li>
+                            <li className={s.footer_item}><Link href={'/paradigms/style/imperative-and-declarative'}>Стили написания кода</Link></li>
+                            <li className={s.footer_item}><Link href={'/next-js/basicnext-js/create-next-app'}>Начало работы с next.js</Link></li>
 
                         </ul>
                     </div>
@@ -49,7 +49,7 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
             </div>
            
             <div className={s.copyright}>
-            <span className={s.doc}><Link href={'/docs/sitedocument'}>Документация по сайту</Link></span>
+            <span className={s.doc}><Link href={'/docs/site-document'}>Документация по сайту</Link></span>
                 <span >
               
                     {`© 2022 - ${format(new Date(), 'yyyy')} Дмитрий Черномашенцев`}</span>
