@@ -117,6 +117,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                                 [s.subCardJs]: pathname.startsWith('/js'),
                                 [s.subCardTs]: pathname.startsWith('/ts'),
                                 [s.subCardReact]: pathname.startsWith('/react'),
+                             
                                 [s.hide]: post.category !== category,
                             })} >
                                 {router.pathname.startsWith(`/${page}`)?<Link href={`/${page}/${post.category}/${post.slug}`}>{post.title}</Link>:''}

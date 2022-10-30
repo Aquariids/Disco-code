@@ -23,7 +23,7 @@ const SidebarMenu = ():JSX.Element => {
             document.querySelector(`.${s.nav_menu}`)?.scrollBy(0,heightTop + menuHeight);
 
         }  else {
-            document.querySelector(`.${s.nav_menu}`)?.scrollBy(heightTop,  heightTop - (menuHeight * 2) );
+            document.querySelector(`.${s.nav_menu}`)?.scrollBy(0,  heightTop - (menuHeight * 2) );
         }
         
     

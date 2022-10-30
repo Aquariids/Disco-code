@@ -7,7 +7,7 @@
 	display: grid;
 	margin-top: 0;
 	text-align: left;
-	padding-left: 6px;
+	padding-left: 0px;
 	grid-template-columns: 1fr;
 	margin-bottom: 0px;
 }
@@ -86,7 +86,8 @@
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	padding: 0;
-	gap: 15px 5px;
+	gap: 13px 5px;
+	
 }
 
 
@@ -337,7 +338,6 @@
 
 
 /* show and hide */
-
 
 
 .hide {
