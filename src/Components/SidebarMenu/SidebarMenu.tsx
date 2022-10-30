@@ -10,22 +10,22 @@ import MenuNextJs from "../Menu/MenuNextJs/MenuNextJs";
 const SidebarMenu = ():JSX.Element => {
 
     useEffect(()=> {
+    const activeHeight:number | undefined = document.querySelector('.active_scroll')?.clientHeight;
+    
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const activeHeight:any = document.querySelector('.active_scroll')?.clientHeight;
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const activeLink:any = document.querySelector('.active_scroll');
-    const heightTop = activeLink?.offsetTop + activeHeight;
+    const activeLink:Element | any = document.querySelector('.active_scroll') as HTMLElement;
+    const heightTop:number = activeLink?.offsetTop + activeHeight;
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-explicit-any
-    const menuHeight:any = document.querySelector(`.${s.nav_menu}`)!.clientHeight - 89;
+    const menuHeight:number = document.querySelector(`.${s.nav_menu}`)!.clientHeight - 89;
         if(heightTop > menuHeight) {
 
-            document.querySelector(`.${s.nav_menu}`)?.scrollBy(0,heightTop - menuHeight);
+            document.querySelector(`.${s.nav_menu}`)?.scrollBy(0,heightTop + menuHeight);
 
         }  else {
-            document.querySelector(`.${s.nav_menu}`)?.scrollBy(heightTop, menuHeight);
+            document.querySelector(`.${s.nav_menu}`)?.scrollBy(heightTop,  heightTop - (menuHeight * 2) );
         }
+        
     
   });
     const router = useRouter();
