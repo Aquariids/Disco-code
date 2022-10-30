@@ -8,18 +8,22 @@ import { AppContextProvider, IAppContext } from "../context/app.context";
 const { wrapper, header, sidebar, footer, body, content } = s;
 import cn from 'classnames';
 import { useRouter } from "next/router";
+import ListMobileMenu from "../src/Components/mobileModalMenu/ListMobileMenu/ListMobileMenu";
 const Layout = ({ children, }: LayoutProps): JSX.Element => {
-    const r = useRouter().asPath.length;
+    const r = useRouter().asPath.split('/').length;
+    
     return (
         <>
 
             <div className={cn(wrapper, {
-                [s.wrapper2]: r >= 4
+                ['wrapper2']: (r >= 3)
             })}>
                 <Header className={header} />
                 <Sidebar className={sidebar} />
                 <div className={body}>
                     <div className={content}>
+                    <ListMobileMenu />
+
                         {children}
                     </div>
                 </div>

@@ -65,7 +65,6 @@ const PostPage: NextPage<never> = ({ post,}: MDXPost): JSX.Element => {
             <h1>{post.meta.title}</h1>
           </div>
           <MDXRemote {...post.source} />
-          <ListMobileMenu />
 
 
           <div className={cn('mainEdit', "page_edit")}>

@@ -1,4 +1,4 @@
 export interface logoProps {
-    path?:string,
+    path:string,
     src:string,
 }

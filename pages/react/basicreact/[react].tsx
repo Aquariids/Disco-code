@@ -13,7 +13,6 @@ import { POSTS_PATH_REACT } from '../../api/paths';
 import Link from 'next/link';
 import s from './../pageReact.module.css';
 import AnimationContainer from '../../../src/Components/AnimationContainers/AnimationContainer';
-import ListMobileMenu from '../../../src/Components/mobileModalMenu/ListMobileMenu/ListMobileMenu';
 
 
 const PostPage: NextPage<never> = ({ post }: MDXPost): JSX.Element => {
@@ -37,7 +36,6 @@ const PostPage: NextPage<never> = ({ post }: MDXPost): JSX.Element => {
                     <h1>{post.meta.title}</h1>
                 </div>
                 <MDXRemote  {...post.source} />
-                <ListMobileMenu />
 
             </AnimationContainer>
 

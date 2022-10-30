@@ -21,10 +21,10 @@ const logo = ({ path, src }: logoProps): JSX.Element => {
                 </motion.div>
             </AnimatePresence>
         );
-    // } else if (router.asPath.startsWith(path)) {
-    //     return (
-    //         <Link href={'/'}><img style={{ width: '48px', height:'48px', cursor: 'pointer',borderRadius: '15px' }} src={src} /></Link>
-    //     );
+    } else if (router.asPath.startsWith(path)) {
+        return (
+            <Link href={'/'}><img style={{ width: '48px', height:'48px', cursor: 'pointer',borderRadius: '15px' }} src={src} /></Link>
+        );
     } else {
         return (
             <AnimatePresence>

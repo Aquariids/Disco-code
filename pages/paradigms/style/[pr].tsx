@@ -64,7 +64,6 @@ const PostPage: NextPage<never> = ({
             <h1>{post.meta.title}</h1>
           </div>
           <MDXRemote {...post.source} />
-          <ListMobileMenu />
 
           <div className={cn('mainEdit', "page_edit")}>
             <a
