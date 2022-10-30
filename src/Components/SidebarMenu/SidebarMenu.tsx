@@ -18,16 +18,14 @@ const SidebarMenu = ():JSX.Element => {
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-explicit-any
     const menuHeight:number = document.querySelector(`.${s.nav_menu}`)!.clientHeight - 89;
-        if(heightTop > menuHeight) {
-
-            document.querySelector(`.${s.nav_menu}`)?.scrollBy(0,heightTop + menuHeight);
-
-        }  else {
-            document.querySelector(`.${s.nav_menu}`)?.scrollBy(0,  heightTop - (menuHeight * 2) );
-        }
         
-    
-  });
+
+        document.querySelector(`.${s.nav_menu}`)?.scrollBy(0,  heightTop - menuHeight + 400  );
+
+  },[]);
+
+  
+  
     const router = useRouter();
     if (router.pathname.startsWith('/js')) {
         return (
