@@ -6,10 +6,10 @@ const MenuJs = ({ setMobile, mobile, mobileMenuActive, sideBarMenuActive }: mobi
     if (mobileMenuActive === true) {
         return (
             <>
-                <Menu title="Базовый JavaScript" category='basicjs' page='js' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
+                <Menu title="Базовый JavaScript" category='basic-js' page='js' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
                 
-                <Menu title="Продвинутый JavaScript" category='advancedjs' page='js' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
-                <Menu title="Алгоритмы" category='algorithmsjs' page='js' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
+                <Menu title="Продвинутый JavaScript" category='advanced-js' page='js' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
+                <Menu title="Алгоритмы" category='algorithms-js' page='js' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
                 
                 {/* <Menu title="Простенькие задачи" category='.' page='js' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} /> */}
             </>
@@ -17,17 +17,17 @@ const MenuJs = ({ setMobile, mobile, mobileMenuActive, sideBarMenuActive }: mobi
     } if (sideBarMenuActive === true) {
         return (
             <>
-                <Menu title="Базовый JavaScript" category='basicjs' dropdown={true} page='js' />
-                <Menu title="Продвинутый JavaScript" category='advancedjs' dropdown={true} page='js' />
-                <Menu title="Алгоритмы" category='algorithmsjs' dropdown={true} page='js' />
+                <Menu title="Базовый JavaScript" category='basic-js' dropdown={true} page='js' />
+                <Menu title="Продвинутый JavaScript" category='advanced-js' dropdown={true} page='js' />
+                <Menu title="Алгоритмы" category='algorithms-js' dropdown={true} page='js' />
             </>
         );
     } else {
         return (
             <>
-                <Menu title="Базовый JavaScript" category='basicjs' page='js' />
-                <Menu title="Продвинутый JavaScript" category='advancedjs' page='js' />
-                <Menu title="Алгоритмы" category='algorithmsjs' page='js' />
+                <Menu title="Базовый JavaScript" category='basic-js' page='js' />
+                <Menu title="Продвинутый JavaScript" category='advanced-js' page='js' />
+                <Menu title="Алгоритмы" category='algorithms-js' page='js' />
                 {/* <Menu title="Простенькие задачи" category='/' page='js' /> */}
             </>
         );

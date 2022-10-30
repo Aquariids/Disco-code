@@ -19,7 +19,6 @@ import {
 import { POSTS_PATH_NEXTJS } from "../../api/paths";
 import Link from "next/link";
 import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
-import ListMobileMenu from "../../../src/Components/mobileModalMenu/ListMobileMenu/ListMobileMenu";
 
 
 
