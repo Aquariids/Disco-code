@@ -29,6 +29,8 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                 setMobile(!mobileTrue);
         });
     };
+
+    // side bar
     if(dropdown === true) {
         return (
             <div className={s.content} {...props}>
@@ -61,6 +63,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
         );
     }  
 
+    // mobile modal menu
     else if (mobileMenu === true) {
 
         return(
