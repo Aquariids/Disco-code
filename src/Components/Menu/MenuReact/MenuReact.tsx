@@ -6,7 +6,7 @@ const MenuReact = ({ setMobile, mobile, mobileMenuActive, sideBarMenuActive }: m
     if (mobileMenuActive === true) {
         return (
             <>
-                <Menu title=" Базовые темы react" category='basicreact' page='react' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
+                <Menu title=" Базовые темы react" category='basic-react' page='react' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
                 {/* <Menu title=" Продвинутые темы react" category='.' page='react' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} /> */}
             </>
         );
@@ -15,13 +15,13 @@ const MenuReact = ({ setMobile, mobile, mobileMenuActive, sideBarMenuActive }: m
     if (sideBarMenuActive === true) {
         return (
             <>
-                <Menu title="Базовые темы react" category='basicreact' dropdown={true} page='react' />
+                <Menu title="Базовые темы react" category='basic-react' dropdown={true} page='react' />
             </>
         );
     } else {
         return (
             <>
-                <Menu title=" Базовые темы react" category='basicreact' page='react' />
+                <Menu title=" Базовые темы react" category='basic-react' page='react' />
                 {/* <Menu title=" Продвинутые темы react" category='.' page='react' /> */}
             </>
         );

@@ -338,10 +338,7 @@
 
 /* show and hide */
 
-.show {
-	display: block;
-	margin-top: 10px;
-}
+
 
 .hide {
 	display: none;

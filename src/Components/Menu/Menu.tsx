@@ -12,7 +12,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
 
     const router = useRouter();
     const pathname = router.asPath.split('#')[0]; // если мы переходим по ссылке с якорем куда то, к статье какой нибудь, то активная ссылка будет немного ломаться, поэтому если есть якорь мы его убираем.
-    
+    const checkActiveLink = pathname.split('/')[pathname.split('/').length - 1]; // отрезаем от пути наш slug и будем проверять сщ slug из api, и так будет кидать активную ссылку
     const { posts } = useContext(AppContext);
     
     posts && posts.sort((a,b) => a.id - b.id);
@@ -44,15 +44,14 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                         <li 
                         key={index}
                             className={cn(s.link, {
-                                [s.active]: pathname.replace(post.slug, '') + post.slug === pathname,
-                                ['active_scroll']: pathname.replace(post.slug, '') + post.slug === pathname,
-                                [s.active_js]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/js'),
-                                [s.active_ts]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/ts'),
-                                [s.active_react]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/react'),
-                                [s.show]: post.category == category,
+                                [s.active]: post.slug === checkActiveLink,
+                                ['active_scroll']: post.slug === checkActiveLink,
+                                [s.active_js]: post.slug === checkActiveLink && router.pathname.startsWith('/js'),
+                                [s.active_ts]:  post.slug === checkActiveLink && router.pathname.startsWith('/ts'),
+                                [s.active_react]: post.slug === checkActiveLink && router.pathname.startsWith('/react'),
                                 [s.hide]: post.category !== category,
                             })} >
-
+                               
                                 {router.pathname.startsWith(`/${page}`)?<Link  href={`/${page}/${post.category}/${post.slug}`}>{post.title}</Link>:''}
                             
                         </li>
@@ -77,12 +76,11 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                         onClick={mob}
                         key={index}
                             className={cn(s.link,{
-                                [s.active]: pathname.replace(post.slug, '') + post.slug === pathname,
-                                ['active_scroll']: pathname.replace(post.slug, '') + post.slug === pathname,
-                                [s.active_js]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/js'),
-                                [s.active_ts]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/ts'),
-                                [s.active_react]: pathname.replace(post.slug, '') + post.slug === pathname && router.pathname.startsWith('/react'),
-                                [s.show]: post.category == category,
+                                [s.active]:post.slug === checkActiveLink,
+                                ['active_scroll']: post.slug === checkActiveLink,
+                                [s.active_js]: post.slug === checkActiveLink && router.pathname.startsWith('/js'),
+                                [s.active_ts]: post.slug === checkActiveLink && router.pathname.startsWith('/ts'),
+                                [s.active_react]: post.slug === checkActiveLink && router.pathname.startsWith('/react'),
                                 [s.hide]: post.category !== category,
                             })} >
 
@@ -116,7 +114,6 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                                 [s.subCardJs]: pathname.startsWith('/js'),
                                 [s.subCardTs]: pathname.startsWith('/ts'),
                                 [s.subCardReact]: pathname.startsWith('/react'),
-                                [s.active]: pathname.replace(post.slug, '') + post.slug === pathname,
                                 [s.hide]: post.category !== category,
                             })} >
                                 {router.pathname.startsWith(`/${page}`)?<Link href={`/${page}/${post.category}/${post.slug}`}>{post.title}</Link>:''}

@@ -6,7 +6,7 @@ const MenuTs = ({ setMobile, mobile, sideBarMenuActive, mobileMenuActive }: mobi
     if (mobileMenuActive === true) {
         return (
             <>
-                <Menu title=" Работа с typeScript" category='basicts' page='ts' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
+                <Menu title=" Работа с typeScript" category='basic-ts' page='ts' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
                 {/* <Menu title="Фиксы некоторых ошибок" category='/' page='ts'  mobileMenu={true} setMobile={setMobile} mobileTrue={mobile}/> */}
             </>
         );
@@ -15,14 +15,14 @@ const MenuTs = ({ setMobile, mobile, sideBarMenuActive, mobileMenuActive }: mobi
     if (sideBarMenuActive === true) {
         return (
             <>
-                <Menu title="Основы typeScript" category='basicts' dropdown={true} page='ts' />
+                <Menu title="Основы typeScript" category='basic-ts' dropdown={true} page='ts' />
             </>
         );
 
     } else {
         return (
             <>
-                <Menu title=" Основы typeScript" category='basicts' page='ts' />
+                <Menu title=" Основы typeScript" category='basic-ts' page='ts' />
                 {/* <Menu title="Фиксы некоторых ошибок" category='/' page='ts' /> */}
             </>
         );
