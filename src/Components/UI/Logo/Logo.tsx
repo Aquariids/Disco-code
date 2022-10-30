@@ -8,6 +8,9 @@ import { logoProps } from './Logo.props';
 const logo = ({ path, src }: logoProps): JSX.Element => {
 
     const router = useRouter();
+
+
+ 
     if (router.pathname === path) {
         return (
             <AnimatePresence>
@@ -34,7 +37,7 @@ const logo = ({ path, src }: logoProps): JSX.Element => {
                 initial={{ x: -10, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
             >
-                <Link href={'/'}><img style={{ width: '48px', height:'48px', cursor: 'pointer', borderRadius: '15px' }} src={src} /></Link>
+                <Link href={'/'}><img  style={{ width: '48px', height:'48px', cursor: 'pointer', borderRadius: '15px' }} src={src} /></Link>
             </motion.div>
         </AnimatePresence>
         );

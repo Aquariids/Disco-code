@@ -8,7 +8,7 @@ const { footer } = s;
 const Footer = ({ className, ...props }: FooterProps): JSX.Element => {
     return (
         <footer className={cn(className, footer,)} {...props}>
-            <FooterMenu/>
+            <FooterMenu />
         </footer>
     );
 };

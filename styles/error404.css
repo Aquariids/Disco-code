@@ -1,5 +1,6 @@
 
 .error404 {
+	position: relative;
     position: relative;
 	display: grid;
 	justify-content: center;
@@ -12,20 +13,26 @@
 		
 		". body ."
 		
+
+		
 		
 
 
 }
 
+
 .body404 {
 	display: flex;
 	flex-direction: column;
 	grid-area: body;
+	
 }
+
+
 
 .error404 h1 {
     font-size: 50px;
-	margin-top: 100px;
+
 	margin-bottom: 0px;
 	}
 .error404 p {
@@ -48,4 +55,31 @@
     .error404 h1 {
         font-size: 30px;
     }
+}
+
+
+
+.erorr404btn {
+	bottom: 0;
+	width: 100vw;
+	min-height: 50px;
+	border: 1px solid black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	padding: 10px;
+	margin: 0 auto;
+	background-color: var(--basic_color);
+	
+}
+
+.erorr404btn button {
+	color: #fff;
+	padding: 0;
+}
+
+.erorr404btn button:hover {
+	color: #999;
+	
 }
