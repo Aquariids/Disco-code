@@ -11,15 +11,13 @@ const Sidebar = ({className, ...props}:SidebarProps):JSX.Element => {
     const r = router.asPath.split('/').length;
     
 
-    if(router.asPath === '/docs/sitedocument') { // этой части на сайте нет, это для документации сайта
+    if(router.asPath === '/docs/site-document') { // этой части на сайте нет, это для документации сайта
         return <div>
         <ul className={s.docs}>
         <h3 className={s.docsTitle}>Навигация</h3>
             <li>Api</li>
             <li>Pages</li>
-            <li>Layout</li>
-            <li>4</li>
-            <li>5</li>
+           
         </ul>
         </div>;
     }

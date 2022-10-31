@@ -10,17 +10,22 @@ import MenuNextJs from "../Menu/MenuNextJs/MenuNextJs";
 const SidebarMenu = ():JSX.Element => {
 
     useEffect(()=> {
+        
     const activeHeight:number | undefined = document.querySelector('.active_scroll')?.clientHeight;
-    
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const activeLink:Element | any = document.querySelector('.active_scroll') as HTMLElement;
     const heightTop:number = activeLink?.offsetTop + activeHeight;
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-explicit-any
-    const menuHeight:number = document.querySelector(`.${s.nav_menu}`)!.clientHeight - 89;
-        
+        if(activeLink != null && activeHeight != null) {
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-explicit-any
+            const menuHeight:number = document.querySelector(`.${s.nav_menu}`)!.clientHeight - 89;
 
-        document.querySelector(`.${s.nav_menu}`)?.scrollBy(0,  heightTop - menuHeight + 400  );
+            document.querySelector(`.${s.nav_menu}`)?.scrollBy(0,  heightTop - menuHeight + 400  );
+
+        } else {
+           alert('Технические неполадки с загрузкой сайдбара');
+        }
+   
 
   },[]);
 
@@ -58,7 +63,7 @@ const SidebarMenu = ():JSX.Element => {
         );
     }
 
-    if (router.pathname.startsWith('/nextjs')) {
+    if (router.pathname.startsWith('/next-js')) {
         return (
             <nav className={s.nav_menu}>
                 <MenuNextJs sideBarMenuActive={true} mobileMenuActive={false}/>
