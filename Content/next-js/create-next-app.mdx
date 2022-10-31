@@ -1,5 +1,5 @@
 ---
-title: 'Разворачиваем nextJs проект '
+title: 'Разворачиваем next.js проект и typescript '
 id: '0'
 category: 'basic-next-js'
 ---
@@ -7,17 +7,49 @@ category: 'basic-next-js'
 <div className='mdHead'>
 
 #### Теги
-<div className = 'tag_nextjs'>[](#)</div>
-<div className = 'mini_tag_nextjs'>[](#)</div>
+<div className = 'tag_main'>[Создание next.js проекта](#создание-nextjs-проекта)</div> <br/>
+<div className = 'tag_main'>[Подключаем typeScript к готовому проекту](#подключаем-typescript-к-готовому-проекту)</div> <br/>
+<div className = 'tag_main'>[Запуск проекта](#запуск-проекта)</div>
 
 </div>
 
 
 
-## Создание nextJs проекта
+## Создание next.js проекта
 Для создания проекта на `nextJs` используем команду - `npx create-next-app имя проекта --use-npm`.<br/>
 В моем случае название будет `test`.  Я буду использовать менеджер пакетов `npm` поэтому в конце пишем флаг `--use-npm`.
-
 ```
 npx create-next-app test --use-npm
 ```
+Так же если хотите сразу с typescript то пишем так:
+```
+npx create-next-app@latest --ts --use-npm
+```
+## Подключаем typeScript к готовому проекту
+Если у вас уже готовый проект, то установим `ts` отдельно.
+Сначала создаем файл `tsconfig.json`. Можно сразу через консоль для этого используем команду `touch`
+```
+touch tsconfig.json
+```
+Если вдруг выдает ошибку, то сначала установим для терминала этот глобальный пакет:
+```
+npm install touch-cli -g
+```
+Далее установим тайпы и сам `typescript`.
+```
+npm i -D typescript @types/react @types/node
+```
+Так как `next.js` в себе использует реакт, то устанавливаем тайпы для реакта и так же `next.js` для `server side rendering` использует `nodejs`,  поэтому установим и тайпы для `nodejs`. 
+
+## Запуск проекта
+Для запуска используем команду `run dev`
+```
+npm run dev
+```
+И увидим, что лайв сервер готов и что typescript тоже готов к работе.
+
+ <div className='container-img'> <span className="img"> ![console.log](/images/Content/next-js/npm_run_dev.png) </span></div>
+
+Так же не забудем переименовать файлы в папке `page` из `js` формата в `tsx`.
+
+ <div className='container-img'> <span className="img"> ![console.log](/images/Content/next-js/tsx.png) </span></div>
