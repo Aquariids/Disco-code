@@ -3,6 +3,6 @@ export interface mobileModalMenuProps {
     js?:'js',
     react?:'react';
     paradigms?:'paradigms'
-    nextJs?:'nextJs'
+    nextJs?:'next-js'
 }
 

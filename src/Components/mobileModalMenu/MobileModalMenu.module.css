@@ -4,7 +4,7 @@
 
 .modal {
 	margin-top:60px;
-	display: grid;
+	display: flex;
 	opacity: 0;
 	flex-direction: column;
 	visibility: hidden;

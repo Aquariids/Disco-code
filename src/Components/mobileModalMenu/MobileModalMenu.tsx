@@ -22,7 +22,7 @@ const mobileModalMenu = ({js,ts,react,paradigms,nextJs}:mobileModalMenuProps) =>
                 {ts === 'ts'? <MenuTs sideBarMenuActive={false} mobileMenuActive={true} setMobile={setMobile} mobile={mobile}/>:<></>}
                 {react === 'react'? <MenuReact sideBarMenuActive={false} mobileMenuActive={true} setMobile={setMobile} mobile={mobile}/>:<></>}
                 {paradigms === 'paradigms'? <MenuParadigms sideBarMenuActive={false} mobileMenuActive={true} setMobile={setMobile} mobile={mobile}/>:<></>}
-                {nextJs === 'nextJs'? <MenuNextJs sideBarMenuActive={false} mobileMenuActive={true} setMobile={setMobile} mobile={mobile}/>:<></>}
+                {nextJs === 'next-js'? <MenuNextJs sideBarMenuActive={false} mobileMenuActive={true} setMobile={setMobile} mobile={mobile}/>:<></>}
 
             </div>
 

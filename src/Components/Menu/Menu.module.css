@@ -298,6 +298,7 @@
 .mobile_list {
 	margin-left: 20px;
 	padding: 0;
+	display: grid;
 }
 
 .mobile_list li {
