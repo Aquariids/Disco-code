@@ -5,7 +5,6 @@ import SidebarMenu from '../../src/Components/SidebarMenu/SidebarMenu';
 import { useRouter } from 'next/router';
 import cn from 'classnames';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Sidebar = ({className, ...props}:SidebarProps):JSX.Element => {
     const router = useRouter(); 
     const r = router.asPath.split('/').length;
