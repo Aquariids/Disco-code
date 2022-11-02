@@ -3,7 +3,7 @@ import s from "./Articles.module.css";
 import Card from ".././Card/Card";
 import { articlesProps } from "./Articles.props";
 
-const Articles = ({category}:articlesProps) => {
+const Articles = ({category}:articlesProps):JSX.Element => {
 
   if(category === 'js') {
     
@@ -79,7 +79,9 @@ const Articles = ({category}:articlesProps) => {
       </>
     );
   } else {
-    <></>;
+    return (
+      <></>
+    );
   }
   
 };
