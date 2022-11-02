@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { withLayout } from "../layout/Layout";
 import React, { useRef } from "react";
-import Articles from "../src/Components/Articles";
+import Articles from "../src/Components/Articles/Articles";
 import s from "./index.module.css";
 import Head from "next/head";
 const Home: NextPage = (): JSX.Element => {
@@ -9,7 +9,7 @@ const Home: NextPage = (): JSX.Element => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const h2ref = useRef<number | any>(null);
 
-  const scrollToMyRef = () => {window.scrollTo(0, h2ref.current.clientHeight + h2ref.current.offsetTop  - h2ref.current.offsetHeight - 50  );};
+  const scrollToMyRef = () => {window.scrollTo(0, h2ref.current.clientHeight + h2ref.current.offsetTop  - h2ref.current.offsetHeight - 20 );};
 
 console.log(h2ref);
 
@@ -79,8 +79,8 @@ console.log(h2ref);
         <div className={s.text}>
           <div className={s.bgText}>
           <div className={s.title}>Всем привет</div>В данных мной материалах,
-          мои суждения и выводы могут быть ошибочны. Я лишь начинающий свой путь
-          в серости программирования маленький человек.
+          мои суждения и выводы могут быть ошибочны. Если вы где-то нашли ошибку или неточность, то буду рад вашим pull request запросам. 
+          Под каждой страницей есть ссылка на редактирование ее на github.
         </div>
         </div>
         </div>
@@ -92,7 +92,8 @@ console.log(h2ref);
     
 
       <div ref={h2ref} className={s.articles} >
-        <Articles   />
+        <Articles category="js"  />
+        <Articles category="other"  />
         </div>
 
         </div>

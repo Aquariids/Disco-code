@@ -1,10 +1,19 @@
-import AnimationContainerForCards from "./AnimationContainers/AnimationContainerForCards";
+import AnimationContainerForCards from ".././AnimationContainers/AnimationContainerForCards";
 import s from "./Articles.module.css";
-import Card from "./Card/Card";
-const Articles = () => {
+import Card from ".././Card/Card";
+import { articlesProps } from "./Articles.props";
 
+const Articles = ({category}:articlesProps) => {
+
+  if(category === 'js') {
+    
   return (
+    <>
+    <h3> JavaScript и технологии завязанные на нем</h3>
+    
     <div className={s.articles}>
+     
+
       <AnimationContainerForCards>
         <Card
           title={"JavaScript"}
@@ -39,22 +48,40 @@ const Articles = () => {
       </AnimationContainerForCards>
 
       <AnimationContainerForCards>
-        <Card
-          title={"Парадигмы программирования"}
-          text={
-            "Узнаем о том как люди пишут код и какие концепции используют для этого"
-          }
-          url={"/paradigms"}
-        />
-      </AnimationContainerForCards>
-
-      <AnimationContainerForCards>
 
         <Card title={"Next.js"} text={"Познакомимся с таким javaScript фреймворком как next.js. Узнаем, что это за рендеринг такой SSR и SSG и многое другое! "} color={"next"} url={"/next-js"} />
         
       </AnimationContainerForCards>
     </div>
+    </>
   );
+
+  }
+  if(category === 'other') {
+
+    return (
+      <>
+      <h3> Разное о программировании </h3>
+  
+      <div className={s.articles}>
+        <AnimationContainerForCards>
+          <Card
+            title={"Парадигмы программирования"}
+            text={
+              "Узнаем о том как люди пишут код и какие концепции используют для этого"
+            }
+            url={"/paradigms"}
+          />
+        </AnimationContainerForCards>
+  
+     
+      </div>
+      </>
+    );
+  } else {
+    <></>;
+  }
+  
 };
 
 export default Articles;
