@@ -9,7 +9,7 @@ const Articles = ({category}:articlesProps):JSX.Element => {
     
   return (
     <>
-    <h3> JavaScript и технологии завязанные на нем</h3>
+    <h3 className={s.articles_title}> JavaScript и технологии завязанные на нем</h3>
     
     <div className={s.articles}>
      
@@ -61,7 +61,7 @@ const Articles = ({category}:articlesProps):JSX.Element => {
 
     return (
       <>
-      <h3> Разное о программировании </h3>
+      <h3 className={s.articles_title}> Разное о программировании </h3>
   
       <div className={s.articles}>
         <AnimationContainerForCards>
