@@ -84,11 +84,11 @@ const PostPage: NextPage<never> = ({
               {post.meta.prev === "none" ? (
                 <span></span>
               ) : (
-                "Предыдущая страница"
+                "Предыдущая тема"
               )}
             </Link>
             <Link href={post.meta.next}>
-              {post.meta.next === "none" ? <span></span> : "Следующая страница"}
+              {post.meta.next === "none" ? <span></span> : "Следующая тема"}
             </Link>
           </div>
         </AnimationContainer>

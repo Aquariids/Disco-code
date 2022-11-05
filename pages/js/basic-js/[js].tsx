@@ -8,20 +8,15 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import Head from "next/head";
 import "highlight.js/styles/a11y-dark.css";
 import cn from "classnames";
-import {
-  getAllPosts,
-  getPostFromSlug,
-  getSlugs,
-  MDXPost,
-} from "../../api/api";
+import { getAllPosts, getPostFromSlug, getSlugs, MDXPost } from "../../api/api";
 import { POSTS_PATH_JS } from "../../api/paths";
 import Link from "next/link";
 import s from "../pageJs.module.css";
 import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
 
+const PostPage: NextPage<never> = ({ post }: MDXPost): JSX.Element => {
 
-
-const PostPage: NextPage<never> = ({ post,}: MDXPost): JSX.Element => {
+  
   return (
     <>
       <div className="page">
@@ -65,7 +60,6 @@ const PostPage: NextPage<never> = ({ post,}: MDXPost): JSX.Element => {
 
           <MDXRemote {...post.source} />
 
-
           <div className={cn(s.edit, "page_edit")}>
             <a
               target="_blank"
@@ -78,7 +72,7 @@ const PostPage: NextPage<never> = ({ post,}: MDXPost): JSX.Element => {
             <img
               style={{ width: "30px", paddingLeft: "5px" }}
               src="/edit.svg"
-            />   
+            />
           </div>
           {/* <div>
           <div>
@@ -95,15 +89,13 @@ const PostPage: NextPage<never> = ({ post,}: MDXPost): JSX.Element => {
               {post.meta.prev === "none" ? (
                 <span></span>
               ) : (
-                "Предыдущая страница"
+                "Предыдущая тема"
               )}
             </Link>
             <Link href={post.meta.next}>
-              {post.meta.next === "none" ? <span></span> : "Следующая страница"}
+              {post.meta.next === "none" ? <span></span> : "Следующая тема"}
             </Link>
-            
           </div>
-          
         </AnimationContainer>
       </div>
     </>
@@ -121,15 +113,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         rehypeSlug, // добавляет заголовку id ввиде самого заголовка
         [rehypeAutolinkHeadings, { behavior: "wrap" }], // внутрь заголовка добавляет тег а c id в виде имени заголовка
         rehypeHighlight,
-        
       ],
     },
-   
-  }
-  );
+  });
 
   const posts = getAllPosts(POSTS_PATH_JS).map((post) => post.meta);
-  return { props: { post: { source: mdxSource, meta }, posts },revalidate: 10 };
+  return {
+    props: { post: { source: mdxSource, meta }, posts },
+    revalidate: 10,
+  };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
