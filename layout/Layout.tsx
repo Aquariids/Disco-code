@@ -10,13 +10,15 @@ import cn from 'classnames';
 import { useRouter } from "next/router";
 import ListMobileMenu from "../src/Components/mobileModalMenu/ListMobileMenu/ListMobileMenu";
 const Layout = ({ children, }: LayoutProps): JSX.Element => {
-    const r = useRouter().asPath.split('/').length;
+    
+    const router = useRouter();
+    const r = router.asPath.split('/').length;
     
     return (
         <>
 
             <div className={cn(wrapper, {
-                ['wrapper2']: (r >= 3)
+                [s.wrapper2]: (r >= 3)
             })}>
                 <Header className={header} />
                 <Sidebar className={sidebar} />
