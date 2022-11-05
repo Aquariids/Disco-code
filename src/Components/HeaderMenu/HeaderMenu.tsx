@@ -23,8 +23,8 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
         if(router.asPath.startsWith('/react') ) {
             return <Logo path='/react' src='/logo/react_logo.svg' />;
         }
-        if(router.asPath.startsWith('/nextjs') ) {
-            return <Logo path='/nextjs' src='/logo/nextjs_logo.svg' />;
+        if(router.asPath.startsWith('/next-js') ) {
+            return <Logo path='/next-js' src='/logo/nextjs_logo.svg' />;
         }
         
          else {
