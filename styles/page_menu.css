@@ -1,6 +1,7 @@
 .page h2,h3,h4 {
 	padding-top: 16px;
 	margin-top: -16px;
+	margin-bottom: 16px;
 	color: rgba(36, 36, 36, 0.89);
 }
 
