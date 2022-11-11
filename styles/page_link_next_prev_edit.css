@@ -6,7 +6,7 @@
 }
 
 .page_footer a {
-	width: 190px;
+	max-width: 155px;
 }
 
 .a_none {

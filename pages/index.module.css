@@ -37,6 +37,7 @@
 .articles {
 	min-height: 100vh;
 	display: grid;
+	
 }
 
 
@@ -243,8 +244,9 @@ color: #000000;
 	}
 
 	.articles {
-		margin-top: 50px;
+		margin-top: 0px;
 		margin-bottom: 0px;
+		padding-top: 0px;
 	}
 
 	.bgText {
@@ -264,9 +266,14 @@ color: #000000;
 	}
 
 	.container {
-		grid-template-rows: 0.9fr;
+		grid-template-rows: 30%;
 	}
-	
+
+	.titlePage {
+		min-height: auto;
+	}
+
+
 }
 
 
