@@ -1,4 +1,3 @@
-import AnimationContainerForCards from ".././AnimationContainers/AnimationContainerForCards";
 import s from "./Articles.module.css";
 import Card from ".././Card/Card";
 import { articlesProps } from "./Articles.props";
@@ -12,9 +11,6 @@ const Articles = ({category}:articlesProps):JSX.Element => {
     <h3 className={s.articles_title}> JavaScript и технологии завязанные на нем</h3>
     
     <div className={s.articles}>
-     
-
-      <AnimationContainerForCards>
         <Card
           title={"JavaScript"}
           text={
@@ -23,9 +19,7 @@ const Articles = ({category}:articlesProps):JSX.Element => {
           color={"js"}
           url={"/js"}
         />
-      </AnimationContainerForCards>
 
-      <AnimationContainerForCards>
         <Card
           title={"React"}
           text={
@@ -34,9 +28,7 @@ const Articles = ({category}:articlesProps):JSX.Element => {
           color={"react"}
           url={"/react"}
         />
-      </AnimationContainerForCards>
 
-      <AnimationContainerForCards>
         <Card
           title={"TypeScript"}
           text={
@@ -45,13 +37,10 @@ const Articles = ({category}:articlesProps):JSX.Element => {
           color={"ts"}
           url={"/ts"}
         />
-      </AnimationContainerForCards>
 
-      <AnimationContainerForCards>
 
         <Card title={"Next.js"} text={"Познакомимся с таким javaScript фреймворком как next.js. Узнаем, что это за рендеринг такой SSR и SSG и многое другое! "} color={"next"} url={"/next-js"} />
         
-      </AnimationContainerForCards>
     </div>
     </>
   );
@@ -64,7 +53,6 @@ const Articles = ({category}:articlesProps):JSX.Element => {
       <h3 className={s.articles_title}> Разное о программировании </h3>
   
       <div className={s.articles}>
-        <AnimationContainerForCards>
           <Card
             title={"Парадигмы программирования"}
             text={
@@ -72,7 +60,6 @@ const Articles = ({category}:articlesProps):JSX.Element => {
             }
             url={"/paradigms"}
           />
-        </AnimationContainerForCards>
   
      
       </div>
