@@ -69,7 +69,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
         return(
             <div className={s.mobile_content} {...props}>
                 <div className={s.mobile_btn}>
-                <h4 className={s.titleMobile}
+                <h4 className={s.title_mobile}
                 >{title}</h4>
                 </div>
                 
@@ -113,11 +113,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                     {posts && posts.map((post,index) => (
                         <li 
                             key={index}
-                            className={cn( s.link,s.subCard,{
-                                [s.subCardJs]: pathname.startsWith('/js'),
-                                [s.subCardTs]: pathname.startsWith('/ts'),
-                                [s.subCardReact]: pathname.startsWith('/react'),
-                             
+                            className={cn( s.link,s.content_links,{
                                 [s.hide]: post.category !== category,
                             })} >
                                 {router.pathname.startsWith(`/${page}`)?<Link href={`/${page}/${post.category}/${post.slug}`}>{post.title}</Link>:''}
