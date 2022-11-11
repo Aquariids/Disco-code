@@ -21,6 +21,8 @@
 
 }
 
+
+
 .container {
 	display: grid;
 	justify-content: center;
@@ -41,7 +43,10 @@
 }
 
 
-
+.articles_title {
+	margin: 0;
+	padding: 0;
+}
 .btnScroll {
 	outline:none;	
 	margin: 0 auto;
@@ -250,7 +255,6 @@ color: #000000;
 	}
 
 	.bgText {
-		
 		margin-top: 10px;
 		border-radius: 5px;
 		padding: 5px;

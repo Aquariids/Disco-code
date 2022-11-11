@@ -12,6 +12,11 @@
 }
 
 .articles_title {
+	display: grid;
+	text-align: center;
+	align-items: center;
+	grid-template-columns: 1fr;
+	grid-template-rows: 100px;
 	margin: 0;
 	padding: 0;
 }
