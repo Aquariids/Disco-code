@@ -13,22 +13,22 @@ const MobileButton = ({ mobile, setMobile, ...props }: MobileButtonProps) => {
     }
     return (
         <button onTouchStart={mob}  {...props} className={s.btn}>
-            <div className={s.contentBtn}>
+            <div className={s.content_btn}>
                 <div className={s.svg}>
                     <div className={cn(s.arrows)}>
-                    <span className={cn(s.arrowTop, {
-                        [s.arrowTopTrue]: mobile === true,
-                        [s.arrowsJs]: router.pathname.startsWith('/js'),
-                        [s.arrowsReact]: router.pathname.startsWith('/react'),
-                        [s.arrowsTs]: router.pathname.startsWith('/ts'),
+                    <span className={cn(s.arrow_top, {
+                        [s.arrow_top_true]: mobile === true,
+                        [s.arrows_js]: router.pathname.startsWith('/js'),
+                        [s.arrows_react]: router.pathname.startsWith('/react'),
+                        [s.arrows_ts]: router.pathname.startsWith('/ts'),
 
 
                     })}><ArrowIcon /></span>
-                    <span className={cn(s.arrowDown, {
-                    [s.arrowDownTrue]: mobile === true,
-                    [s.arrowsJs]: router.pathname.startsWith('/js'),
-                    [s.arrowsReact]: router.pathname.startsWith('/react'),
-                    [s.arrowsTs]: router.pathname.startsWith('/ts'),
+                    <span className={cn(s.arrow_down, {
+                    [s.arrow_down_true]: mobile === true,
+                    [s.arrows_js]: router.pathname.startsWith('/js'),
+                    [s.arrows_react]: router.pathname.startsWith('/react'),
+                    [s.arrows_ts]: router.pathname.startsWith('/ts'),
 
 
                     })}><ArrowIcon /></span>

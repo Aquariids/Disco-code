@@ -16,7 +16,7 @@ const mobileModalMenu = ({js,ts,react,paradigms,nextJs}:mobileModalMenuProps) =>
         <>
             
             <div className={cn(s.modal, {
-                [s.modaltrue]: mobile === true
+                [s.modal_true]: mobile === true
             })}>
                 {js === 'js'? <MenuJs sideBarMenuActive={false} mobileMenuActive={true} setMobile={setMobile} mobile={mobile}/>:<></>}
                 {ts === 'ts'? <MenuTs sideBarMenuActive={false} mobileMenuActive={true} setMobile={setMobile} mobile={mobile}/>:<></>}
