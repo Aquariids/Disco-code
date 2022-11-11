@@ -39,20 +39,10 @@
 pre {
 	font-size: 14px;
 	
-	
-	
 
 }
 
 
-<<<<<<< HEAD
-.hljs .language-html {
-	padding: 30px;
-
-}
-
-=======
->>>>>>> 172495ec4c57310166713350dcca36d9161436cc
 code {
 	border-radius: 10px;
 }
@@ -72,8 +62,8 @@ code {
 	}
 	
 	.mdHead {
-		padding-right: 30px;
-		padding-left: 30px;
+		padding-right: 14px;
+		padding-left: 14px;
 		margin-left: calc(-50vw + 50%);
 		width: 100vw;
 		background-color: #20232A;
@@ -100,8 +90,8 @@ code {
 	.mdTitle {
 		margin-top: 0px;
 		padding-top: 30px;
-		padding-left: 30px;
-		padding-right: 30px;
+		padding-left: 14px;
+		padding-right: 14px;
 		margin-left: calc(-50vw + 50%);
 		width: 100vw;
 		color: #fff;
