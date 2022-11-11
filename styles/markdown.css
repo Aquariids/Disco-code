@@ -40,10 +40,16 @@ pre {
 	font-size: 14px;
 }
 
+
+.hljs .language-html {
+	padding: 30px;
+
+}
+
 code {
-	
 	border-radius: 10px;
 }
+
 
 
 
@@ -51,10 +57,13 @@ code {
 	code {
 		border-radius: 0px;
 	}
+	
+	
 	pre {
 		margin-left: calc(-50vw + 50%);
 		width: 100vw;
 	}
+	
 	.mdHead {
 		padding-right: 30px;
 		padding-left: 30px;
