@@ -11,7 +11,6 @@ const Home: NextPage = (): JSX.Element => {
 
   const scrollToMyRef = () => {window.scrollTo(0, h2ref.current.clientHeight + h2ref.current.offsetTop  - h2ref.current.offsetHeight - 20 );};
 
-console.log(h2ref);
 
 
   return (

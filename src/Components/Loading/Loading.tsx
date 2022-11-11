@@ -30,7 +30,7 @@ export  function Loading(): any {
 
     return loading && (
         <>
-            <span className={cn(s.loader,s.fadeInTop)}> </span>
+            <span className={cn(s.loader,s.fade)}> </span>
         </>
 
     );
