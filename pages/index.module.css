@@ -32,6 +32,7 @@
 
 
 .titlePage {
+
 	min-height: 100vh;
 	
 }
@@ -117,6 +118,7 @@ color: #000000;
 .allText {
 	display: grid;
 	grid-template-columns:  1fr 1fr;
+
 	
 }
 
@@ -125,11 +127,11 @@ color: #000000;
 
 .menu {
 	grid-template-rows: 1fr;
-	padding-bottom: 20px;
 	min-height: 55vh;
 	display: grid;
 	justify-content: center;
 	align-items: center;
+	margin-top: -15px;
 	
 }
 
@@ -144,7 +146,6 @@ color: #000000;
 
 
 	.articles {
-		padding-top: 25px;
 		padding-bottom: 50px;
 	}
 	
@@ -172,7 +173,6 @@ color: #000000;
 		margin-bottom: 10px;
 	}
 	.articles {
-		padding-top: 50px;
 		padding-bottom: 10px;
 	}
 
@@ -245,7 +245,6 @@ color: #000000;
 @media (max-width:785px) {
 	.text {
 		font-size: 16px;
-
 	}
 
 	.articles {
@@ -255,6 +254,7 @@ color: #000000;
 	}
 
 	.bgText {
+
 		margin-top: 10px;
 		border-radius: 5px;
 		padding: 5px;
@@ -297,12 +297,7 @@ color: #000000;
 }
 
 
-@media (max-width:400px) {
-	.titlePage {
-		margin-bottom: 185px;
-	}
-	
-}
+
 
 @media (max-width:320px) {
 	.body h1 {
