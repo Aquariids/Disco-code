@@ -1,5 +1,4 @@
 .articles {
-	margin-top: 65px;
 	display: grid;
 	justify-content: center;
 	gap: 30px;
@@ -8,7 +7,6 @@
 	margin-bottom: 50px;
 	max-height: 50%;
 
-	
 }
 
 .articles_title {
@@ -16,7 +14,7 @@
 	text-align: center;
 	align-items: center;
 	grid-template-columns: 1fr;
-	grid-template-rows: 100px;
+	grid-template-rows: 150px;
 	margin: 0;
 	padding: 0;
 }
