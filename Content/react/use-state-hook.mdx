@@ -9,10 +9,8 @@ category: 'basic-react'
 
 #### Теги
 <div className = 'tag_react'>[Про state и hook](#про-state-и-hook)</div><br/>
-<div className = 'tag_react'>[useState:](#usestate)</div>
-<div className = 'mini_tag_react'>[приложение счечтик](#приложение-счетчик)</div><br/>
+<div className = 'tag_react'>[useState:](#usestate)</div><br/>
 <div className = 'tag_react'>[Управляемый компонент:](#управляемый-компонент)</div>
-<div className = 'mini_tag_react'>[приложение управляемый компонент](#приложение-управляемый-компонент)</div>
 
 </div>
 
@@ -60,9 +58,8 @@ const Counter = () => { // создаем наш компонент
 export default Counter;
 
 ```
-В итоге мы имеем состояние с именем`(name)` и состояние с числом`(likes)` которое будет изменяться при клике. Начальное состояние имени у нас `dima`, при клике меняем на `Lox`.
+В итоге мы имеем состояние с именем`(name)` и состояние с числом`(likes)` которое будет изменяться при клике. Начальное состояние имени у нас `dima`, при клике меняем на `pepe`.
 Начальное состояние `likes` у нас `0` и мы сделали две функции для изменения этого состояния на `+1` и `-1`.
-### Приложение счетчик
 
 <div className="container-app">
 <iframe className="content-app-react" src="https://disco-code-app.vercel.app/Counter" ></iframe>
@@ -114,27 +111,14 @@ const Input = () => {
 
 export default Input;
 ```
-Разберем `input`.
-```jsx
-{ // Скобки здесь лишь для нормального отображения кода
-<div className={s.input}>
-        <p>{`${name}: ${value}`}</p>
-            
-    <input 
-        type = 'text'
-        onChange = {event => setValue(event.target.value)}
-        value = {value}>
-    </input> 
-</div>
-}
-```
+Разберем `input`.<br/>
 В теге `<p>` Мы будем отображать содержимое
 ```jsx
 {<p>{`${name}: ${value}`}</p>}
 ```
 Далее мы создаем `input`. Здесь мы меняем инпут на то, что ввели в него и помещаем это в `state`. Стейт меняет и помещает все в `value` и после мы его отображаем.
 ```jsx
-{
+{ // Скобки здесь лишь для нормального отображения кода
 <input 
     type = 'text'
     onChange = {event => setValue(event.target.value)}
@@ -143,7 +127,6 @@ export default Input;
 } 
 ```
 Сам способ называется двухсторонним связыванием. Мы связязали значение внутри инпута с состоянием. Подобные компоненты называются управляемыми, так как мы можем изменить значение компонента изменив состояние.
-### Приложение управляемый компонент
 
 <div className="container-app">
 <iframe className="content-app-react" src="https://disco-code-app.vercel.app/Input" > </iframe>
