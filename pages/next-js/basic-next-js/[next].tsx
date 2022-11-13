@@ -70,7 +70,7 @@ const PostPage: NextPage<never> = ({ post,}: MDXPost): JSX.Element => {
             <a
               target="_blank"
               rel="noopener"
-              href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/${post.meta.slug}.mdx`}
+              href={`https://github.com/Aquariids/Disco-code/blob/main/Content/next-js/${post.meta.slug}.mdx`}
             >
               {" "}
               Отредактировать эту страницу
