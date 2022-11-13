@@ -6,11 +6,13 @@ category: 'basic-react'
 ---
 
 <div className='mdHead'>
-  
+
 #### Теги
 <div className = 'tag_react'>[Про state и hook](#про-state-и-hook)</div><br/>
-<div className = 'tag_react'>[useState](#usestate)</div><br/>
-<div className = 'tag_react'>[Управляемый компонент](#управляемый-компонент)</div>
+<div className = 'tag_react'>[useState:](#usestate)</div>
+<div className = 'mini_tag_react'>[приложение счечтик](#приложение-счетчик)</div><br/>
+<div className = 'tag_react'>[Управляемый компонент:](#управляемый-компонент)</div>
+<div className = 'mini_tag_react'>[приложение управляемый компонент](#приложение-управляемый-компонент)</div>
 
 </div>
 
@@ -23,15 +25,14 @@ category: 'basic-react'
 Для изменения переменной состояния у нас есть функция которая находится в `useState`.
 ```javaScript
 import React,{useState} from "react"; // импортируем функцию useState и сам React
-import s from './UseState.module.scss';
-const UseState = () => { // создаем наш компонент
+const Counter = () => { // создаем наш компонент
         // useState принимает в себя наше значение с которым мы будем работать и функцию, которая это значение будет менять.
         // (Если в консоли посмотреть на внутренности useState, то увидим массив из двух элементов. Первый - значение, а второй - функция)
     const [name,setName] = useState('dima');  // Так как мы знаем что useState возвращает массив из двух объектов, мы можем использовать деструктуризацию этого массива. 
  
     
     const click = () => { // создаем свою функцию которая будет использовать функцию из useState,
-        setName('Lox'); // меняем значение внутри useState на 'Lox'
+        setName('pepe'); // меняем значение внутри useState на 'Lox'
     }
     
     const  [likes,setLikes] = useState(0) // Тут тоже самое только с числами. Мы сделаем счетчик
@@ -43,8 +44,8 @@ const UseState = () => { // создаем наш компонент
         setLikes(likes -1); // тут на -1
     }
     return(
-        <div className={s.useState}>
-        <h2>Просто страничка</h2>
+        <div>
+        <h2>Счетчик</h2>
         <p>{name}</p>
         <p>{likes}</p>
 
@@ -56,18 +57,23 @@ const UseState = () => { // создаем наш компонент
     
 }
 
-export default UseState
+export default Counter;
 
 ```
 В итоге мы имеем состояние с именем`(name)` и состояние с числом`(likes)` которое будет изменяться при клике. Начальное состояние имени у нас `dima`, при клике меняем на `Lox`.
 Начальное состояние `likes` у нас `0` и мы сделали две функции для изменения этого состояния на `+1` и `-1`.
+### Приложение счетчик
+
+<div className="container-app">
+<iframe className="content-app-react" src="https://disco-code-app.vercel.app/Counter" ></iframe>
+</div>
+
+
 ## Управляемый компонент
 Управляемый компонент - это когда мы обновляем `state` и он сразу обновляет нам `UI` то есть наш компонент, то что мы видим. Они синхронизированны по сути.
 ```jsx
-
 import React,{useState} from "react";
-import s from './UseState.module.scss';
-const UseState = () => {
+const Input = () => {
 
    const [name,setName] = useState('Dima');
    const [value,setValue] = useState(''); // задаем стейт пустой строкой для инпута.
@@ -84,23 +90,21 @@ const UseState = () => {
     }
 
     return(
-        <div className={s.useState}>
-        <h2>Просто страничка</h2>
-        <div className={s.changeName}>
-        <p>{name}</p>
-        <button onClick={click}>{contentButton()}</button>
-        </div>
+        <div>
+            <div>
+                <h2>Управляемый компонент</h2>
+                <button onClick={click}>{contentButton()}</button>
+                </div>
         
-        <div className={s.input}>
-            <p>{`${name}: ${value}`}</p>
-            
-        <input 
-            type= 'text'
-            onChange={event => setValue(event.target.value)}
-            value={value}>
-        </input> 
+                <div>
+                    <p>{`${name}: ${value}`}</p>
+                <input 
+                    type= 'text'
+                    onChange={event => setValue(event.target.value)}
+                    value={value}>
+                </input> 
 
-        </div>
+            </div>
         
         </div>
     )
@@ -108,7 +112,7 @@ const UseState = () => {
 }
 
 
-export default UseState
+export default Input;
 ```
 Разберем `input`.
 ```jsx
@@ -139,3 +143,8 @@ export default UseState
 } 
 ```
 Сам способ называется двухсторонним связыванием. Мы связязали значение внутри инпута с состоянием. Подобные компоненты называются управляемыми, так как мы можем изменить значение компонента изменив состояние.
+### Приложение управляемый компонент
+
+<div className="container-app">
+<iframe className="content-app-react" src="https://disco-code-app.vercel.app/Input" > </iframe>
+</div>
