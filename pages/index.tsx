@@ -1,15 +1,15 @@
 import type { NextPage } from "next";
 import { withLayout } from "../layout/Layout";
-import React, { useRef } from "react";
+import React, {useRef } from "react";
 import Articles from "../src/Components/Articles/Articles";
 import s from "./index.module.css";
 import Head from "next/head";
 const Home: NextPage = (): JSX.Element => {
-
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const h2ref = useRef<number | any>(null);
 
   const scrollToMyRef = () => {window.scrollTo(0, h2ref.current.clientHeight + h2ref.current.offsetTop  - h2ref.current.offsetHeight + 55 );};
+
 
 
 
