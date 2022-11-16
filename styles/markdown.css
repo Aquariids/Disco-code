@@ -57,6 +57,12 @@
 	width: 320px;
 }
 
+.content-app-slider-js {
+	width: 700px;
+	height: 550px;
+	border:none;
+	
+}
 
 pre {
 	font-size: 14px;

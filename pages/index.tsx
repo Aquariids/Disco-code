@@ -28,14 +28,10 @@ const Home: NextPage = (): JSX.Element => {
           name="description"
           content="Здесь вы можете найти статьи на  разные темы по javaScript, typeScript, reactjs, nextjs"
         />
-        <meta
-          property="og:title"
-          content="Добро пожаловать в серость под диско. Документация на понятном языке.  "
-        />
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="DiscoCode - Пишем о javaScript и разных технологиях в программировании"
+          content="DiscoCode - Пишу о javaScript и разных технологиях в программировании"
         />
         <meta
           property="og:description"
