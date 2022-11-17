@@ -16,7 +16,7 @@
 	background-image: url(/index.svg);
 	
 	background-repeat: no-repeat;
-	background-size: 23%;
+	background-size: 23.3%;
 	background-position: bottom right;
 
 }
@@ -185,25 +185,6 @@ color: #000000;
 	
 }
 
-@media (max-width:1250px) {
-
-	.index_meta_content {
-		background-size: 35%;
-		
-
-	}
-	
-}
-
-@media (max-width:1100px) {
-
-	.index_meta_content {
-		background-position-x: 105%;
-		
-
-	}
-	
-}
 
 @media (max-width:1000px) {
 	
