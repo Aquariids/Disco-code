@@ -9,7 +9,7 @@ const MenuJs = ({ setMobile, mobile, mobileMenuActive, sideBarMenuActive }: mobi
                 <Menu title="Базовый JavaScript" category='basic-js' page='js' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
                 <Menu title="Продвинутый JavaScript" category='advanced-js' page='js' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
                 <Menu title="Алгоритмы" category='algorithms-js' page='js' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
-                <Menu title="Практика и webpack" category='practice-js' page='js' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
+                <Menu title="Практика & Webpack" category='practice-js' page='js' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
                 {/* <Menu title="Простенькие задачи" category='.' page='js' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} /> */}
             </>
         );
@@ -19,7 +19,7 @@ const MenuJs = ({ setMobile, mobile, mobileMenuActive, sideBarMenuActive }: mobi
                 <Menu title="Базовый JavaScript" category='basic-js' dropdown={true} page='js' />
                 <Menu title="Продвинутый JavaScript" category='advanced-js' dropdown={true} page='js' />
                 <Menu title="Алгоритмы" category='algorithms-js' dropdown={true} page='js' />
-                <Menu title="Практика и webpack" category='practice-js' dropdown={true} page='js' />
+                <Menu title="Практика & Webpack" category='practice-js' dropdown={true} page='js' />
 
 
             </>
@@ -30,7 +30,7 @@ const MenuJs = ({ setMobile, mobile, mobileMenuActive, sideBarMenuActive }: mobi
                 <Menu title="Базовый JavaScript" category='basic-js' page='js' />
                 <Menu title="Продвинутый JavaScript" category='advanced-js' page='js' />
                 <Menu title="Алгоритмы" category='algorithms-js' page='js' />
-                <Menu title="Практика и webpack" category='practice-js' page='js' />
+                <Menu title="Практика & Webpack" category='practice-js' page='js' />
 
                 {/* <Menu title="Простенькие задачи" category='/' page='js' /> */}
 
