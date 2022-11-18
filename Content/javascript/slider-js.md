@@ -5,9 +5,9 @@ category: 'practice-js'
 ---
 
 
-Здесь мы будем работать с `dom` элементами, напишем регулярное выражение используем `webpack`, будем работать с `css` через `js`
+Здесь мы будем практиковаться с работой с элементами `DOM`, напишем регулярное выражение, используем `webpack`, будем работать с `css` через `js`.
 ## html
-У нас будет 4 слайда, вы можете выбрать любые удобные вам картинки, у меня будет гурочка.
+Вы можете выбрать любое удобноем вам количество слайдеров и картинки, у меня будет гурочка и 4 слайда.
 ```html
 <DOCTYPE html>
     <html lang="en">
@@ -57,12 +57,12 @@ category: 'practice-js'
     </html>
 ```
 ## webpack и npm
-Инициализируем `npm`, называем и описываем проект. После устанавливаем `webpack` и пакеты для него.
+Инициализируем `npm`, называем и описываем проект. После, устанавливаем `webpack` и пакеты для него.
 ```javaScript
 npm init // создаем проект
 npm i webpack webpack-cli -D // устанавливаем webpack
 ```
-Устанавливаем лоадеры и плагин. О них мы говорили в теме про <span className = 'link_js'> [webpack](/js/practice-js/webpack) </span>
+Устанавливаем лоадеры и плагины. О них мы говорили в теме про <span className = 'link_js'> [webpack](/js/practice-js/webpack) </span>
 ```javaScript
 npm install --save-dev css-loader // для css
 
@@ -123,10 +123,10 @@ module.exports = {
 
 <div className='container-img'> <span className="img"> ![project slider](/images/Content/Js/project_slider.png) </span></div>
 
-### style.scss
+### Смотрим на style.scss
 ```scss
 .slider {
-    width: 650px; 
+    width: 650px; // весь слайдер в 650px - под эту ширину мы будем подгонять каждый слайдер,но об этом в js коде
     margin-top: 50px;
     display: flex;
     flex-direction: column;
@@ -139,7 +139,7 @@ module.exports = {
         color: rgba(0,0,0, .5);
     }
     &-wrapper {
-        width: 100%;
+        width: 100%; // обертка будет принимать ширину родителя .slider
         margin-top: 15px;
         box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
     }
@@ -161,11 +161,11 @@ module.exports = {
         color: rgba(0,0,0,1);
     }
 }
-.slide {
+.slide { // так же и каждый слайд будет принимать ту же ширину
     width: 100%;
     height: 390px;
-    img {
-        width: 100%;
+    img { 
+        width: 100%; // картинки тоже
         height: 100%;
         object-fit: cover;
     }
@@ -209,7 +209,7 @@ module.exports = {
 ```javaScript
 
 // создаем главную функцию(модуль) slider
-// эта функция будет принимать в себя все состовляющие слайдера и вызывать мы будем ее в index.js
+// эта функция будет принимать в себя все составляющие слайдера и вызывать мы будем ее в index.js
 function slider({ container, slide, nextArrow, prevArrow, totalCounter, currentCounter, wrapper, field }) {
     const slides = document.querySelectorAll(slide), // каждый слайд - '.slide'
         slider = document.querySelector(container), // весь слайдер - '.slider'
@@ -221,32 +221,120 @@ function slider({ container, slide, nextArrow, prevArrow, totalCounter, currentC
         current = document.querySelector(currentCounter), // текущий слайдер - '#current'
         width = window.getComputedStyle(slidesWrapper).width; // ширина нашего блока со слайдерами, нужно это будет для того, что бы подгонять слайды под эту ширину, '.slider-wrapper' у нас имеет ширину 100% идет эта ширина с родителя '.slider'
         // getComputedStyle() - позволяет нам получить css свойсвта элемента
+        // То есть в переменной width сейчас 650px(в моем случае 649 с копейками, далее мы с этим разберемся)
     let slideIndex = 1; // индекс каждого слайдера
-    let offset = 0; // поле которое мы будем смещать, для смещения слайдеров влево или право
+    let offset = 0; // отступ, для работы с translateX, об этом ниже
 
 }
 
 
 export default slider; // экспортируем наш слайдер
 ```
-### работаем со slidesField
-Поле `slidesField` нужно для того, что бы в нем выставить горизонтально наши слайды
+### работаем со slidesField и slidesWrapper
+Поле `slidesField` нужно для того, что бы в нем выставить горизонтально наши слайды и ширина его должна быть равна всем слайдам внутри.
 ```javaScript
-    slidesField.style.width = `${100 * slides.length }%`; // мы умножаем 100 на кол слайдеров и получаем в нашем случае 400%
+    slidesField.style.width = `${100 * slides.length }%`; // мы умножаем 100 на кол слайдеров и получаем в нашем случае 400%, так как 4 слайдера
     slidesField.style.display = 'flex'; // потом мы выставляем поле горизонтально, с помощью flex
-    slidesField.style.transition = '0.5s all'; // ну транзишен для красоты при переключении
+    slidesField.style.transition = '0.5s all'; // ну транзишен для плавности при передвижении
 
      slides.forEach(slide => { // далее установим каждому слайду одинаковую ширину
         slide.style.width = width; // та самашя ширина которую мы получали с помощью getComputedStyle()
         });
 ```
-В итоге мы получим блок в котором видно будет все наши слайды горизонтально, ширина блока будет зависить от кол слайдеров.
+В итоге мы получим блок в котором видно будет все наши слайды горизонтально, ширина блока будет зависить от кол слайдеров и от ширины которую мы зададим самому слайдеру в нашем случае `650px`.
+
+<div className='container-img'> <span className="img"> ![project slider](/images/Content/Js/not-hidden-slider.png) </span></div>
+
 Теперь нам нужно сделать так, что бы эти слайды были скрыты границами блока `slidesWrapper`.
 ```javaScript
     slidesWrapper.style.overflow = 'hidden'; // так наши слайды не будут выходить за пределы  slidesWrapper
     // ширина slidesWrapper - у нас зависит от самого слайдера, и самим слайдам мы задали ту же самую шиирну
     // поэтому slide будет занимать всю ширину slidesWrapper, остальные слайды при этом будут скрыты из за overflow = 'hidden'
 ```
+Вот и все, теперь мы видим первый слайд, а остальные скрыты.
+
+<div className='container-img'> <span className="img"> ![project slider](/images/Content/Js/hidden-slider.png) </span></div>
+
+### Реализцуем функцию deleteNotDigits
+Для прокрутки нам нужно будет работать с переменной `width` - в ней у нас хранится наша ширина из css свойтва, число там будет ввиде текста и припиской `px`, так же может быть с точкой `649.986px` - в моем случае так.
+Поэтому пишем функцию которая будет убирать все, кроме цифр и точек, округлять и приводить тип к числу.
+```javaScript
+    function deleteNotDigits(str) {
+        return Math.round(str.replace(/[^.\d]/g, '')); 
+        // Math.round для округления и преобразования в число
+        // далее мы убираем с помощью replace все кроме точек и чисел
+        // с помощью ^ мы говорим `все кроме`
+        // далее идет точка, значит кроме точек
+        // а далее идет класс \d - значит ищем только числа
+        // получается мы убираем все кроме . и чисел которые нашли с помощью класса \d
+    }
+```
+### Реализуем функцию addedZeroSlides
+Теперь оживим наш `total`, что бы мы видели на каком слайде находимся
+```javaScript
+
+function addedZeroSlides() {
+        if (slides.length < 10) { // если меньше 10 слайдов, то показыаем так 05 04 03 06 07
+            total.textContent = `0${slides.length}`; // тут общее кол
+            current.textContent = `0${slideIndex}`; // тут текущий слайд
+        } else { // иначе убираем 0 и будет уже 10 11 12 14 и тд
+            total.textContent = `${slides.length}`;
+            current.textContent = `${slideIndex}`; // тут текущий слайд
+        }
+    }
+
+        addedZeroSlides();
+
+
+```
+### Реализуем прокрутку слайдов (translateX)
+Теперь сделаем переключение слайда вперед:
+```javaScript
+    next.addEventListener('click', () => { // создаем событие при клике на стрелочку вправо
+        // если мы на последнем слайде, то обнуляем offset
+        if (offset == deleteNotDigits(width) * (slides.length - 1)) { 
+            offset = 0; // когда offset = 0 это значит мы на первом слайде
+        } else {
+            offset += deleteNotDigits(width); // если мы не на последнем слайде, то прибовляем ширину в offset
+            // 1 слайд offset = 0
+            // 2 - слайд offset = 650
+            // 3 - слайд offset = 1300
+            // 4 - слайд offset = 1950
+            // width(650) * slides.length - 1 = 1950 - Значит мы на посл слайде, поэтому и обнуляем offset и возвращаемся на первый слайд
+        }
+        slidesField.style.transform = `translateX(-${offset}px)`; // translateX будет сдвигать наше поле со слайдами, внутрь принимает наш offset
+        //  не забываем, что у translateX offset стоит с минусом -offset, при таком варианта, мы сдвигаем слайды влево
+        // мы сдвинули первый слайд влево на 650px, что произойдет? вылезет слайд который был справа, вот так и работают слайдеры
+        if (slideIndex == slides.length) { // если индекс равен кол сдлайдев
+            slideIndex = 1; // то возвращаемся к первому слайду
+        } else {
+            slideIndex++; // иначе прибавляем пока индекс не будет равен кол слайдов
+        }
+         addedZeroSlides();
+    });
+```
+Теперь сделаем прокрутку влево, назад. Тут будет все тоже самое, но наоборот:
+```javaScript
+    prev.addEventListener('click', () => {
+        if (offset == 0) { // если offset равен нулю, это значит при прокрутке налево, мы должны получить посл слайдер
+            offset = deleteNotDigits(width) * (slides.length - 1); // его и получаем offset = 1950
+        } else { // теперь не прибавляем, а отнимаем 
+            offset -= deleteNotDigits(width);
+            // мы на 4 слайде offset = 1950, отнимаем 650 и попадаем на 3 слайд и так далее, до 0
+        }
+        slidesField.style.transform = `translateX(-${offset}px)`; // все тоже самое
+
+        if (slideIndex == 1) { // и тут если мы на первом слайде
+            slideIndex = slides.length; // при нажатии налево мы окажемся на посл слайде
+        } else {
+            slideIndex--; // иначе отнимаем по одному пока не будет на первом
+        }
+         addedZeroSlides();
+    });
+```
+### Точки для слайдера
+Теперь в середину внизу добавим прозрачные точки, которые тоже будут указывать на каком мы слайде, так же мы сможем переключать слайды с помощью них.
+Например сразу на последний слайд, что бы не кликать на стрелку три раза.
 
 
 <div className="container-app">
