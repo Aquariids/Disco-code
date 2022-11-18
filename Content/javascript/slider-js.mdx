@@ -2,10 +2,41 @@
 title: 'Пишем классический слайдер'
 id: 1
 category: 'practice-js'
+prev: '/js/practice-js/webpack'
 ---
 
 
-Здесь мы будем практиковаться с работой с элементами `DOM`, напишем регулярное выражение, используем `webpack`, будем работать с `css` через `js`.
+<div className = 'mdHead'>
+
+#### Теги
+
+<div className = 'tag_js'>[html](#html)</div><br/>
+<div className = 'tag_js'>[Webpack & npm:](#webpack--npm)</div>
+<div className = 'mini_tag_js'>[webpack.config.js](#webpackconfigjs)</div><br/>
+<div className = 'tag_js'>[Весь каталог проекта:](#весь-каталог-проекта)</div>
+<div className = 'mini_tag_js'>[смотрим на style.scss](#смотрим-на-stylescss)</div><br/>
+<div className = 'tag_js'>[Пишем слайдер](#пишем-слайдер)</div>
+<div className = 'mini_tag_js'>[получаем элементы,](#получаем-элементы)</div>
+<div className = 'mini_tag_js'>[работаем с slidesField и slidesWrapper,](#работаем-с-slidesfield-и-slideswrapper)</div>
+<div className = 'mini_tag_js'>[реализцуем функцию deleteNotDigits,](#реализцуем-функцию-deletenotdigits)</div>
+<div className = 'mini_tag_js'>[реализуем функцию addedZeroSlides,](#реализуем-функцию-addedzeroslides)</div>
+<div className = 'mini_tag_js'>[реализуем прокрутку слайдов (translateX),](#реализуем-прокрутку-слайдов-translatex)</div>
+<div className = 'mini_tag_js'>[переключатели ввиде точек для слайдера.](#переключатели-ввиде-точек-для-слайдера)</div><br/>
+<div className = 'tag_js'>[Весь код без комментариев](#весь-код-без-комментариев)</div><br/>
+<div className = 'tag_js'>[Файл index.js](#файл-indexjs)</div><br/>
+<div className = 'tag_js'>[Готовый слайдер](#готовый-слайдер)</div><br/>
+
+
+
+
+
+
+
+
+</div>
+
+
+Здесь мы будем практиковаться с работой с элементами `DOM`, напишем регулярное выражение, используем `webpack`, будем работать с `css` через `js`. Сначала рекомендую перейти к коду без комментариев в конце и попробовать разобарться, что там происходит, потом уже смотреть мои объяснения.
 ## html
 Вы можете выбрать любое удобноем вам количество слайдеров и картинки, у меня будет гурочка и 4 слайда.
 ```html
@@ -56,7 +87,7 @@ category: 'practice-js'
 
     </html>
 ```
-## webpack и npm
+## Webpack & npm
 Инициализируем `npm`, называем и описываем проект. После, устанавливаем `webpack` и пакеты для него.
 ```javaScript
 npm init // создаем проект
@@ -203,7 +234,7 @@ module.exports = {
     }
 ```
 
-## Пишем слайдер slider.js
+## Пишем слайдер
 Начнем с главного модуля `slider.js`
 ### Получаем элементы 
 ```javaScript
@@ -230,7 +261,7 @@ function slider({ container, slide, nextArrow, prevArrow, totalCounter, currentC
 
 export default slider; // экспортируем наш слайдер
 ```
-### работаем со slidesField и slidesWrapper
+### Работаем с slidesField и slidesWrapper
 Поле `slidesField` нужно для того, что бы в нем выставить горизонтально наши слайды и ширина его должна быть равна всем слайдам внутри.
 ```javaScript
     slidesField.style.width = `${100 * slides.length }%`; // мы умножаем 100 на кол слайдеров и получаем в нашем случае 400%, так как 4 слайдера
@@ -285,7 +316,6 @@ function addedZeroSlides() {
 
         addedZeroSlides();
 
-
 ```
 ### Реализуем прокрутку слайдов (translateX)
 Теперь сделаем переключение слайда вперед:
@@ -311,6 +341,7 @@ function addedZeroSlides() {
             slideIndex++; // иначе прибавляем пока индекс не будет равен кол слайдов
         }
          addedZeroSlides();
+         currentDotSlides(); // об этом чутка дальше
     });
 ```
 Теперь сделаем прокрутку влево, назад. Тут будет все тоже самое, но наоборот:
@@ -330,12 +361,201 @@ function addedZeroSlides() {
             slideIndex--; // иначе отнимаем по одному пока не будет на первом
         }
          addedZeroSlides();
+         currentDotSlides();
     });
 ```
-### Точки для слайдера
+### Переключатели ввиде точек для слайдера
+
 Теперь в середину внизу добавим прозрачные точки, которые тоже будут указывать на каком мы слайде, так же мы сможем переключать слайды с помощью них.
 Например сразу на последний слайд, что бы не кликать на стрелку три раза.
+```javaScript
+//  установим для слайдера позицию relative
+// это нужно, что бы наши точки сдлеать абсолютными по отношению к слайдеру
+    slider.style.position = 'relative'; 
+```
+Теперь сделаем сами точки:
+```javaScript
+const indicators = document.createElement('ol'), // создаем список
+        dots = []; // пустой массив 
+    indicators.classList.add('carousel-indicators'); // добавим класс к нашему списку
+    slider.append(indicators); // добавляем список в слайдер
 
+    for (let i = 0; i < slides.length; i++) { 
+     const dot = document.createElement('li'); // создаем столько точек, сколько есть слайдеров
+     dot.setAttribute('data-slide-to', i + 1); // устанавливаем атрибут, так мы свяжем слайды и наши точки
+     dot.classList.add('dot') // добавляем класс для стилизации, в style.scss можете глянуть, что класс делает
+     if (i == 0) {
+         dot.style.opacity = 1; // у наших точек opacity 0.5, ставя opacity = 1 мы как бы подкрашиваем активную точку
+         // при первом заходе на сайт со слайдером, нам нужно первую точку сразу подкрасить
+        // иначе она не будет активна пока мы не начнем листать слайдер 
+     }
+     indicators.append(dot);// Добавляем в наш список, наши точки
+     dots.push(dot); // пушим наши точки в массив
+     
+    }
+
+function currentDotSlides() { 
+    dots.forEach(dot => dot.style.opacity = '.5'); // указываем каждой точке опасити 0.5, что бы были чутка прозрачные
+    dots[slideIndex - 1].style.opacity = 1; // указываем  текущей точке opacity 1, что бы выделить активную.
+    // slideIndex у нас изначально 1, а первая точка в массиве под индексом 0, поэтому вычитаем -1
+    // если у нас slideIndex = 3, значит мы на третьем слайдере, третья точка в массиве будет под индекс 2, делаем slideIndex -1 и все
+    // ну и так далее.
+}
+
+dots.forEach(dot => { // перебираем наш массив с точками
+    dot.addEventListener('click', (e) => { // вешаем событие
+        const slideTo = e.target.getAttribute('data-slide-to'); // получаем атрибут у активной точки, если это первая точка, то это будет 1 и тд
+        slideIndex = slideTo; // меняем текущий слайд при нажатии на точку
+        offset = deleteNotDigits(width) * (slideTo - 1); // меняем offset, тоже как и со стрелками, теперь только с точками
+        slidesField.style.transform = `translateX(-${offset}px)`; // так же меняем translateX
+        addedZeroSlides();
+        currentDotSlides();
+    });
+});
+```
+
+## Весь код без комментариев
+Немного изменил последовательность.
+```javaScript
+function slider({ container, slide, nextArrow, prevArrow, totalCounter, currentCounter, wrapper, field }) {
+    const slides = document.querySelectorAll(slide),
+        slider = document.querySelector(container),
+        slidesWrapper = document.querySelector(wrapper),
+        slidesField = document.querySelector(field),
+        prev = document.querySelector(prevArrow),
+        next = document.querySelector(nextArrow),
+        total = document.querySelector(totalCounter),
+        current = document.querySelector(currentCounter),
+        width = window.getComputedStyle(slidesWrapper).width;
+
+    let slideIndex = 1;
+    let offset = 0;
+
+
+    slidesField.style.width = `${100 * slides.length}%`;
+    slidesField.style.display = 'flex';
+    slidesField.style.transition = '0.5s all';
+    slider.style.position = 'relative';
+
+    slides.forEach(slide => {
+        slide.style.width = width;
+    });
+    slidesWrapper.style.overflow = 'hidden';
+
+    function deleteNotDigits(str) {
+        return Math.round(str.replace(/[^.\d]/g, ''));
+    }
+
+    function addedZeroSlides() {
+        if (slides.length < 10) {
+            total.textContent = `0${slides.length}`;
+            current.textContent = `0${slideIndex}`;
+        } else {
+            total.textContent = `${slides.length}`;
+            current.textContent = `${slideIndex}`;
+        }
+    }
+
+    function currentDotSlides() {
+        dots.forEach(dot => dot.style.opacity = '.5');
+        dots[slideIndex - 1].style.opacity = 1;
+    }
+
+    addedZeroSlides();
+
+    next.addEventListener('click', () => {
+        if (offset == deleteNotDigits(width) * (slides.length - 1)) {
+            offset = 0;
+        } else {
+            offset += deleteNotDigits(width);
+
+        }
+        slidesField.style.transform = `translateX(-${offset}px)`;
+        if (slideIndex == slides.length) {
+            slideIndex = 1;
+        } else {
+            slideIndex++;
+        }
+
+        addedZeroSlides();
+        currentDotSlides();
+    });
+
+    prev.addEventListener('click', () => {
+        if (offset == 0) {
+            offset = deleteNotDigits(width) * (slides.length - 1);
+        } else {
+            offset -= deleteNotDigits(width);
+        }
+        slidesField.style.transform = `translateX(-${offset}px)`;
+
+        if (slideIndex == 1) {
+            slideIndex = slides.length;
+        } else {
+            slideIndex--;
+        }
+
+        addedZeroSlides();
+        currentDotSlides();
+    });
+
+
+    const indicators = document.createElement('ol'),
+        dots = [];
+    indicators.classList.add('carousel-indicators');
+    slider.append(indicators);
+
+    for (let i = 0; i < slides.length; i++) {
+        const dot = document.createElement('li');
+        dot.setAttribute('data-slide-to', i + 1);
+        dot.classList.add('dot')
+        if (i == 0) {
+            dot.style.opacity = 1;
+        }
+        indicators.append(dot);
+        dots.push(dot);
+    }
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', (e) => {
+            const slideTo = e.target.getAttribute('data-slide-to');
+            slideIndex = slideTo;
+            offset = deleteNotDigits(width) * (slideTo - 1);
+            slidesField.style.transform = `translateX(-${offset}px)`;
+
+            addedZeroSlides();
+            currentDotSlides();
+        });
+    });
+
+}
+
+export default slider;
+
+```
+
+## Файл index.js
+Теперь вызываем нашу функцию `slider`
+```javaScript
+import './scss/style.scss'; // импортируем scss файл
+import slider from "../slider"; // импортируем функцию slider которую писали выше
+
+window.addEventListener('DOMContentLoaded',() => { // вешаем на окно событие DOMContentLoaded это событие ждет пока html полностью загрузится
+    slider({ // вызываем наш слайдер и указываем аргументы, которые уже разобрали в самом слайдере
+        container: '.slider',
+        wrapper: '.slider-wrapper',
+        nextArrow:'.slider-next', 
+        prevArrow:'.slider-prev', 
+        field: '.slider-inner',
+        totalCounter: '#total',
+        currentCounter: '#current',
+        slide: '.slide'
+    });
+})
+```
+Ну и пишем команду `npx webpack` собираем наш `bundle` и готово.
+
+## Готовый слайдер
 
 <div className="container-app">
 <iframe  className="content-app-slider-js" src="https://slider-app-discocode-practice.vercel.app" > </iframe>
