@@ -29,10 +29,6 @@ prev: '/js/practice-js/webpack'
 
 
 
-
-
-
-
 </div>
 
 
@@ -202,7 +198,7 @@ module.exports = {
     }
 
 }
- 
+
 .carousel-indicators { 
     position: absolute;
     right: 0;
@@ -238,7 +234,6 @@ module.exports = {
 Начнем с главного модуля `slider.js`
 ### Получаем элементы 
 ```javaScript
-
 // создаем главную функцию(модуль) slider
 // эта функция будет принимать в себя все составляющие слайдера и вызывать мы будем ее в index.js
 function slider({ container, slide, nextArrow, prevArrow, totalCounter, currentCounter, wrapper, field }) {
@@ -257,7 +252,6 @@ function slider({ container, slide, nextArrow, prevArrow, totalCounter, currentC
     let offset = 0; // отступ, для работы с translateX, об этом ниже
 
 }
-
 
 export default slider; // экспортируем наш слайдер
 ```
@@ -303,7 +297,6 @@ export default slider; // экспортируем наш слайдер
 ### Реализуем функцию addedZeroSlides
 Теперь оживим наш `total`, что бы мы видели на каком слайде находимся
 ```javaScript
-
 function addedZeroSlides() {
         if (slides.length < 10) { // если меньше 10 слайдов, то показыаем так 05 04 03 06 07
             total.textContent = `0${slides.length}`; // тут общее кол
@@ -340,8 +333,8 @@ function addedZeroSlides() {
         } else {
             slideIndex++; // иначе прибавляем пока индекс не будет равен кол слайдов
         }
-         addedZeroSlides();
-         currentDotSlides(); // об этом чутка дальше
+        addedZeroSlides();
+        currentDotSlides(); // об этом чутка дальше
     });
 ```
 Теперь сделаем прокрутку влево, назад. Тут будет все тоже самое, но наоборот:
@@ -360,8 +353,8 @@ function addedZeroSlides() {
         } else {
             slideIndex--; // иначе отнимаем по одному пока не будет на первом
         }
-         addedZeroSlides();
-         currentDotSlides();
+        addedZeroSlides();
+        currentDotSlides();
     });
 ```
 ### Переключатели ввиде точек для слайдера
