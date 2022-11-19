@@ -4,6 +4,7 @@ import Head from 'next/head';
 import ym from 'react-yandex-metrika';
 import {YMInitializer} from 'react-yandex-metrika';
 import Router, { useRouter } from 'next/router';
+import { useEffect } from 'react';
 Router.events.on('routeChangeComplete', (url:string)=> {
   if(typeof window !== 'undefined')
   ym('hit',url);
@@ -11,9 +12,16 @@ Router.events.on('routeChangeComplete', (url:string)=> {
 
 
 
+
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const router = useRouter();
-
+  const r = router.asPath.split('/').length;
+  useEffect(()=> {
+    if(r >= 3) {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      document.querySelector('html')!.style.scrollBehavior = 'smooth';
+    }
+  });
   
   return (
     <>

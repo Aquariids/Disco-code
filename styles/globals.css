@@ -15,13 +15,13 @@
 
 
 html {
-	scroll-behavior: smooth;
 	overflow-x: hidden;
 	background-image: url(/manga.svg);
 	background-position: bottom right;
 	background-repeat: no-repeat;
 	background-size: 73%;
 	margin-right: calc(-1 *(100vw - 100%));
+	
 }
 
 @media (max-width: 1065px) {
@@ -44,6 +44,7 @@ html {
 }
 
 body {
+	
 	position: relative;
 	margin: 0;
 	padding: 0;
