@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { withLayout } from "../layout/Layout";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Articles from "../src/Components/Articles/Articles";
 import s from "./index.module.css";
 import Head from "next/head";

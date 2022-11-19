@@ -20,6 +20,10 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     if(r >= 3) {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       document.querySelector('html')!.style.scrollBehavior = 'smooth';
+    } else {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      document.querySelector('html')!.style.scrollBehavior = 'auto';
+
     }
   });
   
