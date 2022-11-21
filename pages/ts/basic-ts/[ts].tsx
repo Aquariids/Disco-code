@@ -8,7 +8,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import Head from 'next/head';
 import "highlight.js/styles/mono-blue.css";
 import { getAllPosts, getPostFromSlug, getSlugs, MDXPost } from '../../api/api';
-import { POSTS_PATH_TS } from '../../api/paths';
+import { POSTS_PATH_BASIC_TS } from '../../api/paths';
 import Link from 'next/link';
 import s from './../pageTs.module.css';
 import cn from 'classnames';
@@ -59,7 +59,7 @@ export default withLayout(PostPage);
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const { ts } = params as { ts: string };
-    const { content, meta } = getPostFromSlug(ts, POSTS_PATH_TS);
+    const { content, meta } = getPostFromSlug(ts, POSTS_PATH_BASIC_TS);
     const mdxSource = await serialize(content, {
         mdxOptions: {
             rehypePlugins: [
@@ -73,11 +73,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
     );
 
-    const posts = getAllPosts(POSTS_PATH_TS)
-        .map((post) => post.meta);
+    const basic_Ts = getAllPosts(POSTS_PATH_BASIC_TS).map((post) => post.meta);
 
+        const postsTs = {basic_Ts};
 
-    return { props: { post: { source: mdxSource, meta }, posts } };
+    return { props: { post: { source: mdxSource, meta }, postsTs } };
 
 };
 
@@ -85,7 +85,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const paths = getSlugs(POSTS_PATH_TS).map((ts) => {
+    const paths = getSlugs(POSTS_PATH_BASIC_TS).map((ts) => {
         return ({ params: { ts } });
     });
     return {

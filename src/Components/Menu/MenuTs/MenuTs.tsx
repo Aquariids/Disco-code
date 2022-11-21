@@ -11,15 +11,7 @@ const MenuTs = ({ setMobile, mobile, sideBarMenuActive, mobileMenuActive }: mobi
             </>
         );
     }
-
-    if (sideBarMenuActive === true) {
-        return (
-            <>
-                <Menu title="Основы typeScript" category='basic-ts' dropdown={true} page='ts' />
-            </>
-        );
-
-    } else {
+ else {
         return (
             <>
                 <Menu title=" Основы typeScript" category='basic-ts' page='ts' />

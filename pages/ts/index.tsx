@@ -2,11 +2,22 @@ import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import React from "react";
 import { withLayout } from "../../layout/Layout";
+import MainMenuTs from "../../src/Components/Menu/MenuTs/MainMenuTs";
 import { getAllPosts } from "../api/api";
-import { POSTS_PATH_TS } from "../api/paths";
-import MenuTs from "../../src/Components/Menu/MenuTs/MenuTs";
+import {  POSTS_PATH_BASIC_TS} from "../api/paths";
 
-const Home: NextPage = (): JSX.Element => {
+export const getStaticProps: GetStaticProps = async () => {
+  const basic_Ts = getAllPosts(POSTS_PATH_BASIC_TS).map((post) => post.meta);
+
+const postsTs = {basic_Ts};
+  return {
+    props: {
+      postsTs,
+    },
+  };
+};
+
+const Home: NextPage = ({postsTs}:any): JSX.Element => {
   return (
     <div className="page_content">
       <Head>
@@ -29,7 +40,7 @@ const Home: NextPage = (): JSX.Element => {
 
       <div className="page_body">
         <div className={"page_menu"}>
-          <MenuTs sideBarMenuActive={false} mobileMenuActive={false} />
+          <MainMenuTs MainPosts={postsTs}  />
         </div>
       </div>
     </div>
@@ -38,12 +49,4 @@ const Home: NextPage = (): JSX.Element => {
 
 export default withLayout(Home);
 
-export const getStaticProps: GetStaticProps = async () => {
-  const posts = getAllPosts(POSTS_PATH_TS).map((post) => post.meta);
 
-  return {
-    props: {
-      posts,
-    },
-  };
-};

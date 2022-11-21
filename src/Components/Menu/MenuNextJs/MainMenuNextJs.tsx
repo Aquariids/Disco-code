@@ -4,7 +4,7 @@ import Menu from '../Menu';
 
 interface MainPostsProps<T> {
     MainPosts: {
-        basic_next_js:T
+        basic_next_js:T,
     }
     
 

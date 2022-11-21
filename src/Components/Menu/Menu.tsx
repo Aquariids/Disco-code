@@ -14,7 +14,6 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
     const checkActiveLink = pathname.split('/')[pathname.split('/').length - 1]; // отрезаем от пути наш slug и будем проверять сщ slug из api, и так будет кидать активную ссылку
     
     posts && posts.sort((a:any,b:any) => a.id - b.id);
-    console.log(posts);
     
 
 
@@ -97,8 +96,6 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
 
     // main content page
     else {
-        
-        
         return (
             <>
             <div className={s.content} {...props}>
