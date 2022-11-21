@@ -4,7 +4,7 @@ import { Readable } from 'stream';
 import { POSTS_PATH_JS, POSTS_PATH_NEXTJS, POSTS_PATH_PARADIGMS, POSTS_PATH_REACT, POSTS_PATH_TS } from "./paths";
 
 
-export default async (req,res) => {
+export default async (req: { headers: { host: any; }; },res: { writeHead: (arg0: number, arg1: { "Content-Type": string; }) => void; end: (arg0: string) => void; }) => {
     const metaJs = getAllPosts(POSTS_PATH_JS).map((post) => post.meta);
     const metaTs = getAllPosts(POSTS_PATH_TS).map((post) => post.meta);
     const metaNextJs = getAllPosts(POSTS_PATH_NEXTJS).map((post) => post.meta);
@@ -12,7 +12,7 @@ export default async (req,res) => {
     const metaReact = getAllPosts(POSTS_PATH_REACT).map((post) => post.meta);
 
 
-    const links = [];
+    const links:string[] = [];
 
     
     const stream = new SitemapStream({ hostname: `https://${req.headers.host}` });
