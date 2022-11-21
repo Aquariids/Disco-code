@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from "next";
 import React from "react";
 import { withLayout } from "../../layout/Layout";
-import { getAllPosts } from "../api/api";
+import { getAllPosts, PostMeta } from "../api/api";
 import { POSTS_PATH_ADVANCED_JS, POSTS_PATH_ALGORITHMS_JS, POSTS_PATH_BASIC_JS, POSTS_PATH_PRACTICE_JS } from "../api/paths";
 import Head from "next/head";
 import MainMenuJs from "../../src/Components/Menu/MenuJs/MainMenuJs";

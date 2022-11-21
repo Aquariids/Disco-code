@@ -3,7 +3,7 @@ import { PostMeta } from "../pages/api/api";
 
 
 export interface IAppContext {
-    postsJs?:PostMeta[],
+    postsJs?:any,
     basicJs?:PostMeta[]
 }
 

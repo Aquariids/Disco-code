@@ -9,7 +9,7 @@ import Head from "next/head";
 import "highlight.js/styles/a11y-dark.css";
 import cn from "classnames";
 import { getAllPosts, getPostFromSlug, getSlugs, MDXPost } from "../../api/api";
-import { POSTS_PATH_JS } from "../../api/paths";
+import { POSTS_PATH_ADVANCED_JS, POSTS_PATH_ALGORITHMS_JS, POSTS_PATH_BASIC_JS, POSTS_PATH_PRACTICE_JS } from "../../api/paths";
 import Link from "next/link";
 import s from "../pageJs.module.css";
 import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
@@ -106,7 +106,7 @@ export default withLayout(PostPage);
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { js } = params as { js: string };
-  const { content, meta } = getPostFromSlug(js, POSTS_PATH_JS);
+  const { content, meta } = getPostFromSlug(js, POSTS_PATH_PRACTICE_JS);
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [
@@ -117,15 +117,22 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
   });
 
-  const posts = getAllPosts(POSTS_PATH_JS).map((post) => post.meta);
+
+  const postsJsBasic = getAllPosts(POSTS_PATH_BASIC_JS).map((post) => post.meta);
+  const postsJsAdvanced = getAllPosts(POSTS_PATH_ADVANCED_JS).map((post) => post.meta);
+  const postsJsAlgorithms = getAllPosts(POSTS_PATH_ALGORITHMS_JS).map((post) => post.meta);
+  const postsJsPractice = getAllPosts(POSTS_PATH_PRACTICE_JS).map((post) => post.meta);
+
+  const postsJs = {postsJsBasic,postsJsAdvanced,postsJsAlgorithms,postsJsPractice};
+  
   return {
-    props: { post: { source: mdxSource, meta }, posts },
+    props: { post: { source: mdxSource, meta }, postsJs },
     revalidate: 10,
   };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getSlugs(POSTS_PATH_JS).map((js) => ({ params: { js } }));
+  const paths = getSlugs(POSTS_PATH_PRACTICE_JS).map((js) => ({ params: { js } }));
 
   return {
     paths,

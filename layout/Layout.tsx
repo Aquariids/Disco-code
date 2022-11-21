@@ -42,7 +42,7 @@ export const withLayout = <T extends Record<string, unknown> & IAppContext>(Comp
     return function withLayoutComponent(props: T): JSX.Element {
 
         return (
-            <AppContextProvider basicJs={props.basicJs} postsJs={props.postsJs}>
+            <AppContextProvider  postsJs={props.postsJs}>
                 <Layout {...props}>
                     <Component {...props} />
                 </Layout>

@@ -9,15 +9,13 @@ export interface IMenu extends  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     setMobile?:any;
     mobileTrue?: boolean;
-    posts: PostMeta[] | undefined
+    posts: any
+    
 }
 
 export interface mobileMenuProps {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     setMobile?:any;
     mobile?:boolean;
-    mobileMenuActive:boolean;
-    sideBarMenuActive:boolean;
-    postsBasic: PostMeta[] | undefined;
 
 }
