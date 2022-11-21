@@ -1,4 +1,9 @@
+# *
 User-agent: *
-Allow: / 
+Allow: /
 
-Sitemap:https://discocode.ru/sitemap.xml
+# Host
+Host: https://discocode.ru
+
+# Sitemaps
+Sitemap: https://discocode.ru/sitemap.xml
