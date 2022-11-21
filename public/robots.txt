@@ -1,4 +1,4 @@
 User-agent: *
 Allow: / 
 
-Sitemap:https://discocode.ru/api/sitemap
+Sitemap:https://discocode.ru/api/sitemap.xml
