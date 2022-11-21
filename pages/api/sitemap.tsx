@@ -1,4 +1,4 @@
-import { getAllPosts, getSlugs } from "./api";
+import { getAllPosts } from "./api";
 import { SitemapStream, streamToPromise } from 'sitemap';
 import { Readable } from 'stream';
 import { POSTS_PATH_JS } from "./paths";
