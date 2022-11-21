@@ -123,7 +123,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const postsJsAlgorithms = getAllPosts(POSTS_PATH_ALGORITHMS_JS).map((post) => post.meta);
   const postsJsPractice = getAllPosts(POSTS_PATH_PRACTICE_JS).map((post) => post.meta);
 
-  const postsJs = {postsJsBasic,postsJsAdvanced,postsJsAlgorithms,postsJsPractice};
+const postsJs = {postsJsBasic,postsJsAdvanced,postsJsAlgorithms,postsJsPractice};
   
   return {
     props: { post: { source: mdxSource, meta }, postsJs },

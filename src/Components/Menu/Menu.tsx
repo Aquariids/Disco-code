@@ -30,7 +30,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
         });
     };
 
-    // side bar
+    // sidebar
     if(dropdown === true) {
         return (
             <div className={s.content} {...props}>
@@ -62,7 +62,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
         );
     }  
 
-    // // mobile modal menu
+    // mobile modal menu
     else if (mobileMenu === true) {
 
         return(
@@ -95,7 +95,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
         );
     }
 
-    // // content page
+    // main content page
     else {
         
         

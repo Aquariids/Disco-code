@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { AppContext } from '../../../../context/app.context';
 import { PostMeta } from '../../../../pages/api/api';
 import Menu from '../Menu';
 interface MainPostsProps<T> {
@@ -16,7 +15,6 @@ interface MainPostsProps<T> {
 
 const MenuJs = ({MainPosts}:MainPostsProps<PostMeta[]>): JSX.Element => {
     const {basic_Js, advanced_Js, algorithms_js,practice_Js} = MainPosts;
-    console.log("(👍≖‿‿≖)👍 ✿ file: MainMenuJs.tsx ✿ line 19 ✿ MenuJs ✿ MainPosts", MainPosts)
 
 
         return (

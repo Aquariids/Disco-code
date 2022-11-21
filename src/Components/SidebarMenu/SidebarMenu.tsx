@@ -4,8 +4,8 @@ import MenuTs from "../Menu/MenuTs/MenuTs";
 import MenuReact from "../Menu/MenuReact/MenuReact";
 import MenuParadigms from "../Menu/MenuParadigms/MenuParadigms";
 import { useEffect } from "react";
-import MenuNextJs from "../Menu/MenuNextJs/MenuNextJs";
 import DropdownMenuJs from "../Menu/MenuJs/DropdownMenuJs";
+import DropdownMenuNextJs from "../Menu/MenuNextJs/DropdownMenuNextJs";
 
 const SidebarMenu = ():JSX.Element => {
 
@@ -66,7 +66,7 @@ const SidebarMenu = ():JSX.Element => {
     if (router.pathname.startsWith('/next-js')) {
         return (
             <nav className={s.nav_menu}>
-                <MenuNextJs sideBarMenuActive={true} mobileMenuActive={false}/>
+                <DropdownMenuNextJs/>
             </nav>
         );
     }

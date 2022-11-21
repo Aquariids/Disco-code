@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { AppContext } from '../../../../context/app.context';
+import { JsContext } from '../../../../context/app.context';
 import Menu from '../Menu';
 import { mobileMenuProps } from '../Menu.props';
 const MobileMenuJs = ({ setMobile, mobile, }: mobileMenuProps): JSX.Element => {
 
-    const { postsJs } = useContext(AppContext);
+    const { postsJs } = useContext(JsContext);
 
         return (
             <>

@@ -27,9 +27,9 @@ interface Post {
   meta: PostMeta;
 }
 
-export interface MDXPost {
+export interface MDXPost  {
   post: {
-    source: MDXRemoteSerializeResult<Record<string, unknown>>;
+    source: MDXRemoteSerializeResult<Record<string, unknown>>
     meta: PostMeta;
   };
 }

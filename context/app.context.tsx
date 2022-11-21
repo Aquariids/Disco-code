@@ -4,18 +4,18 @@ import { PostMeta } from "../pages/api/api";
 
 export interface IAppContext {
     postsJs?:any,
-    basicJs?:PostMeta[]
+    postsNextJs?:any
 }
 
-export const AppContext = createContext<IAppContext>({postsJs:[]});
-export const basicJsContext = createContext<IAppContext>({basicJs:[]});
+export const JsContext = createContext<IAppContext>({postsJs:[]});
+export const NextJsContext = createContext<IAppContext>({postsNextJs:[]});
 
 
-export const AppContextProvider = ({postsJs,basicJs,children}:IAppContext & {children: ReactNode}):JSX.Element => {
+export const AppContextProvider = ({postsJs,postsNextJs,children}:IAppContext & {children: ReactNode}):JSX.Element => {
 
-    return <AppContext.Provider value={{postsJs}}>
-        <basicJsContext.Provider value={{basicJs}}>
+    return <JsContext.Provider value={{postsJs}}>
+        <NextJsContext.Provider value={{postsNextJs}}>
         {children }
-        </basicJsContext.Provider>
-        </AppContext.Provider>;
+        </NextJsContext.Provider>
+        </JsContext.Provider>;
 };

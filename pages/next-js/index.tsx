@@ -2,21 +2,22 @@ import type { GetStaticProps, NextPage } from "next";
 import React from "react";
 import { withLayout } from "../../layout/Layout";
 import { getAllPosts } from "../api/api";
-import {POSTS_PATH_NEXTJS } from "../api/paths";
+import {POSTS_PATH_BASIC_NEXTJS } from "../api/paths";
 import Head from "next/head";
-import MenuNextJs from "../../src/Components/Menu/MenuNextJs/MenuNextJs";
+import MainMenuNextJs from "../../src/Components/Menu/MenuNextJs/MainMenuNextJs";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = getAllPosts(POSTS_PATH_NEXTJS).map((post) => post.meta);
+  const basic_next_js = getAllPosts(POSTS_PATH_BASIC_NEXTJS).map((post) => post.meta);
 
+  const postsNextJs = {basic_next_js,};
   return {
     props: {
-      posts,
+      postsNextJs,
     },
   };
 };
 
-const Home: NextPage = (): JSX.Element => {
+const Home: NextPage = ({postsNextJs}:any): JSX.Element => {
   return (
     <div className="page_content">
       <Head>
@@ -53,7 +54,7 @@ const Home: NextPage = (): JSX.Element => {
       <div className="page_body">
 
         <div className="page_menu">
-        <MenuNextJs sideBarMenuActive={false} mobileMenuActive={false} />
+        <MainMenuNextJs MainPosts={postsNextJs}  />
         </div>
       </div>
     </div>
