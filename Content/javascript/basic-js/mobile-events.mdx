@@ -1,0 +1,48 @@
+---
+title: 'Мобильные события '
+id: 21
+prev: '/js/basic-js/events'
+next: '/js/basic-js/event-delegation'
+category: 'basic-js'
+---
+
+<div className = 'mdHead'>
+
+#### Теги
+<div className = 'tag_js'>[Коротко о событиях](#коротко-о-событиях)</div> <br/>
+<div className = 'tag_js'>[Более специфические события](#более-специфические-события)</div> <br/>
+<div className = 'tag_js'>[Наглядно показываю:](#наглядно-показываю)</div> 
+<div className = 'mini_tag_js'>[touchstart,](#touchstart)</div> 
+<div className = 'mini_tag_js'>[touchmove,](#touchmove)</div> 
+<div className = 'mini_tag_js'>[touchend.](#touchend)</div> 
+
+</div>
+
+## Коротко о событиях ##
+В мобильных событиях нету кликов, событий мыши и тд. Здесь у нас тапы - когда мы косаемся экрана мобилы.<br/>
+<b>touchstart</b> - срабатывает при возникновении касания с элементом.<br/>
+<b>touchmove</b> - срабатывает при каждом смещении пальца по элементу.<br/>
+<b>touchend</b>- как только палец оторвался от элемента, событие сработало.<br/>
+## Более специфические события ##
+<b>touchenter</b> - срабатывает когда ведем пальцем по экрану и наскальзываем на элемент на котором висит событие.<br/>
+<b>touchleave</b> - наоборот когда мы скользим пальцем и просто продолжая скользить уходим за передел нашего элемента.<br/>
+<b>touchcancel</b> - возникает когда точка соприкосновения не регистрируется на поверхности. Если например наш палец выйдет за пределы браузера, тогда сработает это событие.<br/>
+## Наглядно показываю ##
+Для перехода в режим телефона в браузере, заходим в инспектор кода и нажимаем на телефончик в углу или комбинацию клавиш как на скриншоте.
+
+<div className='container-img'> <span className="img"> ![alt text](/images/Content/Js/mobile.png) </span></div>
+
+### touchstart ###
+Просто жмем пальчиком на элемент.
+
+<div className='container-img'> <span className="img"> ![alt text](/images/Content/Js/touchstart.gif) </span></div>
+
+### touchmove ###
+Жмем и двигаем пальчиком.
+
+<div className='container-img'> <span className="img"> ![alt text](/images/Content/Js/touchmove.gif) </span></div>
+
+### touchend ###
+Срабатывает когда отпускаем палец после нажатия. 
+
+<div className='container-img'> <span className="img"> ![alt text](/images/Content/Js/touchend.gif) </span></div>

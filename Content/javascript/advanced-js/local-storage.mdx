@@ -1,0 +1,91 @@
+---
+title: 'localStorage'
+id: 3
+prev: '/js/advanced-js/array-methods'
+next: '/js/advanced-js/ajax'
+category: 'advanced-js'
+---
+
+<div className = 'mdHead'>
+
+#### Теги
+<div className='tag_js'>[Что такое localStorage](#что-такое-localstorage)</div> <br/>
+<div className='tag_js'>[Методы localStorage:](#методы-localstorage)</div>
+<div className='mini_tag_js'>[setItem,](#setitem)</div>
+<div className='mini_tag_js'>[getItem,](#getitem)</div>
+<div className='mini_tag_js'>[removeItem,](#removeitem)</div>
+<div className='mini_tag_js'>[clear.](#clear)</div> <br/>
+<div className='tag_js'>[Небольшой пример работы с checkbox](#небольшой-пример-работы-с-checkbox)</div> <br/>
+<div className='tag_js'>[Массивы и объекты в localStorage ](#массивы-и-объекты-в-localstorage)</div>
+
+
+</div>
+
+
+## Что такое localStorage ##
+`localStorage` - это свойство глобального объекта `window`, локальное хранилище.
+Если мы будем обновлять страницу или закрывать, данные из хранилища будут на месте.<br/>
+`localStorage` имеет несколько нужных свойств. Данные в нем хранятся в виде ключ: значение.<br/>
+Посмотреть на `localStorage` и что в нем находится можно в консоли разработчика в application / Storage
+
+## Методы localStorage
+### `setItem()` ###
+Добавляем в хранилище ключ и значение.
+```javaScript
+localStorage.setItem('number',5); // записываем number со значением 5. Если такое свойство есть, то значение просто перезапишется
+```
+
+### `getItem()` ###
+Получаем значение ключа.
+```javaScript
+console.log(localStorage.getItem('number')); // получим 5
+```
+### `removeItem()` ###
+Удаляем ключ
+### `clear()` ###
+Очищает хранилище
+
+## Небольшой пример работы с checkbox ##
+Наш `html` файл:
+```html
+<form>
+  <input id="checkbox_id" type="checkbox" >
+</form>
+```
+Далее код:
+```javaScript
+const checkbox = document.querySelector('#checkbox_id'),// получаем инпут
+      form = document.querySelector('form'); // получаем форму
+    
+      if(localStorage.getItem('isCheked')) { // тут работаем с чекбоксом. Если в хранилище есть isCheked
+            checkbox.checked = true; // то ставим чекбокс в положение true то есть с галочкой
+        } 
+
+        checkbox.addEventListener('change',(e)=> { // навешиваем событие
+            if(localStorage.getItem('isCheked')) { // если в localStorage есть ключ isCheked
+                localStorage.removeItem('isCheked'); // то удаляем его
+            } else {
+                localStorage.setItem('isCheked',true) // иначе устанавливем ключ isCheked и значение true
+            }
+
+        });
+// Теперь чекбокс будет активен после нажатия и останется в таком состоянии, пока мы еще раз не нажем на него.
+// Он будет активен или не активен даже если мы закроем браузер.        
+```
+## Массивы и объекты в localStorage ##
+
+Что бы с такими структурами нормально работать их нужно перевести в формат `JSON`. Иначе мы будем получать стркоу `Object Object`.
+
+```javaScript
+  const persone = {
+            name: 'Alex',
+            age: 24
+        };
+
+        const serializedPesron = JSON.stringify(persone); // парсим в JSON
+
+        localStorage.setItem('Alex', serializedPesron); // если мы здесь значение впишем presone, то в localStorage будет Object Object.
+        console.log(JSON.parse(localStorage.getItem('Alex'))); // парсим обратно и получаем наш обычный объект
+       
+```
+ По сути нам просто нужно превратить объект в строку, что бы хранить его в localStorage.

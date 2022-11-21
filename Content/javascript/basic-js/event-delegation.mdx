@@ -1,0 +1,66 @@
+---
+title: 'Делегирование событий'
+id: 22
+prev: '/js/basic-js/mobile-events'
+next: '/js/basic-js/set-interval-and-set-time-out'
+category: 'basic-js'
+---
+
+<div className = 'mdHead'>
+
+#### Теги
+
+<div className = 'tag_js'>[Что так делегирование событий?](#что-так-делегирование-событий)</div><br/>
+<div className = 'tag_js'>[matches и contains - проверяем класс и селектор](#matches-и-contains---проверяем-класс-и-селектор)</div><br/>
+<div className = 'tag_js'>[Разница между делегированием и forEach перебором](#разница-между-делегированием-и-foreach-перебором)</div><br/>
+
+</div>
+## Что так делегирование событий? ##
+
+Делегирование событий - это когда работаем с родителем который дает права детишкам.
+Мы назначаем обработчик события на родителя, далее, пишем условие в котором проверяем наше событие на определенный дочерний элемент
+и выполняем код только тогда, когда нажали на нужный элемент внутри родителя.<br/>
+Наш родитель с детьми:
+```html
+<section class="section">  
+        <button class="bg">Я</button>  
+        <div class="bg">г</div>
+        <div class="bg">i</div>
+        <button class="bg">й</button> 
+    </section>
+```
+javascript код:
+```javaScript
+const section = document.querySelector('.section'); // получаем родителя.
+
+section.addEventListener('click', (e) => {
+    // напоминаю, что через console.dir(e.target) мы можем получить элемент в виде объекта и посмотреть всю инфу этого элемента
+    // оттуда у button мы получаем tagName:"BUTTON" - его мы будем использовать в нашем условии.
+    if (e.target && e.target.tagName == "BUTTON") { // пишем  e.target вначале для того что бы проверить его на существование. Не у всех тегов он есть
+        // далее проверяем на имя тега 
+        console.log('hello'); // при нажатии на любую кнопку внутри нашей секции мы будем получать hello
+    }
+});
+```
+Там где у нас тег `button` будет срабатывать наше событие. Мы повесели обработчик на все `button` вунтри `section`. Это и есть делегирование событий.
+Так же можно проверять на классы и селекторы.
+## matches и contains - проверяем класс и селектор ##
+```javaScript
+(e.target && e.target.classList.contains('blue')) // так мы проверяем на класс, с contains уже знакомы.
+(e.target && e.target.matches("button.bg")) // а этот метод проверяет на совпадение с селектором.
+```
+## Разница между делегированием и forEach перебором ##
+Фишка в том, что `forEach` будет юзаться на всех кнопках из верстки, но когда мы будем уже после применения `forEach` сооздавать динамически доп кнопки, они не будут работать.
+```javaScript
+const section = document.querySelector('.section');
+const btns = document.querySelectorAll('button');
+btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        console.log('gello');
+    });
+});
+const btnNew = document.createElement('button'); // Создаем нашу кнопку
+btnNew.classList.add('red'); // Даем ей класс
+section.append(btnNew); // помещаем на страницу
+// на нашей btnNew не будет работать созданный выше forEach
+```

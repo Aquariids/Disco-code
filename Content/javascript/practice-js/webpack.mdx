@@ -1,0 +1,273 @@
+---
+title: 'Webpack'
+id: 0
+category: 'practice-js'
+next: '/js/practice-js/slider-js'
+---
+
+
+<div className = 'mdHead'>
+
+#### Теги
+
+<div className = 'tag_js'>[Что такое webpack:](#что-такое-webpack)</div>
+<div className = 'mini_tag_js'>[установка и запуск,](#установка-и-запуск)</div>
+<div className = 'mini_tag_js'>[режимы работы](#режимы-работы)</div><br/>
+<div className = 'tag_js'>[Настройка webpack.config.js:](#настройка-webpackconfigjs)</div>
+<div className = 'mini_tag_js'>[разбираем каждое свойство подробнее.](#разбираем-каждое-свойство-подробнее)</div><br/>
+<div className = 'tag_js'>[Плагины и лоадеры для webpack:](#плагины-и-лоадеры-для-webpack)</div>
+<div className = 'mini_tag_js'>[лоадер(загрузчик)](#лоадеры)</div>
+<div className = 'mini_tag_js'>[плагины](#плагины)</div><br/>
+<div className = 'tag_js'>[Смотрим на готовый конфиг](#смотрим-на-готовый-конфиг)</div>
+
+<h5> Интересные ссылки </h5>
+<div className = 'mini_tag_js'><a target="_blank"  href="https://webpack.js.org/">Webpack</a></div><br/> 
+<div className = 'mini_tag_js'><a target="_blank"  href="https://webpack.js.org/loaders/css-loader/">css-loader</a></div><br/>
+<div className = 'mini_tag_js'><a target="_blank"  href="https://webpack.js.org/plugins/mini-css-extract-plugin/">MiniCssExtractPlugin</a></div><br/>
+<div className = 'mini_tag_js'><a target="_blank"  href="https://webpack.js.org/loaders/sass-loader/">sass-loader</a></div><br/> 
+
+</div>
+
+## Что такое webpack
+`webpack` - это сборщик модулей, он анализирует модули приложения и собирает их в один или более бандл(bundle). 
+В практических уроках далее я буду использовать `webpack`, поэтому разбираемся с ним заранее.
+
+### Установка и запуск
+Для начала нужно инициализировать `npm` командой `npm init`.<br/>
+Для установки вебпака используем команду:
+```
+npm i webpack webpack-cli -D
+```
+- `webpack` - это самое главное, сам собрщик
+- `webpack-cli` - это пакет для запуска вебпака из командной строки.
+
+Для базового запуска `webpack` используем команду:
+```javaScript
+npx webpack
+```
+Дальше при настройке вебпака мы поговорим как лучше запускать его и как создать свою удобную команду с блэкджеком.
+
+### Режимы работы
+У webpack есть два режима работы
+1. Это использование стандарнтых заводских настроек.
+   >Когда мы запускаем проект без `webpack.config.js` наш входной главный файл должен в таком режиме работы обязательно называться `index.js` и находиться в папке `src` -  `src/index.js`.
+2. Это когда мы сами настраиваем проект с нуля.
+   > Все же в реальных проектах всегда используется `webpack.config.js` - файл с помощью которого мы можем сами все гибко настроить.
+
+## Настройка webpack.config.js
+Создаем в корне проекта файл `webpack.config.js` и помещаем в него этот код:
+```javaScript
+'use strict';
+
+let path = require('path'); // техническая переменная для правильной работы c путями
+
+module.exports = {
+  mode:'development', // мод в каком режиме мы работаем
+   entry: './src/index.js', // точка входа
+   output: { // точка выхода
+      filename: 'bundle.js',
+      path: path.resolve(__dirname, 'dist')
+   },
+   watch:true, // позволяет автоматически собирать проект при изменениях
+   devtool:'source-map', // хранит наши исходные файлы
+   module:{}, // тут будут лоадеры
+   plugins:[], // тут будут плагины
+};
+
+```
+### Разбираем каждое свойство подробнее
+* `mode` 
+  > Свойство `mode` имеет два режима `development` и `production`: <br/>
+  `development` - это режим разработки, в таком режиме сборка будет происходить быстрее.
+   Этот режим не сильно оптимизирует ваш код разными плагинами. Этот режим нужен для процесса работы, а когда уже закончим проект, то ставим в `production`
+```javaScript
+  mode:'development',
+```
+  
+  >>`production` - Это режим для конечной сборки продукта, если не указывать `mode`, то этот режим ставится автоматически,
+   он сжимает код на столько на сколько возможно и делает его совершенно нечитабельным, но оптимизированным
+
+```javaScript
+  mode:'prodaction',
+```
+* `entry`
+  > Свойство `entry` просто указывает входную точку, тот файл с которого мы будем начинать. В варианте где мы использовали вебпак без конфига, такой файл является `index.js`.
+   Обычно это такой файл, где вы прописываете все импорты, файл который собирает все модули в одном месте.
+```javaScript
+   entry: './src/index.js', // мы тут можем указать путь к нашему файлу и все, необязательно index.js
+
+   entry: [ // для двух и более файлов можно сделать массив
+   './src/index.js',
+   './script.js' 
+     ],
+```
+* `output`
+  >Здесь мы указываем имя файла в котором будет храниться весь минифицированный код из модулей и путь где он будет лежать.
+```javaScript
+ output: {
+      filename: 'bundle.js', // имя файла на выходе
+      path: path.resolve(__dirname, 'dist') // путь 
+      // __dirname - позволяет получить корень нашей папки
+      // dist - это какая папка будет создана, например можно сделать так '/dist/js' 
+   },
+```
+* `watch`
+    > Это свойство в позиции `true` просто позволяет в автоматическом режиме следить за проектом и пересобирать его на ходу, нам не придется каждый раз писать `npx webpack`.
+      Это свойство можно и не ставить в конфиге.
+      В `package.json` в поле `scripts` мы можем создать свой скрипт для запуска и слежения.
+```javaScript
+"scripts": {
+    "build": "webpack",
+    "start": "webpack --watch"
+  },
+  // в таком случае запускается проект не через npx, а через npm
+  // npm build - просто соберет проект как и npx webpack
+  // npm start - соберет проект и запустит сразу watch
+```
+* `devtool`
+   > У `devtool` есть разные настройки, но в основном всегда используется `source-map`. Эта опция позволяет нам сохранять исходный код.
+   В браузере зайдя в инспектор кода на вкладку source мы можем посмотреть исходные файлы. Они будут на вкладке которая будет иметь имя вашего проекта из `package.json`,
+   если раскрыть вкладу, вы увидите исходные файлы. Без `devtool:'source-map'` соответственно их там не будет.
+```javaScript
+ devtool:'source-map', 
+```
+
+<div className='container-img'> <span className="img"> ![console.log](/images/Content/Js/source-map.png) </span></div>
+
+
+## Плагины и лоадеры для webpack
+
+### Лоадеры
+Лоадеры(загрузчик) - это модули, которые нужны что бы взаимодействовать с разными типами файлов при импорте.
+В базовом виде webpack понимает только `js` и `JSON`, что бы исправить такую ситуацию используют лоадеры.<br/>
+Но сначала их нужно установить.<br/>
+Для начала `css loader` для работы с `css` файлами.
+```
+npm install --save-dev css-loader
+```
+Далее `sass loader` для `scss`.
+```
+npm install --save-dev sass-loader
+```
+
+Без этих лоадеров, при импорте `css` или `scss`  файлов в модулях будут ошибки.
+Так же установим `babel-loader` который будет наш код компилировать в более старый, такой код понятен для современных бразуеров и для старых браузеров. У `babel` много возможностей,
+в нашем случае за код для старых браузеров отвечает опция `@babel/preset-env`
+```
+npm install -D babel-loader @babel/preset-env
+```
+Лоадер состоит из `module{}` - свойство содержащее правила и внутри него `rules[]` - это уже сами правила. Внутри `rules[]` находится объект с несколькими свойствами:
+`test` - внутри которого путь в виде регулярных выражений и `use` - сам лоадер, если их лоадеров несколько, можно указать как массив. Сидеть и запоминать как и что писать не нужно, просто гуглите нужный loader и в документации там будет все написанно. 
+Теперь настраиваем `webpack.config.js`:
+```javaScript
+module.exports = {
+   module: { // содержит наши правила
+      rules: [{ // сами правила
+         test:/\.(s*)css$/, // путь
+         use: [ // сами лоадеры, в моем случае сразу два в одном месте
+            'css-loader', // для css
+            'sass-loader', // для scss
+         ]
+      },
+      { // правила для babel
+      test: /\.m?js$/, // путь 
+      exclude: /(node_modules|bower_components)/, // это строчка указывает на исключения
+      use: { // сами правила. Здесь уже в виде объекта, loader указанно как свойство
+         loader: 'babel-loader', // сам лоадер
+         options: { // тут доп свойство с опциями
+            presets: ['@babel/preset-env'] // и опция которая нам нужна
+         }
+      } // все это не нужно писать в ручную, все это взято с документаций. гуглите ребята гуглите!
+      }
+   ],
+      
+   },
+};
+```
+### Плагины
+Если лоадеры нужны для работы с разными типами файлов при импорте, то плагин позволяет работать не только с импортами.
+Плагины так же могут выполнять задачи уже после сборки бандла. Эти задачи могут касаться самого бандла, так и другого кода.
+Короче говоря, плагин, штука помощнее.<br/>
+Установим плагин для минификации `css`
+```
+npm install --save-dev mini-css-extract-plugin
+```
+webpack.config.js:
+```javaScript
+const miniCss = require('mini-css-extract-plugin'); // импортируем сам плагин
+module.exports = {
+   module: {
+      rules: [{
+         test:/\.(s*)css$/,
+         use: [
+            miniCss.loader, // добавляем в правило у лоадера такое свойство(взято с документации)
+            'css-loader',
+            'sass-loader',
+         ]
+      },
+      {
+      test: /\.m?js$/,
+      exclude: /(node_modules|bower_components)/,
+      use: {
+         loader: 'babel-loader',
+         options: {
+            presets: ['@babel/preset-env']
+         }
+      }
+      }
+   ],
+      
+   },
+   plugins: [ // в plugins все плагины создаются с помощью new
+      new miniCss({ // у нашего плагина есть опция
+         filename: 'style.min.css', // опция - имя файла на выходе
+      }),
+   ]
+};
+```
+## Смотрим на готовый конфиг
+Итог таков, мы имеем настройки для работы с `css`,`scss`, `babel` под старые браузеры, минификацию `css`.
+```javaScript
+const path = require('path');
+const miniCss = require('mini-css-extract-plugin');
+module.exports = {
+    mode:'development', 
+   entry: ['./src/index.js'],
+   output: {
+      filename: 'bundle.js',
+      path: path.resolve(__dirname, 'dist')
+   },
+   watch:true,
+   devtool:'source-map',
+   
+   module: {
+      rules: [{
+         test:/\.(s*)css$/,
+         use: [
+            miniCss.loader,
+            'css-loader',
+            'sass-loader',
+         ]
+      },
+      {
+      test: /\.m?js$/,
+      exclude: /(node_modules|bower_components)/,
+      use: {
+         loader: 'babel-loader',
+         options: {
+            presets: ['@babel/preset-env']
+         }
+      }
+      }
+   ],
+      
+   },
+   plugins: [
+      new miniCss({
+         filename: 'style.min.css',
+      }),
+   ]
+};
+```
+Не забываем файлы `css` или `scss` импортировать в ваш главный файл, в моем случае `index.js`.
+Ваш минифицированый `css` файл будет появляться там же где и `js` файл.

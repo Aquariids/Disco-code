@@ -2,21 +2,26 @@ import type { GetStaticProps, NextPage } from "next";
 import React from "react";
 import { withLayout } from "../../layout/Layout";
 import { getAllPosts } from "../api/api";
-import { POSTS_PATH_JS } from "../api/paths";
+import { POSTS_PATH_ADVANCED_JS, POSTS_PATH_ALGORITHMS_JS, POSTS_PATH_BASIC_JS, POSTS_PATH_PRACTICE_JS } from "../api/paths";
 import Head from "next/head";
-import MenuJs from "../../src/Components/Menu/MenuJs/MenuJs";
+import MainMenuJs from "../../src/Components/Menu/MenuJs/MainMenuJs";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = getAllPosts(POSTS_PATH_JS).map((post) => post.meta);
+  const basic_Js = getAllPosts(POSTS_PATH_BASIC_JS).map((post) => post.meta);
+  const advanced_Js = getAllPosts(POSTS_PATH_ADVANCED_JS).map((post) => post.meta);
+  const algorithms_js = getAllPosts(POSTS_PATH_ALGORITHMS_JS).map((post) => post.meta);
+  const practice_Js = getAllPosts(POSTS_PATH_PRACTICE_JS).map((post) => post.meta);
 
+  const postsJs = {basic_Js, advanced_Js,practice_Js,algorithms_js};
   return {
     props: {
-      posts,
+      postsJs,
     },
   };
 };
 
-const Home: NextPage = (): JSX.Element => {
+const Home: NextPage = ({postsJs}:any): JSX.Element => {
+
   return (
     <div className="page_content">
       <Head>
@@ -56,7 +61,7 @@ const Home: NextPage = (): JSX.Element => {
 
         <div className="page_menu">
 
-          <MenuJs sideBarMenuActive={false} mobileMenuActive={false} />
+          <MainMenuJs MainPosts={postsJs} />
         </div>
       </div>
     </div>

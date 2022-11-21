@@ -1,0 +1,102 @@
+---
+title: 'Подробнее об объекте classList '
+id: 18
+prev: '/js/basic-js/dom-navigation'
+next: '/js/basic-js/oop-and-prototype'
+category: 'basic-js'
+---
+
+<div className = 'mdHead'>
+
+#### Теги
+
+<div className='tag_js'>[Методы classList:]()</div>
+<div className='mini_tag_js'>[item,](#item)</div>
+<div className='mini_tag_js'>[add,](#add)</div>
+<div className='mini_tag_js'>[remove,](#remove)</div>
+<div className='mini_tag_js'>[toggle,](#toggle)</div>
+<div className='mini_tag_js'>[contains](#contains)</div> <br/>
+<div className='tag_js'>[Что внутри toggle](#что-внутри-toggleнебольшая-практика)</div>
+
+</div>
+
+
+
+
+
+
+
+<span className = 'link_js'> [Ранее](/js/basicjs/domHtml#работаем-с-css-селекторами-classlist) </span> мы использовали один метод `add` у `classList` для добавления класса, сейчас же мы будем работать в полную силу.
+Что бы обратиться к списку классов пишем `.classList`  - это свойство которое есть у дом узла!
+Например можно использовать свойство length:
+```javaScript
+// допустим у нас есть коллекция кнопок.
+console.log(btns[0].classList.length); // так мы узнаем сколько классов у нашей первой кнопки их 2.
+// так как у нас псевдомассив, мы не можем просто обратиться так btns.classList, нам нужно обращаться к элементу
+```
+
+## Методы classList ##
+```html
+<button class="red yellow">  кнопка 1 </button>
+<button class="blue"> кнопка 2 </button>
+<button class="green"> кнопка 3</button>
+<!-- Наши кнопки которые мы будем использовать. -->
+```
+```javaScript
+// получаем псевдомассив с нашими кнопоками, для работы.
+const btns = document.querySelectorAll('button'); 
+```
+### item() ###
+ `item()` - позволяет получить класс с помощью индекса.
+```javaScript
+btns[0].classList.item(0); //  получим red - первый класс у элемента
+```
+### add() ###
+`add()` - уже знакомы с этим методом. Добавляет класс.
+```javaScript
+btns[1].classList.add('hi', 'bb'); // через запятую можно передавать несколько классов
+// теперь у второй кнопки 3 класса blue hi bb
+```
+
+<div className='container-img'> <span className="img"> ![alt text](/images/Content/Js/add.png) </span></div>
+
+### remove() ###
+`remove()` - удаляет классы
+```javaScript
+btns[1].classList.remove('blue'); // удалили класс blue.
+```
+### toggle() ###
+ `toggle()` - позволяет тоглить классы, что значит переключать. 
+Если у нас есть класс, он его удаляет, если нет, он его добавляет.
+```javaScript
+btns[1].classList.remove('blue'); // сначала мы удалили класс.
+btns[1].classList.toggle('blue'); // потом затоглили и класс blue добавился.
+// если мы не будем удалять класс, а сразу затоглим, то он удалится.
+```
+### contains() ###
+`contains()` - позволяет проверять есть ли класс, если есть то нам вернет true если нет false.
+C пощью item() мы можем ипользовать классы в условиях, но мы не всегда знаем под каким индексом класс, для этого есть метод contains().
+```javaScript
+if (btns[0].classList.contains('red')) { // проверяет на наличие класса, получили правду 
+    console.log('red'); // выполнили код
+}
+```
+## Что внутри toggle(Небольшая практика) ##
+Посмотрим как примерно работает `toggle` внутри.
+```javaScript
+btns[0].addEventListener('click', () => {
+    if (!btns[2].classList.contains('red')) { // мы проверяем, если у btns[2] нету класса red, то мы его добавляем
+        // contains проверяет на существование класса и возрвращает true если его нет, потому что мы использвуем оператор ! - не
+        btns[2].classList.add('red'); // выполняет это условие
+    } else {
+        btns[2].classList.remove('red'); // если же класс есть, то мы его убираем
+    }
+});
+```
+С использованием toggle:
+```javaScript
+btns[0].addEventListener('click', () => {
+    btns[2].classList.toggle('red'); // работает точно так же
+});
+```
+Иногда нужно делать все вручную, поэтому этим нужно уметь пользоваться.
