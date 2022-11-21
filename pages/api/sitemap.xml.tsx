@@ -15,7 +15,7 @@ export default async (req: { headers: { host: any; }; },res: { writeHead: (arg0:
     const links:string[] = [];
 
     
-    const stream = new SitemapStream({ hostname: `https://${req.headers.host}` });
+    const stream = new SitemapStream({ hostname: `https://discocode.ru/` });
     metaJs.forEach((post)=> {
         stream.write({
             url:`/js/${post.category}/${post.slug}`,
