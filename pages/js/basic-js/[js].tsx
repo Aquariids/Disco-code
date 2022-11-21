@@ -31,11 +31,11 @@ const PostPage: NextPage<never> = ({ post }: MDXPost): JSX.Element => {
           <meta name="yandex-verification" content="a99ae512e4f1c330" />
           <meta
             name="description"
-            content={"Уроки по javascript, задачи, алгоритмы.js статьи,"}
+            content={"Уроки и разборы по базовым темам в javascript"}
           />
           <meta
             property="og:description"
-            content={"Уроки и разбор разных тем по javascript"}
+            content={"Уроки и разборы по базовым темам в javascript"}
           />
 
           <meta property="og:type" content="article" />

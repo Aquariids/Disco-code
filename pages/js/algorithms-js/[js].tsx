@@ -30,9 +30,9 @@ const PostPage: NextPage<never> = ({ post }: MDXPost): JSX.Element => {
                 <title>{post.meta.title}</title>
                 <meta name="google-site-verification" content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY" />
                 <meta name="yandex-verification" content="a99ae512e4f1c330" />
-                <meta name='description' content={'Уроки по javascript, задачи, алгоритмы.js статьи,'} />
+                <meta name='description' content={'Разбор алгоритмов на javascript'} />
                 <meta property='og:title' content={post.meta.title} />
-                <meta property='og:description' content={'Уроки и разбор разных тем по javascript'} />
+                <meta property='og:description' content={'Разбор алгоритмов но javascript'} />
                 <meta property='og:type' content={'article'} />
                 <meta property='og:image' content='https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:JavaScript-logo.png' />
                 <meta property="og:image:width" content="1200" />
