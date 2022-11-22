@@ -5,6 +5,7 @@ import cn from 'classnames';
 import { IMenu } from './Menu.props';
 import { useRouter } from 'next/router';
 import Button from '../UI/Button/Button';
+import { PostMeta } from '../../../pages/api/api';
 
 
 const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue, posts,  ...props}:IMenu): JSX.Element => {
@@ -40,7 +41,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                 >{title}</Button>
                 </div>
                 {isOpen && (<ul className={s.listMenu}>
-                    {posts && posts.map((post,index) => (
+                    {posts && posts.map((post:any,index:number) => (
                         
                         <li 
                         key={index}
@@ -72,7 +73,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                 </div>
                 
                 <ul className={s.mobile_list}>
-                    {posts && posts.map((post,index) => (
+                    {posts && posts.map((post:any,index:number) => (
                         <li 
                         onClick={mob}
                         key={index}
@@ -105,7 +106,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                 </div>
 
                     <ul className={s.content_list_menu}>
-                    {posts && posts.map((post,index) => (
+                    {posts && posts.map((post:any,index:number) => (
                         <li 
                             key={index}
                             className={cn( s.link,s.content_links)} >
