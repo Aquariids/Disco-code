@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../../../context/app.context';
 import Menu from '../Menu';
-import { mobileMenuProps } from '../Menu.props';
+import { mobileMenuProps } from '../../mobileModalMenu/MobileModalMenu.props';
+import { JsContextProps } from './postsJs.props';
+import { PostMeta } from '../../../../pages/api/api';
 const MobileMenuJs = ({ setMobile, mobile, }: mobileMenuProps): JSX.Element => {
 
     const { AllThemePosts } = useContext(AppContext);
-    const {posts_Basic_Js,posts_Advanced_Js,posts_Algorithms_Js,posts_Practice_Js} = AllThemePosts;
+    const {posts_Basic_Js,posts_Advanced_Js,posts_Algorithms_Js,posts_Practice_Js}:JsContextProps<PostMeta[]> = AllThemePosts;
 
         return (
             <>

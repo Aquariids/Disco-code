@@ -18,8 +18,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Home: NextPage = ({AllThemePosts}:any): JSX.Element => {
+const Home: NextPage = (): JSX.Element => {
   return (
     <div className="page_content">
       <Head>
@@ -42,7 +41,7 @@ const Home: NextPage = ({AllThemePosts}:any): JSX.Element => {
 
       <div className="page_body">
         <div className={"page_menu"}>
-          <MainMenuTs MainPosts={AllThemePosts}  />
+          <MainMenuTs />
         </div>
       </div>
     </div>

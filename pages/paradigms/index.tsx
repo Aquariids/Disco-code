@@ -7,9 +7,9 @@ import Head from "next/head";
 import MainMenuParadigms from "../../src/Components/Menu/MenuParadigms/MainMenuParadigms";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const post_style_paradigms = getAllPosts(POSTS_PATH_PARADIGMS_STYLE).map((post) => post.meta);
+  const post_Style_Paradigms = getAllPosts(POSTS_PATH_PARADIGMS_STYLE).map((post) => post.meta);
 
-  const AllThemePosts = {post_style_paradigms,};
+  const AllThemePosts = {post_Style_Paradigms,};
   return {
     props: {
       AllThemePosts,
@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Home: NextPage = ({AllThemePosts}:any): JSX.Element => {
+const Home: NextPage = (): JSX.Element => {
   return (
     <div className="page_content">
       <Head>
@@ -57,7 +57,7 @@ const Home: NextPage = ({AllThemePosts}:any): JSX.Element => {
 
         <div className="page_menu">
 
-          <MainMenuParadigms MainPosts={AllThemePosts} />
+          <MainMenuParadigms />
         </div>
       </div>
     </div>

@@ -1,19 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../../../../context/app.context';
 import { PostMeta } from '../../../../pages/api/api';
 import Menu from '../Menu';
+import { ParadigmsContextPosts } from './postsParadigms.props';
 
-interface MainPostsProps<T> {
-    MainPosts: {
-        post_style_paradigms:T,
-    }
-    
+const MainMenuParadigms = (): JSX.Element => {
 
-}
-const MainMenuParadigms = ({MainPosts}:MainPostsProps<PostMeta[]>): JSX.Element => {
-    const {post_style_paradigms} = MainPosts;
+    const { AllThemePosts } = useContext(AppContext);
+    const {post_Style_Paradigms}:ParadigmsContextPosts<PostMeta[]> = AllThemePosts;
         return (
             <>
-                <Menu posts={post_style_paradigms} title=" Стили написания" category='style' page='paradigms' />
+                <Menu posts={post_Style_Paradigms} title=" Стили написания" category='style' page='paradigms' />
             </>
         );
     

@@ -12,22 +12,17 @@ const SidebarMenu = (): JSX.Element => {
     useEffect(() => {
 
         const activeHeight: number | undefined = document.querySelector('.active_scroll')?.clientHeight;
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const activeLink: Element | any = document.querySelector('.active_scroll') as HTMLElement;
         const heightTop: number = activeLink?.offsetTop + activeHeight;
 
         if (activeLink != null && activeHeight != null) {
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-explicit-any
             const menuHeight: number = document.querySelector(`.${s.nav_menu}`)!.clientHeight - 89;
-
             document.querySelector(`.${s.nav_menu}`)?.scrollBy(0, heightTop - menuHeight + 400);
-
         } else {
             alert('Технические неполадки с загрузкой сайдбара');
         }
-
-
-    }, []);
+}, []);
 
 
     const router = useRouter();

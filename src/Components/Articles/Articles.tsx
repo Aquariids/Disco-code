@@ -60,8 +60,6 @@ const Articles = ({category}:articlesProps):JSX.Element => {
             }
             url={"/paradigms"}
           />
-  
-     
       </div>
       </>
     );

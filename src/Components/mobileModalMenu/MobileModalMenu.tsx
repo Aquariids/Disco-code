@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import MobileButton from '../UI/MobileButton/MobileButton';
 import cn from 'classnames';
-import { mobileModalMenuProps } from './MobileModalMenu.props';
+import {mobileModalMenuProps } from './MobileModalMenu.props';
 import s from './MobileModalMenu.module.css';
 import MobileMenuJs from '../Menu/MenuJs/MobileMenuJs';
 import MobileMenuTs from '../Menu/MenuTs/MobileMenuTs';

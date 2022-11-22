@@ -7,8 +7,6 @@ import Head from "next/head";
 import MainMenuJs from "../../src/Components/Menu/MenuJs/MainMenuJs";
 
 export const getStaticProps: GetStaticProps = async () => {
-  
- 
   const posts_Basic_Js = getAllPosts(POSTS_PATH_BASIC_JS).map((post) => post.meta);
   const posts_Advanced_Js = getAllPosts(POSTS_PATH_ADVANCED_JS).map((post) => post.meta);
   const posts_Algorithms_Js = getAllPosts(POSTS_PATH_ALGORITHMS_JS).map((post) => post.meta);
@@ -22,8 +20,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Home: NextPage = ({AllThemePosts}:any): JSX.Element => {
+const Home: NextPage = (): JSX.Element => {
 
   return (
     <div className="page_content">
@@ -64,7 +61,7 @@ const Home: NextPage = ({AllThemePosts}:any): JSX.Element => {
 
         <div className="page_menu">
 
-          <MainMenuJs MainPosts={AllThemePosts} />
+          <MainMenuJs />
         </div>
       </div>
     </div>

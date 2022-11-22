@@ -1,17 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../../../../context/app.context';
 import { PostMeta } from '../../../../pages/api/api';
 import Menu from '../Menu';
-interface MainPostsProps<T> {
-    MainPosts: {
-        posts_Basic_Ts:T,
-    }
-    
+import { TsContextProps } from './postsTs.props';
 
-}
+const MainMenuTs = (): JSX.Element => {
 
-const MainMenuTs = ({MainPosts}:MainPostsProps<PostMeta[]>): JSX.Element => {
-    const {posts_Basic_Ts} = MainPosts;
-
+    const { AllThemePosts } = useContext(AppContext);
+    const {posts_Basic_Ts}:TsContextProps<PostMeta[]> = AllThemePosts;
 
         return (
             <>

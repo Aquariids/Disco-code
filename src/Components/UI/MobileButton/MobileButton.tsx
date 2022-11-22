@@ -21,16 +21,12 @@ const MobileButton = ({ mobile, setMobile, ...props }: MobileButtonProps) => {
                         [s.arrows_js]: router.pathname.startsWith('/js'),
                         [s.arrows_react]: router.pathname.startsWith('/react'),
                         [s.arrows_ts]: router.pathname.startsWith('/ts'),
-
-
                     })}><ArrowIcon /></span>
                     <span className={cn(s.arrow_down, {
                     [s.arrow_down_true]: mobile === true,
                     [s.arrows_js]: router.pathname.startsWith('/js'),
                     [s.arrows_react]: router.pathname.startsWith('/react'),
                     [s.arrows_ts]: router.pathname.startsWith('/ts'),
-
-
                     })}><ArrowIcon /></span>
                     </div>
                 </div>
