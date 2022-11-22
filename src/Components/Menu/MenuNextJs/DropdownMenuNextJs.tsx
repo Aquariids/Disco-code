@@ -1,21 +1,22 @@
 import React, { useContext } from 'react';
-import {NextJsContext } from '../../../../context/app.context';
+import {AppContext } from '../../../../context/app.context';
 import Menu from '../Menu';
 
-const MenuJs = (): JSX.Element => {
+const DropdownMenuNextJs = (): JSX.Element => {
 
-    const { postsNextJs } = useContext(NextJsContext);
+    const { AllThemePosts } = useContext(AppContext);
 
-    console.log("(👍≖‿‿≖)👍 ✿ file: DropdownMenuNextJs.tsx ✿ line 8 ✿ MenuJs ✿ postsNextJs", postsNextJs)
+    const {posts_Basic_Next_Js} = AllThemePosts;
+    console.log("(👍≖‿‿≖)👍 ✿ file: DropdownMenuNextJs.tsx ✿ line 8 ✿ MenuJs ✿ postsNextJs", AllThemePosts)
 
 
         return (
             <>
-                <Menu posts={postsNextJs?.basic_next_js} title="Основы nextJs" category='basic-next-js' dropdown={true} page='next-js' />
+                <Menu posts={posts_Basic_Next_Js} title="Основы nextJs" category='basic-next-js' dropdown={true} page='next-js' />
             </>
         );
     
 
 };
 
-export default MenuJs;
+export default DropdownMenuNextJs;

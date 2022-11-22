@@ -115,11 +115,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
   );
 
-  const basic_next_js = getAllPosts(POSTS_PATH_BASIC_NEXTJS).map((post) => post.meta);
-
-  const postsNextJs = {basic_next_js,};
+  const posts_Basic_Next_Js = getAllPosts(POSTS_PATH_BASIC_NEXTJS).map((post) => post.meta);
+  const AllThemePosts = {posts_Basic_Next_Js,};
   
-  return { props: { post: { source: mdxSource, meta }, postsNextJs },revalidate: 10 };
+  return { props: { post: { source: mdxSource, meta }, AllThemePosts },revalidate: 10 };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

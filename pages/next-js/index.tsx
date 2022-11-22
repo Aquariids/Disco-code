@@ -7,17 +7,17 @@ import Head from "next/head";
 import MainMenuNextJs from "../../src/Components/Menu/MenuNextJs/MainMenuNextJs";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const basic_next_js = getAllPosts(POSTS_PATH_BASIC_NEXTJS).map((post) => post.meta);
+  const posts_Basic_Next_Js = getAllPosts(POSTS_PATH_BASIC_NEXTJS).map((post) => post.meta);
 
-  const postsNextJs = {basic_next_js,};
+  const AllThemePosts = {posts_Basic_Next_Js,};
   return {
     props: {
-      postsNextJs,
+      AllThemePosts,
     },
   };
 };
 
-const Home: NextPage = ({postsNextJs}:any): JSX.Element => {
+const Home: NextPage = ({AllThemePosts}:any): JSX.Element => {
   return (
     <div className="page_content">
       <Head>
@@ -54,7 +54,7 @@ const Home: NextPage = ({postsNextJs}:any): JSX.Element => {
       <div className="page_body">
 
         <div className="page_menu">
-        <MainMenuNextJs MainPosts={postsNextJs}  />
+        <MainMenuNextJs MainPosts={AllThemePosts}  />
         </div>
       </div>
     </div>

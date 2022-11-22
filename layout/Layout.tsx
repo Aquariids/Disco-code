@@ -39,13 +39,10 @@ const Layout = ({ children, }: LayoutProps): JSX.Element => {
 
 export const withLayout = <T extends Record<string, unknown> & IAppContext>(Component: FunctionComponent<T>) => {
     return function withLayoutComponent(props: T): JSX.Element {
-    console.log("(👍≖‿‿≖)👍 ✿ file: Layout.tsx ✿ line 43 ✿ withLayoutComponent ✿ props", props)
+        
 
         return (
-            <AppContextProvider
-                postsTs={props.postsTs}
-                postsNextJs={props.postsNextJs}
-                postsJs={props.postsJs}>
+            <AppContextProvider AllThemePosts={props.AllThemePosts}>
                 <Layout {...props}>
                     <Component {...props} />
                 </Layout>

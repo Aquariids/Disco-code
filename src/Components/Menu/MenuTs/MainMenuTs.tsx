@@ -3,21 +3,19 @@ import { PostMeta } from '../../../../pages/api/api';
 import Menu from '../Menu';
 interface MainPostsProps<T> {
     MainPosts: {
-        basic_Ts:T,
+        posts_Basic_Ts:T,
     }
     
 
 }
 
-
 const MainMenuTs = ({MainPosts}:MainPostsProps<PostMeta[]>): JSX.Element => {
-    const {basic_Ts} = MainPosts;
+    const {posts_Basic_Ts} = MainPosts;
 
 
         return (
             <>
-                <Menu posts={basic_Ts} title=" Основы typeScript" page='ts' />
-                {/* <Menu title="Фиксы некоторых ошибок" category='/' page='ts' /> */}
+                <Menu posts={posts_Basic_Ts} title=" Основы typeScript" page='ts' />
                 
             </>
         );

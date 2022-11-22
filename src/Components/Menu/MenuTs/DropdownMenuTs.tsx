@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
-import {TsContext } from '../../../../context/app.context';
+import {AppContext } from '../../../../context/app.context';
 import Menu from '../Menu';
-const DropdownMenuJs = (): JSX.Element => {
+const DropdownMenuTs = (): JSX.Element => {
 
-    const { postsTs } = useContext(TsContext);
-
+    const { AllThemePosts } = useContext(AppContext);
+    const {posts_Basic_Ts} = AllThemePosts;
 
     return (
         <>
-            <Menu posts={postsTs?.basic_Ts} title="Основы typeScript" category='basic-ts' dropdown={true} page='ts' />
+            <Menu posts={posts_Basic_Ts} title="Основы typeScript" category='basic-ts' dropdown={true} page='ts' />
         </>
     );
 };
 
-export default DropdownMenuJs;
+export default DropdownMenuTs;

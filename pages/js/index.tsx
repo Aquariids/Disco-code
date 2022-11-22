@@ -7,20 +7,22 @@ import Head from "next/head";
 import MainMenuJs from "../../src/Components/Menu/MenuJs/MainMenuJs";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const basic_Js = getAllPosts(POSTS_PATH_BASIC_JS).map((post) => post.meta);
-  const advanced_Js = getAllPosts(POSTS_PATH_ADVANCED_JS).map((post) => post.meta);
-  const algorithms_js = getAllPosts(POSTS_PATH_ALGORITHMS_JS).map((post) => post.meta);
-  const practice_Js = getAllPosts(POSTS_PATH_PRACTICE_JS).map((post) => post.meta);
-
-  const postsJs = {basic_Js, advanced_Js,practice_Js,algorithms_js};
+  
+ 
+  const posts_Basic_Js = getAllPosts(POSTS_PATH_BASIC_JS).map((post) => post.meta);
+  const posts_Advanced_Js = getAllPosts(POSTS_PATH_ADVANCED_JS).map((post) => post.meta);
+  const posts_Algorithms_Js = getAllPosts(POSTS_PATH_ALGORITHMS_JS).map((post) => post.meta);
+  const posts_Practice_Js = getAllPosts(POSTS_PATH_PRACTICE_JS).map((post) => post.meta);
+  
+  const AllThemePosts = {posts_Basic_Js,posts_Advanced_Js,posts_Algorithms_Js,posts_Practice_Js};
   return {
     props: {
-      postsJs,
+      AllThemePosts,
     },
   };
 };
 
-const Home: NextPage = ({postsJs}:any): JSX.Element => {
+const Home: NextPage = ({AllThemePosts}:any): JSX.Element => {
 
   return (
     <div className="page_content">
@@ -61,7 +63,7 @@ const Home: NextPage = ({postsJs}:any): JSX.Element => {
 
         <div className="page_menu">
 
-          <MainMenuJs MainPosts={postsJs} />
+          <MainMenuJs MainPosts={AllThemePosts} />
         </div>
       </div>
     </div>

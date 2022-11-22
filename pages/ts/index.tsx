@@ -7,17 +7,18 @@ import { getAllPosts } from "../api/api";
 import {  POSTS_PATH_BASIC_TS} from "../api/paths";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const basic_Ts = getAllPosts(POSTS_PATH_BASIC_TS).map((post) => post.meta);
 
-const postsTs = {basic_Ts};
+
+  const posts_Basic_Ts = getAllPosts(POSTS_PATH_BASIC_TS).map((post) => post.meta);
+  const AllThemePosts = {posts_Basic_Ts,};
   return {
     props: {
-      postsTs,
+     AllThemePosts,
     },
   };
 };
 
-const Home: NextPage = ({postsTs}:any): JSX.Element => {
+const Home: NextPage = ({AllThemePosts}:any): JSX.Element => {
   return (
     <div className="page_content">
       <Head>
@@ -40,7 +41,7 @@ const Home: NextPage = ({postsTs}:any): JSX.Element => {
 
       <div className="page_body">
         <div className={"page_menu"}>
-          <MainMenuTs MainPosts={postsTs}  />
+          <MainMenuTs MainPosts={AllThemePosts}  />
         </div>
       </div>
     </div>

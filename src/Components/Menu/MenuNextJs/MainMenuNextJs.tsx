@@ -4,20 +4,20 @@ import Menu from '../Menu';
 
 interface MainPostsProps<T> {
     MainPosts: {
-        basic_next_js:T,
+        posts_Basic_Next_Js:T,
     }
     
 
 }
-const MenuJs = ({MainPosts}:MainPostsProps<PostMeta[]>): JSX.Element => {
-    const {basic_next_js} = MainPosts;
+const MainMenuNextJs = ({MainPosts}:MainPostsProps<PostMeta[]>): JSX.Element => {
+    const {posts_Basic_Next_Js} = MainPosts;
         return (
             <>
-                <Menu posts={basic_next_js} title="Основы nextJs" category='basic-next-js' page='next-js' />
+                <Menu posts={posts_Basic_Next_Js} title="Основы nextJs" category='basic-next-js' page='next-js' />
             </>
         );
     
 
 };
 
-export default MenuJs;
+export default MainMenuNextJs;

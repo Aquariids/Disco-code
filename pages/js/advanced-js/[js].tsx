@@ -8,14 +8,12 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import Head from 'next/head';
 import "highlight.js/styles/a11y-dark.css";
 import cn from 'classnames';
-import { getAllPosts, getPostFromSlug, getSlugs, MDXPost } from '../../api/api';
+import { getAllPosts, getPostFromSlug, getSlugs, MDXPost, PostMeta } from '../../api/api';
 import { POSTS_PATH_ADVANCED_JS, POSTS_PATH_ALGORITHMS_JS, POSTS_PATH_BASIC_JS, POSTS_PATH_PRACTICE_JS } from '../../api/paths';
 import Link from 'next/link';
 import s from '../pageJs.module.css';
 
 import AnimationContainer from '../../../src/Components/AnimationContainers/AnimationContainer';
-
-
 
 
 
@@ -86,14 +84,16 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 
     });
-    const postsJsBasic = getAllPosts(POSTS_PATH_BASIC_JS).map((post) => post.meta);
-    const postsJsAdvanced = getAllPosts(POSTS_PATH_ADVANCED_JS).map((post) => post.meta);
-    const postsJsAlgorithms = getAllPosts(POSTS_PATH_ALGORITHMS_JS).map((post) => post.meta);
-    const postsJsPractice = getAllPosts(POSTS_PATH_PRACTICE_JS).map((post) => post.meta);
+    
+  const posts_Basic_Js = getAllPosts(POSTS_PATH_BASIC_JS).map((post) => post.meta);
+  const posts_Advanced_Js = getAllPosts(POSTS_PATH_ADVANCED_JS).map((post) => post.meta);
+  const posts_Algorithms_Js = getAllPosts(POSTS_PATH_ALGORITHMS_JS).map((post) => post.meta);
+  const posts_Practice_Js = getAllPosts(POSTS_PATH_PRACTICE_JS).map((post) => post.meta);
   
-  const postsJs = {postsJsBasic,postsJsAdvanced,postsJsAlgorithms,postsJsPractice};
+  const AllThemePosts = {posts_Basic_Js,posts_Advanced_Js,posts_Algorithms_Js,posts_Practice_Js};
 
-    return { props: { post: { source: mdxSource, meta }, postsJs },revalidate: 10};
+
+    return { props: { post: { source: mdxSource, meta }, AllThemePosts },revalidate: 10};
 
 };
 

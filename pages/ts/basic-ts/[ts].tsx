@@ -73,11 +73,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
     );
 
-    const basic_Ts = getAllPosts(POSTS_PATH_BASIC_TS).map((post) => post.meta);
+    const posts_Basic_Ts = getAllPosts(POSTS_PATH_BASIC_TS).map((post) => post.meta);
+    const AllThemePosts = {posts_Basic_Ts,};
 
-        const postsTs = {basic_Ts};
-
-    return { props: { post: { source: mdxSource, meta }, postsTs } };
+    return { props: { post: { source: mdxSource, meta }, AllThemePosts } };
 
 };
 

@@ -85,13 +85,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     });
 
 
-    const postsJsBasic = getAllPosts(POSTS_PATH_BASIC_JS).map((post) => post.meta);
-    const postsJsAdvanced = getAllPosts(POSTS_PATH_ADVANCED_JS).map((post) => post.meta);
-    const postsJsAlgorithms = getAllPosts(POSTS_PATH_ALGORITHMS_JS).map((post) => post.meta);
-    const postsJsPractice = getAllPosts(POSTS_PATH_PRACTICE_JS).map((post) => post.meta);
+    const posts_Basic_Js = getAllPosts(POSTS_PATH_BASIC_JS).map((post) => post.meta);
+    const posts_Advanced_Js = getAllPosts(POSTS_PATH_ADVANCED_JS).map((post) => post.meta);
+    const posts_Algorithms_Js = getAllPosts(POSTS_PATH_ALGORITHMS_JS).map((post) => post.meta);
+    const posts_Practice_Js = getAllPosts(POSTS_PATH_PRACTICE_JS).map((post) => post.meta);
+    
+    const AllThemePosts = {posts_Basic_Js,posts_Advanced_Js,posts_Algorithms_Js,posts_Practice_Js};
   
-  const postsJs = {postsJsBasic,postsJsAdvanced,postsJsAlgorithms,postsJsPractice};
-    return { props: { post: { source: mdxSource, meta }, postsJs },revalidate: 10 };
+    return { props: { post: { source: mdxSource, meta }, AllThemePosts },revalidate: 10 };
 
 };
 
