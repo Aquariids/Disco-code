@@ -9,7 +9,7 @@ import Head from 'next/head';
 import "highlight.js/styles/nord.css";
 import cn from 'classnames';
 import { getAllPosts, getPostFromSlug, getSlugs, MDXPost } from '../../api/api';
-import { POSTS_PATH_REACT } from '../../api/paths';
+import { POSTS_PATH_BASIC_REACT } from '../../api/paths';
 import Link from 'next/link';
 import s from './../pageReact.module.css';
 import AnimationContainer from '../../../src/Components/AnimationContainers/AnimationContainer';
@@ -58,7 +58,7 @@ export default withLayout(PostPage);
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const { react } = params as { react: string };
-    const { content, meta } = getPostFromSlug(react, POSTS_PATH_REACT);
+    const { content, meta } = getPostFromSlug(react, POSTS_PATH_BASIC_REACT);
     const mdxSource = await serialize(content, {
         mdxOptions: {
             rehypePlugins: [
@@ -72,11 +72,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
     );
 
-    const posts = getAllPosts(POSTS_PATH_REACT)
-        .map((post) => post.meta);
+   
 
+        const posts_Basic_React = getAllPosts(POSTS_PATH_BASIC_REACT).map((post) => post.meta);
+        const AllThemePosts = {posts_Basic_React,};
 
-    return { props: { post: { source: mdxSource, meta }, posts } };
+    return { props: { post: { source: mdxSource, meta }, AllThemePosts } };
 
 };
 
@@ -84,7 +85,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const paths = getSlugs(POSTS_PATH_REACT).map((react) => {
+    const paths = getSlugs(POSTS_PATH_BASIC_REACT).map((react) => {
         return ({ params: { react } });
     });
     return {

@@ -2,13 +2,25 @@ import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import React from 'react';
 import { withLayout } from '../../layout/Layout';
-import MenuReact from '../../src/Components/Menu/MenuReact/MenuReact';
+import MainMenuReact from '../../src/Components/Menu/MenuReact/MainMenuReact';
 import { getAllPosts } from '../api/api';
-import { POSTS_PATH_REACT } from '../api/paths';
+import { POSTS_PATH_BASIC_REACT } from '../api/paths';
 
+export const getStaticProps: GetStaticProps = async () => {
 
+  const posts_Basic_React = getAllPosts(POSTS_PATH_BASIC_REACT).slice(0, 9).map(post => post.meta);
 
-const Home: NextPage = (): JSX.Element => {
+  const AllThemePosts = {posts_Basic_React};
+
+  return {
+    props: {
+      AllThemePosts
+    }
+  };
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Home: NextPage = ({AllThemePosts}:any): JSX.Element => {
 
   return (
     <div className='page_content'>
@@ -26,7 +38,7 @@ const Home: NextPage = (): JSX.Element => {
       <h2>Содержание</h2>
       <div className='page_body'>
         <div className='page_menu'>
-          <MenuReact sideBarMenuActive={false} mobileMenuActive={false}/>
+          <MainMenuReact MainPosts={AllThemePosts}/>
         </div>
       </div>
     </div>
@@ -39,16 +51,5 @@ const Home: NextPage = (): JSX.Element => {
 
 export default withLayout(Home);
 
-export const getStaticProps: GetStaticProps = async () => {
 
-  const posts = getAllPosts(POSTS_PATH_REACT)
-    .slice(0, 9)
-    .map(post => post.meta);
-
-  return {
-    props: {
-      posts
-    }
-  };
-};
 

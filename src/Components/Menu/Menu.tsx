@@ -1,21 +1,21 @@
 import Link from 'next/link';
-import React, {useContext,useState } from 'react';
+import React, {useState } from 'react';
 import s from './Menu.module.css';
 import cn from 'classnames';
 import { IMenu } from './Menu.props';
 import { useRouter } from 'next/router';
 import Button from '../UI/Button/Button';
-import { AppContext } from '../../../context/app.context';
 
 
-const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,  ...props}:IMenu): JSX.Element => {
+const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue, posts,  ...props}:IMenu): JSX.Element => {
 
     const router = useRouter();
     const pathname = router.asPath.split('#')[0]; // если мы переходим по ссылке с якорем куда то, к статье какой нибудь, то активная ссылка будет немного ломаться, поэтому если есть якорь мы его убираем.
     const checkActiveLink = pathname.split('/')[pathname.split('/').length - 1]; // отрезаем от пути наш slug и будем проверять сщ slug из api, и так будет кидать активную ссылку
-    const { posts } = useContext(AppContext);
     
-    posts && posts.sort((a,b) => a.id - b.id);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    posts && posts.sort((a:any,b:any) => a.id - b.id);
+    
 
 
     const [isOpen, setOpen] = useState(router.pathname.startsWith(`/${page}/${category}`) == true? true: false);
@@ -30,7 +30,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
         });
     };
 
-    // side bar
+    // sidebar
     if(dropdown === true) {
         return (
             <div className={s.content} {...props}>
@@ -41,7 +41,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                 >{title}</Button>
                 </div>
                 {isOpen && (<ul className={s.listMenu}>
-                    {posts && posts.map((post,index) => (
+                    {posts && posts.map((post:any,index:number) => (
                         
                         <li 
                         key={index}
@@ -51,9 +51,8 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                                 [s.active_js]: post.slug === checkActiveLink && router.pathname.startsWith('/js'),
                                 [s.active_ts]:  post.slug === checkActiveLink && router.pathname.startsWith('/ts'),
                                 [s.active_react]: post.slug === checkActiveLink && router.pathname.startsWith('/react'),
-                                [s.hide]: post.category !== category,
                             })} >
-                               
+                            
                                 {router.pathname.startsWith(`/${page}`)?<Link  href={`/${page}/${post.category}/${post.slug}`}>{post.title}</Link>:''}
                             
                         </li>
@@ -74,7 +73,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                 </div>
                 
                 <ul className={s.mobile_list}>
-                    {posts && posts.map((post,index) => (
+                    {posts && posts.map((post:any,index:number) => (
                         <li 
                         onClick={mob}
                         key={index}
@@ -84,7 +83,6 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                                 [s.active_js]: post.slug === checkActiveLink && router.pathname.startsWith('/js'),
                                 [s.active_ts]: post.slug === checkActiveLink && router.pathname.startsWith('/ts'),
                                 [s.active_react]: post.slug === checkActiveLink && router.pathname.startsWith('/react'),
-                                [s.hide]: post.category !== category,
                             })} >
 
                                 {router.pathname.startsWith(`/${page}`)?<Link  href={`/${page}/${post.category}/${post.slug}`}>{post.title}</Link>:''}
@@ -97,10 +95,8 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
         );
     }
 
-    // content page
+    // main content page
     else {
-        
-        
         return (
             <>
             <div className={s.content} {...props}>
@@ -110,12 +106,10 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
                 </div>
 
                     <ul className={s.content_list_menu}>
-                    {posts && posts.map((post,index) => (
+                    {posts && posts.map((post:any,index:number) => (
                         <li 
                             key={index}
-                            className={cn( s.link,s.content_links,{
-                                [s.hide]: post.category !== category,
-                            })} >
+                            className={cn( s.link,s.content_links)} >
                                 {router.pathname.startsWith(`/${page}`)?<Link href={`/${page}/${post.category}/${post.slug}`}>{post.title}</Link>:''}
 
                         </li>

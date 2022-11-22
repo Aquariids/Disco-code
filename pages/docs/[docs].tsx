@@ -12,12 +12,12 @@ import { getAllPosts, getPostFromSlug, getSlugs, PostMeta } from '../api/api';
 
 
 
-interface MSXPost {
+interface MDXPost {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
     meta: PostMeta
 }
 
-const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => {
+const PostPage: NextPage<never> = ({ post }: { post: MDXPost }): JSX.Element => {
 
 
 
@@ -31,7 +31,7 @@ const PostPage: NextPage<never> = ({ post }: { post: MSXPost }): JSX.Element => 
                     <h1>{'Документация по разработке сайта'}</h1>
                 </div>
                 <MDXRemote  {...post.source} />
-  
+
         </div>
     );
 

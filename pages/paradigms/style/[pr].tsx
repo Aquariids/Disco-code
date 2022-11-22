@@ -16,9 +16,8 @@ import {
   MDXPost,
 
 } from "../../api/api";
-import { POSTS_PATH_PARADIGMS } from "../../api/paths";
+import { POSTS_PATH_PARADIGMS_STYLE } from "../../api/paths";
 import Link from "next/link";
-import ListMobileMenu from "../../../src/Components/mobileModalMenu/ListMobileMenu/ListMobileMenu";
 
 
 const PostPage: NextPage<never> = ({
@@ -101,7 +100,7 @@ export default withLayout(PostPage);
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { pr } = params as { pr: string };
-  const { content, meta } = getPostFromSlug(pr, POSTS_PATH_PARADIGMS);
+  const { content, meta } = getPostFromSlug(pr, POSTS_PATH_PARADIGMS_STYLE);
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [
@@ -112,15 +111,18 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
   });
 
-  const posts = getAllPosts(POSTS_PATH_PARADIGMS).map((post) => post.meta);
-  return { props: { post: { source: mdxSource, meta }, posts } };
+  const post_style_paradigms = getAllPosts(POSTS_PATH_PARADIGMS_STYLE).map((post) => post.meta);
+  const AllThemePosts = {post_style_paradigms};
+  
+  return { props: { post: { source: mdxSource, meta }, AllThemePosts } };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getSlugs(POSTS_PATH_PARADIGMS).map((pr) => ({ params: { pr } }));
+  const paths = getSlugs(POSTS_PATH_PARADIGMS_STYLE).map((pr) => ({ params: { pr } }));
 
   return {
     paths,
     fallback: false,
   };
 };
+

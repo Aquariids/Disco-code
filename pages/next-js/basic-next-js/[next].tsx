@@ -16,7 +16,7 @@ import {
   getSlugs,
   MDXPost,
 } from "../../api/api";
-import { POSTS_PATH_NEXTJS } from "../../api/paths";
+import { POSTS_PATH_BASIC_NEXTJS} from "../../api/paths";
 import Link from "next/link";
 import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
 
@@ -102,7 +102,7 @@ export default withLayout(PostPage);
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { next } = params as { next: string };
-  const { content, meta } = getPostFromSlug(next, POSTS_PATH_NEXTJS);
+  const { content, meta } = getPostFromSlug(next, POSTS_PATH_BASIC_NEXTJS);
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [
@@ -115,12 +115,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
   );
 
-  const posts = getAllPosts(POSTS_PATH_NEXTJS).map((post) => post.meta);
-  return { props: { post: { source: mdxSource, meta }, posts },revalidate: 10 };
+  const posts_Basic_Next_Js = getAllPosts(POSTS_PATH_BASIC_NEXTJS).map((post) => post.meta);
+  const AllThemePosts = {posts_Basic_Next_Js,};
+  
+  return { props: { post: { source: mdxSource, meta }, AllThemePosts },revalidate: 10 };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getSlugs(POSTS_PATH_NEXTJS).map((next) => ({ params: { next } }));
+  const paths = getSlugs(POSTS_PATH_BASIC_NEXTJS).map((next) => ({ params: { next } }));
 
   return {
     paths,

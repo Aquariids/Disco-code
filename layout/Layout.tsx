@@ -25,7 +25,6 @@ const Layout = ({ children, }: LayoutProps): JSX.Element => {
                 <div className={body}>
                     <div className={content}>
                     <ListMobileMenu />
-
                         {children}
                     </div>
                 </div>
@@ -40,9 +39,10 @@ const Layout = ({ children, }: LayoutProps): JSX.Element => {
 
 export const withLayout = <T extends Record<string, unknown> & IAppContext>(Component: FunctionComponent<T>) => {
     return function withLayoutComponent(props: T): JSX.Element {
+        
 
         return (
-            <AppContextProvider posts={props.posts}>
+            <AppContextProvider AllThemePosts={props.AllThemePosts}>
                 <Layout {...props}>
                     <Component {...props} />
                 </Layout>

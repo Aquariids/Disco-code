@@ -9,13 +9,11 @@ import Head from 'next/head';
 import "highlight.js/styles/a11y-dark.css";
 import cn from 'classnames';
 import { getAllPosts, getPostFromSlug, getSlugs, MDXPost } from '../../api/api';
-import { POSTS_PATH_JS } from '../../api/paths';
+import { POSTS_PATH_ADVANCED_JS, POSTS_PATH_ALGORITHMS_JS, POSTS_PATH_BASIC_JS, POSTS_PATH_PRACTICE_JS } from '../../api/paths';
 import Link from 'next/link';
 import s from '../pageJs.module.css';
 
 import AnimationContainer from '../../../src/Components/AnimationContainers/AnimationContainer';
-
-
 
 
 
@@ -31,9 +29,9 @@ const PostPage: NextPage<never> = ({ post }: MDXPost): JSX.Element => {
                 <title>{post.meta.title}</title>
                 <meta name="google-site-verification" content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY" />
                 <meta name="yandex-verification" content="a99ae512e4f1c330" />
-                <meta name='description' content={'Уроки по javascript, задачи, алгоритмы.js статьи,'} />
+                <meta name='description' content={'Уроки и разборы на продвинутые темы в javascript'} />
                 <meta property='og:title' content={post.meta.title} />
-                <meta property='og:description' content={'Уроки и разбор разных тем по javascript'} />
+                <meta property='og:description' content={'Уроки и разборы на продвинутые темы в javascript'} />
                 <meta property='og:type' content={'article'} />
                 <meta property='og:image' content='https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:JavaScript-logo.png' />
                 <meta property="og:image:width" content="1200" />
@@ -74,7 +72,7 @@ export default withLayout(PostPage);
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const { js } = params as { js: string };
-    const { content, meta } = getPostFromSlug(js, POSTS_PATH_JS);
+    const { content, meta } = getPostFromSlug(js, POSTS_PATH_ADVANCED_JS);
     const mdxSource = await serialize(content, {
         mdxOptions: {
             rehypePlugins: [
@@ -86,11 +84,16 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 
     });
+    
+  const posts_Basic_Js = getAllPosts(POSTS_PATH_BASIC_JS).map((post) => post.meta);
+  const posts_Advanced_Js = getAllPosts(POSTS_PATH_ADVANCED_JS).map((post) => post.meta);
+  const posts_Algorithms_Js = getAllPosts(POSTS_PATH_ALGORITHMS_JS).map((post) => post.meta);
+  const posts_Practice_Js = getAllPosts(POSTS_PATH_PRACTICE_JS).map((post) => post.meta);
+  
+  const AllThemePosts = {posts_Basic_Js,posts_Advanced_Js,posts_Algorithms_Js,posts_Practice_Js};
 
 
-    const posts = getAllPosts(POSTS_PATH_JS)
-        .map(post => post.meta);
-    return { props: { post: { source: mdxSource, meta }, posts },revalidate: 10};
+    return { props: { post: { source: mdxSource, meta }, AllThemePosts },revalidate: 10};
 
 };
 
@@ -98,7 +101,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const paths = getSlugs(POSTS_PATH_JS).map(js => ({ params: { js } }));
+    const paths = getSlugs(POSTS_PATH_ADVANCED_JS).map(js => ({ params: { js } }));
 
     return {
         paths,

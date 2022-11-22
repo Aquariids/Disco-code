@@ -27,9 +27,9 @@ interface Post {
   meta: PostMeta;
 }
 
-export interface MDXPost {
+export interface MDXPost  {
   post: {
-    source: MDXRemoteSerializeResult<Record<string, unknown>>;
+    source: MDXRemoteSerializeResult<Record<string, unknown>>
     meta: PostMeta;
   };
 }
@@ -52,7 +52,7 @@ export const getPostFromSlug = (slug: string, url: string): Post => {
     meta: {
       slug,
       title: data.title ?? slug,
-      id: data.id ?? "",
+      id: data.id ?? 0,
       prev: data.prev ?? "none",
       next: data.next ?? "none",
       category: data.category ?? "none",

@@ -2,21 +2,23 @@ import type { GetStaticProps, NextPage } from "next";
 import React from "react";
 import { withLayout } from "../../layout/Layout";
 import { getAllPosts } from "../api/api";
-import {POSTS_PATH_NEXTJS } from "../api/paths";
+import {POSTS_PATH_BASIC_NEXTJS } from "../api/paths";
 import Head from "next/head";
-import MenuNextJs from "../../src/Components/Menu/MenuNextJs/MenuNextJs";
+import MainMenuNextJs from "../../src/Components/Menu/MenuNextJs/MainMenuNextJs";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = getAllPosts(POSTS_PATH_NEXTJS).map((post) => post.meta);
+  const posts_Basic_Next_Js = getAllPosts(POSTS_PATH_BASIC_NEXTJS).map((post) => post.meta);
 
+  const AllThemePosts = {posts_Basic_Next_Js,};
   return {
     props: {
-      posts,
+      AllThemePosts,
     },
   };
 };
 
-const Home: NextPage = (): JSX.Element => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Home: NextPage = ({AllThemePosts}:any): JSX.Element => {
   return (
     <div className="page_content">
       <Head>
@@ -53,7 +55,7 @@ const Home: NextPage = (): JSX.Element => {
       <div className="page_body">
 
         <div className="page_menu">
-        <MenuNextJs sideBarMenuActive={false} mobileMenuActive={false} />
+        <MainMenuNextJs MainPosts={AllThemePosts}  />
         </div>
       </div>
     </div>

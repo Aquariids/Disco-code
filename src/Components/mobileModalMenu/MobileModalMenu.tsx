@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import MenuJs from '../Menu/MenuJs/MenuJs';
 import MobileButton from '../UI/MobileButton/MobileButton';
 import cn from 'classnames';
-import MenuTs from '../Menu/MenuTs/MenuTs';
-import MenuReact from '../Menu/MenuReact/MenuReact';
 import { mobileModalMenuProps } from './MobileModalMenu.props';
 import s from './MobileModalMenu.module.css';
-import MenuParadigms from '../Menu/MenuParadigms/MenuParadigms';
-import MenuNextJs from '../Menu/MenuNextJs/MenuNextJs';
+import MobileMenuJs from '../Menu/MenuJs/MobileMenuJs';
+import MobileMenuTs from '../Menu/MenuTs/MobileMenuTs';
+import MobileMenuParadigms from '../Menu/MenuParadigms/MobileMenuParadigms';
+import MobileMenuReact from '../Menu/MenuReact/MobileMenuReact';
+import MobileMenuNextJs from '../Menu/MenuNextJs/MobileMenuNextJs';
 
 const mobileModalMenu = ({js,ts,react,paradigms,nextJs}:mobileModalMenuProps) => {
     const [mobile, setMobile] = useState(false);
@@ -18,11 +18,11 @@ const mobileModalMenu = ({js,ts,react,paradigms,nextJs}:mobileModalMenuProps) =>
             <div className={cn(s.modal, {
                 [s.modal_true]: mobile === true
             })}>
-                {js === 'js'? <MenuJs sideBarMenuActive={false} mobileMenuActive={true} setMobile={setMobile} mobile={mobile}/>:<></>}
-                {ts === 'ts'? <MenuTs sideBarMenuActive={false} mobileMenuActive={true} setMobile={setMobile} mobile={mobile}/>:<></>}
-                {react === 'react'? <MenuReact sideBarMenuActive={false} mobileMenuActive={true} setMobile={setMobile} mobile={mobile}/>:<></>}
-                {paradigms === 'paradigms'? <MenuParadigms sideBarMenuActive={false} mobileMenuActive={true} setMobile={setMobile} mobile={mobile}/>:<></>}
-                {nextJs === 'next-js'? <MenuNextJs sideBarMenuActive={false} mobileMenuActive={true} setMobile={setMobile} mobile={mobile}/>:<></>}
+                {js === 'js'? <MobileMenuJs setMobile={setMobile} mobile={mobile} />:<></>}
+                {ts === 'ts'? <MobileMenuTs setMobile={setMobile} mobile={mobile}/>:<></>}
+                {react === 'react'? <MobileMenuReact setMobile={setMobile} mobile={mobile}/>:<></>}
+                {nextJs === 'next-js'? <MobileMenuNextJs setMobile={setMobile} mobile={mobile}/>:<></>}
+                {paradigms === 'paradigms'? <MobileMenuParadigms  setMobile={setMobile} mobile={mobile}/>:<></>}
 
             </div>
 

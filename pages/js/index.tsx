@@ -2,21 +2,29 @@ import type { GetStaticProps, NextPage } from "next";
 import React from "react";
 import { withLayout } from "../../layout/Layout";
 import { getAllPosts } from "../api/api";
-import { POSTS_PATH_JS } from "../api/paths";
+import { POSTS_PATH_ADVANCED_JS, POSTS_PATH_ALGORITHMS_JS, POSTS_PATH_BASIC_JS, POSTS_PATH_PRACTICE_JS } from "../api/paths";
 import Head from "next/head";
-import MenuJs from "../../src/Components/Menu/MenuJs/MenuJs";
+import MainMenuJs from "../../src/Components/Menu/MenuJs/MainMenuJs";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = getAllPosts(POSTS_PATH_JS).map((post) => post.meta);
-
+  
+ 
+  const posts_Basic_Js = getAllPosts(POSTS_PATH_BASIC_JS).map((post) => post.meta);
+  const posts_Advanced_Js = getAllPosts(POSTS_PATH_ADVANCED_JS).map((post) => post.meta);
+  const posts_Algorithms_Js = getAllPosts(POSTS_PATH_ALGORITHMS_JS).map((post) => post.meta);
+  const posts_Practice_Js = getAllPosts(POSTS_PATH_PRACTICE_JS).map((post) => post.meta);
+  
+  const AllThemePosts = {posts_Basic_Js,posts_Advanced_Js,posts_Algorithms_Js,posts_Practice_Js};
   return {
     props: {
-      posts,
+      AllThemePosts,
     },
   };
 };
 
-const Home: NextPage = (): JSX.Element => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Home: NextPage = ({AllThemePosts}:any): JSX.Element => {
+
   return (
     <div className="page_content">
       <Head>
@@ -56,7 +64,7 @@ const Home: NextPage = (): JSX.Element => {
 
         <div className="page_menu">
 
-          <MenuJs sideBarMenuActive={false} mobileMenuActive={false} />
+          <MainMenuJs MainPosts={AllThemePosts} />
         </div>
       </div>
     </div>
