@@ -5,7 +5,6 @@ import cn from 'classnames';
 import { IMenu } from './Menu.props';
 import { useRouter } from 'next/router';
 import Button from '../UI/Button/Button';
-import { PostMeta } from '../../../pages/api/api';
 
 
 const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue, posts,  ...props}:IMenu): JSX.Element => {
@@ -14,6 +13,7 @@ const Menu = ({title,category, dropdown, page, mobileMenu, setMobile,mobileTrue,
     const pathname = router.asPath.split('#')[0]; // если мы переходим по ссылке с якорем куда то, к статье какой нибудь, то активная ссылка будет немного ломаться, поэтому если есть якорь мы его убираем.
     const checkActiveLink = pathname.split('/')[pathname.split('/').length - 1]; // отрезаем от пути наш slug и будем проверять сщ slug из api, и так будет кидать активную ссылку
     
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     posts && posts.sort((a:any,b:any) => a.id - b.id);
     
 

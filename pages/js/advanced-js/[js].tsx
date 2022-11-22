@@ -8,7 +8,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import Head from 'next/head';
 import "highlight.js/styles/a11y-dark.css";
 import cn from 'classnames';
-import { getAllPosts, getPostFromSlug, getSlugs, MDXPost, PostMeta } from '../../api/api';
+import { getAllPosts, getPostFromSlug, getSlugs, MDXPost } from '../../api/api';
 import { POSTS_PATH_ADVANCED_JS, POSTS_PATH_ALGORITHMS_JS, POSTS_PATH_BASIC_JS, POSTS_PATH_PRACTICE_JS } from '../../api/paths';
 import Link from 'next/link';
 import s from '../pageJs.module.css';

@@ -17,6 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Home: NextPage = ({AllThemePosts}:any): JSX.Element => {
   return (
     <div className="page_content">
