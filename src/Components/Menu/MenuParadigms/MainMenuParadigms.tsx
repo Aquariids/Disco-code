@@ -4,16 +4,16 @@ import Menu from '../Menu';
 
 interface MainPostsProps<T> {
     MainPosts: {
-        posts_Paradigms:T,
+        post_style_paradigms:T,
     }
     
 
 }
 const MainMenuParadigms = ({MainPosts}:MainPostsProps<PostMeta[]>): JSX.Element => {
-    const {posts_Paradigms} = MainPosts;
+    const {post_style_paradigms} = MainPosts;
         return (
             <>
-                <Menu posts={posts_Paradigms} title=" Стили написания" category='style' page='paradigms' />
+                <Menu posts={post_style_paradigms} title=" Стили написания" category='style' page='paradigms' />
             </>
         );
     

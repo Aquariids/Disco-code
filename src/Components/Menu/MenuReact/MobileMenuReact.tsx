@@ -7,10 +7,10 @@ const MobileMenuReact = ({ setMobile, mobile, }: mobileMenuProps): JSX.Element =
 
     
 const { AllThemePosts } = useContext(AppContext);
-const {posts_Basic_Ts} = AllThemePosts;
+const {posts_Basic_React} = AllThemePosts;
         return (
             <>
-                <Menu title=" Базовые темы react" category='basic-react' page='react' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
+                <Menu posts={posts_Basic_React} title=" Базовые темы react" category='basic-react' page='react' mobileMenu={true} setMobile={setMobile} mobileTrue={mobile} />
             </>
         );
     

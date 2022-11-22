@@ -5,11 +5,10 @@ import Menu from '../Menu';
 const DropdownMenuParadigms = (): JSX.Element => {
 
     const { AllThemePosts } = useContext(AppContext);
-
-    const {posts_Paradigms} = AllThemePosts;
+    const {post_style_paradigms} = AllThemePosts;
         return (
             <>
-            <Menu posts={posts_Paradigms} title="Стили написания" category='style' dropdown={true} page='paradigms' />
+            <Menu posts={post_style_paradigms} title="Стили написания" category='style' dropdown={true} page='paradigms' />
             </>
         );
     
