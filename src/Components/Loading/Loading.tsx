@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 import cn from 'classnames';
 import s from './Loading.module.css';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export  function Loading(): any {
+type TODO_ANY = any;
 
+export const Loading = (): JSX.Element | TODO_ANY => {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
 

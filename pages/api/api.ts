@@ -42,11 +42,11 @@ export interface PostMeta {
   category?: string;
 }
 export const getPostFromSlug = (slug: string, url: string): Post => {
+
   const postPath = path.join(url, `${slug}.mdx`);
-
   const source = fs.readFileSync(postPath);
-
   const { content, data } = matter(source);
+
   return {
     content,
     meta: {

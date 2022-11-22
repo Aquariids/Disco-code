@@ -111,8 +111,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
   });
 
-  const post_style_paradigms = getAllPosts(POSTS_PATH_PARADIGMS_STYLE).map((post) => post.meta);
-  const AllThemePosts = {post_style_paradigms};
+  const post_Style_Paradigms = getAllPosts(POSTS_PATH_PARADIGMS_STYLE).map((post) => post.meta);
+  const AllThemePosts = {post_Style_Paradigms};
   
   return { props: { post: { source: mdxSource, meta }, AllThemePosts } };
 };

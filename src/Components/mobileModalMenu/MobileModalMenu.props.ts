@@ -4,5 +4,15 @@ export interface mobileModalMenuProps {
     react?:'react';
     paradigms?:'paradigms'
     nextJs?:'next-js'
+    
 }
 
+    type TODO_ANY = any;
+
+export interface mobileMenuProps {
+    mobileMenu?:boolean;
+    mobileTrue?: boolean;
+    mobile?:boolean;
+    setMobile?:React.Dispatch<React.SetStateAction<boolean>> | TODO_ANY;
+
+}

@@ -12,35 +12,34 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
     const r = router.asPath.split('/').length;
 
 
-    
+
     const logoCreat = () => {
-        if(router.asPath.startsWith('/js')) {
+        if (router.asPath.startsWith('/js')) {
             return <Logo path='/js' src='/logo/js_logo.svg' />;
         }
-        if(router.asPath.startsWith('/ts')) {
+        if (router.asPath.startsWith('/ts')) {
             return <Logo path='/ts' src='/logo/ts_logo.svg' />;
         }
-        if(router.asPath.startsWith('/react') ) {
+        if (router.asPath.startsWith('/react')) {
             return <Logo path='/react' src='/logo/react_logo.svg' />;
         }
-        if(router.asPath.startsWith('/next-js') ) {
+        if (router.asPath.startsWith('/next-js')) {
             return <Logo path='/next-js' src='/logo/nextjs_logo.svg' />;
         }
-        
-         else {
-            return  <Logo path='/' src='/logo/disco.svg' /> ;
-         }
+
+        else {
+            return <Logo path='/' src='/logo/disco.svg' />;
+        }
     };
     return (
         <div className={cn(header, {
             [s.header2]: r >= 3
         })} {...props}>
             <div className={content}>
-                <div  className={logo}>
-                { logoCreat()}
+                <div className={logo}>
+                    {logoCreat()}
                     <span className={link} > <Link href={'/'}>DiscoCode</Link> </span>
-                    
-                     </div>
+                </div>
 
                 <div className={s.nav}>
                     <div className={s.dropdown}>
@@ -57,7 +56,7 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
                     <div className={github}><a className={link} target={"_blank"} href={'https://github.com/Aquariids/Disco-code'}>Github <img style={{ width: '15px', height: '15px' }} src='/link.svg' /></a></div>
                 </div>
             </div>
-            <Loading />
+            <Loading  />
         </div>
     );
 };

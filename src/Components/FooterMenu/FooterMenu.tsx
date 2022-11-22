@@ -37,26 +37,24 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
                     <div className={s.social}>
                         <h3 className={s.footer_heading}> Где меня найти </h3>
                         <ul className={s.footer_nav_list} style={{ listStyleType: 'none' }}>
-                            <li className={s.footer_item}><a href="mailto:favoritePonyville@gmail.com">FavoritePonyville@gmail.com  </a> <LinkA/></li>
+                            <li className={s.footer_item}><a href="mailto:favoritePonyville@gmail.com">FavoritePonyville@gmail.com  </a> <LinkA /></li>
                             <li className={s.footer_item}><a target={"_blank"} href={'https://github.com/Aquariids'}>Github  </a> <LinkA /></li>
                             <li className={s.footer_item}><a target={"_blank"} href={'https://t.me/Aquariida'}>Телеграм  </a> <LinkA /></li>
 
                         </ul>
                     </div>
 
-                    
+
                 </div>
-                
+
             </div>
-           
             <div className={s.copyright}>
-            <span className={s.doc}><Link href={'/docs/site-document'}>Документация по сайту</Link></span>
+                <span className={s.doc}><Link href={'/docs/site-document'}>Документация по сайту</Link></span>
                 <span >
-              
-                    {`© 2022 - ${format(new Date(), 'yyyy')} Дмитрий Черномашенцев`}</span>
+                    {`© 2022 - ${format(new Date(), 'yyyy')} Дмитрий Черномашенцев`}
+                </span>
             </div>
-           
-            
+
         </>
 
     );
