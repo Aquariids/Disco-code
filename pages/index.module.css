@@ -14,7 +14,7 @@
 	width: 100vw;
 	margin-left: calc(-50vw + 50%);
 	background-color: #000000;
-	background-image: url(/index.svg);
+	background-image: url(/images/animeBg/index.svg);
 	
 	background-repeat: no-repeat;
 	background-size: 23.3%;
