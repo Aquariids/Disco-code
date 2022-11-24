@@ -11,7 +11,10 @@ category: 'basic-js'
 #### Теги
 
 <div className = 'tag_js'>[Что за rest оператор](#что-за-rest-оператор)</div> <br/>
-<div className = 'tag_js'>[Пример использования](#пример-использования)</div>
+<div className = 'tag_js'>[Пример использования:](#пример-использования)</div>
+<div className = 'mini_tag_js'>[rest оператор и деструктуризация,](#rest-оператор-и-деструктуризация)</div>
+<div className = 'mini_tag_js'>[небольшая практика с классами.](#небольшая-практика-с-классами)</div>
+
 
 </div>
 
@@ -19,7 +22,7 @@ category: 'basic-js'
 
 ##  Что за rest оператор ##
 
-`rest` оператор это брат оператора `spread`, только [spread](https://github.com/Aquariids/Js-Ts-React-etc../blob/main/JavaScript/Basic%20js/Copying%20objects%20and%20links.md#%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80-spread) может взять массив и раскинуть его по аргументам. 
+`rest` оператор это брат оператора `spread`, только [spread]() может взять массив и раскинуть его по аргументам. 
 ```javaScript
 function spread(a,b,c) {
     console.log(a); //1
@@ -31,7 +34,7 @@ const arr = [1,20,3];
 spread(...arr);
 ```
 
-`rest` - он же на оборот аргументы превращает в массив:
+`rest` - он же наоборот аргументы превращает в массив:
 ```javaScript
 function rest(a, b, ...rest) { // rest оператор можно назвать как угодно, главное его добавлять после нужных аргументов
     console.log(a); // привет
@@ -44,6 +47,19 @@ rest('привет', 10, 1, 2, 3, 4, 5) // вызываем функцию и п
 // rest по сути пустой массив для аргументов.
 ```
 ##  Пример использования ##
+
+### Rest оператор и деструктуризация
+
+Мы можем использовать `rest` оператор при деструктуризации:
+```javaScript
+// в переменные a и b мы вытаскиваем 1 и 2, а остальное кладем в переменную c
+const [a,b,...c] = [1,2,3,4,5,6,7]; 
+
+console.log(c) // 3,4,5,6,7
+```
+
+### Небольшая практика с классами
+
 
 Сделаем у элемента класс по умолчанию.
 Добавим нужные классы элементу.
@@ -75,4 +91,5 @@ let twoNewUser = new User('.btnscroll','hi','friend')// в этом случае
 
 
 ```
-![rest](https://github.com/Aquariids/Js-Ts-React-etc../blob/main/JavaScript/img/rest.png)
+
+<div className='container-img'> <span className="img"> ![console.log](/images/Content/Js/rest.png) </span></div>
