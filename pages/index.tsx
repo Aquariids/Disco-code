@@ -18,6 +18,7 @@ const Home: NextPage = (): JSX.Element => {
     document.querySelector('html')!.style.scrollBehavior = 'auto';
   };
   
+console.log(process.env.SITE_URL);
 
 
 
