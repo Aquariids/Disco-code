@@ -70,10 +70,10 @@
 
 .js {
 	background-repeat: no-repeat;
-	background-size: 50%;
-	background-position-y:top;
-	background-position-x:130%;
-	background-image: url(/images/cards/js.svg);
+	background-size: 20%;
+	background-position-y:-10px;
+	background-position-x:right;
+	/* background-image: url(/images/cards/js.svg); */
 	background-color: var(--js_color_links_pages);
 }
 
@@ -85,11 +85,6 @@
 }
 
 .ts {
-	background-repeat: no-repeat;
-	background-size: 80%;
-	background-position-y:top;
-	background-position-x:right;
-	background-image: url(/images/cards/ts.png);
 	color: #FFF;
 	background-color: var(--ts_color_links_pages);
 }
@@ -102,10 +97,10 @@
 
 .next {
 	background-repeat: no-repeat;
-	background-position-y:-38px;
-	background-position-x:120%;
+	background-position-y:top;
+	background-position-x:right;
 	background-size: 50%;
-	background-image: url(/logo/nextjs_logo.svg);
+	/* background-image: url(/logo/nextjs_logo.svg); */
 	color: #FFF;
 	background-color: var(--next_color_links_pages);
 }
