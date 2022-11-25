@@ -89,6 +89,7 @@ rq.then((product) => { // этот продукт переходит в этот
 ```
 ##  fetch API 
 `fetch` - это современный способ для работы с сетевыми запросами.
+
 ### Из чего состоит fetch
 
 ### Методы для ответа fetch
@@ -105,7 +106,6 @@ fetch('server.php', { // тут у нас ссылка на наш сервер
     })
     .then(data => data.text())  // здесь мы его переводим в текст, что бы посмотреть удобно на него в консоли
     .then(data => {
-        console.log(data);
         showThanksModal(message.succes);  // выводим текст об удачной отправки формы
         
         statusMessage.remove();
@@ -122,8 +122,6 @@ fetch('server.php', { // тут у нас ссылка на наш сервер
 const inputRub = document.querySelector('#rub'), // получаем элементы
     inputUsd = document.querySelector('#usd');
 
-
-
 inputRub.addEventListener('input', async () => {  // чешаем событие на инпут
   let response = await fetch('./js/current.json', { // получаем ответ в переменную response
         method: "GET",
@@ -131,6 +129,7 @@ inputRub.addEventListener('input', async () => {  // чешаем событие
             'Content-type': 'application/json; charset=utf-8'
         },
     })
+
     // свойство ok Будет true если status в диапозоне от 200 до 299, делать проверку как у меня не обязательно
     if(response.ok && response.status === '200') { // тут хватит и просто response.ok
         let data = await response.json() // парсим наш ответ в json формат, методом json()
