@@ -18,6 +18,7 @@ export const getStaticProps: GetStaticProps = async () => {
       AllThemePosts,
     },
   };
+
 };
 
 const Home: NextPage = (): JSX.Element => {

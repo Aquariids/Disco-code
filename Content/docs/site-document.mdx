@@ -123,7 +123,167 @@ export const getAllPosts = (url:string) => {
 
 ```
 
+## context
+
+```javaScript
+import { createContext, ReactNode } from "react";
+type TODO_ANY = any; // ну тут потому что я тупой, да не знаю как типизировать
+export interface IAppContext {
+    AllThemePosts: TODO_ANY;
+
+}
+export const AppContext = createContext<IAppContext>({AllThemePosts:[]}); // создаем контекст массив.
+
+// ну у нас будут наши посты в AllThemePosts, children - то чем будет оборачивать AppContextProvider
+export const AppContextProvider = ({AllThemePosts,children}:IAppContext & {children: ReactNode}):JSX.Element => {
+            // оборачиваем данные которые будем получать из layout, посути наши страницы
+    return <AppContext.Provider value={{AllThemePosts}}>
+                {children }
+            </AppContext.Provider>;
+};
+```
+## layout
+```javaScript
+// ну тут обынчый layout
+const Layout = ({ children, }: LayoutProps): JSX.Element => {
+    
+    const router = useRouter();
+    const r = router.asPath.split('/').length;
+    
+    return (
+        <>
+
+            <div className={cn(wrapper, {
+                [s.wrapper2]: (r >= 3) // тут все изи, немного меняю страницу, если мы находимся где то в постах уже
+                // wrapper2 - просто убирает путсую правую часть у сайта, что бы место под контент было больше, например не небольших экранах
+            })}>
+                <Header className={header} /> 
+                <Sidebar className={sidebar} />
+                <div className={body}>
+                    <div className={content}>
+                    <ListMobileMenu /> {// Ну тут кнопочка для мобилок
+                    }
+                        {children}
+                    </div>
+                </div>
+                <Footer className={footer} />
+            </div>
+
+        </>
+
+    );
+};
+
+```
+С layout в принципе и так все понятно.
+### Функция withLayout
+Тут же внутри `layout` у меня есть функция `withLayout`, которой мы оборачиваем все страницы. Это HOC функция.
+На наших страницах(page) с помощью `getStaticProps` мы будем получать данные с помощью функций из `api`,
+полученные данные со страниц, как раз таки будут попадать в `props` функции `withLayout`. А сама страница будет компонентом в `layout`
+которая внутри `layout` будет внутри `content` на месте `children`.
+```javaScript
+export const withLayout = <T extends Record<string, unknown> & IAppContext>(Component: FunctionComponent<T>) => { // сам компонент 
+    return function withLayoutComponent(props: T): JSX.Element { // тута будут наши данные из страниц обернутых withLayout
+        return ( // ну вот мы и оборачиваем весь layout, а значит, что может получить наши посты почти везде.
+            <AppContextProvider AllThemePosts={props.AllThemePosts}>
+                <Layout {...props}>
+                    <Component {...props} />
+                </Layout>
+            </AppContextProvider>
+        );
+    };
+};
+```
 
 ## Как мы работаем с api на страницах ##
+
+### На примере js
+#### Файл index.tsx - содержание всего js
+Есть главная страница `js` в котором находится содержание - `index.tsx`.
+
+<div className='container-img'> <span className="img"> ![js_page](/images/Content/docs/js_page.png) </span></div>
+
+На этой странице мы используем `getStaticProps` вметсе с  [getAllPosts]().
+Таким образом на этой странице мы получаем данные с нагих `mdx` страниц, то есть `meta` данные, которые указаны в самом верху каждой статьи.
+```javaScript
+import type { GetStaticProps, NextPage } from "next";
+import React from "react";
+import { withLayout } from "../../layout/Layout";
+import { getAllPosts } from "../api/api";
+import { POSTS_PATH_ADVANCED_JS, POSTS_PATH_ALGORITHMS_JS, POSTS_PATH_BASIC_JS, POSTS_PATH_PRACTICE_JS } from "../api/paths";
+import Head from "next/head";
+import MainMenuJs from "../../src/Components/Menu/MenuJs/MainMenuJs";
+
+export const getStaticProps: GetStaticProps = async () => { // вот сам getStaticProps, функция будет срабатывать когда мы заходим на страницу
+// то есть когда мы будем находиться в корневой главной странице, у нас в пропсах ничего не будет 
+// как только мы зайдем на страницу js, мы получим вот это вот все внизу AllThemePosts
+  const posts_Basic_Js = getAllPosts(POSTS_PATH_BASIC_JS).map((post) => post.meta);
+  const posts_Advanced_Js = getAllPosts(POSTS_PATH_ADVANCED_JS).map((post) => post.meta);
+  const posts_Algorithms_Js = getAllPosts(POSTS_PATH_ALGORITHMS_JS).map((post) => post.meta);
+  const posts_Practice_Js = getAllPosts(POSTS_PATH_PRACTICE_JS).map((post) => post.meta);
+  // тут я получаю кажду тему отдельно и помещаю все в AllThemePosts и далее возвращаю его из getStaticProps
+  const AllThemePosts = {posts_Basic_Js,posts_Advanced_Js,posts_Algorithms_Js,posts_Practice_Js};
+  return {
+    props: {
+      AllThemePosts, 
+    },
+  };
+};
+
+// таким образом, все, что находится в AllThemePosts, попадает в контекст
+const Home: NextPage = (): JSX.Element => {
+
+// тут все понятно
+  return (
+    <div className="page_content">
+      <Head>
+        <title>Содержание</title>
+        <meta
+          name="google-site-verification"
+          content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY"
+        />
+
+        <meta name="yandex-verification" content="a99ae512e4f1c330" />
+        <meta
+          name="description"
+          content={"Уроки по javascript, задачи, алгоритмы.js статьи,"}
+        />
+        <meta property="og:title" content="Уроки по javascript" />
+        <meta
+          property="og:description"
+          content={"Уроки и разбор разных тем по javascript"}
+        />
+
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://discocode.ru/js" />
+        <meta
+          property="og:image"
+          content="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.seancdavis.com%2Fposts%2Frun-loop-n-times-javascript%2F&psig=AOvVaw3_1bJy-ASlokQV8SIxMjzi&ust=1665134220667000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKi09r-iy_oCFQAAAAAdAAAAABAI"
+        />
+        <meta property="og:site_name" content="DiscoCode" />
+        <meta property="og:locale" content="ru_Ru" />
+
+        <meta property="og:author" content="Дмитрий черномашенцев" />
+        <meta property="og:section" content="JavaScript" />
+        <meta property="og:tag" content="JavaScript, js" />
+      </Head>
+      <h2>Содержание</h2>
+
+      <div className="page_body">
+
+        <div className="page_menu">
+
+          <MainMenuJs /> { // тут мы вызываем наше меню внутри которого с помощью контекста я получаю посты
+          }
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default withLayout(Home); // тут как раз таки експоритруем наш компонент обернутый withLayout
+```
+Получается так, что пока мы не зайдем на какую либо страницу, наш контекст будет пустым, как только мы зашли например на js старницу, 
+в наш контекст попадает весь объект `AllThemePosts` с нужными данными, для отображения содержания
 
 Продолжение следует....
