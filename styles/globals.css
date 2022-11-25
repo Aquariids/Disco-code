@@ -16,23 +16,6 @@ html {
 	
 }
 
-@media (max-width: 1065px) {
-	html {
-		background-position-x: 127%;
-	}
-}
-
-@media (max-width: 1200px) {
-	html {
-		background-size: 60em;
-	}
-}
-
-@media (max-width: 985px) {
-	html {
-		background-size: 0;
-	}
-}
 
 body {
 	position: relative;
@@ -49,6 +32,23 @@ body {
 	line-height: 1.5;
 }
 
+@media (max-width: 1065px) {
+	body {
+		background-position-x: 127%;
+	}
+}
+
+@media (max-width: 1200px) {
+	body {
+		background-size: 60em;
+	}
+}
+
+@media (max-width: 985px) {
+	body {
+		background-size: 0;
+	}
+}
 a {
 	text-decoration: none;
 
