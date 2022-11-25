@@ -1,5 +1,5 @@
 ---
-title: 'Promise API'
+title: 'Promise, fetch API'
 id: 9
 prev: '/js/advanced-js/regular-expressions'
 category: 'advanced-js'
