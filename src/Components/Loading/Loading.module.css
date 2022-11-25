@@ -1,12 +1,15 @@
 .loader {
 	position: absolute;
 	right: 0;
-	opacity: 0;
+
 	display: inline-block;
+
 	box-sizing: border-box;
 	width: 30px;
 	height: 30px;
 	margin-right: 100px;
+
+	opacity: 0;
 	border-top: 3px solid #FFF;
 	border-right: 3px solid transparent;
 	border-radius: 50%;
@@ -15,6 +18,7 @@
 @media (max-width: 985px) {
 	.loader {
 		left: 0;
+
 		margin-right: 0;
 		margin-left: 30px;
 	}
@@ -35,8 +39,6 @@
 	.loader {
 		width: 10px;
 		height: 10px;
-		
-		
 	}
 }
 
@@ -48,12 +50,14 @@
 
 @keyframes rotation {
 	0% {
-		opacity: 1;
 		transform: rotate(0deg);
+
+		opacity: 1;
 	}
 
 	100% {
-		opacity: 1;
 		transform: rotate(360deg);
+
+		opacity: 1;
 	}
 }

@@ -1,17 +1,20 @@
 .button {
 	position: relative;
+
 	padding-top: 30px;
+
 	cursor: pointer;
 	white-space: nowrap;
 	text-transform: uppercase;
+
 	color: rgb(109 109 109);
 	border: none;
 	background: transparent;
+
 	font-size: 15px;
 	font-weight: bold;
 	line-height: 18px;
 }
-
 
 .active {
 	color: black;
@@ -19,7 +22,9 @@
 
 .arrow {
 	position: absolute;
+
 	display: inline-block;
+
 	max-width: 50px;
 	margin-right: 10px;
 	margin-left: 10px;
@@ -32,12 +37,11 @@
 
 .down svg {
 	display: inline-block;
+
 	transition: all 0.2;
 	transform: rotate(90deg);
 	fill: rgb(0 0 0);
 }
-
-
 
 @media (max-width: 1215px) {
 	.button {
@@ -53,9 +57,8 @@
 
 @media (max-width: 1040px) {
 	.button {
-		white-space: normal;
 		width: 130px;
+
+		white-space: normal;
 	}
 }
-
-

@@ -2,15 +2,20 @@
 	max-width: 100%;
 	height: auto;
 }
+
 .mdTitle {
 	margin-top: 50px;
 }
+
 .img {
-	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
-	cursor: pointer;
 	display: grid;
+
+	cursor: pointer;
+
+	box-shadow: 0 5px 10px 0 rgb(0 0 0 / 50%);
 	grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
 }
+
 .mdHead {
 	margin-bottom: 55px;
 }
@@ -18,14 +23,13 @@
 .imgLogo {
 	display: flex;
 	justify-content: right;
-	margin-top: -70px;
 
+	margin-top: -70px;
 }
 
 .container-imgLogo {
 	display: none;
 	justify-content: right;
-		
 }
 
 .container-img {
@@ -40,99 +44,90 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
 	border-bottom: 1px solid #20232A;
 }
 
-
 .content-app-react {
-	border:none;
-	width: 100%;	
-	height:225px;
+	width: 100%;
+	height: 225px;
+
+	border: none;
 }
 
 .content-app-ajax {
-	border:none;
-	height:210px;
 	width: 320px;
+	height: 210px;
+
+	border: none;
 }
 
 .content-app-slider-js {
 	width: 700px;
 	height: 550px;
-	border:none;
-	
+
+	border: none;
 }
 
 pre {
 	font-size: 14px;
 }
 
-
 code {
 	border-radius: 10px;
 }
 
-
-
-
-@media (max-width:785px) {
+@media (max-width: 785px) {
 	code {
-		border-radius: 0px;
+		border-radius: 0;
 	}
-	
-	
+
+
 	pre {
-		margin-left: calc(-50vw + 50%);
 		width: 100vw;
+		margin-left: calc(-50vw + 50%);
 	}
-	
+
 	.mdHead {
-		padding-right: 14px;
-		padding-left: 14px;
-		margin-left: calc(-50vw + 50%);
 		width: 100vw;
-		background-color: #20232A;
-		padding-bottom: 15px;
 		margin-bottom: 35px;
-		
-		
+		margin-left: calc(-50vw + 50%);
+		padding-right: 14px;
+		padding-bottom: 15px;
+		padding-left: 14px;
+
+		background-color: #20232A;
 	}
+
 	.mdHead h4 {
-		padding-top: 15px;
 		margin: 0;
-		color: #fff;
-		
+		padding-top: 15px;
+
+		color: #FFF;
 	}
 
 	.mdHead h5 {
-		padding-top: 15px;
 		margin: 0;
-		color: #fff;
-		
+		padding-top: 15px;
+
+		color: #FFF;
 	}
 
-
 	.mdTitle {
-		margin-top: 0px;
-		padding-top: 30px;
-		padding-left: 14px;
-		padding-right: 14px;
-		margin-left: calc(-50vw + 50%);
 		width: 100vw;
-		color: #fff;
-		background-color: #20232A;
+		margin-top: 0;
+		margin-bottom: -5px;
+		margin-left: calc(-50vw + 50%);
+		padding-top: 30px;
+		padding-right: 14px;
 		padding-bottom: 15px;
-		margin-bottom: -5px
-	
+		padding-left: 14px;
+
+		color: #FFF;
+		background-color: #20232A;
 	}
 
 	.mdTitle h1 {
 		margin: 0;
 	}
-
-	
 }
-
-
-
-

@@ -1,6 +1,8 @@
 .logo {
 	display: flex;
 	justify-content: center;
-	border-radius: 10px;
+
 	transition: all 0.1s;
+
+	border-radius: 10px;
 }

@@ -1,20 +1,26 @@
-
 .tag_js {
 	display: inline-block;
+
 	color: var(--js_color_links_pages);
+
 	font-size: 16px;
 }
 
 .tag_js:hover {
 	transition: all 0.1s;
+
 	color: var(--js_hover_color_links_pages);
 }
 
 .mini_tag_js {
 	display: inline;
+
 	margin-right: 5px;
+
 	transition: all 0.1s;
+
 	color: var(--js_color_links_pages);
+
 	font-size: 14px;
 }
 
@@ -23,26 +29,24 @@
 }
 
 .link_js {
+	color: var(--js_color_links_pages);
 	box-shadow: 0 0.5px 0 0;
-	color: var(--js_color_links_pages)
 }
 
 .link_js:hover {
-	color: var(--js_hover_color_links_pages)
+	color: var(--js_hover_color_links_pages);
 }
 
-
-@media (max-width:785px) {
+@media (max-width: 785px) {
 	.tag_js {
 		color: var(--js_color_links_pages_mobile);
 	}
+
 	.mini_tag_js {
 		color: var(--js_color_links_pages_mobile);
 	}
+
 	.link_js {
-		color: var(--js_color_links_pages_mobile)
+		color: var(--js_color_links_pages_mobile);
 	}
-	
-	
-	
 }

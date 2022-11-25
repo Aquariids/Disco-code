@@ -8,20 +8,15 @@
 @import "./page_menu.css";
 @import "./error404.css";
 
-
-
-
-
-
-
 html {
 	overflow-x: hidden;
-	background-image: url(/images/animeBg/manga.svg);
-	background-position: bottom right;
-	background-repeat: no-repeat;
-	background-size: 73%;
+
 	margin-right: calc(-1 *(100vw - 100%));
-	
+
+	background-image: url(/images/animeBg/manga.svg);
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	background-size: 73%;
 }
 
 @media (max-width: 1065px) {
@@ -29,7 +24,6 @@ html {
 		background-position-x: 127%;
 	}
 }
-
 
 @media (max-width: 1200px) {
 	html {
@@ -44,8 +38,8 @@ html {
 }
 
 body {
-	
 	position: relative;
+
 	margin: 0;
 	padding: 0;
 
@@ -57,6 +51,7 @@ body {
 
 a {
 	text-decoration: none;
+
 	color: inherit;
 }
 
@@ -64,10 +59,7 @@ a {
 	box-sizing: border-box;
 }
 
-
-
-
- /* @media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
 	html {
 		color-scheme: dark;
 	}
@@ -75,11 +67,8 @@ a {
 	body {
 		color: white;
 		background: black;
-	} 
+	}
 
-} 
+}
 
 */
-
-
-

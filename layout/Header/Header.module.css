@@ -1,17 +1,18 @@
 .header {
 	position: fixed;
 	z-index: 201;
+
 	display: grid;
+
 	width: 100%;
 	height: 60px;
-	background-color:  var(--basic_color);
-	box-shadow: 0.5px 0.5px 1px rgba(112, 111, 111, 0.911);
 
+	background-color: var(--basic_color);
+	box-shadow: 0.5px 0.5px 1px rgb(112 111 111 / 91.1%);
 }
 
-
-@media (max-width:785px) {
+@media (max-width: 785px) {
 	.header {
 		box-shadow: none;
-}
+	}
 }

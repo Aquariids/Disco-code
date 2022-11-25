@@ -1,20 +1,26 @@
-
 .tag_main {
 	display: inline-block;
+
 	color: var(--main_color_links_pages);
+
 	font-size: 16px;
 }
 
 .tag_main:hover {
 	transition: all 0.1s;
+
 	color: var(--main_hover_color_links_pages);
 }
 
 .mini_tag_main {
 	display: inline;
+
 	margin-right: 5px;
+
 	transition: all 0.1s;
+
 	color: var(--main_color_links_pages);
+
 	font-size: 14px;
 }
 
@@ -23,12 +29,9 @@
 }
 
 .link_main {
-	color: var(--main_color_links_pages)
+	color: var(--main_color_links_pages);
 }
 
 .link_main:hover {
-	color: var(--main_hover_color_links_pages)
+	color: var(--main_hover_color_links_pages);
 }
-
-
-

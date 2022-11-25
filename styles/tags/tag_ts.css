@@ -1,19 +1,26 @@
 .tag_ts {
 	display: inline-block;
+
 	color: var(--ts_color_links_pages);
+
 	font-size: 16px;
 }
 
 .tag_ts:hover {
 	transition: all 0.1s;
+
 	color: var(--ts_hover_color_links_pages);
 }
 
 .mini_tag_ts {
 	display: inline;
+
 	margin-right: 5px;
+
 	transition: all 0.1s;
+
 	color: var(--ts_color_links_pages);
+
 	font-size: 14px;
 }
 

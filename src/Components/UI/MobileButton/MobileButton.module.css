@@ -3,74 +3,74 @@
 	z-index: 300;
 	right: 20px;
 	bottom: 44px;
+
 	display: none;
+
 	width: 60px;
 	height: 60px;
+
 	border: 1px solid rgb(255 255 255 / 25%);
 	border-radius: 50%;
 	background-color: rgb(32 35 42);
 	box-shadow: rgb(0 0 0 / 35%) 0 0 20px;
 
-	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	-webkit-tap-highlight-color: rgb(255 255 255 / 0%);
 	-webkit-tap-highlight-color: transparent;
-	
 }
 
-
 .content_btn {
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 20px;
 	padding-left: 20px;
-    padding-right: 20px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .svg {
-	margin: 0;
 	display: flex;
-    height: 30px;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    flex-direction: row;
+	flex-direction: row;
+
+	height: 30px;
+	margin: 0;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
 }
 
 .arrow_top svg {
-	fill: var(--main_color_links_pages);
 	margin-top: 2px;
-	transform: translate(0px, 0px) rotate(-90deg);
-    transition: -webkit-transform 0.2s ease 0s, transform 0.6s ease 0s;
+
+	transition: -webkit-transform 0.2s ease 0s, transform 0.6s ease 0s;
+	transform: translate(0, 0) rotate(-90deg);
+	fill: var(--main_color_links_pages);
 }
 
 .arrow_down svg {
+	transition: -webkit-transform 0.2s ease 0s, transform 0.6s ease 0s;
+	transform: translate(0, 0) rotate(90deg);
 	fill: var(--main_color_links_pages);
-	transform: translate(0px, 0px) rotate(90deg);
-    transition: -webkit-transform 0.2s ease 0s, transform 0.6s ease 0s;
 }
-	
+
 
 .arrow_top_true svg {
-	transform: translate(0px, 12px) rotate(-90deg);
-
+	transform: translate(0, 12px) rotate(-90deg);
 }
 
 .arrow_down_true svg {
-	transform: translate(0px, -12px) rotate(90deg);
-
+	transform: translate(0, -12px) rotate(90deg);
 }
 
 .arrows {
-    display: flex;
+	display: flex;
 	align-self: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
 
-	
+	flex-direction: column;
 }
-
 
 .arrows_js svg {
 	fill: var(--js_color_links_pages_mobile);
 }
+
 .arrows_react svg {
 	fill: var(--react_color_links_pages);
 }
@@ -84,6 +84,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
 		cursor: pointer;
 	}
 }

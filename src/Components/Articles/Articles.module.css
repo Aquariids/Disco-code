@@ -1,39 +1,30 @@
 .articles {
 	display: grid;
 	justify-content: center;
-	gap: 30px;
-	grid-template-columns: repeat(2, minmax(245px,450px));
-	grid-template-rows: 1fr 1fr;
-	margin-bottom: 50px;
-	max-height: 50%;
 
+	max-height: 50%;
+	margin-bottom: 50px;
+	gap: 30px;
+	grid-template-columns: repeat(2, minmax(245px, 450px));
+	grid-template-rows: 1fr 1fr;
 }
 
 .articles_title {
 	display: grid;
-	text-align: center;
 	align-items: center;
-	grid-template-columns: 1fr;
-	grid-template-rows: 150px;
+
 	margin: 0;
 	padding: 0;
+
+	text-align: center;
+	grid-template-columns: 1fr;
+	grid-template-rows: 150px;
 }
-
-
-
-
 
 @media (max-width: 1000px) {
 	.articles {
-		
 		align-items: center;
 		justify-content: center;
 		grid-template-columns: 1fr;
 	}
 }
-
-
-
-
-
-
