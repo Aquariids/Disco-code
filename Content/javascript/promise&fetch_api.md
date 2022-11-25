@@ -1,5 +1,5 @@
 ---
-title: 'Promise API'
+title: 'Promise, fetch API'
 id: 9
 prev: '/js/advanced-js/regular-expressions'
 category: 'advanced-js'
@@ -69,7 +69,6 @@ rq.then((product) => { // этот продукт переходит в этот
                 resolve(product); // если у нас все четко и в bool: true, то работаем дальше
             } else { // иначе ошибка и используем reject
                 reject();
-
                 // само собой, это пример и никто не будет писать такое условие. Подробнее далее в разборе fetch
             }
 
@@ -88,41 +87,42 @@ rq.then((product) => { // этот продукт переходит в этот
 });
 
 ```
- ## <a name=""> fetch API </a>>
+ ##  fetch API 
+
 API - это интерфейс какого-то программного обеспечения или приложения, это набор готовых решений.
 Например DOM API - когда мы обращаемся к document и у него уже есть готовые методы и нам их предоставляют.
 Так же можем использовать сторонние возможности. По сути это набор готовых методов и свойств которые нам дают.<br>
 fetch - это и есть наш интерфейс который позволяет работать с запросами и ответами http.
 XMLHttpRequest - это устаревший способ, а fetch современный
 fetch построен на  promise. так мы и получаем AJAX запросы, асинхронные.
-```javaScript
 
-
-```
-
-/*
 Кусочек из небольшого скажем так проекта. Так это работает на практике
-fetch('server.php', { тут у нас ссылка на наш сервер
-        method:"POST",  вот он метод
-        headers: { заголовок
+
+```javaScript
+fetch('server.php', { // тут у нас ссылка на наш сервер
+        method:"POST",  // вот он метод
+        headers: { // заголовок
             'Content-type':'application/json'
         },
-        body: JSON.stringify(object) объект который отправляем и сразу его парсим в json
+        body: JSON.stringify(object) // объект который отправляем и сразу его парсим в json
 
     })
-    .then(data => data.text())  здесь мы его переводим в текст, что бы посмотреть удобно посмотреть на ннего в консоли
+    .then(data => data.text())  // здесь мы его переводим в текст, что бы посмотреть удобно на него в консоли
     .then(data => {
         console.log(data);
-        showThanksModal(message.succes);  выводим текст об удачной отправки формы
+        showThanksModal(message.succes);  // выводим текст об удачной отправки формы
         
         statusMessage.remove();
     }).catch(()=> {
-        showThanksModal(message.failure); уведомление об ошибки
+        showThanksModal(message.failure); // уведомление об ошибки
     }).finally(()=>{
-        form.reset();  отчищаем форму после отправки или после ошибки, плевать.
+        form.reset();  // очищаем форму после отправки или после ошибки, плевать.
     });
 
-*/
+```
+
+
+
 
   fetch(`https://jsonplaceholder.typicode.com/todos/${getRandomNum(1,100)}`)
   .then(response => response.json())

@@ -1,7 +1,9 @@
 .page_footer {
 	display: flex;
 	justify-content: space-between;
+
 	margin-bottom: 50px;
+
 	white-space: nowrap;
 }
 
@@ -16,17 +18,19 @@
 .page_edit {
 	display: flex;
 	justify-content: right;
+
 	margin-top: 80px;
 	margin-bottom: 100px;
+
 	white-space: nowrap;
+
 	font-size: 16px;
 }
-
-
 
 .mainFooter a {
 	color: var(--main_color_links_pages);
 }
+
 .mainFooter a:hover {
 	color: var(--main_hover_color_links_pages);
 	box-shadow: 0 0.7px 0 0;
@@ -35,11 +39,10 @@
 .mainFooter a:focus {
 	color: var(--main_color_links_pages);
 }
+
 .mainFooter a {
 	box-shadow: 0 0.5px 0 0;
 }
-
-
 
 .mainEdit a {
 	color: rgb(77 77 77);
@@ -50,14 +53,10 @@
 	box-shadow: 0 0.7px 0 0;
 }
 
-
-@media (max-width:785px) {
-	
+@media (max-width: 785px) {
 	.mainFooter a:active {
 		color: var(--main_color_links_pages_mobile);
 	}
-	
-	
 }
 
 @media (max-width: 500px) {
@@ -67,8 +66,6 @@
 	}
 }
 
-
-
 @media (max-width: 550px) {
 	.page_footer {
 		flex-direction: column;
@@ -76,6 +73,7 @@
 
 	.page_edit {
 		justify-content: left;
+
 		margin-top: 50px;
 		margin-bottom: 60px;
 	}

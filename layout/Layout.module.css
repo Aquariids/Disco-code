@@ -1,17 +1,18 @@
 .wrapper {
 	position: relative;
+
 	display: grid;
 	justify-content: center;
+
 	min-height: 100vh;
 	grid-template-columns: var(--grid_columns_wrapper);
-	gap: 0px 30px;
+	gap: 0 30px;
 	grid-template-rows: 60px 1fr;
 	/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
 	grid-template-areas:
 		"header header header"
 		"sidebar body ."
 		"footer footer footer";
-		
 }
 
 .mobileSidebar {
@@ -20,7 +21,6 @@
 
 .header {
 	grid-area: header;
-	
 }
 
 .sidebar {
@@ -56,6 +56,7 @@
 
 	.footer {
 		align-items: center;
+
 		text-align: center;
 	}
 
@@ -75,10 +76,13 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
+
 	display: grid;
 	visibility: visible;
 	justify-content: center;
+
 	transition: all 0.3s;
+
 	opacity: 1;
 	background-color: #FFF;
 }
@@ -105,6 +109,7 @@
 
 	.footer {
 		align-items: center;
+
 		text-align: center;
 	}
 

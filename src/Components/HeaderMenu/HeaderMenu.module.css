@@ -1,10 +1,13 @@
 .header {
 	position: relative;
+
 	display: grid;
 	align-items: center;
 	justify-content: center;
+
 	height: 60px;
 	margin-right: calc(-1 *(100vw - 100%));
+
 	color: #FFF;
 	gap: 30px;
 	grid-template-columns: var(--grid_columns_wrapper);
@@ -25,12 +28,14 @@
 .content {
 	display: flex;
 	align-items: center;
+
 	text-align: center;
 	grid-area: header;
 }
 
 .link {
 	padding-left: 10px;
+
 	transition: all 0.1s;
 }
 
@@ -40,11 +45,9 @@
 
 .link:hover {
 	transition: all 0.1s;
+
 	color: var(--next_hover_color_links_pages);
 }
-
-
-
 
 @media (max-width: 785px) {
 	.header {
@@ -69,13 +72,16 @@
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
+
 	width: 100%;
+
 	font-size: 16px;
 }
 
 .btn {
 	display: flex;
 	justify-content: flex-end;
+
 	width: 100%;
 }
 
@@ -83,17 +89,20 @@
 	color: #FFF;
 	border: none;
 	background-color: transparent;
+
 	font-size: 15px;
 }
 
 .github {
 	padding: 0;
+
 	font-size: 13px;
 }
 
 .github a {
 	display: flex;
 	align-items: center;
+
 	padding-right: 4px;
 }
 
@@ -104,6 +113,7 @@
 .github:active {
 	padding-top: 4px;
 	padding-bottom: 4px;
+
 	border-radius: 50px;
 	background-color: rgb(128 128 128 / 36.5%);
 }
@@ -120,55 +130,55 @@
 
 .dropdown {
 	position: relative;
+
 	display: block;
 }
 
 .dropdown_content {
 	position: absolute;
+
 	visibility: hidden;
+
 	min-width: 100%;
 	margin: 0;
 	padding: 20px 0 0;
+
 	transition: visibility 0.2s linear, opacity 0.2s linear;
+
 	opacity: 0;
-	
-
-
 }
 
-
 .dropdown_content li {
-	border-bottom: 1px solid rgba(139, 139, 139, 0.705);
-	padding: 5px 0;
-	box-shadow: 0.5px 0.5px 1px rgba(112, 111, 111, 0.911);
 	display: block;
-	text-decoration: none;
-	color: black;
-	background-color: #fff;
-	cursor: pointer;
-	font-size: 17px;
 
+	padding: 5px 0;
+
+	cursor: pointer;
+	text-decoration: none;
+
+	color: black;
+	border-bottom: 1px solid rgb(139 139 139 / 70.5%);
+	background-color: #FFF;
+	box-shadow: 0.5px 0.5px 1px rgb(112 111 111 / 91.1%);
+
+	font-size: 17px;
 }
 
 .dropdown_content li:first-child {
 	margin-top: 1px;
 }
 
-
-
-
 .dropdown:hover .dropdown_content {
 	visibility: visible;
+
 	opacity: 1;
 }
 
 .js {
-	
 	color: var(--js_color_links_pages);
 }
 
 .mainLinks {
-
 	color: var(--main_color_links_pages);
 }
 
@@ -181,7 +191,6 @@
 }
 
 .ts {
-	
 	color: #3178C6;
 }
 
@@ -198,7 +207,7 @@
 }
 
 /* .next {
-	
+
 	color: var(--next_color_links_pages);
 } */
 

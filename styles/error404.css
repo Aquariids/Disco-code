@@ -1,85 +1,79 @@
-
 .error404 {
 	position: relative;
-    position: relative;
+	position: relative;
+
 	display: grid;
 	justify-content: center;
+
 	min-height: 100vh;
 	grid-template-columns: var(--grid_columns_wrapper);
-	gap: 0px 30px;
+	gap: 0 30px;
 	grid-template-rows: 60px 1fr;
 	/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
-	grid-template-areas:
-		
-		". body ."
-		
-
-		
-		
-
-
+	grid-template-areas: ". body .";
 }
-
 
 .body404 {
 	display: flex;
 	flex-direction: column;
 	grid-area: body;
-	
 }
-
-
 
 .error404 h1 {
-    font-size: 50px;
+	margin-bottom: 0;
 
-	margin-bottom: 0px;
-	}
+	font-size: 50px;
+}
+
 .error404 p {
-    font-size:25px;
-    color:gray;
 	margin-top: 10px;
 	margin-bottom: 10px;
+
+	color: gray;
+
+	font-size: 25px;
 }
 
+@media (max-width: 350px) {
+	.body404 {
+		display: grid;
+		grid-template-columns: 250px;
 
-@media (max-width:350px) {
-    .body404 {
-        display: grid;
-        grid-template-columns: 250px;
-        justify-content: center;
-    }
-    .error404 p {
-        font-size: 20px;
-    }
-    .error404 h1 {
-        font-size: 30px;
-    }
+		justify-content: center;
+	}
+
+	.error404 p {
+		font-size: 20px;
+	}
+
+	.error404 h1 {
+		font-size: 30px;
+	}
 }
-
-
 
 .erorr404btn {
+	position: fixed;
 	bottom: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
 	width: 100vw;
 	min-height: 50px;
-	border: 1px solid black;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: fixed;
-	padding: 10px;
 	margin: 0 auto;
+	padding: 10px;
+
+	border: 1px solid black;
 	background-color: var(--basic_color);
-	
 }
 
 .erorr404btn button {
-	color: #fff;
 	padding: 0;
+
+	color: #FFF;
 }
 
 .erorr404btn button:hover {
 	color: #999;
-	
 }
