@@ -87,17 +87,13 @@ rq.then((product) => { // этот продукт переходит в этот
 });
 
 ```
- ##  fetch API 
+##  fetch API 
+`fetch` - это современный способ для работы с сетевыми запросами.
+### Из чего состоит fetch
 
-API - это интерфейс какого-то программного обеспечения или приложения, это набор готовых решений.
-Например DOM API - когда мы обращаемся к document и у него уже есть готовые методы и нам их предоставляют.
-Так же можем использовать сторонние возможности. По сути это набор готовых методов и свойств которые нам дают.<br>
-fetch - это и есть наш интерфейс который позволяет работать с запросами и ответами http.
-XMLHttpRequest - это устаревший способ, а fetch современный
-fetch построен на  promise. так мы и получаем AJAX запросы, асинхронные.
-
-Кусочек из небольшого скажем так проекта. Так это работает на практике
-
+### Методы для ответа fetch
+Кусочек из небольшого скажем так проекта, как это работает на практике. Перед изучением `fetch` рекомендую узнать начала про [XMLHttpRequest]().<br/>
+Здесь мы будем использовать отправку данных.
 ```javaScript
 fetch('server.php', { // тут у нас ссылка на наш сервер
         method:"POST",  // вот он метод
@@ -120,13 +116,28 @@ fetch('server.php', { // тут у нас ссылка на наш сервер
     });
 
 ```
+### Калькулятор валюты
+А тут мы повторим тот же калькулятор, что и в примере с `XMLHttpRequest`:
+```javaScript
+const inputRub = document.querySelector('#rub'), // получаем элементы
+    inputUsd = document.querySelector('#usd');
 
 
 
+inputRub.addEventListener('input', async () => {  // чешаем событие на инпут
+  let response = await fetch('./js/current.json', { // получаем ответ в переменную response
+        method: "GET",
+        headers: {
+            'Content-type': 'application/json; charset=utf-8'
+        },
+    })
+    // свойство ok Будет true если status в диапозоне от 200 до 299, делать проверку как у меня не обязательно
+    if(response.ok && response.status === '200') { // тут хватит и просто response.ok
+        let data = await response.json() // парсим наш ответ в json формат, методом json()
+        inputUsd.value = (+inputRub.value / data.current.usd).toFixed(2) // работаем с инпутами как и было до этого.
+    } else {
+        alert(`Ошибка запроса ${response.status}`) // Окно об ошибке
+    }
+})
 
-  fetch(`https://jsonplaceholder.typicode.com/todos/${getRandomNum(1,100)}`)
-  .then(response => response.json())
-  .then(json => console.log(json));
-function getRandomNum (max,min){
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}  // ето я херней страдаю
+```
