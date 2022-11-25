@@ -247,6 +247,9 @@
 	.subtitle {
 		font-size: 12px;
 	}
+	.allText {
+		margin-top: 35px;
+	}
 }
 
 @media (max-width: 320px) {
