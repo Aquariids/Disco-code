@@ -13,10 +13,7 @@ html {
 
 	margin-right: calc(-1 *(100vw - 100%));
 
-	background-image: url(/images/animeBg/manga.svg);
-	background-repeat: no-repeat;
-	background-position: bottom right;
-	background-size: 73%;
+	
 }
 
 @media (max-width: 1065px) {
@@ -39,7 +36,10 @@ html {
 
 body {
 	position: relative;
-
+	background-image: url(/images/animeBg/manga.svg);
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	background-size: 73%;
 	margin: 0;
 	padding: 0;
 
