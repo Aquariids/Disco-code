@@ -1,0 +1,21 @@
+.docs {
+    position: fixed;
+	display: flex;
+	flex-direction: column;
+
+	margin-top: 100px;
+	margin-left: 10px;
+
+	list-style-type: circle;
+	grid-template-columns: 1fr;
+}
+
+.docsTitle {
+
+}
+
+@media (max-width: 785px) {
+	.docs {
+		display: none;
+	}
+}

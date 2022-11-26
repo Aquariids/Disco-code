@@ -64,6 +64,7 @@ const SidebarMenu = (): JSX.Element => {
             </nav>
         );
     }
+
     else {
         return (
             <></>
