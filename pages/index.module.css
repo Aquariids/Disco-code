@@ -1,5 +1,7 @@
 .body {
 	text-align: center;
+	display: grid;
+	grid-template-columns: 1fr;
 }
 
 .index_meta_content {
@@ -21,12 +23,6 @@
 	background-size: 23.3%;
 }
 
-.container {
-	display: grid;
-	justify-content: center;
-	grid-template-columns: 1fr;
-	grid-template-rows: 1fr;
-}
 
 .titlePage {
 	min-height: 100vh;
@@ -34,7 +30,6 @@
 
 .articles {
 	display: grid;
-
 	min-height: 100vh;
 }
 
@@ -205,6 +200,10 @@
 @media (max-width: 785px) {
 	.text {
 		font-size: 16px;
+	}
+	
+	.index_meta_content {
+		min-height: 45vh;
 	}
 
 	.articles {
