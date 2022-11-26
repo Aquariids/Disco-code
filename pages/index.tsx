@@ -68,7 +68,7 @@ console.log(process.env.SITE_URL);
       </div>
 
       </div>
-         <div  className={s.menu}>
+        <div  className={s.menu}>
           <div className={s.allText}>
         <div className={s.bgText2}>
         <div   className={s.text}>
@@ -84,7 +84,7 @@ console.log(process.env.SITE_URL);
           <div className={s.bgText}>
           <div className={s.title}>Всем привет</div>В данных мной материалах,
           мои суждения и выводы могут быть ошибочны. Если вы где-то нашли ошибку или неточность, то буду рад вашим pull request запросам. 
-          Под каждой страницей есть ссылка на редактирование ее на github.
+          Под каждой страницей есть ссылка для редактирование ее на github.
         </div>
         </div>
         </div>
