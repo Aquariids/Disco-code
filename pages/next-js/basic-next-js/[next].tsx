@@ -54,7 +54,7 @@ const PostPage: NextPage<never> = ({post}: MDXPost): JSX.Element => {
           <meta property="og:locale" content="ru_Ru" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
-          <meta property="og:author" content="Дмитрий черномашенцев" />
+          <meta property="og:author" content="Дмитрий Черномашенцев" />
           <meta property="og:section" content="nextJs" />
           <meta property="og:tag" content="next, nextJs, js" />
         </Head>
@@ -70,7 +70,7 @@ const PostPage: NextPage<never> = ({post}: MDXPost): JSX.Element => {
             <a
               target="_blank"
               rel="noopener"
-              href={`https://github.com/Aquariids/Disco-code/blob/main/Content/next-js/${post.meta.slug}.mdx`}
+              href={`https://github.com/Aquariids/Disco-code/blob/main/Content/next-js/basic-next-js/${post.meta.slug}.mdx`}
             >
               {" "}
               Отредактировать эту страницу

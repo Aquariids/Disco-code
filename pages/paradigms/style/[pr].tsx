@@ -53,7 +53,7 @@ const PostPage: NextPage<never> = ({
         <meta property="og:site_name" content="DiscoCode" />
         <meta property="og:locale" content="ru_Ru" />
 
-        <meta property="og:author" content="Дмитрий черномашенцев" />
+        <meta property="og:author" content="Дмитрий Черномашенцев" />
         <meta property="og:section" content="Paradigms" />
         <meta property="og:tag" content="OOP, js, paradigms" />
         </Head>
@@ -68,7 +68,7 @@ const PostPage: NextPage<never> = ({
             <a
               target="_blank"
               rel="noopener"
-              href={`https://github.com/Aquariids/Disco-code/blob/main/Content/paradigms/${post.meta.slug}.mdx`}
+              href={`https://github.com/Aquariids/Disco-code/blob/main/Content/paradigms/style/${post.meta.slug}.mdx`}
             >
               {" "}
               Отредактировать эту страницу
