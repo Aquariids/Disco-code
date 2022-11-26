@@ -4,21 +4,15 @@ import s from './Sidebar.module.css';
 import SidebarMenu from '../../src/Components/SidebarMenu/SidebarMenu';
 import { useRouter } from 'next/router';
 import cn from 'classnames';
+import MenuDocs from '../../src/Components/Menu/MenuDocs/MenuDocs';
 
 const Sidebar = ({className, ...props}:SidebarProps):JSX.Element => {
     const router = useRouter(); 
     const r = router.asPath.split('/').length;
     
 
-    if(router.asPath === '/docs/site-document') { // этой части на сайте нет, это для документации сайта
-        return <div>
-        <ul className={s.docs}>
-        <h3 className={s.docsTitle}>Навигация</h3>
-            <li>Api</li>
-            <li>Pages</li>
-           
-        </ul>
-        </div>;
+    if(router.asPath.startsWith('/docs')) { // этой части на сайте нет, это для документации сайта
+        return <MenuDocs/>;
     }
     
     // тут уже идет сайт
