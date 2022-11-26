@@ -120,14 +120,15 @@ fetch('server.php', { // тут у нас ссылка на наш сервер
 ```
 ### Калькулятор валюты
 А тут мы повторим тот же калькулятор, что и в примере с `XMLHttpRequest`:
+
 ```javaScript
 const inputRub = document.querySelector('#rub'), // получаем элементы
     inputUsd = document.querySelector('#usd');
 
 inputRub.addEventListener('input', async () => {  // чешаем событие на инпут
   let response = await fetch('./js/current.json', { // получаем ответ в переменную response
-        method: "GET",
-        headers: {
+        method: "GET", // это тоже можно не указывать
+        headers: { // вообще можно написать в одну строчку без method, headers.
             'Content-type': 'application/json; charset=utf-8'
         },
     })
@@ -140,5 +141,4 @@ inputRub.addEventListener('input', async () => {  // чешаем событие
         alert(`Ошибка запроса ${response.status}`) // Окно об ошибке
     }
 })
-
 ```
