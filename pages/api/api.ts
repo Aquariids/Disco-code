@@ -18,7 +18,6 @@ export const getSlugs = (url: string): string[] => {
 
 export const getAllPosts = (url: string) => {
   const posts = getSlugs(url).map((slug) => getPostFromSlug(slug, url));
-
   return posts;
 };
 
@@ -59,3 +58,4 @@ export const getPostFromSlug = (slug: string, url: string): Post => {
     },
   };
 };
+
