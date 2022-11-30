@@ -3,6 +3,9 @@
 	height: auto;
 }
 
+.nonActive {
+	font-weight: 400;
+}
 .mdTitle {
 	margin-top: 50px;
 }
@@ -86,6 +89,12 @@ code {
 	pre {
 		width: 100vw;
 		margin-left: calc(-50vw + 50%);
+	}
+
+	.btnTop {
+		position: absolute;
+		display: flex;
+		
 	}
 
 	.mdHead {
