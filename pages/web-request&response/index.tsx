@@ -1,4 +1,4 @@
-import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import { withLayout } from "../../layout/Layout";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
@@ -10,9 +10,7 @@ import "highlight.js/styles/dark.css";
 import AnimationContainer from "../../src/Components/AnimationContainers/AnimationContainer";
 import cn from "classnames";
 import {
-  getAllPosts,
   getPostFromSlug,
-  getSlugs,
   MDXPost,
 
 } from "../api/api";
@@ -37,15 +35,15 @@ const PostPage: NextPage<never> = ({
         <meta name="yandex-verification" content="a99ae512e4f1c330" />
         <meta
           name="description"
-          content={"Функциональное программирование, ООП, стили написания кода."}
+          content={"Как работает web - request & response, что за HTTP запросы и ответы, TCP/IP"}
         />
         <meta
           property="og:description"
-          content={"Функциональное программирование, ООП, стили написания кода."}
+          content={"Как работает web - request & response, что за HTTP запросы и ответы, TCP/IP"}
         />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://discocode.ru/paradigms" />
+        <meta property="og:url" content="https://discocode.ru/web-request&response" />
         <meta
           property="og:image"
           content="/"
@@ -54,8 +52,8 @@ const PostPage: NextPage<never> = ({
         <meta property="og:locale" content="ru_Ru" />
 
         <meta property="og:author" content="Дмитрий Черномашенцев" />
-        <meta property="og:section" content="Paradigms" />
-        <meta property="og:tag" content="OOP, js, paradigms" />
+        <meta property="og:section" content="web-request&response" />
+        <meta property="og:tag" content="HTTP, js, web,request,response" />
         </Head>
 
         <AnimationContainer>
