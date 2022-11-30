@@ -63,7 +63,6 @@ const PostPage: NextPage<never> = ({
             <h1>{post.meta.title}</h1>
           </div>
           <MDXRemote {...post.source} />
-
           <div className={cn('mainEdit', "page_edit")}>
             <a
               target="_blank"

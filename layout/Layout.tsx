@@ -26,6 +26,7 @@ const Layout = ({ children, }: LayoutProps): JSX.Element => {
                     <div className={content}>
                     <ListMobileMenu />
                         {children}
+
                     </div>
                 </div>
                 <Footer className={footer} />

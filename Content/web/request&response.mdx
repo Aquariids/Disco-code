@@ -2,3 +2,119 @@
 title: 'Как работает web - request & response '
 id: '0'
 ---
+
+<div className = 'mdHead'>
+
+#### Теги
+
+<div className='tag_main'>[client–server:](#clientserver)</div> 
+<div className='mini_tag_main'>[URL&DNS,](#url--dns)</div>
+<div className='mini_tag_main'>[TCP/IP socket connection,](#tcpip-socket-connection)</div>
+<div className='mini_tag_main'>[HTTP request,](#http-request)</div>
+<div className='mini_tag_main'>[HTTP response.](#http-response)</div> <br/>
+<div className='tag_main'>[Подробнее TCP/IP:](#подробнее-tcpip)</div>
+<div className='mini_tag_main'>[TCP,](#tcp---transmission-control-protocol)</div>
+<div className='mini_tag_main'>[IP.](#ip---internet-protocol)</div> <br/>
+
+</div>
+
+
+## client–server
+
+Если очень просто, то вот вся модель, мы создаем запрос(request) и нам на наш запрос приходит ответ(respone). Это называется "Модель запрос-ответ или Клиент-серверная архитектура."
+
+<div className='container-img'> <span className="img"> ![requestAndResponse](/images/Content/web/requestAndResponse.png) </span></div>
+
+Но разберемеся немного подробнее.
+
+### URL & DNS
+
+Наш url по которому мы переходим, состоит из трех частей.
+1. HTTP или HTTPS протокол
+2. Название домена
+3. Ресурс к которому мы хотим получить доступ.
+
+<div className='container-img'> <span className="img"> ![url](/images/Content/web/url.png) </span></div>
+
+Доменное имя здесь лишь удобно выглядящее название для человека, что бы было легче запомнить. На самом деле, за каждый доменым именем стоит `IP` адрес.
+Каждый раз когда мы пытаемся получить доступ к серверу, заходим на сайт например, наш браузер делает запрос к `DNS(domain name system)`.
+* DNS - Это база(или система) серверов, которая используется для получения `IP` адресов.
+
+Так вот `DNS` сопоставляет наше доменное имя с реальным адресом в сети.
+
+<div className='container-img'> <span className="img"> ![DNS](/images/Content/web/DNS.png) </span></div>
+
+
+Далее браузер получает этот `IP` адрес. Который в свою очередь тоже состоит из 3 частей
+1. HTTP или HTTPS протокол
+2. IP адрес
+3. Номер порта - по умолчанию 443 для HTTPS & 80 для HTTP
+
+<div className='container-img'> <span className="img"> ![IP](/images/Content/web/IP.png) </span></div>
+
+* Порт позволяет нам получить доступ на сервере для передачи определенных данных, он идентифицирует определенную службу которая запущена на сервере. Это как бы под адрес. Порт не имеет ничего общего с ресурсом из `URL`, ресурс будет отправлен в HTTP запросе.
+
+### TCP/IP socket connection
+
+После того, как мы имеем реальный `IP` адрес, между браузером и сервером устанавливается `TCP/IP socket connection` - соединение в общем.
+
+<div className='container-img'> <span className="img"> ![TCPIP](/images/Content/web/TCPIP.png) </span></div>
+
+Это соединение остается на протяжении всего времени, пока доставляются данные.
+`TCP/IP` вместе они представляют собой протоколы взаимодействия, которые определяют как данные перемещаются по интернету. О них мы поговорим немного позже.
+
+### HTTP request
+После того как у нас установится соединение, мы делаем сам `HTTP` запрос.<br/>
+`HTTP` - означает `HyperText Transfer Protocol`, протокол перемещения гипер текста. Это протокол взаимодействия, который позвляет двум или более сторонам взаимодействовать дург с другом.
+`HTTP` работает при помощи отправки сообщений (запросов) и ответов от сервера, от клиента к серверу и назад.
+
+Вот примерно так выглядит `request`:
+
+<div className='container-img'> <span className="img"> ![HTTP_request](/images/Content/web/HTTP_request.png) </span></div>
+
+* Первым делом обычно идет `HTTP` метод + `target` запроса или `url` - ресурс + `HTTP` версия.
+* Далее идут `headers request` тут разные варианты.
+* Дальше тело запроса `body` оно есть только при отправке данных.
+
+Глянем на примерее нашего сайта в google chrome:
+
+<div className='container-img'> <span className="img"> ![request_chrome](/images/Content/web/request_chrome.png) </span></div>
+
+А вот как это выглялит в браузере Mozilla Firefox:
+
+<div className='container-img'> <span className="img"> ![request_mozilla](/images/Content/web/request_mozilla.png) </span></div>
+
+Далее запрос обрабатывается сервером, в зависимости чего мы от него хотим. И когда сервер нам готов ответить он отправляет нам ответ.
+
+### HTTP respone
+Данные в ответ на отправляются уже с помощью `HTTP respone`, тут  примерно такое же сообщение как и было в запросе.
+
+<div className='container-img'> <span className="img"> ![HTTP_response](/images/Content/web/HTTP_response.png) </span></div>
+
+Тут все примерно так же
+
+* Первым делом идет `HTTP` версия + статус код + статус сообщение.
+* Далее идут `headers response` тут опять же разные варианты.
+* Ну и тело запроса `body` - обычно это запрошенный `JSON` или `HTML`
+
+На вкладке `Network` в инспекторе кода можно все это самому посмотреть на любом сайте.
+Если мы работаем не с `API`, а просто заходим на веб страницу, то важно понимать, первым делом мы получаем саму `html` страницу!
+* Первым загружает `index.html`
+* Далее идет сканирование ресурсов -  js,css и изображения, браузер ищет их в index.html
+* Процесс повторяется для каждого файла. То есть для каждого файла будет новый `HTTP request`
+
+Вот напримере нашего сайта, видно, что первым загружается главная html страница.
+
+<div className='container-img'> <span className="img"> ![HTTP_response](/images/Content/web/discocode_functions.png) </span></div>
+
+
+## Подробнее TCP/IP
+
+Мы уже говорили, что это протоколы взаимодействия которе определяют каким образом данные перемещаются по интернету, без сильных подробностей узнаем конкретнее ддля чего они нужны.
+
+### TCP - Transmission Control Protocol
+Прежде всего, `TCP` разбивает запросы и ответы, на огромное количество маленьких кусочков, такие куски называются  - пакеты.
+Делается это прежде чем, ответ будет отослан. Каждый из этих пакетов идет по своему пути, так они приходят намного быстрее.После того, как ответ получен, `TCP` из этих пакетов пересоберет данные которые были запрошенны. 
+### IP - Internet Protocol
+Работа `IP` заключается в том, что бы отправлять и регулировать отправку по нужному адресу пакеты, которые создал `TCP`. Именно `IP` удостоверяется, что данные доставлены по нужному `ip` адресу
+
