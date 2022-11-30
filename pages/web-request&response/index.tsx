@@ -65,7 +65,7 @@ const PostPage: NextPage<never> = ({
             <a
               target="_blank"
               rel="noopener"
-              href={`https://github.com/Aquariids/Disco-code/blob/main/Content/paradigms/style/${post.meta.slug}.mdx`}
+              href={`https://github.com/Aquariids/Disco-code/blob/main/Content/web/${post.meta.slug}.mdx`}
             >
               {" "}
               Отредактировать эту страницу
