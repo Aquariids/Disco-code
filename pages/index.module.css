@@ -1,7 +1,8 @@
 .body {
 	text-align: center;
 	display: grid;
-	grid-template-columns: 1fr;
+	justify-content: center;
+	grid-template-columns: minmax(320px, 1180px);
 }
 
 .index_meta_content {
@@ -22,6 +23,7 @@
 	background-position: bottom right;
 	background-size: 23.3%;
 }
+
 
 
 .titlePage {
