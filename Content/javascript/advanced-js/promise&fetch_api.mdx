@@ -1,6 +1,6 @@
 ---
 title: 'Promise, fetch API'
-id: 9
+id: 5
 prev: '/js/advanced-js/regular-expressions'
 category: 'advanced-js'
 ---
@@ -17,7 +17,6 @@ category: 'advanced-js'
 
 ```javaScript
 let b = new Promise((resolve,reject)=> {})
-
 ```
 Promise может находится в трех состояниях:
 1. Состояние `pending:` начальное состояни. Ожидание, того когда станет доступно будущее значение.
@@ -55,11 +54,12 @@ let b = new Promise((resolve,reject)=> {
     console.log('конец'); // конец
 })
 ```
- Далее расмотрим какие проблемы решает `promise`, а после как вообще с ним работать и для чего.
+Далее расмотрим какие проблемы решает `promise`, а после как вообще с ним работать и для чего.
 
 ## Callback hell
 Колбек ад, это когда колбеков очень много, все становится очень запутанно и непонятно.
 
+### Пример для примера
 ```javaScript
 // имитируем асинхронную работу
 console.log('Запрос данных...'); // выводим запрос
@@ -80,7 +80,7 @@ setTimeout(()=> {
             console.log(product.sending); // sent
         },2000) // суть в том, что получается вот такая лесенка, это классический колбек ад
     },2000) // если нам нужна будет еще одна операция, у нас появится еще одна такая лесенка
-},2000); // представим что их штук 5, вот тут и начинается ад
+},2000) // представим что их штук 5, вот тут и начинается ад
 ```
 
 Что бы у нас наш код не превратился в колбек ад, нам понадабятся `promise`.
@@ -109,7 +109,7 @@ rq.then((product) => { // rq - это промис который выполни
                 // само собой, это пример и никто не будет писать такое условие. Подробнее далее в разборе fetch
             }
 
-        }, 2000);
+        }, 2000)
     });
 }).then((data) => { // тут опять получаем наш product
     data.modify = true; // меняем наш объект
@@ -123,6 +123,97 @@ console.log('Конец');
 });
 ```
 По сути работа с промисами, превращается в такую вот некую цепочку промисов, при работе с `fetch` все станет намного яснее.
+
+### Пример с XMLHttpRequest и API
+Сейчас мы воспользуемся `API restcountries` - с помощью него мы сможем получать информацию о странах, ну и делать с ними всякое, мм..ага..дада..
+```javaScript
+const getCountry = (country) => { // Создаем функцию, в нее будем передавать нужную страну
+
+    const request = new XMLHttpRequest();  // создаем объект XMLHttpRequest
+
+    // говорим, что нам надо, тут же указываем аргументом страну которую хотим
+    request.open("GET", `https://restcountries.com/v3.1/name/${country}`); 
+    request.send() // отправляем запрос
+    request.addEventListener('load', () => {  // создаем событие load, оно будет срабатывать когда данные будут получены
+        const data = JSON.parse(request.response); // парсим наш ответ в объект
+        // у каждой страны язык находится в объекте languages, но имя свойств у всех стран разные
+        // поэтому мы получаем просто их значения без ключей и все. Будем выводить самое первое значение
+        const lang = Object.values(data[0].languages)
+        
+        // создадим переменную с html кодом, который поместим на страницу с версткой
+        const html = `
+        <div class="country"> 
+        <img class="country-img" src="${data[0].flags.png}" />
+        <div class="country-data">
+          <h3 class="country-name">${data[0].name.official}</h3>
+          <p class="country-lang"><span>Язык: </span>${lang[0]}</p>
+        </div>
+      </div>
+        `
+    document.querySelector('body').insertAdjacentHTML('afterbegin',html) // помещаем, про этот метод я говорил уже, да да
+    
+    
+    })
+}
+
+getCountry('usa') // вызываем
+```
+Вот что мы получаем:
+
+<div className='container-img'> <span className="img"> ![usa](/images/Content/Js/usa.png) </span></div>
+
+А теперь посмотрим на колбек ад, который может произойти на практике.
+
+### XMLHttpRequest & callback hell
+
+```javaScript
+const showCountry = (data,className) => { // отдельно помещаем отображение страны
+    const lang = Object.values(data[0].languages)
+    const html = `
+        <div class="country ${className}">
+        <img class="country__img" src="${data[0].flags.png}" />
+        <div class="country__data">
+          <h3 class="country__name">${data[0].name.official}</h3>
+          <p class="country__row"><span>Язык: </span>${lang[0]}</p>
+        </div>
+      </div>
+        `
+    document.querySelector('body').insertAdjacentHTML('afterbegin', html)
+}
+
+
+const getCountyAndBorderCountries = (country) => { // теперь мы получаем страну и ее первую соседнюю страну
+
+    const request = new XMLHttpRequest();
+
+    request.open("GET", `https://restcountries.com/v3.1/name/${country}`); // все так же как и было
+    request.send()
+    request.addEventListener('load', () => {
+        const data = JSON.parse(request.response);
+        showCountry(data) // теперь тут отображаем страну
+        const [firstCountry] = data[0].borders; // получаем соседнюю страну
+        const request2 = new XMLHttpRequest();  // вызываем новый ajax
+        request2.open("GET", `https://restcountries.com/v3.1/alpha/${firstCountry}`); // теперь запрашиваем соседнюю страну
+        request2.send() // все как всегда
+        request2.addEventListener('load', () => { // событие load
+            const data = JSON.parse(request2.response);
+            showCountry(data,"neighbour") // и показываем ее с нужным классом
+
+        })
+
+    })
+}
+
+getCountyAndBorderCountries('usa')
+```
+
+Вот что получается:
+
+<div className='container-img'> <span className="img"> ![usaAndCan](/images/Content/Js/usaAndCan.png) </span></div>
+
+Вот получается у нас, что в одном `ajax` запросе находится еще один, теперь представим, что нам нужно еще узнать соседнюю страну соседней страны, или еще сделать какой то вызовы `ajax`.
+Вот тогда и будет ад, в одном запросе другой и так далее.<br/>
+Теперь посмотрим как оно будет с `fetch`.
 ##  fetch API 
 `fetch` - это современный способ для работы с сетевыми запросами.
 
@@ -130,32 +221,10 @@ console.log('Конец');
 
 ### Методы для ответа fetch
 
-### Настоящий пример callback hell
-Кусочек из небольшого скажем так проекта, как это работает на практике. Перед изучением `fetch` рекомендую узнать начала про <span className = 'link_js'>[XMLHttpRequest](/js/advanced-js/ajax#не-современный-способ-ajax---xmlhttprequest)</span>.<br/>
-Здесь мы будем использовать отправку данных.
-```javaScript
-fetch('server.php', { // тут у нас ссылка на наш сервер
-        method:"POST",  // вот он метод
-        headers: { // заголовок
-            'Content-type':'application/json'
-        },
-        body: JSON.stringify(object) // объект который отправляем и сразу его парсим в json
 
-    })
-    .then(data => data.text())  // здесь мы его переводим в текст, что бы посмотреть удобно на него в консоли
-    .then(data => {
-        showThanksModal(message.succes);  // выводим текст об удачной отправки формы
-        
-        statusMessage.remove();
-    }).catch(()=> {
-        showThanksModal(message.failure); // уведомление об ошибки
-    }).finally(()=>{
-        form.reset();  // очищаем форму после отправки или после ошибки, плевать.
-    });
-
-```
 ### Калькулятор валюты
-А тут мы повторим тот же калькулятор, что и в примере с `XMLHttpRequest`:
+
+А тут мы повторим тот же калькулятор, что и в примере с <span className = 'link_js'> [XMLHttpRequest](ajax#калькулятор) </span>:
 
 ```javaScript
 const inputRub = document.querySelector('#rub'), // получаем элементы
@@ -181,22 +250,3 @@ inputRub.addEventListener('input', async () => {  // чешаем событие
 
 
 
-
-Script
-let a = 7; // создаем переменную
-
-console.log(a); // 7
-
-let b = new Promise((resolve,reject)=> { // создаем новый промис.
-    // resolve - это функция которая выполнится при удачном выполнении промиса
-    // reject -  при неудачном выполнении
-    setTimeout(()=> { // внутрь помещаем асинхронную операцию
-        resolve(a = 99); // в a присвоим 99
-    },2000); // выведем через 2 сек
-}).then(()=> { // нам выведет сначала 7, через 2 сек 99. И вот прикол промисов, нам не нужно опять делать setTimeout и писать опять в нем что-то
-console.log(a); // для этого всего у нас есть then он принимает в себя resolve. и внутри него мы можем работать с данными и просто по цепочке создавать дальше
-}).then(()=>{ // то есть по сути все что написанно внутри then, это тоже самое, что если бы мы писали это в resolve
-    // мы можем убрать из resolve a = 99 и все будет работать, только в последнем then будет 8. Но если мы удалим resolve. then уже не будет работать
-    console.log(a + 1); // тут уже выыведет 100 и так далее
-}); // это последовательность действий, при удачной работе мы обещаем, что выплним определленную цепочку действий.
-```
