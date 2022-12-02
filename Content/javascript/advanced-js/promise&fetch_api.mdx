@@ -19,9 +19,12 @@ category: 'advanced-js'
 <div className='mini_tag_js'>[пример для примера,](#пример-для-примера)</div>
 <div className='mini_tag_js'>[пример с XMLHttpRequest и API,](#пример-с-xmlhttprequest-и-api)</div>
 <div className='mini_tag_js'>[XMLHttpRequest & callback hell.](#xmlhttprequest--callback-hell)</div><br/>
-<div className='tag_js'>[fetch API](#fetch-api)</div>
-
-
+<div className='tag_js'>[fetch API:](#fetch-api)</div>
+<div className='mini_tag_js'>[потребляем промис из fetch](#потребляем-промис-из-fetch)</div><br/>
+<div className='tag_js'>[Отклоненный promise:](#отклоненный-promise)</div>
+<div className='mini_tag_js'>[вспомним про reject,](#вспомним-про-reject)</div>
+<div className='mini_tag_js'>[вспомним про метод catch.](#вспомним-про-метод-catch)</div><br/>
+<div className='tag_js'>[Калькулятор валюты](#калькулятор-валюты)</div>
 
 
 </div>
@@ -367,7 +370,7 @@ const getCountryData = (country) => {
         })
 }
 ```
-### Калькулятор валюты
+## Калькулятор валюты
 
 А тут мы повторим тот же калькулятор, что и в примере с `XMLHttpRequest`:
 
@@ -385,7 +388,7 @@ inputRub.addEventListener('input', async () => {  // чешаем событие
 
     // свойство ok Будет true если status в диапозоне от 200 до 299
     if(response.ok) { 
-        let data = await response.json() // парсим наш ответ в json формат, методом json()
+        let data = await response.json() // парсим наш ответ в объект
         inputUsd.value = (+inputRub.value / data.current.usd).toFixed(2) // работаем с инпутами как и было до этого.
     } else {
         alert(`Ошибка запроса ${response.status}`) // Окно об ошибке
