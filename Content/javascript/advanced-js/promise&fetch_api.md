@@ -6,6 +6,26 @@ next: '/js/advanced-js/local-storage'
 category: 'advanced-js'
 ---
 
+<div className = 'mdHead'>
+
+#### Теги
+
+<div className='tag_js'>[Что такое promise:](#что-такое-promise)</div>
+<div className='mini_tag_js'>[создаем promise,](#создаем-promise)</div>
+<div className='mini_tag_js'>[then,](#then)</div>
+<div className='mini_tag_js'>[catch,](#catch)</div>
+<div className='mini_tag_js'>[finally.](#finally)</div> <br/>
+<div className='tag_js'>[Callback hell:](#callback-hell)</div>
+<div className='mini_tag_js'>[пример для примера,](#пример-для-примера)</div>
+<div className='mini_tag_js'>[пример с XMLHttpRequest и API,](#пример-с-xmlhttprequest-и-api)</div>
+<div className='mini_tag_js'>[XMLHttpRequest & callback hell.](#xmlhttprequest--callback-hell)</div><br/>
+<div className='tag_js'>[fetch API](#fetch-api)</div>
+
+
+
+
+</div>
+
 ## Что такое promise 
 `Promise` - Это объект с помощью которого мы работаем с отложенными и асинхронными операциями. Этот объект используется в качестве заполнителя для будущего результата асинхронной операциии. Или еще проще, `promise` просто контейнер для будущего значения.
 С помощью промисов мы работает с `ajax`. Нам пришел ответ, от вызова `ajax`, этот ответ мы и поместим в `promise`.
@@ -37,7 +57,6 @@ let b = new Promise((resolve,reject)=> {
 }).then(hi => console.log(hi)) // hi
 // внутри then выполнилась колбек функция которая в свой аргумент приняла то, что вернул промис
 ```
-
 ### catch
 Метод `catch` будет выполняться при неудачном выполнении кода.
 ```javaScript
@@ -128,6 +147,7 @@ console.log('Конец');
 По сути работа с промисами, превращается в такую вот некую цепочку промисов, при работе с `fetch` все станет намного яснее.
 
 ### Пример с XMLHttpRequest и API
+
 Сейчас мы воспользуемся `API restcountries` - с помощью него мы сможем получать информацию о странах, ну и делать с ними всякое, мм..ага..дада..
 ```javaScript
 const getCountry = (country) => { // Создаем функцию, в нее будем передавать нужную страну
@@ -347,23 +367,6 @@ const getCountryData = (country) => {
         })
 }
 ```
-### Чуть про работу промисов
-
-* Когда мы работали со своим созданным промисом, там были две функции, с `fetch` они не нужны, так как `fetch` возвращает нам готовый промис.
-
-```javaScript
-// пример с промисом который был выше
-let b = new Promise((resolve,reject)=> {
-    return resolve('hi')  // тут при удачном вызове нужно самому вызвать resolve
-}).then(hi => console.log(hi)) // hi
-// далее обычная цепочка промисов
-
-// пример с  fetch
-let a = fetch(`https://restcountries.com/v3.1/name/japan`).then(()=> { // мы получили страну, у нас удачный вызов
-    return 'hi' // но далее просто вернули строку hi
-}).then((hi)=> console.log(hi)) // и в след then мы получили это значение
-```
-
 ### Калькулятор валюты
 
 А тут мы повторим тот же калькулятор, что и в примере с `XMLHttpRequest`:
@@ -390,5 +393,3 @@ inputRub.addEventListener('input', async () => {  // чешаем событие
 })
 ```
 Вот и все, потыкать сам калькулятор можно <span className = 'link_js'> [тут](ajax#калькулятор) </span>. Можете все повторить из предыдущей темы и потом просто вставить этот код, все будет работать так же.
-
-
