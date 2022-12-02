@@ -1,7 +1,8 @@
 ---
 title: 'Promise, fetch API'
-id: 5
-prev: '/js/advanced-js/regular-expressions'
+id: 6
+prev: '/js/advanced-js/ajax'
+next: '/js/advanced-js/local-storage'
 category: 'advanced-js'
 ---
 
@@ -22,6 +23,9 @@ Promise может находится в трех состояниях:
 1. Состояние `pending:` начальное состояни. Ожидание, того когда станет доступно будущее значение.
 2. Состояние `fulfilled:` операция завершена удачно.
 3. Состояние `rejected:` операция завершена с ошибкой.
+
+* Есть такое понятие <b>потребление promise</b>, это когда мы работаем с промис и его состояниями.
+То есть мы создаем промис и потом потребляем. В работе с `fetch` мы будем только потреблять.
 
 ### then
 
@@ -215,16 +219,122 @@ getCountyAndBorderCountries('usa')
 Вот тогда и будет ад, в одном запросе другой и так далее.<br/>
 Теперь посмотрим как оно будет с `fetch`.
 ##  fetch API 
-`fetch` - это современный способ для работы с сетевыми запросами.
+`fetch` - это современный способ для работы с сетевыми запросами. Сейчас перенесем пример выше на `fetch`.
+* При работе с `fetch` не нужно делать промис в ручную, функция  `fetch` создает промис и возвращает его.
+### Потребляем промис из fetch
+Давайте потребим наш промис из функции `fetch`.
+```javaScript
+// кусочек из кода выше
+const showCountry = (data,className = "") => {
+    const lang = Object.values(data[0].languages)
+    const html = `
+        <div class="country ${className}">
+        <img class="country__img" src="${data[0].flags.png}" />
+        <div class="country__data">
+          <h3 class="country__name">${data[0].name.official}</h3>
+          <p class="country__row"><span>Язык: </span>${lang[0]}</p>
+        </div>
+      </div>
+        `
+    document.querySelector('body').insertAdjacentHTML('afterbegin', html)
+}
 
-### Из чего состоит fetch
+// используя fetch получим нашу страну
+const getCountryData = (country) => {
+    // Мы просто вызываем fetch и помещаем api
+    const response = fetch(`https://restcountries.com/v3.1/name/${country}`) // получаем ответ
+    .then(data => data.json())  // если ответ есть, мы переходим в then, тут получаем данные объектом с помощью json()
+    .then(data => showCountry(data)) // вызываем функцию показать страну.
+}
 
-### Методы для ответа fetch
+getCountryData('usa') // вот и все.
+```
+* Метод json() позволяет декодировать ответ в обычный объект.
 
+Теперь давайте получим и соседа, исправим как раз колбек ад, который у нас начал появляться с `XMLHttpRequest`.
+```javaScript
+const getCountryData = (country) => {
+    const response = fetch(`https://restcountries.com/v3.1/name/${country}`) // получаем ответ
+        .then(data => data.json())  // если ответ есть, мы переходим в then, тут получаем данные объектом с помощью json()
+        .then(data => {
+            showCountry(data) // внутри then так же отображаем основную страну
+            const [firstCountry] = data[0].borders; // получаем соседа
+
+        // тут важно вернуть промис. Получаем соседа
+        return fetch(`https://restcountries.com/v3.1/alpha/${firstCountry}`)}) 
+        .then(data => data.json()) // тут мы продолжаем работать с промисом
+        .then(data => showCountry(data, 'neighbour')) // тут только с нужным классом
+}
+
+getCountryData('usa')
+```
+Очень важный момент:
+```javaScript
+        // в конце получая вторую страну  мы могли бы написать так
+          fetch(`https://restcountries.com/v3.1/alpha/${firstCountry}`)
+            .then(data => data.json()) 
+            .then(data => showCountry(data, 'neighbour'))
+        // но это большая ошибка, таким образом у нас опять получится callback hell
+        //  у нас одна колбек функция определена внутри другой колбек функции, внешней, то есть первым вызывом нашей главной страны
+            // получается начиная опять внутри какой то вызов, у нас будет колбек ад
+```
+Теперь еще раз посмотирм на правильный вариант, так станет понятнее.
+```javaScript
+.then(data => {
+            showCountry(data) 
+            const [firstCountry] = data[0].borders; /
+
+            return fetch(`https://restcountries.com/v3.1/alpha/${firstCountry}`) }) // тут заканчивается then который возвращает нам промис
+          .then(data => data.json())  // и далее идут другие then
+          .then(data => showCountry(data, 'neighbour'))  // мы не вызываем их внутри еще одного fetch, мы вызываем их лишь после другого then
+          // таким образом у нас нет колбек ада
+```
+В общем и все, получаем тот же результат:
+
+<div className='container-img'> <span className="img"> ![usaAndCan](/images/Content/Js/usaAndCan.png) </span></div>
+
+### Отклоненный promise
+До этого мы конечно все сделали красиво, но мы не обработали никаких ошибок, а если сервер не ответит? Если ничего не придет? Давайте исправим и это.
+Будем использовать уже знакомые `catch & finally`.
+В каком случае может быть отколонен наш запрос? Ну скорее всего если у нас не будет интернета.
+В инспекторе кода на вкладке `сеть` & `network` можно открыть такое окошко:
+
+<div className='container-img'> <span className="img"> ![network](/images/Content/Js/network.png) </span></div>
+
+Для отлова ошибки о дисконекте используем кнопку, при нажатии который мы будем получать наши страны.
+```javaScript
+const btn = document.querySelector('.btn'); // обычная кнопка с классом btn
+btn.addEventListener('click',() => { // получаем страны при нажатии
+    getCountryData('usa')
+    
+} )
+```
+После мы открываем страницу, где будет одна кнопка, в инспекторе кода в сети ставим офлайн и нажимаем кнопку, таким образом мы получим 2 ошибки.
+
+<div className='container-img'> <span className="img"> ![usaAndCan](/images/Content/Js/errorNet.png) </span></div>
+
+Если у вас появляются страны даже в офлайн режиме, то почистите кеш браузера и все.
+
+### Чуть про работу промисов
+
+* Когда мы работали со своим созданным промисом, там были две функции, тут они не нужны, так как `fetch` возвращает нам готовый промис.
+
+```javaScript
+// пример с промисом который был выше
+let b = new Promise((resolve,reject)=> {
+    return resolve('hi')  // тут при удачном вызове нужно самому вызвать resolve
+}).then(hi => console.log(hi)) // hi
+// далее обычная цепочка промисов
+
+// пример с  fetch
+let a = fetch(`https://restcountries.com/v3.1/name/japan`).then(()=> { // мы получили страну, у нас удачный вызов
+    return 'hi' // но далее просто вернули строку hi
+}).then((hi)=> console.log(hi)) // и в след then мы получили это значение
+```
 
 ### Калькулятор валюты
 
-А тут мы повторим тот же калькулятор, что и в примере с <span className = 'link_js'> [XMLHttpRequest](ajax#калькулятор) </span>:
+А тут мы повторим тот же калькулятор, что и в примере с `XMLHttpRequest`:
 
 ```javaScript
 const inputRub = document.querySelector('#rub'), // получаем элементы
@@ -238,8 +348,8 @@ inputRub.addEventListener('input', async () => {  // чешаем событие
         },
     })
 
-    // свойство ok Будет true если status в диапозоне от 200 до 299, делать проверку как у меня не обязательно
-    if(response.ok && response.status === '200') { // тут хватит и просто response.ok
+    // свойство ok Будет true если status в диапозоне от 200 до 299
+    if(response.ok) { 
         let data = await response.json() // парсим наш ответ в json формат, методом json()
         inputUsd.value = (+inputRub.value / data.current.usd).toFixed(2) // работаем с инпутами как и было до этого.
     } else {
@@ -247,6 +357,6 @@ inputRub.addEventListener('input', async () => {  // чешаем событие
     }
 })
 ```
-
+Вот и все, потыкать сам калькулятор можно <span className = 'link_js'> [тут](ajax#калькулятор) </span>. Можете все повторить из предыдущей темы и потом просто вставить этот код, все будет работать так же.
 
 
