@@ -13,6 +13,7 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
 
 
 
+    
     const logoCreat = () => {
         if (router.asPath.startsWith('/js')) {
             return <Logo path='/js' src='/logo/js_logo.svg' />;
@@ -26,7 +27,6 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
         if (router.asPath.startsWith('/next-js')) {
             return <Logo path='/next-js' src='/logo/nextjs_logo.svg' />;
         }
-
         else {
             return <Logo path='/' src='/logo/disco.svg' />;
         }

@@ -10,7 +10,8 @@ const logo = ({ path, src }: logoProps): JSX.Element => {
     const router = useRouter();
 
 
- 
+ try {
+
     if (router.pathname === path) {
         return (
             <AnimatePresence>
@@ -43,6 +44,11 @@ const logo = ({ path, src }: logoProps): JSX.Element => {
         );
 
     }
+ }
+ catch(e) {
+    console.log(e);
+    return <></>;
+ }
 
 
 };
