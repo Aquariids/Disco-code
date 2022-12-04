@@ -9,7 +9,7 @@
 	margin-right: calc(-1 *(100vw - 100%));
 
 	color: #FFF;
-	gap: 30px;
+	gap: var(--grid_gap);
 	grid-template-columns: var(--grid_columns_wrapper);
 	grid-template-areas: ". header .";
 }

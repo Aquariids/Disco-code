@@ -2,18 +2,16 @@
 	display: grid;
 	align-items: center;
 	justify-content: center;
-
 	text-align: right;
-
-	color: #FFF;
-
+	color: #FFF;	
 	font-size: 15px;
-	gap: 30px;
 	grid-template-columns: var(--grid_columns_wrapper);
 	grid-template-areas: ". footer .";
+	gap: var(--grid_gap);
 }
 
 .nav {
+	margin-right: 30px;
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: auto;
@@ -32,7 +30,6 @@
 .content {
 	display: flex;
 	justify-content: right;
-
 	margin-bottom: 25px;
 
 	grid-area: footer;
@@ -73,7 +70,6 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: right;
-
 	margin-bottom: 20px;
 }
 
@@ -86,67 +82,15 @@
 	color: #999;
 }
 
+
+.footer_nav_list {
+	padding: 0;
+}
+
 .doc:hover {
 	transition: 0.7s;
 
 	opacity: 1;
-}
-
-@media (max-width: 1000px) { 
-	.content {
-		
-	}
-
-	.footer {
-		grid-template-columns: 550px;
-
-		justify-content: center;
-		/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
-		grid-template-areas: "footer";
-	}
-
-
-}
-@media (max-width: 785px) {
-	.content {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		gap: 0;
-		text-align: center;
-	}
-
-	.copyright {
-		flex-direction: column;
-		justify-content: center;
-	}
-
-	.doc {
-		margin-left: 0;
-	}
-}
-
-@media (max-width: 785px) {
-	.footer {
-		align-items: center;
-		justify-content: center;
-
-		text-align: center;
-		grid-template-columns: minmax(320px, 1fr);
-		/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
-		grid-template-areas: "footer";
-	}
-
-	
-
-	.footer_nav_list {
-		padding-left: 0;
-	}
-
-	.footer_item {
-		display: flex;
-		justify-content: center;
-	}
 }
 
 .copyright {
@@ -167,14 +111,59 @@
 .copyright span {
 	margin-top: 25px;
 }
-
 @media (max-width: 785px) {
-	.copyright {
+	.footer {
+		align-items: center;
 		justify-content: center;
 
+		text-align: center;
+		grid-template-columns: minmax(320px, 1fr);
+		/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
+		grid-template-areas: "footer";
+	}
+
+	.footer_nav_list {
+		padding-left: 0;
+	}
+
+	.footer_item {
+		display: flex;
+		justify-content: center;
+	}
+
+	.content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 0;
+		text-align: center;
+	}
+
+	.copyright {
+		flex-direction: column;
+		justify-content: center;
+		
 		margin-right: 50px;
 		margin-left: 50px;
 	}
+
+	.doc {
+		margin-left: 0;
+	}
+
+	
+	.nav {
+		margin-right: 0;
+
+	}
+
+	
+}
+
+
+
+@media (max-width: 885px) {
+	
 }
 
 @media (max-width: 555px) {

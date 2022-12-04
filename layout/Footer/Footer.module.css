@@ -7,7 +7,7 @@
 
 	width: 100vw;
 	margin-left: calc(-50vw + 50%);
-
+	
 	background-color: var(--basic_color);
 	grid-template-rows: 1fr;
 }

@@ -24,7 +24,7 @@
 	--next_hover_color_links_pages: gray;
 
 	/* layout */
-
+	--grid_gap: 0 30px;
 	--grid_columns_wrapper: 21% minmax(320px, 1180px) 21%;
 	--grid_columns_wrapper_mobile: 21% minmax(320px, 1180px);
 }
