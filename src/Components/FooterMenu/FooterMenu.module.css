@@ -117,7 +117,7 @@
 		justify-content: center;
 
 		text-align: center;
-		grid-template-columns: minmax(320px, 1fr);
+		grid-template-columns: var(--grid_index_page_columns_wrapper_mobile);
 		/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
 		grid-template-areas: "footer";
 	}

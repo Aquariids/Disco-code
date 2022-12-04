@@ -2,7 +2,7 @@
 	text-align: center;
 	display: grid;
 	justify-content: center;
-	grid-template-columns: minmax(320px, 1180px);
+	grid-template-columns: var(--grid_index_page_columns_wrapper_mobile);
 }
 
 .index_meta_content {
@@ -262,6 +262,4 @@
 		font-size: 12px;
 	}
 
-	.index_meta_content {
-	}
 }
