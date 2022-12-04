@@ -35,10 +35,8 @@
 
 	margin-bottom: 25px;
 
-	white-space: nowrap;
 	grid-area: footer;
 	grid-template-columns: 1fr 1fr;
-	gap: 30px;
 }
 
 .footer_heading {
