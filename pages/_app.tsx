@@ -30,6 +30,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   
 
   useEffect(()=> {
+    const chat = document.querySelector('#telegram_feedback_root') && document.querySelector('#telegram_feedback_root') as HTMLElement;
     const headers = document.querySelectorAll('script');
     function loadScript(src:string) { // создаем функцию для подгрузки скриптов.
       const script = document.createElement('script'); 
@@ -39,20 +40,16 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   }
   if(router.asPath === '/') {
     loadScript('https://app.telegram-feedback.com/chat.js?wid=44bc091c-5f0b-4b85-9f1b-b239e8950da1');
-    const chat = document.querySelector('#telegram_feedback_root') && document.querySelector('#telegram_feedback_root') as HTMLElement;
     if(chat) {
       chat.style.display = 'block';
     }
   } else {    
     headers.forEach(item => {
       if(item.src == 'https://app.telegram-feedback.com/chat.js?wid=44bc091c-5f0b-4b85-9f1b-b239e8950da1') {
-        const chat = document.querySelector('#telegram_feedback_root') && document.querySelector('#telegram_feedback_root') as HTMLElement;
         if(chat != null) {
           chat.style.display = 'none';
         }
-        
         item.src = '';
-        
       } 
       
     });
