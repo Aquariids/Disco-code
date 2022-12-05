@@ -47,8 +47,6 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         const chat = document.querySelector('#telegram_feedback_root') && document.querySelector('#telegram_feedback_root') as HTMLElement;
         if(chat != null) {
           chat.style.display = 'none';
-        } else {
-          chat!.style.display = 'block';
         }
         
         item.src = '';
