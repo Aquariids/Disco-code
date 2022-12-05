@@ -1,14 +1,16 @@
 import type { NextPage } from "next";
 import { withLayout } from "../layout/Layout";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Articles from "../src/Components/Articles/Articles";
 import s from "./index.module.css";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 const Home: NextPage = (): JSX.Element => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const h2ref = useRef<number | any>(null);
-
+  const router = useRouter();
+  console.log("(👍≖‿‿≖)👍 ✿ file: index.tsx:13 ✿ router", router)
 
   const scrollToMyRef = () => {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -18,7 +20,6 @@ const Home: NextPage = (): JSX.Element => {
     document.querySelector('html')!.style.scrollBehavior = 'auto';
   };
   
-console.log(process.env.SITE_URL);
 
 
 
@@ -28,7 +29,6 @@ console.log(process.env.SITE_URL);
         <title>
           DiscoCode - уроки по javascript, typescript, react, nextjs
         </title>
-        <link href="https://app.telegram-feedback.com/chat.js?wid=44bc091c-5f0b-4b85-9f1b-b239e8950da1"/>
         <meta
           name="google-site-verification"
           content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY"

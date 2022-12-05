@@ -27,6 +27,33 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     }
   });
   
+
+  useEffect(()=> {
+    const headers = document.querySelectorAll('script');
+    function loadScript(src:string) { // создаем функцию для подгрузки скриптов.
+      const script = document.createElement('script'); 
+      script.src = src; 
+      script.async = false; 
+      document.head.append(script); 
+  }
+  if(router.asPath === '/') {
+    loadScript('https://app.telegram-feedback.com/chat.js?wid=44bc091c-5f0b-4b85-9f1b-b239e8950da1');
+
+  } else {
+
+    headers.forEach(item => {
+      if(item.src == 'https://app.telegram-feedback.com/chat.js?wid=44bc091c-5f0b-4b85-9f1b-b239e8950da1') {
+        item.src = '';
+        
+      } 
+      
+    });
+
+    
+  }
+
+  });
+
   return (
     <>
       <Head>
