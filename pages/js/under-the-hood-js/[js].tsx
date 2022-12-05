@@ -31,11 +31,11 @@ const PostPage: NextPage<never> = ({ post }: MDXPost): JSX.Element => {
           <meta name="yandex-verification" content="a99ae512e4f1c330" />
           <meta
             name="description"
-            content={"Практика javaScript & webpack"}
+            content={"Как работает javaScript под капотом"}
           />
           <meta
             property="og:description"
-            content={"Практика javaScript & webpack"}
+            content={"Как работает javaScript под капотом"}
           />
 
           <meta property="og:type" content="article" />
@@ -50,7 +50,7 @@ const PostPage: NextPage<never> = ({ post }: MDXPost): JSX.Element => {
           <meta property="og:image:height" content="630" />
           <meta property="og:author" content="Дмитрий черномашенцев" />
           <meta property="og:section" content="JavaScript" />
-          <meta property="og:tag" content="JavaScript, js" />
+          <meta property="og:tag" content="JavaScript, js, scope, event loop" />
         </Head>
 
         <AnimationContainer>
@@ -64,7 +64,7 @@ const PostPage: NextPage<never> = ({ post }: MDXPost): JSX.Element => {
             <a
               target="_blank"
               rel="noopener"
-              href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/practice-js/${post.meta.slug}.mdx`}
+              href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/basic-js/${post.meta.slug}.mdx`}
             >
               {" "}
               Отредактировать эту страницу
@@ -106,7 +106,7 @@ export default withLayout(PostPage);
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { js } = params as { js: string };
-  const { content, meta } = getPostFromSlug(js, POSTS_PATH_PRACTICE_JS);
+  const { content, meta } = getPostFromSlug(js, POSTS_PATH_UNDER_THE_HOOD_JS);
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [
@@ -117,14 +117,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
   });
 
-
   const posts_Basic_Js = getAllPosts(POSTS_PATH_BASIC_JS).map((post) => post.meta);
   const posts_Advanced_Js = getAllPosts(POSTS_PATH_ADVANCED_JS).map((post) => post.meta);
   const posts_Algorithms_Js = getAllPosts(POSTS_PATH_ALGORITHMS_JS).map((post) => post.meta);
   const posts_Practice_Js = getAllPosts(POSTS_PATH_PRACTICE_JS).map((post) => post.meta);
   const posts_Under_The_Hood_Js = getAllPosts(POSTS_PATH_UNDER_THE_HOOD_JS).map((post) => post.meta);
-  const AllThemePosts = {posts_Basic_Js,posts_Advanced_Js,posts_Algorithms_Js,posts_Practice_Js,posts_Under_The_Hood_Js};  
+  const AllThemePosts = {posts_Basic_Js,posts_Advanced_Js,posts_Algorithms_Js,posts_Practice_Js,posts_Under_The_Hood_Js};
   
+
   return {
     props: { post: { source: mdxSource, meta }, AllThemePosts },
     revalidate: 10,
@@ -132,7 +132,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getSlugs(POSTS_PATH_PRACTICE_JS).map((js) => ({ params: { js } }));
+  const paths = getSlugs(POSTS_PATH_UNDER_THE_HOOD_JS).map((js) => ({ params: { js } }));
 
   return {
     paths,
