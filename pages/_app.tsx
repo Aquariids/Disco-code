@@ -45,7 +45,12 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   } else {    
     headers.forEach(item => {
       if(item.src == 'https://app.telegram-feedback.com/chat.js?wid=44bc091c-5f0b-4b85-9f1b-b239e8950da1') {
-        document.querySelector('#telegram_feedback_root')!.style.display = 'none';
+        const chat = document.querySelector('#telegram_feedback_root') && document.querySelector('#telegram_feedback_root') as unknown as HTMLCollectionOf<HTMLElement>;
+        if(chat != null) {
+          chat.style.display = 'none';
+        }
+        
+        
         item.src = '';
         
       } 
