@@ -9,7 +9,7 @@ import Head from "next/head";
 import "highlight.js/styles/a11y-dark.css";
 import cn from "classnames";
 import { getAllPosts, getPostFromSlug, getSlugs, MDXPost } from "../../api/api";
-import { POSTS_PATH_ADVANCED_JS, POSTS_PATH_ALGORITHMS_JS, POSTS_PATH_BASIC_JS, POSTS_PATH_JS, POSTS_PATH_PRACTICE_JS, POSTS_PATH_UNDER_THE_HOOD_JS } from "../../api/paths";
+import { POSTS_PATH_ADVANCED_JS, POSTS_PATH_ALGORITHMS_JS, POSTS_PATH_BASIC_JS, POSTS_PATH_PRACTICE_JS, POSTS_PATH_UNDER_THE_HOOD_JS } from "../../api/paths";
 import Link from "next/link";
 import s from "../pageJs.module.css";
 import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
