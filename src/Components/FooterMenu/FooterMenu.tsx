@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import LinkA from '../../../public/link.svg';
 import { format } from 'date-fns';
+
 const { footer, content, } = s;
 
 
@@ -42,6 +43,7 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
                             <li className={s.footer_item}><a href="mailto:favoritePonyville@gmail.com">FavoritePonyville@gmail.com  </a> <LinkA /></li>
                             <li className={s.footer_item}><a target={"_blank"} href={'https://github.com/Aquariids'}>Github  </a> <LinkA /></li>
                             <li className={s.footer_item}><a target={"_blank"} href={'https://t.me/Aquariida'}>Телеграм  </a> <LinkA /></li>
+
 
                         </ul>
                     </div>
