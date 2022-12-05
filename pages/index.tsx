@@ -28,7 +28,7 @@ console.log(process.env.SITE_URL);
         <title>
           DiscoCode - уроки по javascript, typescript, react, nextjs
         </title>
-        <script src="https://app.telegram-feedback.com/chat.js?wid=44bc091c-5f0b-4b85-9f1b-b239e8950da1"></script>
+        <link href="https://app.telegram-feedback.com/chat.js?wid=44bc091c-5f0b-4b85-9f1b-b239e8950da1"/>
         <meta
           name="google-site-verification"
           content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY"
