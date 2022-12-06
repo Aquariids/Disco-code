@@ -10,11 +10,10 @@ const Home: NextPage = (): JSX.Element => {
   const h2ref = useRef<number | any>(null);
 
   const scrollToMyRef = () => {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    document.querySelector('html')!.style.scrollBehavior = 'smooth';
+    const html =  document.querySelector('html') as HTMLElement;
+    html.style.scrollBehavior = 'smooth';
     window.scrollTo(0, h2ref.current.clientHeight + h2ref.current.offsetTop  - h2ref.current.offsetHeight + 55 );
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    document.querySelector('html')!.style.scrollBehavior = 'auto';
+    html.style.scrollBehavior = 'auto';
   };
   
 
