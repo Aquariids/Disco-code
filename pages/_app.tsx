@@ -17,7 +17,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   const r = router.asPath.split('/').length;
 
   function telegramChat () {
-    const chat = document.querySelector('#app') && document.querySelector('#app') as HTMLElement;
+    const chat = document.querySelector('#__replain_widget') as HTMLElement;
     const headers = document.querySelectorAll('script');
     function loadScript(src:string) { // создаем функцию для подгрузки скриптов.
       const script = document.createElement('script'); 
@@ -28,6 +28,8 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   if(router.asPath === '/') {
     loadScript('https://widget.replain.cc/dist/client.js?id=3c7a4665-2ba9-4f82-9bd2-d3f54e2bbb6b');
     if(chat) {
+      chat.style.height = '70%';
+      chat.style.width = '20%';
       chat.style.display = 'block';
     }
   } else {    
@@ -46,6 +48,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
 
   useEffect(()=> {
     telegramChat();
+
     if(r >= 3) {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       document.querySelector('html')!.style.scrollBehavior = 'smooth';
