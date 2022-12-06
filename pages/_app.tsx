@@ -37,6 +37,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
           chat.style.display = 'none';
         }
         item.src = '';
+        item.remove();
       } 
       
     }); 
