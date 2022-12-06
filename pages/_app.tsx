@@ -40,16 +40,18 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   }
   }
 
+  function smothScroll() {
+    const html = document.querySelector('html') as HTMLElement;
+
+    if(r >= 3) { // при переходе к темам с главной страници, мне не нужен плавный скролл
+      html.style.scrollBehavior = 'smooth'; 
+    } else {
+      html.style.scrollBehavior = 'auto'; 
+    }
+  }
   useEffect(()=> {
     telegramChat();
-
-    if(r >= 3) {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      document.querySelector('html')!.style.scrollBehavior = 'smooth';
-    } else {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      document.querySelector('html')!.style.scrollBehavior = 'auto';
-    }
+    smothScroll();
   });
   
 
@@ -73,7 +75,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
 
       <Component {...pageProps} key={router.pathname} /></>
   );
-}
+};
 
 export default MyApp;
 
