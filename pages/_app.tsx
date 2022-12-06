@@ -17,7 +17,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   const r = router.asPath.split('/').length;
 
   function telegramChat () {
-    const chat = document.querySelector('#app') && document.querySelector('#telegram_feedback_root') as HTMLElement;
+    const chat = document.querySelector('#app') && document.querySelector('#app') as HTMLElement;
     const headers = document.querySelectorAll('script');
     function loadScript(src:string) { // создаем функцию для подгрузки скриптов.
       const script = document.createElement('script'); 
