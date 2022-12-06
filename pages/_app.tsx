@@ -12,24 +12,11 @@ Router.events.on('routeChangeComplete', (url:string)=> {
 });
 
 
-
-
-function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   const router = useRouter();
   const r = router.asPath.split('/').length;
-  useEffect(()=> {
-    if(r >= 3) {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      document.querySelector('html')!.style.scrollBehavior = 'smooth';
-    } else {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      document.querySelector('html')!.style.scrollBehavior = 'auto';
 
-    }
-  });
-  
-
-  useEffect(()=> {
+  function telegramChat () {
     const chat = document.querySelector('#telegram_feedback_root') && document.querySelector('#telegram_feedback_root') as HTMLElement;
     const headers = document.querySelectorAll('script');
     function loadScript(src:string) { // создаем функцию для подгрузки скриптов.
@@ -52,12 +39,22 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         item.src = '';
       } 
       
-    });
-
-    
+    }); 
+  }
   }
 
+  useEffect(()=> {
+    telegramChat();
+    if(r >= 3) {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      document.querySelector('html')!.style.scrollBehavior = 'smooth';
+    } else {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      document.querySelector('html')!.style.scrollBehavior = 'auto';
+    }
   });
+  
+
 
   return (
     <>

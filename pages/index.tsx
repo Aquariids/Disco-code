@@ -1,16 +1,13 @@
 import type { NextPage } from "next";
 import { withLayout } from "../layout/Layout";
-import React, { useEffect, useRef } from "react";
+import React, {useRef } from "react";
 import Articles from "../src/Components/Articles/Articles";
 import s from "./index.module.css";
 import Head from "next/head";
-import { useRouter } from "next/router";
 
 const Home: NextPage = (): JSX.Element => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const h2ref = useRef<number | any>(null);
-  const router = useRouter();
-  console.log("(👍≖‿‿≖)👍 ✿ file: index.tsx:13 ✿ router", router)
 
   const scrollToMyRef = () => {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
