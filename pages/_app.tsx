@@ -31,7 +31,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   } else {    
     headers.forEach(item => {
       if(item.src == 'https://widget.replain.cc/dist/client.js?id=3c7a4665-2ba9-4f82-9bd2-d3f54e2bbb6b') {
-        if(chat != null) chat.style.display = 'none';
+        if(chat) chat.style.display = 'none';
         item.src = '';
         item.remove();
       } 
