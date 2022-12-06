@@ -19,7 +19,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   function telegramChat () {
     const chat = document.querySelector('#__replain_widget') as HTMLElement;
     const headers = document.querySelectorAll('script');
-    function loadScript(src:string) { // создаем функцию для подгрузки скриптов.
+    function loadScript(src:string) { 
       const script = document.createElement('script'); 
       script.src = src; 
       script.async = true; 
@@ -27,15 +27,11 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   }
   if(router.asPath === '/') {
     loadScript('https://widget.replain.cc/dist/client.js?id=3c7a4665-2ba9-4f82-9bd2-d3f54e2bbb6b');
-    if(chat) {
-      chat.style.display = 'block';
-    }
+    if(chat) chat.style.display = 'block';
   } else {    
     headers.forEach(item => {
       if(item.src == 'https://widget.replain.cc/dist/client.js?id=3c7a4665-2ba9-4f82-9bd2-d3f54e2bbb6b') {
-        if(chat != null) {
-          chat.style.display = 'none';
-        }
+        if(chat) chat.style.display = 'none';
         item.src = '';
         item.remove();
       } 
@@ -44,16 +40,18 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   }
   }
 
+  function smothScroll() {
+    const html = document.querySelector('html') as HTMLElement;
+
+    if(r >= 3) { // при переходе к темам с главной страници, мне не нужен плавный скролл
+      html.style.scrollBehavior = 'smooth'; 
+    } else {
+      html.style.scrollBehavior = 'auto'; 
+    }
+  }
   useEffect(()=> {
     telegramChat();
-
-    if(r >= 3) {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      document.querySelector('html')!.style.scrollBehavior = 'smooth';
-    } else {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      document.querySelector('html')!.style.scrollBehavior = 'auto';
-    }
+    smothScroll();
   });
   
 
@@ -77,7 +75,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
 
       <Component {...pageProps} key={router.pathname} /></>
   );
-}
+};
 
 export default MyApp;
 
