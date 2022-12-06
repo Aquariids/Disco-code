@@ -28,8 +28,6 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   if(router.asPath === '/') {
     loadScript('https://widget.replain.cc/dist/client.js?id=3c7a4665-2ba9-4f82-9bd2-d3f54e2bbb6b');
     if(chat) {
-      chat.style.height = '70%';
-      chat.style.width = '20%';
       chat.style.display = 'block';
     }
   } else {    
