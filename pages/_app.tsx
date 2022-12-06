@@ -22,7 +22,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
     function loadScript(src:string) { // создаем функцию для подгрузки скриптов.
       const script = document.createElement('script'); 
       script.src = src; 
-      script.async = false; 
+      script.async = true; 
       document.head.append(script); 
   }
   if(router.asPath === '/') {
