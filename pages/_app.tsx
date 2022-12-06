@@ -26,13 +26,13 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
       document.head.append(script); 
   }
   if(router.asPath === '/') {
-    loadScript('https://app.telegram-feedback.com/chat.js?wid=44bc091c-5f0b-4b85-9f1b-b239e8950da1');
+    loadScript('https://widget.replain.cc/dist/client.js?id=3c7a4665-2ba9-4f82-9bd2-d3f54e2bbb6b');
     if(chat) {
       chat.style.display = 'block';
     }
   } else {    
     headers.forEach(item => {
-      if(item.src == 'https://app.telegram-feedback.com/chat.js?wid=44bc091c-5f0b-4b85-9f1b-b239e8950da1') {
+      if(item.src == 'https://widget.replain.cc/dist/client.js?id=3c7a4665-2ba9-4f82-9bd2-d3f54e2bbb6b') {
         if(chat != null) {
           chat.style.display = 'none';
         }
