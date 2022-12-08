@@ -100,7 +100,7 @@ const Home: NextPage = (): JSX.Element => {
             <span className={s.newPage}>Написал о том как сделать <Link href={'js/practice-js/slider-js'}>классический слайдер на js</Link><span className={s.dateNewPage}>19.11.2022</span></span>
             <span className={s.newPage}>Добавленна новая статья про то как работают <Link href={'web-request&response'}>web запросы и ответы</Link><span className={s.dateNewPage}>30.11.2022</span></span>
             <span className={s.newPage}>Закончил писать про <Link href={'js/advanced-js/promise&fetch_api'}>fetch & promise</Link><span className={s.dateNewPage}>02.12.2022</span></span>
-            <span className={s.newPage}>Добавленна новая статья про работу <Link href={'js/under-the-hood-js/engine'}>движка в javaScript & JRE</Link><span className={s.dateNewPage}>7.12.2022</span></span>
+            <span className={s.newPage}>Добавлен новый раздел "JavaScript под капотом" и первая статья о работе <Link href={'js/under-the-hood-js/engine'}>движка в javaScript & JRE</Link><span className={s.dateNewPage}>7.12.2022</span></span>
           </ul>
         </div>
         <div ref={h2ref} className={s.articles} >
