@@ -30,6 +30,7 @@
 	list-style-type: none;
 	min-height: 10vh;
 	padding: 0;
+	margin-top: 0;
 }
 
 .newPage a {
@@ -42,6 +43,23 @@ text-decoration: underline;
 	text-align: left;
 }
 
+.titleNewPage {
+	display: grid;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	grid-template-columns: 1fr;
+	grid-template-rows: 150px;
+}
+
+.titleNewPage h3 {
+	margin: 0;
+	padding: 0;
+	padding-bottom: 16px;
+	border-bottom: 1px solid #999;
+
+}
 .dateNewPage {
 	margin-top: 10px;
 	margin-bottom: 10px;

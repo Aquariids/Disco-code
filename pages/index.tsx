@@ -93,8 +93,7 @@ const Home: NextPage = (): JSX.Element => {
         </div>
 
         <div>
-          <h3>Что нового</h3>
-          <hr />
+          <span className={s.titleNewPage}> <h3>Что нового</h3> </span>
           <ul className={s.containerNewPages}>
             <span className={s.newPage}>Добавлен новый раздел "Практика js" и добавил первую статью про <Link href={'js/practice-js/webpack'}>Webpack</Link><span className={s.dateNewPage}>17.11.2022</span></span>
             <span className={s.newPage}>Написал о том как сделать <Link href={'js/practice-js/slider-js'}>классический слайдер на js</Link><span className={s.dateNewPage}>19.11.2022</span></span>
