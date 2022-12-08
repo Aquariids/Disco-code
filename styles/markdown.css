@@ -35,6 +35,10 @@
 	justify-content: right;
 }
 
+.md_date {
+	font-size: 15px;
+}
+
 .container-img {
 	display: flex;
 	align-items: center;

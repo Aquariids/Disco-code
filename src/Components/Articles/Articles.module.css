@@ -12,13 +12,16 @@
 .articles_title {
 	display: grid;
 	align-items: center;
-
 	margin: 0;
 	padding: 0;
-
 	text-align: center;
 	grid-template-columns: 1fr;
 	grid-template-rows: 150px;
+}
+
+.articles_title span {
+	border-bottom: 1px solid #999;
+	padding-bottom: 16px;
 }
 
 @media (max-width: 1000px) {
