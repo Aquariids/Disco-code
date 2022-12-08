@@ -37,6 +37,9 @@
 
 .md_date {
 	font-size: 15px;
+	display:flex;
+	justify-content: right;
+	margin-bottom: 50px;
 }
 
 .container-img {
@@ -100,6 +103,7 @@ code {
 		display: flex;
 		
 	}
+	
 
 	.mdHead {
 		width: 100vw;
@@ -143,4 +147,12 @@ code {
 	.mdTitle h1 {
 		margin: 0;
 	}
+}
+
+
+@media (max-width:550px) {
+	.md_date {
+		justify-content: left;
+	}
+	
 }

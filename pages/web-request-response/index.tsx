@@ -86,6 +86,7 @@ const PostPage: NextPage<never> = ({
             <Link href={post.meta.next}>
               {post.meta.next === "none" ? <span></span> : "Следующая тема"}
             </Link>
+            <span className="md_date">{post.meta.date}</span>
           </div>
         </AnimationContainer>
       </div>
