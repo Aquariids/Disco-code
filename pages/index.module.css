@@ -24,15 +24,37 @@
 	background-size: 23.3%;
 }
 
+.containerNewPages {
+	display: grid;
+	grid-template-columns: 1fr;
+	list-style-type: none;
+	min-height: 10vh;
+	padding: 0;
+}
 
+.newPage a {
+color: #999;
+font-weight: bold;
+text-decoration: underline;
+}
+.newPage {
+	margin-bottom: 20px;
+	text-align: left;
+}
 
+.dateNewPage {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 12px;
+	display: flex;
+}
 .titlePage {
 	min-height: 100vh;
 }
 
 .articles {
 	display: grid;
-	min-height: 100vh;
+	min-height: 60vh;
 }
 
 .articles_title {
