@@ -65,10 +65,8 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   useEffect(()=> {
     telegramChat();
     smothScroll();
-  });
+  },[router]);
   
-
-
   return (
     <>
       <Head>
