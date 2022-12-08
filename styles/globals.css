@@ -16,6 +16,14 @@ html {
 }
 
 
+@media (max-width:785px) {
+	html {
+		margin-right: 0;
+
+	}
+	
+}
+
 body {
 	position: relative;
 	background-image: url(/images/animeBg/manga.svg);

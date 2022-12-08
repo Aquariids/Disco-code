@@ -44,6 +44,7 @@ const PostPage: NextPage<never> = ({ post }: MDXPost): JSX.Element => {
                 <Link href={post.meta.prev}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая тема'}</Link>
                 <Link href={post.meta.next}>{post.meta.next === 'none' ? <span></span> : 'Следующая тема'}</Link>
             </div>
+            <span className="md_date">{post.meta.date}</span>
         </div>
     );
 

@@ -95,8 +95,8 @@ const PostPage: NextPage<never> = ({ post }: MDXPost): JSX.Element => {
             <Link href={post.meta.next}>
               {post.meta.next === "none" ? <span></span> : "Следующая тема"}
             </Link>
-            <span className="md_date">{post.meta.date}</span>
           </div>
+          <span className="md_date">{post.meta.date}</span>
         </AnimationContainer>
       </div>
     </>
