@@ -66,7 +66,7 @@ const Articles = ({ category }: articlesProps): JSX.Element => {
             text={
               "Узнаем что происходит когда мы заходим на какую либо страницу, что за http ответы и запросы и какие протоколы в этом участвуют"
             }
-            url={"/web-request&response"}
+            url={"/web-request-response"}
           />
         </div>
 
