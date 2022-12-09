@@ -1,55 +1,57 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires, no-undef
-const runtimeCaching = require('next-pwa/cache')
 
-// eslint-disable-next-line no-undef
-module.exports = {
-	withPWA(config) {
-		config.module.rules.push({
-			reactStrictMode: true,
-		i18n: {
-			locales: ['ru', 'nl'],
-			defaultLocale: 'ru',
-			localeDetection: false,
-		},
-		pwa: {
-			// eslint-disable-next-line no-undef
-			disable: process.env.NODE_ENV !== 'production',
-			dest: 'public',
-			runtimeCaching,
-			buildExcludes: [/middleware-manifest.json$/],
-		},
-		});
+/**
+ * @type {import('next').NextConfig}
+ */
 
-		return config;
-	},
-	webpack(config) {
-		config.module.rules.push({
-			loader: '@svgr/webpack',
-			issuer: /\.[jt]sx?$/,
-			options: {
-				prettier: false,
-				svgo: true,
-				svgoConfig: {
-					plugins: [{
-						name: 'preset-default',
-						params: {
-							override: {
-								removeViewBox: false
-							}
-						}
-					}]
-				},
+const removeImports = require('next-remove-imports')();
 
-				titleProp: true,
+const withTM = require('next-transpile-modules')(['friendly-challenge']);
+const runtimeCaching = require('next-pwa/cache');
 
+// next-pwa
+const withPWA = require('next-pwa')({
+	dest: 'public',
+	disable: process.env.NODE_ENV !== 'production',
+	runtimeCaching,
+	register: true,
+	skipWaiting: true,
+	scope: '/',
+	maximumFileSizeToCacheInBytes: 3000000,
+
+});
+
+const nextConfig = removeImports(
+	withTM(
+		withPWA({
+			webpack(config) {
+				config.module.rules.push({
+					loader: '@svgr/webpack',
+					issuer: /\.[jt]sx?$/,
+					options: {
+						prettier: false,
+						svgo: true,
+						svgoConfig: {
+							plugins: [{
+								name: 'preset-default',
+								params: {
+									override: {
+										removeViewBox: false
+									}
+								}
+							}]
+						},
+
+						titleProp: true,
+
+					},
+					test: /\.svg$/,
+				});
+
+
+				return config;
 			},
-			test: /\.svg$/,
-		});
+		})
+	)
+);
 
-
-		return config;
-	},
-
-	
-};
-
+module.exports = nextConfig;
