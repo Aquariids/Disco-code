@@ -94,7 +94,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     
     const posts_Under_The_Hood_Js = getAllPosts(POSTS_PATH_UNDER_THE_HOOD_JS).map((post) => post.meta);
     const AllThemePosts = {posts_Basic_Js,posts_Advanced_Js,posts_Algorithms_Js,posts_Practice_Js,posts_Under_The_Hood_Js};  
-    return { props: { post: { source: mdxSource, meta }, AllThemePosts },revalidate: 10 };
+    return { props: { post: { source: mdxSource, meta }, AllThemePosts },revalidate: 60 };
 
 };
 

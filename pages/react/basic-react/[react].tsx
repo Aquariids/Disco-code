@@ -77,7 +77,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         const posts_Basic_React = getAllPosts(POSTS_PATH_BASIC_REACT).map((post) => post.meta);
         const AllThemePosts = {posts_Basic_React,};
 
-    return { props: { post: { source: mdxSource, meta }, AllThemePosts } };
+    return { props: { post: { source: mdxSource, meta }, AllThemePosts },revalidate: 60 };
 
 };
 
