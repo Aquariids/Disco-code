@@ -3,8 +3,7 @@
  * @type {import('next').NextConfig}
  */
 
-const removeImports = require('next-remove-imports');
-const withTM = require('next-transpile-modules');
+const removeImports = require('next-remove-imports')();
 const runtimeCaching = require('next-pwa/cache');
 
 // next-pwa
@@ -20,7 +19,6 @@ const withPWA = require('next-pwa')({
 });
 
 const nextConfig = removeImports(
-	withTM(
 		withPWA({
 			webpack(config) {
 				config.module.rules.push({
@@ -50,7 +48,6 @@ const nextConfig = removeImports(
 				return config;
 			},
 		})
-	)
-);
+	);
 
 module.exports = nextConfig;
