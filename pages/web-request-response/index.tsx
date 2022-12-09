@@ -71,7 +71,7 @@ const PostPage: NextPage<never> = ({
               Отредактировать эту страницу
             </a>
             <img
-              style={{ width: "30px", paddingLeft: "5px" }}
+              style={{ width: "30px", height:"30px",paddingLeft: "5px" }}
               src="/edit.svg"
             />
           </div>

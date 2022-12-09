@@ -43,7 +43,7 @@ const Menu = ({ title, category, dropdown, page, mobileMenu, setMobile, mobileTr
                 {isOpen && (<ul className={s.listMenu}>
                     {posts && posts.map((post, index: number) => (
                         <li
-                            key={index}
+                            key={post.id ?? index}
                             className={cn(s.link, {
                                 [s.active]: post.slug === checkActiveLink,
                                 ['active_scroll']: post.slug === checkActiveLink,
@@ -71,7 +71,7 @@ const Menu = ({ title, category, dropdown, page, mobileMenu, setMobile, mobileTr
                     {posts && posts.map((post, index: number) => (
                         <li
                             onClick={hideModalAfterTransition}
-                            key={index}
+                            key={post.id ?? index}
                             className={cn(s.link, {
                                 [s.active]: post.slug === checkActiveLink,
                                 ['active_scroll']: post.slug === checkActiveLink,
@@ -99,7 +99,7 @@ const Menu = ({ title, category, dropdown, page, mobileMenu, setMobile, mobileTr
                     <ul className={s.content_list_menu}>
                         {posts && posts.map((post, index: number) => (
                             <li
-                                key={index}
+                                key={post.id ?? index}
                                 className={cn(s.link, s.content_links)} >
                                 {router.pathname.startsWith(`/${page}`) ? <Link href={`/${page}/${post.category}/${post.slug}`}>{post.title}</Link> : ''}
                             </li>
