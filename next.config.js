@@ -3,9 +3,8 @@
  * @type {import('next').NextConfig}
  */
 
-const removeImports = require('next-remove-imports')();
-
-const withTM = require('next-transpile-modules')(['friendly-challenge']);
+const removeImports = require('next-remove-imports');
+const withTM = require('next-transpile-modules');
 const runtimeCaching = require('next-pwa/cache');
 
 // next-pwa
