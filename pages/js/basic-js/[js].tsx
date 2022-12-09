@@ -130,7 +130,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: { post: { source: mdxSource, meta }, AllThemePosts },
-    revalidate: 10,
+    revalidate: 60,
   };
 };
 
