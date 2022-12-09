@@ -40,7 +40,7 @@ const Home: NextPage = (): JSX.Element => {
         <meta property="og:title" content="Уроки по javascript" />
         <meta
           property="og:description"
-          content={"Уроки и разбор разных тем по javascript"}
+          content={"Онлайн руководство по javascript"}
         />
 
         <meta property="og:type" content="article" />
