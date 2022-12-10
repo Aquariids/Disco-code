@@ -1,0 +1,43 @@
+
+:root {
+	--basic_color: #20232A;
+
+	/* main */
+
+	--main_color_links_pages: rgb(146 94 94);
+	--main_hover_color_links_pages: rgb(100 51 51);
+
+	/* js */
+	--js_color_links_pages: #E9A12C;
+	--js_hover_color_links_pages: #F44336;
+	--js_color_links_pages_mobile: #F5DE19;
+
+	/* ts */
+	--ts_color_links_pages: #3178C6;
+	--ts_hover_color_links_pages: #3147C6;
+
+	/* react */
+	--react_color_links_pages: #61DAFB;
+	--react_hover_color_links_pages: #0FE;
+
+	/* next */
+	--next_color_links_pages: #000;
+	--next_hover_color_links_pages: gray;
+
+	/* layout */
+	--grid_gap: 0 30px;
+	--grid_columns_wrapper: 21% minmax(500px, 1180px) 21%;
+	--grid_columns_wrapper_mobile: 21% minmax(500px, 1180px);
+	--grid_index_page_columns_wrapper_mobile: minmax(250px, 1180px);
+
+	
+	
+
+}
+
+
+
+
+
+
+

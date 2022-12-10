@@ -1,5 +1,4 @@
-// @import '../../../styles/var.scss';
-
+@import '../../../styles/variables';
 .container {
 	display: flex;
 
@@ -126,10 +125,9 @@
 }
 
 
-@media (min-width: 785px) {
+@media (max-width:#{$screen_mobile_785}) {
 	&{
 		min-width: 350px;
-		
 	}
 
 	@media (max-width: 400px) {
