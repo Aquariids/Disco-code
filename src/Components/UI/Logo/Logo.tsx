@@ -25,7 +25,7 @@ const logo = ({ path, src }: logoProps): JSX.Element => {
         );
     } else if (router.asPath.startsWith(path)) {
         return (
-            <Link href={'/'}><img alt='logo' style={{ width: '48px', height:'48px', cursor: 'pointer',borderRadius: '15px' }} src={src} /></Link>
+            <span className={s.logo}><Link href={'/'}><img alt='logo' style={{ width: '48px', height:'48px', cursor: 'pointer',borderRadius: '15px' }} src={src} /></Link></span>
         );
     } else {
         return (
