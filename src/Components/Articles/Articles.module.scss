@@ -9,7 +9,7 @@
 	grid-template-rows: 1fr 1fr;
 }
 
-.articles_title {
+.title {
 	display: grid;
 	align-items: center;
 	margin: 0;
@@ -19,7 +19,7 @@
 	grid-template-rows: 150px;
 }
 
-.articles_title span {
+.title span {
 	border-bottom: 1px solid #999;
 	padding-bottom: 16px;
 }

@@ -7,10 +7,10 @@ const MenuDocs = () => {
             <>
                 <ul className={s.docs}>
                     <h3 className={s.docsTitle}>Навигация</h3>
-                    <Link href={'/docs/site-document#api'}>Api</Link>
-                    <Link href={'/docs/site-document#context'}>Context</Link>
-                    <Link href={'/docs/site-document#layout'}>Layout</Link>
-                    <Link href={'/docs/site-document#как-мы-работаем-с-api-на-страницах'}>Api на страницах</Link>
+                    <Link href={'/docs#api'}>Api</Link>
+                    <Link href={'/docs#context'}>Context</Link>
+                    <Link href={'/docs#layout'}>Layout</Link>
+                    <Link href={'/docs#как-мы-работаем-с-api-на-страницах'}>Api на страницах</Link>
 
 
                 </ul>;

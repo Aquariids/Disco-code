@@ -54,7 +54,7 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
 
             </div>
             <div className={s.copyright}>
-                <span className={s.doc}><Link href={'/docs/site-document'}>Документация по сайту</Link></span>
+                <span className={s.doc}><Link href={'/docs'}>Документация по сайту</Link></span>
                 <span >
                     {`© 2022 - ${format(new Date(), 'yyyy', )} Дмитрий Черномашенцев`}
 

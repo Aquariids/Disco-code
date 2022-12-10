@@ -98,7 +98,7 @@ const PostPage: NextPage<Props> = ({
 export default withLayout(PostPage);
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { content, meta } = getPostFromSlug('request&response', POSTS_PATH_WEB);
+  const { content, meta } = getPostFromSlug('request-response', POSTS_PATH_WEB);
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [
