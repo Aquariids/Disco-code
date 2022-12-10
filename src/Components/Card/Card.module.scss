@@ -130,7 +130,7 @@
 		min-width: 350px;
 	}
 
-	@media (max-width: 400px) {
+	@media (max-width:#{$screen_mobile_400}) {
 		&{
 			min-width: 100vw;
 			margin-left: calc(-50vw + 50%);
