@@ -24,6 +24,10 @@
 	background-size: 23.3%;
 }
 
+.newPage a:hover {
+	color: rgb(103, 77, 77);
+}
+
 .containerNewPages {
 	display: grid;
 	grid-template-columns: 1fr;
