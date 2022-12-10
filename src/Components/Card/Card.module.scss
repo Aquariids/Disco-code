@@ -1,3 +1,5 @@
+// @import '../../../styles/var.scss';
+
 .container {
 	display: flex;
 
@@ -124,9 +126,10 @@
 }
 
 
-@media (min-width:785px) {
+@media (min-width: 785px) {
 	&{
 		min-width: 350px;
+		
 	}
 
 	@media (max-width: 400px) {
