@@ -1,4 +1,4 @@
-import s from "./Articles.module.css";
+import s from "./Articles.module.scss";
 import Card from ".././Card/Card";
 import { articlesProps } from "./Articles.props";
 
@@ -8,7 +8,7 @@ const Articles = ({ category }: articlesProps): JSX.Element => {
 
     return (
       <>
-        <h3 className={s.articles_title}><span> JavaScript и технологии завязанные на нем</span></h3>
+        <h3 className={s.title}><span> JavaScript и технологии завязанные на нем</span></h3>
 
         <div className={s.articles}>
           <Card
@@ -50,7 +50,7 @@ const Articles = ({ category }: articlesProps): JSX.Element => {
 
     return (
       <>
-        <h3 className={s.articles_title}> <span>Разное о программировании</span> </h3>
+        <h3 className={s.title}> <span>Разное о программировании</span> </h3>
 
         <div className={s.articles}>
           <Card

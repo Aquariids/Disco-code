@@ -1,0 +1,158 @@
+.container {
+	display: flex;
+
+	max-width: 450px;
+	min-height: 275px;
+	margin: 0 auto;
+
+	cursor: pointer;
+	transition: 0.2s;
+
+	color: #FFF;
+
+	border: 1px solid rgb(153 153 153 / 57.5%);
+	border-radius: 3%;
+	background-color: rgb(0 0 0 / 81.5%);
+	box-shadow: 0 0 1px 0 rgb(0 0 0 / 53.4%);
+
+	font-size: 25px;
+	&:hover {
+		transition: all 0.2s;
+		transform: scale(1.05);
+		transform: scale(1.05);
+		transform: scale(1.05);
+	
+		background-color: rgb(0 0 0 / 34.9%);
+		box-shadow: 0 0 5px #000;
+		text-shadow: 1px 1px 3px  black;
+	}
+	
+.body {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+
+	width: 100%;
+	&__bg {
+		display: flex;
+	}
+
+	&__title {
+		display: grid;
+	
+		padding-right: 10px;
+		padding-left: 10px;
+	
+		font-weight: bold;
+		grid-template-columns: 1fr;
+	}
+
+	&__footer {
+		display: flex;
+	
+		padding: 10px;
+	
+		text-align: left;
+	
+		font-size: 16px;
+	}
+
+	@media  (max-width: 1195px) {
+		&__title {
+			font-size: 22px;
+		}
+	}
+	
+}
+
+
+
+&__js {
+	/* background-image: url(/images/cards/js.svg); */
+	background-color: var(--js_color_links_pages);
+	background-repeat: no-repeat;
+	background-position-x: right;
+	background-position-y: -10px;
+	background-size: 20%;
+
+	&js:hover {
+		color: #FFF;
+		background-color: var(--js_hover_color_links_pages);
+	
+		box-shadow: 0 0 5px var(--js_hover_color_links_pages);
+	}
+}
+
+
+
+&__ts {
+	color: #FFF;
+	background-color: var(--ts_color_links_pages);
+
+	&:hover {
+		color: rgb(198 228 255);
+		background-color: var(--ts_hover_color_links_pages);
+		box-shadow: 0 0 5px var(--ts_hover_color_links_pages);
+	}
+}
+
+
+
+&__next {
+	/* background-image: url(/logo/nextjs_logo.svg); */
+	color: #FFF;
+	background-color: var(--next_color_links_pages);
+	background-repeat: no-repeat;
+	background-position-x: right;
+	background-position-y: top;
+	background-size: 50%;
+}
+
+
+&__react {
+	color: #000;
+	background-color: #61DAFB;
+	background-image: url(/images/cards/reactbg.svg);
+	background-repeat: no-repeat;
+	background-position-y: 30%;
+	background-size: 151%;
+	&:hover {
+		color: #FFF;
+		background-color: #41E1ED;
+		box-shadow: 0 0 10px  var(--react_hover_color_links_pages);
+	}
+}
+
+
+@media (min-width:785px) {
+	&{
+		min-width: 350px;
+	}
+
+	@media (max-width: 400px) {
+		&{
+			min-width: 100vw;
+			margin-left: calc(-50vw + 50%);
+			padding: 30px;
+			border-radius: 0%;
+		}
+		
+		
+	}
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+

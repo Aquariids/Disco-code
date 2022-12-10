@@ -1,28 +1,27 @@
+
 import React from 'react';
 import cn from 'classnames';
 import { ICard } from './Card.props';
-import s from './Card.module.css';
+import s from './Card.module.scss';
 import Link from 'next/link';
-const { body, footer, container, bg,  js, ts, next, react } = s;
+const { body, body__footer, container, body__bg,  container__js, container__ts, container__next, container__react, body__title } = s;
 const Card = ({ title,text, color, url }: ICard) => {
     return (
 
         <Link href={url}>
             <div className={cn(container, {
-                [js]: color === 'js',
-                [ts]: color === 'ts',
-                [next]: color === 'next',
-                [react]: color === 'react',
-                // [s.reactbg]: color === 'react'
-
+                [container__js]: color === 'js',
+                [container__ts]: color === 'ts',
+                [container__next]: color === 'next',
+                [container__react]: color === 'react',
 
             })} >
                 <div className={body}>
-                    <div className={bg}>
-                    <div className={s.title}>{title}</div>
+                    <div className={body__bg}>
+                    <div className={body__title}>{title}</div>
                     </div>
-                    <div className={footer}>
-                        <div className={s.text}>{text}</div>
+                    <div className={body__footer}>
+                        <div>{text}</div>
                     </div>
                 </div>
             </div>

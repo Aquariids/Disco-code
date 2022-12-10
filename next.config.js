@@ -2,7 +2,7 @@
 /**
  * @type {import('next').NextConfig}
  */
-
+const path = require('path');
 const removeImports = require('next-remove-imports')();
 const runtimeCaching = require('next-pwa/cache');
 
@@ -20,8 +20,14 @@ const withPWA = require('next-pwa')({
 
 const nextConfig = removeImports(
 		withPWA({
+			sassOptions: {
+				// eslint-disable-next-line no-undef
+				includePaths: [path.join(__dirname, 'styles')],
+			  },
+
 			webpack(config) {
 				config.module.rules.push({
+					
 					loader: '@svgr/webpack',
 					issuer: /\.[jt]sx?$/,
 					options: {
@@ -38,6 +44,8 @@ const nextConfig = removeImports(
 							}]
 						},
 
+						
+
 						titleProp: true,
 
 					},
@@ -47,7 +55,13 @@ const nextConfig = removeImports(
 
 				return config;
 			},
+
+		
+
+			
 		})
+
+		
 	);
 
 module.exports = nextConfig;
