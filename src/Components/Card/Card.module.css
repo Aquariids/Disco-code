@@ -112,11 +112,6 @@
 	background-size: 50%;
 }
 
-.next:hover {
-	color: var(--next_hover_color_links_pages);
-	background-color: rgb(49 49 49);
-	box-shadow: 0 0 5px var(--next_hover_color_links_pages);
-}
 
 .react {
 	color: #000;

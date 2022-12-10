@@ -20,42 +20,45 @@ import { POSTS_PATH_PARADIGMS_STYLE } from "../../api/paths";
 import Link from "next/link";
 
 
-const PostPage: NextPage<never> = ({
+interface Props { post: MDXPost }
+
+
+const PostPage: NextPage<Props> = ({
   post,
-}: MDXPost): JSX.Element => {
+}): JSX.Element => {
   return (
     <>
       <div className="page">
         <Head>
-         <title>{post.meta.title}</title>
+          <title>{post.meta.title}</title>
           <meta property="og:title" content={post.meta.title} />
           <meta
-          name="google-site-verification"
-          content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY"
-        />
+            name="google-site-verification"
+            content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY"
+          />
 
-        <meta name="yandex-verification" content="a99ae512e4f1c330" />
-        <meta
-          name="description"
-          content={"Функциональное программирование, ООП, стили написания кода."}
-        />
-        <meta
-          property="og:description"
-          content={"Функциональное программирование, ООП, стили написания кода."}
-        />
+          <meta name="yandex-verification" content="a99ae512e4f1c330" />
+          <meta
+            name="description"
+            content={"Функциональное программирование, ООП, стили написания кода."}
+          />
+          <meta
+            property="og:description"
+            content={"Функциональное программирование, ООП, стили написания кода."}
+          />
 
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://discocode.ru/paradigms" />
-        <meta
-          property="og:image"
-          content="/"
-        />
-        <meta property="og:site_name" content="DiscoCode" />
-        <meta property="og:locale" content="ru_Ru" />
+          <meta property="og:type" content="article" />
+          <meta property="og:url" content="https://discocode.ru/paradigms" />
+          <meta
+            property="og:image"
+            content="/"
+          />
+          <meta property="og:site_name" content="DiscoCode" />
+          <meta property="og:locale" content="ru_Ru" />
 
-        <meta property="og:author" content="Дмитрий Черномашенцев" />
-        <meta property="og:section" content="Paradigms" />
-        <meta property="og:tag" content="OOP, js, paradigms" />
+          <meta property="og:author" content="Дмитрий Черномашенцев" />
+          <meta property="og:section" content="Paradigms" />
+          <meta property="og:tag" content="OOP, js, paradigms" />
         </Head>
 
         <AnimationContainer>
@@ -74,7 +77,7 @@ const PostPage: NextPage<never> = ({
               Отредактировать эту страницу
             </a>
             <img
-              style={{ width: "30px", height:"30px", paddingLeft: "5px" }}
+              style={{ width: "30px", height: "30px", paddingLeft: "5px" }}
               src="/edit.svg"
             />
           </div>
@@ -112,9 +115,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   });
 
   const post_Style_Paradigms = getAllPosts(POSTS_PATH_PARADIGMS_STYLE).map((post) => post.meta);
-  const AllThemePosts = {post_Style_Paradigms};
-  
-  return { props: { post: { source: mdxSource, meta }, AllThemePosts },revalidate: 60 };
+  const AllThemePosts = { post_Style_Paradigms };
+
+  return { props: { post: { source: mdxSource, meta }, AllThemePosts }, revalidate: 60 };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

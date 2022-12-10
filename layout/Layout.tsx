@@ -9,6 +9,7 @@ const { wrapper, header, sidebar, footer, body, content } = s;
 import cn from 'classnames';
 import { useRouter } from "next/router";
 import ListMobileMenu from "../src/Components/mobileModalMenu/ListMobileMenu/ListMobileMenu";
+import { MDXPost, Post } from "../pages/api/api";
 const Layout = ({ children, }: LayoutProps): JSX.Element => {
     
     const router = useRouter();
@@ -38,12 +39,16 @@ const Layout = ({ children, }: LayoutProps): JSX.Element => {
 };
 
 
-export const withLayout = <T extends Record<string, unknown> & IAppContext>(Component: FunctionComponent<T>) => {
+interface post {
+    post: MDXPost
+}
+
+export const withLayout = <T extends Record<string, unknown> & IAppContext & post> (Component: FunctionComponent<T>) => {
     
     return function withLayoutComponent(props: T): JSX.Element {
         
         return (
-            <AppContextProvider AllThemePosts={props.AllThemePosts}>
+            <AppContextProvider AllThemePosts={props.AllThemePosts} >
                 <Layout {...props}>
                     <Component {...props} />
                 </Layout>

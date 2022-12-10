@@ -15,7 +15,9 @@ import s from './../pageReact.module.css';
 import AnimationContainer from '../../../src/Components/AnimationContainers/AnimationContainer';
 
 
-const PostPage: NextPage<never> = ({ post }: MDXPost): JSX.Element => {
+interface Props { post: MDXPost }
+
+const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
 
 
 
@@ -39,7 +41,7 @@ const PostPage: NextPage<never> = ({ post }: MDXPost): JSX.Element => {
 
             </AnimationContainer>
 
-            <div className={cn(s.edit, 'page_edit')}><a target='_blank' rel='noopener' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/react/basic-react/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{ width: '30px',  height:"30px",paddingLeft: '5px' }} src='/edit.svg' /></div>
+            <div className={cn(s.edit, 'page_edit')}><a target='_blank' rel='noopener' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/react/basic-react/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{ width: '30px', height: "30px", paddingLeft: '5px' }} src='/edit.svg' /></div>
             <div className={cn(s.footer, 'page_footer')}>
                 <Link href={post.meta.prev}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая тема'}</Link>
                 <Link href={post.meta.next}>{post.meta.next === 'none' ? <span></span> : 'Следующая тема'}</Link>
@@ -72,12 +74,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
     );
 
-   
 
-        const posts_Basic_React = getAllPosts(POSTS_PATH_BASIC_REACT).map((post) => post.meta);
-        const AllThemePosts = {posts_Basic_React,};
 
-    return { props: { post: { source: mdxSource, meta }, AllThemePosts },revalidate: 60 };
+    const posts_Basic_React = getAllPosts(POSTS_PATH_BASIC_REACT).map((post) => post.meta);
+    const AllThemePosts = { posts_Basic_React, };
+
+    return { props: { post: { source: mdxSource, meta }, AllThemePosts }, revalidate: 60 };
 
 };
 

@@ -14,7 +14,10 @@ import Link from "next/link";
 import s from "../pageJs.module.css";
 import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
 
-const PostPage: NextPage<never> = ({ post }: MDXPost): JSX.Element => {
+interface Props { post: MDXPost }
+
+
+const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
 
   
   return (
