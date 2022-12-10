@@ -21,16 +21,15 @@ export const getAllPosts = (url: string) => {
   return posts;
 };
 
-interface Post {
+export interface Post {
   content: string;
   meta: PostMeta;
 }
 
 export interface MDXPost  {
-  post: {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
     meta: PostMeta;
-  };
+
 }
 export interface PostMeta {
   slug: string;

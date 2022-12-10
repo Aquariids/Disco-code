@@ -22,7 +22,9 @@ import AnimationContainer from "../../../src/Components/AnimationContainers/Anim
 
 
 
-const PostPage: NextPage<never> = ({post}: MDXPost): JSX.Element => {
+interface Props { post: MDXPost }
+
+const PostPage: NextPage<Props> = ({post}): JSX.Element => {
   return (
     <>
       <div className="page">

@@ -17,10 +17,11 @@ import {
 import { POSTS_PATH_WEB } from "../api/paths";
 import Link from "next/link";
 
+interface Props { post: MDXPost }
 
-const PostPage: NextPage<never> = ({
+const PostPage: NextPage<Props> = ({
   post,
-}: MDXPost): JSX.Element => {
+}): JSX.Element => {
   return (
     <>
       <div className="page">

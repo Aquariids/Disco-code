@@ -12,15 +12,11 @@ import { getAllPosts, getPostFromSlug, getSlugs, MDXPost } from '../../api/api';
 import { POSTS_PATH_ADVANCED_JS, POSTS_PATH_ALGORITHMS_JS, POSTS_PATH_BASIC_JS, POSTS_PATH_PRACTICE_JS, POSTS_PATH_UNDER_THE_HOOD_JS } from '../../api/paths';
 import Link from 'next/link';
 import s from '../pageJs.module.css';
-
 import AnimationContainer from '../../../src/Components/AnimationContainers/AnimationContainer';
 
+interface Props { post: MDXPost }
 
-
-
-const PostPage: NextPage<never> = ({ post }: MDXPost): JSX.Element => {
-
-
+const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
 
 
     return (
