@@ -76,8 +76,8 @@ const Home: NextPage = (): JSX.Element => {
                 </div>
               </div>
 
-              <div className={s.aboutSite__text}>
-                <div className={s.aboutSite__paragraphAboutMe}>
+              <div className={s.aboutSite__paragraphAboutMe}>
+                <div className={s.aboutSite__text}>
                   <div className={s.aboutSite__title}>Всем привет</div>В данных мной материалах,
                   мои суждения и выводы могут быть ошибочны. Если вы где-то нашли ошибку или неточность, то буду рад вашим pull request запросам.
                   Под каждой страницей есть ссылка для редактирования ее на github.
