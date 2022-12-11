@@ -21,7 +21,7 @@
 
 @media (max-width: 985px) {
 	.header2 {
-		grid-template-columns: var(--grid_columns_wrapper_mobile);
+		grid-template-columns: var(--grid_columns_wrapper_without_right_side);
 	}
 }
 
@@ -50,7 +50,7 @@
 
 @media (max-width: 785px) {
 	.header {
-		grid-template-columns: var(--grid_index_page_columns_wrapper_mobile);
+		grid-template-columns: var(--grid_columns_wrapper_mobile);
 		grid-template-rows: 60px;
 
 		/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */

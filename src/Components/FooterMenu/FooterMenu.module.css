@@ -23,7 +23,7 @@
 
 @media (max-width: 985px) {
 	.footer2 {
-		grid-template-columns: var(--grid_columns_wrapper_mobile);
+		grid-template-columns: var(--grid_columns_wrapper_without_right_side);
 	}
 }
 
@@ -117,7 +117,7 @@
 		justify-content: center;
 
 		text-align: center;
-		grid-template-columns: var(--grid_index_page_columns_wrapper_mobile);
+		grid-template-columns: var(--grid_columns_wrapper_mobile);
 		/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
 		grid-template-areas: "footer";
 	}

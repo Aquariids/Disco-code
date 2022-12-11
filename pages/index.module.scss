@@ -1,0 +1,304 @@
+@import '../styles/variables@media.scss';
+
+.body {
+	text-align: center;
+	display: grid;
+	justify-content: center;
+	grid-template-columns: var(--grid_columns_wrapper_mobile);
+
+	& h1 {
+		display: flex;
+		justify-content: center;
+	
+		margin-bottom: 0;
+	
+		color: #FFF;
+	
+		font-size: 60px;
+	}
+	.welcomePage {
+		min-height: 100vh;
+
+
+		.welcomePageTitle {
+			position: relative;
+		
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		
+			width: 100vw;
+			min-height: 45vh;
+			margin-left: calc(-50vw + 50%);
+		
+			background-color: #000;
+			background-image: url(/images/animeBg/index.svg);
+		
+			background-repeat: no-repeat;
+			background-position: bottom right;
+			background-size: 23.3%;
+		
+			&__items{
+				display: grid;
+				justify-content: center;
+				grid-template-columns: 1fr;
+			}
+
+			&__textcode {
+				color: var(--basic_color);
+				
+			}
+
+			&__subtitle {
+				display: inline-block;
+			
+				max-width: 100%;
+				margin-bottom: 25px;
+				padding-right: 5px;
+			
+				text-align: right;
+			
+				color: #FFF;
+				text-shadow: -3px 2px 3px  rgb(97 97 97 / 80.1%);
+			
+				font-size: 14px;
+				font-weight: 400;
+			}
+
+			&__btnScroll {
+				width: 200px;
+				height: 40px;
+				margin: 0 auto;
+			
+				cursor: pointer;
+				transition: all 0.3s;
+			
+				color: #FFF;
+				border-radius: 5px;
+				border: none;
+				outline: none;
+				background-color: var(--basic_color);
+
+				&:hover {
+					transition: all 0.3s;
+				
+					color: #000;
+					background-color: rgb(243 239 239);
+				}
+			}
+
+			@media (max-width: 985px) {
+				&{
+					background-image: none;
+				}
+
+				@media (max-width:#{$screen_mobile_785}) {
+					&__btnScroll {
+						display: none;
+					}
+
+					@media (max-width:#{$screen_mobile_500}) {
+						&__subtitle {
+							font-size: 12px;
+						}
+						
+					}
+					
+				}
+				
+			}
+
+		}
+
+		.aboutSite {
+			display: grid;
+			align-items: center;
+			justify-content: center;
+			min-height: 55vh;
+			margin-top: -15px;
+			grid-template-rows: 1fr;
+
+
+			&__content {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+			}
+
+			&__title {
+				margin-bottom: 20px;
+			
+				text-align: center;
+			
+				font-size: 28px;
+			}
+			
+			&__text {
+				margin-top: 0;
+				margin-right: 15px;
+				margin-left: 10px;
+			
+				text-align: left;
+				font-size: 20px;
+				font-weight: 400;
+				line-height: 1.7;
+			}
+
+			
+			@media (max-width: 1350px) {
+				&__text {
+					font-size: 16px;
+				}
+				&__content {
+					display: flex;
+					flex-direction: column;
+					margin-top: 10px;
+					margin-bottom: 10px;
+				}
+			
+				&__title {
+					padding-top: 20px;
+			
+					text-align: left;
+				}
+				@media (max-width:#{$screen_mobile_785}) {
+					&__text {
+						font-size: 16px;
+					}
+				
+					&__paragraphAboutMe {
+						margin-top: 10px;
+						padding: 5px;
+						
+						border-radius: 5px;
+						background-color: rgb(153 153 153 / 24.7%);
+					}
+				
+					&__containerAboutSite {
+						margin-bottom: 10px;
+						padding: 5px;
+					}
+				
+					&__title {
+						padding-top: 0;
+					}
+
+					@media (max-width:#{$screen_mobile_500}) {
+						
+						&__content {
+							margin-top: 35px;
+						}
+
+
+					
+						
+					}
+				}
+				
+			}
+		}
+
+		@media (max-width:#{$screen_mobile_785}) {
+			&{
+				min-height: auto;
+			}
+			&__title {
+				min-height: 45vh;
+			}
+		
+		}
+	}
+
+	.news {
+
+		&__content {
+			display: grid;
+			grid-template-columns: 1fr;
+			list-style-type: none;
+			min-height: 10vh;
+			padding: 0;
+			margin-top: 0;
+		}
+		
+		&__item a {
+		color: #999;
+		font-weight: bold;
+		text-decoration: underline;
+		}
+		&__item {
+			margin-bottom: 20px;
+			text-align: left;
+
+			& a:hover {
+				color:rgb(113, 96, 96);
+			}
+		}
+		
+		
+		
+		&__title {
+			display: grid;
+			align-items: center;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			grid-template-columns: 1fr;
+			grid-template-rows: 150px;
+
+			& h3 {
+				margin: 0;
+				padding: 0;
+				padding-bottom: 16px;
+				border-bottom: 1px solid #999;
+			
+			}
+		}
+		
+
+		&__date {
+			margin-top: 10px;
+			margin-bottom: 10px;
+			font-size: 12px;
+			display: flex;
+		}
+	}
+
+	.articles {
+		display: grid;
+		min-height: 60vh;
+	}
+	
+
+
+	@media (max-width:#{$screen_mobile_500}) {
+		& h1 {
+			font-size: 40px;
+		}
+		
+	
+	@media (max-width: 320px) {
+		& h1 {
+			font-size: 30px;
+		}
+
+	}
+
+	
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

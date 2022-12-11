@@ -11,7 +11,6 @@
 	grid-template-columns: var(--grid_columns_wrapper);
 	gap: var(--grid_gap);
 	grid-template-rows: 60px 1fr;
-	/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
 	grid-template-areas:
 		"header header header"
 		"sidebar body ."
@@ -46,21 +45,50 @@
 		grid-area: footer;
 	}
 
+	@media (max-width:#{$screen_mobile_785}) {
+		&{
+			grid-template-columns: var(--grid_columns_wrapper_mobile);
+			grid-template-areas:
+				"header"
+				"body"
+				"footer";
+		}
+	
+		.footer {
+			align-items: center;
+	
+			text-align: center;
+		}
+	
+		
+		.content {
+			margin: 0 14px;
+		}
+
+		
+		@media (max-width:300px) {
+			&{
+				overflow-x: hidden;
+			}
+			
+		}
+	}
+
 
 }
 
 
 .wrapperWithoutRightSide {
 
+
 	@media (max-width:#{$screen_wrapper_without_right_side}) {
 		&{
-			grid-template-columns: var(--grid_columns_wrapper_mobile);
+			grid-template-columns: var(--grid_columns_wrapper_without_right_side);
 		}
 
 		@media (max-width:#{$screen_mobile_785}) {
 			&{
-				grid-template-columns: var(--grid_index_page_columns_wrapper_mobile);
-				/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
+				grid-template-columns: var(--grid_columns_wrapper_mobile);
 				grid-template-areas:
 					"header"
 					"body"
