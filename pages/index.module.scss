@@ -117,6 +117,7 @@
 			min-height: 55vh;
 			margin-top: -15px;
 			grid-template-rows: 1fr;
+			
 
 
 			&__content {
@@ -164,6 +165,7 @@
 					&__text {
 						font-size: 16px;
 						margin-top: 15px;
+						
 					}
 				
 					&__paragraphAboutMe {
@@ -172,6 +174,10 @@
 						
 						border-radius: 5px;
 						background-color: rgb(153 153 153 / 24.7%);
+					}
+
+					&__paragraphAboutSite {
+						padding: 5px;
 					}
 				
 					&__containerAboutSite {
