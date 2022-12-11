@@ -3,13 +3,13 @@ import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import { LayoutProps } from "./Layout.props";
 import Sidebar from "./Sidebar/Sidebar";
-import s from './Layout.module.css';
+import s from './Layout.module.scss';
 import { AppContextProvider, IAppContext } from "../context/app.context";
 const { wrapper, header, sidebar, footer, body, content } = s;
 import cn from 'classnames';
 import { useRouter } from "next/router";
 import ListMobileMenu from "../src/Components/mobileModalMenu/ListMobileMenu/ListMobileMenu";
-import { MDXPost, Post } from "../pages/api/api";
+import { MDXPost } from "../pages/api/api";
 const Layout = ({ children, }: LayoutProps): JSX.Element => {
     
     const router = useRouter();
@@ -19,7 +19,7 @@ const Layout = ({ children, }: LayoutProps): JSX.Element => {
         <>
 
             <div className={cn(wrapper, {
-                [s.wrapper2]: (r >= 3)
+                [s.wrapperWithoutRightSide]: (r >= 3)
             })}>
                 <Header className={header} />
                 <Sidebar className={sidebar} />

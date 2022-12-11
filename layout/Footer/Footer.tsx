@@ -1,6 +1,6 @@
 import React from 'react';
 import { FooterProps } from './Footer.props';
-import s from './Footer.module.css';
+import s from './Footer.module.scss';
 import cn from 'classnames';
 import FooterMenu from '../../src/Components/FooterMenu/FooterMenu';
 const { footer } = s;

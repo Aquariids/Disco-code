@@ -1,6 +1,6 @@
 import React from 'react';
 import { SidebarProps } from './Sidebar.props';
-import s from './Sidebar.module.css';
+import s from './Sidebar.module.scss';
 import SidebarMenu from '../../src/Components/SidebarMenu/SidebarMenu';
 import { useRouter } from 'next/router';
 import cn from 'classnames';

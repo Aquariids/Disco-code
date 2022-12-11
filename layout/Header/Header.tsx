@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderMenu from '../../src/Components/HeaderMenu/HeaderMenu';
 import { HeaderProps } from './Header.props';
-import s from './Header.module.css';
+import s from './Header.module.scss';
 import cn from 'classnames';
 const Header = ({className, ...props  }:HeaderProps): JSX.Element => {
     //error404 это костыль, что бы не было ошибки у логотипов при 404 ошибке. Так как я лого меняю от url, а у 404 его нет, поэтому начинается конфликт сервера и клиента.
