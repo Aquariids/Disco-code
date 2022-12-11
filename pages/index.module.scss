@@ -163,6 +163,7 @@
 				@media (max-width:#{$screen_mobile_785}) {
 					&__text {
 						font-size: 16px;
+						margin-top: 15px;
 					}
 				
 					&__paragraphAboutMe {
@@ -184,8 +185,8 @@
 
 					@media (max-width:#{$screen_mobile_500}) {
 						
-						&__content {
-							margin-top: 35px;
+						& {
+							margin-top: 0px;
 						}
 
 
