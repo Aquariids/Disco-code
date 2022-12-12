@@ -10,6 +10,8 @@
 }
 
 .title {
+	font-size: 30px;
+	font-weight: 500;
 	display: grid;
 	align-items: center;
 	margin: 0;
@@ -28,6 +30,14 @@
 	.articles {
 		align-items: center;
 		justify-content: center;
-		grid-template-columns: 1fr;
+		grid-template-columns: repeat(1, minmax(245px, 450px));
+
+	}
+
+	@media (max-width:400px) {
+		.title {
+			font-size: 25px;
+		}
+		
 	}
 }
