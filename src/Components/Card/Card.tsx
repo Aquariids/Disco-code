@@ -9,6 +9,7 @@ const Card = ({ title, color, url }: ICard) => {
         <div className={s.card}>
             <div className={card__title}>{title} </div>
             <Link href={url}>
+           
                 <div className={cn(container, {
                     [container__js]: color === 'js',
                     [container__ts]: color === 'ts',
@@ -24,10 +25,10 @@ const Card = ({ title, color, url }: ICard) => {
                 <div className={footer}>
                         Подробнее...
                     </div>
-                
+                    
             </Link>
+            </div>
             
-        </div>
 
 
     );
