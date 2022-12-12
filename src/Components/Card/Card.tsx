@@ -14,27 +14,36 @@ const Card = ({ title, color, url }: ICard) => {
         activeEl.forEach((item)=> {
             if(item && item.classList.contains(container__js)) {
                 item.classList.add(s.activeCardJs);
-                item.classList.remove(s.activeCardJs);
+                setTimeout(()=> {
+                    item.classList.remove(s.activeCardJs);
+                },200);
 
             }
             else if(item && item.classList.contains(container__react)) {
                 item.classList.add(s.activeCardReact);
-                item.classList.remove(s.activeCardReact);
+                setTimeout(()=> {
+                    item.classList.remove(s.activeCardReact);
+                },200);
 
             }
             else if(item && item.classList.contains(container__next)) {
                 item.classList.add(s.activeCardNextJs);
-                item.classList.remove(s.activeCardNextJs);
+                setTimeout(()=> {
+                    item.classList.remove(s.activeCardNextJs);
+                },200);
 
             }
             else if(item && item.classList.contains(container__ts)) {
                 item.classList.add(s.activeCardTS);
-                item.classList.remove(s.activeCardTS);
+                setTimeout(()=> {
+                    item.classList.remove(s.activeCardTS);
+                },200);
 
             } else  {
                 item && item.classList.add(s.activeCardBasic);
-                item.classList.remove(s.activeCardBasic);
-
+                setTimeout(()=> {
+                    item.classList.remove(s.activeCardBasic);
+                },200);
             }
 
         });
