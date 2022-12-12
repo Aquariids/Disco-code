@@ -10,7 +10,6 @@ const Card = ({ title, color, url }: ICard) => {
     function addBacgroundActiveCard(e:any) {
         const activeEl = e.target;
 
-        const  g = setInterval(() => {
             if(activeEl && activeEl.classList.contains(container__js)) {
                 activeEl.classList.add(s.activeCardJs);
             }
@@ -26,10 +25,6 @@ const Card = ({ title, color, url }: ICard) => {
                 activeEl && activeEl.classList.add(s.activeCardBasic);
             }
 
-            clearInterval(g);
-        },1000);
-     
-       
     }
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     function removeBacgroundActiveCard(e:any) {
