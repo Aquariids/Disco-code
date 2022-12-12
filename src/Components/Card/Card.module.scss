@@ -56,15 +56,6 @@
 		background-position-y: bottom;
 		transition: all 0.2s;
 		background-size: contain;
-		&:hover{
-			// background-image: url(/images/cards/basic_hover.png);
-			// background-color: var(--main_color_links_pages);
-
-		
-
-
-	
-		}
 
 		
 		
@@ -97,10 +88,7 @@
 		transition: all 0.2s;
 		background-size: contain;
 	
-		&:hover {
-			background-image: url(/images/cards/js_card_color.png);
-			background-color: #f5de19;
-		}
+		
 	}
 	
 	
@@ -114,11 +102,6 @@
 		transition: all 0.2s;
 		background-size: contain;
 	
-		&:hover {
-			background-image: url(/images/cards/ts_card_color.png);
-			background-color: var(--ts_color_links_pages);
-			
-		}
 	}
 	
 	
@@ -132,11 +115,6 @@
 		transition: all 0.2s;
 		background-size: contain;
 	
-		&:hover {
-			background-image: url(/images/cards/nextjs_card_color.png);
-			background-color: #000;
-			
-		}
 	}
 	
 	
@@ -149,9 +127,6 @@
 		transition: all 0.2s;
 		background-size: contain;
 	
-		&:hover {
-			
-		}
 
 		
 	}
@@ -174,8 +149,6 @@
 				border-right: none;
 			}
 
-
-
 			
 			
 		}
@@ -192,9 +165,27 @@
 		background-color: var(--react_color_links_pages);
 
 	}
+
+	.activeCardJs {
+		background-image: url(/images/cards/js_card_color.png);
+		background-color: #f5de19;
+
+	}
 	
+	.activeCardNextJs {
+		background-image: url(/images/cards/nextjs_card_color.png);
+		background-color: #000;
+	}
 
+	.activeCardTS {
+		background-image: url(/images/cards/ts_card_color.png);
+		background-color: var(--ts_color_links_pages);
+	}
 
+	.activeCardBasic {
+		background-image: url(/images/cards/basic_hover.png);
+		background-color: var(--main_color_links_pages);
+	}
 	
 }
 
