@@ -10,7 +10,7 @@ const Card = ({ title, color, url }: ICard) => {
     function addBacgroundActiveCard(e:any) {
         const activeEl = e.target;
 
-        let  g = setInterval(() => {
+        const  g = setInterval(() => {
             if(activeEl && activeEl.classList.contains(container__js)) {
                 activeEl.classList.add(s.activeCardJs);
             }
@@ -27,7 +27,7 @@ const Card = ({ title, color, url }: ICard) => {
             }
 
             clearInterval(g);
-        },100);
+        },1000);
      
        
     }
