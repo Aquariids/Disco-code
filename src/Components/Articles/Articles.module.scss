@@ -33,4 +33,11 @@
 		grid-template-columns: repeat(1, minmax(245px, 450px));
 
 	}
+
+	@media (max-width:400px) {
+		.title {
+			font-size: 25px;
+		}
+		
+	}
 }
