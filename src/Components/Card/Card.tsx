@@ -9,40 +9,49 @@ const Card = ({ title, color, url }: ICard) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     function addBacgroundActiveCard(e:any) {
         const activeEl = e.target;
-        if(activeEl && activeEl.classList.contains(container__js)) {
-            activeEl.classList.add(s.activeCardJs);
-        }
-        else if(activeEl && activeEl.classList.contains(container__react)) {
-            activeEl.classList.add(s.activeCardReact);
-        }
-        else if(activeEl && activeEl.classList.contains(container__next)) {
-            activeEl.classList.add(s.activeCardNextJs);
-        }
-        else if(activeEl && activeEl.classList.contains(container__ts)) {
-            activeEl.classList.add(s.activeCardTS);
-        } else  {
-            activeEl && activeEl.classList.add(s.activeCardBasic);
-        }
+
+        let  g = setInterval(() => {
+            if(activeEl && activeEl.classList.contains(container__js)) {
+                activeEl.classList.add(s.activeCardJs);
+            }
+            else if(activeEl && activeEl.classList.contains(container__react)) {
+                activeEl.classList.add(s.activeCardReact);
+            }
+            else if(activeEl && activeEl.classList.contains(container__next)) {
+                activeEl.classList.add(s.activeCardNextJs);
+            }
+            else if(activeEl && activeEl.classList.contains(container__ts)) {
+                activeEl.classList.add(s.activeCardTS);
+            } else  {
+                activeEl && activeEl.classList.add(s.activeCardBasic);
+            }
+
+            clearInterval(g);
+        },100);
+     
        
     }
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     function removeBacgroundActiveCard(e:any) {
+
         const activeEl = e.target;
-        if(activeEl && activeEl.classList.contains(container__js)) {
-            activeEl.classList.remove(s.activeCardJs);
-        }
-        else if(activeEl && activeEl.classList.contains(container__react)) {
-            activeEl.classList.remove(s.activeCardReact);
-        }
-        else if(activeEl && activeEl.classList.contains(container__next)) {
-            activeEl.classList.remove(s.activeCardNextJs);
-        }
-        else if(activeEl && activeEl.classList.contains(container__ts)) {
-            activeEl.classList.remove(s.activeCardTS);
-        }
-        else  {
-            activeEl && activeEl.classList.remove(s.activeCardBasic);
-        }
+
+            if(activeEl && activeEl.classList.contains(container__js)) {
+                activeEl.classList.remove(s.activeCardJs);
+            }
+            else if(activeEl && activeEl.classList.contains(container__react)) {
+                activeEl.classList.remove(s.activeCardReact);
+            }
+            else if(activeEl && activeEl.classList.contains(container__next)) {
+                activeEl.classList.remove(s.activeCardNextJs);
+            }
+            else if(activeEl && activeEl.classList.contains(container__ts)) {
+                activeEl.classList.remove(s.activeCardTS);
+            }
+            else  {
+                activeEl && activeEl.classList.remove(s.activeCardBasic);
+            }
+        
        
         
     }
