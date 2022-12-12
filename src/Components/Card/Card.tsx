@@ -52,11 +52,11 @@ const Card = ({ title, color, url }: ICard) => {
 useEffect(():any => {
 
     if(localStorage.getItem('updateCards') == 'ok') {
-        return "";
+        return;
     } else {
         loadingCard();
     }
-},[]);
+});
         
         
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

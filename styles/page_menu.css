@@ -59,6 +59,7 @@ h4 {
 	.page_content h2 {
 		margin-top: 50px;
 	}
+
 }
 
 .page_body {
@@ -72,6 +73,7 @@ h4 {
 
 .page__text {
 	margin: 0;
+	margin-bottom: 25px;
 }
 
 @media (max-width: 785px) {
