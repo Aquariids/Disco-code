@@ -1,4 +1,4 @@
-.page h2,
+h2,
 h3,
 h4 {
 	margin-top: -16px;
@@ -8,7 +8,21 @@ h4 {
 	color: rgb(36 36 36 / 89%);
 }
 
+
+
+
+.page__text {
+	background-color: rgba(153, 153, 153, 0.495);
+	text-align: left;
+	padding: 5px;
+}
+
+.page__title {
+	font-size: 32px;
+}
+
 .page_content {
+	margin-top: 25px;
 	scroll-behavior: auto;
 
 	text-align: center;
@@ -49,10 +63,15 @@ h4 {
 
 .page_body {
 	display: grid;
+
 }
 
 .page_body h1 {
-	margin-top: 25px;
+	font-size: 25px;
+}
+
+.page__text {
+	margin: 0;
 }
 
 @media (max-width: 785px) {
@@ -65,9 +84,7 @@ h4 {
 		gap: 15px;
 	}
 
-	.page_body h1 {
-		margin-bottom: 50px;
-	}
+
 
 
 	.page_content span {

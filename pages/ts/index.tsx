@@ -4,16 +4,16 @@ import React from "react";
 import { withLayout } from "../../layout/Layout";
 import MainMenuTs from "../../src/Components/Menu/MenuTs/MainMenuTs";
 import { getAllPosts } from "../api/api";
-import {  POSTS_PATH_BASIC_TS} from "../api/paths";
+import { POSTS_PATH_BASIC_TS } from "../api/paths";
 
 export const getStaticProps: GetStaticProps = async () => {
 
 
   const posts_Basic_Ts = getAllPosts(POSTS_PATH_BASIC_TS).map((post) => post.meta);
-  const AllThemePosts = {posts_Basic_Ts,};
+  const AllThemePosts = { posts_Basic_Ts, };
   return {
     props: {
-     AllThemePosts,
+      AllThemePosts,
     },
   };
 };
@@ -37,10 +37,15 @@ const Home: NextPage = (): JSX.Element => {
         <meta property="og:type" content={"article"} />
       </Head>
 
-      <h2>Содержание</h2>
+      <h1> Онлайн руководство по TypeScript </h1>
 
       <div className="page_body">
-        <div className={"page_menu"}>
+        <div className="page_menu">
+
+          <p className="page__text">
+            TypeScript - это по сути расширение javaScript. TypeScript позволяет нам писать типизированный код, так что, можно считать, что мы делаем из javaScript очень серьезного парня, с которым лучше не шутить
+          </p>
+          <div className="page__title">Содержание</div>
           <MainMenuTs />
         </div>
       </div>

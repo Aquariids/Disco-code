@@ -8,6 +8,8 @@ const Card = ({ title, color, url }: ICard) => {
 
 
     const loadingCard = () => {
+        console.log('hi');
+        
         const activeEl = document.querySelectorAll(`.${container}`);
         activeEl.forEach((item)=> {
             if(item && item.classList.contains(container__js)) {
@@ -40,7 +42,6 @@ const Card = ({ title, color, url }: ICard) => {
 
 useEffect(()=> {
     loadingCard();
-
 },[]);
         
         
@@ -85,7 +86,6 @@ useEffect(()=> {
                 activeEl && activeEl.classList.remove(s.activeCardBasic);
             }
         
-       
         
     }
     return (

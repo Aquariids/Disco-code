@@ -13,7 +13,7 @@ const Home: NextPage = (): JSX.Element => {
   const scrollToMyRef = () => {
     const html = document.querySelector('html') as HTMLElement;
     html.style.scrollBehavior = 'smooth';
-    window.scrollTo(0, h2ref.current.clientHeight + h2ref.current.offsetTop - h2ref.current.offsetHeight + 45);
+    window.scrollTo(0, h2ref.current.clientHeight + h2ref.current.offsetTop - h2ref.current.offsetHeight + 165);
     html.style.scrollBehavior = 'auto';
   };
 

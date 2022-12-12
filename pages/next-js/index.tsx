@@ -50,11 +50,16 @@ const Home: NextPage = (): JSX.Element => {
         <meta property="og:section" content="nextJS" />
         <meta property="og:tag" content="nextjS, js" />
       </Head>
-      <h2>Содержание</h2>
 
       <div className="page_body">
+      <h1> Онлайн руководство по NextJs </h1>
 
         <div className="page_menu">
+        <p className="page__text">
+        Познакомимся с таким javaScript фреймворком как next.js. Узнаем, что это за рендеринг такой SSR и SSG. Посмотрим как работают такие сайты как этот. Научимся получать данные на сервере, создавать удобные динамические маршруты и многому другому! 
+
+      </p>
+        <div className="page__title">Содержание</div>
         <MainMenuNextJs />
         </div>
       </div>

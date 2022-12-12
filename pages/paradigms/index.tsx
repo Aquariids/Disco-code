@@ -51,11 +51,15 @@ const Home: NextPage = (): JSX.Element => {
         <meta property="og:section" content="Paradigms" />
         <meta property="og:tag" content="OOP, js, paradigms" />
       </Head>
-      <h2>Содержание</h2>
 
       <div className="page_body">
+      <h1> Парадигмы программирования </h1>
 
         <div className="page_menu">
+        <p className="page__text">
+            Узнаем о том как люди пишут код и какие концепции для этого используют.  
+      </p>
+        <div className="page__title">Содержание</div>
 
           <MainMenuParadigms />
         </div>
