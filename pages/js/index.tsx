@@ -56,12 +56,19 @@ const Home: NextPage = (): JSX.Element => {
         <meta property="og:section" content="JavaScript" />
         <meta property="og:tag" content="JavaScript, js" />
       </Head>
-      <h2>Содержание</h2>
+
+    
 
       <div className="page_body">
+      <h1> Онлайн руководство по JavaScript</h1>
 
+      
+      
         <div className="page_menu">
-
+        <p className="page__text">
+      Здесь мы узнаем о базовом javaScript, так же посмотрим на продвинутый материал. Немного взглянем на алгоритмы, займемся практикой и поговорим о том, что из себя представляет javaScript внутри. 
+      </p>
+        <div className="page__title">Содержание</div>
           <MainMenuJs />
         </div>
       </div>

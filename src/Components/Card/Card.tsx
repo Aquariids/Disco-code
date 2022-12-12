@@ -85,7 +85,6 @@ useEffect(()=> {
                 activeEl && activeEl.classList.remove(s.activeCardBasic);
             }
         
-       
         
     }
     return (
