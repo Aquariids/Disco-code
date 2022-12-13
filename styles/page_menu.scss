@@ -1,3 +1,4 @@
+@import './variables@media.scss';
 h2,
 h3,
 h4 {
@@ -55,13 +56,6 @@ h4 {
 	justify-content: center;
 }
 
-@media (max-width: 785px) {
-	.page_content h2 {
-		margin-top: 50px;
-	}
-
-}
-
 .page_body {
 	display: grid;
 
@@ -76,7 +70,12 @@ h4 {
 	margin-bottom: 25px;
 }
 
-@media (max-width: 785px) {
+
+@media screen and (max-width:#{$screen_mobile_785}) {
+	.page_content h2 {
+		margin-top: 50px;
+	}
+
 	.page_menu {
 		display: flex;
 		flex-direction: column;
@@ -92,4 +91,5 @@ h4 {
 	.page_content span {
 		display: none;
 	}
+
 }

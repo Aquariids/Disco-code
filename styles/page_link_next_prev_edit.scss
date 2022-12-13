@@ -51,12 +51,12 @@
 	box-shadow: 0 0.7px 0 0;
 }
 
-@media (max-width:#{$screen_mobile_785}) {
+@media screen and (max-width:#{$screen_mobile_785}) {
 	.mainFooter a:active {
 		color: var(--main_color_links_pages_mobile);
 	}
 
-	@media (max-width: 550px) {
+	@media screen and (max-width: 550px) {
 		.page_footer {
 			flex-direction: column;
 		}
@@ -68,7 +68,7 @@
 			margin-bottom: 60px;
 		}
 
-		@media (max-width:#{$screen_mobile_500}) {
+		@media screen and (max-width:#{$screen_mobile_500}) {
 			.mainFooter a {
 				border-bottom: 1px solid var(--main_color_links_pages);
 				box-shadow: 0 0 0 0;
