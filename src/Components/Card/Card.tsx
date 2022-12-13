@@ -12,28 +12,28 @@ const Card = ({ title, color, url }: ICard) => {
         
         const activeEl = document.querySelectorAll(`.${card__container}`);
         activeEl.forEach((item)=> {
-            if(item && item.classList.contains(container__js)) {
+            if(item && item.classList.contains(card__container__js)) {
                 item.classList.add(s.activeCardJs);
                 setTimeout(()=> {
                     item.classList.remove(s.activeCardJs);
                 },200);
 
             }
-            else if(item && item.classList.contains(container__react)) {
+            else if(item && item.classList.contains(card__container__react)) {
                 item.classList.add(s.activeCardReact);
                 setTimeout(()=> {
                     item.classList.remove(s.activeCardReact);
                 },200);
 
             }
-            else if(item && item.classList.contains(container__next)) {
+            else if(item && item.classList.contains(card__container__next)) {
                 item.classList.add(s.activeCardNextJs);
                 setTimeout(()=> {
                     item.classList.remove(s.activeCardNextJs);
                 },200);
 
             }
-            else if(item && item.classList.contains(container__ts)) {
+            else if(item && item.classList.contains(card__container__ts)) {
                 item.classList.add(s.activeCardTS);
                 setTimeout(()=> {
                     item.classList.remove(s.activeCardTS);
