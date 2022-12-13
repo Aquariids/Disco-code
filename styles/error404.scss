@@ -67,19 +67,13 @@
 			grid-template-columns: 1fr;
 		}
 		@media (max-width: 350px) {
-			&__body404 {
-				display: grid;
-				grid-template-columns: 250px;
-		
-				justify-content: center;
-			}
 		
 			& p {
 				font-size: 20px;
 			}
 		
 			& h1 {
-				font-size: 30px;
+				font-size: 35px;
 			}
 		}
 	}
