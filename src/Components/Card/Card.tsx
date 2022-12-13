@@ -8,7 +8,7 @@ const Card = ({ title, color, url }: ICard) => {
 
 
     const loadingCard = () => {
-        localStorage.setItem('updateCards','ok');
+        localStorage.setItem('loading','loaded');
         
         const activeEl = document.querySelectorAll(`.${card__container}`);
         activeEl.forEach((item)=> {
@@ -51,7 +51,7 @@ const Card = ({ title, color, url }: ICard) => {
 
 useEffect(():any => {
 
-    if(localStorage.getItem('updateCards') == 'ok') {
+    if(localStorage.getItem('loading') == 'loaded') {
         return;
     } else {
         loadingCard();

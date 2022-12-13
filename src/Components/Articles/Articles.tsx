@@ -7,10 +7,10 @@ const Articles = ({ category }: articlesProps): JSX.Element => {
   if (category === 'js') {
 
     return (
-      <>
-        <div className={s.title}><span> JavaScript и технологии завязанные на нем</span></div>
+      <div className={s.articles}>
+        <div className={s.articles__title}><span> JavaScript и технологии завязанные на нем</span></div>
 
-        <div className={s.articles}>
+        <div className={s.articles__article}>
           <Card
             title={"JavaScript"}
             color={"js"}
@@ -34,17 +34,17 @@ const Articles = ({ category }: articlesProps): JSX.Element => {
           color={"next"} url={"/next-js"} />
 
         </div>
-      </>
+      </div>
     );
 
   }
   if (category === 'other') {
 
     return (
-      <>
-        <div className={s.title}> <span>Разное о программировании</span> </div>
+      <div className={s.articles}>
+        <div className={s.articles__title}> <span>Разное о программировании</span> </div>
 
-        <div className={s.articles}>
+        <div className={s.articles__article}>
           <Card
             title={"Парадигмы программирования"}
             url={"/paradigms"}
@@ -56,7 +56,7 @@ const Articles = ({ category }: articlesProps): JSX.Element => {
           />
         </div>
 
-      </>
+      </div>
     );
   } else {
     return (
