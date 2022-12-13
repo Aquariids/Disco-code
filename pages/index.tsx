@@ -21,7 +21,7 @@ const Home: NextPage = (): JSX.Element => {
 
 
   return (
-    <div className={s.body}>
+    <div className={s.page}>
       <Head>
         <title>
           DiscoCode - уроки по javascript, typescript, react, nextjs
@@ -52,24 +52,24 @@ const Home: NextPage = (): JSX.Element => {
         <meta property="og:site_name" content="DiscoCode" />
         <meta property="og:locale" content="ru_Ru"></meta>
       </Head>
-        <div className={s.welcomePage}>
-          <div className={s.welcomePageTitle}>
-            <div className={s.welcomePageTitle__items}>
+        <div className={s.page__welcome}>
+          <div className={s.page__welcome__title}>
+            <div className={s.page__welcome__title__items}>
               <h1>
                 {" "}
-                &lt;Disco <span className={s.welcomePageTitle__textcode}>Code/&gt;</span>{" "}
+                &lt;Disco <span className={s.page__welcome__title__textcode}>Code/&gt;</span>{" "}
               </h1>
-              <span className={s.welcomePageTitle__subtitle}> В серость под диско</span>
-              <button onClick={scrollToMyRef} className={s.welcomePageTitle__btnScroll}> Перейти к урокам </button>
+              <span className={s.page__welcome__title__subtitle}> В серость под диско</span>
+              <button onClick={scrollToMyRef} className={s.page__welcome__title__btnScroll}> Перейти к урокам </button>
 
             </div>
 
           </div>
-          <div className={s.aboutSite}>
-            <div className={s.aboutSite__content}>
-              <div className={s.aboutSite__paragraphAboutSite}>
-                <div className={s.aboutSite__text}>
-                  <div className={s.aboutSite__title}>О сайте</div>
+          <div className={s.page__welcome__aboutSite}>
+            <div className={s.page__welcome__aboutSite__content}>
+              <div className={s.page__welcome__aboutSite__paragraphAboutSite}>
+                <div className={s.page__welcome__aboutSite__text}>
+                  <div className={s.page__welcome__aboutSite__title}>О сайте</div>
                   Этот сайт является местом где я выкладываю все, что изучил, изучаю и
                   просто пишу о разных интересных мне технологиях в программировании.
                   Здесь будут выкладываться различные руководства и учебные материалы,
@@ -77,9 +77,9 @@ const Home: NextPage = (): JSX.Element => {
                 </div>
               </div>
 
-              <div className={s.aboutSite__paragraphAboutMe}>
-                <div className={s.aboutSite__text}>
-                  <div className={s.aboutSite__title}>Всем привет</div>В данных мной материалах,
+              <div className={s.page__welcome__aboutSite__paragraphAboutMe}>
+                <div className={s.page__welcome__aboutSite__text}>
+                  <div className={s.page__welcome__aboutSite__title}>Всем привет</div>В данных мной материалах,
                   мои суждения и выводы могут быть ошибочны. Если вы где-то нашли ошибку или неточность, то буду рад вашим pull request запросам.
                   Под каждой страницей есть ссылка для редактирования ее на github.
                 </div>
@@ -91,17 +91,17 @@ const Home: NextPage = (): JSX.Element => {
 
         </div>
 
-        <div className={s.news}>
-          <span className={s.news__title}> <h3>Что нового</h3> </span>
-          <div className={s.news__content}>
-            <span className={s.news__item}>Добавлен новый раздел "Практика js" и добавил статью про <Link href={'js/practice-js/webpack'}>Webpack</Link><span className={s.news__date}>17.11.2022</span></span>
-            <span className={s.news__item}>Написал о том как сделать <Link href={'js/practice-js/slider-js'}>классический слайдер на js</Link><span className={s.news__date}>19.11.2022</span></span>
-            <span className={s.news__item}>Добавлена новая статья о том как работают <Link href={'web-request-response'}>web запросы и ответы</Link><span className={s.news__date}>30.11.2022</span></span>
-            <span className={s.news__item}>Закончил писать про <Link href={'js/advanced-js/promise-fetch_api'}>fetch & promise</Link><span className={s.news__date}>02.12.2022</span></span>
-            <span className={s.news__item}>Добавлен новый раздел "JavaScript под капотом" и первая статья о работе <Link href={'js/under-the-hood-js/engine'}>движка в javaScript & JRE</Link><span className={s.news__date}>7.12.2022</span></span>
+        <div className={s.page__news}>
+          <span className={s.page__news__title}> <h3>Что нового</h3> </span>
+          <div className={s.page__news__content}>
+            <span className={s.page__news__item}>Добавлен новый раздел "Практика js" и добавил статью про <Link href={'js/practice-js/webpack'}>Webpack</Link><span className={s.page__news__date}>17.11.2022</span></span>
+            <span className={s.page__news__item}>Написал о том как сделать <Link href={'js/practice-js/slider-js'}>классический слайдер на js</Link><span className={s.page__news__date}>19.11.2022</span></span>
+            <span className={s.page__news__item}>Добавлена новая статья о том как работают <Link href={'web-request-response'}>web запросы и ответы</Link><span className={s.news__date}>30.11.2022</span></span>
+            <span className={s.page__news__item}>Закончил писать про <Link href={'js/advanced-js/promise-fetch_api'}>fetch & promise</Link><span className={s.page__news__date}>02.12.2022</span></span>
+            <span className={s.page__news__item}>Добавлен новый раздел "JavaScript под капотом" и первая статья о работе <Link href={'js/under-the-hood-js/engine'}>движка в javaScript & JRE</Link><span className={s.page__news__date}>7.12.2022</span></span>
           </div>
         </div>
-        <div ref={h2ref} className={s.articles} >
+        <div ref={h2ref} className={s.page__articles} >
           <Articles category="js" />
           <Articles category="other" />
         </div>

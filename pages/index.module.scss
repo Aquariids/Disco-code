@@ -1,6 +1,6 @@
 @import '../styles/variables@media.scss';
 
-.body {
+.page {
 	text-align: center;
 	display: grid;
 	justify-content: center;
@@ -16,11 +16,9 @@
 	
 		font-size: 60px;
 	}
-	.welcomePage {
+	&__welcome {
 		min-height: 100vh;
-
-
-		.welcomePageTitle {
+		&__title {
 			position: relative;
 		
 			display: flex;
@@ -43,12 +41,12 @@
 				justify-content: center;
 				grid-template-columns: 1fr;
 			}
-
+	
 			&__textcode {
 				color: var(--basic_color);
 				
 			}
-
+	
 			&__subtitle {
 				display: inline-block;
 			
@@ -64,7 +62,7 @@
 				font-size: 14px;
 				font-weight: 400;
 			}
-
+	
 			&__btnScroll {
 				width: 200px;
 				height: 40px;
@@ -78,7 +76,7 @@
 				border: none;
 				outline: none;
 				background-color: var(--basic_color);
-
+	
 				&:hover {
 					transition: all 0.3s;
 				
@@ -86,31 +84,11 @@
 					background-color: rgb(243 239 239);
 				}
 			}
-
-			@media (max-width: 985px) {
-				&{
-					background-image: none;
-				}
-
-				@media (max-width:#{$screen_mobile_785}) {
-					&__btnScroll {
-						display: none;
-					}
-
-					@media (max-width:#{$screen_mobile_500}) {
-						&__subtitle {
-							font-size: 12px;
-						}
-						
-					}
-					
-				}
-				
-			}
-
+	
+			
+	
 		}
-
-		.aboutSite {
+		&__aboutSite {
 			display: grid;
 			align-items: center;
 			justify-content: center;
@@ -145,77 +123,10 @@
 			}
 
 			
-			@media (max-width: 1350px) {
-				&__text {
-					font-size: 16px;
-				}
-				&__content {
-					display: flex;
-					flex-direction: column;
-					margin-top: 10px;
-					margin-bottom: 10px;
-				}
 			
-				&__title {
-					padding-top: 20px;
-			
-					text-align: left;
-				}
-				@media (max-width:#{$screen_mobile_785}) {
-					&__text {
-						font-size: 16px;
-						margin-top: 20px;
-						
-					}
-				
-					&__paragraphAboutMe {
-						margin-top: 10px;
-						padding: 5px;
-						
-						border-radius: 5px;
-						background-color: rgb(153 153 153 / 24.7%);
-					}
-
-					&__paragraphAboutSite {
-						padding: 5px;
-					}
-				
-					&__containerAboutSite {
-						margin-bottom: 10px;
-						padding: 5px;
-					}
-				
-					&__title {
-						padding-top: 0;
-					}
-
-					@media (max-width:#{$screen_mobile_500}) {
-						
-						& {
-							margin-top: 0px;
-						}
-
-
-					
-						
-					}
-				}
-				
-			}
-		}
-
-		@media (max-width:#{$screen_mobile_785}) {
-			&{
-				min-height: auto;
-			}
-			&__title {
-				min-height: 45vh;
-			}
-		
 		}
 	}
-
-	.news {
+	&__news {
 
 		&__content {
 			display: grid;
@@ -239,8 +150,6 @@
 				color:rgb(113, 96, 96);
 			}
 		}
-		
-		
 		
 		&__title {
 			display: grid;
@@ -269,27 +178,96 @@
 		}
 	}
 
-	.articles {
+
+	&__articles {
 		display: grid;
 		min-height: 60vh;
 	}
+	@media screen and (max-width: 1350px) {
+		&__welcome__aboutSite__text {
+			font-size: 16px;
+		}
+		&__welcome__aboutSite__content {
+			display: flex;
+			flex-direction: column;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
 	
-
-
-	@media (max-width:#{$screen_mobile_500}) {
-		& h1 {
-			font-size: 40px;
+		&__welcome__aboutSite__title {
+			padding-top: 20px;
+	
+			text-align: left;
+		}
+		@media screen and (max-width: 985px) {
+			&__welcome__title{
+				background-image: none;
+			}
+	
+			@media screen and (max-width:#{$screen_mobile_785}) {
+				&__welcome{
+					min-height: auto;
+				}
+				&__welcome__title {
+					min-height: 45vh;
+				}
+				&__welcome__title__btnScroll {
+					display: none;
+				}
+	
+				&__welcome__aboutSite__text {
+					font-size: 16px;
+					margin-top: 20px;
+					
+				}
+			
+				&__welcome__aboutSite__paragraphAboutMe {
+					margin-top: 10px;
+					padding: 5px;
+					
+					border-radius: 5px;
+					background-color: rgb(153 153 153 / 24.7%);
+				}
+	
+				&__welcome__aboutSite__paragraphAboutSite {
+					padding: 5px;
+				}
+			
+				&__welcome__aboutSite__containerAboutSite {
+					margin-bottom: 10px;
+					padding: 5px;
+				}
+			
+				&__welcome__aboutSite__title {
+					padding-top: 0;
+				}
+	
+				@media screen and (max-width:#{$screen_mobile_500}) {
+					& h1 {
+						font-size: 40px;
+					}
+					&__welcome__title__subtitle {
+						font-size: 12px;
+					}
+	
+					&__welcome__aboutSite{
+						margin-top: 0px;
+					}
+	
+	
+					@media screen and (max-width: 320px) {
+						& h1 {
+							font-size: 30px;
+						}
+				
+					}
+					
+				}
+				
+			}
+			
 		}
 		
-	
-	@media (max-width: 320px) {
-		& h1 {
-			font-size: 30px;
-		}
-
-	}
-
-	
 	}
 	
 }
