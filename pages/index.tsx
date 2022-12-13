@@ -96,7 +96,7 @@ const Home: NextPage = (): JSX.Element => {
           <div className={s.page__news__content}>
             <span className={s.page__news__item}>Добавлен новый раздел "Практика js" и добавил статью про <Link href={'js/practice-js/webpack'}>Webpack</Link><span className={s.page__news__date}>17.11.2022</span></span>
             <span className={s.page__news__item}>Написал о том как сделать <Link href={'js/practice-js/slider-js'}>классический слайдер на js</Link><span className={s.page__news__date}>19.11.2022</span></span>
-            <span className={s.page__news__item}>Добавлена новая статья о том как работают <Link href={'web-request-response'}>web запросы и ответы</Link><span className={s.news__date}>30.11.2022</span></span>
+            <span className={s.page__news__item}>Добавлена новая статья о том как работают <Link href={'web-request-response'}>web запросы и ответы</Link><span className={s.page__news__date}>30.11.2022</span></span>
             <span className={s.page__news__item}>Закончил писать про <Link href={'js/advanced-js/promise-fetch_api'}>fetch & promise</Link><span className={s.page__news__date}>02.12.2022</span></span>
             <span className={s.page__news__item}>Добавлен новый раздел "JavaScript под капотом" и первая статья о работе <Link href={'js/under-the-hood-js/engine'}>движка в javaScript & JRE</Link><span className={s.page__news__date}>7.12.2022</span></span>
           </div>
