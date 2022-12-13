@@ -1,3 +1,5 @@
+@import './variables@media.scss';
+
 .img img {
 	max-width: 100%;
 	height: auto;
@@ -87,7 +89,7 @@ code {
 	border-radius: 10px;
 }
 
-@media (max-width: 785px) {
+@media (max-width:#{$screen_mobile_785}) {
 	code {
 		border-radius: 0;
 	}
@@ -146,12 +148,14 @@ code {
 	.mdTitle h1 {
 		margin: 0;
 	}
-}
 
 
-@media (max-width:550px) {
-	.md_date {
-		justify-content: left;
+	@media (max-width:550px) {
+		.md_date {
+			justify-content: left;
+		}
+		
 	}
-	
 }
+
+
