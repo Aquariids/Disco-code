@@ -17,7 +17,7 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
     return (
         <>
             <div className={cn(footer, {
-                [s.footerWithoutRightSide]: r >= 3
+                [s.footerWithoutRightSide]: (r >= 3)
             })} {...props}>
                 <div className={footer__content}>
                     <div className={s.footer__content__nav}>
