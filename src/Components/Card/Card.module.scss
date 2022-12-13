@@ -145,7 +145,7 @@
 
 
 
-	@media (max-width:#{$screen_mobile_785}) {
+	@media screen and (max-width:#{$screen_mobile_785}) {
 		&__container {
 			min-width: 350px;
 			background-image: url(/images/cards/basic_hover.png);
@@ -175,7 +175,7 @@
 	
 	
 	
-		@media (max-width:400px) {
+		@media screen and (max-width:400px) {
 			&__container{
 				min-width: 100vw;
 				margin-left: calc(-50vw + 50%);
