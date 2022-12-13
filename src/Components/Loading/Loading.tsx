@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import cn from 'classnames';
-import s from './Loading.module.css';
+import s from './Loading.module.scss';
 
 type TODO_ANY = any;
 
