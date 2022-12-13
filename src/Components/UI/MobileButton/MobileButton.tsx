@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './MobileButton.module.css';
+import s from './MobileButton.module.scss';
 import { MobileButtonProps } from './MobileButton.props';
 import ArrowIcon from './arrow.svg';
 import cn from 'classnames';
@@ -13,7 +13,7 @@ const MobileButton = ({ mobile, setMobile, ...props }: MobileButtonProps) => {
     }
     return (
         <button onTouchStart={mob}  {...props} className={s.btn}>
-            <div className={s.content_btn}>
+            <div className={s.btn__content}>
                 <div className={s.svg}>
                     <div className={cn(s.arrows)}>
                     <span className={cn(s.arrow_top, {

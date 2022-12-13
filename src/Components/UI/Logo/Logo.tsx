@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-import s from './Logo.module.css';
+import s from './Logo.module.scss';
 import { AnimatePresence, motion } from 'framer-motion';
 import { logoProps } from './Logo.props';
 

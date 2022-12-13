@@ -28,12 +28,13 @@
 	max-width: 50px;
 	margin-right: 10px;
 	margin-left: 10px;
+
+	& svg {
+		transform: rotate(270deg);
+		fill: rgb(109 109 109);
+	}
 }
 
-.arrow svg {
-	transform: rotate(270deg);
-	fill: rgb(109 109 109);
-}
 
 .down svg {
 	display: inline-block;
@@ -43,22 +44,26 @@
 	fill: rgb(0 0 0);
 }
 
-@media (max-width: 1215px) {
+@media screen and (max-width: 1215px) {
 	.button {
 		font-size: 14px;
 	}
-}
 
-@media (max-width: 1115px) {
-	.button {
-		font-size: 13px;
+	@media screen and (max-width: 1115px) {
+		.button {
+			font-size: 13px;
+		}
+
+		@media screen and (max-width: 1040px) {
+			.button {
+				width: 130px;
+		
+				white-space: normal;
+			}
+		}
 	}
 }
 
-@media (max-width: 1040px) {
-	.button {
-		width: 130px;
 
-		white-space: normal;
-	}
-}
+
+

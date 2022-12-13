@@ -1,7 +1,7 @@
 import React from 'react';
 import { ButtonProps } from './Button.props';
 import cn from 'classnames';
-import s from './Button.module.css';
+import s from './Button.module.scss';
 import ArrowIcon from './arrow.svg';
 
 const Button = ({children,arrow = 'up',...props}:ButtonProps) => {
