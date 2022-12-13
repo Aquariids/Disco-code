@@ -18,7 +18,7 @@
 	}
 
 
-	.footer {
+	&__footer {
 		width: 100%;
 		border:  1px solid black;;
 		border-top: none;
@@ -38,9 +38,8 @@
 		}
 	}
 	
-	
-	
-	.container {
+
+	&__container {
 		display: flex;
 		max-width: 450px;
 		min-height: 250px;
@@ -57,27 +56,6 @@
 		transition: all 0.2s;
 		background-size: contain;
 
-		
-		
-	.body {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		width: 100%;
-		transition: all 0.2s;
-		&__bg {
-			display: flex;
-		}
-		
-		
-		
-		
-	
-	
-		
-	}
-	
-	
 	
 	&__js {
 		color: #000;
@@ -133,53 +111,7 @@
 
 
 	
-	@media (max-width:#{$screen_mobile_785}) {
-		&{
-			min-width: 350px;
-			background-image: url(/images/cards/basic_hover.png);
-			background-color: var(--main_color_links_pages);
-		}
-
-		&__react {
-			background-image: url(/images/cards/react_card_color.png);
-			background-color: var(--react_color_links_pages);
 	
-		}
-	
-		&__js {
-			background-image: url(/images/cards/js_card_color.png);
-			background-color: #f5de19;
-		}
-		
-		&__next {
-			background-image: url(/images/cards/nextjs_card_color.png);
-			background-color: #000;
-		}
-	
-		&__ts {
-			background-image: url(/images/cards/ts_card_color.png);
-			background-color: var(--ts_color_links_pages);
-		}
-	
-	
-	
-		@media (max-width:400px) {
-			&{
-				min-width: 100vw;
-				margin-left: calc(-50vw + 50%);
-				padding: 30px;
-				border-radius: 0%;
-
-				border-left: none;
-				border-right: none;
-			}
-
-			
-			
-		}
-	
-		
-	}
 	
 	
 	}
@@ -209,6 +141,56 @@
 	.activeCardBasic {
 		background-image: url(/images/cards/basic_hover.png);
 		background-color: var(--main_color_links_pages);
+	}
+
+
+
+	@media (max-width:#{$screen_mobile_785}) {
+		&__container {
+			min-width: 350px;
+			background-image: url(/images/cards/basic_hover.png);
+			background-color: var(--main_color_links_pages);
+		}
+
+		&__container__react {
+			background-image: url(/images/cards/react_card_color.png);
+			background-color: var(--react_color_links_pages);
+	
+		}
+	
+		&__container__js {
+			background-image: url(/images/cards/js_card_color.png);
+			background-color: #f5de19;
+		}
+		
+		&__container__next {
+			background-image: url(/images/cards/nextjs_card_color.png);
+			background-color: #000;
+		}
+	
+		&__container__ts {
+			background-image: url(/images/cards/ts_card_color.png);
+			background-color: var(--ts_color_links_pages);
+		}
+	
+	
+	
+		@media (max-width:400px) {
+			&__container{
+				min-width: 100vw;
+				margin-left: calc(-50vw + 50%);
+				padding: 30px;
+				border-radius: 0%;
+
+				border-left: none;
+				border-right: none;
+			}
+
+			
+			
+		}
+	
+		
 	}
 }
 

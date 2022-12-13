@@ -3,14 +3,14 @@ import cn from 'classnames';
 import { ICard } from './Card.props';
 import s from './Card.module.scss';
 import Link from 'next/link';
-const {footer, container, container__js, container__ts, container__next, container__react, card__title } = s;
+const {card__footer, card__container, card__container__js, card__container__ts, card__container__next, card__container__react, card__title } = s;
 const Card = ({ title, color, url }: ICard) => {
 
 
     const loadingCard = () => {
         localStorage.setItem('updateCards','ok');
         
-        const activeEl = document.querySelectorAll(`.${container}`);
+        const activeEl = document.querySelectorAll(`.${card__container}`);
         activeEl.forEach((item)=> {
             if(item && item.classList.contains(container__js)) {
                 item.classList.add(s.activeCardJs);
@@ -63,16 +63,16 @@ useEffect(():any => {
     function addBacgroundActiveCard(e:any) {
         const activeEl = e.target;
 
-            if(activeEl && activeEl.classList.contains(container__js)) {
+            if(activeEl && activeEl.classList.contains(card__container__js)) {
                 activeEl.classList.add(s.activeCardJs);
             }
-            else if(activeEl && activeEl.classList.contains(container__react)) {
+            else if(activeEl && activeEl.classList.contains(card__container__react)) {
                 activeEl.classList.add(s.activeCardReact);
             }
-            else if(activeEl && activeEl.classList.contains(container__next)) {
+            else if(activeEl && activeEl.classList.contains(card__container__next)) {
                 activeEl.classList.add(s.activeCardNextJs);
             }
-            else if(activeEl && activeEl.classList.contains(container__ts)) {
+            else if(activeEl && activeEl.classList.contains(card__container__ts)) {
                 activeEl.classList.add(s.activeCardTS);
             } else  {
                 activeEl && activeEl.classList.add(s.activeCardBasic);
@@ -84,16 +84,16 @@ useEffect(():any => {
 
         const activeEl = e.target;
 
-            if(activeEl && activeEl.classList.contains(container__js)) {
+            if(activeEl && activeEl.classList.contains(card__container__js)) {
                 activeEl.classList.remove(s.activeCardJs);
             }
-            else if(activeEl && activeEl.classList.contains(container__react)) {
+            else if(activeEl && activeEl.classList.contains(card__container__react)) {
                 activeEl.classList.remove(s.activeCardReact);
             }
-            else if(activeEl && activeEl.classList.contains(container__next)) {
+            else if(activeEl && activeEl.classList.contains(card__container__next)) {
                 activeEl.classList.remove(s.activeCardNextJs);
             }
-            else if(activeEl && activeEl.classList.contains(container__ts)) {
+            else if(activeEl && activeEl.classList.contains(card__container__ts)) {
                 activeEl.classList.remove(s.activeCardTS);
             }
             else  {
@@ -106,15 +106,15 @@ useEffect(():any => {
         <div className={s.card}>
             <div className={card__title}>{title} </div>
             <Link href={url}>
-                <div onMouseOver={addBacgroundActiveCard} onMouseOut={removeBacgroundActiveCard} className={cn(container, {
-                    [container__js]: color === 'js',
-                    [container__ts]: color === 'ts',
-                    [container__next]: color === 'next',
-                    [container__react]: color === 'react',
+                <div onMouseOver={addBacgroundActiveCard} onMouseOut={removeBacgroundActiveCard} className={cn(card__container, {
+                    [card__container__js]: color === 'js',
+                    [card__container__ts]: color === 'ts',
+                    [card__container__next]: color === 'next',
+                    [card__container__react]: color === 'react',
                 })} >
                     
                 </div>
-                <div className={footer}>
+                <div className={card__footer}>
                         Подробнее...
                     </div>
                     

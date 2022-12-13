@@ -7,6 +7,7 @@
 @import "./page_link_next_prev_edit.css";
 @import "./page_menu.css";
 @import "./error404.css";
+@import "./variables@media.scss";
 
 
 
@@ -32,10 +33,9 @@ body {
 
 
 
-@media (max-width:785px) {
+@media (max-width:#{$screen_mobile_785}) {
 	html {
 		margin-right: 0;
-
 	}
 	
 }
