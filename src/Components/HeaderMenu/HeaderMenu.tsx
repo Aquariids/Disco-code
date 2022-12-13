@@ -1,19 +1,16 @@
-import s from './HeaderMenu.module.css';
+import s from './HeaderMenu.module.scss';
 import { HeaderProps } from './HeaderMenu.props';
 import Link from 'next/link';
 import cn from 'classnames';
 import { useRouter } from 'next/router';
 import Logo from '../UI/Logo/Logo';
 import { Loading } from '../Loading/Loading';
-const { header, link, content, logo, github } = s;
+const { header, header__link, header__content, header__logo, header__github } = s;
 
 const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
     const router = useRouter();
     const r = router.asPath.split('/').length;
 
-
-
-    
     const logoCreat = () => {
         if (router.asPath.startsWith('/js')) {
             return <Logo path='/js' src='/logo/js_logo.svg' />;
@@ -33,18 +30,18 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
     };
     return (
         <div className={cn(header, {
-            [s.header2]: r >= 3
+            [s.footerWithoutRightSide]: (r >= 3)
         })} {...props}>
-            <div className={content}>
-                <div className={logo}>
+            <div className={header__content}>
+                <div className={header__logo}>
                     {logoCreat()}
-                    <span className={link} > <Link href={'/'}>DiscoCode</Link> </span>
+                    <span className={header__link} > <Link href={'/'}>DiscoCode</Link> </span>
                 </div>
 
-                <div className={s.nav}>
-                    <div className={s.dropdown}>
-                        <div className={s.btn}><button> Выбрать тему </button></div>
-                        <ul className={s.dropdown_content}>
+                <div className={s.header__nav}>
+                    <div className={s.header__dropdown}>
+                        <div className={s.header__dropdown__btn}><button> Выбрать тему </button></div>
+                        <ul className={s.header__dropdown__content}>
                             <li><Link href={'/js'}><span className={s.js}>JavaScript</span></Link></li>
                             <li><Link href={'/react'}><span className={s.react}>React</span></Link></li>
                             <li><Link href={'/ts'}><span className={s.ts}>TypeScript</span></Link></li>
@@ -53,7 +50,7 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
 
                         </ul>
                     </div>
-                    <div className={github}><a className={link} target={"_blank"} href={'https://github.com/Aquariids/Disco-code'}>Github <img alt='github' style={{ width: '15px', height: '15px' }} src='/link.svg' /></a></div>
+                    <div className={header__github}><a className={header__link} target={"_blank"} href={'https://github.com/Aquariids/Disco-code'}>Github <img alt='github' style={{ width: '15px', height: '15px' }} src='/link.svg' /></a></div>
                 </div>
             </div>
             <Loading  />
