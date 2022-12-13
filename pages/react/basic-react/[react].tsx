@@ -11,7 +11,7 @@ import cn from 'classnames';
 import { getAllPosts, getPostFromSlug, getSlugs, MDXPost } from '../../api/api';
 import { POSTS_PATH_BASIC_REACT } from '../../api/paths';
 import Link from 'next/link';
-import s from './../pageReact.module.css';
+import s from './../pageReact.module.scss';
 import AnimationContainer from '../../../src/Components/AnimationContainers/AnimationContainer';
 
 

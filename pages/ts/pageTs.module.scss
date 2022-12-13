@@ -1,3 +1,5 @@
+@import '../../styles/variables@media.scss';
+
 .footer a:hover {
 	color: var(--ts_hover_color_links_pages);
 	box-shadow: 0 0.7px 0 0;
@@ -15,13 +17,6 @@
 	box-shadow: 0 0.5px 0 0;
 }
 
-@media (max-width: 500px) {
-	.footer a {
-		border-bottom: 1px solid var(--ts_color_links_pages);
-		box-shadow: 0 0 0 0;
-	}
-}
-
 .edit a {
 	color: rgb(77 77 77);
 	box-shadow: 0 0.2px 0 0;
@@ -29,4 +24,11 @@
 
 .edit a:hover {
 	box-shadow: 0 0.7px 0 0;
+}
+
+@media screen and (max-width:#{$screen_mobile_500}) {
+	.footer a {
+		border-bottom: 1px solid var(--ts_color_links_pages);
+		box-shadow: 0 0 0 0;
+	}
 }
