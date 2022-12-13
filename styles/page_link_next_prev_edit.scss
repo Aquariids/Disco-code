@@ -1,3 +1,5 @@
+@import './variables@media.scss';
+
 .page_footer {
 	display: flex;
 	justify-content: space-between;
@@ -9,10 +11,6 @@
 
 .page_footer a {
 	max-width: 155px;
-}
-
-.a_none {
-	text-decoration: none;
 }
 
 .page_edit {
@@ -53,28 +51,32 @@
 	box-shadow: 0 0.7px 0 0;
 }
 
-@media (max-width: 785px) {
+@media (max-width:#{$screen_mobile_785}) {
 	.mainFooter a:active {
 		color: var(--main_color_links_pages_mobile);
 	}
-}
 
-@media (max-width: 500px) {
-	.mainFooter a {
-		border-bottom: 1px solid var(--main_color_links_pages);
-		box-shadow: 0 0 0 0;
+	@media (max-width: 550px) {
+		.page_footer {
+			flex-direction: column;
+		}
+	
+		.page_edit {
+			justify-content: left;
+	
+			margin-top: 50px;
+			margin-bottom: 60px;
+		}
+
+		@media (max-width:#{$screen_mobile_500}) {
+			.mainFooter a {
+				border-bottom: 1px solid var(--main_color_links_pages);
+				box-shadow: 0 0 0 0;
+			}
+		}
 	}
 }
 
-@media (max-width: 550px) {
-	.page_footer {
-		flex-direction: column;
-	}
 
-	.page_edit {
-		justify-content: left;
 
-		margin-top: 50px;
-		margin-bottom: 60px;
-	}
-}
+
