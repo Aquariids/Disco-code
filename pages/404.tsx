@@ -11,7 +11,7 @@ const Error404 = (): JSX.Element => {
     <>
 
     <div className='error404'>
-      <div className='body404'>
+      <div className='error404__body'>
       <h1>Страница не найдена</h1>
       <p>Мы не смогли найти то, что вы искали.</p>
       <span>Пожалуйста, свяжитесь с владельцем сайта, с которого вы перешли по URL адресу, и дайте знать о сломанной ссылке.</span>
@@ -19,7 +19,7 @@ const Error404 = (): JSX.Element => {
 
       </div>
 
-      <div className='erorr404btn'>
+      <div className='error404__btn'>
     <Button  arrow='none'> <Link href={'/'}>Вернуться на главную страницу</Link> </Button>
     </div>
   </div>
