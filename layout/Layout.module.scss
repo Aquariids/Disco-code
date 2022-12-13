@@ -45,7 +45,7 @@
 		grid-area: footer;
 	}
 
-	@media (max-width:#{$screen_mobile_785}) {
+	@media screen and (max-width:#{$screen_mobile_785}) {
 		&{
 			grid-template-columns: var(--grid_columns_wrapper_mobile);
 			grid-template-areas:
@@ -66,7 +66,7 @@
 		}
 
 		
-		@media (max-width:300px) {
+		@media screen and  (max-width:300px) {
 			&{
 				overflow-x: hidden;
 			}
@@ -81,12 +81,12 @@
 .wrapperWithoutRightSide {
 
 
-	@media (max-width:#{$screen_wrapper_without_right_side}) {
+	@media screen and (max-width:#{$screen_wrapper_without_right_side}) {
 		&{
 			grid-template-columns: var(--grid_columns_wrapper_without_right_side);
 		}
 
-		@media (max-width:#{$screen_mobile_785}) {
+		@media screen and  (max-width:#{$screen_mobile_785}) {
 			&{
 				grid-template-columns: var(--grid_columns_wrapper_mobile);
 				grid-template-areas:
@@ -107,7 +107,7 @@
 			}
 
 			
-			@media (max-width:300px) {
+			@media screen and (max-width:300px) {
 				&{
 					overflow-x: hidden;
 				}

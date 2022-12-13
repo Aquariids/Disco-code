@@ -12,7 +12,7 @@
 	background-color: var(--basic_color);
 	box-shadow: 0.5px 0.5px 1px rgb(112 111 111 / 91.1%);
 
-	@media (max-width:#{$screen_mobile_785}) {
+	@media screen and (max-width:#{$screen_mobile_785}) {
 		&{
 			box-shadow: none;
 		}

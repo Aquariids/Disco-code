@@ -16,7 +16,7 @@
 	background-color: #F7F7F7;
 	box-shadow: 0 0 1px 0;
 
-	@media (max-width:#{$screen_mobile_785}) {
+	@media screen and  (max-width:#{$screen_mobile_785}) {
 		&{
 			display: none;
 	

@@ -13,7 +13,7 @@
 	background-color: var(--basic_color);
 	grid-template-rows: 1fr;
 
-	@media (max-width:#{$screen_mobile_785}) {
+	@media screen and  (max-width:#{$screen_mobile_785}) {
 		&{
 			margin-top: 80px;
 		}
