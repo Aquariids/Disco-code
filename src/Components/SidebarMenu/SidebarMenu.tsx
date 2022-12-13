@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import s from './SidebarMenu.module.css';
+import s from './SidebarMenu.module.scss';
 import { useEffect } from "react";
 import DropdownMenuJs from "../Menu/MenuJs/DropdownMenuJs";
 import DropdownMenuNextJs from "../Menu/MenuNextJs/DropdownMenuNextJs";

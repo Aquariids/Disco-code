@@ -1,3 +1,5 @@
+@import "../../../../styles/variables@media.scss";
+
 .btn {
 	position: fixed;
 	z-index: 300;
@@ -16,14 +18,27 @@
 
 	-webkit-tap-highlight-color: rgb(255 255 255 / 0%);
 	-webkit-tap-highlight-color: transparent;
+
+
+	&__content {
+		margin-right: auto;
+		margin-left: auto;
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+
+	@media (max-width:#{$screen_mobile_785}) {
+		& {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+	
+			cursor: pointer;
+		}
+	}
 }
 
-.content_btn {
-	margin-right: auto;
-	margin-left: auto;
-	padding-right: 20px;
-	padding-left: 20px;
-}
+
 
 .svg {
 	display: flex;
@@ -79,12 +94,4 @@
 	fill: var(--ts_color_links_pages);
 }
 
-@media (max-width: 785px) {
-	.btn {
-		display: flex;
-		align-items: center;
-		justify-content: center;
 
-		cursor: pointer;
-	}
-}

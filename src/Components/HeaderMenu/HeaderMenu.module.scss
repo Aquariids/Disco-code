@@ -38,8 +38,10 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-			
+		color: transparent;
+		text-shadow: 0 0 0 black;
 				span {
+					color: #fff;
 						margin-left: 4px;
 					}
 	}

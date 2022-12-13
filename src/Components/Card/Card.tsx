@@ -9,7 +9,7 @@ const Card = ({ title, color, url }: ICard) => {
 
     const loadingCard = () => {
         localStorage.setItem('loading','loaded');
-        
+
         const activeEl = document.querySelectorAll(`.${card__container}`);
         activeEl.forEach((item)=> {
             if(item && item.classList.contains(card__container__js)) {
@@ -50,7 +50,6 @@ const Card = ({ title, color, url }: ICard) => {
     };
 
 useEffect(():any => {
-
     if(localStorage.getItem('loading') == 'loaded') {
         return;
     } else {

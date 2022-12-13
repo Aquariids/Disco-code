@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
-import s from './Menu.module.css';
+import s from './Menu.module.scss';
 import cn from 'classnames';
 import { IMenu } from './Menu.props';
 import { useRouter } from 'next/router';
@@ -33,20 +33,20 @@ const Menu = ({ title, category, dropdown, page, mobileMenu, setMobile, mobileTr
     // sidebar
     if (dropdown === true) {
         return (
-            <div className={s.content} {...props}>
-                <div className={s.btn}>
+            <div className={s.dropdown_menu} {...props}>
+                <div className={s.dropdown_menu__btn}>
                     <Button
                         arrow={isOpen === true ? 'down' : 'up'}
                         onClick={handleToggle}
                     >{title}</Button>
                 </div>
-                {isOpen && (<ul className={s.listMenu}>
+                {isOpen && (<ul className={s.dropdown_menu__list}>
                     {posts && posts.map((post, index: number) => (
                         <li
                             key={post.id ?? index}
                             className={cn(s.link, {
                                 [s.active]: post.slug === checkActiveLink,
-                                ['active_scroll']: post.slug === checkActiveLink,
+                                ['active_scroll']: post.slug === checkActiveLink, // это надо, что бы к ссылке подкручивать скролл в сайдбаре
                                 [s.active_js]: post.slug === checkActiveLink && router.pathname.startsWith('/js'),
                                 [s.active_ts]: post.slug === checkActiveLink && router.pathname.startsWith('/ts'),
                                 [s.active_react]: post.slug === checkActiveLink && router.pathname.startsWith('/react'),
@@ -60,14 +60,14 @@ const Menu = ({ title, category, dropdown, page, mobileMenu, setMobile, mobileTr
     }
 
     // mobile modal menu
-    else if (mobileMenu === true) {
+    if (mobileMenu === true) {
         return (
-            <div className={s.mobile_content} {...props}>
-                <div className={s.mobile_btn}>
-                    <h4 className={s.title_mobile}
+            <div className={s.mobile_menu} {...props}>
+                <div className={s.mobile_menu__btn}>
+                    <h4 className={s.mobile_menu__title}
                     >{title}</h4>
                 </div>
-                <ul className={s.mobile_list}>
+                <ul className={s.mobile_menu__list}>
                     {posts && posts.map((post, index: number) => (
                         <li
                             onClick={hideModalAfterTransition}
@@ -91,16 +91,16 @@ const Menu = ({ title, category, dropdown, page, mobileMenu, setMobile, mobileTr
     else {
         return (
             <>
-                <div className={s.content} {...props}>
-                    <div className={s.content_btn}>
-                        <h4 className={s.title}
+                <div className={s.main_menu} {...props}>
+                    <div className={s.main_menu__btn}>
+                        <h4 className={s.main_menu__title}
                         >{title}</h4>
                     </div>
-                    <ul className={s.content_list_menu}>
+                    <ul className={s.main_menu__list}>
                         {posts && posts.map((post, index: number) => (
                             <li
                                 key={post.id ?? index}
-                                className={cn(s.link, s.content_links)} >
+                                className={cn(s.link, s.main_menu__links)} >
                                 {router.pathname.startsWith(`/${page}`) ? <Link href={`/${page}/${post.category}/${post.slug}`}>{post.title}</Link> : ''}
                             </li>
                         ))}
