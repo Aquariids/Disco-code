@@ -75,7 +75,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <>
       <Head>
-        <meta name="viewport" content="viewport-fit=cover" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
         <meta name="yandex-verification" content="a99ae512e4f1c330" />
         <meta name="google-site-verification" content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
