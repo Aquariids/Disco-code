@@ -1,4 +1,5 @@
 @import "./variables@media.scss";
+
 .error404 {
 	position: relative;
 
@@ -12,21 +13,22 @@
 	/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
 	grid-template-areas: ". body .";
 
-	
- h1 {
-	margin-bottom: 0;
 
-	font-size: 50px;
-}
+	h1 {
+		margin-bottom: 0;
 
- p {
-	margin-top: 10px;
-	margin-bottom: 10px;
+		font-size: 50px;
+	}
 
-	color: gray;
+	p {
+		margin-top: 10px;
+		margin-bottom: 10px;
 
-	font-size: 25px;
-}
+		color: gray;
+
+		font-size: 25px;
+	}
+
 	&__body {
 		display: flex;
 		flex-direction: column;
@@ -36,53 +38,45 @@
 	&__btn {
 		position: fixed;
 		bottom: 0;
-	
+
 		display: flex;
 		align-items: center;
 		justify-content: center;
-	
+
 		width: 100vw;
 		min-height: 50px;
 		margin: 0 auto;
 		padding: 10px;
-	
+
 		border: 1px solid black;
 		background-color: var(--basic_color);
 
 		button {
 			padding: 0;
-		
+
 			color: #FFF;
 		}
+
 		button:hover {
 			color: #999;
 		}
 	}
-	
 
 
-	@media screen and (max-width:#{$screen_mobile_785}) {
+	@media screen and (max-width: #{$screen_mobile_785}) {
 		& {
 			grid-template-rows: 1fr;
 			grid-template-columns: 1fr;
 		}
+
 		@media screen and  (max-width: 350px) {
-		
 			& p {
 				font-size: 20px;
 			}
-		
+
 			& h1 {
 				font-size: 35px;
 			}
 		}
 	}
-	
-	
-
 }
-
-
-
-
-

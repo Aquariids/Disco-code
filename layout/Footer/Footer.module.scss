@@ -1,4 +1,4 @@
-@import '../../styles/variables@media.scss';
+@import "../../styles/variables@media.scss";
 
 .footer {
 	position: absolute;
@@ -9,15 +9,13 @@
 
 	width: 100vw;
 	margin-left: calc(-50vw + 50%);
-	
+
 	background-color: var(--basic_color);
 	grid-template-rows: 1fr;
 
-	@media screen and  (max-width:#{$screen_mobile_785}) {
-		&{
+	@media screen and  (max-width: #{$screen_mobile_785}) {
+		& {
 			margin-top: 80px;
 		}
 	}
 }
-
-

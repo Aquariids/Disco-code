@@ -1,4 +1,4 @@
-@import '../../styles/variables@media.scss';
+@import "../../styles/variables@media.scss";
 
 .footer a:hover {
 	color: var(--js_hover_color_links_pages);
@@ -26,8 +26,7 @@
 	box-shadow: 0 0.7px 0 0;
 }
 
-
-@media screen and (max-width:#{$screen_mobile_785}) {
+@media screen and (max-width: #{$screen_mobile_785}) {
 	.footer a:focus {
 		color: var(--js_color_links_pages_mobile);
 	}
@@ -35,7 +34,8 @@
 	.footer a {
 		color: var(--js_color_links_pages_mobile);
 	}
-	@media screen and (max-width:#{$screen_mobile_500}) {
+
+	@media screen and (max-width: #{$screen_mobile_500}) {
 		.footer a {
 			border-bottom: 1px solid var(--js_color_links_pages_mobile);
 			box-shadow: 0 0 0 0;

@@ -1,25 +1,23 @@
-
 @import "../../../styles/variables@media.scss";
 // меню для сайдбара
 .dropdown_menu {
-
 	&__btn {
 		display: grid;
 		justify-content: left;
-	
+
 		width: 100%;
 		margin-left: 20px;
 	}
 
 	&__list {
 		display: grid;
-	
+
 		max-width: 100%;
 		margin-top: 0;
 		margin-bottom: 0;
 		margin-left: 20px;
 		padding-left: 0;
-	
+
 		text-align: left;
 		grid-template-columns: 1fr;
 	}
@@ -28,35 +26,34 @@
 		&__btn {
 			margin-left: 10px;
 		}
-	
+
 		&__list {
 			margin-left: 10px;
 		}
 	}
-	
+
 	@media screen and (max-width: 1235px) {
 		&__btn {
 			margin-left: 5px;
 		}
-	
+
 		&__list {
 			margin-left: 5px;
 		}
 	}
-	
+
 	@media screen and (max-width: 1135px) {
 		&__btn {
 			margin-left: 0;
 		}
 	}
-	
+
 	@media screen and (max-width: 1040px) {
 		&__btn {
 			display: flex;
 			justify-content: center;
 		}
 	}
-	
 }
 
 // меню для мобилок
@@ -70,14 +67,13 @@
 		li {
 			margin-top: 0;
 			padding: 5px 0;
-	
+
 			line-height: 1.1;
 		}
 	}
 
 	&__title {
 		margin-top: 30px;
-
 
 		margin-right: 20px;
 		margin-bottom: 0;
@@ -94,12 +90,10 @@
 		line-height: 15px;
 	}
 
-	
-&__btn {
-	margin-left: 14px;
-}
 
-
+	&__btn {
+		margin-left: 14px;
+	}
 }
 
 // одинаковые ссылки у сайдбара и в мобильном меню
@@ -113,156 +107,146 @@
 
 	list-style-type: none;
 
+	cursor: auto;
+
 	transition: all 0.1s;
 
-	cursor: auto;
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 19px;
 
 	a:hover {
 		transition: all 0.1s;
-	
+
 		color: rgb(137 137 137);
 	}
 }
-
 
 // меню содержания страниц
 .main_menu {
 	&__list {
 		display: grid;
+
 		width: 100%;
 		padding: 0;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 13px 5px;
 
-		
-	& .link a:hover {
-		color: rgb(255, 253, 253);
 
-	transition: all 0.1s;
-}
+		& .link a:hover {
+			transition: all 0.1s;
+
+			color: rgb(255 253 253);
+		}
 	}
 
 	&__btn {
 		display: grid;
 		justify-content: center;
-	
+
 		margin-bottom: 25px;
 		padding-bottom: 10px;
-	
+
 		border-bottom: 1px solid rgb(0 0 0 / 25.3%);
 	}
+
 	&__title {
 		margin-top: 20px;
 		margin-right: 20px;
 		margin-left: 20px;
 		padding: 5px;
 		padding-top: 5px;
-	
+
 		text-transform: uppercase;
-	
+
 		color: rgb(109 109 109);
 		border-radius: 5px;
 		background-color: rgb(34 34 36 / 11.1%);
-	
+
 		font-size: 15px;
 		font-weight: 700;
 		font-weight: bold;
 		line-height: 15px;
 	}
 
-	
-
-&__links {
-	height: 50px;
-	border-radius: 5px;
-
-	a {
-		border-bottom: 1px solid black;
-		display: flex;
-		align-items: center;
-		justify-content: left;
-		width: 100%;
-		height: 100%;
-		
-		text-align: left;
-	
-		color: rgb(0 0 0 / 65.1%);
-	
-		font-size: 14px;
-		font-weight: 600;
-		line-height: 1.4;
-	}
-	&:hover {
-		transition: all 0.3s;
-	
-		background-color: #20232ACB;
-	}
-}
 
 
+	&__links {
+		height: 50px;
 
-@media screen and (max-width: 1665px) {
+		border-radius: 5px;
 
-	&__list {
-		grid-template-columns: 1fr 1fr;
-	}
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: left;
 
-	@media screen and (max-width:1145px) {
-		&__links a {
-			font-size: 13px;
+			width: 100%;
+			height: 100%;
+
+			text-align: left;
+
+			color: rgb(0 0 0 / 65.1%);
+			border-bottom: 1px solid black;
+
+			font-size: 14px;
+			font-weight: 600;
+			line-height: 1.4;
 		}
-		
-		@media screen and (max-width: 830px) {
+
+		&:hover {
+			transition: all 0.3s;
+
+			background-color: #20232ACB;
+		}
+	}
+
+	@media screen and (max-width: 1665px) {
+		&__list {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@media screen and (max-width: 1145px) {
 			&__links a {
-				font-size: 15px;
+				font-size: 13px;
 			}
-		
-			&__list {
-				grid-template-columns: 1fr;
-			}
-	
-			
-			@media screen and (max-width: 450px) {
-				&__links {
-					max-width: 100%;
-					height: 50px;
-	
-					text-align: left;
+
+			@media screen and (max-width: 830px) {
+				&__links a {
+					font-size: 15px;
 				}
 
-				@media screen and (max-width: 365px) {
-					&__list{
-						gap: 15px;
-				
-						grid-template-columns: auto;
+				&__list {
+					grid-template-columns: 1fr;
+				}
+
+
+				@media screen and (max-width: 450px) {
+					&__links {
+						max-width: 100%;
+						height: 50px;
+
+						text-align: left;
 					}
 
-					@media screen and (max-width: 335px) {
-						&__links {
-							max-width: 200px;
+					@media screen and (max-width: 365px) {
+						&__list {
+							gap: 15px;
+
+							grid-template-columns: auto;
+						}
+
+						@media screen and (max-width: 335px) {
+							&__links {
+								max-width: 200px;
+							}
 						}
 					}
-					
 				}
-	
-		
+			}
+		}
 	}
-	
-	}
-	}
-
-	
 }
-
-
-
-}
-
-
-
 
 /* active links */
 
@@ -307,9 +291,9 @@
 .active_react:hover {
 	color: var(--react_hover_color_links_pages);
 }
-@media screen and (max-width:#{$screen_mobile_785}) {
+
+@media screen and (max-width: #{$screen_mobile_785}) {
 	.active_js {
 		color: var(--js_color_links_pages_mobile);
 	}
-
 }

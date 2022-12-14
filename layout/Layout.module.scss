@@ -1,5 +1,4 @@
-
-@import '../styles/variables@media.scss';
+@import "../styles/variables@media.scss";
 
 .wrapper {
 	position: relative;
@@ -16,23 +15,22 @@
 		"sidebar body ."
 		"footer footer footer";
 
-
 	.mobileSidebar {
 		width: 100%;
 	}
-	
+
 	.header {
 		grid-area: header;
 	}
-	
+
 	.sidebar {
 		grid-area: sidebar;
 	}
-	
+
 	.body {
 		grid-area: body;
 	}
-	
+
 	.content {
 		position: relative;
 
@@ -40,88 +38,72 @@
 			margin-top: 0;
 		}
 	}
-	
+
 	.footer {
 		grid-area: footer;
 	}
 
-	@media screen and (max-width:#{$screen_mobile_785}) {
-		&{
+	@media screen and (max-width: #{$screen_mobile_785}) {
+		& {
 			grid-template-columns: var(--grid_columns_wrapper_mobile);
 			grid-template-areas:
 				"header"
 				"body"
 				"footer";
 		}
-	
+
 		.footer {
 			align-items: center;
-	
+
 			text-align: center;
 		}
-	
-		
+
+
 		.content {
 			margin: 0 14px;
 		}
 
-		
-		@media screen and  (max-width:300px) {
-			&{
+
+		@media screen and  (max-width: 300px) {
+			& {
 				overflow-x: hidden;
 			}
-			
 		}
 	}
-
-
 }
 
 .wrapperWithoutRightSide {
-
-
-	@media screen and (max-width:#{$screen_wrapper_without_right_side}) {
-		&{
+	@media screen and (max-width: #{$screen_wrapper_without_right_side}) {
+		& {
 			grid-template-columns: var(--grid_columns_wrapper_without_right_side);
 		}
 
-		@media screen and  (max-width:#{$screen_mobile_785}) {
-			&{
+		@media screen and  (max-width: #{$screen_mobile_785}) {
+			& {
 				grid-template-columns: var(--grid_columns_wrapper_mobile);
 				grid-template-areas:
 					"header"
 					"body"
 					"footer";
 			}
-		
+
 			.footer {
 				align-items: center;
-		
+
 				text-align: center;
 			}
-		
-			
+
+
 			.content {
 				margin: 0 14px;
 			}
 
-			
-			@media screen and (max-width:300px) {
-				&{
+
+			@media screen and (max-width: 300px) {
+				& {
 					overflow-x: hidden;
 				}
-				
 			}
 		}
 	}
-	
 }
-
-
-
-
-
-
-
-
-

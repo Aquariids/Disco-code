@@ -1,4 +1,5 @@
-@import './variables@media.scss';
+@import "./variables@media.scss";
+
 h2,
 h3,
 h4 {
@@ -9,13 +10,12 @@ h4 {
 	color: rgb(36 36 36 / 89%);
 }
 
-
-
-
 .page__text {
-	background-color: rgba(153, 153, 153, 0.495);
-	text-align: left;
 	padding: 5px;
+
+	text-align: left;
+
+	background-color: rgb(153 153 153 / 49.5%);
 }
 
 .page__title {
@@ -58,7 +58,6 @@ h4 {
 
 .page_body {
 	display: grid;
-
 }
 
 .page_body h1 {
@@ -70,8 +69,7 @@ h4 {
 	margin-bottom: 25px;
 }
 
-
-@media screen and (max-width:#{$screen_mobile_785}) {
+@media screen and (max-width: #{$screen_mobile_785}) {
 	.page_content h2 {
 		margin-top: 50px;
 	}
@@ -85,11 +83,7 @@ h4 {
 		gap: 15px;
 	}
 
-
-
-
 	.page_content span {
 		display: none;
 	}
-
 }

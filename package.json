@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "stylelint": "stylelint \"**/*.css\" --fix",
+    "stylelint": "stylelint \"**/*.scss\" --fix",
     "postbuild": "next-sitemap"
   },
   "dependencies": {

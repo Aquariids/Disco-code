@@ -1,5 +1,4 @@
-
-@import '../../../styles/variables@media.scss';
+@import "../../../styles/variables@media.scss";
 
 .loader {
 	position: absolute;
@@ -17,7 +16,6 @@
 	border-right: 3px solid transparent;
 	border-radius: 50%;
 }
-
 
 .fade {
 	animation: rotation 1s linear infinite;
@@ -39,8 +37,7 @@
 	}
 }
 
-
-@media screen and (max-width:985px) {
+@media screen and (max-width: 985px) {
 	.loader {
 		left: 0;
 
@@ -48,10 +45,10 @@
 		margin-left: 30px;
 	}
 
-	@media (max-width:#{$screen_mobile_785}) {
+	@media (max-width: #{$screen_mobile_785}) {
 		.loader {
 			left: 60px;
-	
+
 			width: 15px;
 			height: 15px;
 			margin-right: 15px;
@@ -59,14 +56,10 @@
 		}
 	}
 
-	@media (max-width:#{$screen_mobile_500}) {
+	@media (max-width: #{$screen_mobile_500}) {
 		.loader {
 			width: 10px;
 			height: 10px;
 		}
 	}
 }
-
-
-
-

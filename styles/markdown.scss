@@ -1,4 +1,4 @@
-@import './variables@media.scss';
+@import "./variables@media.scss";
 
 .img img {
 	max-width: 100%;
@@ -8,6 +8,7 @@
 .nonActive {
 	font-weight: 400;
 }
+
 .mdTitle {
 	margin-top: 50px;
 }
@@ -38,10 +39,12 @@
 }
 
 .md_date {
-	font-size: 15px;
-	display:flex;
+	display: flex;
 	justify-content: right;
+
 	margin-bottom: 50px;
+
+	font-size: 15px;
 }
 
 .container-img {
@@ -89,7 +92,7 @@ code {
 	border-radius: 10px;
 }
 
-@media screen and (max-width:#{$screen_mobile_785}) {
+@media screen and (max-width: #{$screen_mobile_785}) {
 	code {
 		border-radius: 0;
 	}
@@ -101,10 +104,10 @@ code {
 
 	.btnTop {
 		position: absolute;
+
 		display: flex;
-		
 	}
-	
+
 
 	.mdHead {
 		width: 100vw;
@@ -149,13 +152,9 @@ code {
 		margin: 0;
 	}
 
-
-	@media screen and (max-width:550px) {
+	@media screen and (max-width: 550px) {
 		.md_date {
 			justify-content: left;
 		}
-		
 	}
 }
-
-

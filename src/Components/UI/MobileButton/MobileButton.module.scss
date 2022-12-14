@@ -19,7 +19,6 @@
 	-webkit-tap-highlight-color: rgb(255 255 255 / 0%);
 	-webkit-tap-highlight-color: transparent;
 
-
 	&__content {
 		margin-right: auto;
 		margin-left: auto;
@@ -27,18 +26,16 @@
 		padding-left: 20px;
 	}
 
-	@media (max-width:#{$screen_mobile_785}) {
+	@media (max-width: #{$screen_mobile_785}) {
 		& {
 			display: flex;
 			align-items: center;
 			justify-content: center;
-	
+
 			cursor: pointer;
 		}
 	}
 }
-
-
 
 .svg {
 	display: flex;
@@ -63,7 +60,6 @@
 	transform: translate(0, 0) rotate(90deg);
 	fill: var(--main_color_links_pages);
 }
-
 
 .arrow_top_true svg {
 	transform: translate(0, 12px) rotate(-90deg);
@@ -93,5 +89,3 @@
 .arrows_ts svg {
 	fill: var(--ts_color_links_pages);
 }
-
-

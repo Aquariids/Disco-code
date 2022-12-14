@@ -1,101 +1,101 @@
-@import '../styles/variables@media.scss';
+@import "../styles/variables@media.scss";
 
 .page {
-	text-align: center;
 	display: grid;
 	justify-content: center;
+
+	text-align: center;
 	grid-template-columns: var(--grid_columns_wrapper_mobile);
 
 	& h1 {
 		display: flex;
 		justify-content: center;
-	
+
 		margin-bottom: 0;
-	
+
 		color: #FFF;
-	
+
 		font-size: 60px;
 	}
+
 	&__welcome {
 		min-height: 100vh;
+
 		&__title {
 			position: relative;
-		
+
 			display: flex;
 			align-items: center;
 			justify-content: center;
-		
+
 			width: 100vw;
 			min-height: 45vh;
 			margin-left: calc(-50vw + 50%);
-		
+
 			background-color: #000;
 			background-image: url(/images/animeBg/index.svg);
-		
+
 			background-repeat: no-repeat;
 			background-position: bottom right;
 			background-size: 23.3%;
-		
-			&__items{
+
+			&__items {
 				display: grid;
 				justify-content: center;
 				grid-template-columns: 1fr;
 			}
-	
+
 			&__textcode {
 				color: var(--basic_color);
-				
 			}
-	
+
 			&__subtitle {
 				display: inline-block;
-			
+
 				max-width: 100%;
 				margin-bottom: 25px;
 				padding-right: 5px;
-			
+
 				text-align: right;
-			
+
 				color: #FFF;
 				text-shadow: -3px 2px 3px  rgb(97 97 97 / 80.1%);
-			
+
 				font-size: 14px;
 				font-weight: 400;
 			}
-	
+
 			&__btnScroll {
 				width: 200px;
 				height: 40px;
 				margin: 0 auto;
-			
+
 				cursor: pointer;
 				transition: all 0.3s;
-			
+
 				color: #FFF;
-				border-radius: 5px;
 				border: none;
+				border-radius: 5px;
 				outline: none;
 				background-color: var(--basic_color);
-	
+
 				&:hover {
 					transition: all 0.3s;
-				
+
 					color: #000;
 					background-color: rgb(243 239 239);
 				}
 			}
-	
-			
-	
 		}
+
 		&__aboutSite {
 			display: grid;
 			align-items: center;
 			justify-content: center;
+
 			min-height: 55vh;
 			margin-top: -15px;
 			grid-template-rows: 1fr;
-			
 
 
 			&__content {
@@ -105,57 +105,63 @@
 
 			&__title {
 				margin-bottom: 20px;
-			
+
 				text-align: center;
-			
+
 				font-size: 28px;
 			}
-			
+
 			&__text {
 				margin-top: 0;
 				margin-right: 15px;
 				margin-left: 10px;
-			
+
 				text-align: left;
+
 				font-size: 20px;
 				font-weight: 400;
 				line-height: 1.7;
 			}
-
-			
-			
 		}
 	}
-	&__news {
 
+	&__news {
 		&__content {
 			display: grid;
-			grid-template-columns: 1fr;
-			list-style-type: none;
+
 			min-height: 10vh;
-			padding: 0;
 			margin-top: 0;
+			padding: 0;
+
+			list-style-type: none;
+			grid-template-columns: 1fr;
 		}
-		
+
 		&__item a {
-		color: #999;
-		font-weight: bold;
-		text-decoration: underline;
+			text-decoration: underline;
+
+			color: #999;
+
+			font-weight: bold;
 		}
+
 		&__item {
 			margin-bottom: 20px;
+
 			text-align: left;
 
 			& a:hover {
-				color:rgb(113, 96, 96);
+				color: rgb(113 96 96);
 			}
 		}
-		
+
 		&__title {
 			display: grid;
 			align-items: center;
+
 			margin: 0;
 			padding: 0;
+
 			text-align: center;
 			grid-template-columns: 1fr;
 			grid-template-rows: 150px;
@@ -164,126 +170,113 @@
 				margin: 0;
 				padding: 0;
 				padding-bottom: 16px;
+
 				border-bottom: 1px solid #999;
-			
 			}
 		}
-		
+
 
 		&__date {
+			display: flex;
+
 			margin-top: 10px;
 			margin-bottom: 10px;
+
 			font-size: 12px;
-			display: flex;
 		}
 	}
-
 
 	&__articles {
 		display: grid;
+
 		min-height: 60vh;
 	}
+
 	@media screen and (max-width: 1350px) {
 		&__welcome__aboutSite__text {
 			font-size: 16px;
 		}
+
 		&__welcome__aboutSite__content {
 			display: flex;
 			flex-direction: column;
+
 			margin-top: 10px;
 			margin-bottom: 10px;
 		}
-	
+
 		&__welcome__aboutSite__title {
 			padding-top: 20px;
-	
+
 			text-align: left;
 		}
+
 		@media screen and (max-width: 985px) {
-			&__welcome__title{
+			&__welcome__title {
 				background-image: none;
 			}
-	
-			@media screen and (max-width:#{$screen_mobile_785}) {
-				&__welcome{
+
+			@media screen and (max-width: #{$screen_mobile_785}) {
+				&__welcome {
 					min-height: auto;
 				}
+
 				&__welcome__title {
 					min-height: 45vh;
 				}
+
 				&__welcome__title__btnScroll {
 					display: none;
 				}
-	
+
 				&__welcome__aboutSite__text {
-					font-size: 16px;
 					margin-top: 20px;
-					
+
+					font-size: 16px;
 				}
-			
+
 				&__welcome__aboutSite__paragraphAboutMe {
 					margin-top: 10px;
 					padding: 5px;
-					
+
 					border-radius: 5px;
 					background-color: rgb(153 153 153 / 24.7%);
 				}
-	
+
 				&__welcome__aboutSite__paragraphAboutSite {
 					padding: 5px;
 				}
-			
+
 				&__welcome__aboutSite__containerAboutSite {
 					margin-bottom: 10px;
 					padding: 5px;
 				}
-			
+
 				&__welcome__aboutSite__title {
 					padding-top: 0;
 				}
-	
-				@media screen and (max-width:#{$screen_mobile_500}) {
+
+				@media screen and (max-width: #{$screen_mobile_500}) {
 					& h1 {
 						font-size: 40px;
 					}
+
 					&__welcome__title__subtitle {
 						font-size: 12px;
 					}
-	
-					&__welcome__aboutSite{
-						margin-top: 0px;
+
+					&__welcome__aboutSite {
+						margin-top: 0;
 					}
-	
-	
+
+
 					@media screen and (max-width: 320px) {
 						& h1 {
 							font-size: 30px;
 						}
-				
 					}
-					
 				}
-				
 			}
-			
 		}
-		
 	}
-	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

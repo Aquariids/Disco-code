@@ -1,4 +1,4 @@
-@import './variables@media.scss';
+@import "./variables@media.scss";
 
 .page_footer {
 	display: flex;
@@ -51,7 +51,7 @@
 	box-shadow: 0 0.7px 0 0;
 }
 
-@media screen and (max-width:#{$screen_mobile_785}) {
+@media screen and (max-width: #{$screen_mobile_785}) {
 	.mainFooter a:active {
 		color: var(--main_color_links_pages_mobile);
 	}
@@ -60,15 +60,15 @@
 		.page_footer {
 			flex-direction: column;
 		}
-	
+
 		.page_edit {
 			justify-content: left;
-	
+
 			margin-top: 50px;
 			margin-bottom: 60px;
 		}
 
-		@media screen and (max-width:#{$screen_mobile_500}) {
+		@media screen and (max-width: #{$screen_mobile_500}) {
 			.mainFooter a {
 				border-bottom: 1px solid var(--main_color_links_pages);
 				box-shadow: 0 0 0 0;
@@ -76,7 +76,3 @@
 		}
 	}
 }
-
-
-
-
