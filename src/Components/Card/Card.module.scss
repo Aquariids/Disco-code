@@ -30,11 +30,10 @@
 		margin-right: -5px;
 		transition: all 0.2s;	
 		
-		@media (max-width:400px) {
-			min-width: 100vw;
-			margin-left: calc(-50vw + 50%);
-			border-left: none;
-			border-right: none;
+		&:hover {
+			font-weight: 700;
+			transition: all 0.2s;	
+
 		}
 	}
 	
@@ -56,7 +55,6 @@
 		transition: all 0.2s;
 		background-size: contain;
 
-	
 	&__js {
 		color: #000;
 		background-image: url(/images/cards/js_card_bw.png);
@@ -175,7 +173,7 @@
 	
 	
 	
-		@media screen and (max-width:400px) {
+		@media screen and (max-width:#{$screen_mobile_400}) {
 			&__container{
 				min-width: 100vw;
 				margin-left: calc(-50vw + 50%);
@@ -186,6 +184,13 @@
 				border-right: none;
 			}
 
+			&__footer {
+				min-width: 100vw;
+				margin-left: calc(-50vw + 50%);
+				border-left: none;
+				border-right: none;
+			}
+			
 			
 			
 		}
