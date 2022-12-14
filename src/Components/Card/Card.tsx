@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import cn from 'classnames';
 import { ICard } from './Card.props';
 import s from './Card.module.scss';
@@ -6,6 +6,8 @@ import Link from 'next/link';
 const {card__footer, card__container, card__container__js, card__container__ts, card__container__next, card__container__react, card__title } = s;
 const Card = ({ title, color, url }: ICard) => {
 
+    const h2ref = useRef<number | any>(null);
+    
 
     const loadingCard = () => {
         localStorage.setItem('loading','loaded');
@@ -59,53 +61,94 @@ useEffect(():any => {
         
         
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    function addBacgroundActiveCard(e:any) {
-        const activeEl = e.target;
+    function addBacgroundActiveCard(e?:any) {
+        const activeEl = e.target && e.target;
 
-            if(activeEl && activeEl.classList.contains(card__container__js)) {
+            if(activeEl.classList.contains(card__container__js)) {
                 activeEl.classList.add(s.activeCardJs);
             }
-            else if(activeEl && activeEl.classList.contains(card__container__react)) {
+            else if(activeEl.classList.contains(card__container__react)) {
                 activeEl.classList.add(s.activeCardReact);
             }
-            else if(activeEl && activeEl.classList.contains(card__container__next)) {
+            else if(activeEl.classList.contains(card__container__next)) {
                 activeEl.classList.add(s.activeCardNextJs);
             }
-            else if(activeEl && activeEl.classList.contains(card__container__ts)) {
+            else if(activeEl.classList.contains(card__container__ts)) {
                 activeEl.classList.add(s.activeCardTS);
             } else  {
-                activeEl && activeEl.classList.add(s.activeCardBasic);
+                activeEl.classList.add(s.activeCardBasic);
             }
 
     }
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     function removeBacgroundActiveCard(e:any) {
 
-        const activeEl = e.target;
+        const activeEl = e.target && e.target;
 
-            if(activeEl && activeEl.classList.contains(card__container__js)) {
+            if(activeEl.classList.contains(card__container__js)) {
                 activeEl.classList.remove(s.activeCardJs);
             }
-            else if(activeEl && activeEl.classList.contains(card__container__react)) {
+            else if(activeEl.classList.contains(card__container__react)) {
                 activeEl.classList.remove(s.activeCardReact);
             }
-            else if(activeEl && activeEl.classList.contains(card__container__next)) {
+            else if(activeEl.classList.contains(card__container__next)) {
                 activeEl.classList.remove(s.activeCardNextJs);
             }
-            else if(activeEl && activeEl.classList.contains(card__container__ts)) {
+            else if(activeEl.classList.contains(card__container__ts)) {
                 activeEl.classList.remove(s.activeCardTS);
             }
             else  {
-                activeEl && activeEl.classList.remove(s.activeCardBasic);
+                activeEl.classList.remove(s.activeCardBasic);
             }
         
         
     }
+
+    function footerActiveAddCard() {
+        const activeEl = h2ref.current && h2ref.current;
+        if(activeEl.classList.contains(card__container__js)) {
+            activeEl.classList.add(s.activeCardJs);
+        }
+        else if(activeEl.classList.contains(card__container__react)) {
+            activeEl.classList.add(s.activeCardReact);
+        }
+        else if(activeEl.classList.contains(card__container__next)) {
+            activeEl.classList.add(s.activeCardNextJs);
+        }
+        else if(activeEl.classList.contains(card__container__ts)) {
+            activeEl.classList.add(s.activeCardTS);
+        } else  {
+            activeEl.classList.add(s.activeCardBasic);
+        }
+    }
+
+    function footerActiveRemoveCard() {
+        const activeEl = h2ref.current && h2ref.current;
+        if(activeEl.classList.contains(card__container__js)) {
+            activeEl.classList.remove(s.activeCardJs);
+        }
+        else if(activeEl.classList.contains(card__container__react)) {
+            activeEl.classList.remove(s.activeCardReact);
+        }
+        else if(activeEl.classList.contains(card__container__next)) {
+            activeEl.classList.remove(s.activeCardNextJs);
+        }
+        else if(activeEl.classList.contains(card__container__ts)) {
+            activeEl.classList.remove(s.activeCardTS);
+        }
+        else  {
+            activeEl.classList.remove(s.activeCardBasic);
+        }
+        
+        
+    }
+
+    
     return (
         <div className={s.card}>
             <div className={card__title}>{title} </div>
             <Link href={url}>
-                <div onMouseOver={addBacgroundActiveCard} onMouseOut={removeBacgroundActiveCard} className={cn(card__container, {
+                <div ref={h2ref} onMouseOver={addBacgroundActiveCard} onMouseOut={removeBacgroundActiveCard} className={cn(card__container, {
                     [card__container__js]: color === 'js',
                     [card__container__ts]: color === 'ts',
                     [card__container__next]: color === 'next',
@@ -113,7 +156,7 @@ useEffect(():any => {
                 })} >
                     
                 </div>
-                <div className={card__footer}>
+                <div onMouseOver={footerActiveAddCard} onMouseOut={footerActiveRemoveCard}  className={card__footer}>
                         Подробнее...
                     </div>
                     
