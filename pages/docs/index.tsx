@@ -1,4 +1,4 @@
-import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import rehypeSlug from 'rehype-slug';
@@ -8,7 +8,7 @@ import Head from 'next/head';
 import "highlight.js/styles/a11y-dark.css";
 import { POSTS_PATH_DOCS } from '../api/paths';
 import { withLayout } from '../../layout/Layout';
-import { getAllPosts, getPostFromSlug, getSlugs, PostMeta } from '../api/api';
+import { getPostFromSlug, PostMeta } from '../api/api';
 
 
 

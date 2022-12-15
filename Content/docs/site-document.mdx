@@ -1,8 +1,6 @@
 
 
-Здесь буду записывать свои костыли, что бы потом мог хотя бы разобраться сам.
-
-
+Здесь буду записывать свои костыли, что бы потом мог хотя бы разобраться сам. Так же сайт развивается и некоторый код здесь может устареть. Но суть будет одна.
 
 
 ## Api ##
@@ -150,21 +148,20 @@ const Layout = ({ children, }: LayoutProps): JSX.Element => {
     
     const router = useRouter();
     const r = router.asPath.split('/').length;
-    
+     
     return (
         <>
-
             <div className={cn(wrapper, {
-                [s.wrapper2]: (r >= 3) // тут все изи, немного меняю страницу, если мы находимся где то в постах уже
-                // wrapper2 - просто убирает путсую правую часть у сайта, что бы место под контент было больше, например не небольших экранах
-            })}>
-                <Header className={header} /> 
+                [s.wrapperWithoutRightSide]: (r >= 3) // тут все изи, немного меняю страницу, если мы находимся где то в постах уже
+                // wrapperWithoutRightSide - просто убирает путсую правую часть у сайта, что бы место под контент было больше, например не небольших экранах
+            })}> 
+                <Header className={header} />
                 <Sidebar className={sidebar} />
                 <div className={body}>
                     <div className={content}>
-                    <ListMobileMenu /> {// Ну тут кнопочка для мобилок
-                    }
+                    <ListMobileMenu />
                         {children}
+
                     </div>
                 </div>
                 <Footer className={footer} />
@@ -178,16 +175,17 @@ const Layout = ({ children, }: LayoutProps): JSX.Element => {
 ```
 С layout в принципе и так все понятно.
 ### Функция withLayout
-Тут же внутри `layout` у меня есть функция `withLayout`, которой мы оборачиваем все страницы. Это HOC функция.
+Тут же внутри `layout` у меня есть функция `withLayout`, которой мы оборачиваем все страницы. Это HOC - компонент высшего порядка.
 На наших страницах(page) с помощью `getStaticProps` мы будем получать данные с помощью функций из `api`,
 полученные данные со страниц, как раз таки будут попадать в `props` функции `withLayout`. А сама страница будет компонентом в `layout`
-которая внутри `layout` будет внутри `content` на месте `children`.
+которая внутри `layout` будет внутри `content` на месте `children`. Суть такая, что мы на странице получили данные, эти данные попали в withLayout, отсюда они попали в контекст и в саму страницу(компонент) возвращаему вместе с layout. 
+Мы могли бы передать пропсы в layout и просто перекидывать их в нужные компоненты, в сайдбар, из сайдабара в меню по js, там в другое меню и так далее. Но как мне кажется легче их получить через контекст без перекидываний.
 ```javaScript
 export const withLayout = <T extends Record<string, unknown> & IAppContext>(Component: FunctionComponent<T>) => { // сам компонент 
     return function withLayoutComponent(props: T): JSX.Element { // тута будут наши данные из страниц обернутых withLayout
         return ( // ну вот мы и оборачиваем весь layout, а значит, что может получить наши посты почти везде.
             <AppContextProvider AllThemePosts={props.AllThemePosts}>
-                <Layout {...props}>
+                <Layout >
                     <Component {...props} />
                 </Layout>
             </AppContextProvider>
