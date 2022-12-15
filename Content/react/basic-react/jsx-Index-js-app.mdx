@@ -91,7 +91,7 @@ category: 'basic-react'
 Здесь мы можем все удалить кроме `App.js` и `index.js`.<br/>
 Внутри `App.js` удаляем все ненужное и импортируем сам реакт. Реакт импортируется там, где используются компоненты.(Так было раньше, сейчас не обязательно)<br/>
 Так без лишних вещей будет выглядеть `App.js:`<br/>
-```javaScript
+```jsx
 import React from 'react';
 
 function App() {
@@ -106,7 +106,7 @@ export default App;
 ```
 ### index js
 Внутри `index.js` так же удаляем ненужное:<br/>
-```javaScript
+```jsx
 import React from 'react'; // импорт самого реакта и создания компоненты
 import ReactDOM from 'react-dom'; // здесь мы импортируем реакт дом, он посзволяет вмонтировать наш компонент в приложение
 import App from './App';
@@ -121,7 +121,7 @@ ReactDOM.render( // у реакт дом вызываем функцию render
 ## Что такое JSX 
 Jsx - это специальный синтаксис для написания `html` кода внутри `javaScript`. `Jsx` это некое расширение для `javaScript`.
 Мы в компоненте используем обычный `html` код, в свою очередь он компилируется в почти обычный `js` где мы использовали интерфейс `document`, а здесь с использованием библиотеки `React`. Именно поэтому если мы создаем компонент, то нам обязательно нужно будет импортировать реакт.(Так было раньше, сейчас можно не импортировать)
-```javaScript
+```jsx
 // JSX синтаксис
 
 ReactDOM.render(
@@ -131,7 +131,7 @@ ReactDOM.render(
 );
 ```
 Вот во что он превращается.
-```javaScript
+```jsx
 ReactDOM.render(
   React.createElement('div', {},
     React.createElement('button', {}, 'sss')),
@@ -141,7 +141,7 @@ ReactDOM.render(
 // Как видим лучше использовать JSX и не волноваться.
 ```
 В нашем случае, что бы все заработало, нужно `jsx` написать в отдельном файле, это и будет наш компонент. А потом вставить компонент в `ReactDOM.`
-```javaScript
+```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';

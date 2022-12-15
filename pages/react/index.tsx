@@ -4,13 +4,14 @@ import React from 'react';
 import { withLayout } from '../../layout/Layout';
 import MainMenuReact from '../../src/Components/Menu/MenuReact/MainMenuReact';
 import { getAllPosts } from '../api/api';
-import { POSTS_PATH_BASIC_REACT } from '../api/paths';
+import { POSTS_PATH_BASIC_REACT, POSTS_PATH_INTERVIEW_REACT } from '../api/paths';
 
 export const getStaticProps: GetStaticProps = async () => {
 
   const posts_Basic_React = getAllPosts(POSTS_PATH_BASIC_REACT).slice(0, 9).map(post => post.meta);
+  const posts_Interview_React = getAllPosts(POSTS_PATH_INTERVIEW_REACT).slice(0, 9).map(post => post.meta);
 
-  const AllThemePosts = { posts_Basic_React };
+  const AllThemePosts = { posts_Basic_React, posts_Interview_React };
 
   return {
     props: {

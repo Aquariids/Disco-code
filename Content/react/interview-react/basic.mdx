@@ -1,0 +1,67 @@
+---
+title: 'Разные базовые вопросы'
+id: 0
+category: 'interview-react'
+---
+
+
+## Контролируемый и неконтролируемый компнонет
+Или так же можно сказать управляемый и неуправляемый. Обычно это относится с такими html элементами как `input`, `textarea` и тому подобное.
+
+* Контролируемый компоннет - это компонент у которого его значение котролирует рекат. Если мы меняем состояние, то меняется и значение.
+```Jsx
+import React, { useState } from 'react'
+
+export function ControlledInput() {
+  const [name, setName] = useState('')
+  console.log(name); // при каждом вводе в инпут мы меняем стейт
+
+  function handleSubmit(event) { // отменяем стандартное поведение формы
+    event.preventDefault()
+    alert(name) // выведет стейт при отправке формы
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Name:&nbsp;
+        <input type="text" value={name} onChange = {e => setName(e.target.value)}  /> 
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+  )
+}
+```
+* Неконтролируемый компонет - это компонент который хранит свое состояние прямо в `html` коде. 
+```jsx
+import React, { useRef } from 'react'
+
+export function UncontrolledInput() {
+  
+  const nameInput = useRef() 
+
+  function handleSubmit(event) {
+    event.preventDefault()
+    // тут мы уже с помощью useRef будем получать значение прямо из элемента
+    alert(nameInput.current.value)
+  }
+  
+  function hundle() {
+    console.log(nameInput.current.value)
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Name:
+        <input type="text" ref={nameInput} onChange={hundle} defaultValue="" />
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+  )
+}
+```
+
+## Зачем нужны keys
+
+## Что такое render props

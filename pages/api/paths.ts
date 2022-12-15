@@ -7,6 +7,9 @@ export const POSTS_PATH_UNDER_THE_HOOD_JS = path.join(process.cwd(), `/Content/j
 export const POSTS_PATH_BASIC_TS = path.join(process.cwd(), `/Content/typescript/basic-ts`);
 export const POSTS_PATH_BASIC_NEXTJS = path.join(process.cwd(), `/Content/next-js/basic-next-js`);
 export const POSTS_PATH_BASIC_REACT = path.join(process.cwd(), `/Content/react/basic-react`);
+export const POSTS_PATH_INTERVIEW_REACT= path.join(process.cwd(), `/Content/react/interview-react`);
 export const POSTS_PATH_PARADIGMS_STYLE = path.join(process.cwd(), `/Content/paradigms/style`);
 export const POSTS_PATH_WEB = path.join(process.cwd(), `/Content/web`);
 export const POSTS_PATH_DOCS = path.join(process.cwd(), `/Content/docs`);
+
+
