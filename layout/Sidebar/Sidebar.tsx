@@ -10,7 +10,7 @@ const Sidebar = ({className, ...props}:SidebarProps):JSX.Element => {
     const router = useRouter(); 
     const r = router.asPath.split('/').length;
     
-
+    
     if(router.asPath.startsWith('/docs')) { // этой части на сайте нет, это для документации сайта
         return <MenuDocs/>;
     }

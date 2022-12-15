@@ -46,10 +46,11 @@ interface post {
 export const withLayout = <T extends Record<string, unknown> & IAppContext & post> (Component: FunctionComponent<T>) => {
     
     return function withLayoutComponent(props: T): JSX.Element {
+        console.log("(👍≖‿‿≖)👍 ✿ file: Layout.tsx:49 ✿ withLayoutComponent ✿ props", props)
         
         return (
             <AppContextProvider AllThemePosts={props.AllThemePosts} >
-                <Layout {...props}>
+                <Layout>
                     <Component {...props} />
                 </Layout>
             </AppContextProvider>
