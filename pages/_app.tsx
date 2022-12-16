@@ -73,6 +73,9 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
     smothScroll();
   }, [router]);
 
+
+
+  
   return (
     <>
       <Head>
