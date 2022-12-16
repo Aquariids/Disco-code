@@ -9,7 +9,7 @@ import Head from "next/head";
 import "highlight.js/styles/a11y-dark.css";
 import cn from "classnames";
 import { getAllPosts, getPostFromSlug, getSlugs, MDXPost } from "../../api/api";
-import { POSTS_PATH_ADVANCED_JS, POSTS_PATH_ALGORITHMS_JS, POSTS_PATH_BASIC_JS, POSTS_PATH_PRACTICE_JS, POSTS_PATH_UNDER_THE_HOOD_JS } from "../../api/paths";
+import { POSTS_PATH_ADVANCED_JS, POSTS_PATH_ALGORITHMS_JS, POSTS_PATH_BASIC_JS, POSTS_PATH_INTERVIEW_JS, POSTS_PATH_PRACTICE_JS, POSTS_PATH_UNDER_THE_HOOD_JS } from "../../api/paths";
 import Link from "next/link";
 import s from "../pageJs.module.scss";
 import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
@@ -127,7 +127,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const posts_Algorithms_Js = getAllPosts(POSTS_PATH_ALGORITHMS_JS).map((post) => post.meta);
   const posts_Practice_Js = getAllPosts(POSTS_PATH_PRACTICE_JS).map((post) => post.meta);
   const posts_Under_The_Hood_Js = getAllPosts(POSTS_PATH_UNDER_THE_HOOD_JS).map((post) => post.meta);
-  const AllThemePosts = {posts_Basic_Js,posts_Advanced_Js,posts_Algorithms_Js,posts_Practice_Js,posts_Under_The_Hood_Js};  
+  const posts_Interview_Js = getAllPosts(POSTS_PATH_INTERVIEW_JS).map((post) => post.meta);
+
+  const AllThemePosts = {posts_Basic_Js,posts_Advanced_Js,posts_Algorithms_Js,posts_Practice_Js,posts_Under_The_Hood_Js,posts_Interview_Js};  
 
   
 
