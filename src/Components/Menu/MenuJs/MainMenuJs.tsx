@@ -7,7 +7,7 @@ import { JsContextProps } from './postsJs.props';
 
 const MainMenuJs = (): JSX.Element => {
     const { AllThemePosts} = useContext(AppContext);
-    const {posts_Basic_Js,posts_Advanced_Js,posts_Algorithms_Js,posts_Practice_Js,posts_Under_The_Hood_Js}:JsContextProps<PostMeta[]> = AllThemePosts;
+    const {posts_Basic_Js,posts_Advanced_Js,posts_Algorithms_Js,posts_Practice_Js,posts_Under_The_Hood_Js,posts_Interview_Js}:JsContextProps<PostMeta[]> = AllThemePosts;
 
         return (
             <>
@@ -16,7 +16,8 @@ const MainMenuJs = (): JSX.Element => {
                 <Menu posts={posts_Algorithms_Js} title="Алгоритмы" page='js' />
                 <Menu posts={posts_Practice_Js} title="Практика & Webpack" page='js' />    
                 <Menu posts={posts_Under_The_Hood_Js} title="JavaScript под капотом" page='js' />                
-            
+                <Menu posts={posts_Interview_Js} title="Собеседование" page='js' />                
+
             </>
         );
     };

@@ -12,8 +12,10 @@ const ListMobileMenu = () => {
                 {router.asPath.startsWith('/js/algorithms-js')?<MobileModalMenu js="js"/>:<></>}
                 {router.asPath.startsWith('/js/practice-js')?<MobileModalMenu js="js"/>:<></>}
                 {router.asPath.startsWith('/js/under-the-hood-js')?<MobileModalMenu js="js"/>:<></>}
+                {router.asPath.startsWith('/js/interview-js')?<MobileModalMenu js="js"/>:<></>}
                 {router.asPath.startsWith('/ts/basic-ts')?<MobileModalMenu ts="ts"/>:<></>}
                 {router.asPath.startsWith('/react/basic-react')?<MobileModalMenu react="react"/>:<></>} 
+                {router.asPath.startsWith('/react/interview-react')?<MobileModalMenu react="react"/>:<></>} 
                 {router.asPath.startsWith('/paradigms/style')?<MobileModalMenu paradigms="paradigms"/>:<></>} 
                 {router.asPath.startsWith('/next-js/basic-next-js')?<MobileModalMenu nextJs='next-js'/>:<></>} 
 

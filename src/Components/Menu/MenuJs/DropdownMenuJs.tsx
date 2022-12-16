@@ -10,7 +10,7 @@ const DropdownMenuJs = (): JSX.Element => {
  
     const { AllThemePosts} = useContext(AppContext);
 
-    const {posts_Basic_Js,posts_Advanced_Js,posts_Algorithms_Js,posts_Practice_Js,posts_Under_The_Hood_Js}:JsContextProps<PostMeta[]> = AllThemePosts;
+    const {posts_Basic_Js,posts_Advanced_Js,posts_Algorithms_Js,posts_Practice_Js,posts_Under_The_Hood_Js,posts_Interview_Js}:JsContextProps<PostMeta[]> = AllThemePosts;
 
     return (
         <>
@@ -19,6 +19,8 @@ const DropdownMenuJs = (): JSX.Element => {
             <Menu posts={posts_Algorithms_Js} title="Алгоритмы" category='algorithms-js'  dropdown={true} page='js' />
             <Menu posts={posts_Practice_Js} title="Практика & Webpack" category='practice-js'  dropdown={true} page='js' />
             <Menu posts={posts_Under_The_Hood_Js} title="JavaScript под капотом" category='under-the-hood-js'  dropdown={true} page='js' />
+            <Menu posts={posts_Interview_Js} title="Собеседование" category='interview-js'  dropdown={true} page='js' />
+
         </>
     );
 };
