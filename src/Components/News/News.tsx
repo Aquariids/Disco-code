@@ -15,16 +15,15 @@ const News = () => {
     return (
         <div className={s.news}>
         <span className={s.news__title}> <h3>Что нового</h3> </span>
-        <div className={s.news__content}>
+        <ul className={s.news__content}>
             {
                 posts.map((post)=> {
                     return (
-                    <>
-                        <span key={post.id} className={s.news__item}>{post.body} <Link href={post.src}>{post.link}</Link><span className={s.news__date}>{post.date}</span></span>
-                    </>);
+                        <li key={post.id} className={s.news__item}>{post.body} <Link href={post.src}>{post.link}</Link><span className={s.news__date}>{post.date}</span></li>
+                    );
                 })
             }
-        </div>
+        </ul>
       </div>
     );
 };

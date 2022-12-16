@@ -72,7 +72,7 @@
 
 				cursor: pointer;
 				transition: all 0.3s;
-
+				font-size: 16px;
 				color: #FFF;
 				border: none;
 				border-radius: 5px;
@@ -92,6 +92,7 @@
 			display: grid;
 			align-items: center;
 			justify-content: center;
+			line-height: 1.7;
 
 			min-height: 55vh;
 			margin-top: -15px;
@@ -120,7 +121,6 @@
 
 				font-size: 20px;
 				font-weight: 400;
-				line-height: 1.7;
 			}
 		}
 	}

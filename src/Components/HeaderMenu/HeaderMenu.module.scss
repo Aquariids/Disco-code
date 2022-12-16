@@ -27,10 +27,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
-
+		text-align: center;
 		width: 100%;
-
-		font-size: 16px;
 	}
 
 
@@ -102,7 +100,7 @@
 				background-color: #FFF;
 				box-shadow: 0.5px 0.5px 1px rgb(112 111 111 / 91.1%);
 
-				font-size: 17px;
+				font-size: 16px;
 
 				&:first-child {
 					margin-top: 1px;
@@ -113,15 +111,15 @@
 		&__btn {
 			display: flex;
 			justify-content: flex-end;
-
+			
 			width: 100%;
 
 			button {
 				color: #FFF;
 				border: none;
 				background-color: transparent;
-
-				font-size: 15px;
+				font-weight: 500;
+				font-size: 14px;
 			}
 		}
 	}
@@ -129,7 +127,7 @@
 	&__github {
 		padding: 0;
 
-		font-size: 13px;
+		font-size: 14px;
 
 		a {
 			display: flex;

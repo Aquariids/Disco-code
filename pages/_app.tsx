@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
+import 'normalize.css/normalize.css';
 import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
