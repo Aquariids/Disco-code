@@ -9,6 +9,8 @@ const News = () => {
         {id: 3,body:`Добавлена новая статья о том как работают`, link:'web запросы и ответы', src:'js/practice-js/webpack', date: '30.11.2022'},
         {id: 4,body:`Закончил писать про`, link:'fetch & promise', src:'js/advanced-js/promise-fetch_api', date: '02.12.2022'},
         {id: 5,body:`Добавлен новый раздел "JavaScript под капотом" и первая статья о работе`, link:'движка в javaScript & JRE', src:'js/under-the-hood-js/engine', date: '7.12.2022'},
+        {id: 6,body:`Добавлена статья о работе`, link:'контекста выполнения & call stack ', src:'/js/under-the-hood-js/call-stack', date: '16.12.2022'},
+
 
 
       ]);
