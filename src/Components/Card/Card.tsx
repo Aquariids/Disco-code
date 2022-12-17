@@ -69,7 +69,7 @@ const Card = ({ title, color, url }: ICard) => {
                 removeBacgroundActiveCard();
             },250);
         }
-    });
+    },[]);
     return (
         <div className={s.card}>
             <div className={card__title}>{title} </div>
