@@ -68,11 +68,6 @@
 			margin-bottom: 60px;
 		}
 
-		@media screen and (max-width: #{$screen_mobile_500}) {
-			.mainFooter a {
-				border-bottom: 1px solid var(--main_color_links_pages);
-				box-shadow: 0 0 0 0;
-			}
-		}
+	
 	}
 }

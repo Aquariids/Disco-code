@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../../../context/app.context';
 import Menu from '../Menu';
-import { mobileMenuProps } from '../../mobileModalMenu/MobileModalMenu.props';
+import { mobileMenuProps } from '../../ListMobileMenu/mobileModalMenu/MobileModalMenu.props';
 import { PostMeta } from '../../../../pages/api/api';
 import { ReactContextProps } from './postsReact.props';
 const MobileMenuReact = ({ setMobile, mobile, }: mobileMenuProps): JSX.Element => {

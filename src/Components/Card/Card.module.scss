@@ -62,52 +62,30 @@
 		font-size: 25px;
 
 		&__js {
-			transition: all 0.2s;
-
-			color: #000;
 			background-image: url(/images/cards/js_card_bw.png);
-			background-repeat: no-repeat;
-			background-position-x: center;
-			background-position-y: bottom;
-			background-size: contain;
 		}
 
 
 
 		&__ts {
-			transition: all 0.2s;
-
-			color: #000;
 			background-image: url(/images/cards/ts_card_bw.png);
-			background-repeat: no-repeat;
-			background-position-x: center;
-			background-position-y: bottom;
-			background-size: contain;
 		}
 
 
 
 		&__next {
-			transition: all 0.2s;
-
-			color: #000;
 			background-image: url(/images/cards/nextjs_card_bw.png);
-			background-repeat: no-repeat;
-			background-position-x: center;
-			background-position-y: bottom;
-			background-size: contain;
 		}
 
 
 		&__react {
-			transition: all 0.2s;
-
-			color: #000;
 			background-image: url(/images/cards/react_card_bw.png);
-			background-repeat: no-repeat;
-			background-position-x: center;
-			background-position-y: bottom;
-			background-size: contain;
+		}
+
+		&__html {
+			background-image: url(/images/cards/htmlCss_card_bw.png);
+
+		
 		}
 	}
 
@@ -130,6 +108,11 @@
 	.activeCardTS {
 		background-color: var(--ts_color_links_pages);
 		background-image: url(/images/cards/ts_card_color.png);
+	}
+
+	.activeCardHtml {
+		background-color: var(--main_color_links_pages);
+		background-image: url(/images/cards/htmlCss_card_color.png);
 	}
 
 	.activeCardBasic {
@@ -163,6 +146,10 @@
 		&__container__ts {
 			background-color: var(--ts_color_links_pages);
 			background-image: url(/images/cards/ts_card_color.png);
+		}
+		&__container__html {
+			background-color: var(--main_color_links_pages);
+			background-image: url(/images/cards/htmlCss_card_color.png);
 		}
 
 

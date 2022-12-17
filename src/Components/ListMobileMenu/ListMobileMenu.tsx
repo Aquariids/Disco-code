@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import React from 'react';
-import MobileModalMenu from '../MobileModalMenu';
+import MobileModalMenu from './mobileModalMenu/MobileModalMenu';
 
 
 const ListMobileMenu = () => {
@@ -18,6 +18,8 @@ const ListMobileMenu = () => {
                 {router.asPath.startsWith('/react/interview-react')?<MobileModalMenu react="react"/>:<></>} 
                 {router.asPath.startsWith('/paradigms/style')?<MobileModalMenu paradigms="paradigms"/>:<></>} 
                 {router.asPath.startsWith('/next-js/basic-next-js')?<MobileModalMenu nextJs='next-js'/>:<></>} 
+                {router.asPath.startsWith('/html-css/html')?<MobileModalMenu htmlCss='html-css'/>:<></>} 
+
 
 
         </>

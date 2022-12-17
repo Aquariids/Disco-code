@@ -35,10 +35,5 @@
 		color: var(--js_color_links_pages_mobile);
 	}
 
-	@media screen and (max-width: #{$screen_mobile_500}) {
-		.footer a {
-			border-bottom: 1px solid var(--js_color_links_pages_mobile);
-			box-shadow: 0 0 0 0;
-		}
-	}
+
 }

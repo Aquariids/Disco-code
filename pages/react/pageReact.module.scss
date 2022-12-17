@@ -31,9 +31,4 @@
 	box-shadow: 0 0.7px 0 0;
 }
 
-@media (max-width: #{$screen_mobile_500}) {
-	.footer a {
-		border-bottom: 1px solid var(--react_color_links_pages);
-		box-shadow: 0 0 0 0;
-	}
-}
+

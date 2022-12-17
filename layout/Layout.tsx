@@ -8,7 +8,7 @@ import { AppContextProvider, IAppContext } from "../context/app.context";
 const { wrapper, header, sidebar, footer, body, content } = s;
 import cn from 'classnames';
 import { useRouter } from "next/router";
-import ListMobileMenu from "../src/Components/mobileModalMenu/ListMobileMenu/ListMobileMenu";
+import ListMobileMenu from "../src/Components/ListMobileMenu/ListMobileMenu";
 import { MDXPost } from "../pages/api/api";
 const Layout = ({ children, }: LayoutProps): JSX.Element => {
     

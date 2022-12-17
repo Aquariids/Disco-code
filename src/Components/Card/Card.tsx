@@ -3,7 +3,9 @@ import cn from 'classnames';
 import { ICard } from './Card.props';
 import s from './Card.module.scss';
 import Link from 'next/link';
-const {card__footer, card__container, card__container__js, card__container__ts, card__container__next, card__container__react, card__title } = s;
+const {card__footer, card__container, card__container__js,
+    card__container__ts, card__container__next, card__container__react, card__title,
+    card__container__html } = s;
 const Card = ({ title, color, url }: ICard) => {
 
     const h2ref = useRef<number | any>(null);
@@ -11,44 +13,13 @@ const Card = ({ title, color, url }: ICard) => {
 
     const loadingCard = () => {
         localStorage.setItem('loading','loaded');
+        setTimeout(()=> {
+            addBacgroundActiveCard();
+        },300);
 
-        const activeEl = document.querySelectorAll(`.${card__container}`);
-        activeEl.forEach((item)=> {
-            if(item && item.classList.contains(card__container__js)) {
-                item.classList.add(s.activeCardJs);
-                setTimeout(()=> {
-                    item.classList.remove(s.activeCardJs);
-                },200);
-
-            }
-            else if(item && item.classList.contains(card__container__react)) {
-                item.classList.add(s.activeCardReact);
-                setTimeout(()=> {
-                    item.classList.remove(s.activeCardReact);
-                },200);
-
-            }
-            else if(item && item.classList.contains(card__container__next)) {
-                item.classList.add(s.activeCardNextJs);
-                setTimeout(()=> {
-                    item.classList.remove(s.activeCardNextJs);
-                },200);
-
-            }
-            else if(item && item.classList.contains(card__container__ts)) {
-                item.classList.add(s.activeCardTS);
-                setTimeout(()=> {
-                    item.classList.remove(s.activeCardTS);
-                },200);
-
-            } else  {
-                item && item.classList.add(s.activeCardBasic);
-                setTimeout(()=> {
-                    item.classList.remove(s.activeCardBasic);
-                },200);
-            }
-
-        });
+        setTimeout(()=> {
+            removeBacgroundActiveCard();
+        },300);
     };
 
  
@@ -65,7 +36,11 @@ const Card = ({ title, color, url }: ICard) => {
         }
         else if(activeEl.classList.contains(card__container__ts)) {
             activeEl.classList.add(s.activeCardTS);
-        } else  {
+        } 
+        else if(activeEl.classList.contains(card__container__html)) {
+            activeEl.classList.add(s.activeCardHtml);
+        } 
+        else  {
             activeEl.classList.add(s.activeCardBasic);
         }
     }
@@ -84,6 +59,10 @@ const Card = ({ title, color, url }: ICard) => {
         else if(activeEl.classList.contains(card__container__ts)) {
             activeEl.classList.remove(s.activeCardTS);
         }
+
+        else if(activeEl.classList.contains(card__container__html)) {
+            activeEl.classList.remove(s.activeCardHtml);
+        } 
         else  {
             activeEl.classList.remove(s.activeCardBasic);
         }
@@ -108,6 +87,7 @@ const Card = ({ title, color, url }: ICard) => {
                     [card__container__ts]: color === 'ts',
                     [card__container__next]: color === 'next',
                     [card__container__react]: color === 'react',
+                    [card__container__html]: color === 'html',
                 })} >
                     
                 </div>

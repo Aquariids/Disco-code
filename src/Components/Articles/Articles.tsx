@@ -54,6 +54,12 @@ const Articles = ({ category }: articlesProps): JSX.Element => {
             title={"Web request & response"}
             url={"/web-request-response"}
           />
+
+          <Card
+            title={"Html & Css"}
+            url={"/html-css"}
+            color= {"html"}
+          />
         </div>
 
       </div>
