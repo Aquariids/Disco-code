@@ -9,9 +9,16 @@ const {card__footer, card__container, card__container__js,
 const Card = ({ title, color, url }: ICard) => {
 
     const h2ref = useRef<number | any>(null);
-    
 
+    const loadingCard = () => {
+        addBacgroundActiveCard();
+        setTimeout(()=> {
+            localStorage.setItem('preloadingCard','loaded');
+            removeBacgroundActiveCard();
+        },300);
+    };
 
+ 
     function addBacgroundActiveCard() {
         const activeEl = h2ref.current && h2ref.current;
         if(activeEl.classList.contains(card__container__js)) {
@@ -59,15 +66,11 @@ const Card = ({ title, color, url }: ICard) => {
         
     }
 
-    useEffect(():any => {
-
-        localStorage.setItem('loadingCard','loaded');
-        addBacgroundActiveCard();
-
-        if(localStorage.getItem('loadingCard') == 'loaded') {
-            setTimeout(()=> {
-                removeBacgroundActiveCard();
-            },250);
+    useEffect(() => {
+        if(localStorage.getItem('preloadingCard') == 'loaded') {
+            return;
+        } else {
+            loadingCard();
         }
     },[]);
     return (
