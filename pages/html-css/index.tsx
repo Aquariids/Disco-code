@@ -2,14 +2,14 @@ import type { GetStaticProps, NextPage } from "next";
 import React from "react";
 import { withLayout } from "../../layout/Layout";
 import { getAllPosts } from "../api/api";
-import {POSTS_PATH_HTML } from "../api/paths";
+import { POSTS_PATH_HTML } from "../api/paths";
 import Head from "next/head";
 import MainMenuHtmlCss from "../../src/Components/Menu/MenuHtml&css/MainMenuHtmlCss";
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts_Html = getAllPosts(POSTS_PATH_HTML).map((post) => post.meta);
 
-  const AllThemePosts = {posts_Html,};
+  const AllThemePosts = { posts_Html, };
   return {
     props: {
       AllThemePosts,
@@ -30,12 +30,12 @@ const Home: NextPage = (): JSX.Element => {
         <meta name="yandex-verification" content="a99ae512e4f1c330" />
         <meta
           name="description"
-          content={"Функциональное программирование, ООП, стили написания кода."}
+          content={"Css, html, grid, html теги, элементы."}
         />
-        <meta property="og:title" content="Парадигмы программирования" />
+        <meta property="og:title" content="Руководсвто по html & css" />
         <meta
           property="og:description"
-          content={"Функциональное программирование, ООП, стили написания кода."}
+          content={"Краткое руководство по html и css."}
         />
 
         <meta property="og:type" content="article" />
@@ -48,19 +48,18 @@ const Home: NextPage = (): JSX.Element => {
         <meta property="og:locale" content="ru_Ru" />
 
         <meta property="og:author" content="Дмитрий черномашенцев" />
-        <meta property="og:section" content="Paradigms" />
-        <meta property="og:tag" content="OOP, js, paradigms" />
+        <meta property="og:section" content="html, css" />
+        <meta property="og:tag" content="html,css,grid" />
       </Head>
 
       <div className="page_body">
-      <h1> Html & css </h1>
+        <h1> Мини руководство по Html & Css </h1>
 
         <div className="page_menu">
-        <p className="page__text">
+          <p className="page__text">
             Немного поговорим про структуру веб страниц и как их можно стилизовать.
-      </p>
-        <div className="page__title">Содержание</div>
-    <p> Материал дополняется и пишется</p>
+          </p>
+          <div className="page__title">Содержание</div>
           <MainMenuHtmlCss />
         </div>
       </div>

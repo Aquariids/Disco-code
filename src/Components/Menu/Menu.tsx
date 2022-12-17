@@ -100,9 +100,7 @@ const Menu = ({ title, category, dropdown, page, mobileMenu, setMobile, mobileTr
                         {posts && posts.map((post, index: number) => (
                             <li
                                 key={post.id ?? index}
-                                className={cn(s.link, s.main_menu__links, {
-                                    ['block']: post.category == 'html'
-                                })} >
+                                className={cn(s.link, s.main_menu__links)} >
                                 {router.pathname.startsWith(`/${page}`) ? <Link href={`/${page}/${post.category}/${post.slug}`}>{post.title}</Link> : ''}
                             </li>
                         ))}

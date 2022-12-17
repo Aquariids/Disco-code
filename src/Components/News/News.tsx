@@ -10,8 +10,7 @@ const News = () => {
         {id: 4,body:`Закончил писать про`, link:'fetch & promise', src:'js/advanced-js/promise-fetch_api', date: '02.12.2022'},
         {id: 5,body:`Добавлен новый раздел "JavaScript под капотом" и первая статья о работе`, link:'движка в javaScript & JRE', src:'js/under-the-hood-js/engine', date: '7.12.2022'},
         {id: 6,body:`Добавлена статья о работе`, link:'контекста выполнения & call stack ', src:'/js/under-the-hood-js/call-stack', date: '16.12.2022'},
-
-
+        {id: 7,body:`Создал новую тему "html & css" и добавил статью про`, link:'структуру веб страницы', src:'/html-css/html/html-page', date: '17.12.2022'},
 
       ]);
     return (

@@ -40,15 +40,15 @@ const PostPage: NextPage<Props> = ({
           <meta name="yandex-verification" content="a99ae512e4f1c330" />
           <meta
             name="description"
-            content={"Функциональное программирование, ООП, стили написания кода."}
+            content={"Html теги, html Элементы, html атрибуты"}
           />
           <meta
             property="og:description"
-            content={"Функциональное программирование, ООП, стили написания кода."}
+            content={"Краткое руководтство по html"}
           />
 
           <meta property="og:type" content="article" />
-          <meta property="og:url" content="https://discocode.ru/paradigms" />
+          <meta property="og:url" content="https://discocode.ru/html-css" />
           <meta
             property="og:image"
             content="/"
@@ -57,8 +57,8 @@ const PostPage: NextPage<Props> = ({
           <meta property="og:locale" content="ru_Ru" />
 
           <meta property="og:author" content="Дмитрий Черномашенцев" />
-          <meta property="og:section" content="Paradigms" />
-          <meta property="og:tag" content="OOP, js, paradigms" />
+          <meta property="og:section" content="Html" />
+          <meta property="og:tag" content="Html" />
         </Head>
 
         <AnimationContainer>
