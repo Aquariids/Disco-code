@@ -190,7 +190,8 @@
 }
 
 .footerWithoutRightSide {
-	display: flex;
+	display: grid;
+	
 
 	@media screen and (max-width: #{$screen_wrapper_without_right_side}) {
 		& {

@@ -30,7 +30,7 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
     };
     return (
         <div className={cn(header, {
-            [s.footerWithoutRightSide]: (r >= 3)
+            [s.headerWithoutRightSide]: (r >= 3)
         })} {...props}>
             <div className={header__content}>
                 <div className={header__logo}>

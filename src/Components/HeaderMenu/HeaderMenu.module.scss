@@ -176,7 +176,8 @@
 	}
 }
 
-.footerWithoutRightSide {
+.headerWithoutRightSide {
+	display: grid;
 	@media (max-width: #{$screen_wrapper_without_right_side}) {
 		& {
 			grid-template-columns: var(--grid_columns_wrapper_without_right_side);
