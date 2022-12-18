@@ -13,11 +13,17 @@ import { POSTS_PATH_ADVANCED_JS, POSTS_PATH_ALGORITHMS_JS, POSTS_PATH_BASIC_JS, 
 import Link from 'next/link';
 import s from '../pageJs.module.scss';
 import AnimationContainer from '../../../src/Components/AnimationContainers/AnimationContainer';
+import NoneFooter404 from '../../NoneFooter404';
 
 interface Props { post: MDXPost }
 
 const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
 
+    if(!post)  {
+        return (<NoneFooter404/>);
+    
+      }
+    
 
     return (
         <div className='page'>
