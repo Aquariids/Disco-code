@@ -19,10 +19,7 @@ interface Props { post: MDXPost }
 
 const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
 
-    if(!post)  {
-        return (<NoneFooter404/>);
-    
-      }
+
     
 
     return (
