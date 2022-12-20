@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../../../context/app.context';
 import { PostMeta } from '../../../../pages/api/api';
-import Menu from '../Menu';
+import MenuMainLinks from '../MenuMainLinks';
 import { ParadigmsContextProps } from './postsParadigms.props';
 
 const MainMenuParadigms = (): JSX.Element => {
@@ -11,7 +11,7 @@ const MainMenuParadigms = (): JSX.Element => {
 
         return (
             <>
-                <Menu posts={post_Style_Paradigms} title=" Стили написания" category='style' page='paradigms' />
+                <MenuMainLinks posts={post_Style_Paradigms} title=" Стили написания" category='style' page='paradigms' />
             </>
         );
     

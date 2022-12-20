@@ -9,7 +9,7 @@ import Head from 'next/head';
 import "highlight.js/styles/nord.css";
 import cn from 'classnames';
 import { getAllPosts, getPostFromSlug, getSlugs, MDXPost } from '../../api/api';
-import { POSTS_PATH_BASIC_REACT } from '../../api/paths';
+import { POSTS_PATH_BASIC_REACT, POSTS_PATH_INTERVIEW_REACT } from '../../api/paths';
 import Link from 'next/link';
 import s from './../pageReact.module.scss';
 import AnimationContainer from '../../../src/Components/AnimationContainers/AnimationContainer';
@@ -76,8 +76,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 
 
+    const posts_Interview_React = getAllPosts(POSTS_PATH_INTERVIEW_REACT).map((post) => post.meta);
     const posts_Basic_React = getAllPosts(POSTS_PATH_BASIC_REACT).map((post) => post.meta);
-    const AllThemePosts = { posts_Basic_React, };
+    const AllThemePosts = { posts_Interview_React,posts_Basic_React };
 
     return { props: { post: { source: mdxSource, meta }, AllThemePosts }, revalidate: 60 };
 

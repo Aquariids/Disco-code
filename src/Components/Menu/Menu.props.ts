@@ -1,12 +1,9 @@
 import { DetailedHTMLProps, HTMLAttributes, } from "react";
 import { PostMeta } from "../../../pages/api/api";
-import { mobileMenuProps } from "../ListMobileMenu/mobileModalMenu/MobileModalMenu.props";
-export interface IMenu extends  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, mobileMenuProps    {
+export interface IMenu extends  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>    {
     title:string,
     category?:string,
-    dropdown?:boolean,
     page:string,
     posts: PostMeta[]
-    
 }
 

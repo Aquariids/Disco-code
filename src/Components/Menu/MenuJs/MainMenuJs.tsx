@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../../../context/app.context';
 import { PostMeta } from '../../../../pages/api/api';
-import Menu from '../Menu';
+import MenuMainLinks from '../MenuMainLinks';
 import { JsContextProps } from './postsJs.props';
 
 
@@ -11,12 +11,12 @@ const MainMenuJs = (): JSX.Element => {
 
         return (
             <>
-                <Menu posts={posts_Basic_Js} title="Базовый JavaScript" page='js' />
-                <Menu posts={posts_Advanced_Js} title="Продвинутый JavaScript" page='js' />
-                <Menu posts={posts_Algorithms_Js} title="Алгоритмы" page='js' />
-                <Menu posts={posts_Practice_Js} title="Практика & Webpack" page='js' />    
-                <Menu posts={posts_Under_The_Hood_Js} title="JavaScript под капотом" page='js' />                
-                <Menu posts={posts_Interview_Js} title="Собеседование" page='js' />                
+                <MenuMainLinks posts={posts_Basic_Js} title="Базовый JavaScript" page='js' />
+                <MenuMainLinks posts={posts_Advanced_Js} title="Продвинутый JavaScript" page='js' />
+                <MenuMainLinks posts={posts_Algorithms_Js} title="Алгоритмы" page='js' />
+                <MenuMainLinks posts={posts_Practice_Js} title="Практика & Webpack" page='js' />    
+                <MenuMainLinks posts={posts_Under_The_Hood_Js} title="JavaScript под капотом" page='js' />                
+                <MenuMainLinks posts={posts_Interview_Js} title="Собеседование" page='js' />                
 
             </>
         );

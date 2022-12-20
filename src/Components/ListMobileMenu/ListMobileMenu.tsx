@@ -20,8 +20,6 @@ const ListMobileMenu = () => {
                 {router.asPath.startsWith('/next-js/basic-next-js')?<MobileModalMenu nextJs='next-js'/>:<></>} 
                 {router.asPath.startsWith('/html-css/html')?<MobileModalMenu htmlCss='html-css'/>:<></>} 
 
-
-
         </>
     );
 };

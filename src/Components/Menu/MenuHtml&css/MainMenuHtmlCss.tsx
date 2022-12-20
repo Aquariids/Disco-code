@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../../../context/app.context';
 import { PostMeta } from '../../../../pages/api/api';
-import Menu from '../Menu';
+import MenuMainLinks from '../MenuMainLinks';
 import { HtmlCssContextProps } from './postsHtmlCss.props';
 
 
@@ -11,7 +11,7 @@ const MainMenuHtmlCss = (): JSX.Element => {
 
         return (
             <>
-                <Menu posts={posts_Html} title="Html" page='html-css' />                
+                <MenuMainLinks posts={posts_Html} title="Html" page='html-css' />                
             </>
         );
     };

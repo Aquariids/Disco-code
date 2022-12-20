@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import {AppContext } from '../../../../context/app.context';
 import { PostMeta } from '../../../../pages/api/api';
-import Menu from '../Menu';
+import DropdownMenuLinks from '../DropdownMenuLinks';
 import { HtmlCssContextProps } from './postsHtmlCss.props';
 
 
@@ -12,7 +12,7 @@ const DropdownMenuHtmlCss = (): JSX.Element => {
 
     return (
         <>
-            <Menu posts={posts_Html} category="html" title="Html" dropdown={true} page='html-css' />
+            <DropdownMenuLinks posts={posts_Html} category="html" title="Html" page='html-css' />
         </>
     );
 };

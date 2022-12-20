@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../../../context/app.context';
 import { PostMeta } from '../../../../pages/api/api';
-import Menu from '../Menu';
+import MenuMainLinks from '../MenuMainLinks';
 import { TsContextProps } from './postsTs.props';
 
 const MainMenuTs = (): JSX.Element => {
@@ -11,7 +11,7 @@ const MainMenuTs = (): JSX.Element => {
 
         return (
             <>
-                <Menu posts={posts_Basic_Ts} title=" Основы typeScript" page='ts' />
+                <MenuMainLinks posts={posts_Basic_Ts} title=" Основы typeScript" page='ts' />
                 
             </>
         );

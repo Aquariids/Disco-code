@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../../../context/app.context';
 import { PostMeta } from '../../../../pages/api/api';
-import Menu from '../Menu';
+import MenuMainLinks from '../MenuMainLinks';
 import { NextJsContextProps } from './postsNextJs.props';
 
 
@@ -12,7 +12,7 @@ const MainMenuNextJs = (): JSX.Element => {
 
         return (
             <>
-                <Menu posts={posts_Basic_Next_Js} title="Основы nextJs" category='basic-next-js' page='next-js' />
+                <MenuMainLinks posts={posts_Basic_Next_Js} title="Основы nextJs" category='basic-next-js' page='next-js' />
             </>
         );
     
