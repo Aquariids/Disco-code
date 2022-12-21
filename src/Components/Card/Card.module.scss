@@ -87,6 +87,11 @@
 
 		
 		}
+
+		&__node {
+			background-image: url(/images/cards/nodejs_card_bw.png);
+		
+		}
 	}
 
 
@@ -108,6 +113,11 @@
 	.activeCardTS {
 		background-color: var(--ts_color_links_pages);
 		background-image: url(/images/cards/ts_card_color.png);
+	}
+
+	.activeCardNodeJs {
+		background-color: #6da72a;
+		background-image: url(/images/cards/nodejs_card_color.png);
 	}
 
 	.activeCardHtml {

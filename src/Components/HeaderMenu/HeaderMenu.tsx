@@ -24,6 +24,9 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
         if (router.asPath.startsWith('/next-js')) {
             return <Logo path='/next-js' src='/logo/nextjs_logo.svg' />;
         }
+        if (router.asPath.startsWith('/node-js')) {
+            return <Logo path='/next-js' src='/logo/nodeJs_logo.png' />;
+        }
         else {
             return <Logo path='/' src='/logo/disco.svg' />;
         }

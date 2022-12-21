@@ -5,7 +5,7 @@ import s from './Card.module.scss';
 import Link from 'next/link';
 const {card__footer, card__container, card__container__js,
     card__container__ts, card__container__next, card__container__react, card__title,
-    card__container__html } = s;
+    card__container__html,card__container__node } = s;
 const Card = ({ title, color, url }: ICard) => {
 
     const h2ref = useRef<number | any>(null);
@@ -36,6 +36,9 @@ const Card = ({ title, color, url }: ICard) => {
         else if(activeEl.classList.contains(card__container__html)) {
             activeEl.classList.add(s.activeCardHtml);
         } 
+        else if(activeEl.classList.contains(card__container__node)) {
+            activeEl.classList.add(s.activeCardNodeJs);
+        }
         else  {
             activeEl.classList.add(s.activeCardBasic);
         }
@@ -55,10 +58,13 @@ const Card = ({ title, color, url }: ICard) => {
         else if(activeEl.classList.contains(card__container__ts)) {
             activeEl.classList.remove(s.activeCardTS);
         }
-
         else if(activeEl.classList.contains(card__container__html)) {
             activeEl.classList.remove(s.activeCardHtml);
         } 
+
+        else if(activeEl.classList.contains(card__container__node)) {
+            activeEl.classList.remove(s.activeCardNodeJs);
+        }
         else  {
             activeEl.classList.remove(s.activeCardBasic);
         }
@@ -83,6 +89,7 @@ const Card = ({ title, color, url }: ICard) => {
                     [card__container__ts]: color === 'ts',
                     [card__container__next]: color === 'next',
                     [card__container__react]: color === 'react',
+                    [card__container__node]: color === 'node',
                     [card__container__html]: color === 'html',
                 })} >
                     

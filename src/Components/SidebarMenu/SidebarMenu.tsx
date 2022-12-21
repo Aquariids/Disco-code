@@ -7,6 +7,7 @@ import DropdownMenuTs from "../Menu/MenuTs/DropdownMenuTs";
 import DropdownMenuReact from "../Menu/MenuReact/DropdownMenuReact";
 import DropdownMenuParadigms from "../Menu/MenuParadigms/DropdownMenuParadigms";
 import DropdownMenuHtmlCss from "../Menu/MenuHtml&css/DropdownMenuHtmlCss";
+import DropdownMenuNodeJs from "../Menu/MenuNodeJs/DropdownMenuNodeJs";
 
 const SidebarMenu = (): JSX.Element => {
 
@@ -66,6 +67,14 @@ const SidebarMenu = (): JSX.Element => {
         );
     }
 
+    if (router.pathname.startsWith('/node-js')) {
+        return (
+            <nav className={s.nav_menu}>
+                <DropdownMenuNodeJs />
+            </nav>
+        );
+    }
+
     if (router.pathname.startsWith('/html-css')) {
         return (
             <nav className={s.nav_menu}>
@@ -73,6 +82,8 @@ const SidebarMenu = (): JSX.Element => {
             </nav>
         );
     }
+
+    
 
     else {
         return (
