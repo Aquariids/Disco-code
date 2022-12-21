@@ -42,7 +42,7 @@ const DropdownMenuLinks = ({ title, category, page,  posts, ...props }: IMenu): 
                                 [s.active_ts]: post.slug === checkActiveLink && router.pathname.startsWith('/ts'),
                                 [s.active_react]: post.slug === checkActiveLink && router.pathname.startsWith('/react'),
                             })} >
-                            {router.pathname.startsWith(`/${page}`) ? <Link href={`/${page}/${post.category}/${post.slug}`}>{post.title}</Link> : ''}
+                            {router.pathname.startsWith(`/${page}`) && <Link href={`/${page}/${post.category}/${post.slug}`}>{post.title}</Link>}
                         </li>
                     ))}
                 </ul>)}

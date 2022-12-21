@@ -1,1 +1,1 @@
-export type mobileModalMenuProps = { page:'ts' | 'js' | 'react' | 'paradigms' | 'next-js' | 'html-css'; }
+export type mobileModalMenuProps = { page:'ts' | 'js' | 'react' | 'paradigms' | 'next-js' | 'html-css'; };
