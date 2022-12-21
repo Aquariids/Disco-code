@@ -11,7 +11,7 @@ import MobileMenuNextJs from '../../Menu/MenuNextJs/MobileMenuNextJs';
 import MobileMenuHtmlCss from '../../Menu/MenuHtml&css/MobileMenuHtmlCss';
 import { MobileContext } from '../../../../context/app.context';
 
-const mobileModalMenu = ({js,ts,react,paradigms,nextJs,htmlCss}:mobileModalMenuProps) => {
+const mobileModalMenu = ({page}:mobileModalMenuProps) => {
     const [mobile, setMobile] = useState<boolean>(false);
     const propsMobile = [mobile, setMobile];
   
@@ -21,12 +21,12 @@ const mobileModalMenu = ({js,ts,react,paradigms,nextJs,htmlCss}:mobileModalMenuP
             <div className={cn(s.modal, {
                 [s.modal_true]: mobile === true
             })}>
-                {js === 'js'? <MobileMenuJs />:<></>}
-                {ts === 'ts'? <MobileMenuTs />:<></>}
-                {react === 'react'? <MobileMenuReact />:<></>}
-                {nextJs === 'next-js'? <MobileMenuNextJs/>:<></>}
-                {paradigms === 'paradigms'? <MobileMenuParadigms  />:<></>}
-                {htmlCss === 'html-css'? <MobileMenuHtmlCss />:<></>}
+                {page === 'js'? <MobileMenuJs />:<></>}
+                {page === 'ts'? <MobileMenuTs />:<></>}
+                {page === 'react'? <MobileMenuReact />:<></>}
+                {page === 'next-js'? <MobileMenuNextJs/>:<></>}
+                {page === 'paradigms'? <MobileMenuParadigms  />:<></>}
+                {page === 'html-css'? <MobileMenuHtmlCss />:<></>}
 
 
             </div>
