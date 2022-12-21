@@ -21,12 +21,12 @@ const mobileModalMenu = ({page}:mobileModalMenuProps) => {
             <div className={cn(s.modal, {
                 [s.modal_true]: mobile === true
             })}>
-                {page === 'js'? <MobileMenuJs />:<></>}
-                {page === 'ts'? <MobileMenuTs />:<></>}
-                {page === 'react'? <MobileMenuReact />:<></>}
-                {page === 'next-js'? <MobileMenuNextJs/>:<></>}
-                {page === 'paradigms'? <MobileMenuParadigms  />:<></>}
-                {page === 'html-css'? <MobileMenuHtmlCss />:<></>}
+                {page === 'js' && <MobileMenuJs />}
+                {page === 'ts' && <MobileMenuTs />}
+                {page === 'react' && <MobileMenuReact />}
+                {page === 'next-js' && <MobileMenuNextJs/>}
+                {page === 'paradigms' && <MobileMenuParadigms/>}
+                {page === 'html-css' && <MobileMenuHtmlCss />}
 
 
             </div>
