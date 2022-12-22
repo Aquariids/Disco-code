@@ -8,7 +8,7 @@ const path = require('path');
 
 
 
-const createMenu =  ({theme, posts,page}) => {
+const createMenu = ({ theme, posts, page }) => {
     const themePosts = posts.post.map(el => {
         return `posts_${el}`;
     });
@@ -17,14 +17,14 @@ const createMenu =  ({theme, posts,page}) => {
         return `posts_${element}:T`;
     });
 
-    const dropDownLinks = posts.post.map((el,i) => {
+    const dropDownLinks = posts.post.map((el, i) => {
         return `
         <DropdownMenuLinks posts={posts_${el}} title='${posts.title[i]}' category='${posts.category[i]}' page='${page}'/>`;
     });
 
-   
 
-    
+
+
 
     const dropdownComponent = `
 import React, { useContext } from 'react';
@@ -50,7 +50,7 @@ const DropdownMenu${theme} = (): JSX.Element => {
 export default DropdownMenu${theme};
     `;
 
-    const mainLinks = posts.post.map((el,i) => {
+    const mainLinks = posts.post.map((el, i) => {
         return `
         <MenuMainLinks posts={posts_${el}} title='${posts.title[i]}' category='${posts.category[i]}' page='${page}'/>`;
     });
@@ -79,7 +79,7 @@ const MainMenu${theme} = (): JSX.Element => {
 export default MainMenu${theme};
     `;
 
-    const mobileLinks = posts.post.map((el,i) => {
+    const mobileLinks = posts.post.map((el, i) => {
         return `
         <MenuMobileLinks posts={posts_${el}} title='${posts.title[i]}' category='${posts.category[i]}' page='${page}'/>`;
     });
@@ -107,41 +107,49 @@ const MobileMenu${theme} = (): JSX.Element => {
 
 export default MobileMenu${theme};
     `;
-    
 
-    
-    
+
+
+
     // eslint-disable-next-line no-undef
-    fs.mkdirSync(path.resolve(__dirname,'src','Components','Menu',`Menu${theme}`));
-    fs.writeFile(path.resolve(__dirname,'src','Components','Menu',`Menu${theme}`, `DropdownMenu${theme}.tsx`),`${dropdownComponent}`, ()=> {
-    
+    fs.mkdirSync(path.resolve(__dirname,'src','Components', 'Menu', `Menu${theme}`));
+    fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `DropdownMenu${theme}.tsx`), `${dropdownComponent}`, () => {
+
     });
-    fs.writeFile(path.resolve(__dirname,'src','Components','Menu',`Menu${theme}`, `MainMenu${theme}.tsx`),`${mainComponent}`, ()=> {
-       
+    fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `MainMenu${theme}.tsx`), `${mainComponent}`, () => {
+
     });
-    fs.writeFile(path.resolve(__dirname,'src','Components','Menu',`Menu${theme}`, `MobileMenu${theme}.tsx`),`${mobileComponent}`, ()=> {
-       
+    fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `MobileMenu${theme}.tsx`), `${mobileComponent}`, () => {
+
     });
 
-    fs.writeFile(path.resolve(__dirname,'src','Components','Menu',`Menu${theme}`, `posts${theme}.props.ts`),`export interface ${theme}ContextProps<T> {${propsPosts}}`, ()=> {
-        
-});
-    
+    fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `posts${theme}.props.ts`), `export interface ${theme}ContextProps<T> {${propsPosts}}`, () => {
+
+    });
+
 
 };
 
+
+
 // Указываем названи еглавной темы например : Js,NextJs,React - на выходе у папок будет MenuJs, MenuNextJs, MenuReact.
 const theme = 'React';  // если это файлы то на выходе будет DropdownMenuJs,DropdownMenuNextJs и так далее.
-const post = ['Basic_React','Interview_React']; // посты которые получаем из контекста. на выходе будет posts_Basic_Nest_Js и тд
-const category = ['basic-react','interview-react']; // категория темы. Стоят на каждой mdx странице.
-const title = ['Базовые темы react','Собеседование']; // тайтл для  подписки категории
+const post = ['Basic_React', 'Interview_React']; // посты которые получаем из контекста. на выходе будет posts_Basic_Nest_Js и тд
+const category = ['basic-react', 'interview-react']; // категория темы. Стоят на каждой mdx странице.
+const title = ['Базовые темы react', 'Собеседование']; // тайтл для  подписки категории
 const page = 'react'; // главная страница темы. Например js,react,next-js
-createMenu({theme, posts:{
-    post,
-    category,
-    title,
 
-},page});
+
+// создаем папку с тремя компонентами для меню в сайдбаре, меню основого и мобильного меню. По пути src/Components/Menu
+// что бы ручками меньше работать мне при создании новой темы на сайте.
+createMenu({
+    theme, posts: {
+        post,
+        category,
+        title,
+
+    }, page
+});
 
 
 
