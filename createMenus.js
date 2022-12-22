@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-var-requires */
 // eslint-disable-next-line no-undef
 const fs = require('fs');
@@ -112,21 +111,22 @@ export default MobileMenu${theme};
 
 
     // eslint-disable-next-line no-undef
-    fs.mkdirSync(path.resolve(__dirname,'src','Components', 'Menu', `Menu${theme}`));
-    fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `DropdownMenu${theme}.tsx`), `${dropdownComponent}`, () => {
 
-    });
-    fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `MainMenu${theme}.tsx`), `${mainComponent}`, () => {
 
-    });
-    fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `MobileMenu${theme}.tsx`), `${mobileComponent}`, () => {
+    const createAllMenus = async () => {
+        return new Promise((res) => {
+            fs.mkdirSync(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`));
+            res();
+        }).then(() => {
+            fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `DropdownMenu${theme}.tsx`), `${dropdownComponent}`, () => { });
+            fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `MainMenu${theme}.tsx`), `${mainComponent}`, () => { });
+            fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `MobileMenu${theme}.tsx`), `${mobileComponent}`, () => { });
+            fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `posts${theme}.props.ts`), `export interface ${theme}ContextProps<T> {${propsPosts}}`, () => { });
+        });
+    };
 
-    });
 
-    fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `posts${theme}.props.ts`), `export interface ${theme}ContextProps<T> {${propsPosts}}`, () => {
-
-    });
-
+    createAllMenus();
 
 };
 
@@ -150,11 +150,3 @@ createMenu({
 
     }, page
 });
-
-
-
-
-
-// const createPagePosts = (posts) => {
-//     fs.path.re
-// }
