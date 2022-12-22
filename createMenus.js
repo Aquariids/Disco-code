@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-var-requires */
 // eslint-disable-next-line no-undef
 const fs = require('fs');
@@ -117,16 +118,18 @@ export default MobileMenu${theme};
         return new Promise((res) => {
             fs.mkdirSync(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`));
             res();
-        }).then(() => {
-            fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `DropdownMenu${theme}.tsx`), `${dropdownComponent}`, () => { });
-            fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `MainMenu${theme}.tsx`), `${mainComponent}`, () => { });
-            fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `MobileMenu${theme}.tsx`), `${mobileComponent}`, () => { });
-            fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `posts${theme}.props.ts`), `export interface ${theme}ContextProps<T> {${propsPosts}}`, () => { });
         });
     };
 
 
-    createAllMenus();
+    createAllMenus().then(() => {
+        fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `DropdownMenu${theme}.tsx`), `${dropdownComponent}`, () => { });
+        fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `MainMenu${theme}.tsx`), `${mainComponent}`, () => { });
+        fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `MobileMenu${theme}.tsx`), `${mobileComponent}`, () => { });
+        fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `posts${theme}.props.ts`), `export interface ${theme}ContextProps<T> {${propsPosts}}`, () => { });
+    }).catch(err => {
+        console.log('ПАПКА УЖЕ ПОХОЖЕ ЕСТЬ');
+    });
 
 };
 
