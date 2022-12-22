@@ -116,13 +116,13 @@ export default MobileMenu${theme};
 
     const createAllMenus = async () => {
         return new Promise((res) => {
-            fs.mkdirSync(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`));
+            fs.mkdirSync(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`)); // папку делаем
             res();
         });
     };
 
 
-    createAllMenus().then(() => {
+    createAllMenus().then(() => { // после создания папки делаем файлы внутри
         fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `DropdownMenu${theme}.tsx`), `${dropdownComponent}`, () => { });
         fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `MainMenu${theme}.tsx`), `${mainComponent}`, () => { });
         fs.writeFile(path.resolve(__dirname, 'src', 'Components', 'Menu', `Menu${theme}`, `MobileMenu${theme}.tsx`), `${mobileComponent}`, () => { });
