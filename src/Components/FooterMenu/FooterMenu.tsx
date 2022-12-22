@@ -31,8 +31,10 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
                             <li className={s.footer__item}><Link href={'/react/basic-react/react-single-page-app'}> Базовый React </Link></li>
                             <li className={s.footer__item}><Link href={'/ts/basic-ts/installation'}>Основы typeScript</Link></li>
                             <li className={s.footer__item}><Link href={'/next-js/basic-next-js/create-next-app'}>Начало работы с next.js</Link></li>
+                            <li className={s.footer__item}><Link href={'/node-js/basic-node-js/npm'}>Фундаментальный node.js</Link></li>
                             <li className={s.footer__item}><Link href={'/paradigms/style/imperative-and-declarative'}>Стили написания кода</Link></li>
                             <li className={s.footer__item}><Link href={'/web-request-response'}>Как работает web - request & response</Link></li>
+                            <li className={s.footer__item}><Link href={'/html-css/html/html-page'}>Коротко про html & css</Link></li>
 
 
                         </ul>
@@ -43,7 +45,9 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
                         <ul className={s.footer__navList} style={{ listStyleType: 'none' }}>
                             <li className={s.footer__item}><a href="mailto:favoritePonyville@gmail.com">FavoritePonyville@gmail.com  </a> <LinkA /></li>
                             <li className={s.footer__item}><a target={"_blank"} href={'https://github.com/Aquariids'}>Github  </a> <LinkA /></li>
-                            <li className={s.footer__item}><a target={"_blank"} href={'https://t.me/Aquariida'}>Телеграм  </a> <LinkA /></li>
+                            <li className={s.footer__item}><a target={"_blank"} href={'https://t.me/Aquariida'}>Телеграм </a> <LinkA /></li>
+                            <li className={s.footer__item}><a target={"_blank"} href={'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D1%87%D0%B5%D1%80%D0%BD%D0%BE%D0%BC%D0%B0%D1%88%D0%B5%D0%BD%D1%86%D0%B5%D0%B2-1b439825b/'}>Linkedin  </a> <LinkA /></li>
+
                         </ul>
                     </div>
 
