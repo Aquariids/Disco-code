@@ -16,8 +16,7 @@ export const POSTS_PATH_REACT = path.join(process.cwd(), `/Content/react`);
 export const POSTS_PATH_PARADIGMS = path.join(process.cwd(), `/Content/paradigms`);
 
 ```
-`process.cwd()` - Этот метод возвращается текущий рабочий каталог.
-Все это мутные штуки из `node js`. Подробно в этом разбираться мне тяжело, но суть именно такая, что таким образом мы полностью получаем путь к нашим файлам, вместе с рабочим каталогом<br/>
+`process.cwd()` - Этот метод возвращается текущий рабочий каталог. Таким образом мы полностью получаем путь к нашим файлам, вместе с рабочим каталогом<br/>
 Например:<br/>
  С методом `process.cwd()`
 
@@ -38,7 +37,7 @@ console.log(POSTS_PATH_REACT); // \Content\react
 
 ```javaScript
 import path from "path"; // используется для работы с путями файлов
-import fs from "fs"; // используетс для чтения файлов
+import fs from "fs"; // используетс для работы с  файлами
 import { sync } from "glob"; // с помощью этой функции мы получаем все наши mdx файлы по url
 import matter from "gray-matter"; // об этом будет ниже.
 ```
@@ -76,7 +75,7 @@ export const getPostFromSlug = (slug: string,url: string): Post => {
         
     const postPath = path.join(url, `${slug}.mdx`); // из пути и имени создаем полный путь к файлу
 
-    const source = fs.readFileSync(postPath); // тут мы читаем все наши файлы и получаем весь наш контент из mdx файла в байтах
+    const source = fs.readFileSync(postPath); // тут мы читаем все наши файлы и получаем весь наш контент из mdx файла в буфере
     // если добавить опцию в виде стандарта для кодировки, то тогда получим нормальный текст, Для этого добавляем опцию fs.readFileSync(postPath,{encoding:'utf8'}) 
     
     const { content, data } = matter(source); // я использую метод matter, поэтому мне не нужно добавлять кодировку выше. 
