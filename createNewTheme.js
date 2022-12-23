@@ -23,6 +23,8 @@ const textIndexPage = `
 `;
 
 
+
+// создаем пути в api/paths.ts для контента
 const createPATHS = async () => {
 
   const urlPathsExport = urlPaths.map((item,i) => {
@@ -38,6 +40,10 @@ export const ${pathPosts[i]} = path.join(process.cwd(), '${item}');`
 }
 
 createPATHS();
+
+
+
+// создаем страницу index и динамические страницы под каждую категорию
 const createPages = async () => {
   const PATH = pathPosts.map((item, i) => {
     return item;
@@ -289,6 +295,10 @@ export default withLayout(Home);
 createPages();
 
 
+
+
+
+// создаем папку с тремя компонентами для меню в сайдбаре, меню основого и мобильного меню. По пути src/Components/Menu
 const createMenu = ({ theme, posts, page }) => {
   const themePosts = posts.post.map(el => {
     return `posts_${el}`;
@@ -419,9 +429,6 @@ export default MobileMenu${theme};
 
 
 
-
-// создаем папку с тремя компонентами для меню в сайдбаре, меню основого и мобильного меню. По пути src/Components/Menu
-// что бы ручками меньше работать мне при создании новой темы на сайте.
 createMenu({
   theme, posts: {
     post,
