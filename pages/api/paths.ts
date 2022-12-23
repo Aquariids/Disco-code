@@ -16,3 +16,6 @@ export const POSTS_PATH_WEB = path.join(process.cwd(), `/Content/web`);
 export const POSTS_PATH_DOCS = path.join(process.cwd(), `/Content/docs`);
 
 
+
+export const POSTS_PATH_BASIC_DIMANLOX = path.join(process.cwd(), '/Content/diman-lox/basic-diman-lox');
+export const POSTS_PATH_ADVANCED_DIMANLOX = path.join(process.cwd(), '/Content/diman-lox/interview-diman-lox');
