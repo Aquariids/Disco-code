@@ -6,16 +6,16 @@ const fs = require('fs');
 const path = require('path');
 
 // Указываем названи еглавной темы например : Js,NextJs,React - на выходе у папок будет MenuJs, MenuNextJs, MenuReact.
-const theme = 'React';  // если это файлы то на выходе будет DropdownMenuJs,DropdownMenuNextJs и так далее.
-const post = ['Basic_React', 'Interview_React']; // посты которые получаем из контекста. на выходе будет posts_Basic_Nest_Js и тд
-const category = ['basic-react', 'interview-react']; // категория темы. Стоят на каждой mdx странице.
-const title = ['Базовые темы react', 'Собеседование']; // тайтл для  подписки категории
+const theme = 'NestJs';  // если это файлы то на выходе будет DropdownMenuJs,DropdownMenuNextJs и так далее.
+const post = ['Basic_Nest_Js', 'Advanced_Nest_Js']; // посты которые получаем из контекста. на выходе будет posts_Basic_Nest_Js и тд
+const category = ['basic-nest-js', 'interview-nest-js']; // категория темы. Стоят на каждой mdx странице.
+const title = ['Базовые темы nestJs', 'Собеседование']; // тайтл для  подписки категории
 const page = 'nest-js'; // главная страница темы. Например js,react,next-js
 const idDynamicPage = 'nest'; // айдишник для динамических страниц на выходе у страниц выглядит так [nest]
 // порядок путей постов очень важен. Первый будет отрисован в первой папке, второй во второй и так далее. Поэтому если у нас категория basic идет первой, значит и путь для этой котегории должен идти первым
 const pathPosts = ['POSTS_PATH_BASIC_NESTJS', 'POSTS_PATH_ADVANCED_NESTJS']; // пути до постов
-const urlPaths = ['/Content/docs', '/Content/hello'] // конкретный путь до контента, в итоге будет так  export const POSTS_PATH_BASIC_NESTJS = path.join(process.cwd(), '/Content/docs');
-const titleIndexPage = 'Онлайн руководство по React';
+const urlPaths = [`/Content/${page}/${category[0]}`, `/Content/${page}/${category[1]}`]; // конкретный путь до контента, в итоге будет так  export const POSTS_PATH_BASIC_NESTJS = path.join(process.cwd(), '/Content/docs');
+const titleIndexPage = 'Онлайн руководство по NestJs';
 const textIndexPage = ` 
 Познакомимся с таким javaScript фреймворком как next.js.
 Узнаем, что это за рендеринг такой SSR и SSG. Посмотрим как работают такие сайты как этот.
@@ -24,6 +24,16 @@ const textIndexPage = `
 
 
 
+
+// папки под контент для mdx файлов
+const createFolderContent =  () => {
+  for (let i = 0; i < category.length; i++) {
+           fs.mkdirSync(path.resolve(__dirname, 'Content', `${page}`, `${category[i]}`), { recursive: true });
+          }
+  
+};
+
+createFolderContent();
 // создаем пути в api/paths.ts для контента
 const createPATHS = async () => {
 
@@ -37,7 +47,7 @@ export const ${pathPosts[i]} = path.join(process.cwd(), '${item}');`
 
 
     
-}
+};
 
 createPATHS();
 
