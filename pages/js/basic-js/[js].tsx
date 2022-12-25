@@ -13,6 +13,7 @@ import { POSTS_PATH_ADVANCED_JS, POSTS_PATH_ALGORITHMS_JS, POSTS_PATH_BASIC_JS, 
 import Link from "next/link";
 import s from "../pageJs.module.scss";
 import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
+import ErrorBoundary from "../../../src/Components/ErrorBoundary/ErrorBoundary";
 
 interface Props { post: MDXPost }
 
@@ -59,8 +60,11 @@ const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
           <div className="mdTitle">
             <h1>{post.meta.title}</h1>
           </div>
+          <ErrorBoundary>
 
-          <MDXRemote {...post.source} />
+            <MDXRemote {...post.source} />
+          </ErrorBoundary>
+
 
           <div className={cn(s.edit, "page_edit")}>
             <a
@@ -72,7 +76,7 @@ const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
               Отредактировать эту страницу
             </a>
             <img
-              style={{ width: "30px", height:"30px", paddingLeft: "5px" }}
+              style={{ width: "30px", height: "30px", paddingLeft: "5px" }}
               src="/edit.svg"
             />
           </div>
@@ -128,9 +132,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const posts_Under_The_Hood_Js = getAllPosts(POSTS_PATH_UNDER_THE_HOOD_JS).map((post) => post.meta);
   const posts_Interview_Js = getAllPosts(POSTS_PATH_INTERVIEW_JS).map((post) => post.meta);
 
-  const AllThemePosts = {posts_Basic_Js,posts_Advanced_Js,posts_Algorithms_Js,posts_Practice_Js,posts_Under_The_Hood_Js,posts_Interview_Js};  
+  const AllThemePosts = { posts_Basic_Js, posts_Advanced_Js, posts_Algorithms_Js, posts_Practice_Js, posts_Under_The_Hood_Js, posts_Interview_Js };
 
-  
+
 
   return {
     props: { post: { source: mdxSource, meta }, AllThemePosts },
