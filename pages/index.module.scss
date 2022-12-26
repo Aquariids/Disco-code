@@ -37,6 +37,7 @@
 
 			background-repeat: no-repeat;
 			background-position: bottom right;
+			background-size: 23.3%;
 
 			&__items {
 				display: grid;
@@ -149,11 +150,6 @@
 			text-align: left;
 		}
 
-		@media screen and (max-width:1130px) {
-			&__welcome__title {
-				background-position-x: 110% ;
-			}
-	}
 
 
 		@media screen and (max-width: 985px) {
