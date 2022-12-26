@@ -150,6 +150,13 @@
 			text-align: left;
 		}
 
+		@media screen and (max-width:1130px) {
+			&__welcome__title {
+				background-position-x: 110% ;
+			}
+	}
+
+
 		@media screen and (max-width: 985px) {
 			&__welcome__title {
 				background-image: none;
