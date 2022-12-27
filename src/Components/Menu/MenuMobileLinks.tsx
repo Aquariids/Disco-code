@@ -41,6 +41,8 @@ const MenuMobileLinks = ({ title, page, posts, ...props }: IMenu): JSX.Element =
                             [s.active_js]: post.slug === checkActiveLink && router.pathname.startsWith('/js'),
                             [s.active_ts]: post.slug === checkActiveLink && router.pathname.startsWith('/ts'),
                             [s.active_react]: post.slug === checkActiveLink && router.pathname.startsWith('/react'),
+                            [s.active_node]: post.slug === checkActiveLink && router.pathname.startsWith('/node-js'),
+                            
                         })} >
                         {router.pathname.startsWith(`/${page}`) ? <Link href={`/${page}/${post.category}/${post.slug}`}>{post.title}</Link> : ''}
                     </li>

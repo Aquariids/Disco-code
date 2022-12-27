@@ -292,6 +292,14 @@
 	color: var(--react_hover_color_links_pages);
 }
 
+.active_node {
+	color: var(--node_color_links_pages);
+}
+
+.active_node:hover {
+	color: var(--node_hover_color_links_pages);
+}
+
 @media screen and (max-width: #{$screen_mobile_785}) {
 	.active_js {
 		color: var(--js_color_links_pages_mobile);
