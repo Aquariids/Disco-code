@@ -162,6 +162,11 @@
 			background-image: url(/images/cards/htmlCss_card_color.png);
 		}
 
+		&__container__node {
+			background-color: var(--node_color_links_pages);
+			background-image: url(/images/cards/nodejs_card_color.png);
+		}
+
 
 
 		@media screen and (max-width: #{$screen_mobile_400}) {
