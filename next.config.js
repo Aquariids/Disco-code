@@ -19,8 +19,10 @@ const withPWA = require('next-pwa')({
 });
 
 const nextConfig = removeImports(
+	
 		withPWA({
 			webpack(config) {
+				
 				config.module.rules.push({
 					loader: '@svgr/webpack',
 					issuer: /\.[jt]sx?$/,
