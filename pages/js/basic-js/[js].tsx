@@ -19,6 +19,8 @@ interface Props { post: MDXPost }
 
 const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
 
+
+
   return (
     <>
       <div className="page">

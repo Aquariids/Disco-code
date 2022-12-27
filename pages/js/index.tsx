@@ -1,5 +1,5 @@
 import type { GetStaticProps, NextPage } from "next";
-import React from "react";
+import React, { useEffect } from "react";
 import { withLayout } from "../../layout/Layout";
 import { getAllPosts } from "../api/api";
 import { POSTS_PATH_ADVANCED_JS, POSTS_PATH_ALGORITHMS_JS, POSTS_PATH_BASIC_JS, POSTS_PATH_INTERVIEW_JS, POSTS_PATH_PRACTICE_JS, POSTS_PATH_UNDER_THE_HOOD_JS } from "../api/paths";

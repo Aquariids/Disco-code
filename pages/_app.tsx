@@ -54,6 +54,12 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   // }
   // }
 
+
+  
+
+
+  
+
   function smothScroll() { // да костыли, ну и что теперь поделать, да вот так вот
     const html = document.querySelector('html') as HTMLElement;
 

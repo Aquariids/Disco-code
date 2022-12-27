@@ -1,8 +1,6 @@
 ---
 title: 'Устанавливаем npm'
-id: '0'
+id: 0
 category: 'basic-node-js'
 ---
 
-
-ПРивет братишка
