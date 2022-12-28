@@ -11,7 +11,7 @@ const DropdownMenuNodeJs = (): JSX.Element => {
 
         return (
             <>
-                <DropdownMenuLinks posts={posts_Basic_Node_Js} title="Фундаментальный nodeJs" category='basic-node-js' page='node-js' />;
+                <DropdownMenuLinks posts={posts_Basic_Node_Js} title="Фундаментальный nodeJs" category='basic-node-js' page='node-js' />
             </>
         );
     
