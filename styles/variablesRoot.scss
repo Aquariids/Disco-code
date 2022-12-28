@@ -1,3 +1,5 @@
+
+@import './variables@media.scss';
 :root {
 	--basic_color: #20232A;
 
@@ -26,14 +28,17 @@
 	/* node js */
 	--node_color_links_pages: #6da72a;
 	--node_hover_color_links_pages: #3d5d19;
-
+	
 
 
 
 	/* layout */
+	--sidebar300: 300px;
+	--sidebar250:250px;
+
 	--grid_gap: 0 30px;
-	--grid_columns_wrapper_sidebar: 300px minmax(45%, 1180px) 20%;
+	--grid_columns_wrapper_sidebar: var(--sidebar300) minmax(45%, 1180px) 20%;
 	--grid_columns_wrapper: 20% minmax(500px, 1180px) 20%;
-	--grid_columns_wrapper_without_right_side: 300px minmax(45%, 1180px); /* grid_columns_wrapper_mobile */
-	--grid_columns_wrapper_mobile: minmax(250px, 1180px); /* grid_index_page_columns_wrapper_mobile */
+	--grid_columns_wrapper_without_right_side: var(--sidebar250) minmax(45%, 1180px); 
+	--grid_columns_wrapper_mobile: minmax(250px, 1180px); 
 }

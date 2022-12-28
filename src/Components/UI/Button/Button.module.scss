@@ -1,3 +1,4 @@
+@import '../../../../styles/variables@media.scss';
 .button {
 	position: relative;
 
@@ -43,3 +44,11 @@
 	fill: rgb(0 0 0);
 }
 
+
+@media screen and (max-width:#{$screen_wrapper_without_right_side}) {
+	.button {
+		font-size: 14px;
+	}
+
+	
+}
