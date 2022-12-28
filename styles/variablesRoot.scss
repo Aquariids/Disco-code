@@ -37,8 +37,8 @@
 	--sidebar250:250px;
 
 	--grid_gap: 0 30px;
-	--grid_columns_wrapper_sidebar: var(--sidebar300) minmax(45%, 1180px) 20%;
-	--grid_columns_wrapper: 20% minmax(500px, 1180px) 20%;
+	--grid_columns_wrapper_sidebar: var(--sidebar300) minmax(45%, 1180px)  minmax(255px, 300px);
+	--grid_columns_wrapper: minmax(255px, 300px) minmax(500px, 1180px) minmax(255px, 300px);
 	--grid_columns_wrapper_without_right_side: var(--sidebar250) minmax(45%, 1180px); 
-	--grid_columns_wrapper_mobile: minmax(250px, 1180px); 
+	--grid_columns_wrapper_mobile: minmax(250px, 800px); 
 }
