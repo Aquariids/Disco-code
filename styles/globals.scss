@@ -50,7 +50,7 @@ body {
 	}
 }
 
-@media (max-width: 985px) {
+@media (max-width:#{$screen_wrapper_without_right_side} ) {
 	body {
 		background-size: 0;
 	}

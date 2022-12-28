@@ -19,7 +19,9 @@ const Layout = ({ children, }: LayoutProps): JSX.Element => {
         <>
 
             <div className={cn(wrapper, {
-                [s.wrapperWithoutRightSide]: (r >= 3)
+                [s.wrapperWithoutRightSide]: (r >= 3),
+
+              
             })}>
                 <Header className={header} />
                 <Sidebar className={sidebar} />

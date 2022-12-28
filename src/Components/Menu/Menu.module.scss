@@ -6,7 +6,7 @@
 		justify-content: left;
 
 		width: 100%;
-		margin-left: 20px;
+		margin-left: 5px;
 	}
 
 	&__list {
@@ -15,44 +15,22 @@
 		max-width: 100%;
 		margin-top: 0;
 		margin-bottom: 0;
-		margin-left: 20px;
+		margin-left: 5px;
 		padding-left: 0;
 
 		text-align: left;
 		grid-template-columns: 1fr;
 	}
 
-	@media screen and (max-width: 1325px) {
-		&__btn {
-			margin-left: 10px;
-		}
-
-		&__list {
-			margin-left: 10px;
-		}
-	}
-
-	@media screen and (max-width: 1235px) {
-		&__btn {
-			margin-left: 5px;
-		}
-
-		&__list {
-			margin-left: 5px;
-		}
-	}
-
-	@media screen and (max-width: 1135px) {
+	@media screen and (max-width:#{$screen_wrapper_without_right_side}) {
 		&__btn {
 			margin-left: 0;
 		}
-	}
-
-	@media screen and (max-width: 1040px) {
-		&__btn {
-			display: flex;
-			justify-content: center;
+		&__list {
+			margin-left: 0;
 		}
+
+		
 	}
 }
 

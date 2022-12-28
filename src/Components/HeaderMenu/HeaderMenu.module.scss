@@ -6,13 +6,13 @@
 	display: grid;
 	align-items: center;
 	justify-content: center;
-
+	grid-template-columns: var(--grid_columns_wrapper);
 	height: 60px;
 	margin-right: calc(-1 *(100vw - 100%));
 
 	color: #FFF;
 	gap: var(--grid_gap);
-	grid-template-columns: var(--grid_columns_wrapper);
+	
 	grid-template-areas: ". header .";
 
 	&__content {
@@ -150,7 +150,7 @@
 	}
 
 
-	@media screen and (max-width: 785px) {
+	@media screen and (max-width: #{$screen_mobile_785}) {
 		& {
 			grid-template-columns: var(--grid_columns_wrapper_mobile);
 			grid-template-rows: 60px;
@@ -176,8 +176,10 @@
 	}
 }
 
+
 .headerWithoutRightSide {
 	display: grid;
+
 	@media (max-width: #{$screen_wrapper_without_right_side}) {
 		& {
 			grid-template-columns: var(--grid_columns_wrapper_without_right_side);
@@ -194,6 +196,7 @@
 		}
 	}
 }
+
 
 .js {
 	color: var(--js_color_links_pages);

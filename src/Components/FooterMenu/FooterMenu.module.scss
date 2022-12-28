@@ -4,12 +4,12 @@
 	display: grid;
 	align-items: center;
 	justify-content: center;
+	margin-right: calc(-1 *(100vw - 100%));
 
 	text-align: right;
 	color: #FFF;
-
-	font-size: 15px;
 	grid-template-columns: var(--grid_columns_wrapper);
+	font-size: 15px;
 	grid-template-areas: ". footer .";
 	gap: var(--grid_gap);
 
