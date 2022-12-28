@@ -33,8 +33,6 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
     };
     return (
         <div className={cn(header, {
-            [s.grid_template_columns]: (r < 3),
-            [s.grid_columns_wrapper_sidebar]: (r >= 3),
             [s.headerWithoutRightSide]: (r >= 3)
         })} {...props}>
             <div className={header__content}>
