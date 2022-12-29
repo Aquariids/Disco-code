@@ -10,7 +10,7 @@ const MobileMenuNodeJs = (): JSX.Element => {
 
         return (
             <>
-                <MenuMobileLinks posts={posts_Basic_Node_Js} title="Фундаментальный nodeJs" category='basic-node-js' page='node-js' />
+                <MenuMobileLinks posts={posts_Basic_Node_Js} title="Базовый nodeJs" category='basic-node-js' page='node-js' />
             </>
         );
     

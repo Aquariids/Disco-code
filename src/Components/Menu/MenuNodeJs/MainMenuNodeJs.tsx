@@ -12,7 +12,7 @@ const MainMenuNodeJs = (): JSX.Element => {
 
         return (
             <>
-                <MenuMainLinks posts={posts_Basic_Node_Js} title="Фундаментальный nodeJs" category='basic-node-js' page='node-js' />
+                <MenuMainLinks posts={posts_Basic_Node_Js} title="Базовый nodeJs" category='basic-node-js' page='node-js' />
             </>
         );
     

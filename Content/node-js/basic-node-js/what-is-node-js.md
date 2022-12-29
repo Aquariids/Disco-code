@@ -1,20 +1,8 @@
 ---
-title: 'Как установить и как работает node.js. Блокирущий и неблокирущий I/O'
+title: 'Как работает node.js. Блокирущий и неблокирущий I/O'
 id: 1
 category: 'basic-node-js'
 ---
-
- ##  Установка node js
- Для того, что бы установить node js можно перейти на <span className = 'link_nodeJs'><a target="_blank" href="https://nodejs.org/en/">официальный сайт node.js</a></span> скачать и установить.
- Для проверки версии используйте команду:
- ```javaScript
- node -v // например 14.17.0
- ```
- Так же у вас установится `npm`. Тоже проверяем:
- ```javaScript
- npm -v // например 6.14.13
- ```
- Далее устанавливаем ё
  ## Что такое node js
 
  `Node.js` - позволяет нам выполнять код вне браузера. Это серверная платформа для работы с `javaScript` через  <span className = 'link_nodeJs'> [движок v8](/js/under-the-hood-js/engine)</span>. Это позволяет нам писать бэкенд. Мы можем написать и фронт и бек на одном `javaScript`.
@@ -79,11 +67,11 @@ category: 'basic-node-js'
 // Пример из ролика ubliTv. ссылка есть в начале урока.
 const crypto = require('crypto');
 
-const start = Date.now();
+const start = Date.now(); // время начала
 
 // используем функцию для шифровки пароля 1000000 - это кол итераций
 crypto.pbkdf2('qwerty', '5', 1000000, 64, 'sha512', () => {
-    console.log('1 закончил за', Date.now() - start );
+    console.log('1 закончил за', Date.now() - start ); // вычитаем из времени выполнения время начала скрипта.
 });
 crypto.pbkdf2('qwerty', '5', 1000000, 64, 'sha512', () => {
     console.log('2 закончил за', Date.now() - start );
@@ -95,7 +83,7 @@ crypto.pbkdf2('qwerty', '5', 1000000, 64, 'sha512', () => {
     console.log('4 закончил за', Date.now() - start );
 });
 
-// у нас получился такой вывод
+// у нас получился такой вывод в миллисекундах
 /*
 1 закончил за 1128
 2 закончил за 1196

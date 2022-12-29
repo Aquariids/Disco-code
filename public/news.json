@@ -47,5 +47,12 @@
         "link":"структуру веб страницы",
         "src":"/html-css/html/html-page",
         "date":"17.12.2022"
+    },
+    {
+        "id":8,
+        "body":"Создал новую тему \"Node.js\" и добавил статью про то как",
+        "link":"установить node.js и что такое npm ",
+        "src":"/node-js/basic-node-js/npm",
+        "date":"29.12.2022"
     }
 ]

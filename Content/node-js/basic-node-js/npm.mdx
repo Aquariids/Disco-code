@@ -1,0 +1,135 @@
+---
+title: 'Установка Node.js. Что такое npm?'
+id: 0
+category: 'basic-node-js'
+---
+
+<div className='mdHead'>
+
+#### Теги
+<div className = 'tag_nodeJs'>[Установка node.js](#установка-node-js)</div>
+<div className = 'mini_tag_nodeJs'>[Тестируем работу node js](#тестируем-работу-node-js)</div> <br/>
+<div className = 'tag_nodeJs'>[Что такое npm?](#что-такое-npm)</div> <br/>
+
+</div>
+
+##  Установка node js
+Для того, что бы установить node js можно перейти на <span className = 'link_nodeJs'><a target="_blank" href="https://nodejs.org/en/">официальный сайт node.js</a></span> скачать и установить. У вас будет выбор рекомендуемой версии и последней версии. Выбирайте любую. 
+Далее нам нужно открыть терминал. Это может быть командная строка(`cmd`) или `Windows PowerShell`. Я пользуюсь терминалом внутри `Visual Studio Code`. <br/>
+Пишем там эту команду для проверки версии.
+```javaScript
+node -v // например 14.17.0
+```
+Так же у вас установится `npm`. Тоже проверяем:
+```javaScript
+ npm -v // например 6.14.13
+```
+### Тестируем работу node js
+
+Теперь проведем маленький тест и посмотрим как с помощью `node.js` мы можем выполнять `javaScript` код.<br/>
+
+Создаем на рабочем столе текстовый документ и переименовываем его в `hello`. Далее открываем и пишем внутри:
+```javaScript
+console.log(5 + 5);
+```
+<div className='container-img'> <span className="img"> ![hello.txt](/images/Content/node-js/hello.png) </span></div>
+
+Дальше переходим в `файл` и `сохранить как`.
+
+<div className='container-img'> <span className="img"> ![howHello.txt](/images/Content/node-js/howHello.png) </span></div>
+
+Дальше приписываем расширение `.js` и ставим тип файла: `Все файлы`.
+
+<div className='container-img'> <span className="img"> ![helloJs.js](/images/Content/node-js/helloJs.png) </span></div>
+
+Теперь нужно в терминале перейти на рабочий стол. Если вы октрывали `cmd` через пуск, то дописываем:
+```
+cd Desktop
+```
+Теперь мы должны находиться на рабочем столе. У меня этот путь выглядит так `C:\Users\Dimasiks\Desktop`.
+(Опять же вы можете где угодно положить этот файл и там сразу открыть терминал или делать это все вунтри вашей `ide` создав срзу `js` файл.)<br/>
+Далее вунтри терминала пишем:
+```
+node hello
+```
+И мы получим ответ `10`.
+
+<div className='container-img'> <span className="img"> ![cmd](/images/Content/node-js/cmd.png) </span></div>
+
+Мы можем даже пользоваться `js` кодом внутри самого терминала. Для этого сначала нужно ввести команду:
+```
+node
+```
+
+<div className='container-img'> <span className="img"> ![cmdJs](/images/Content/node-js/cmdJs.png) </span></div>
+
+
+## Что такое npm?
+`npm(node package manager)` - Это менеджер пакетов. Он автоматически устанавливается с `node.js` и используется для скачивания и установки разных пакетов.
+* Пакет - это `js` файлы которые из себя представляют библиотеку, модуль, плагин и так далее.
+
+
+Но для начала нам нужно инициализировать наш проект командой:
+```
+npm init
+```
+Далее в терминале у вас будет уточняться информация о проекте. Если ничего не хотите писать, просто жмите `enter`.
+После этого в проекте у вас появится файл `package.json`. В этом файле хранится информация о проекте и его зависимостях(пакеты).
+```javaScript
+{
+    "name": "Dima",
+    "version": "1.0.0",
+    "description": "",
+    "main": "hello.js",
+    "dependencies": { 
+        // тут будут зависимости которые останутся в продакшене
+    },
+    "devDependencies": {
+        // тут будут только для разработки
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
+}
+
+```
+Для установки пакета достаточно использовать `npm i` или `npm install`. Давайте установим какие нибудь пакеты.
+```javaScript
+npm i express // если устанавливать так, наши зависимости будут в dependencies
+
+npm i --save-dev nodemon // а так они будут попадать в devDependencies
+```
+`--save-dev` - это специальный ключ, который указывает, что наш пакте будет нам нужен только для разработки.<br/>
+Вот как теперь выглядит `package.json`:
+```javaScript
+{
+    "name": "Dima",
+    "version": "1.0.0",
+    "description": "",
+    "main": "hello.js",
+    "dependencies": {
+        "express": "^4.18.2" 
+    },
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+    "nodemon": "^2.0.20"
+    }
+}
+```
+В папке с проектом у вас появится папка `node_modules`.
+
+<div className='container-img'> <span className="img"> ![node_modules](/images/Content/node-js/node_modules.png) </span></div>
+
+В этой папке и хранятся все пакеты которые вы установите.
+И вся прелесть в том, что вам не нужно постоянно копировать папку `node_modules`, что бы пользоваться пакетами в ней.
+Все что вам нужно, это файл `package.json` и команда `npm i`.
+```javaScript
+npm i // после этой команды у вас установятся все зависимости которые прописаны в package.json
+```
+Все пакеты можно посмотреть на <span className = 'link_nodeJs'><a target="_blank" href="https://www.npmjs.com/">официальном сайте npm</a></span>.
