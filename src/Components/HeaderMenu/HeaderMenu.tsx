@@ -43,13 +43,14 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
 
                 <div className={s.header__nav}>
                     <div className={s.header__dropdown}>
-                        <div className={s.header__dropdown__btn}><button> Выбрать тему </button></div>
+                        <div className={s.header__dropdown__btn}><button> Выбрать технологию </button></div>
                         <ul className={s.header__dropdown__content}>
-                            <li><Link href={'/js'}><span className={s.js}>JavaScript</span></Link></li>
-                            <li><Link href={'/react'}><span className={s.react}>React</span></Link></li>
-                            <li><Link href={'/ts'}><span className={s.ts}>TypeScript</span></Link></li>
-                            <li><Link href={'/paradigms'}><span className={s.mainLinks}>Парадигмы</span></Link></li>
-                            <li><Link href={'/next-js'}><span className={s.next}>Next.js</span></Link></li>
+                            <li className={s.js}><Link href={'/js'}><span>JavaScript</span></Link></li>
+                            <li className={s.react}><Link href={'/react'}><span>React</span></Link></li>
+                            <li className={s.ts}><Link href={'/ts'}><span>TypeScript</span></Link></li>
+                            <li className={s.mainLinks}><Link href={'/paradigms'}><span>Парадигмы</span></Link></li>
+                            <li className={s.next}><Link href={'/next-js'}><span>Next.js</span></Link></li>
+                            <li className={s.node}><Link href={'/node-js'}><span>Node.js</span></Link></li>
 
                         </ul>
                     </div>

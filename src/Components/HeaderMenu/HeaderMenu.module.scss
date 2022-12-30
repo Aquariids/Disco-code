@@ -198,42 +198,58 @@
 }
 
 
-.js {
-	color: var(--js_color_links_pages);
-}
 
 .mainLinks {
-	color: var(--main_color_links_pages);
+	transition: all .3s;
 }
 
 .mainLinks:hover {
-	color: var(--main_hover_color_links_pages);
+	color: #FFF;
+	background-color: var(--main_hover_color_links_pages);
+}
+
+.js {
+	transition: all .3s;
 }
 
 .js:hover {
-	color: var(--js_hover_color_links_pages);
+	color: #fff;
+	background-color: var(--js_color_links_pages_mobile);
 }
 
 .ts {
-	color: #3178C6;
+	transition: all .3s;
+
 }
 
 .ts:hover {
-	color: #1A426C;
+	color: #fff;
+	background-color: var(--ts_color_links_pages);
 }
 
 .react {
-	color: var(--react_color_links_pages);
+	transition: all .3s;
 }
 
 .react:hover {
-	color: var(--react_hover_color_links_pages);
+	color: #FFF;
+	background-color: var(--react_hover_color_links_pages);
 }
 
 .next {
-	color: var(--next_color_links_pages);
+	transition: all .3s;
 }
 
 .next:hover {
-	color: var(--next_hover_color_links_pages);
+	color: #FFF;
+	background-color: var(--next_color_links_pages);
+}
+
+.node {
+	transition: all .3s;
+}
+
+.node:hover {
+	color: #FFF;
+	background-color: var(--node_color_links_pages);
 }
