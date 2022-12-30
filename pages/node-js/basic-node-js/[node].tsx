@@ -6,6 +6,8 @@ import rehypeSlug from "rehype-slug";
 import rehypeHighlight from "rehype-highlight";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import Head from "next/head";
+import s from '.././pageNodeJs.module.scss';
+
 import "highlight.js/styles/devibeans.css";
 
 
@@ -39,7 +41,7 @@ const PostPage: NextPage<Props> = ({post}): JSX.Element => {
           <meta name="yandex-verification" content="a99ae512e4f1c330" />
           <meta
             name="description"
-            content={"Онлайн руководство: фундаментальный node js"}
+            content={"Онлайн руководство: базовый node js"}
           />
           <meta
             property="og:description"
@@ -68,7 +70,7 @@ const PostPage: NextPage<Props> = ({post}): JSX.Element => {
           <MDXRemote {...post.source} />
 
 
-          <div className={cn('mainEdit', "page_edit")}>
+          <div className={cn(s.edit, "page_edit")}>
             <a
               target="_blank"
               rel="noopener"
@@ -82,7 +84,7 @@ const PostPage: NextPage<Props> = ({post}): JSX.Element => {
               src="/edit.svg"
             />
           </div>
-          <div className={cn('mainFooter', "page_footer")}>
+          <div className={cn(s.footer, "page_footer")}>
             <Link href={post.meta.prev}>
               {post.meta.prev === "none" ? (
                 <span></span>

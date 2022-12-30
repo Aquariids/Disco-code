@@ -4,7 +4,6 @@ import { withLayout } from "../../layout/Layout";
 import { getAllPosts } from "../api/api";
 import {POSTS_PATH_BASIC_NODEJS } from "../api/paths";
 import Head from "next/head";
-import MainMenuNextJs from "../../src/Components/Menu/MenuNextJs/MainMenuNextJs";
 import MainMenuNodeJs from "../../src/Components/Menu/MenuNodeJs/MainMenuNodeJs";
 
 export const getStaticProps: GetStaticProps = async () => {

@@ -54,5 +54,12 @@
         "link":"установить node.js и что такое npm ",
         "src":"/node-js/basic-node-js/npm",
         "date":"29.12.2022"
+    },
+    {
+        "id":9,
+        "body":"Добавил статью о том как работает ",
+        "link":"node.js, блокирущий и неблокирущий ввод/вывод и что за библиотека libuv. ",
+        "src":"/node-js/basic-node-js/what-is-node-js",
+        "date":"30.12.2022"
     }
 ]
