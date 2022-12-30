@@ -41,11 +41,11 @@ const PostPage: NextPage<Props> = ({post}): JSX.Element => {
           <meta name="yandex-verification" content="a99ae512e4f1c330" />
           <meta
             name="description"
-            content={"Онлайн руководство: базовый node js"}
+            content={"Онлайн руководство по node js"}
           />
           <meta
             property="og:description"
-            content={"Разбираемся в nextJs"}
+            content={"Разбираем базовые темы node.js"}
           />
 
           <meta property="og:type" content="article" />
