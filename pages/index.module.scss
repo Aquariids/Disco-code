@@ -5,7 +5,6 @@
 	justify-content: center;
 
 	text-align: center;
-	grid-template-columns: var(--grid_columns_wrapper_mobile);
 
 	& h1 {
 		display: flex;
@@ -20,7 +19,7 @@
 	}
 
 	&__welcome {
-		min-height: 100vh;
+		min-height: 50vh;
 
 		&__title {
 			position: relative;
@@ -89,13 +88,14 @@
 		}
 
 		&__aboutSite {
+			grid-template-columns: minmax(var(--wrapperSides), var(--wrapper));
 			display: grid;
 			align-items: center;
 			justify-content: center;
 			line-height: 1.7;
-
-			min-height: 55vh;
-			margin-top: -15px;
+			min-height: 20vh;
+			margin-bottom: 50px;
+			margin-top: 50px;
 			grid-template-rows: 1fr;
 
 
@@ -128,7 +128,6 @@
 	&__articles {
 		display: grid;
 
-		min-height: 60vh;
 	}
 
 	@media screen and (max-width: 1350px) {

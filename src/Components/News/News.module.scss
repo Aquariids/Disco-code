@@ -4,7 +4,7 @@
 	justify-content: center;
 
 	text-align: center;
-	grid-template-columns: var(--grid_columns_wrapper_mobile);
+    grid-template-columns: minmax(var(--wrapperSides), var(--wrapper));
 
     &__content {
         display: grid;

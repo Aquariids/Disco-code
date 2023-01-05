@@ -35,9 +35,10 @@
 	/* layout */
 	--sidebar300: 300px;
 	--sidebar250:250px;
-
+	--wrapperSides: 300px;
+	--wrapper:1180px;
 	--grid_gap: 0 15px;
-	--grid_columns_wrapper: 300px minmax(500px, 1180px) 300px;
+	--grid_columns_wrapper: var(--wrapperSides) minmax(500px, var(--wrapper)) var(--wrapperSides);
 	--grid_columns_wrapper_without_right_side: 250px minmax(45%, 1180px); 
 	--grid_columns_wrapper_mobile: minmax(250px, 800px); 
 }
