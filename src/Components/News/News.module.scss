@@ -1,8 +1,7 @@
 .news {
-
+    margin-top: 10px;
     display: grid;
 	justify-content: center;
-
 	text-align: center;
     grid-template-columns: minmax(var(--wrapperSides), var(--wrapper));
 
