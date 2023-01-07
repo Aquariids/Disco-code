@@ -6,19 +6,19 @@ import s from './QuizJs.module.scss';
 hljs.registerLanguage('javascript', javascript);
 const QuizJs = ({data}): JSX.Element => {
     const [currentQuiz, setCurrentQuiz] = useState(0);
-    const [showScore, setShowScore] = useState(false);
-
+    const [showEndScore, setShowEndScore] = useState(false);
+    const [score, setScore] = useState(1);
     const handleAnswerClick = (isCorrect) => {
 
         if(isCorrect === true) {
-            alert('все четко')
+            alert('все четко');
         }
         const nextQuestion = currentQuiz + 1;
 
         if (nextQuestion < data.length) {
             setCurrentQuiz(nextQuestion);
         } else {
-            setShowScore(true);
+            setShowEndScore(true);
         }
     };
     useEffect(() => {
@@ -26,7 +26,7 @@ const QuizJs = ({data}): JSX.Element => {
     }, []);
     return (
         <>
-            {showScore ? (<div className={s.end}>КОНЕц </div>) :
+            {showEndScore ? (<div className={s.end}>Вы выполнили {score} </div>) :
 
                 <div className={s.quiz}>
                     <div className={s.quest}> {data[currentQuiz].question}</div>

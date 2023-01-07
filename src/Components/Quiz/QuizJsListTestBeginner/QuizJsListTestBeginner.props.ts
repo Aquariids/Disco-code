@@ -8,7 +8,7 @@ interface data {
         correct: boolean
     }[]
 }
-export const quizDataBeginner1: data[] = [
+export const quizData1: data[] = [
     {
         question: 'Какое значение будет в result?',
         code: `

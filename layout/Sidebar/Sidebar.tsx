@@ -20,6 +20,9 @@ const Sidebar = ({className, ...props}:SidebarProps):JSX.Element => {
             <></>
         );
     } 
+    if(router.asPath.startsWith('/tests')) {
+        return(<></>);
+    }
     else {
         return (
             <div className={cn(className, s.sidebar)} {...props}>

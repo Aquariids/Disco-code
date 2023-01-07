@@ -1,0 +1,15 @@
+.tests {
+    height:100vh;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 50px;
+}
+
+.tests__beginner {
+text-align: center;
+width: 250px;
+height: 250px;
+border: 1px solid black;
+cursor: pointer;
+}
