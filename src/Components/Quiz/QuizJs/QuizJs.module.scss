@@ -1,6 +1,7 @@
 
 
 .quiz {
+  height: 600px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -20,7 +21,7 @@
     }
 
     &__end {
-      transition: all .3s;
+      height: 350px;
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -156,26 +157,22 @@
 
 .correctly {
   color: rgb(3, 195, 3);
-  border: 1px solid rgb(3, 195, 3);
   background-color: rgba(3, 195, 3, 0.187);
 }
 
 .correctly:hover {
   color: rgb(3, 195, 3);
-  border: 1px solid rgb(3, 195, 3);
   background-color: rgba(3, 195, 3, 0.187);
 
 }
 
 .wrong {
   color: red;
-  border: 1px solid red;
   background-color: rgba(255, 0, 0, 0.187);
 }
 
 .wrong:hover {
   color: red;
-  border: 1px solid red;
   background-color: rgba(255, 0, 0, 0.187);
 }
 

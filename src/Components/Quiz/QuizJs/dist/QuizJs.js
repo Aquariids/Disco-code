@@ -19,6 +19,7 @@ var QuizJs = function (_a) {
     var btns = document.querySelectorAll("." + QuizJs_module_scss_1["default"].btn);
     var percent = Math.floor(rigthAnswers / data.length * 100);
     var nextBtn = document.querySelector("." + QuizJs_module_scss_1["default"].next__btn);
+    var about = document.querySelector("." + QuizJs_module_scss_1["default"].about);
     if (disabledBtn === false && nextBtn != null) {
         nextBtn.classList.add(QuizJs_module_scss_1["default"].next__btn_active);
     }
@@ -44,6 +45,7 @@ var QuizJs = function (_a) {
     }
     var next = function () {
         btns.forEach(function (btn) {
+            about.style.display = 'none';
             btn.style.transition = '0s';
             btn.classList.remove(QuizJs_module_scss_1["default"].correctly);
             btn.classList.remove(QuizJs_module_scss_1["default"].wrong);
@@ -61,7 +63,6 @@ var QuizJs = function (_a) {
     };
     var handleAnswerClick = function (isCorrect, e) {
         var btns = document.querySelectorAll("." + QuizJs_module_scss_1["default"].btn);
-        var about = document.querySelector("." + QuizJs_module_scss_1["default"].about);
         setDisabledBtn(!disabledBtn);
         if (isCorrect === true) {
             about.textContent = "" + data[currentQuestion].about;

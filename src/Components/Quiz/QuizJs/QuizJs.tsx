@@ -16,6 +16,8 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
     const btns = document.querySelectorAll(`.${s.btn}`) as NodeList;
     const percent = Math.floor(rigthAnswers / data.length * 100);
     const nextBtn = document.querySelector(`.${s.next__btn}`) as HTMLElement;
+    const about = document.querySelector(`.${s.about}`) as HTMLElement;
+
         if(disabledBtn === false && nextBtn != null) {
         nextBtn.classList.add(s.next__btn_active);
     } else {
@@ -37,6 +39,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
 
     const next = () => {
         btns.forEach((btn: any) => {
+            about.style.display = 'none';
             btn.style.transition = '0s';
             btn.classList.remove(s.correctly);
             btn.classList.remove(s.wrong);
@@ -57,7 +60,6 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
     const handleAnswerClick = (isCorrect, e) => {
         const btns = document.querySelectorAll(`.${s.btn}`) as NodeList;
 
-        const about = document.querySelector(`.${s.about}`) as HTMLElement;
    
         setDisabledBtn(!disabledBtn);
         if (isCorrect === true) {

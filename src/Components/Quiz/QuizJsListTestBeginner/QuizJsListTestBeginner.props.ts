@@ -28,6 +28,7 @@ export const quizData1: data[] = [
     },
     {
         question: 'Что yyyy в консоль?',
+        about: 'Пенис помн большой яя',
         id: 2,
         code: 'var name = "World"; console.warn("Hello, " + name + "!")',
         answerOptions: [
