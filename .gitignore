@@ -15,7 +15,7 @@
 /build
 # да откуда взялись эти dist!!! aaaaaaaaaaaaaaaa
 /dist
-*/dist
+*/dist 
 /src/*/dist
 /layout/*/dist
 /src/Components/*/dist

@@ -5,11 +5,7 @@ import QuizJsListTestBeginner from '../../../src/Components/Quiz/QuizJsListTestB
 import s from './test.module.scss';
 const test = () => {
 
-    return (
-        <div>
-            <QuizJsListTestBeginner />
-        </div>
-    );
+    return <QuizJsListTestBeginner />;
 
 
 };

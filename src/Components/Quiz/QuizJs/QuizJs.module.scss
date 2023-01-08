@@ -1,12 +1,98 @@
+
+
 .quiz {
-    display: grid;
-    
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+    transition: all 3s;
+
+
+    &__content {
+      transition: all .3s;
+
+      width:  80%;
+      border-radius: 10px;
+      border: 3px solid #eee;
+      padding: 50px;
+      
+
+    }
 }
 
+
+
+.next {
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+ 
+  &__btn {
+    width: 125px;
+  }
+}
+.answers {
+
+    display: grid;
+    justify-content: left;
+    grid-template-columns: minmax(200px,300px);
+}
+.code {
+ 
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.nice {
+  color: green;
+}
+
+.middle {
+  text-shadow: 0 0 0 rgb(225, 255, 1);
+}
+.btn {
+    background-color: transparent;
+    border: none;
+    outline:none;
+    padding: 10px;
+    box-shadow: 0px 0.5px 1px #999;
+    transition: all .3s;
+  }
+  .btn:hover {
+    background-color: rgb(218, 218, 218);
+    cursor: pointer;
+    color: #fff;
+    
+  }
 .end {
     display: block;
 }
 
 .quest {
     display:block;
+}
+
+
+.correctly {
+  color: #fff;
+  background-color: rgb(38, 218, 38);
+}
+
+.correctly:hover {
+  background-color: rgb(38, 218, 38);
+
+}
+
+.wrong {
+  color: #fff;
+  background-color: red;
+}
+
+.wrong:hover {
+  background-color: red;
 }

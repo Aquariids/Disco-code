@@ -33,7 +33,7 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
     };
     return (
         <div className={cn(header, {
-            [s.headerWithoutRightSide]: (r >= 3)
+            [s.headerWithoutRightSide]: (r >= 3) && router.asPath.split('/')[1] != 'tests'
         })} {...props}>
             <div className={header__content}>
                 <div className={header__logo}>
