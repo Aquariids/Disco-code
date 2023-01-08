@@ -5,6 +5,7 @@ import Articles from "../src/Components/Articles/Articles";
 import s from "./index.module.scss";
 import Head from "next/head";
 import News from "../src/Components/News/News";
+import QuizCard from "../src/Components/QuizCard/QuizCard";
 
 const Home: NextPage = (): JSX.Element => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -89,6 +90,9 @@ const Home: NextPage = (): JSX.Element => {
         </div>
 
       <News/>
+      <QuizCard  category="mainPage" src="/tests" text= "JavaScript тесты разных уровней." title={'JavaScript Тесты'} />
+
+      
         <div ref={h2ref} className={s.page__articles} >
           <Articles category="js" />
           <Articles category="other" />

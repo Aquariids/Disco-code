@@ -38,10 +38,14 @@
     }
 
     &__back {
+
       width: 80%;
       margin-bottom: 20px;
       margin-left: 10px;
       span {
+        a {
+          display: block;
+        }
       width: 220px;
       display: block;
       height: 40px;
@@ -156,13 +160,13 @@
 
 
 .correctly {
-  color: rgb(3, 195, 3);
-  background-color: rgba(3, 195, 3, 0.187);
+  color: #2EE59D;
+  background-color: #2ee59c31;
 }
 
 .correctly:hover {
-  color: rgb(3, 195, 3);
-  background-color: rgba(3, 195, 3, 0.187);
+  color: #2EE59D;
+  background-color: #2ee59c31;
 
 }
 
@@ -202,10 +206,10 @@
   display: none;
   justify-content: left;
   grid-template-columns: minmax(200px,300px);
-  border: 1px solid  rgb(3, 195, 3);
-  color:  rgb(3, 195, 3);
-  text-shadow: 1px 1px 1px #fff;
-  background-color:  rgba(3, 195, 3, 0.201);;
+  border: 1px solid  #2EE59D;
+  color:  #1aac71;
+  text-shadow: 2px 2px 2px #fff;
+  background-color: #2ee59c31;
   padding: 5px;
 }
 
