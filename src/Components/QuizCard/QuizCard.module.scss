@@ -71,9 +71,6 @@
     display: grid;
     width: 100%;
     margin: 0 auto;
-}
-
-.main_page_bg {
     background-image: url('/images/quizCard/nekoMainPagebw.png');
     &:hover {
         background-image: url('/images/quizCard/nekoMainPage.png');
