@@ -7,7 +7,6 @@ import cn from 'classnames';
 import Link from 'next/dist/client/link';
 hljs.registerLanguage('javascript', javascript);
 const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element => {
-
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [showEndScore, setShowEndScore] = useState(false);
     const [score, setScore] = useState(1);
@@ -18,7 +17,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
     const nextBtn = document.querySelector(`.${s.next__btn}`) as HTMLElement;
     const about = document.querySelector(`.${s.about}`) as HTMLElement;
 
-        if(disabledBtn === false && nextBtn != null) {
+    if (disabledBtn === false && nextBtn != null) {
         nextBtn.classList.add(s.next__btn_active);
     } else {
         nextBtn && nextBtn.classList.remove(s.next__btn_active);
@@ -38,6 +37,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
     }
 
     const next = () => {
+
         btns.forEach((btn: any) => {
             about.style.display = 'none';
             btn.style.transition = '0s';
@@ -55,16 +55,19 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
         }
 
     };
-    
+
 
     const handleAnswerClick = (isCorrect, e) => {
         const btns = document.querySelectorAll(`.${s.btn}`) as NodeList;
 
-   
+
         setDisabledBtn(!disabledBtn);
         if (isCorrect === true) {
-            about.textContent = `${data[currentQuestion].about}`;
-            about.style.display = 'grid';
+            if(about != null) {
+                about.textContent = `${data[currentQuestion].about}`;
+                about.style.display = 'grid';
+            }
+         
             setRigthAnswers(rigthAnswers + 1);
             e.target.classList.add(s.correctly);
             btns.forEach((btn: any) => {
@@ -86,18 +89,24 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
 
                 });
             });
-            about.textContent = `${data[currentQuestion].about}`;
-            about.style.display = 'grid';
+            if(about != null) {
+                about.textContent = `${data[currentQuestion].about}`;
+                about.style.display = 'grid';
+            }
+            
             e.target.classList.add(s.wrong);
         }
     };
-
-
+   
     useEffect(() => {
-        hljs.initHighlighting();
+       
+    
         setPercentTest(percent);
         localStorage.setItem(`${localKey}`, `${percentTest}`);
-    },);
+       
+        window.addEventListener('DOMContentLoaded', () => hljs.highlightAll(), false);
+
+    },[]);
     return (
         <>
             {showEndScore ? (
@@ -127,13 +136,13 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
                             <code className='hljs language-js'> {data[currentQuestion].code}</code>
                         </pre>
                         <div className={s.con}>
-                        <div className={s.answers}>
-                            {data[currentQuestion].answerOptions.map((answerOptions, index) => {
-                                return <button className={s.btn} onClick={(e) => handleAnswerClick(answerOptions.correct, e)} key={index}>{answerOptions.answerText}</button>;
-                            })}
-                        </div>
+                            <div className={s.answers}>
+                                {data[currentQuestion].answerOptions.map((answerOptions, index) => {
+                                    return <button className={s.btn} onClick={(e) => handleAnswerClick(answerOptions.correct, e)} key={index}>{answerOptions.answerText}</button>;
+                                })}
+                            </div>
 
-                        <div className={s.about}></div>
+                            <div className={s.about}></div>
                         </div>
 
                     </div>

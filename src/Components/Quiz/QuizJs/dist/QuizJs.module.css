@@ -1,5 +1,4 @@
 .quiz {
-  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -74,7 +73,7 @@
   text-decoration: none;
   display: inline-block;
   width: 140px;
-  height: 45px;
+  height: 40px;
   line-height: 45px;
   border-radius: 45px;
   font-family: "Montserrat", sans-serif;
@@ -103,10 +102,12 @@
 }
 
 .answers {
+  height: 200px;
   width: 50%;
   display: grid;
   justify-content: left;
-  grid-template-columns: minmax(200px, 300px);
+  align-items: center;
+  grid-template-columns: 300px;
 }
 
 .code {
@@ -115,6 +116,9 @@
 }
 
 .btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 40px;
   background-color: transparent;
   border: none;
   outline: none;
@@ -175,8 +179,8 @@
 
 .about {
   width: 50%;
+  font-size: 14px;
   display: none;
-  justify-content: left;
   grid-template-columns: minmax(200px, 300px);
   border: 1px solid #2EE59D;
   color: #1aac71;
@@ -186,6 +190,5 @@
 }
 
 .con {
-  width: 100%;
   display: flex;
 }

@@ -13,7 +13,8 @@ export const quizData1: data[] = [
     
     {
         question: 'Какое значение будет в result?',
-        about: 'КОроче ты тут сделал так и сяк',
+        about: `Массивы в js начинаются с нулевого индекса: Первый элемент имеет индекс 0,
+                а послдений элемент будет равен длине массива минус 1. Использование недопустимого индекса вернет undefined`,
         code: `
         const array = [1,2,3];
         const result = array[3];
@@ -27,15 +28,34 @@ export const quizData1: data[] = [
         ],
     },
     {
-        question: 'Что yyyy в консоль?',
-        about: 'Пенис помн большой яя',
+        question: 'Какое значение будет в result?',
+        about: `
+        
+        Метод Object.assign() используется для копирования значений всех собственных перечисляемых
+        свойств из одного или более исходных объектов в целевой объект.
+        После копирования он возвращает целевой объект.
+        Свойства в целевом объекте будут перезаписаны свойствами исходного объекта, если они имеют одинаковые ключи.
+        Свойства более поздних источников аналогичным образом перезапишут более ранние.
+        `,
         id: 2,
-        code: 'var name = "World"; console.warn("Hello, " + name + "!")',
+        code: `
+        const obj = Object.assign({
+            name: "JavaScript"
+            }, {
+            name: "ECMAScript"
+            }, {
+            name: "LiveScript"
+            });
+            
+            const result = obj.name;
+        `,
         answerOptions: [
-            { answerText: '111', correct: false },
-            { answerText: 'false', correct: false },
-            { answerText: 'fal223se', correct: false },
-            { answerText: 'sss',   correct: true },
+            { answerText: 'ECMAScript', correct: false },
+            { answerText: 'JavaScript', correct: false },
+            { answerText: 'undefined', correct: false },
+            { answerText: 'LiveScript',   correct: true },
+            { answerText: 'JavaScript,ECMAScript,LiveScript', correct: false },
+
         ],
     }
 

@@ -65,8 +65,10 @@ var QuizJs = function (_a) {
         var btns = document.querySelectorAll("." + QuizJs_module_scss_1["default"].btn);
         setDisabledBtn(!disabledBtn);
         if (isCorrect === true) {
-            about.textContent = "" + data[currentQuestion].about;
-            about.style.display = 'grid';
+            if (about != null) {
+                about.textContent = "" + data[currentQuestion].about;
+                about.style.display = 'grid';
+            }
             setRigthAnswers(rigthAnswers + 1);
             e.target.classList.add(QuizJs_module_scss_1["default"].correctly);
             btns.forEach(function (btn) {
@@ -86,16 +88,18 @@ var QuizJs = function (_a) {
                     }
                 });
             });
-            about.textContent = "" + data[currentQuestion].about;
-            about.style.display = 'grid';
+            if (about != null) {
+                about.textContent = "" + data[currentQuestion].about;
+                about.style.display = 'grid';
+            }
             e.target.classList.add(QuizJs_module_scss_1["default"].wrong);
         }
     };
     react_1.useEffect(function () {
-        highlight_js_1["default"].initHighlighting();
         setPercentTest(percent);
         localStorage.setItem("" + localKey, "" + percentTest);
-    });
+        window.addEventListener('DOMContentLoaded', function () { return highlight_js_1["default"].highlightAll(); }, false);
+    }, []);
     return (react_1["default"].createElement(react_1["default"].Fragment, null, showEndScore ? (react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].quiz },
         react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].quiz__back },
             react_1["default"].createElement("span", null,
