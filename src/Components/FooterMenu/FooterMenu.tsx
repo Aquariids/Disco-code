@@ -17,7 +17,7 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
     return (
         <>
             <div className={cn(footer, {
-                [s.footerWithoutRightSide]: (r >= 3)
+                [s.footerWithoutRightSide]: (r >= 3) && router.asPath.split('/')[1] != 'tests'
             })} {...props}>
                 <div className={footer__content}>
                     <div className={s.footer__content__nav}>
@@ -31,10 +31,11 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
                             <li className={s.footer__item}><Link href={'/react/basic-react/react-single-page-app'}> Базовый React </Link></li>
                             <li className={s.footer__item}><Link href={'/ts/basic-ts/installation'}>Основы typeScript</Link></li>
                             <li className={s.footer__item}><Link href={'/next-js/basic-next-js/create-next-app'}>Начало работы с next.js</Link></li>
-                            <li className={s.footer__item}><Link href={'/node-js/basic-node-js/npm'}>Фундаментальный node.js</Link></li>
+                            <li className={s.footer__item}><Link href={'/node-js/basic-node-js/npm'}>Базовый node.js</Link></li>
                             <li className={s.footer__item}><Link href={'/paradigms/style/imperative-and-declarative'}>Стили написания кода</Link></li>
                             <li className={s.footer__item}><Link href={'/web-request-response'}>Как работает web - request & response</Link></li>
                             <li className={s.footer__item}><Link href={'/html-css/html/html-page'}>Коротко про html & css</Link></li>
+                            <li className={s.footer__item}><Link href={'/tests'}>Тесты по javaScript</Link></li>
 
 
                         </ul>
@@ -50,6 +51,8 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
 
                         </ul>
                     </div>
+
+                    
 
 
                 </div>

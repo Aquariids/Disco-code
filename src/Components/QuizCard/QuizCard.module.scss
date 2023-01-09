@@ -1,0 +1,95 @@
+@import './../../../styles/variables@media.scss';
+
+.tests {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        display:block;
+        width: 100%;
+        height: 100%;
+    }
+    &__card {
+        text-align: center;
+     &_title {
+        font-size: 25px;
+        margin-bottom: 20px;
+     }   
+    }
+    &__bg {
+
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: left;
+        width: 650px;
+        height: 270px;
+        border: 1px solid black;
+        cursor: pointer;
+        transition: all .3s;
+        
+        
+        
+        }
+}
+
+
+.beginner {
+    background-image: url('/images/quizCard/neko_beginner.png');
+
+    &:hover {
+        background-image: url('/images/quizCard/neko_beginner_color.png');
+        
+    }
+
+}
+.text {
+    border-bottom: 1px solid black;
+    border-top: none;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 300px;
+}
+
+
+.main_page_tests {
+    display: grid;
+    
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: minmax(var(--wrapperSides), var(--wrapper));
+    margin-top: 0;
+}
+
+.main_page {
+    
+    grid-template-columns: minmax(245px, 1fr);
+    display: grid;
+    width: 100%;
+    margin: 0 auto;
+    background-image: url('/images/quizCard/nekoMainPagebw.png');
+    &:hover {
+        background-image: url('/images/quizCard/nekoMainPage.png');
+    }
+}
+
+
+
+@media screen and (max-width: #{$screen_mobile_785}) {
+    .main_page {
+        background-image: url('/images/quizCard/nekoMainPage.png');
+    }
+}
+@media screen and (max-width: #{$screen_mobile_400}) {
+    .main_page {
+        min-width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        border-right: none;
+		border-left: none;
+    }
+}
+

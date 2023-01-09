@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
 import { withLayout } from "../layout/Layout";
-import React, { useEffect, useRef } from "react";
+import React, {useRef } from "react";
 import Articles from "../src/Components/Articles/Articles";
 import s from "./index.module.scss";
 import Head from "next/head";
-import Link from "next/link";
 import News from "../src/Components/News/News";
+import QuizCard from "../src/Components/QuizCard/QuizCard";
 
 const Home: NextPage = (): JSX.Element => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -90,11 +90,13 @@ const Home: NextPage = (): JSX.Element => {
         </div>
 
       <News/>
+
+      
         <div ref={h2ref} className={s.page__articles} >
           <Articles category="js" />
+          <QuizCard  category="mainPage" src="/tests" text= "JavaScript тесты разных уровней." title={'JavaScript Тесты'} />
           <Articles category="other" />
         </div>
-
     </div>
   );
 };
