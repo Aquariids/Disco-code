@@ -6,9 +6,9 @@ import s from './tests.module.scss';
 
 const index = () => {
     return (
-        <>
+        <div className={s.main}>
         <QuizCard  category="beginner" src="/tests/beginner/" text= "Для разработчиков JavaScript, которые только начинают изучать язык или недавно начали" title={'Тесты для начинающих'} />
-        </>
+        </div>
     );
 };
 

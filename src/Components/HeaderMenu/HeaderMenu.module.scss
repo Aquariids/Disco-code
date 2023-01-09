@@ -124,6 +124,19 @@
 		}
 	}
 
+	&__tests {
+		padding-right: 10px;
+		color: #FFF;
+				border: none;
+				font-weight: 500;
+				font-size: 14px;
+
+		&:hover {
+			transition: all 0.1s;
+
+			color: var(--next_hover_color_links_pages);
+		}
+	}
 	&__github {
 		padding: 0;
 

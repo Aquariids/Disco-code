@@ -40,8 +40,10 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
                     {logoCreat()}
                     <span className={header__link} > <Link href={'/'}>DiscoCode</Link> </span>
                 </div>
-
+                
                 <div className={s.header__nav}>
+                <div className={s.header__tests}><Link href={'/tests'}>Тесты</Link></div>
+
                     <div className={s.header__dropdown}>
                         <div className={s.header__dropdown__btn}><button> Выбрать технологию </button></div>
                         <ul className={s.header__dropdown__content}>
@@ -54,6 +56,7 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
 
                         </ul>
                     </div>
+
                     <div className={header__github}><a className={header__link} target={"_blank"} href={'https://github.com/Aquariids/Disco-code'}>Github <img alt='github' style={{ width: '15px', height: '15px' }} src='/link.svg' /></a></div>
                 </div>
             </div>
