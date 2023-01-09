@@ -102,6 +102,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
         <>
             {showEndScore ? (
                 <div className={s.quiz}>
+                    <div className={s.quiz__back}><span><Link href={'/tests/beginner'}>Вернуться к тестам</Link></span></div>
                     <div className={s.quiz__end}>
                         <div className={s.quiz__score_end}>Ваш результат: {rigthAnswers} из {data.length} - {`${percent}%`}</div>
                         <div></div>
