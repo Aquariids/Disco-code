@@ -8,6 +8,7 @@ var javascript_1 = require("highlight.js/lib/languages/javascript");
 var QuizJs_module_scss_1 = require("./QuizJs.module.scss");
 var classnames_1 = require("classnames");
 var link_1 = require("next/dist/client/link");
+var AnimationContainer_1 = require("../../AnimationContainers/AnimationContainer");
 highlight_js_1["default"].registerLanguage('javascript', javascript_1["default"]);
 var QuizJs = function (_a) {
     var _b;
@@ -46,7 +47,7 @@ var QuizJs = function (_a) {
     }
     var next = function () {
         btns.forEach(function (btn) {
-            about.style.display = 'none';
+            about.style.opacity = '0';
             btn.style.transition = '0s';
             btn.classList.remove(QuizJs_module_scss_1["default"].correctly);
             btn.classList.remove(QuizJs_module_scss_1["default"].wrong);
@@ -68,7 +69,7 @@ var QuizJs = function (_a) {
         if (isCorrect === true) {
             if (about != null) {
                 about.textContent = "" + data[currentQuestion].about;
-                about.style.display = 'grid';
+                about.style.opacity = '1';
             }
             setRigthAnswers(rigthAnswers + 1);
             e.target.classList.add(QuizJs_module_scss_1["default"].correctly);
@@ -91,7 +92,7 @@ var QuizJs = function (_a) {
             });
             if (about != null) {
                 about.textContent = "" + data[currentQuestion].about;
-                about.style.display = 'grid';
+                about.style.opacity = '1';
             }
             e.target.classList.add(QuizJs_module_scss_1["default"].wrong);
         }
@@ -100,25 +101,25 @@ var QuizJs = function (_a) {
         setPercentTest(percent);
         localStorage.setItem("" + localKey, "" + percentTest);
     });
-    return (react_1["default"].createElement(react_1["default"].Fragment, null, showEndScore ? (react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].quiz },
-        react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].quiz__back },
-            react_1["default"].createElement("span", null,
-                react_1["default"].createElement(link_1["default"], { href: '/tests/beginner' }, "\u0412\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F \u043A \u0442\u0435\u0441\u0442\u0430\u043C"))),
-        react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].quiz__end },
-            react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].quiz__score_end },
-                "\u0412\u0430\u0448 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442: ",
-                rigthAnswers,
-                " \u0438\u0437 ",
-                data.length,
-                " - ", percent + "%"),
-            react_1["default"].createElement("div", null),
-            react_1["default"].createElement("div", { className: classnames_1["default"]((_b = {},
-                    _b[QuizJs_module_scss_1["default"].nice] = percent === 100,
-                    _b[QuizJs_module_scss_1["default"].middle] = percent > 55 && percent != 100 || percent == 50,
-                    _b[QuizJs_module_scss_1["default"].bad] = percent < 55 && percent != 0 && percent > 30,
-                    _b[QuizJs_module_scss_1["default"].bad] = percent < 30 && percent != 0,
-                    _b[QuizJs_module_scss_1["default"].veryBad] = percent === 0,
-                    _b)) }, percentForAnswer())))) :
+    return (react_1["default"].createElement(AnimationContainer_1["default"], null, showEndScore ? (react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].quiz },
+        react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].end_container },
+            react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].quiz__back },
+                react_1["default"].createElement("span", null,
+                    react_1["default"].createElement(link_1["default"], { href: '/tests/beginner' }, "\u0412\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F \u043A \u0442\u0435\u0441\u0442\u0430\u043C"))),
+            react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].quiz__end },
+                react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].quiz__score_end },
+                    "\u0412\u0430\u0448 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442: ",
+                    rigthAnswers,
+                    " \u0438\u0437 ",
+                    data.length,
+                    " - ", percent + "%"),
+                react_1["default"].createElement("div", { className: classnames_1["default"]((_b = {},
+                        _b[QuizJs_module_scss_1["default"].nice] = percent === 100,
+                        _b[QuizJs_module_scss_1["default"].middle] = percent > 55 && percent != 100 || percent == 50,
+                        _b[QuizJs_module_scss_1["default"].bad] = percent < 55 && percent != 0 && percent > 30,
+                        _b[QuizJs_module_scss_1["default"].bad] = percent < 30 && percent != 0,
+                        _b[QuizJs_module_scss_1["default"].veryBad] = percent === 0,
+                        _b)) }, percentForAnswer()))))) :
         react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].quiz },
             react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].quiz__back },
                 react_1["default"].createElement("span", null,
@@ -128,12 +129,13 @@ var QuizJs = function (_a) {
                 react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].quest },
                     " ",
                     data[currentQuestion].question),
-                react_1["default"].createElement(react_highlight_1["default"], { className: classnames_1["default"]('hljs language-js', QuizJs_module_scss_1["default"].cod) }, data[currentQuestion].code),
-                react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].con },
+                react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].container_code_about },
+                    react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].about }, data[currentQuestion].about),
+                    react_1["default"].createElement(react_highlight_1["default"], { className: classnames_1["default"]('hljs language-js', QuizJs_module_scss_1["default"].cod) }, data[currentQuestion].code)),
+                react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].container_answer },
                     react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].answers }, data[currentQuestion].answerOptions.map(function (answerOptions, index) {
                         return react_1["default"].createElement("button", { className: QuizJs_module_scss_1["default"].btn, onClick: function (e) { return handleAnswerClick(answerOptions.correct, e); }, key: index }, answerOptions.answerText);
-                    })),
-                    react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].about }))),
+                    })))),
             react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].next },
                 react_1["default"].createElement("button", { disabled: disabledBtn, onClick: next, className: QuizJs_module_scss_1["default"].next__btn }, " \u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C ")))));
 };

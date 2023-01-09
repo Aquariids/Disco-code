@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Highlight from 'react-highlight'
 import 'highlight.js/styles/default.css';
 import hljs from 'highlight.js';
@@ -6,6 +6,7 @@ import javascript from 'highlight.js/lib/languages/javascript';
 import s from './QuizJs.module.scss';
 import cn from 'classnames';
 import Link from 'next/dist/client/link';
+import AnimationContainer from '../../AnimationContainers/AnimationContainer';
 hljs.registerLanguage('javascript', javascript);
 const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -40,7 +41,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
     const next = () => {
 
         btns.forEach((btn: any) => {
-            about.style.display = 'none';
+            about.style.opacity = '0';
             btn.style.transition = '0s';
             btn.classList.remove(s.correctly);
             btn.classList.remove(s.wrong);
@@ -66,7 +67,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
         if (isCorrect === true) {
             if(about != null) {
                 about.textContent = `${data[currentQuestion].about}`;
-                about.style.display = 'grid';
+                about.style.opacity = '1';
             }
          
             setRigthAnswers(rigthAnswers + 1);
@@ -92,7 +93,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
             });
             if(about != null) {
                 about.textContent = `${data[currentQuestion].about}`;
-                about.style.display = 'grid';
+                about.style.opacity = '1';
             }
             
             e.target.classList.add(s.wrong);
@@ -104,13 +105,13 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
 
     });
     return (
-        <>
+        <AnimationContainer>
             {showEndScore ? (
                 <div className={s.quiz}>
+                    <div className={s.end_container}>
                     <div className={s.quiz__back}><span><Link href={'/tests/beginner'}>Вернуться к тестам</Link></span></div>
                     <div className={s.quiz__end}>
                         <div className={s.quiz__score_end}>Ваш результат: {rigthAnswers} из {data.length} - {`${percent}%`}</div>
-                        <div></div>
                         <div className={cn({
                             [s.nice]: percent === 100,
                             [s.middle]: percent > 55 && percent != 100 || percent == 50,
@@ -121,6 +122,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
                         }
                         )} >{percentForAnswer()}</div>
                     </div>
+                    </div>
                 </div>
             ) :
                 <div className={s.quiz}>
@@ -128,18 +130,22 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
                     <div className={s.quiz__content}>
                         <div className={s.quiz__score}>{`${score}/${data.length}`}</div>
                         <div className={s.quest}> {data[currentQuestion].question}</div>
+                        <div className={s.container_code_about}>
+                        <div className={s.about}>{data[currentQuestion].about}</div>
                         <Highlight className={cn('hljs language-js', s.cod)}>
                         {data[currentQuestion].code}
                         </Highlight>
+                        </div>
                         
-                        <div className={s.con}>
+                        
+
+                        
+                        <div className={s.container_answer}>
                             <div className={s.answers}>
                                 {data[currentQuestion].answerOptions.map((answerOptions, index) => {
                                     return <button className={s.btn} onClick={(e) => handleAnswerClick(answerOptions.correct, e)} key={index}>{answerOptions.answerText}</button>;
                                 })}
                             </div>
-
-                            <div className={s.about}></div>
                         </div>
 
                     </div>
@@ -150,7 +156,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
             }
 
 
-        </>
+        </AnimationContainer>
     );
 };
 
