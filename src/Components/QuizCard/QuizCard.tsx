@@ -1,8 +1,11 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useRef } from 'react';
 import s from './QuizCard.module.scss';
 import cn from 'classnames';
 const QuizCard = ({category,src,text,title}) => {
+
+
+
     return (
         <div className={cn(s.tests, {
             [s.main_page_tests]: category === 'mainPage'

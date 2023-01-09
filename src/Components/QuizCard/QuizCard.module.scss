@@ -39,10 +39,10 @@
 
 
 .beginner {
-    background-image: url('/images/quizCard/neko.png');
+    background-image: url('/images/quizCard/neko_beginner.png');
 
     &:hover {
-        background-image: url('/images/quizCard/neko2.png');
+        background-image: url('/images/quizCard/neko_beginner_color.png');
         
     }
 
@@ -71,6 +71,9 @@
     display: grid;
     width: 100%;
     margin: 0 auto;
+}
+
+.main_page_bg {
     background-image: url('/images/quizCard/nekoMainPagebw.png');
     &:hover {
         background-image: url('/images/quizCard/nekoMainPage.png');
