@@ -1,8 +1,9 @@
 .quiz {
+  justify-content: center;
+  height: 720px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 50px;
   transition: all 3s;
 }
 .quiz__content {
@@ -10,7 +11,8 @@
   width: 80%;
   border-radius: 10px;
   border: 3px solid #eee;
-  padding: 50px;
+  padding: 10px;
+  min-height: 600px;
 }
 .quiz__end {
   height: 350px;
@@ -28,13 +30,14 @@
 }
 .quiz__back {
   width: 80%;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   margin-left: 10px;
 }
 .quiz__back span {
   width: 220px;
-  display: block;
-  height: 40px;
+  display: flex;
+  justify-content: center;
+  height: 30px;
   text-align: center;
   border: none;
   text-decoration: none;
@@ -53,7 +56,10 @@
   cursor: pointer;
 }
 .quiz__back span a {
-  display: block;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 .quiz__back span:hover {
   background: #2EE59D;
@@ -66,14 +72,16 @@
   width: 80%;
   display: flex;
   justify-content: right;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .next__btn {
   border: none;
   text-decoration: none;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 140px;
-  height: 40px;
+  height: 30px;
   line-height: 45px;
   border-radius: 45px;
   font-family: "Montserrat", sans-serif;
@@ -102,12 +110,12 @@
 }
 
 .answers {
-  height: 200px;
+  height: 100%;
   width: 50%;
   display: grid;
   justify-content: left;
   align-items: center;
-  grid-template-columns: 300px;
+  grid-template-columns: 275px;
 }
 
 .code {
@@ -116,13 +124,13 @@
 }
 
 .btn {
+  font-size: 16px;
   margin-top: 5px;
   margin-bottom: 5px;
-  height: 40px;
+  height: 32px;
   background-color: transparent;
   border: none;
   outline: none;
-  padding: 10px;
   box-shadow: 0px 0.5px 1px #999;
   transition: all 0.3s;
 }
@@ -178,6 +186,7 @@
 }
 
 .about {
+  height: 100%;
   width: 50%;
   font-size: 14px;
   display: none;
@@ -191,4 +200,11 @@
 
 .con {
   display: flex;
+}
+
+.cod {
+  overflow: hidden;
+  width: 100%;
+  height: 250px;
+  font-size: 14px;
 }

@@ -128,7 +128,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
                     <div className={s.quiz__content}>
                         <div className={s.quiz__score}>{`${score}/${data.length}`}</div>
                         <div className={s.quest}> {data[currentQuestion].question}</div>
-                        <Highlight className='hljs language-js'>
+                        <Highlight className={cn('hljs language-js', s.cod)}>
                         {data[currentQuestion].code}
                         </Highlight>
                         

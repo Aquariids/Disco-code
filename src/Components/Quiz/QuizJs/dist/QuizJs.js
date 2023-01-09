@@ -128,7 +128,7 @@ var QuizJs = function (_a) {
                 react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].quest },
                     " ",
                     data[currentQuestion].question),
-                react_1["default"].createElement(react_highlight_1["default"], { className: 'hljs language-js' }, data[currentQuestion].code),
+                react_1["default"].createElement(react_highlight_1["default"], { className: classnames_1["default"]('hljs language-js', QuizJs_module_scss_1["default"].cod) }, data[currentQuestion].code),
                 react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].con },
                     react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].answers }, data[currentQuestion].answerOptions.map(function (answerOptions, index) {
                         return react_1["default"].createElement("button", { className: QuizJs_module_scss_1["default"].btn, onClick: function (e) { return handleAnswerClick(answerOptions.correct, e); }, key: index }, answerOptions.answerText);
