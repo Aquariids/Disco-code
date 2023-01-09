@@ -2,7 +2,7 @@
 exports.__esModule = true;
 var react_1 = require("react");
 var react_highlight_1 = require("react-highlight");
-require("highlight.js/styles/default.css");
+require("highlight.js/styles/github-dark-dimmed.css");
 var highlight_js_1 = require("highlight.js");
 var javascript_1 = require("highlight.js/lib/languages/javascript");
 var QuizJs_module_scss_1 = require("./QuizJs.module.scss");
@@ -36,7 +36,7 @@ var QuizJs = function (_a) {
             return "Хорошо, но есть ошибки!";
         }
         else if (percent < 55 && percent != 0 && percent > 30 || percent == 50) {
-            return " Могло бы быть и хуже, попробуй еще!";
+            return "Могло бы быть и хуже, попробуй еще!";
         }
         else if (percent < 30 && percent != 0) {
             return "Попытка не пытка!";
@@ -46,8 +46,9 @@ var QuizJs = function (_a) {
         }
     }
     var next = function () {
+        about.style.transition = '0s';
+        about.style.opacity = '0';
         btns.forEach(function (btn) {
-            about.style.opacity = '0';
             btn.style.transition = '0s';
             btn.classList.remove(QuizJs_module_scss_1["default"].correctly);
             btn.classList.remove(QuizJs_module_scss_1["default"].wrong);
@@ -65,6 +66,7 @@ var QuizJs = function (_a) {
     };
     var handleAnswerClick = function (isCorrect, e) {
         var btns = document.querySelectorAll("." + QuizJs_module_scss_1["default"].btn);
+        about.style.transition = '.2s';
         setDisabledBtn(!disabledBtn);
         if (isCorrect === true) {
             if (about != null) {
@@ -91,8 +93,8 @@ var QuizJs = function (_a) {
                 });
             });
             if (about != null) {
-                about.textContent = "" + data[currentQuestion].about;
                 about.style.opacity = '1';
+                about.textContent = "" + data[currentQuestion].about;
             }
             e.target.classList.add(QuizJs_module_scss_1["default"].wrong);
         }
@@ -115,9 +117,9 @@ var QuizJs = function (_a) {
                     " - ", percent + "%"),
                 react_1["default"].createElement("div", { className: classnames_1["default"]((_b = {},
                         _b[QuizJs_module_scss_1["default"].nice] = percent === 100,
-                        _b[QuizJs_module_scss_1["default"].middle] = percent > 55 && percent != 100 || percent == 50,
-                        _b[QuizJs_module_scss_1["default"].bad] = percent < 55 && percent != 0 && percent > 30,
-                        _b[QuizJs_module_scss_1["default"].bad] = percent < 30 && percent != 0,
+                        _b[QuizJs_module_scss_1["default"].middle] = percent > 55 && percent != 100,
+                        _b[QuizJs_module_scss_1["default"].bad] = percent < 55 && percent != 0 && percent > 30 || percent == 50,
+                        _b[QuizJs_module_scss_1["default"].bad_bad] = percent < 30 && percent != 0,
                         _b[QuizJs_module_scss_1["default"].veryBad] = percent === 0,
                         _b)) }, percentForAnswer()))))) :
         react_1["default"].createElement("div", { className: QuizJs_module_scss_1["default"].quiz },

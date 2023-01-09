@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Highlight from 'react-highlight'
-import 'highlight.js/styles/default.css';
+import 'highlight.js/styles/github-dark-dimmed.css';
 import hljs from 'highlight.js';
 import javascript from 'highlight.js/lib/languages/javascript';
 import s from './QuizJs.module.scss';
@@ -18,19 +18,23 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
     const percent = Math.floor(rigthAnswers / data.length * 100);
     const nextBtn = document.querySelector(`.${s.next__btn}`) as HTMLElement;
     const about = document.querySelector(`.${s.about}`) as HTMLElement;
-
     if (disabledBtn === false && nextBtn != null) {
         nextBtn.classList.add(s.next__btn_active);
     } else {
         nextBtn && nextBtn.classList.remove(s.next__btn_active);
     }
+
+
+
+    
+
     function percentForAnswer() {
         if (percent === 100) {
             return "Отлично, можешь собой гордиться!";
         } else if (percent > 55 && percent != 100) {
             return "Хорошо, но есть ошибки!";
         } else if (percent < 55 && percent != 0 && percent > 30 || percent == 50) {
-            return " Могло бы быть и хуже, попробуй еще!";
+            return "Могло бы быть и хуже, попробуй еще!";
         } else if (percent < 30 && percent != 0) {
             return "Попытка не пытка!";
         } else if (percent === 0) {
@@ -39,9 +43,9 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
     }
 
     const next = () => {
-
-        btns.forEach((btn: any) => {
+            about.style.transition = '0s';
             about.style.opacity = '0';
+            btns.forEach((btn: any) => {
             btn.style.transition = '0s';
             btn.classList.remove(s.correctly);
             btn.classList.remove(s.wrong);
@@ -50,9 +54,11 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
         setDisabledBtn(!disabledBtn);
         const nextQuestion = currentQuestion + 1;
         if (nextQuestion < data.length) {
+
             setScore(score + 1);
             setCurrentQuestion(nextQuestion);
         } else {
+
             setShowEndScore(true);
         }
 
@@ -61,6 +67,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
 
     const handleAnswerClick = (isCorrect, e) => {
         const btns = document.querySelectorAll(`.${s.btn}`) as NodeList;
+        about.style.transition = '.2s';
 
 
         setDisabledBtn(!disabledBtn);
@@ -91,9 +98,10 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
 
                 });
             });
-            if(about != null) {
-                about.textContent = `${data[currentQuestion].about}`;
+            if(about != null) {                
                 about.style.opacity = '1';
+                about.textContent = `${data[currentQuestion].about}`;
+
             }
             
             e.target.classList.add(s.wrong);
@@ -114,9 +122,9 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
                         <div className={s.quiz__score_end}>Ваш результат: {rigthAnswers} из {data.length} - {`${percent}%`}</div>
                         <div className={cn({
                             [s.nice]: percent === 100,
-                            [s.middle]: percent > 55 && percent != 100 || percent == 50,
-                            [s.bad]: percent < 55 && percent != 0 && percent > 30,
-                            [s.bad]: percent < 30 && percent != 0,
+                            [s.middle]: percent > 55 && percent != 100 ,
+                            [s.bad]: percent < 55 && percent != 0 && percent > 30 || percent == 50,
+                            [s.bad_bad]: percent < 30 && percent != 0,
                             [s.veryBad]: percent === 0,
 
                         }
@@ -142,7 +150,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
                         
                         <div className={s.container_answer}>
                             <div className={s.answers}>
-                                {data[currentQuestion].answerOptions.map((answerOptions, index) => {
+                                { data[currentQuestion].answerOptions.map((answerOptions, index) => {
                                     return <button className={s.btn} onClick={(e) => handleAnswerClick(answerOptions.correct, e)} key={index}>{answerOptions.answerText}</button>;
                                 })}
                             </div>

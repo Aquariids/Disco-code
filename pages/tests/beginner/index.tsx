@@ -2,15 +2,22 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { withLayout } from '../../../layout/Layout';
 import s from './test.module.scss';
+import {quizData1} from '../../../src/Components/Quiz/QuizJsListTestBeginner/QuizJsListTestBeginner.props';
 const index = () => {
     const  [p,setP] = useState('') as any;
     useEffect(()=> {
        if(localStorage.getItem('test1') != null) {
         setP(localStorage.getItem('test1'));
        }
-        
-    },[]);
 
+    },[]);
+    
+
+       useEffect(()=> {
+        quizData1.map((item,i) => {
+            quizData1[i].answerOptions.sort(()=> Math.random() - 0.5);
+           });
+       });
 
     return (
             <div className={s.container}>

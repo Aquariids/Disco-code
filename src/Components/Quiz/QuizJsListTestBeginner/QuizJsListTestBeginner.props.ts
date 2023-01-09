@@ -1,8 +1,7 @@
 
 interface data {
     question: string;
-    code: string;
-    id: number;
+    code?: string;
     about:string;
     answerOptions: {
         answerText: string,
@@ -14,18 +13,17 @@ export const quizData1: data[] = [
     {
         question: 'Какое значение будет в result?',
         about: `Массивы в js начинаются с нулевого индекса: Первый элемент имеет индекс 0, 
-        а послдений элемент будет равен длине массива минус 1. Использование недопустимого индекса вернет undefined`,
+        а последний элемент будет равен длине массива минус 1. Использование недопустимого индекса вернет undefined`,
         code: `
         const array = [1,2,3];
         const result = array[3];
         `,
-        id: 1,
         answerOptions: [
             { answerText: '3', correct: false },
             { answerText: 'undefined', correct: true },
             { answerText: 'null', correct: false },
             { answerText: 'throw a SyntaxError',   correct: false },
-        ],
+        ].sort(()=> Math.random() - 0.5)
     },
     {
         question: 'Какое значение будет в result?',
@@ -35,9 +33,8 @@ export const quizData1: data[] = [
         свойств из одного или более исходных объектов в целевой объект.
         После копирования он возвращает целевой объект.
         Свойства в целевом объекте будут перезаписаны свойствами исходного объекта, если они имеют одинаковые ключи.
-        Свойства более поздних источников аналогичным образом перезапишут более ранние.
+        Более поздние свойства перезапишут ранние.
         `,
-        id: 2,
         code: `
         const obj = Object.assign({
             name: "JavaScript"
@@ -46,8 +43,7 @@ export const quizData1: data[] = [
             }, {
             name: "LiveScript"
             });
-            
-            const result = obj.name;
+        const result = obj.name;
         `,
         answerOptions: [
             { answerText: 'ECMAScript', correct: false },
@@ -56,10 +52,135 @@ export const quizData1: data[] = [
             { answerText: 'LiveScript',   correct: true },
             { answerText: 'JavaScript,ECMAScript,LiveScript', correct: false },
 
-        ],
+        ].sort(()=> Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about: `
+        Метод indexOf() возвращает первый индекс, при котором данный элемент может быть найден в массиве или -1, если он отсутствует.
+        `,
+        code: `
+        const array = [1,2,3,5];
+        const result = array.indexOf(3);
+
+        `,
+        answerOptions: [
+            { answerText: '-1', correct: false },
+            { answerText: '2', correct: true },
+            { answerText: '5', correct: false },
+            { answerText: '3',   correct: false },
+
+        ].sort(()=> Math.random() - 0.5)
+    },
+    {
+        question: 'Что является идентичной записью result += value',
+        about: `
+        Оператор += (добавление присваивания) добавляет значение правого операнда к переменной и присваивает результат.
+        `,
+        code: `
+        result += value
+
+        `,
+        answerOptions: [
+            { answerText: 'result = ++value', correct: false },
+            { answerText: 'result = value + value', correct: false },
+            { answerText: 'result = value', correct: false },
+            { answerText: 'result = result + value',   correct: true },
+            { answerText: 'result = value++',   correct: false },
+
+
+        ].sort(()=> Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about: `
+        Метод JSON.stringify() преобразует объект в строку JSON.
+        Метод JSON.parse() преобразует строку JSON, обратно в объект.
+        JSON.parse() создает новый объект.
+        `,
+        code: `
+        const o = {
+            name:"Brendan"
+        };
+        const s = JSON.parse(JSON.stringify(o));
+        const result = s === o;
+
+        `,
+        answerOptions: [
+            { answerText: 'true', correct: false },
+            { answerText: 'false', correct: true },
+
+
+        ].sort(()=> Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about: `
+        (оператор вычитания) вычитает два операнда, производя их разницу.
+        Он пытается преобразовать оба операнда в числа, если не может, он возвращает NaN.
+        `,
+        code: `
+        const result = "2009" - "1995";
+
+        `,
+        answerOptions: [
+            { answerText: 'undefined', correct: false },
+            { answerText: '14', correct: true },
+            { answerText: 'NaN', correct: false },
+            { answerText: 'null', correct: false },
+            { answerText: 'throw a TypeError', correct: false },
+
+
+
+        ].sort(()=> Math.random() - 0.5)
+    },
+    {
+        question: 'Какой из операторов не является логическим?',
+        about: `
+        В JavaScript есть три логических оператора: && (логическое И),
+        || (логическое ИЛИ) ! (логическое НЕ). | — побитовый оператор ИЛИ.
+        `,
+        code: `
+        |
+        &&
+        ||
+        !
+
+        `,
+        answerOptions: [
+            { answerText: '|', correct: true },
+            { answerText: '&&', correct: false },
+            { answerText: '!', correct: false },
+            { answerText: '||', correct: false },
+
+
+
+        ].sort(()=> Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about: `
+        Метод test() выполняет поиск соответствия между регулярным выражением и указанной строкой.
+        Флаг i в регулярном выражении используется для нечувствительности к регистру.
+        `,
+        code: `
+        const re = /java/i;
+        const str = "JavaScript";
+        const result = re.test(str);
+        `,
+        answerOptions: [
+            { answerText: 'true', correct: true },
+            { answerText: 'false', correct: false },
+
+
+
+        ].sort(()=> Math.random() - 0.5)
     }
 
 ];
+
+
+
 
 
 export const quizData2: data[] = [
@@ -71,7 +192,6 @@ export const quizData2: data[] = [
         const array = [1,2,3];
         const result = array[3];
         `,
-        id: 1,
         answerOptions: [
             { answerText: '3', correct: false },
             { answerText: 'undefined', correct: true },
@@ -81,7 +201,7 @@ export const quizData2: data[] = [
     },
     {
         question: 'Что yyyy в консоль?',
-        id: 2,
+        about: 's',
         code: 'var name = "World"; console.warn("Hello, " + name + "!")',
         answerOptions: [
             { answerText: '111', correct: false },
