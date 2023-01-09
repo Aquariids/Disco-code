@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
+import Highlight from 'react-highlight'
 import 'highlight.js/styles/default.css';
 import hljs from 'highlight.js';
 import javascript from 'highlight.js/lib/languages/javascript';
@@ -97,16 +98,11 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
             e.target.classList.add(s.wrong);
         }
     };
-   
     useEffect(() => {
-       
-    
         setPercentTest(percent);
         localStorage.setItem(`${localKey}`, `${percentTest}`);
-       
-        window.addEventListener('DOMContentLoaded', () => hljs.highlightAll(), false);
 
-    },[]);
+    });
     return (
         <>
             {showEndScore ? (
@@ -132,9 +128,10 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
                     <div className={s.quiz__content}>
                         <div className={s.quiz__score}>{`${score}/${data.length}`}</div>
                         <div className={s.quest}> {data[currentQuestion].question}</div>
-                        <pre>
-                            <code className='hljs language-js'> {data[currentQuestion].code}</code>
-                        </pre>
+                        <Highlight className='hljs language-js'>
+                        {data[currentQuestion].code}
+                        </Highlight>
+                        
                         <div className={s.con}>
                             <div className={s.answers}>
                                 {data[currentQuestion].answerOptions.map((answerOptions, index) => {

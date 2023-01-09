@@ -90,11 +90,11 @@ const Home: NextPage = (): JSX.Element => {
         </div>
 
       <News/>
-      <QuizCard  category="mainPage" src="/tests" text= "JavaScript тесты разных уровней." title={'JavaScript Тесты'} />
 
       
         <div ref={h2ref} className={s.page__articles} >
           <Articles category="js" />
+          <QuizCard  category="mainPage" src="/tests" text= "JavaScript тесты разных уровней." title={'JavaScript Тесты'} />
           <Articles category="other" />
         </div>
     </div>
