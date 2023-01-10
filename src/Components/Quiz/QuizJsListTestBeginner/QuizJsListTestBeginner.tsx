@@ -18,7 +18,6 @@ const QuizJsListTestBeginner = (): JSX.Element => {
         return (
             <>
             {!loading ? (<QuizJs localKey={'test1'} percentTest={percentTest1} setPercentTest={setPercentTest1} data={quizData1} />): <LoadingQuiz/>}
-
             </>
         );
     } else {

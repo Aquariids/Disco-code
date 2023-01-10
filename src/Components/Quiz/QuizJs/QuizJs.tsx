@@ -18,6 +18,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
     const percent = Math.floor(rigthAnswers / data.length * 100);
     const nextBtn = document.querySelector(`.${s.next__btn}`) as HTMLElement;
     const about = document.querySelector(`.${s.about}`) as HTMLElement;
+    const nekoText = document.querySelector(`.${s.neko__oval}`) as HTMLElement;
     if (disabledBtn === false && nextBtn != null) {
         nextBtn.classList.add(s.next__btn_active);
     } else {
@@ -26,7 +27,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
 
 
 
-    
+
 
     function percentForAnswer() {
         if (percent === 100) {
@@ -43,9 +44,10 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
     }
 
     const next = () => {
-            about.style.transition = '0s';
-            about.style.opacity = '0';
-            btns.forEach((btn: any) => {
+        nekoText.style.opacity = '0';
+        about.style.transition = '0s';
+        about.style.opacity = '0';
+        btns.forEach((btn: any) => {
             btn.style.transition = '0s';
             btn.classList.remove(s.correctly);
             btn.classList.remove(s.wrong);
@@ -64,19 +66,22 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
 
     };
 
-
+    
     const handleAnswerClick = (isCorrect, e) => {
         const btns = document.querySelectorAll(`.${s.btn}`) as NodeList;
+
         about.style.transition = '.2s';
 
 
         setDisabledBtn(!disabledBtn);
         if (isCorrect === true) {
-            if(about != null) {
+            nekoText.style.opacity = '1';
+            nekoText.textContent = 'Молодец!';
+            if (about != null) {
                 about.textContent = `${data[currentQuestion].about}`;
                 about.style.opacity = '1';
             }
-         
+
             setRigthAnswers(rigthAnswers + 1);
             e.target.classList.add(s.correctly);
             btns.forEach((btn: any) => {
@@ -84,6 +89,9 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
             });
 
         } else {
+            nekoText.style.opacity = '1';
+            nekoText.textContent = 'Ты дурачек!?';
+
             btns.forEach((btn: any) => {
                 btn.disabled = true;
                 data[currentQuestion].answerOptions.map((item) => {
@@ -98,12 +106,12 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
 
                 });
             });
-            if(about != null) {                
+            if (about != null) {
                 about.style.opacity = '1';
                 about.textContent = `${data[currentQuestion].about}`;
 
             }
-            
+
             e.target.classList.add(s.wrong);
         }
     };
@@ -117,19 +125,30 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
             {showEndScore ? (
                 <div className={s.quiz}>
                     <div className={s.end_container}>
-                    <div className={s.quiz__back}><span><Link href={'/tests/beginner'}>Вернуться к тестам</Link></span></div>
-                    <div className={s.quiz__end}>
-                        <div className={s.quiz__score_end}>Ваш результат: {rigthAnswers} из {data.length} - {`${percent}%`}</div>
-                        <div className={cn({
-                            [s.nice]: percent === 100,
-                            [s.middle]: percent > 55 && percent != 100 ,
-                            [s.bad]: percent < 55 && percent != 0 && percent > 30 || percent == 50,
-                            [s.bad_bad]: percent < 30 && percent != 0,
-                            [s.veryBad]: percent === 0,
+                        <div className={s.quiz__back}><span><Link href={'/tests/beginner'}>Вернуться к тестам</Link></span></div>
+                        <div className={s.quiz__end}>
+                            <div className={cn(s.quiz__score_end,{
+                                [s.nice]: percent === 100,
+                                [s.middle]: percent > 55 && percent != 100,
+                                [s.bad]: percent < 55 && percent != 0 && percent > 30 || percent == 50,
+                                [s.bad_bad]: percent < 30 && percent != 0,
+                                [s.veryBad]: percent === 0,
 
-                        }
-                        )} >{percentForAnswer()}</div>
-                    </div>
+                            })}><span style={{color:`black`}}>Ваш результат: {rigthAnswers} из {data.length} - </span> {`${percent}%`}</div>
+                            <div className={s.neko}>
+                                <blockquote className={s.neko__oval}>
+                                </blockquote>
+                            </div>
+                            <div className={cn({
+                                [s.nice]: percent === 100,
+                                [s.middle]: percent > 55 && percent != 100,
+                                [s.bad]: percent < 55 && percent != 0 && percent > 30 || percent == 50,
+                                [s.bad_bad]: percent < 30 && percent != 0,
+                                [s.veryBad]: percent === 0,
+
+                            }
+                            )} >{percentForAnswer()}</div>
+                        </div>
                     </div>
                 </div>
             ) :
@@ -139,20 +158,24 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
                         <div className={s.quiz__score}>{`${score}/${data.length}`}</div>
                         <div className={s.quest}> {data[currentQuestion].question}</div>
                         <div className={s.container_code_about}>
-                        <div className={s.about}>{data[currentQuestion].about}</div>
-                        <Highlight className={cn('hljs language-js', s.cod)}>
-                        {data[currentQuestion].code}
-                        </Highlight>
+                            <div className={s.about}>{data[currentQuestion].about}</div>
+                            <Highlight className={cn('hljs language-js', s.cod)}>
+                                {data[currentQuestion].code}
+                            </Highlight>
                         </div>
-                        
-                        
 
-                        
+
+
+
                         <div className={s.container_answer}>
                             <div className={s.answers}>
-                                { data[currentQuestion].answerOptions.map((answerOptions, index) => {
+                                {data[currentQuestion].answerOptions.map((answerOptions, index) => {
                                     return <button className={s.btn} onClick={(e) => handleAnswerClick(answerOptions.correct, e)} key={index}>{answerOptions.answerText}</button>;
                                 })}
+                            </div>
+                            <div className={s.neko}>
+                                <blockquote className={s.neko__oval}>
+                                </blockquote>
                             </div>
                         </div>
 
