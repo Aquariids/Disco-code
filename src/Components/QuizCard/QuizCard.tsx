@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useRef } from 'react';
+import React from 'react';
 import s from './QuizCard.module.scss';
 import cn from 'classnames';
 const QuizCard = ({category,src,text,title}) => {
