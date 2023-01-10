@@ -320,6 +320,17 @@
    
   }
   
+  @media (max-width:1265px) {
+
+    .neko {
+      &__oval {
+        border-radius:220px / 140px;
+        width:130px;
+      }
+    }
+    
+  
+  }
   
   
 @media (max-width:1220px) {
@@ -334,7 +345,6 @@
   width: 100%;
   }
 
- 
 }
 
 

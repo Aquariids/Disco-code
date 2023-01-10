@@ -19,6 +19,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
     const nextBtn = document.querySelector(`.${s.next__btn}`) as HTMLElement;
     const about = document.querySelector(`.${s.about}`) as HTMLElement;
     const nekoText = document.querySelector(`.${s.neko__oval}`) as HTMLElement;
+    const neko = document.querySelector(`.${s.neko}`) as HTMLElement;
     if (disabledBtn === false && nextBtn != null) {
         nextBtn.classList.add(s.next__btn_active);
     } else {
@@ -83,6 +84,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
 
         setDisabledBtn(!disabledBtn);
         if (isCorrect === true) {
+            neko.style.backgroundImage = "url('/images/quizCard/test2.png')";
             nekoText.style.opacity = '1';
             nekoText.textContent = 'Молодец!';
             if (about != null) {
@@ -97,6 +99,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
             });
 
         } else {
+            neko.style.backgroundImage = "url('/images/quizCard/test3.png')";
             nekoText.style.opacity = '1';
             nekoText.textContent = 'Ты дурачек!?';
 
