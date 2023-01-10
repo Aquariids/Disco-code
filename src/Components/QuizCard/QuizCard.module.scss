@@ -21,7 +21,6 @@
      }   
     }
     &__bg {
-
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -48,6 +47,7 @@
 
 }
 .text {
+    margin:0;
     border-bottom: 1px solid black;
     border-top: none;
     display: grid;
@@ -82,6 +82,17 @@
 @media screen and (max-width: #{$screen_mobile_785}) {
     .main_page {
         background-image: url('/images/quizCard/nekoMainPage.png');
+    }
+
+    .beginner {
+        background-image: url('/images/quizCard/neko_beginner_color.png');
+
+    }
+
+    .tests {
+        &__bg {
+            width: 100%;
+        }
     }
 }
 @media screen and (max-width: #{$screen_mobile_400}) {

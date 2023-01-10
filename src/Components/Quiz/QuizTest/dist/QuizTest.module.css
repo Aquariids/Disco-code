@@ -1,0 +1,73 @@
+.container {
+  display: grid;
+  width: 100%;
+  min-height: 735px;
+}
+
+.test {
+  margin-top: 25px;
+  width: 250px;
+  height: 300px;
+}
+.test__content {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("/images/quizCard/test.png");
+  border: 1px solid black;
+  width: 250px;
+  height: 250px;
+  text-align: center;
+}
+.test__title {
+  margin-bottom: 10px;
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+}
+.test__score {
+  margin-top: 10px;
+}
+
+.start {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  transition: all 0.3s;
+}
+.start:hover {
+  color: #999;
+}
+
+.nice {
+  color: #02d402;
+}
+
+.middle {
+  color: #d0e623;
+}
+
+.bad {
+  color: #f5a209;
+}
+
+.bad_bad {
+  color: #dd2525;
+}
+
+.veryBad {
+  background-color: #dd2525;
+  color: #dd2525;
+}
+
+@media (max-width: 800px) {
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+}
