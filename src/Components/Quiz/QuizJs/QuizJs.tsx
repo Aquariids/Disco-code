@@ -26,6 +26,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
     }
 
 
+   
 
 
 
@@ -44,6 +45,8 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
     }
 
     const next = () => {
+
+        
         nekoText.style.opacity = '0';
         about.style.transition = '0s';
         about.style.opacity = '0';
@@ -66,6 +69,10 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
 
     };
 
+
+    function onKeyPressed(e) {
+        console.log(e.key);
+      }
     
     const handleAnswerClick = (isCorrect, e) => {
         const btns = document.querySelectorAll(`.${s.btn}`) as NodeList;
@@ -152,7 +159,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
                     </div>
                 </div>
             ) :
-                <div className={s.quiz}>
+                <div onKeyDown={(e)=> onKeyPressed(e)} className={s.quiz}>
                     <div className={s.quiz__back}><span><Link href={'/tests/beginner'}>Вернуться к тестам</Link></span></div>
                     <div className={s.quiz__content}>
                         <div className={s.quiz__score}>{`${score}/${data.length}`}</div>
@@ -181,7 +188,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
 
                     </div>
                     <div className={s.next}>
-                        <button disabled={disabledBtn} onClick={next} className={s.next__btn}> Продолжить </button>
+                        <button  disabled={disabledBtn} onClick={next} className={s.next__btn}> Продолжить </button>
                     </div>
                 </div>
             }
