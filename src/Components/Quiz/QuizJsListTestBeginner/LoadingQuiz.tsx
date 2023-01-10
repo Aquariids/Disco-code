@@ -6,7 +6,7 @@ const LoadingQuiz = () => {
 
     const Screen = styled.div`
   position: relative;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   opacity: 0;
   animation: fade 0.4s ease-in forwards;

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 import { withLayout } from '../../layout/Layout';
 import QuizCard from '../../src/Components/QuizCard/QuizCard';
@@ -11,6 +10,5 @@ const index = () => {
         </div>
     );
 };
-
 
 export default withLayout(index);

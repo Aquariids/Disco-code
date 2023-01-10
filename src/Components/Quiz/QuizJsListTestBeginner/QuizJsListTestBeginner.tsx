@@ -2,8 +2,7 @@ import 'highlight.js/styles/default.css';
 import { useRouter } from 'next/router';
 import {useEffect, useState } from 'react';
 import QuizJs from '../QuizJs/QuizJs';
-import s from './QuizJsListTestBeginner.module.scss';
-import { quizData1, quizData2 } from './QuizJsListTestBeginner.props';
+import { quizData1 } from './QuizJsListTestBeginner.props';
 import LoadingQuiz from './LoadingQuiz';
 const QuizJsListTestBeginner = (): JSX.Element => {
     const [percentTest1, setPercentTest1] = useState('0');
@@ -18,7 +17,6 @@ const QuizJsListTestBeginner = (): JSX.Element => {
         return (
             <>
             {!loading ? (<QuizJs localKey={'test1'} percentTest={percentTest1} setPercentTest={setPercentTest1} data={quizData1} />): <LoadingQuiz/>}
-
             </>
         );
     } else {
