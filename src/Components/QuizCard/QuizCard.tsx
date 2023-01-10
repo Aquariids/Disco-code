@@ -19,7 +19,7 @@ const QuizCard = ({category,src,text,title}) => {
                     <Link href={src}></Link>
                 </div>
                 <div className ={s.text}>
-                        <p> {text}</p>
+                        <p>{text}</p>
                     </div>
             </div>
         </div>

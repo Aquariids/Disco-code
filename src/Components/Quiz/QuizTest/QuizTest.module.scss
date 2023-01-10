@@ -1,0 +1,84 @@
+
+@import '../../../../styles/variables@media.scss';
+.container {
+    display:grid;
+    width: 100%;
+    min-height: 735px;
+}
+
+
+.test {
+    margin-top: 25px;
+    width: 250px;
+    height: 300px;
+    
+
+    &__content {
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-image: url('/images/quizCard/test.png');
+        border: 1px solid black;
+        width: 250px;
+        height: 250px;
+        text-align: center;
+    }
+ &__title {
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+}
+
+&__score {
+    margin-top: 10px;
+}
+}
+
+
+.start {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    transition: all .3s;
+    &:hover  {
+        color: #999;
+    }
+}
+
+
+.nice {
+    color: rgb(2, 212, 2);
+  }
+  
+  .middle {
+   color: rgb(208, 230, 35);
+  }
+  
+  .bad {
+    color: rgb(245, 162, 9);
+  
+  }
+  .bad_bad {
+    color: rgb(221, 37, 37);
+  
+  }
+  
+  .veryBad {
+    background-color: rgb(221, 37, 37);
+    color: rgb(221, 37, 37);
+  }
+
+@media (max-width:#{$screen_mobile_785}) {
+
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+    
+}
