@@ -23,10 +23,12 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-highlight": "^0.15.0",
+    "react-loader-spinner": "^5.3.4",
     "react-yandex-metrika": "^2.6.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-highlight": "^5.0.2",
-    "rehype-slug": "^5.0.1"
+    "rehype-slug": "^5.0.1",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@types/glob": "^7.2.0",
