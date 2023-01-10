@@ -39,11 +39,11 @@ const index = () => {
                 <meta name="yandex-verification" content="a99ae512e4f1c330" />
                 <meta
                     name="description"
-                    content={"JavaScript тесы для новичков"}
+                    content={"JavaScript тесты для новичков"}
                 />
                 <meta
                     property="og:description"
-                    content={"JavaScript тесы для новичков"}
+                    content={"JavaScript тесты для новичков"}
                 />
 
                 <meta property="og:type" content="article" />

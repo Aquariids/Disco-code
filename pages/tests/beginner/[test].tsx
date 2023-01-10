@@ -31,7 +31,7 @@ const test = () => {
                 />
 
                 <meta property="og:type" content="article" />
-                <meta property="og:url" content="https://discocode.ru/tests/beginner" />
+                <meta property="og:url" content={`https://discocode.ru/tests/beginner/${test}`} />
                 <meta property="og:site_name" content="DiscoCode" />
                 <meta property="og:locale" content="ru_Ru" />
                 <meta property="og:image:width" content="1200" />
