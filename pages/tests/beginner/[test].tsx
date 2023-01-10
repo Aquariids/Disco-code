@@ -14,7 +14,7 @@ const test = () => {
         <>
             <Head>
                 <title>{`Javascript beginner тест - ${test} `}</title>
-                <meta property="og:title" content={`javaScript тест ${test}`} />
+                <meta property="og:title" content={`javaScript тест`} />
                 <meta
                     name="google-site-verification"
                     content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY"
@@ -23,11 +23,11 @@ const test = () => {
                 <meta name="yandex-verification" content="a99ae512e4f1c330" />
                 <meta
                     name="description"
-                    content={`JavaScript тест ${test}`}
+                    content={`JavaScript тест`}
                 />
                 <meta
                     property="og:description"
-                    content={`JavaScript тест ${test}`}
+                    content={`JavaScript тест`}
                 />
 
                 <meta property="og:type" content="article" />
@@ -46,6 +46,7 @@ const test = () => {
 
 
 };
+
 
 
 
