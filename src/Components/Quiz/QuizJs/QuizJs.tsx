@@ -46,10 +46,11 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
 
     const next = () => {
 
-        
+        about.style.display = 'none';
         nekoText.style.opacity = '0';
         about.style.transition = '0s';
         about.style.opacity = '0';
+
         btns.forEach((btn: any) => {
             btn.style.transition = '0s';
             btn.classList.remove(s.correctly);
@@ -76,8 +77,8 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
     
     const handleAnswerClick = (isCorrect, e) => {
         const btns = document.querySelectorAll(`.${s.btn}`) as NodeList;
-
         about.style.transition = '.2s';
+        about.style.display = 'grid';
 
 
         setDisabledBtn(!disabledBtn);
