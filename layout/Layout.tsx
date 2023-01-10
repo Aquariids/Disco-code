@@ -13,7 +13,6 @@ import { MDXPost } from "../pages/api/api";
 const Layout = ({ children, }: LayoutProps): JSX.Element => {
     
     const router = useRouter();
-    console.log("(👍≖‿‿≖)👍 ✿ file: Layout.tsx:16 ✿ Layout ✿ router", router.asPath.split('/')[1])
     const r = router.asPath.split('/').length;
     
     return (

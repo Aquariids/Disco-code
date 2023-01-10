@@ -61,5 +61,12 @@
         "link":"node.js, блокирущий и неблокирущий ввод/вывод и что за библиотека libuv. ",
         "src":"/node-js/basic-node-js/what-is-node-js",
         "date":"30.12.2022"
+    },
+    {
+        "id":10,
+        "body":"Создал первый ",
+        "link":"тест javaScript уровня beginner.",
+        "src":"/tests/beginner/1",
+        "date":"10.01.2023"
     }
 ]
