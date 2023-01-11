@@ -13,7 +13,7 @@ const test = () => {
     return (
         <>
             <Head>
-                <title>{`Javascript beginner тест - ${test} `}</title>
+                <title>{`Javascript beginner тест`}</title>
                 <meta property="og:title" content={`javaScript тест`} />
                 <meta
                     name="google-site-verification"

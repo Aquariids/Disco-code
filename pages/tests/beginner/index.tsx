@@ -3,19 +3,9 @@ import { withLayout } from '../../../layout/Layout';
 import { quizData1 } from '../../../src/Components/Quiz/QuizJsListTestBeginner/QuizJsListTestBeginner.props';
 import QuizTest from '../../../src/Components/Quiz/QuizTest/QuizTest';
 import Head from 'next/head';
+import s from './test.module.scss';
 
 const index = () => {
-
-
-
-    const [percent1, setPercent1] = useState('') as any;
-    useEffect(() => {
-        if (localStorage.getItem('test1') != null) {
-            setPercent1(localStorage.getItem('test1'));
-        }
-
-    }, []);
-
 
     useEffect(() => {
         quizData1.map((item, i) => {
@@ -27,7 +17,7 @@ const index = () => {
 
 
     return (
-        <>
+        <div className={s.page}>
             <Head>
                 <title>{'Тесты для новичков javascript'}</title>
                 <meta property="og:title" content={`javaScript тесты`} />
@@ -56,8 +46,12 @@ const index = () => {
                 <meta property="og:section" content="nextJs" />
                 <meta property="og:tag" content="next, nextJs, js" />
             </Head>
-            <QuizTest percent={percent1} />
-        </>
+            <QuizTest numTest={1}/>
+            <QuizTest numTest={2}/>
+
+
+
+        </div>
     );
 };
 

@@ -3,25 +3,26 @@
 .container {
     display:grid;
     width: 100%;
-    height: 90vh;
+    justify-content: center;
+    
 
 }
 
 
 .test {
-    margin-top: 25px;
-    width: 250px;
     height: 300px;
-    
-
+    display: grid;
+    margin-left: 10px;
+    margin-right: 10px;
     &__content {
+        background-image: url('/images/quizCard/test.png');
+        grid-template-columns: minmax(200px, 350px);
+        display: grid;
         position: relative;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        background-image: url('/images/quizCard/test.png');
         border: 1px solid black;
-        width: 250px;
         height: 250px;
         text-align: center;
     }
@@ -37,6 +38,14 @@
 }
 }
 
+
+.activeCard { 
+    background-image: url('/images/quizCard/test_active.png');
+}
+
+.noneActive {
+
+}
 
 .start {
     width: 100%;
@@ -75,11 +84,62 @@
     color: rgb(221, 37, 37);
   }
 
-@media (max-width:#{$screen_mobile_785}) {
+
+
+
+
+
+
+@media (max-width:1050px    ) {
 
     .container {
+        height: 100%;
         display: flex;
         justify-content: center;
     }
+    .test {
+        min-width: 200px;
+        height: 250px;
+
+        &__content {
+        min-width: 200px;
+        height: 200px;
+        }
+    }
+}
+
+@media (max-width:#{$screen_mobile_785}) {
+
+    .container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .test {
+        min-width: 300px;
+        height: 360px;
+
+        &__content {
+        min-width: 300px;
+        height: 300px;
+        }
+    }
+}
+
+@media screen and (max-width: #{$screen_mobile_400}) {
+    .test {
+
+        &__content {
+            min-width: 100vw;
+            margin-left: calc(-50vw + 50%);
     
+            border-right: none;
+    
+            border-left: none;
+            border-radius: 0%;
+        }
+        
+    }
+
+
 }

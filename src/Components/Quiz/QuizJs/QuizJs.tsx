@@ -8,23 +8,31 @@ import cn from 'classnames';
 import Link from 'next/dist/client/link';
 import AnimationContainer from '../../AnimationContainers/AnimationContainer';
 hljs.registerLanguage('javascript', javascript);
-const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element => {
+const QuizJs = ({ data, localKey }): JSX.Element => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [showEndScore, setShowEndScore] = useState(false);
     const [score, setScore] = useState(1);
     const [rigthAnswers, setRigthAnswers] = useState(0);
     const [disabledBtn, setDisabledBtn] = useState(true);
+    const [aboutText,setAboutText] = useState();
+    const about = document.querySelector(`.${s.about}`) as HTMLElement;
+    const neko = document.querySelector(`.${s.neko}`) as HTMLElement;
     const btns = document.querySelectorAll(`.${s.btn}`) as NodeList;
+
     const percent = Math.floor(rigthAnswers / data.length * 100);
     const nextBtn = document.querySelector(`.${s.next__btn}`) as HTMLElement;
-    const about = document.querySelector(`.${s.about}`) as HTMLElement;
     const nekoText = document.querySelector(`.${s.neko__oval}`) as HTMLElement;
-    const neko = document.querySelector(`.${s.neko}`) as HTMLElement;
-    if (disabledBtn === false && nextBtn != null) {
-        nextBtn.classList.add(s.next__btn_active);
-    } else {
-        nextBtn && nextBtn.classList.remove(s.next__btn_active);
-    }
+    useEffect(() => {
+        setAboutText(data[currentQuestion].about)
+        if (disabledBtn === false && nextBtn != null) {
+            nextBtn.classList.add(s.next__btn_active);
+        } else {
+            nextBtn && nextBtn.classList.remove(s.next__btn_active);
+        }
+        localStorage.setItem(`${localKey}`, `${percent}`);
+
+    });
+   
 
 
    
@@ -126,11 +134,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
             e.target.classList.add(s.wrong);
         }
     };
-    useEffect(() => {
-        setPercentTest(percent);
-        localStorage.setItem(`${localKey}`, `${percentTest}`);
-
-    });
+    
     return (
         <AnimationContainer>
             {showEndScore ? (
@@ -169,7 +173,7 @@ const QuizJs = ({ data, percentTest, setPercentTest, localKey }): JSX.Element =>
                         <div className={s.quiz__score}>{`${score}/${data.length}`}</div>
                         <div className={s.quest}> {data[currentQuestion].question}</div>
                         <div className={s.container_code_about}>
-                            <div className={s.about}>{data[currentQuestion].about}</div>
+                            <div className={s.about}>{aboutText}</div>
                             <Highlight className={cn('hljs language-js', s.cod)}>
                                 {data[currentQuestion].code}
                             </Highlight>
