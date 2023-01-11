@@ -8,6 +8,8 @@ interface data {
         correct: boolean
     }[]
 }
+
+
 export const quizData1: data[] = [
 
     {
@@ -178,7 +180,6 @@ export const quizData1: data[] = [
     }
 
 ].sort(() => Math.random() - 0.5);
-
 
 export const quizData2: data[] = [
     {
@@ -638,6 +639,141 @@ export const quizData4: data[] = [
 
 ].sort(() => Math.random() - 0.5);
 
+export const quizData5: data[] = [
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Метод replace() возвращает новую строку, в которой некоторые или все совпадения шаблона заменены фрагментом который мы передаем .
+        Шаблон может быть строкой или регулярным выражением, а заменой может быть строка или функция, вызываемая для каждого совпадения.
+        Чтобы выполнить глобальный поиск и замену, включите в регулярное выражение флаг g.
+        `,
+        code: `
+        const str = "JavaScript";
+        const result = str.replace(/a/g, "e");
+        `,
+        answerOptions: [
+            { answerText: 'JeveScript', correct: true },
+            { answerText: 'JevaScript', correct: false },
+            { answerText: 'ECMAScript', correct: false },
+            { answerText: 'JaveScript', correct: false },
+
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Оператор typeof возвращает строку, указывающую тип переданного значения. Для истинных или ложных значений он вернет логичиский тип "boolean".
+        `,
+        code: 
+        `
+        const result = typeof false;
+        `,
+        answerOptions: [
+            { answerText: '"boolean"', correct: true },
+            { answerText: 'false', correct: false },
+            { answerText: '"null"', correct: false },
+            { answerText: 'true', correct: false },
+            { answerText: '"number"', correct: false },
+
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Переменные объявленные с помощью var допускают повторного объявления. 
+        `,
+        code: 
+        `
+        var prop = 1;
+        var prop = 2;
+        const result = prop;
+        `,
+        answerOptions: [
+            { answerText: '3', correct: false },
+            { answerText: '1', correct: false },
+            { answerText: 'null', correct: false },
+            { answerText: '2', correct: true },
+            { answerText: 'throw a SyntaxError', correct: false },
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Оператор instanceof позволяет проверить, принадлежит ли объект указанному классу, с учётом наследования(присутствует ли объект constructor.prototype в цепочке прототипов object).
+        `,
+        code: 
+        `
+        const array = [1, 2, 3];
+        const result = array instanceof Array;
+        `,
+        answerOptions: [
+            { answerText: 'throw a TypeError', correct: false },
+            { answerText: 'false', correct: false },
+            { answerText: 'true', correct: true },
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        `,
+        code: `
+        `,
+        answerOptions: [
+            { answerText: '6', correct: false },
+            { answerText: '27', correct: true },
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        `,
+        code: `
+        `,
+        answerOptions: [
+            { answerText: '6', correct: false },
+            { answerText: '27', correct: true },
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        `,
+        code: `
+        `,
+        answerOptions: [
+            { answerText: '6', correct: false },
+            { answerText: '27', correct: true },
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        `,
+        code: `
+        `,
+        answerOptions: [
+            { answerText: '6', correct: false },
+            { answerText: '27', correct: true },
+
+        ].sort(() => Math.random() - 0.5)
+    },
+
+].sort(() => Math.random() - 0.5);
 
 
 

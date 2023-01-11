@@ -36,9 +36,24 @@
 
     .page {
       margin-bottom: 100px;
+      grid-template-columns: 1fr 1fr;
+    }
+      
+  }
+
+  @media (max-width:#{$screen_mobile_500}) {
+
+    .page {
+      margin-bottom: 100px;
       grid-template-columns: 1fr;
+    }
+      
+  }
+
+  @media (max-width:#{$screen_mobile_400}) {
+
+    .page {
       grid-template-rows: 1fr;
-  
     }
       
   }

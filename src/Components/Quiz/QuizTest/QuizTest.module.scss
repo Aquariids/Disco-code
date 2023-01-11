@@ -4,7 +4,6 @@
     display:grid;
     width: 100%;
     justify-content: center;
-    align-items: center;
     
 
 }
@@ -15,16 +14,19 @@
     display: grid;
     margin-left: 10px;
     margin-right: 10px;
+
+   
     &__content {
         background-image: url('/images/quizCard/test.png');
-        grid-template-columns: minmax(200px, 350px);
+        grid-template-columns: minmax(200px, 1fr);
         display: grid;
+        width: 100%;
         position: relative;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         border: 1px solid black;
-        height: 230px;
+        height: 240px;
         text-align: center;
     }
  &__title {
@@ -55,6 +57,7 @@
 }
 
 .start {
+    padding-top: 10px;
     width: 100%;
     position: absolute;
     bottom: 0;
@@ -96,13 +99,16 @@
   @media (max-width:1560px    ) {
 
     .container {
+
         height: 100%;
         display: flex;
         justify-content: center;
     }
     .test {
-        min-width: 200px;
+        min-width: 250px;
         height: 300px;
+
+
 
         &__content {
         min-width: 200px;
@@ -122,11 +128,11 @@
     }
     .test {
         min-width: 200px;
-        height: 250px;
+        height: 300px;
 
         &__content {
         min-width: 200px;
-        height: 200px;
+        height: 250px;
         }
     }
 }
@@ -134,25 +140,34 @@
 @media (max-width:#{$screen_mobile_785}) {
 
     .container {
+
         height: 100%;
         display: flex;
         justify-content: center;
     }
-    .test {
-        min-width: 300px;
-        height: 360px;
-
-        &__content {
-        min-width: 300px;
-        height: 300px;
-        }
-    }
+   
+    
 }
 
+
+@media screen and (max-width: #{$screen_mobile_500}) {
+    .test {
+        &__content {
+            min-width: 300px;
+            min-height: 300px;
+            border-radius: 0%;
+        }
+        
+    }
+
+
+}
 @media screen and (max-width: #{$screen_mobile_400}) {
     .test {
-
+        height: 380px;
+        margin-bottom: 100px;
         &__content {
+            height: 360px;
             min-width: 100vw;
             margin-left: calc(-50vw + 50%);
     

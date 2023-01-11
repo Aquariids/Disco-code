@@ -54,6 +54,8 @@ const index = () => {
             <QuizTest numTest={2}/>
             <QuizTest numTest={3}/>
             <QuizTest numTest={4}/>
+            <QuizTest numTest={5}/>
+
 
 
         </div>
