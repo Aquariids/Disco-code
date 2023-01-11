@@ -16,7 +16,11 @@ const QuizTest = ({ numTest }) => {
             <div className={s.test}>
                 <div className={s.test__title}>Тест {numTest}</div>
                 <div className={cn(s.test__content, {
-                    [s.activeCard]: percent != 0
+                    [s.activeCard]: percent != 0,
+                    [s.activeBadCard]: percent === '0' || percent < 30 && percent != 0,
+
+
+
                 })}>
                     <div className={s.test__score}> Пройден на <span className={cn({
                         [s.nice]: percent == 100,

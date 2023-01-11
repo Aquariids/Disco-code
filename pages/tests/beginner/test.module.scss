@@ -1,7 +1,7 @@
 @import '../../../styles/variables@media.scss';
 
 .page {
-    margin-top: 10px;
+    margin-top: 25px;
     display: grid;
     min-height: 100vh;
     justify-content: center;
@@ -27,7 +27,6 @@
   .page {
     margin-bottom: 100px;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
 
   }
     

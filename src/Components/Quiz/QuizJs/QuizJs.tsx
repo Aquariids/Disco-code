@@ -150,7 +150,7 @@ const QuizJs = ({ data, localKey }): JSX.Element => {
                                 [s.bad_bad]: percent < 30 && percent != 0,
                                 [s.veryBad]: percent === 0,
 
-                            })}><span style={{color:`black`}}>Ваш результат: {rigthAnswers} из {data.length} - </span> {`${percent}%`}</div>
+                            })}><span style={{color:`black`}}>Ваш результат: <span className={s.nice}>{rigthAnswers}</span> из {data.length} - </span> {`${percent}%`}</div>
                             <div className={s.neko}>
                                 <blockquote className={s.neko__oval}>
                                 </blockquote>

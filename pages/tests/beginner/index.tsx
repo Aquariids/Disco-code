@@ -52,7 +52,8 @@ const index = () => {
             </Head>
             <QuizTest numTest={1}/>
             <QuizTest numTest={2}/>
-
+            <QuizTest numTest={3}/>
+            <QuizTest numTest={4}/>
 
 
         </div>
