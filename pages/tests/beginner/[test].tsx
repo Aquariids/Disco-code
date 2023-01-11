@@ -3,8 +3,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { withLayout } from '../../../layout/Layout';
 import QuizJsListTestBeginner from '../../../src/Components/Quiz/QuizJsListTestBeginner/QuizJsListTestBeginner';
-const test = (data) => {
-console.log("(👍≖‿‿≖)👍 ✿ file: [test].tsx:7 ✿ test ✿ data", data)
+const test = () => {
 
 
     const router = useRouter();
