@@ -142,6 +142,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getSlugs(POSTS_PATH_BASIC_JS).map((js) => ({ params: { js } }));
+  console.log("(👍≖‿‿≖)👍 ✿ file: [js].tsx:145 ✿ constgetStaticPaths:GetStaticPaths= ✿ paths", paths)
 
   return {
     paths,

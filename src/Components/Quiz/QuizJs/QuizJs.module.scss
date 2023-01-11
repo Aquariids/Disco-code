@@ -1,9 +1,13 @@
 
 @import '../../../../styles/variables@media.scss';
+
+.page {
+}
 .quiz {
     width: 100%;
     justify-content: center;
     display: flex;
+
     margin-top: 10px;
     align-items: center;
     flex-direction: column;

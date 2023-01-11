@@ -136,6 +136,7 @@ const QuizJs = ({ data, localKey }): JSX.Element => {
     };
     
     return (
+        <div className={s.page}>
         <AnimationContainer>
             {showEndScore ? (
                 <div className={s.quiz}>
@@ -203,6 +204,7 @@ const QuizJs = ({ data, localKey }): JSX.Element => {
 
 
         </AnimationContainer>
+        </div>
     );
 };
 

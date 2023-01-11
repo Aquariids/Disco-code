@@ -19,8 +19,8 @@ const Layout = ({ children, }: LayoutProps): JSX.Element => {
         <>
 
             <div className={cn(wrapper, {
-                [s.wrapperWithoutRightSide]: (r >= 3 && router.asPath.split('/')[1] != 'tests')
-
+                [s.wrapperWithoutRightSide]: (r >= 3 && router.asPath.split('/')[1] != 'tests'),
+                [s.noneAnimeBgForQuiz]: router.asPath.startsWith('/tests'),
               
             })}>
                 <Header className={header} />

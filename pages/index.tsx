@@ -18,6 +18,9 @@ const Home: NextPage = (): JSX.Element => {
     html.style.scrollBehavior = 'auto';
   };
 
+
+  
+
   return (
     <div className={s.page}>
       <Head>

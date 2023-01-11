@@ -177,7 +177,7 @@ export const quizData1: data[] = [
         ].sort(()=> Math.random() - 0.5)
     }
 
-];
+].sort(()=> Math.random() - 0.5);
 
 
 export const quizData2: data[] = [
@@ -213,19 +213,20 @@ export const quizData2: data[] = [
     {
         question: 'Какое значение будет в result?',
         about: `
-        Метод indexOf() возвращает первый индекс, при котором данный элемент может быть найден в массиве или -1, если он отсутствует.
+        Объект arguments — это объект типа Array, соответствующий аргументам, переданным функции.
+        arguments.length — это ссылка на количество аргументов, переданных функции.
         `,
         code: `
-        const array = [1,2,3,5];
-        const result = array.indexOf(3);
-
+        const func = function(a,b) {
+            return arguments.length;
+        };
+        const result = func(4,3,2,1);
         `,
         answerOptions: [
-            { answerText: '-1', correct: false },
-            { answerText: '2', correct: true },
-            { answerText: '5', correct: false },
-            { answerText: '3',   correct: false },
-
+            { answerText: '2', correct: false },
+            { answerText: '4', correct: true },
+            { answerText: '0', correct: false },
+            { answerText: 'undefined',   correct: false },
         ].sort(()=> Math.random() - 0.5)
     },
     {
@@ -333,7 +334,7 @@ export const quizData2: data[] = [
         ].sort(()=> Math.random() - 0.5)
     }
 
-];
+].sort(()=> Math.random() - 0.5);
 
 
 

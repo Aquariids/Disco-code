@@ -1,16 +1,20 @@
 // loadingScreen.js
 import styled from "styled-components";
-
+import s from './QuizJsListTestBeginner.module.scss';
 
 const LoadingQuiz = () => {
 
     const Screen = styled.div`
+  margin-top:10px;
   position: relative;
-  height: 100vh;
-  width: 100%;
   opacity: 0;
+  min-height:100vh;
+  width:100%;
+  min -height:100vh;
+
   animation: fade 0.4s ease-in forwards;
-  background: white;
+  background: #FFF;
+  background-image: 'none';
 
   @keyframes fade {
     0% {
@@ -64,6 +68,7 @@ const Balls = styled.div`
   }
 `;
     return (
+      <div className={s.loadPage}>
       <Screen>
         <Balls>
           <div className="ball one"></div>
@@ -71,6 +76,7 @@ const Balls = styled.div`
           <div className="ball three"></div>
         </Balls>
       </Screen>
+      </div>
     );
   };
   

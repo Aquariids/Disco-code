@@ -1,17 +1,12 @@
-.quiz {
+
+.err {
+    min-height: 100vh;
 }
 
-.end {
-    display: block;
-}
-
-.quest {
-    display:block;
-}
-
-.er {
-    font-size: 25px;
+.loadPage {
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    align-items: center;
 }

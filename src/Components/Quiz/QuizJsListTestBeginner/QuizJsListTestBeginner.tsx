@@ -4,6 +4,7 @@ import {useEffect, useState } from 'react';
 import QuizJs from '../QuizJs/QuizJs';
 import { quizData1,quizData2 } from './QuizJsListTestBeginner.props';
 import LoadingQuiz from './LoadingQuiz';
+
 const QuizJsListTestBeginner = (): JSX.Element => {
     const router = useRouter();
     const { test } = router.query;

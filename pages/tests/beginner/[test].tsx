@@ -3,11 +3,12 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { withLayout } from '../../../layout/Layout';
 import QuizJsListTestBeginner from '../../../src/Components/Quiz/QuizJsListTestBeginner/QuizJsListTestBeginner';
-const test = () => {
+const test = (data) => {
+console.log("(👍≖‿‿≖)👍 ✿ file: [test].tsx:7 ✿ test ✿ data", data)
 
 
     const router = useRouter();
-    const {test} = router.query;
+    const {test1} = router.query;
 
 
     return (
@@ -31,7 +32,7 @@ const test = () => {
                 />
 
                 <meta property="og:type" content="article" />
-                <meta property="og:url" content={`https://discocode.ru/tests/beginner/${test}`} />
+                <meta property="og:url" content={`https://discocode.ru/tests/beginner/${test1}`} />
                 <meta property="og:site_name" content="DiscoCode" />
                 <meta property="og:locale" content="ru_Ru" />
                 <meta property="og:image:width" content="1200" />
@@ -53,6 +54,4 @@ const test = () => {
 
 
 export default withLayout(test);
-
-
 

@@ -11,6 +11,10 @@ const index = () => {
         quizData1.map((item, i) => {
             quizData1[i].answerOptions.sort(() => Math.random() - 0.5);
         });
+        quizData1.map((item, i) => {
+            quizData1.sort(() => Math.random() - 0.5);
+        });
+
     });
 
 
