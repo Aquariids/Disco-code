@@ -19,12 +19,12 @@ const QuizTest = ({ numTest }) => {
                     [s.activeCard]: percent != 0
                 })}>
                     <div className={s.test__score}> Пройден на <span className={cn({
-                        [s.nice]: percent === 100,
+                        [s.nice]: percent == 100,
                         [s.middle]: percent > 55 && percent != 100,
                         [s.bad]: percent < 55 && percent != 0 && percent > 30 || percent == 50,
                         [s.bad_bad]: percent < 30 && percent != 0,
-                        [s.veryBad]: percent === 0,
-                    })} >{`${percent ? percent : 0}%`}</span></div>
+                        [s.veryBad]: percent === '0',
+                    })} >{`${percent ? percent : '0'}%`}</span></div>
                     <div className={s.start}><Link href={`/tests/beginner/${numTest}`}>Начать</Link></div>
                 </div>
             </div>
