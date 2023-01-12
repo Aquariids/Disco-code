@@ -377,8 +377,9 @@
 
     .cod {
       overflow: auto;
-      height: 180px;
+      height: 185px;
       font-size: 12px;
+
     }
 
     &__end {
@@ -413,8 +414,11 @@
   }
 
   .btn {
+    margin: 0;
+    margin-top: 5px;
+
     font-size: 14px;
-    height: 25px;
+    height: 30px;
   }
 .about {
   width: 100vw;
