@@ -21,7 +21,7 @@ const QuizJsListTestBeginner = (): JSX.Element => {
     if (test === '5') return !loading ? (<QuizJs localKey={'test5'}  data={quizData5} />): <LoadingQuiz/>;
     if (test === '6') return !loading ? (<QuizJs localKey={'test6'}  data={quizData6} />): <LoadingQuiz/>;
     if (test === '7') return !loading ? (<QuizJs localKey={'test7'}  data={quizData7} />): <LoadingQuiz/>;
-    if (test === '8') return !loading ? (<QuizJs localKey={'test7'}  data={quizData8} />): <LoadingQuiz/>;
+    if (test === '8') return !loading ? (<QuizJs localKey={'test8'}  data={quizData8} />): <LoadingQuiz/>;
 
 
 

@@ -201,7 +201,7 @@ export const quizData2: data[] = [
         Многострочные комментарии начинаются с /* и заканчиваются */. Любой текст между /* и */ будет игнорироваться JavaScript.
         `,
         code: `
-        Выберите корректный синтаксис комментариев в javaScript
+        Комментарии в javaScript;
         `,
         answerOptions: [
             { answerText: '<< Comment >>', correct: false },
@@ -1284,8 +1284,8 @@ export const quizData8: data[] = [
         const result = [1, 2, 3].some(check);
         `,
         answerOptions: [
-            { answerText: 'true', correct: false },
-            { answerText: 'false', correct: true },
+            { answerText: 'true', correct: true },
+            { answerText: 'false', correct: false },
 
 
         ].sort(() => Math.random() - 0.5)
