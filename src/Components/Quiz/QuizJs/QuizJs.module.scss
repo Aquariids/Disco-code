@@ -390,7 +390,10 @@
   }
 
   .answers {
-    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
   }
 
   .about {
@@ -416,7 +419,7 @@
   .btn {
     margin: 0;
     margin-top: 5px;
-
+    width: 50%;
     font-size: 14px;
     height: 30px;
   }
@@ -432,3 +435,17 @@
 
 
 
+
+@media (max-width:#{$screen_mobile_500}) {
+
+
+  
+  .answers {
+    display: grid;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
