@@ -1,12 +1,13 @@
 @import '../../../styles/variables@media.scss';
 
 .page {
-    margin-top: 100px;
+    align-items: center;
     display: grid;
     min-height: 100%;
     justify-content: center;
     grid-template-columns: repeat(4, minmax(auto,1fr));
     grid-template-rows: repeat(1, 380px);
+
    
 }
 
@@ -36,7 +37,8 @@
 
     .page {
       margin-bottom: 100px;
-      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(8, 380px);
+
     }
       
   }
@@ -44,7 +46,8 @@
   @media (max-width:#{$screen_mobile_500}) {
 
     .page {
-      margin-bottom: 100px;
+      margin-top: 50px;
+      margin-bottom: 50px;
       grid-template-columns: 1fr;
     }
       
