@@ -354,9 +354,27 @@
 @media (max-width:#{$screen_mobile_785}) {
 
   .quiz {
-    margin-bottom: 20px;
     &__content {
       border: 0;
+      height: 100%;
+    }
+
+    &__score {
+      font-size: 14px;
+    }
+
+    &__back {
+      margin-top: 20px;
+      span {
+        
+        height: 25px;
+        font-size: 10px;
+      }
+    }
+
+    .cod {
+      height: 100%;
+      font-size: 12px;
     }
 
     &__end {
@@ -364,6 +382,30 @@
       display: flex;
       text-align: center;
     }
+  }
+
+  .answers {
+    grid-template-columns: 1fr;
+  }
+  
+  .next {
+
+    &__btn {
+      height: 30px;
+      font-size: 10px;
+      
+    }
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+
+  .quest {
+    font-size: 15px;
+  }
+
+  .btn {
+    font-size: 15px;
+    height: 30px;
   }
 .about {
   width: 100vw;
