@@ -2,7 +2,7 @@ import 'highlight.js/styles/default.css';
 import { useRouter } from 'next/router';
 import {useEffect, useState } from 'react';
 import QuizJs from '../QuizJs/QuizJs';
-import { quizData1,quizData2,quizData3,quizData4,quizData5 } from './QuizJsListTestBeginner.props';
+import { quizData1,quizData2,quizData3,quizData4,quizData5,quizData6, quizData7, quizData8 } from './QuizJsListTestBeginner.props';
 import LoadingQuiz from './LoadingQuiz';
 
 const QuizJsListTestBeginner = (): JSX.Element => {
@@ -19,6 +19,10 @@ const QuizJsListTestBeginner = (): JSX.Element => {
     if (test === '3') return !loading ? (<QuizJs localKey={'test3'}  data={quizData3} />): <LoadingQuiz/>;
     if (test === '4') return !loading ? (<QuizJs localKey={'test4'}  data={quizData4} />): <LoadingQuiz/>;
     if (test === '5') return !loading ? (<QuizJs localKey={'test5'}  data={quizData5} />): <LoadingQuiz/>;
+    if (test === '6') return !loading ? (<QuizJs localKey={'test6'}  data={quizData6} />): <LoadingQuiz/>;
+    if (test === '7') return !loading ? (<QuizJs localKey={'test7'}  data={quizData7} />): <LoadingQuiz/>;
+    if (test === '8') return !loading ? (<QuizJs localKey={'test7'}  data={quizData8} />): <LoadingQuiz/>;
+
 
 
     else {

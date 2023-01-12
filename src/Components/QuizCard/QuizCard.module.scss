@@ -21,13 +21,13 @@
      }   
     }
     &__bg {
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        text-align: left;
-        width: 650px;
-        height: 270px;
         border: 1px solid black;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        text-align: left;
+        width: 100%;
+        height: 325px;
         cursor: pointer;
         transition: all .3s;
         
@@ -58,7 +58,6 @@
 
 .main_page_tests {
     display: grid;
-    
     justify-content: center;
     align-items: center;
     grid-template-columns: minmax(var(--wrapperSides), var(--wrapper));
@@ -66,9 +65,7 @@
 }
 
 .main_page {
-    
     grid-template-columns: minmax(245px, 1fr);
-
     display: grid;
     width: 100%;
     margin: 0 auto;

@@ -55,6 +55,10 @@ const index = () => {
             <QuizTest numTest={3}/>
             <QuizTest numTest={4}/>
             <QuizTest numTest={5}/>
+            <QuizTest numTest={6}/>
+            <QuizTest numTest={7}/>
+            <QuizTest numTest={8}/>
+
 
 
 

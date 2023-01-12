@@ -42,13 +42,23 @@
 }
 
 
-.activeCard { 
-    background-image: url('/images/quizCard/test_active.png');
+
+
+.activeVeryBadCard {
+    background-image: url('/images/quizCard/test_active_very_bad.png');
+
+}
+
+.activeNiceCard { 
+    background-image: url('/images/quizCard/test_active_nice.png');
 }
 
 .activeBadCard {
     background-image: url('/images/quizCard/test_active_bad.png');
 
+}
+.activeMiddleCard {
+    background-image: url('/images/quizCard/test_active_middle.png');
 
 }
 

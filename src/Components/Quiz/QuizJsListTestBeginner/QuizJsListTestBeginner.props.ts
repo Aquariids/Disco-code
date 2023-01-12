@@ -646,7 +646,7 @@ export const quizData5: data[] = [
         ` 
         Метод replace() возвращает новую строку, в которой некоторые или все совпадения шаблона заменены фрагментом который мы передаем .
         Шаблон может быть строкой или регулярным выражением, а заменой может быть строка или функция, вызываемая для каждого совпадения.
-        Чтобы выполнить глобальный поиск и замену, включите в регулярное выражение флаг g.
+        Чтобы выполнить глобальный поиск и замену, в регулярное выражение добавляется флаг g.
         `,
         code: `
         const str = "JavaScript";
@@ -724,12 +724,20 @@ export const quizData5: data[] = [
         question: 'Какое значение будет в result?',
         about:
         ` 
+        Деструктурирующее присваивание – это специальный синтаксис, 
+        который позволяет нам «распаковать» значения массивов или объектов в отдельные переменные.
         `,
         code: `
+        let numbers = [262, 2009, 95];
+        let [first, second, third] = numbers;
+        const result = second;
         `,
         answerOptions: [
-            { answerText: '6', correct: false },
-            { answerText: '27', correct: true },
+            { answerText: 'undefined', correct: false },
+            { answerText: '3', correct: false },
+            { answerText: '95', correct: false },
+            { answerText: '262', correct: false },
+            { answerText: '2009', correct: true },
 
         ].sort(() => Math.random() - 0.5)
     },
@@ -737,12 +745,41 @@ export const quizData5: data[] = [
         question: 'Какое значение будет в result?',
         about:
         ` 
+        slice() - возвращает(вырезает) часть строки или массива.
+        Принимает два аргумента: 1 - это с какой позиции вырезаем, а 2 - где вырезание заканчивается. Исходный массив или строка, не будут изменены.
+        join() - объединяет все элементы массива в строку и возвращает её.
         `,
         code: `
+        const a = [1, 2, 3, 4, 5];
+        const sliced = a.slice(1, a.length - 1);
+        const result = sliced.join("");
         `,
         answerOptions: [
-            { answerText: '6', correct: false },
-            { answerText: '27', correct: true },
+            { answerText: '23', correct: false },
+            { answerText: '3', correct: false },
+            { answerText: '2345', correct: false },
+            { answerText: '34', correct: false },
+            { answerText: '234', correct: true },
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какой из методов позволяет получить последний элемент массива?',
+        about:
+        ` 
+        Метод pop() удаляет последний элемент из массива и возвращает этот элемент. Этот метод изменяет длину массива.
+        `,
+        code: `
+        Array.unshift()
+        Array.shift()
+        Array.push()
+        Array.pop()
+        `,
+        answerOptions: [
+            { answerText: '.unshift()', correct: false },
+            { answerText: '.shift()', correct: false },
+            { answerText: '.push()', correct: false },
+            { answerText: '.pop()', correct: true },
 
         ].sort(() => Math.random() - 0.5)
     },
@@ -750,30 +787,539 @@ export const quizData5: data[] = [
         question: 'Какое значение будет в result?',
         about:
         ` 
+        Метод toPrecision() возвращает строку, представляющую объект Number с указанной точностью.
+        Метод toFixed() форматирует число, используя запись с фиксированной точкой. toFixed(n) предоставляет длину n после точки.
+        toPrecision(x) предоставляет x общую длину строки.
         `,
         code: `
+        const number = 12.3456;
+        const result = number.toPrecision(2);
         `,
         answerOptions: [
-            { answerText: '6', correct: false },
-            { answerText: '27', correct: true },
-
-        ].sort(() => Math.random() - 0.5)
-    },
-    {
-        question: 'Какое значение будет в result?',
-        about:
-        ` 
-        `,
-        code: `
-        `,
-        answerOptions: [
-            { answerText: '6', correct: false },
-            { answerText: '27', correct: true },
+            { answerText: '12.3', correct: false },
+            { answerText: '12.34', correct: false },
+            { answerText: '12.35', correct: false },
+            { answerText: '12.4', correct: false },
+            { answerText: '12', correct: true },
 
         ].sort(() => Math.random() - 0.5)
     },
 
 ].sort(() => Math.random() - 0.5);
+
+export const quizData6: data[] = [
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Метод slice() возвращает(вырезает) часть строки или массива без изменения исходного.
+        Принимает два аргумента: 1 - это с какой позиции вырезаем, а 2 - где вырезание заканчивается.
+        Если второе значение отрицательное оно обрабатывается как
+        strLength(длина строки) + endIndex(второй аргумент) символ по этому индексу не будет включен. 
+        `,
+        code: `
+        const result = "ECMAScript".slice(1, -1);
+        `,
+        answerOptions: [
+            { answerText: 'CMAScrip', correct: true },
+            { answerText: 'ECMAScrip', correct: false },
+            { answerText: 'CM', correct: false },
+            { answerText: 'C', correct: false },
+
+
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Метод push() добавляет один или несколько элементов в конец массива и возвращает его новую длину.
+        Метод pop() удаляет последний элемент и возвращает его. Этот метод изменяет длину массива.
+        `,
+        code: 
+        `
+        const array = [1, 2, 3];
+        array.push(4);
+        array.pop();
+        const result = array.length;
+        `,
+        answerOptions: [
+            { answerText: '3', correct: true },
+            { answerText: '2', correct: false },
+            { answerText: '4', correct: false },
+            { answerText: '5', correct: false },
+            { answerText: 'undefined', correct: false },
+
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Метод Math.abs() возвращает модуль числа, то есть из отрицательного числа делает положительное.
+        `,
+        code: `
+        const value = -2009;
+        const result = Math.abs(value);
+        `,
+        answerOptions: [
+            { answerText: '2009', correct: true },
+            { answerText: '-2009', correct: false },
+            { answerText: '1', correct: false },
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Оператор + конвертирует булевые значения в число. true в 1, а false в 0. 
+        `,
+        code: 
+        `
+        const result = true + true;
+        `,
+        answerOptions: [
+            { answerText: '2', correct: true },
+            { answerText: '1', correct: false },
+            { answerText: '0', correct: false },
+            { answerText: 'NaN', correct: false },
+
+
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Метод substr() - Это устаревший метод. Возвращает часть строки между начальным индексом и количеством символов после него.
+        Метод substring() возвращает часть строки между начальным и конечным индексами или до конца строки.
+        Метод indexOf() возвращает первый индекс, по которому данный элемент может быть найден в массиве или -1, если такого индекса нет.
+        substr = avaS
+        substring = ava
+        ищем ava в avaS - получаем индекс 0.
+        `,
+        code: `
+        const str = 'javaScript';
+        const substr = str.substr(1, 4);
+        const substring = str.substring(1, 4);
+        const result = substr.indexOf(substring);
+        `,
+        answerOptions: [
+            { answerText: '0', correct: true },
+            { answerText: '4', correct: false },
+            { answerText: '1', correct: false },
+            { answerText: '-1', correct: false },
+
+
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Метод push() добавляет один или несколько элементов в конец массива и возвращает новую длину массива.
+        Метод pop() удаляет последний элемент и возвращает этот элемент.
+        `,
+        code: `
+        const a = [1, 2, 3, 4, 5];
+        const result = a.push(6) - a.pop();
+        `,
+        answerOptions: [
+            { answerText: '0', correct: true },
+            { answerText: 'NaN', correct: false },
+            { answerText: '-1', correct: false },
+            { answerText: '6', correct: false },
+
+
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Оператор new создаёт экземпляр объекта, встроенного или определённого пользователем, имеющего конструктор.
+        Это отдельные экземпляры они между собой не равны.
+        `,
+        code: `
+        const User = function (name) {
+            this.name = name;
+        };
+        
+        const user1 = new User("Диман");
+        const user2 = new User("Диман");
+        const result = user1 === user2;
+        
+        `,
+        answerOptions: [
+            { answerText: 'false', correct: true },
+            { answerText: 'true', correct: false },
+
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Метод every() проверяет, все ли элементы массива подходят под условие переданной функции. Если да, то нам вернет true, иначе false. 
+        `,
+        code: `
+        const check = (value) => value === 2;
+        const result = [1, 2, 3].every(check);
+        `,
+        answerOptions: [
+            { answerText: 'false', correct: true },
+            { answerText: 'true', correct: false },
+
+
+        ].sort(() => Math.random() - 0.5)
+    },
+
+].sort(() => Math.random() - 0.5);
+
+export const quizData7: data[] = [
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Метод concat() используется для объединения двух или более массивов.
+        Этот метод не изменяет исходный массив, он создает новый.
+        `,
+        code: `
+        const array = [1, 2, 3];
+        array.concat(4, 5, 6);
+        const result = array;
+        `,
+        answerOptions: [
+            { answerText: '[ 1, 2, 3, 4, 5, 6 ]', correct: false },
+            { answerText: '[ 1, 2, 3 ]', correct: true },
+            { answerText: '[ 4, 5, 6 ]', correct: false },
+            { answerText: '[ 1, 2, 3,4 ]', correct: false },
+            { answerText: 'throw a TypeError', correct: false },
+
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        декремент уменьшает(отнимает единицу) свой операнд и возвращает значение.
+        Постфиксная форма value-- - сначала возвращает старое значение(перед уменьшением).
+        Префиксная форма --value - сразу возвращает новое значение(после уменьшения).
+        `,
+        code: `
+        let value = 95;
+        const result = value--;
+        `,
+        answerOptions: [
+            { answerText: '95', correct: true },
+            { answerText: '94', correct: false },
+            { answerText: 'undefined', correct: false },
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Метод Math.sqrt() возвращает квадратный корень числа. Если число отрицательное, то вернётся NaN.
+
+        P.S. Че за тупые вопросы, кто это писал?))
+        `,
+        code: `
+        const result = Math.sqrt(4);
+        `,
+        answerOptions: [
+            { answerText: '2', correct: true },
+            { answerText: '8', correct: false },
+            { answerText: '4', correct: false },
+            { answerText: '16', correct: false },
+
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Логический Опертор || (ИЛИ) возвращает первую правду.
+        Логический оператор && (И) вернет первое ложное значение. Так же логическое && имеет больший приоритет и будет первым выполняться чем ||.
+        1 && false  вренет false.
+        0 || false вернет false.
+        false || "Аниме" вернет "Аниме".
+        `,
+        code: `
+        const result = 0 || 1 && false || "Аниме";
+        `,
+        answerOptions: [
+            { answerText: '"Аниме"', correct: true },
+            { answerText: '0', correct: false },
+            { answerText: 'false', correct: false },
+            { answerText: 'undefined', correct: false },
+            { answerText: '1', correct: false },
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Метод reverse() переворачивает массив на месте и возвращает тот же массив.
+        Первый элемент массива становится последним, а последний становится первым.
+        `,
+        code: `
+        const array = [1, 2, 3];
+        const copy = array.reverse();
+        const result = copy === array;
+        `,
+        answerOptions: [
+            { answerText: 'true', correct: true },
+            { answerText: 'false', correct: false },
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Опертор % возвращает остаток после деления.
+        12 % 3 = 0; 13 % 3 = 1; 14 % 3 = 2; 15 % 3 = 0; и так далее
+        `,
+        code: `
+        const result = 11 % 3;
+        `,
+        answerOptions: [
+            { answerText: '2', correct: true },
+            { answerText: '0', correct: false },
+            { answerText: 'NaN', correct: false },
+            { answerText: '1', correct: false },
+
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Оператор in возвращает true если указанное свойство(не значение) находится в указанном объекте или в его цепочке прототипов. 2 является допустимым индексом массива(Массив тоже объект).
+        `,
+        code: `
+        const array = [1, 4, 9];
+        const result = 2 in array;
+        `,
+        answerOptions: [
+            { answerText: 'true', correct: true },
+            { answerText: 'false', correct: false },
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Что является правильным синтаксисом стрелочной функции?',
+        about:
+        ` 
+        Стрелочная функция имеет более короткий синтаксис чем declaration функция. Стрелочная функция не имеет this, arguments. Не может являться функцией конструктор, так же не имеет super и new.target.
+        `,
+        code: `
+        () ==> {}
+        () > {}
+        () => {}
+        () -> {}
+        `,
+        answerOptions: [
+            { answerText: '() ==> {}', correct: false },
+            { answerText: '() > {}', correct: false },
+            { answerText: '() => {}', correct: true },
+            { answerText: '()->{}', correct: false },
+
+
+        ].sort(() => Math.random() - 0.5)
+    },
+
+
+].sort(() => Math.random() - 0.5);
+
+export const quizData8: data[] = [
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Метод shift() удаляет первый элемент массива и возвращает его значение.
+        Метод pop() удаляет последний элемент и возвращает этот элемент.
+        `,
+        code: `
+        const a = [1, 2, 4, 5];
+        const result = a.shift() - a.pop();
+        `,
+        answerOptions: [
+            { answerText: '4', correct: false },
+            { answerText: '6', correct: false },
+            { answerText: '0', correct: false },
+            { answerText: '-4', correct: true },
+
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Метод includes() определяет, содержит ли массив определённый элемент, возвращая в зависимости от этого true или false.
+        
+        `,
+        code: `
+        const array = [1, 2, 3];
+        const result = array.includes(2);
+       
+        `,
+        answerOptions: [
+            { answerText: 'false', correct: false },
+            { answerText: 'true', correct: true },
+            { answerText: 'throw a TypeError', correct: false },
+
+
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Интерполяция - это способ построения строки, который позволяет использовать переменные и выражения внутри строк с помощью знака доллара и фигурных скобок \${ }.
+        Интерполяция работает только со строками в бэктиках. Это символ \`.
+        `,
+        code: `
+        const variable = "Anime";
+        const str = \`\${variable} the best!\`;
+        const result = str;
+        `,
+        answerOptions: [
+            { answerText: '${Anime} the best!', correct: false },
+            { answerText: 'Anime the best!', correct: true },
+            { answerText: 'the best!', correct: false },
+            { answerText: '${variable} the best!', correct: false },
+            { answerText: 'throw a ReferenceError', correct: false },
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        У переменной let область видимости ограничивается любыми блоками кода { }. Будь то цикл, условие или функция.
+        `,
+        code: 
+        `
+        let value = 69;
+        if (value > 1) {
+            let value = 262;
+        }
+        const result = value;
+        `,
+        answerOptions: [
+            { answerText: '1', correct: false },
+            { answerText: '69', correct: true },
+            { answerText: '262', correct: false },
+
+
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Переменная copy просто содержит ссылку на объект obj.
+        Для создания поверхностной копии можно использовать цикл for in или методо Object.assign().
+        Для создания глубокой копии можно использовать JSON.
+        `,
+        code: `
+        const obj = { a: 5, b: 1 };
+        const copy = obj;
+        copy.a = 10;
+        const result = obj.a;
+        `,
+        answerOptions: [
+            { answerText: 'undefined', correct: false },
+            { answerText: '5', correct: false },
+            { answerText: '10', correct: true },
+
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Метод eval() выполняет JavaScript-код, представленный строкой. НИКОГДА не используйте этот метод в настоящих проектах.
+        `,
+        code: `
+        const value = 2009;
+        const result = eval("value + value");
+        `,
+        answerOptions: [
+            { answerText: '4018', correct: true },
+            { answerText: 'NaN', correct: false },
+            { answerText: 'undefined', correct: false },
+            { answerText: '2009', correct: false },
+
+
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+        Метод some() проверяет, есть ли хотя бы один элемент массива подходящий под условие переданной функции. Если да, то нам вернет true, иначе false. 
+        В то время как для every() нужно, что бы все элементы подходили под условие.
+        `,
+        code: `
+        const check = (value) => value === 2;
+        const result = [1, 2, 3].some(check);
+        `,
+        answerOptions: [
+            { answerText: 'true', correct: false },
+            { answerText: 'false', correct: true },
+
+
+        ].sort(() => Math.random() - 0.5)
+    },
+    {
+        question: 'Какое значение будет в result?',
+        about:
+        ` 
+    Свойство length задает или возвращает количество элементов в массиве.
+    Вы можете установить свойство length для усечения массива.
+    Когда вы расширяете массив, изменяя его свойство длины, количество фактических элементов увеличивается,
+    например, если вы установите длину 3, когда она в настоящее время равна 2, массив теперь будет содержать 3 элемента, из-за чего третий элемент будет undefined.
+        `,
+        code: `
+        const array = [1, 2, 3];
+        array.length = 0;
+        const result = array[0];
+        `,
+        answerOptions: [
+            { answerText: '3', correct: false },
+            { answerText: 'undefined', correct: true },
+            { answerText: 'Nan', correct: false },
+            { answerText: '1', correct: false },
+            { answerText: 'throw a TypeError', correct: false },
+
+
+
+        ].sort(() => Math.random() - 0.5)
+    },
+
+
+].sort(() => Math.random() - 0.5);
+
+
 
 
 

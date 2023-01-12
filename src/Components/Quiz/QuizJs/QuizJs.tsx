@@ -29,7 +29,10 @@ const QuizJs = ({ data, localKey }): JSX.Element => {
         } else {
             nextBtn && nextBtn.classList.remove(s.next__btn_active);
         }
-        localStorage.setItem(`${localKey}`, `${percent}`);
+        if(showEndScore) {
+            localStorage.setItem(`${localKey}`, `${percent}`);
+
+        }
 
     });
    
