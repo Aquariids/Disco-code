@@ -356,7 +356,10 @@
   .quiz {
     &__content {
       border: 0;
-      height: 100%;
+      height: 480px;
+    }
+    &__end {
+      border: none;
     }
 
     &__score {
@@ -373,7 +376,8 @@
     }
 
     .cod {
-      height: 100%;
+      overflow: auto;
+      height: 180px;
       font-size: 12px;
     }
 
@@ -386,6 +390,11 @@
 
   .answers {
     grid-template-columns: 1fr;
+  }
+
+  .about {
+    overflow: auto;
+    font-size: 12px;
   }
   
   .next {
@@ -404,8 +413,8 @@
   }
 
   .btn {
-    font-size: 15px;
-    height: 30px;
+    font-size: 14px;
+    height: 25px;
   }
 .about {
   width: 100vw;
