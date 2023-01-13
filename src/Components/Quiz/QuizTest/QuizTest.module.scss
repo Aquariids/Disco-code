@@ -153,6 +153,15 @@
 
 @media (max-width:#{$screen_mobile_785}) {
 
+    .block_link {
+        height:100%;
+        width: 100%;
+    
+        a {
+            height: 5vh;
+            width: 100%;
+        }
+    }
     .container {
 
         height: 100%;

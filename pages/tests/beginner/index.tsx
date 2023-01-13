@@ -50,6 +50,8 @@ const index = () => {
                 <meta property="og:section" content="nextJs" />
                 <meta property="og:tag" content="next, nextJs, js" />
             </Head>
+
+            
             <QuizTest numTest={1}/>
             <QuizTest numTest={2}/>
             <QuizTest numTest={3}/>

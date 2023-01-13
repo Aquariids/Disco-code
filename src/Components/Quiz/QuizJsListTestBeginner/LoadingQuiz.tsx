@@ -5,7 +5,6 @@ import s from './QuizJsListTestBeginner.module.scss';
 const LoadingQuiz = () => {
 
     const Screen = styled.div`
-  margin-top:10px;
   position: relative;
   opacity: 0;
   min-height:100vh;
@@ -26,6 +25,10 @@ const LoadingQuiz = () => {
       opacity: 1;
     }
   }
+
+  
+    
+
 `;
 
 const Balls = styled.div`
@@ -76,6 +79,9 @@ const Balls = styled.div`
       height:15px;
     }
   }
+
+
+
 
 `;
     return (
