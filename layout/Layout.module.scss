@@ -50,15 +50,35 @@
 	.footer {
 		grid-area: footer;
 	}
+	@media (max-width: 1200px) {
+		& {
+			background-size: 60em;
+		}
+	}
+	@media screen and (max-width: #{$screen_wrapper_without_right_side}) {
+		&.wrapper {
+			background-size: 0;
+		}
+	}
+	@media (max-width: 1065px) {
+		& {
+			background-position-x: 127%;
+		}
+	}
+	
+	
 
 	@media screen and (max-width: #{$screen_mobile_785}) {
 		& {
+			background-image: none;;
+
 			grid-template-columns: var(--grid_columns_wrapper_mobile);
 			grid-template-areas:
 				"header"
 				"body"
 				"footer";
 		}
+
 
 		.footer {
 			align-items: center;
@@ -86,6 +106,7 @@
 .wrapperWithoutRightSide {
 	@media screen and (max-width: #{$screen_wrapper_without_right_side}) {
 		& {
+			background-size: 0;
 			grid-template-columns: var(--grid_columns_wrapper_without_right_side);
 		}
 

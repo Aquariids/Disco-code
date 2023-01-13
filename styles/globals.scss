@@ -34,23 +34,8 @@ body {
 	}
 }
 
-@media (max-width: 1065px) {
-	body {
-		background-position-x: 127%;
-	}
-}
 
-@media (max-width: 1200px) {
-	body {
-		background-size: 60em;
-	}
-}
 
-@media (max-width:#{$screen_wrapper_without_right_side} ) {
-	body {
-		background-size: 0;
-	}
-}
 
 a {
 	text-decoration: none;
