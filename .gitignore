@@ -22,7 +22,6 @@
 /pages/*/dist
 
 
-
 # misc
 .DS_Store
 *.pem
@@ -43,3 +42,4 @@ yarn-error.log*
 *.tsbuildinfo
 
 next-env.d.ts
+test.js
