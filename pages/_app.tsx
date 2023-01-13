@@ -59,12 +59,15 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   function smothScroll() { // да костыли, ну и что теперь поделать, да вот так вот
     const html = document.querySelector('html') as HTMLElement;
 
-    if (r >= 3) { // при переходе к темам с главной страници, мне не нужен плавный скролл
+    if (r >= 3 && router.asPath.startsWith('/tests') != true) { // при переходе к темам с главной страници, мне не нужен плавный скролл
       html.style.scrollBehavior = 'smooth';
     } 
     else if(router.asPath === '/web-request-response') {
       html.style.scrollBehavior = 'smooth';
 
+    }
+    else if(router.asPath === '/tests/beginner') {
+      html.style.scrollBehavior = 'auto';
     }
     else {
       html.style.scrollBehavior = 'auto';
