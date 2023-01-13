@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { withLayout } from '../../../layout/Layout';
+import AnimationContainer from '../../../src/Components/AnimationContainers/AnimationContainer';
 import QuizJsListTestBeginner from '../../../src/Components/Quiz/QuizJsListTestBeginner/QuizJsListTestBeginner';
 const test = () => {
 
@@ -41,6 +42,7 @@ const test = () => {
                 <meta property="og:tag" content="next, nextJs, js" />
             </Head>
             <QuizJsListTestBeginner />
+
 
         </>);
 

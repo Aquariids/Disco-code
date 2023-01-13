@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
 import { withLayout } from '../../layout/Layout';
+import AnimationContainer from '../../src/Components/AnimationContainers/AnimationContainer';
 import QuizCard from '../../src/Components/QuizCard/QuizCard';
 import s from './tests.module.scss';
 
@@ -36,7 +37,10 @@ const index = () => {
                 <meta property="og:section" content="nextJs" />
                 <meta property="og:tag" content="next, nextJs, js" />
             </Head>
+        <AnimationContainer>
         <QuizCard  category="beginner" src="/tests/beginner/" text= "Для разработчиков JavaScript, которые только начинают изучать язык или недавно начали" title={'Тесты для начинающих'} />
+        </AnimationContainer>
+
         </div>
     );
 };

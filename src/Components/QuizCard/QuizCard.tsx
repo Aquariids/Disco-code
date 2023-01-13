@@ -7,6 +7,7 @@ const QuizCard = ({category,src,text,title}) => {
 
 
     return (
+        
         <div className={cn(s.tests, {
             [s.main_page_tests]: category === 'mainPage'
         })}>
