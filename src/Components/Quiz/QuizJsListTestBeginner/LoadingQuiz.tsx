@@ -10,8 +10,7 @@ const LoadingQuiz = () => {
   opacity: 0;
   min-height:100vh;
   width:100%;
-  min -height:100vh;
-
+  
   animation: fade 0.4s ease-in forwards;
   background: #FFF;
   background-image: 'none';
@@ -45,6 +44,8 @@ const Balls = styled.div`
     animation: oscillate 0.7s ease-in forwards infinite;
   }
 
+ 
+
   .one {
     animation-delay: 0.5s;
   }
@@ -66,6 +67,16 @@ const Balls = styled.div`
       transform: translateY(0);
     }
   }
+
+
+
+  @media screen and (max-width:800px) {
+    .ball {
+      width:15px;
+      height:15px;
+    }
+  }
+
 `;
     return (
       <div className={s.loadPage}>

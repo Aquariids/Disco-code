@@ -4,7 +4,6 @@
     display:grid;
     width: 100%;
     justify-content: center;
-    margin-top: 20px;
 
 }
 
@@ -28,6 +27,11 @@
         border: 1px solid black;
         height: 240px;
         text-align: center;
+
+        a {
+            width: 100%;
+            height: 100%;
+        }
     }
  &__title {
     margin-bottom: 10px;
@@ -163,8 +167,8 @@
 @media screen and (max-width: #{$screen_mobile_500}) {
     .test {
         &__content {
-            min-width: 300px;
-            min-height: 300px;
+            min-width: 280px;
+            min-height: 280px;
             border-radius: 0%;
         }
         
@@ -172,6 +176,8 @@
 
 
 }
+
+
 @media screen and (max-width: #{$screen_mobile_400}) {
     .test {
         height: 380px;

@@ -14,6 +14,7 @@
 @media (max-width:1560px) {
 
     .page {
+      margin-top: 25px;
         grid-template-columns: repeat(2, minmax(auto,1fr));
         grid-template-rows: repeat(3, 380px);
 
@@ -45,7 +46,6 @@
   @media (max-width:#{$screen_mobile_500}) {
 
     .page {
-      margin-top: 50px;
       margin-bottom: 50px;
       grid-template-columns: 1fr;
     }
