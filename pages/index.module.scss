@@ -23,7 +23,6 @@
 
 		&__title {
 			position: relative;
-
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -41,6 +40,7 @@
 				display: grid;
 				justify-content: center;
 				grid-template-columns: 1fr;
+				margin-bottom: 10px;
 			}
 
 			&__textcode {
@@ -67,7 +67,6 @@
 				width: 200px;
 				height: 40px;
 				margin: 0 auto;
-
 				cursor: pointer;
 				transition: all 0.3s;
 				font-size: 16px;
