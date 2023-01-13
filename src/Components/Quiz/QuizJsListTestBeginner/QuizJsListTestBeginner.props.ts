@@ -139,14 +139,16 @@ export const quizData1: data[] = [
     {
         question: 'Какой из операторов не является логическим?',
         about: `
-        В JavaScript есть три логических оператора: && (логическое И),
+        В JavaScript есть четыре логических оператора: && (логическое И),
         || (логическое ИЛИ) ! (логическое НЕ). | — побитовый оператор ИЛИ.
+        ?? (Оператор нулевого слияния).
         `,
         code: `
         |
         &&
         ||
         !
+        ??
 
         `,
         answerOptions: [
@@ -154,6 +156,8 @@ export const quizData1: data[] = [
             { answerText: '&&', correct: false },
             { answerText: '!', correct: false },
             { answerText: '||', correct: false },
+            { answerText: '??', correct: false },
+
 
 
 
