@@ -14,7 +14,7 @@ const QuizJs = ({ data, localKey }): JSX.Element => {
     const [score, setScore] = useState(1);
     const [rigthAnswers, setRigthAnswers] = useState(0);
     const [disabledBtn, setDisabledBtn] = useState(true);
-    const [aboutText,setAboutText] = useState();
+    const [aboutText, setAboutText] = useState();
     const about = document.querySelector(`.${s.about}`) as HTMLElement;
     const neko = document.querySelector(`.${s.neko}`) as HTMLElement;
     const btns = document.querySelectorAll(`.${s.btn}`) as NodeList;
@@ -29,16 +29,16 @@ const QuizJs = ({ data, localKey }): JSX.Element => {
         } else {
             nextBtn && nextBtn.classList.remove(s.next__btn_active);
         }
-        if(showEndScore) {
+        if (showEndScore) {
             localStorage.setItem(`${localKey}`, `${percent}`);
 
         }
 
     });
-   
 
 
-   
+
+
 
 
 
@@ -83,10 +83,7 @@ const QuizJs = ({ data, localKey }): JSX.Element => {
     };
 
 
-    function onKeyPressed(e) {
-        console.log(e.key);
-      }
-    
+
     const handleAnswerClick = (isCorrect, e) => {
         const btns = document.querySelectorAll(`.${s.btn}`) as NodeList;
         about.style.transition = '.2s';
@@ -97,7 +94,13 @@ const QuizJs = ({ data, localKey }): JSX.Element => {
         if (isCorrect === true) {
             neko.style.backgroundImage = "url('/images/quizCard/test2.png')";
             nekoText.style.opacity = '1';
-            nekoText.textContent = 'Молодец!';
+            if (percent > 50 && score > 2) {
+                nekoText.textContent = 'Ты просто кисик:з';
+
+            } else {
+                nekoText.textContent = 'Молодец!';
+
+            }
             if (about != null) {
                 about.textContent = `${data[currentQuestion].about}`;
                 about.style.opacity = '1';
@@ -112,7 +115,16 @@ const QuizJs = ({ data, localKey }): JSX.Element => {
         } else {
             neko.style.backgroundImage = "url('/images/quizCard/test3.png')";
             nekoText.style.opacity = '1';
-            nekoText.textContent = 'Ты дурачек!?';
+            if (percent == 0 && score > 2) {
+                nekoText.textContent = 'Постарайся!';
+            }
+            if(percent > 85 && score == 8 ) {
+                nekoText.textContent = 'Ты все равно кисик:з';
+
+            }
+            else {
+                nekoText.textContent = 'Все получится!';
+            }
 
             btns.forEach((btn: any) => {
                 btn.disabled = true;
@@ -137,76 +149,76 @@ const QuizJs = ({ data, localKey }): JSX.Element => {
             e.target.classList.add(s.wrong);
         }
     };
-    
+
     return (
         <div className={s.page}>
-        <AnimationContainer>
-            {showEndScore ? (
-                <div className={s.quiz}>
-                    <div className={s.end_container}>
+            <AnimationContainer>
+                {showEndScore ? (
+                    <div className={s.quiz}>
+                        <div className={s.end_container}>
+                            <div className={s.quiz__back}><span><Link href={'/tests/beginner'}>Вернуться к тестам</Link></span></div>
+                            <div className={s.quiz__end}>
+                                <div className={cn(s.quiz__score_end, {
+                                    [s.nice]: percent === 100,
+                                    [s.middle]: percent > 55 && percent != 100,
+                                    [s.bad]: percent < 55 && percent != 0 && percent > 30 || percent == 50,
+                                    [s.bad_bad]: percent < 30 && percent != 0,
+                                    [s.veryBad]: percent === 0,
+
+                                })}><span style={{ color: `black` }}>Ваш результат: <span className={s.nice}>{rigthAnswers}</span> из {data.length} - </span> {`${percent}%`}</div>
+                                <div className={s.neko}>
+                                    <blockquote className={s.neko__oval}>
+                                    </blockquote>
+                                </div>
+                                <div className={cn({
+                                    [s.nice]: percent === 100,
+                                    [s.middle]: percent > 55 && percent != 100,
+                                    [s.bad]: percent < 55 && percent != 0 && percent > 30 || percent == 50,
+                                    [s.bad_bad]: percent < 30 && percent != 0,
+                                    [s.veryBad]: percent === 0,
+
+                                }
+                                )} >{percentForAnswer()}</div>
+                            </div>
+                        </div>
+                    </div>
+                ) :
+                    <div className={s.quiz}>
                         <div className={s.quiz__back}><span><Link href={'/tests/beginner'}>Вернуться к тестам</Link></span></div>
-                        <div className={s.quiz__end}>
-                            <div className={cn(s.quiz__score_end,{
-                                [s.nice]: percent === 100,
-                                [s.middle]: percent > 55 && percent != 100,
-                                [s.bad]: percent < 55 && percent != 0 && percent > 30 || percent == 50,
-                                [s.bad_bad]: percent < 30 && percent != 0,
-                                [s.veryBad]: percent === 0,
-
-                            })}><span style={{color:`black`}}>Ваш результат: <span className={s.nice}>{rigthAnswers}</span> из {data.length} - </span> {`${percent}%`}</div>
-                            <div className={s.neko}>
-                                <blockquote className={s.neko__oval}>
-                                </blockquote>
+                        <div className={s.quiz__content}>
+                            <div className={s.quiz__score}>{`${score}/${data.length}`}</div>
+                            <div className={s.quest}> {data[currentQuestion].question}</div>
+                            <div className={s.container_code_about}>
+                                <div className={s.about}>{aboutText}</div>
+                                <Highlight className={cn('hljs language-js', s.cod)}>
+                                    {data[currentQuestion].code}
+                                </Highlight>
                             </div>
-                            <div className={cn({
-                                [s.nice]: percent === 100,
-                                [s.middle]: percent > 55 && percent != 100,
-                                [s.bad]: percent < 55 && percent != 0 && percent > 30 || percent == 50,
-                                [s.bad_bad]: percent < 30 && percent != 0,
-                                [s.veryBad]: percent === 0,
 
-                            }
-                            )} >{percentForAnswer()}</div>
+
+
+
+                            <div className={s.container_answer}>
+                                <div className={s.answers}>
+                                    {data[currentQuestion].answerOptions.map((answerOptions, index) => {
+                                        return <button className={s.btn} onClick={(e) => handleAnswerClick(answerOptions.correct, e)} key={index}>{answerOptions.answerText}</button>;
+                                    })}
+                                </div>
+                                <div className={s.neko}>
+                                    <blockquote className={s.neko__oval}>
+                                    </blockquote>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div className={s.next}>
+                            <button disabled={disabledBtn} onClick={next} className={s.next__btn}> Продолжить </button>
                         </div>
                     </div>
-                </div>
-            ) :
-                <div onKeyDown={(e)=> onKeyPressed(e)} className={s.quiz}>
-                    <div className={s.quiz__back}><span><Link href={'/tests/beginner'}>Вернуться к тестам</Link></span></div>
-                    <div className={s.quiz__content}>
-                        <div className={s.quiz__score}>{`${score}/${data.length}`}</div>
-                        <div className={s.quest}> {data[currentQuestion].question}</div>
-                        <div className={s.container_code_about}>
-                            <div className={s.about}>{aboutText}</div>
-                            <Highlight className={cn('hljs language-js', s.cod)}>
-                                {data[currentQuestion].code}
-                            </Highlight>
-                        </div>
+                }
 
 
-
-
-                        <div className={s.container_answer}>
-                            <div className={s.answers}>
-                                {data[currentQuestion].answerOptions.map((answerOptions, index) => {
-                                    return <button className={s.btn} onClick={(e) => handleAnswerClick(answerOptions.correct, e)} key={index}>{answerOptions.answerText}</button>;
-                                })}
-                            </div>
-                            <div className={s.neko}>
-                                <blockquote className={s.neko__oval}>
-                                </blockquote>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className={s.next}>
-                        <button  disabled={disabledBtn} onClick={next} className={s.next__btn}> Продолжить </button>
-                    </div>
-                </div>
-            }
-
-
-        </AnimationContainer>
+            </AnimationContainer>
         </div>
     );
 };
