@@ -39,9 +39,6 @@ const QuizJs = ({ data, localKey }): JSX.Element => {
 
 
 
-
-
-
     function percentForAnswer() {
         if (percent === 100) {
             return "Отлично, можешь собой гордиться!";
