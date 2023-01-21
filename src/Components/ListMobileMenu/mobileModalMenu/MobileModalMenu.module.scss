@@ -1,3 +1,6 @@
+@import '../../../../styles/variables@media.scss';
+
+
 .modal {
 	position: fixed;
 	z-index: 200;
@@ -26,8 +29,13 @@
 	scroll-behavior: smooth;
 }
 
-.modal_true {
-	visibility: visible;
-
-	opacity: 1;
+@media (max-width:#{$screen_mobile_785}) {
+	.modal_true {
+		visibility: visible;
+	
+		opacity: 1;
+	}
+	
+	
+	
 }

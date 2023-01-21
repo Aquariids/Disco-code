@@ -12,7 +12,7 @@ const MobileButton = ({ mobile, setMobile, ...props }: MobileButtonProps) => {
         setMobile(!mobile);
     }
     return (
-        <button onTouchStart={mob}  {...props} className={s.btn}>
+        <button onTouchStart={mob} {...props} className={s.btn}>
             <div className={s.btn__content}>
                 <div className={s.svg}>
                     <div className={cn(s.arrows)}>
