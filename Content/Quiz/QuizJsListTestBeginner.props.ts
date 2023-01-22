@@ -11,7 +11,6 @@ interface data {
 
 
 export const quizData1: data[] = [
-
     {
         question: 'Какое значение будет в result?',
         about: `Массивы в js начинаются с нулевого индекса: Первый элемент имеет индекс 0, 
@@ -183,7 +182,7 @@ export const quizData1: data[] = [
         ].sort(() => Math.random() - 0.5)
     }
 
-].sort(() => Math.random() - 0.5);
+];
 
 export const quizData2: data[] = [
     {
@@ -345,7 +344,7 @@ export const quizData2: data[] = [
         ].sort(() => Math.random() - 0.5)
     },
 
-].sort(() => Math.random() - 0.5);
+];
 
 export const quizData3: data[] = [
     {
@@ -486,7 +485,7 @@ export const quizData3: data[] = [
         ].sort(() => Math.random() - 0.5)
     },
 
-].sort(() => Math.random() - 0.5);
+];
 
 export const quizData4: data[] = [
     {
@@ -640,7 +639,7 @@ export const quizData4: data[] = [
         ].sort(() => Math.random() - 0.5)
     },
 
-].sort(() => Math.random() - 0.5);
+];
 
 export const quizData5: data[] = [
     {
@@ -808,7 +807,7 @@ export const quizData5: data[] = [
         ].sort(() => Math.random() - 0.5)
     },
 
-].sort(() => Math.random() - 0.5);
+];
 
 export const quizData6: data[] = [
     {
@@ -984,7 +983,7 @@ export const quizData6: data[] = [
         ].sort(() => Math.random() - 0.5)
     },
 
-].sort(() => Math.random() - 0.5);
+];
 
 export const quizData7: data[] = [
     {
@@ -1146,7 +1145,7 @@ export const quizData7: data[] = [
     },
 
 
-].sort(() => Math.random() - 0.5);
+];
 
 export const quizData8: data[] = [
     {
@@ -1320,7 +1319,7 @@ export const quizData8: data[] = [
     },
 
 
-].sort(() => Math.random() - 0.5);
+];
 
 
 

@@ -1,25 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { withLayout } from '../../../layout/Layout';
-import { quizData1 } from '../../../src/Components/Quiz/QuizJsListTestBeginner/QuizJsListTestBeginner.props';
 import QuizTest from '../../../src/Components/Quiz/QuizTest/QuizTest';
 import Head from 'next/head';
 import s from './test.module.scss';
 import AnimationContainer from '../../../src/Components/AnimationContainers/AnimationContainer';
 
 const index = () => {
-
-    useEffect(() => {
-        quizData1.map((item, i) => {
-            quizData1[i].answerOptions.sort(() => Math.random() - 0.5);
-        });
-        quizData1.map((item, i) => {
-            quizData1.sort(() => Math.random() - 0.5);
-        });
-
-    });
-
-
-
 
     return (
         <AnimationContainer>
