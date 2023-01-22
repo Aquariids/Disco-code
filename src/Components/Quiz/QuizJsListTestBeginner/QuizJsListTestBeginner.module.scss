@@ -3,17 +3,3 @@
     min-height: 100vh;
 }
 
-.loadPage {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@media screen and (max-width:800px) {
-      
-    .loadPage {
-      height: 480px;
-    }
-}
