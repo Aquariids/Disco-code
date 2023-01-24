@@ -40,27 +40,26 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
                     {logoCreat()}
                     <span className={header__link} > <Link href={'/'}>DiscoCode</Link> </span>
                 </div>
-                
+
                 <div className={s.header__nav}>
-                <div className={s.header__tests}><Link href={'/tests'}>Тесты</Link></div>
+                    <div className={s.header__tests}><Link href={'/tests'}>Тесты</Link></div>
 
                     <div className={s.header__dropdown}>
                         <div className={s.header__dropdown__btn}><button> Выбрать технологию </button></div>
                         <ul className={s.header__dropdown__content}>
-                            <li className={s.js}><Link href={'/js'}>JavaScript</Link></li>
-                            <li className={s.react}><Link href={'/react'}>React</Link></li>
-                            <li className={s.ts}><Link href={'/ts'}>TypeScript</Link></li>
-                            <li className={s.mainLinks}><Link href={'/paradigms'}>Парадигмы</Link></li>
-                            <li className={s.next}><Link href={'/next-js'}>Next.js</Link></li>
-                            <li className={s.node}><Link href={'/node-js'}>Node.js</Link></li>
-
+                            <Link href={'/js'}><li className={s.js}>JavaScript</li></Link>
+                            <Link href={'/react'}><li className={s.react}>React</li></Link>
+                            <Link href={'/ts'}><li className={s.ts}>TypeScript</li></Link>
+                            <Link href={'/paradigms'}><li className={s.mainLinks}>Парадигмы</li></Link>
+                            <Link href={'/next-js'}><li className={s.next}>Next.js</li></Link>
+                            <Link href={'/node-js'}><li className={s.node}>Node.js</li></Link>
                         </ul>
                     </div>
 
                     <div className={header__github}><a className={header__link} target={"_blank"} href={'https://github.com/Aquariids/Disco-code'}>Github <img alt='github' style={{ width: '15px', height: '15px' }} src='/link.svg' /></a></div>
                 </div>
             </div>
-            <Loading  />
+            <Loading />
         </div>
     );
 };
