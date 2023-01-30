@@ -164,3 +164,34 @@ f1();
 
 ## Разница между scope chain & call stack
 
+Разберем этот код.
+```javaScript
+const a = 1;
+f1();
+
+function f1() {
+    const b = 2;
+    f2();
+
+    function f2() {
+        const c = 3;
+        f3();
+    }
+}
+
+function f3() {
+    const d = 4;
+
+    console.log(a + b + c + d);
+    // ReferenceError
+}
+
+```
+Вот как будет выглядеть стек вызовов(`call stack`) 
+
+<div className='container-img'> <span className="img"> ![stack-vs-scope](/images/Content/Js/stack-vs-scope.png) </span></div>
+
+Так же указано окружение переменных(`variable environment`) для кажого контекста выполнения.
+
+### Смотрим на scope chain
+
