@@ -49,7 +49,6 @@
 
 	&__link {
 		padding-left: 10px;
-
 		transition: all 0.1s;
 
 		a {
@@ -127,17 +126,29 @@
 		}
 	}
 
-	&__tests {
-		padding-right: 10px;
+	&__content_link {
+		margin-right: 20px;
+		margin-left: 20px;
+		font-size: 16px;
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+		height: 60px;
+		width: 60px;
+		display: flex;
 		color: #FFF;
-				border: none;
-				font-weight: 500;
-				font-size: 14px;
+		font-weight: 500;
+		border: none;
+		cursor: pointer;
+
 
 		&:hover {
 			transition: all 0.1s;
-
 			color: var(--next_hover_color_links_pages);
+		}
+
+		&:active {
+			background-color: rgba(73, 75, 75, 0.24);
 		}
 	}
 	&__github {
@@ -215,6 +226,14 @@
 
 
 
+
+.active { 
+	color: var(--main_color_links_pages);
+
+	border-bottom: 3px solid var(--main_color_links_pages);
+	border-top: 3px solid transparent;
+
+}
 .mainLinks {
 	transition: all .3s;
 }

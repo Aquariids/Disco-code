@@ -18,7 +18,7 @@ const Sidebar = ({className, ...props}:SidebarProps):JSX.Element => {
         return(<></>);
     }
 
-    if(r <= 3){
+    if(r <= 4){
         return(
             <></>
         );
