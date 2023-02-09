@@ -13,6 +13,7 @@ import Link from "next/link";
 import s from "../pageJs.module.scss";
 import AnimationContainer from "../../../../src/Components/AnimationContainers/AnimationContainer";
 import { getAllPosts, getPostFromSlug, getSlugs, MDXPost } from "../../../api/api";
+import UrlNav from "../../../../src/Components/UI/UrlNav/UrlNav";
 
 interface Props { post: MDXPost }
 
@@ -56,14 +57,16 @@ const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
           <meta property="og:section" content="JavaScript" />
           <meta property="og:tag" content="JavaScript, js" />
         </Head>
+        <UrlNav slug = {post.meta.title}/>
 
         <AnimationContainer>
+     
           <div className="mdTitle">
             <h1>{post.meta.title}</h1>
           </div>
-
+            
           <MDXRemote {...post.source} />
-
+          
           <div className={cn(s.edit, "page_edit")}>
             <a
               target="_blank"
@@ -89,20 +92,20 @@ const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
               </a></div>
           </div> */}
           <div className={cn(s.footer, "page_footer")}>
-            <Link href={post.meta.prev}>
+            <Link href={`/content${post.meta.prev}`}>
               {post.meta.prev === "none" ? (
                 <span></span>
               ) : (
                 "Предыдущая тема"
               )}
             </Link>
-            <Link href={`/content/${post.meta.next}`}>
+            <Link href={`/content${post.meta.next}`}>
               {post.meta.next === "none" ? <span></span> : "Следующая тема"}
             </Link>
           </div>
           <span className="md_date">{post.meta.date}</span>
-
-        </AnimationContainer>
+          
+          </AnimationContainer>
       </div>
     </>
   );

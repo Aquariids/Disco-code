@@ -1,18 +1,16 @@
 import type { GetStaticProps, NextPage } from "next";
-import React from "react";
+import React, { useEffect } from "react";
 import { withLayout } from "../../../../layout/Layout";
 import { getAllPosts } from "../../../api/api";
-import { POSTS_PATH_BASIC_JS } from "../../../api/paths";
+import {POSTS_PATH_PRACTICE_JS } from "../../../api/paths";
 import Head from "next/head";
 import MainMenuJs from "../../../../src/Components/Menu/MenuJs/MainMenuJs";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts_Basic_Js = getAllPosts(POSTS_PATH_BASIC_JS).map((post) => post.meta);
-  
- 
+  const posts_Practice_Js = getAllPosts(POSTS_PATH_PRACTICE_JS).map((post) => post.meta);
 
   
-  const AllThemePosts = {posts_Basic_Js};    
+  const AllThemePosts = {posts_Practice_Js};    
   return {
     props: {
       AllThemePosts,

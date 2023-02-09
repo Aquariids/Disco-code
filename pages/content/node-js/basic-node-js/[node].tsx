@@ -21,6 +21,7 @@ import {
 import { POSTS_PATH_BASIC_NODEJS,} from "../../../api/paths";
 import Link from "next/link";
 import AnimationContainer from "../../../../src/Components/AnimationContainers/AnimationContainer";
+import UrlNav from "../../../../src/Components/UI/UrlNav/UrlNav";
 
 
 
@@ -62,7 +63,7 @@ const PostPage: NextPage<Props> = ({post}): JSX.Element => {
           <meta property="og:section" content="nodeJs" />
           <meta property="og:tag" content="node, nodeJs, js,javascript" />
         </Head>
-
+        <UrlNav slug = {post.meta.title}/>
         <AnimationContainer>
           <div className="mdTitle">
             <h1>{post.meta.title}</h1>

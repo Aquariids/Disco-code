@@ -15,12 +15,11 @@ const DropdownMenuJs = (): JSX.Element => {
     return (
         <>
             <DropdownMenuLinks posts={posts_Basic_Js} category="basic-js" title="Базовый JavaScript" page='js' />
-            <DropdownMenuLinks posts={posts_Advanced_Js} category="advanced-js" title="Продвинутый JavaScript" page='js' />
+            <DropdownMenuLinks posts={posts_Advanced_Js} category="advanced-js" title="Продвинутый JavaScript" page='js'/>
             <DropdownMenuLinks posts={posts_Algorithms_Js} title="Алгоритмы" category='algorithms-js' page='js' />
             <DropdownMenuLinks posts={posts_Practice_Js} title="Практика & Webpack" category='practice-js' page='js' />
             <DropdownMenuLinks posts={posts_Under_The_Hood_Js} title="JavaScript под капотом" category='under-the-hood-js' page='js' />
             <DropdownMenuLinks posts={posts_Interview_Js} title="Собеседование" category='interview-js' page='js' />
-
         </>
     );
 };

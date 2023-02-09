@@ -13,6 +13,7 @@ const DropdownMenuLinks = ({ title, category, page,  posts, ...props }: IMenu): 
 
 
     const router = useRouter();
+    
     const pathname = router.asPath.split('#')[0]; // если мы переходим по ссылке с якорем куда то, к статье какой нибудь, то активная ссылка будет немного ломаться, поэтому если есть якорь мы его убираем.
     const checkActiveLink = pathname.split('/')[pathname.split('/').length - 1]; // отрезаем от пути наш slug и будем проверять slug из api, и так будет кидать активную ссылку
     const [isOpen, setOpen] = useState(router.pathname.startsWith(`/content/${page}/${category}`) == true ? true : false);

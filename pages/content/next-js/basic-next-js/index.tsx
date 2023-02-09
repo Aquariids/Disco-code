@@ -1,12 +1,21 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import React from "react";
-import { withLayout } from "../../../layout/Layout";
+import { withLayout } from "../../../../layout/Layout";
+import { getAllPosts } from "../../../api/api";
+import {POSTS_PATH_BASIC_NEXTJS } from "../../../api/paths";
 import Head from "next/head";
-import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
-import Link from "next/link";
-import UrlNav from "../../../src/Components/UI/UrlNav/UrlNav";
+import MainMenuNextJs from "../../../../src/Components/Menu/MenuNextJs/MainMenuNextJs";
 
+export const getStaticProps: GetStaticProps = async () => {
+  const posts_Basic_Next_Js = getAllPosts(POSTS_PATH_BASIC_NEXTJS).map((post) => post.meta);
 
+  const AllThemePosts = {posts_Basic_Next_Js,};
+  return {
+    props: {
+      AllThemePosts,
+    },
+  };
+};
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Home: NextPage = (): JSX.Element => {
@@ -43,20 +52,9 @@ const Home: NextPage = (): JSX.Element => {
       </Head>
 
       <div className="page_body">
-        <UrlNav />
-        <h1 className="page__title_main">Онлайн руководство по NextJs  </h1>
-        <div className="page_menu">
-          <div className="page__title">Содержание</div>
 
-          <AnimationContainer>
-            <div className={"content_list"}>
-              <ol>
-                <li>
-                  <Link href={"/content/next-js/basic-next-js"}> Основы next.js</Link>
-                </li>
-              </ol>
-            </div>
-          </AnimationContainer>
+        <div className="page_menu">
+        <MainMenuNextJs />
         </div>
       </div>
     </div>

@@ -13,6 +13,7 @@ import { POSTS_PATH_ADVANCED_JS, POSTS_PATH_ALGORITHMS_JS, POSTS_PATH_BASIC_JS, 
 import Link from 'next/link';
 import s from '../pageJs.module.scss';
 import AnimationContainer from '../../../../src/Components/AnimationContainers/AnimationContainer';
+import UrlNav from '../../../../src/Components/UI/UrlNav/UrlNav';
 
 interface Props { post: MDXPost }
 
@@ -35,6 +36,7 @@ const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
             </Head>
+            <UrlNav slug = {post.meta.title}/>
 
             <AnimationContainer>
                 <div className='mdTitle'>
@@ -48,8 +50,8 @@ const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
 
                 <div className={cn(s.edit, 'page_edit')}><a target='_blank' rel='noopener' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/advanced-js/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{ width: '30px', height:"30px", paddingLeft: '5px' }} src='/edit.svg' /></div>
                 <div className={cn(s.footer, 'page_footer')}>
-                    <Link href={post.meta.prev}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая тема'}</Link>
-                    <Link href={post.meta.next}>{post.meta.next === 'none' ? <span></span> : 'Следующая тема'}</Link>
+                    <Link href={`/content${post.meta.prev}`}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая тема'}</Link>
+                    <Link href={`/content${post.meta.next}`}>{post.meta.next === 'none' ? <span></span> : 'Следующая тема'}</Link>
                 </div>
                 <span className="md_date">{post.meta.date}</span>
 

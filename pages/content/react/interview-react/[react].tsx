@@ -13,6 +13,7 @@ import { POSTS_PATH_BASIC_REACT, POSTS_PATH_INTERVIEW_REACT } from '../../../api
 import Link from 'next/link';
 import s from './../pageReact.module.scss';
 import AnimationContainer from '../../../../src/Components/AnimationContainers/AnimationContainer';
+import UrlNav from '../../../../src/Components/UI/UrlNav/UrlNav';
 
 interface Props { post: MDXPost }
 
@@ -30,6 +31,7 @@ const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
                 <meta property='og:description' content={'Уроки и разбор разных тем по javascript'} />
                 <meta property='og:type' content={'article'} />
             </Head>
+            <UrlNav slug = {post.meta.title}/>
 
             <AnimationContainer>
                 <div className='mdTitle'>
@@ -41,8 +43,8 @@ const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
 
             <div className={cn(s.edit, 'page_edit')}><a target='_blank' rel='noopener' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/react/basic-react/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{ width: '30px', height: "30px", paddingLeft: '5px' }} src='/edit.svg' /></div>
             <div className={cn(s.footer, 'page_footer')}>
-                <Link href={post.meta.prev}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая тема'}</Link>
-                <Link href={post.meta.next}>{post.meta.next === 'none' ? <span></span> : 'Следующая тема'}</Link>
+                <Link href={`/content${post.meta.prev}`}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая тема'}</Link>
+                    <Link href={`/content${post.meta.next}`}>{post.meta.next === 'none' ? <span></span> : 'Следующая тема'}</Link>
             </div>
         </div>
     );

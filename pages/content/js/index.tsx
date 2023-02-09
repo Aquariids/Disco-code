@@ -1,53 +1,11 @@
-import type { GetStaticProps, NextPage } from "next";
-import React, { useEffect } from "react";
+import type { NextPage } from "next";
+import React from "react";
 import { withLayout } from "../../../layout/Layout";
-import { getAllPosts } from "../../api/api";
-import {
-  POSTS_PATH_ADVANCED_JS,
-  POSTS_PATH_ALGORITHMS_JS,
-  POSTS_PATH_BASIC_JS,
-  POSTS_PATH_INTERVIEW_JS,
-  POSTS_PATH_PRACTICE_JS,
-  POSTS_PATH_UNDER_THE_HOOD_JS,
-} from "../../api/paths";
 import Head from "next/head";
 import Link from "next/link";
 import s from "./pageJs.module.scss";
-export const getStaticProps: GetStaticProps = async () => {
-  const posts_Basic_Js = getAllPosts(POSTS_PATH_BASIC_JS).map(
-    (post) => post.meta
-  );
-
-  const posts_Advanced_Js = getAllPosts(POSTS_PATH_ADVANCED_JS).map(
-    (post) => post.meta
-  );
-  const posts_Algorithms_Js = getAllPosts(POSTS_PATH_ALGORITHMS_JS).map(
-    (post) => post.meta
-  );
-  const posts_Practice_Js = getAllPosts(POSTS_PATH_PRACTICE_JS).map(
-    (post) => post.meta
-  );
-  const posts_Under_The_Hood_Js = getAllPosts(POSTS_PATH_UNDER_THE_HOOD_JS).map(
-    (post) => post.meta
-  );
-  const posts_Interview_Js = getAllPosts(POSTS_PATH_INTERVIEW_JS).map(
-    (post) => post.meta
-  );
-
-  const AllThemePosts = {
-    posts_Basic_Js,
-    posts_Advanced_Js,
-    posts_Algorithms_Js,
-    posts_Practice_Js,
-    posts_Under_The_Hood_Js,
-    posts_Interview_Js,
-  };
-  return {
-    props: {
-      AllThemePosts,
-    },
-  };
-};
+import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
+import UrlNav from "../../../src/Components/UI/UrlNav/UrlNav";
 
 const Home: NextPage = (): JSX.Element => {
   return (
@@ -85,6 +43,7 @@ const Home: NextPage = (): JSX.Element => {
       </Head>
 
       <div className="page_body">
+        <UrlNav/>
         <h1 className="page__title_main"> Онлайн руководство по JavaScript</h1>
 
         <div className="page_menu">
@@ -92,27 +51,48 @@ const Home: NextPage = (): JSX.Element => {
             Здесь мы узнаем о базовом javaScript, так же посмотрим на продвинутый материал. Немного взглянем на алгоритмы, займемся практикой и поговорим о том, что из себя представляет javaScript внутри. 
           </p> */}
           <div className="page__title">Содержание</div>
-          <div className={s.content_list}>
-            <ul>
-              <li>
-                <Link href={"/content/js/basic-js"}> Базовый javascript</Link>
-              </li>
-              <li>
-                <Link href={"/content/js/advanced-js"}>
-                  Продвинутый javaScript
-                </Link>
-              </li>
-              <li>
-                <Link href={"/content/js/basic-js"}> Базовый javascript</Link>
-              </li>
-              <li>
-                <Link href={"/content/js/basic-js"}> Базовый javascript</Link>
-              </li>
-              <li>
-                <Link href={"/content/js/basic-js"}> Базовый javascript</Link>
-              </li>
-            </ul>
-          </div>
+          <AnimationContainer>
+            <div className={"content_list"}>
+              <ol>
+                <li>
+                  <Link href={"/content/js/basic-js"}> Базовый javascript</Link>
+                </li>
+
+                <li>
+                  <Link href={"/content/js/advanced-js"}>
+                    Продвинутый javaScript
+                  </Link>
+                </li>
+                <li>
+                  <Link href={"/content/js/algorithms-js"}> Алгоритмы</Link>{" "}
+                </li>
+
+                <li>
+                  {" "}
+                  <Link href={"/content/js/practice-js"}>
+                    {" "}
+                    Практика & webpack
+                  </Link>
+                </li>
+
+                <li>
+                  {" "}
+                  <Link href={"/content/js/under-the-hood-js"}>
+                    {" "}
+                    JavaScript под капотом
+                  </Link>
+                </li>
+
+                <li>
+                  {" "}
+                  <Link href={"/content/js/interview-js"}>
+                    {" "}
+                    Собеседование
+                  </Link>{" "}
+                </li>
+              </ol>
+            </div>
+          </AnimationContainer>
         </div>
       </div>
     </div>

@@ -1,12 +1,23 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import React from "react";
-import { withLayout } from "../../../layout/Layout";
+import { withLayout } from "../../../../layout/Layout";
+import { getAllPosts } from "../../../api/api";
+import { POSTS_PATH_BASIC_NODEJS } from "../../../api/paths";
 import Head from "next/head";
-import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
-import Link from "next/link";
-import UrlNav from "../../../src/Components/UI/UrlNav/UrlNav";
+import MainMenuNodeJs from "../../../../src/Components/Menu/MenuNodeJs/MainMenuNodeJs";
 
+export const getStaticProps: GetStaticProps = async () => {
+  const posts_Basic_Node_Js = getAllPosts(POSTS_PATH_BASIC_NODEJS).map(
+    (post) => post.meta
+  );
 
+  const AllThemePosts = { posts_Basic_Node_Js };
+  return {
+    props: {
+      AllThemePosts,
+    },
+  };
+};
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Home: NextPage = (): JSX.Element => {
@@ -20,14 +31,8 @@ const Home: NextPage = (): JSX.Element => {
         />
 
         <meta name="yandex-verification" content="a99ae512e4f1c330" />
-        <meta
-            name="description"
-            content={"Основные темы в nextJs, маршрутизация, SSR, и многое другое."}
-          />
-          <meta
-            property="og:description"
-            content={"Разбираемся в nextJs"}
-          />
+        <meta name="description" content={"Фундаментальный node js "} />
+        <meta property="og:description" content={"Разбираемся в nodeJs"} />
 
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://discocode.ru/js" />
@@ -39,24 +44,12 @@ const Home: NextPage = (): JSX.Element => {
         <meta property="og:locale" content="ru_Ru" />
         <meta property="og:author" content="Дмитрий черномашенцев" />
         <meta property="og:section" content="nextJS" />
-        <meta property="og:tag" content="nextjS, js" />
+        <meta property="og:tag" content="nodeJs, js, javaScript" />
       </Head>
 
       <div className="page_body">
-        <UrlNav />
-        <h1 className="page__title_main">Онлайн руководство по NextJs  </h1>
         <div className="page_menu">
-          <div className="page__title">Содержание</div>
-
-          <AnimationContainer>
-            <div className={"content_list"}>
-              <ol>
-                <li>
-                  <Link href={"/content/next-js/basic-next-js"}> Основы next.js</Link>
-                </li>
-              </ol>
-            </div>
-          </AnimationContainer>
+          <MainMenuNodeJs />
         </div>
       </div>
     </div>

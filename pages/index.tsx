@@ -1,22 +1,21 @@
 import type { NextPage } from "next";
 import { withLayout } from "../layout/Layout";
 import React, {useRef } from "react";
-import Articles from "../src/Components/Articles/Articles";
 import s from "./index.module.scss";
 import Head from "next/head";
 import News from "../src/Components/News/News";
-import QuizCard from "../src/Components/QuizCard/QuizCard";
+import Link from "next/link";
 
 const Home: NextPage = (): JSX.Element => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const h2ref = useRef<number | any>(null);
+  // const h2ref = useRef<number | any>(null);
 
-  const scrollToMyRef = () => {
-    const html = document.querySelector('html') as HTMLElement;
-    html.style.scrollBehavior = 'smooth';
-    window.scrollTo(0, h2ref.current.clientHeight + h2ref.current.offsetTop - h2ref.current.offsetHeight + 165);
-    html.style.scrollBehavior = 'auto';
-  };
+  // const scrollToMyRef = () => {
+  //   const html = document.querySelector('html') as HTMLElement;
+  //   html.style.scrollBehavior = 'smooth';
+  //   window.scrollTo(0, h2ref.current.clientHeight + h2ref.current.offsetTop - h2ref.current.offsetHeight + 165);
+  //   html.style.scrollBehavior = 'auto';
+  // };
 
 
   
@@ -61,8 +60,7 @@ const Home: NextPage = (): JSX.Element => {
                 &lt;Disco <span className={s.page__welcome__title__textcode}>Code/&gt;</span>{" "}
               </h1>
               <span className={s.page__welcome__title__subtitle}> В серость под диско</span>
-              <button onClick={scrollToMyRef} className={s.page__welcome__title__btnScroll}> Перейти к урокам </button>
-
+              <Link href={"/content"}> <button className={s.page__welcome__title__btnScroll}>Перейти к урокам </button>  </Link>
             </div>
 
           </div>

@@ -31,7 +31,7 @@ const Articles = ({ category }: articlesProps): JSX.Element => {
 
 
           <Card title={"Next.js"} 
-          color={"next"} url={"/next-js"} />
+          color={"next"} url={"content/next-js"} />
 
         <Card title={"Node.js"} 
           color={"node"} url={"content/node-js"} />

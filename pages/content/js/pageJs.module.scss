@@ -27,22 +27,7 @@
 }
 
 
-.content_list {
-	display: grid;
-	justify-content: flex-start;
-	text-align: left;
-	font-weight: 400;
-	cursor: pointer;
-	li {
-		border-bottom: 1px solid gray;
-		font-size: 20px;
-		padding:15px 5px;
-		
-		&:hover {
-			background-color: rgba(90, 90, 90, 0.24);
-		}
-	}
-}
+
 @media screen and (max-width: #{$screen_mobile_785}) {
 	.footer a:focus {
 		color: var(--js_color_links_pages_mobile);

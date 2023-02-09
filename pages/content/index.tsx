@@ -3,6 +3,7 @@ import { withLayout } from "../../layout/Layout";
 import React from "react";
 import s from "./index.module.scss";
 import Articles from "../../src/Components/Articles/Articles";
+import AnimationContainer from "../../src/Components/AnimationContainers/AnimationContainer";
 
 const Home: NextPage = (): JSX.Element => {
  
@@ -43,13 +44,13 @@ const Home: NextPage = (): JSX.Element => {
         <meta property="og:site_name" content="DiscoCode" />
         <meta property="og:locale" content="ru_Ru"></meta>
       </Head> */}
-  
-  <div className={s.content} >
+  <AnimationContainer>
           <Articles category="js" />
           {/* <QuizCard  category="mainPage" src="/tests" text= "JavaScript тесты разных уровней." title={'JavaScript Тесты'} /> */}
           <Articles category="other" />
-        </div>
+        </AnimationContainer>
     </div>
+
   );
 };
 

@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import { AppContext } from "../../../../context/app.context";
 import { PostMeta } from "../../../../pages/api/api";
+import AnimationContainer from "../../AnimationContainers/AnimationContainer";
 import MenuMainLinks from "../MenuMainLinks";
 import { JsContextProps } from "./postsJs.props";
 
@@ -9,7 +10,6 @@ const MainMenuJs = (): JSX.Element => {
   const { AllThemePosts } = useContext(AppContext);
   const router = useRouter();
   const path = router.asPath.split("/");
-  console.log(path);
 
   const {
     posts_Basic_Js,
@@ -64,7 +64,7 @@ const MainMenuJs = (): JSX.Element => {
           page="js"
         />
       )}
-    </>
+      </>
   );
 };
 
