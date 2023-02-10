@@ -131,10 +131,22 @@
 		background-image: url(/images/cards/basic_hover.png);
 	}
 
+	@media screen and (max-width: 1165px) {
+		&__container {
+			min-height: 180px;
+		}
+	}
+
+	@media screen and (max-width: 1000px) {
+		&__container {
+			min-height: 250px;
+		}
+	}
+
+
 	@media screen and (max-width: #{$screen_mobile_785}) {
 		&__container {
 			min-width: 350px;
-
 			background-color: var(--main_color_links_pages);
 			background-image: url(/images/cards/basic_hover.png);
 		}
