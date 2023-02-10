@@ -96,6 +96,7 @@ h4 {
 }
 
 .navUrlLink {
+
 	color: #436ebd;
 	font-size: 14px;
 
@@ -107,6 +108,7 @@ h4 {
 
 .navUrlContent {
 	display: flex;
+	white-space: nowrap;
 }
 
 .navUrl {
@@ -124,6 +126,25 @@ h4 {
 	font-size: 16px;
 }
 
+
+
+@media screen and (max-width: #{screen_wrapper_without_right_side}) {
+	.navUrlContent {
+		white-space: normal;
+
+	}
+
+	
+}
+
+@media screen and (max-width: 600px) {
+	.navUrlContent {
+		display: flex;
+		flex-direction: column;
+	}
+
+	
+}
 
 @media screen and (max-width: #{$screen_mobile_785}) {
 	.page_content h2 {

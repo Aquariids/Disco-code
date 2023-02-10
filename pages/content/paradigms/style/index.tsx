@@ -1,18 +1,15 @@
 import type { GetStaticProps, NextPage } from "next";
 import React from "react";
-import { withLayout } from "../../../layout/Layout";
-import { getAllPosts } from "../../api/api";
-import { POSTS_PATH_PARADIGMS_STYLE } from "../../api/paths";
+import { withLayout } from "../../../../layout/Layout";
+import { getAllPosts } from "../../../api/api";
+import { POSTS_PATH_PARADIGMS_STYLE } from "../../../api/paths";
 import Head from "next/head";
-import MainMenuParadigms from "../../../src/Components/Menu/MenuParadigms/MainMenuParadigms";
-import Link from "next/link";
-import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
-import UrlNav from "../../../src/Components/UI/UrlNav/UrlNav";
+import MainMenuParadigms from "../../../../src/Components/Menu/MenuParadigms/MainMenuParadigms";
 
 export const getStaticProps: GetStaticProps = async () => {
   const post_Style_Paradigms = getAllPosts(POSTS_PATH_PARADIGMS_STYLE).map((post) => post.meta);
 
-  const AllThemePosts = {post_Style_Paradigms,};
+  const AllThemePosts = { post_Style_Paradigms, };
   return {
     props: {
       AllThemePosts,
@@ -56,22 +53,10 @@ const Home: NextPage = (): JSX.Element => {
       </Head>
 
       <div className="page_body">
-      <UrlNav />
-
-      <h1 className="page__title_main"> Парадигмы программирования </h1>
 
         <div className="page_menu">
-        <div className="page__title">Содержание</div>
 
-        <AnimationContainer>
-            <div className={"content_list"}>
-              <ol>
-                <li>
-                  <Link href={"/content/paradigms/style"}> Стили написания </Link>
-                </li>
-              </ol>
-            </div>
-          </AnimationContainer>
+          <MainMenuParadigms />
         </div>
       </div>
     </div>

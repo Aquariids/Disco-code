@@ -23,18 +23,18 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
                     <div className={s.footer__content__nav}>
                         <h3 className={s.footer__heading}> Навигация по сайту </h3>
                         <ul className={s.footer__navList} style={{ listStyleType: 'none' }}>
-                            <li className={s.footer__item}><Link href={'/js/basic-js/browser-methods-and-console'}>Базовый javaScript</Link></li>
-                            <li className={s.footer__item}><Link href={'/js/advanced-js/hoisting'}>Продвинутый javaScript</Link></li>
-                            <li className={s.footer__item}><Link href={'/js/algorithms-js/binary-search'}>Алгоритмы javaScript</Link></li>
-                            <li className={s.footer__item}><Link href={'/js/practice-js/webpack'}>Практика js & Webpack</Link></li>
-                            <li className={s.footer__item}><Link href={'/js/under-the-hood-js/engine'}>JavaScript под капотом</Link></li>
-                            <li className={s.footer__item}><Link href={'/react/basic-react/react-single-page-app'}> Базовый React </Link></li>
-                            <li className={s.footer__item}><Link href={'/ts/basic-ts/installation'}>Основы typeScript</Link></li>
-                            <li className={s.footer__item}><Link href={'/next-js/basic-next-js/create-next-app'}>Начало работы с next.js</Link></li>
-                            <li className={s.footer__item}><Link href={'/node-js/basic-node-js/npm'}>Базовый node.js</Link></li>
-                            <li className={s.footer__item}><Link href={'/paradigms/style/imperative-and-declarative'}>Стили написания кода</Link></li>
-                            <li className={s.footer__item}><Link href={'/web-request-response'}>Как работает web - request & response</Link></li>
-                            <li className={s.footer__item}><Link href={'/html-css/html/html-page'}>Коротко про html & css</Link></li>
+                            <li className={s.footer__item}><Link href={'/content/js/basic-js/browser-methods-and-console'}>Базовый javaScript</Link></li>
+                            <li className={s.footer__item}><Link href={'/content/js/advanced-js/hoisting'}>Продвинутый javaScript</Link></li>
+                            <li className={s.footer__item}><Link href={'/content/js/algorithms-js/binary-search'}>Алгоритмы javaScript</Link></li>
+                            <li className={s.footer__item}><Link href={'/content/js/practice-js/webpack'}>Практика js & Webpack</Link></li>
+                            <li className={s.footer__item}><Link href={'/content/js/under-the-hood-js/engine'}>JavaScript под капотом</Link></li>
+                            <li className={s.footer__item}><Link href={'/content/react/basic-react/react-single-page-app'}> Базовый React </Link></li>
+                            <li className={s.footer__item}><Link href={'/content/ts/basic-ts/installation'}>Основы typeScript</Link></li>
+                            <li className={s.footer__item}><Link href={'/content/next-js/basic-next-js/create-next-app'}>Начало работы с next.js</Link></li>
+                            <li className={s.footer__item}><Link href={'/content/node-js/basic-node-js/npm'}>Базовый node.js</Link></li>
+                            <li className={s.footer__item}><Link href={'/content/paradigms/style/imperative-and-declarative'}>Стили написания кода</Link></li>
+                            <li className={s.footer__item}><Link href={'/content/web-request-response'}>Как работает web - request & response</Link></li>
+                            <li className={s.footer__item}><Link href={'/content/html-css/html/html-page'}>Коротко про html & css</Link></li>
                             <li className={s.footer__item}><Link href={'/tests'}>Тесты по javaScript</Link></li>
 
 

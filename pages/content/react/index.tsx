@@ -46,7 +46,7 @@ const Home: NextPage = (): JSX.Element => {
                 </li>
                 <li>
                   {" "}
-                  <Link href={"/content/reaCT/interview-react"}>
+                  <Link href={"/content/react/interview-react"}>
                     {" "}
                     Собеседование
                   </Link>{" "}

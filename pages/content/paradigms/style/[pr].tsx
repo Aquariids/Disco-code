@@ -18,6 +18,7 @@ import {
 } from "../../../api/api";
 import { POSTS_PATH_PARADIGMS_STYLE } from "../../../api/paths";
 import Link from "next/link";
+import UrlNav from "../../../../src/Components/UI/UrlNav/UrlNav";
 
 
 interface Props { post: MDXPost }
@@ -60,6 +61,7 @@ const PostPage: NextPage<Props> = ({
           <meta property="og:section" content="Paradigms" />
           <meta property="og:tag" content="OOP, js, paradigms" />
         </Head>
+        <UrlNav slug = {post.meta.title}/>
 
         <AnimationContainer>
           <div className="mdTitle">

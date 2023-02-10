@@ -42,14 +42,14 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
                 </div>
 
                 <div className={s.header__nav}>
-                    <div className= {s.header__links}>
-                    <Link href={'/tests'}><div className={cn(s.header__content_link, {
-                        [s.active]: router.asPath.startsWith('/tests')
-                    })}>Тесты</div> </Link>
-                    <Link href={'/content'}>
-                        <div className={cn(s.header__content_link, {
-                            [s.active]: router.asPath.startsWith('/content')
-                        })}>Уроки </div> </Link>
+                    <div className={s.header__links}>
+                        <Link href={'/tests'}><div className={cn(s.header__content_link, {
+                            [s.active]: router.asPath.startsWith('/tests')
+                        })}>Тесты</div> </Link>
+                        <Link href={'/content'}>
+                            <div className={cn(s.header__content_link, {
+                                [s.active]: router.asPath.startsWith('/content')
+                            })}>Уроки </div> </Link>
                     </div>
                     <div className={s.header__dropdown}>
                         <div className={s.header__dropdown__btn}><button> Выбрать технологию </button></div>
@@ -60,6 +60,8 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
                             <Link href={'/content/paradigms'}><li className={s.mainLinks}>Парадигмы</li></Link>
                             <Link href={'/content/next-js'}><li className={s.next}>Next.js</li></Link>
                             <Link href={'/content/node-js'}><li className={s.node}>Node.js</li></Link>
+                            <Link href={'/content/html-css'}><li className={s.mainLinks}>Html & css</li></Link>
+
                         </ul>
                     </div>
 

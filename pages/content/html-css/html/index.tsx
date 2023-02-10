@@ -1,10 +1,21 @@
-import type {NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import React from "react";
-import { withLayout } from "../../../layout/Layout";
+import { withLayout } from "../../../../layout/Layout";
+import { getAllPosts } from "../../../api/api";
+import { POSTS_PATH_HTML } from "../../../api/paths";
 import Head from "next/head";
-import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
-import Link from "next/link";
-import UrlNav from "../../../src/Components/UI/UrlNav/UrlNav";
+import MainMenuHtmlCss from "../../../../src/Components/Menu/MenuHtml&css/MainMenuHtmlCss";
+
+export const getStaticProps: GetStaticProps = async () => {
+  const posts_Html = getAllPosts(POSTS_PATH_HTML).map((post) => post.meta);
+
+  const AllThemePosts = { posts_Html, };
+  return {
+    props: {
+      AllThemePosts,
+    },
+  };
+};
 
 const Home: NextPage = (): JSX.Element => {
   return (
@@ -42,27 +53,9 @@ const Home: NextPage = (): JSX.Element => {
       </Head>
 
       <div className="page_body">
-      <UrlNav />
-
-        <h1 className="page__title_main"> Мини руководство по Html & Css </h1>
-
-        <div className="page_menu">
-          <div className="page__title">Содержание</div>
-          <AnimationContainer>
-            <div className={"content_list"}>
-              <ol>
-                <li>
-                  <Link href={"/content/html-css/html"}>
-                    {" "}
-                    Html
-                  </Link>
-                </li>
-              </ol>
-            </div>
-          </AnimationContainer>
+          <MainMenuHtmlCss />
         </div>
       </div>
-    </div>
   );
 };
 

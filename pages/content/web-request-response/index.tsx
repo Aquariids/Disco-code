@@ -16,6 +16,7 @@ import {
 } from "../../api/api";
 import { POSTS_PATH_WEB } from "../../api/paths";
 import Link from "next/link";
+import UrlNav from "../../../src/Components/UI/UrlNav/UrlNav";
 
 interface Props { post: MDXPost }
 
@@ -57,6 +58,8 @@ const PostPage: NextPage<Props> = ({
         <meta property="og:tag" content="HTTP, js, web,request,response" />
         </Head>
 
+        <UrlNav slug = {post.meta.title}/>
+        
         <AnimationContainer>
           <div className="mdTitle">
             <h1>{post.meta.title}</h1>

@@ -6,7 +6,7 @@
     min-height: 100%;
     justify-content: center;
     grid-template-columns: repeat(4, minmax(auto,1fr));
-    grid-template-rows: repeat(1, 380px);
+    grid-template-rows: repeat(1, 300px);
    
 }
 
@@ -47,14 +47,6 @@
     .page {
       margin-bottom: 50px;
       grid-template-columns: 1fr;
-    }
-      
-  }
-
-  @media (max-width:#{$screen_mobile_400}) {
-
-    .page {
-      grid-template-rows: 1fr;
     }
       
   }
