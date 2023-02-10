@@ -38,10 +38,10 @@ const MenuMobileLinks = ({ title, page, posts, ...props }: IMenu): JSX.Element =
                         className={cn(s.link, {
                             [s.active]: post.slug === checkActiveLink,
                             ['active_scroll']: post.slug === checkActiveLink,
-                            [s.active_js]: post.slug === checkActiveLink && router.pathname.startsWith('/js'),
-                            [s.active_ts]: post.slug === checkActiveLink && router.pathname.startsWith('/ts'),
-                            [s.active_react]: post.slug === checkActiveLink && router.pathname.startsWith('/react'),
-                            [s.active_node]: post.slug === checkActiveLink && router.pathname.startsWith('/node-js'),
+                            [s.active_js]: post.slug === checkActiveLink && router.pathname.startsWith('/content/js'),
+                            [s.active_ts]: post.slug === checkActiveLink && router.pathname.startsWith('/content/ts'),
+                            [s.active_react]: post.slug === checkActiveLink && router.pathname.startsWith('/content/react'),
+                            [s.active_node]: post.slug === checkActiveLink && router.pathname.startsWith('/content/node-js'),
                             
                         })} >
                         {router.pathname.startsWith(`/content/${page}`) ? <Link href={`/content/${page}/${post.category}/${post.slug}`}>{post.title}</Link> : ''}

@@ -109,13 +109,13 @@ h4 {
 .navUrlContent {
 	display: flex;
 	white-space: nowrap;
+	text-align: left;
 }
 
 .navUrl {
 	margin-top: 55px;
-	display: grid;
+	display: flex;
 	justify-content: left;
-
 		margin-bottom: 25px;
 		padding-bottom: 10px;
 
