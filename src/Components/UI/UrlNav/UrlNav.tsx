@@ -16,7 +16,7 @@ const UrlNav = ({ slug }: props): JSX.Element => {
                     {path[3] === 'basic-js' && <Link href={'/content/js/basic-js'}><span className='navUrlLink'>Базовый JavaScript</span><span className="slash"> / </span></Link>}
                     {path[3] === 'advanced-js' && <Link href={'/content/js/advanced-js'}><span className='navUrlLink'>Продвинутый JavaScript</span><span className="slash"> / </span></Link>}
                     {path[3] === 'algorithms-js' && <Link href={'/content/js/algorithms-js'}><span className='navUrlLink'>Алгоритмы</span><span className="slash"> / </span></Link>}
-                    {path[3] === 'practice-js' && <Link href={'/content/js/practice-jss'}><span className='navUrlLink'>Практика & webpack</span><span className="slash"> / </span></Link>}
+                    {path[3] === 'practice-js' && <Link href={'/content/js/practice-js'}><span className='navUrlLink'>Практика & webpack</span><span className="slash"> / </span></Link>}
                     {path[3] === 'under-the-hood-js' && <Link href={'/content/js/under-the-hood-js'}><span className='navUrlLink'>JavaScript под капотом</span><span className="slash"> / </span></Link>}
                     {path[3] === 'interview-js' && <Link href={'/content/js/interview-js'}><span className='navUrlLink'>Собеседование</span><span className="slash"> / </span></Link>}
                     {slug && <Link href={'#'}><span className='navUrlLink'>{slug}</span></Link>}

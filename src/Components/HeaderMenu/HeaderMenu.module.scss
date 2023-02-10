@@ -90,7 +90,7 @@
 
 			min-width: 100%;
 			margin: 0;
-			padding: 20px 0 0;
+			padding: 21px 0 0;
 
 			transition: visibility 0.2s linear, opacity 0.2s linear;
 
@@ -122,9 +122,10 @@
 
 		&__btn {
 			display: flex;
-			justify-content: flex-end;
+			justify-content: center;
+			text-align: center;
+			width: 100px;
 			
-			width: 100%;
 
 			button {
 				color: #FFF;

@@ -52,7 +52,7 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
                             })}>Уроки </div> </Link>
                     </div>
                     <div className={s.header__dropdown}>
-                        <div className={s.header__dropdown__btn}><button> Выбрать технологию </button></div>
+                        <div className={s.header__dropdown__btn}><button> Технологии </button></div>
                         <ul className={s.header__dropdown__content}>
                             <Link href={'/content/js'}><li className={s.js}>JavaScript</li></Link>
                             <Link href={'/content/react'}><li className={s.react}>React</li></Link>
