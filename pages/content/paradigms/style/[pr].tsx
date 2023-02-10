@@ -84,16 +84,8 @@ const PostPage: NextPage<Props> = ({
             />
           </div>
           <div className={cn('mainFooter', "page_footer")}>
-            <Link href={post.meta.prev}>
-              {post.meta.prev === "none" ? (
-                <span></span>
-              ) : (
-                "Предыдущая тема"
-              )}
-            </Link>
-            <Link href={post.meta.next}>
-              {post.meta.next === "none" ? <span></span> : "Следующая тема"}
-            </Link>
+          <Link href={`/content${post.meta.prev}`}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая тема'}</Link>
+          <Link href={`/content${post.meta.next}`}>{post.meta.next === 'none' ? <span></span> : 'Следующая тема'}</Link>
           </div>
         </AnimationContainer>
       </div>

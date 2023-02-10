@@ -26,7 +26,7 @@ const MobileButton = ({ mobile, setMobile, ...props }: MobileButtonProps) => {
                     <span className={cn(s.arrow_down, {
                     [s.arrow_down_true]: mobile === true,
                     [s.arrows_js]: router.pathname.startsWith('/content/js'),
-                    [s.arrows_react]: router.pathname.startsWith('//contentreact'),
+                    [s.arrows_react]: router.pathname.startsWith('/content/react'),
                     [s.arrows_ts]: router.pathname.startsWith('/content/ts'),
                     [s.arrows_node]: router.pathname.startsWith('/content/node-js'),
                     })}><ArrowIcon /></span>

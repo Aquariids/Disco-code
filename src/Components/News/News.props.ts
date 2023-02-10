@@ -46,28 +46,28 @@ export const newsData:INewsPost[]  = [
         id:6,
         body:"Добавлена статья о работе",
         link:"контекста выполнения & call stack ",
-        src:"/content//js/under-the-hood-js/call-stack",
+        src:"/content/js/under-the-hood-js/call-stack",
         date:"16.12.2022"
     },
     {
         id:7,
         body:"Создал новую тему \"html & css\" и добавил статью про",
         link:"структуру веб страницы",
-        src:"/content//html-css/html/html-page",
+        src:"/content/html-css/html/html-page",
         date:"17.12.2022"
     },
     {
         id:8,
         body:"Создал новую тему \"Node.js\" и добавил статью про то как",
         link:"установить node.js и что такое npm ",
-        src:"/content//node-js/basic-node-js/npm",
+        src:"/content/node-js/basic-node-js/npm",
         date:"29.12.2022"
     },
     {
         id:9,
         body:"Добавил статью о том как работает ",
         link:"node.js, блокирущий и неблокирущий ввод/вывод и что за библиотека libuv. ",
-        src:"/content//node-js/basic-node-js/what-is-node-js",
+        src:"/content/node-js/basic-node-js/what-is-node-js",
         date:"30.12.2022"
     },
     {

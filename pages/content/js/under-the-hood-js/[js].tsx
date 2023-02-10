@@ -90,7 +90,7 @@ const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
           </div> */}
           <div className={cn(s.footer, "page_footer")}>
           <Link href={`/content${post.meta.prev}`}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая тема'}</Link>
-                    <Link href={`/content${post.meta.next}`}>{post.meta.next === 'none' ? <span></span> : 'Следующая тема'}</Link>
+          <Link href={`/content${post.meta.next}`}>{post.meta.next === 'none' ? <span></span> : 'Следующая тема'}</Link>
           </div>
           <span className="md_date">{post.meta.date}</span>
         </AnimationContainer>
