@@ -195,3 +195,4 @@ function f3() {
 
 ### Смотрим на scope chain
 
+

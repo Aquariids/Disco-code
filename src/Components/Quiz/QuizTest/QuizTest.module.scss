@@ -180,7 +180,19 @@
 
 
 @media screen and (max-width: #{$screen_mobile_500}) {
+
+    .container {
+        height: 330px;
+    }
     .test {
+
+        &__title {
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            height: 50px;
+            margin-bottom: 25px;
+        }
         &__content {
             min-width: 280px;
             min-height: 280px;

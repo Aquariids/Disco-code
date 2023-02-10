@@ -42,14 +42,15 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
                 </div>
 
                 <div className={s.header__nav}>
-                <Link href={'/tests'}><div className={cn(s.header__content_link, {
+                    <div className= {s.header__links}>
+                    <Link href={'/tests'}><div className={cn(s.header__content_link, {
                         [s.active]: router.asPath.startsWith('/tests')
                     })}>Тесты</div> </Link>
                     <Link href={'/content'}>
-                    <div className={cn(s.header__content_link, {
-                     [s.active]: router.asPath.startsWith('/content')
-                    })}>Уроки </div> </Link>
-
+                        <div className={cn(s.header__content_link, {
+                            [s.active]: router.asPath.startsWith('/content')
+                        })}>Уроки </div> </Link>
+                    </div>
                     <div className={s.header__dropdown}>
                         <div className={s.header__dropdown__btn}><button> Выбрать технологию </button></div>
                         <ul className={s.header__dropdown__content}>

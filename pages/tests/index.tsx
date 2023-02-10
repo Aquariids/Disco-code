@@ -3,6 +3,7 @@ import React from 'react';
 import { withLayout } from '../../layout/Layout';
 import AnimationContainer from '../../src/Components/AnimationContainers/AnimationContainer';
 import QuizCard from '../../src/Components/QuizCard/QuizCard';
+import UrlNav from '../../src/Components/UI/UrlNav/UrlNav';
 import s from './tests.module.scss';
 
 const index = () => {
@@ -37,6 +38,7 @@ const index = () => {
                 <meta property="og:section" content="nextJs" />
                 <meta property="og:tag" content="next, nextJs, js" />
             </Head>
+            <UrlNav/>
         <AnimationContainer>
         <QuizCard  category="beginner" src="/tests/beginner/" text= "Для разработчиков JavaScript, которые только начинают изучать язык или недавно начали" title={'Тесты для начинающих'} />
         </AnimationContainer>

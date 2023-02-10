@@ -15,6 +15,10 @@
 	
 	grid-template-areas: ". header .";
 
+	&__links {
+		width: 100%;
+		display:flex;
+	}
 	&__content {
 		display: flex;
 		align-items: center;
@@ -198,6 +202,11 @@
 		@media screen and (max-width: #{$screen_mobile_500}) {
 			&__dropdown__btn {
 				display: none;
+			}
+			&__content_link {
+				font-size: 14px;
+				margin: 0;
+				margin-left: 15px;
 			}
 		}
 	}
