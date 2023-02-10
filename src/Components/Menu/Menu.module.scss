@@ -102,31 +102,34 @@
 
 // меню содержания страниц
 .main_menu {
+
+	.numLink {
+		span {
+			padding-right: 15px;
+		}
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: gray;
+
+		
+	}
+
+
+
 	&__list {
 		display: grid;
-
 		width: 100%;
 		padding: 0;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: 1fr;
 		gap: 13px 5px;
-
-
 		& .link a:hover {
 			transition: all 0.1s;
 
-			color: rgb(255 253 253);
+			
 		}
 	}
 
-	&__btn {
-		display: grid;
-		justify-content: center;
-
-		margin-bottom: 25px;
-		padding-bottom: 10px;
-
-		border-bottom: 1px solid rgb(0 0 0 / 25.3%);
-	}
 
 	&__title {
 		margin-top: 20px;
@@ -150,39 +153,28 @@
 
 
 	&__links {
-		height: 50px;
-
-		border-radius: 5px;
-
+		text-align: left;
+		display: flex;
 		a {
 			display: flex;
 			align-items: center;
 			justify-content: left;
+			 color: #436ebd;
+			// border-bottom: 1px solid black;
 
-			width: 100%;
-			height: 100%;
-
-			text-align: left;
-
-			color: rgb(0 0 0 / 65.1%);
-			border-bottom: 1px solid black;
-
-			font-size: 14px;
-			font-weight: 600;
+			font-size: 16px;
+			font-weight: 400;
 			line-height: 1.4;
+			&:hover {
+					transition: all 0.3s;
+					color: #b80000;
+					text-decoration: underline;
+			}
 		}
 
-		&:hover {
-			transition: all 0.3s;
-
-			background-color: #20232ACB;
-		}
+		
 	}
 
-	@media screen and (max-width: 1665px) {
-		&__list {
-			grid-template-columns: 1fr 1fr;
-		}
 
 		@media screen and (max-width: 1145px) {
 			&__links a {
@@ -202,8 +194,6 @@
 				@media screen and (max-width: 450px) {
 					&__links {
 						max-width: 100%;
-						height: 50px;
-
 						text-align: left;
 					}
 
@@ -224,7 +214,6 @@
 			}
 		}
 	}
-}
 
 /* active links */
 

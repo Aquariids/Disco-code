@@ -13,14 +13,15 @@ const DropdownMenuLinks = ({ title, category, page,  posts, ...props }: IMenu): 
 
 
     const router = useRouter();
+    
     const pathname = router.asPath.split('#')[0]; // если мы переходим по ссылке с якорем куда то, к статье какой нибудь, то активная ссылка будет немного ломаться, поэтому если есть якорь мы его убираем.
     const checkActiveLink = pathname.split('/')[pathname.split('/').length - 1]; // отрезаем от пути наш slug и будем проверять slug из api, и так будет кидать активную ссылку
-    const [isOpen, setOpen] = useState(router.pathname.startsWith(`/${page}/${category}`) == true ? true : false);
+    const [isOpen, setOpen] = useState(router.pathname.startsWith(`/content/${page}/${category}`) == true ? true : false);
+
 
     const handleToggle = () => {
         setOpen(!isOpen);
     };
-
 
     // sidebar
         return (
@@ -38,19 +39,17 @@ const DropdownMenuLinks = ({ title, category, page,  posts, ...props }: IMenu): 
                             className={cn(s.link, {
                                 [s.active]: post.slug === checkActiveLink,
                                 ['active_scroll']: post.slug === checkActiveLink, // это надо, что бы к ссылке подкручивать скролл в сайдбаре
-                                [s.active_js]: post.slug === checkActiveLink && router.pathname.startsWith('/js'),
-                                [s.active_ts]: post.slug === checkActiveLink && router.pathname.startsWith('/ts'),
-                                [s.active_react]: post.slug === checkActiveLink && router.pathname.startsWith('/react'),
-                                [s.active_node]: post.slug === checkActiveLink && router.pathname.startsWith('/node-js'),
-
+                                [s.active_js]: post.slug === checkActiveLink && router.pathname.startsWith('/content/js'),
+                                [s.active_ts]: post.slug === checkActiveLink && router.pathname.startsWith('/content/ts'),
+                                [s.active_react]: post.slug === checkActiveLink && router.pathname.startsWith('/content/react'),
+                                [s.active_node]: post.slug === checkActiveLink && router.pathname.startsWith('/content/node-js'),
                             })} >
-                            {router.pathname.startsWith(`/${page}`) && <Link href={`/${page}/${post.category}/${post.slug}`}>{post.title}</Link>}
+                            {router.pathname.startsWith(`/content/${page}`) && <Link href={`/content/${page}/${post.category}/${post.slug}`}>{post.title}</Link>}
                         </li>
                     ))}
                 </ul>)}
             </div>
         );
-
 
 };
 

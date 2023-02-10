@@ -19,11 +19,11 @@ h4 {
 }
 
 .page__title {
-	font-size: 32px;
+	font-size: 24px;
+	text-align: left;
 }
 
 .page_content {
-	margin-top: 25px;
 	scroll-behavior: auto;
 
 	text-align: center;
@@ -42,7 +42,6 @@ h4 {
 .page_menu {
 	display: grid;
 
-	margin-top: 30px;
 	margin-bottom: 50px;
 	scroll-behavior: auto;
 	grid-template-columns: 1fr;
@@ -69,6 +68,84 @@ h4 {
 	margin-bottom: 25px;
 }
 
+.page__title_main {
+	text-align: left;
+	padding-top: 50px;
+}
+
+
+.content_list {
+	display: grid;
+	justify-content: flex-start;
+	text-align: left;
+	font-weight: 400;
+	
+	li {
+		color: gray;
+		padding:15px 5px;
+		font-size: 16px;
+		a {
+			color: #436ebd;
+			&:hover {
+				color: #b80000;
+				text-decoration: underline;
+			}
+		}
+	
+	}
+}
+
+.navUrlLink {
+
+	color: #436ebd;
+	font-size: 14px;
+
+	&:hover {
+		color: #b80000;
+		text-decoration: underline;
+	}
+}
+
+.navUrlContent {
+	display: flex;
+	white-space: nowrap;
+}
+
+.navUrl {
+	margin-top: 55px;
+	display: grid;
+	justify-content: left;
+
+		margin-bottom: 25px;
+		padding-bottom: 10px;
+
+		border-bottom: 1px solid rgb(0 0 0 / 25.3%);
+}
+
+.slash {
+	font-size: 16px;
+}
+
+
+
+@media screen and (max-width: #{screen_wrapper_without_right_side}) {
+	.navUrlContent {
+		white-space: normal;
+
+	}
+
+	
+}
+
+@media screen and (max-width: 600px) {
+	.navUrlContent {
+		display: flex;
+		flex-direction: column;
+	}
+
+	
+}
+
 @media screen and (max-width: #{$screen_mobile_785}) {
 	.page_content h2 {
 		margin-top: 50px;
@@ -83,7 +160,5 @@ h4 {
 		gap: 15px;
 	}
 
-	.page_content span {
-		display: none;
-	}
+	
 }

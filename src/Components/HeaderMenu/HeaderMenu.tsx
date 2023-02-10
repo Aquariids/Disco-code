@@ -12,20 +12,20 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
     const r = router.asPath.split('/').length;
 
     const logoCreat = () => {
-        if (router.asPath.startsWith('/js')) {
-            return <Logo path='/js' src='/logo/js_logo.svg' />;
+        if (router.asPath.startsWith('/content/js')) {
+            return <Logo path='/content/js' src='/logo/js_logo.svg' />;
         }
-        if (router.asPath.startsWith('/ts')) {
-            return <Logo path='/ts' src='/logo/ts_logo.svg' />;
+        if (router.asPath.startsWith('/content/ts')) {
+            return <Logo path='/content/ts' src='/logo/ts_logo.svg' />;
         }
-        if (router.asPath.startsWith('/react')) {
-            return <Logo path='/react' src='/logo/react_logo.svg' />;
+        if (router.asPath.startsWith('/content/react')) {
+            return <Logo path='/content/react' src='/logo/react_logo.svg' />;
         }
-        if (router.asPath.startsWith('/next-js')) {
-            return <Logo path='/next-js' src='/logo/nextjs_logo.svg' />;
+        if (router.asPath.startsWith('/content/next-js')) {
+            return <Logo path='/content/next-js' src='/logo/nextjs_logo.svg' />;
         }
-        if (router.asPath.startsWith('/node-js')) {
-            return <Logo path='/next-js' src='/logo/nodeJs_logo.png' />;
+        if (router.asPath.startsWith('/content/node-js')) {
+            return <Logo path='/content/next-js' src='/logo/nodeJs_logo.png' />;
         }
         else {
             return <Logo path='/' src='/logo/disco.svg' />;
@@ -42,17 +42,26 @@ const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
                 </div>
 
                 <div className={s.header__nav}>
-                    <div className={s.header__tests}><Link href={'/tests'}>Тесты</Link></div>
-
+                    <div className={s.header__links}>
+                        <Link href={'/tests'}><div className={cn(s.header__content_link, {
+                            [s.active]: router.asPath.startsWith('/tests')
+                        })}>Тесты</div> </Link>
+                        <Link href={'/content'}>
+                            <div className={cn(s.header__content_link, {
+                                [s.active]: router.asPath.startsWith('/content')
+                            })}>Уроки </div> </Link>
+                    </div>
                     <div className={s.header__dropdown}>
                         <div className={s.header__dropdown__btn}><button> Выбрать технологию </button></div>
                         <ul className={s.header__dropdown__content}>
-                            <Link href={'/js'}><li className={s.js}>JavaScript</li></Link>
-                            <Link href={'/react'}><li className={s.react}>React</li></Link>
-                            <Link href={'/ts'}><li className={s.ts}>TypeScript</li></Link>
-                            <Link href={'/paradigms'}><li className={s.mainLinks}>Парадигмы</li></Link>
-                            <Link href={'/next-js'}><li className={s.next}>Next.js</li></Link>
-                            <Link href={'/node-js'}><li className={s.node}>Node.js</li></Link>
+                            <Link href={'/content/js'}><li className={s.js}>JavaScript</li></Link>
+                            <Link href={'/content/react'}><li className={s.react}>React</li></Link>
+                            <Link href={'/content/ts'}><li className={s.ts}>TypeScript</li></Link>
+                            <Link href={'/content/paradigms'}><li className={s.mainLinks}>Парадигмы</li></Link>
+                            <Link href={'/content/next-js'}><li className={s.next}>Next.js</li></Link>
+                            <Link href={'/content/node-js'}><li className={s.node}>Node.js</li></Link>
+                            <Link href={'/content/html-css'}><li className={s.mainLinks}>Html & css</li></Link>
+
                         </ul>
                     </div>
 

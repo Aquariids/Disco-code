@@ -28,7 +28,7 @@ const SidebarMenu = (): JSX.Element => {
 
 
     const router = useRouter();
-    if (router.pathname.startsWith('/js')) {
+    if (router.pathname.startsWith('/content/js')) {
         return (
             <nav className={s.nav_menu}>
                 <DropdownMenuJs />
@@ -36,14 +36,14 @@ const SidebarMenu = (): JSX.Element => {
         );
     }
 
-    if (router.pathname.startsWith('/ts')) {
+    if (router.pathname.startsWith('/content/ts')) {
         return (
             <nav className={s.nav_menu}>
                 <DropdownMenuTs />
             </nav>
         );
     }
-    if (router.pathname.startsWith('/react')) {
+    if (router.pathname.startsWith('/content/react')) {
         return (
             <nav className={s.nav_menu}>
                 <DropdownMenuReact />
@@ -51,7 +51,7 @@ const SidebarMenu = (): JSX.Element => {
         );
     }
 
-    if (router.pathname.startsWith('/paradigms')) {
+    if (router.pathname.startsWith('/content/paradigms')) {
         return (
             <nav className={s.nav_menu}>
                 <DropdownMenuParadigms />
@@ -59,7 +59,7 @@ const SidebarMenu = (): JSX.Element => {
         );
     }
 
-    if (router.pathname.startsWith('/next-js')) {
+    if (router.pathname.startsWith('/content/next-js')) {
         return (
             <nav className={s.nav_menu}>
                 <DropdownMenuNextJs />
@@ -67,7 +67,7 @@ const SidebarMenu = (): JSX.Element => {
         );
     }
 
-    if (router.pathname.startsWith('/node-js')) {
+    if (router.pathname.startsWith('/content/node-js')) {
         return (
             <nav className={s.nav_menu}>
                 <DropdownMenuNodeJs />
@@ -75,7 +75,7 @@ const SidebarMenu = (): JSX.Element => {
         );
     }
 
-    if (router.pathname.startsWith('/html-css')) {
+    if (router.pathname.startsWith('/content/html-css')) {
         return (
             <nav className={s.nav_menu}>
                 <DropdownMenuHtmlCss />

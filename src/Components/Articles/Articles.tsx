@@ -14,27 +14,27 @@ const Articles = ({ category }: articlesProps): JSX.Element => {
           <Card
             title={"JavaScript"}
             color={"js"}
-            url={"/js"}
+            url={"content/js"}
           />
 
           <Card
             title={"React"}
             color={"react"}
-            url={"/react"}
+            url={"content/react"}
           />
 
           <Card
             title={"TypeScript"}
             color={"ts"}
-            url={"/ts"}
+            url={"content/ts"}
           />
 
 
           <Card title={"Next.js"} 
-          color={"next"} url={"/next-js"} />
+          color={"next"} url={"content/next-js"} />
 
         <Card title={"Node.js"} 
-          color={"node"} url={"/node-js"} />
+          color={"node"} url={"content/node-js"} />
         </div>
       </div>
     );
@@ -49,17 +49,17 @@ const Articles = ({ category }: articlesProps): JSX.Element => {
         <div className={s.articles__article}>
           <Card
             title={"Парадигмы программирования"}
-            url={"/paradigms"}
+            url={"content/paradigms"}
           />
 
           <Card
             title={"Web request & response"}
-            url={"/web-request-response"}
+            url={"content/web-request-response"}
           />
 
           <Card
             title={"Html & Css"}
-            url={"/html-css"}
+            url={"content/html-css"}
             color= {"html"}
           />
         </div>
