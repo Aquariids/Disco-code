@@ -98,7 +98,7 @@ h4 {
 .navUrlLink {
 
 	color: #436ebd;
-	font-size: 14px;
+	font-size: 13px;
 
 	&:hover {
 		color: #b80000;
@@ -107,14 +107,13 @@ h4 {
 }
 
 .navUrlContent {
-	display: flex;
-	white-space: nowrap;
+	display: inline-block;
 	text-align: left;
 }
 
 .navUrl {
 	margin-top: 55px;
-	display: flex;
+	display: grid;
 	justify-content: left;
 		margin-bottom: 25px;
 		padding-bottom: 10px;
@@ -123,14 +122,17 @@ h4 {
 }
 
 .slash {
-	font-size: 16px;
+	font-size: 13px;
 }
 
 
 
 @media screen and (max-width: #{screen_wrapper_without_right_side}) {
+
+	
 	.navUrlContent {
 		white-space: normal;
+		font-size: 12px;
 
 	}
 
