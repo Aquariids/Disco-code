@@ -14,7 +14,7 @@ import Link from 'next/link';
 import s from '../pageJs.module.scss';
 
 import AnimationContainer from '../../../../src/Components/AnimationContainers/AnimationContainer';
-import UrlNav from '../../../../src/Components/UI/UrlNav/UrlNav';
+import Breadcrumbs from '../../../../src/Components/Breadcrumbs/Breadcrumbs';
 
 interface Props { post: MDXPost }
 
@@ -37,7 +37,7 @@ const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
                 <meta property="og:image:height" content="630" />
             </Head>
 
-            <UrlNav slug = {post.meta.title}/>
+            <Breadcrumbs slug = {post.meta.title}/>
 
             <AnimationContainer>
             <div className='mdTitle'>

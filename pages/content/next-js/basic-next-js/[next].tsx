@@ -19,7 +19,7 @@ import {
 import { POSTS_PATH_BASIC_NEXTJS} from "../../../api/paths";
 import Link from "next/link";
 import AnimationContainer from "../../../../src/Components/AnimationContainers/AnimationContainer";
-import UrlNav from "../../../../src/Components/UI/UrlNav/UrlNav";
+import Breadcrumbs from "../../../../src/Components/Breadcrumbs/Breadcrumbs";
 
 
 
@@ -61,7 +61,7 @@ const PostPage: NextPage<Props> = ({post}): JSX.Element => {
           <meta property="og:section" content="nextJs" />
           <meta property="og:tag" content="next, nextJs, js" />
         </Head>
-        <UrlNav slug = {post.meta.title}/>
+        <Breadcrumbs slug = {post.meta.title}/>
 
         <AnimationContainer>
           <div className="mdTitle">

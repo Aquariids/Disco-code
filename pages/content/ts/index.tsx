@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { withLayout } from "../../../layout/Layout";
 import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
-import UrlNav from "../../../src/Components/UI/UrlNav/UrlNav";
+import Breadcrumbs from "../../../src/Components/Breadcrumbs/Breadcrumbs";
 
 const Home: NextPage = (): JSX.Element => {
   return (
@@ -26,7 +26,7 @@ const Home: NextPage = (): JSX.Element => {
       </Head>
 
       <div className="page_body">
-        <UrlNav />
+        <Breadcrumbs />
         <h1 className="page__title_main"> Онлайн руководство по TypeScript </h1>
         <div className="page_menu">
           <div className="page__title">Содержание</div>

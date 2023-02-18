@@ -1,20 +1,14 @@
 import type { NextPage } from "next";
 import { withLayout } from "../../layout/Layout";
 import React from "react";
-import s from "./index.module.scss";
 import Articles from "../../src/Components/Articles/Articles";
 import AnimationContainer from "../../src/Components/AnimationContainers/AnimationContainer";
+import Head from "next/head";
 
 const Home: NextPage = (): JSX.Element => {
- 
-
- 
-
-  
-
   return (
     <div>
-      {/* <Head>
+      <Head>
         <title>
           DiscoCode - уроки по javascript, typescript, react, nextjs
         </title>
@@ -43,14 +37,12 @@ const Home: NextPage = (): JSX.Element => {
         />
         <meta property="og:site_name" content="DiscoCode" />
         <meta property="og:locale" content="ru_Ru"></meta>
-      </Head> */}
-  <AnimationContainer>
-          <Articles category="js" />
-          {/* <QuizCard  category="mainPage" src="/tests" text= "JavaScript тесты разных уровней." title={'JavaScript Тесты'} /> */}
-          <Articles category="other" />
-        </AnimationContainer>
+      </Head>
+      <AnimationContainer>
+        <Articles category="js" />
+        <Articles category="other" />
+      </AnimationContainer>
     </div>
-
   );
 };
 

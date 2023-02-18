@@ -4,7 +4,7 @@ import QuizTest from '../../../src/Components/Quiz/QuizTest/QuizTest';
 import Head from 'next/head';
 import s from './test.module.scss';
 import AnimationContainer from '../../../src/Components/AnimationContainers/AnimationContainer';
-import UrlNav from '../../../src/Components/UI/UrlNav/UrlNav';
+import UrlNav from '../../../src/Components/Breadcrumbs/Breadcrumbs';
 
 const index = () => {
 

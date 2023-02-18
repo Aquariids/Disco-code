@@ -4,7 +4,7 @@ import { withLayout } from "../../../layout/Layout";
 import Head from "next/head";
 import Link from "next/link";
 import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
-import UrlNav from "../../../src/Components/UI/UrlNav/UrlNav";
+import Breadcrumbs from "../../../src/Components/Breadcrumbs/Breadcrumbs";
 
 const Home: NextPage = (): JSX.Element => {
   return (
@@ -34,7 +34,7 @@ const Home: NextPage = (): JSX.Element => {
       </Head>
 
       <div className="page_body">
-        <UrlNav />
+        <Breadcrumbs />
         <h1 className="page__title_main"> Онлайн руководство по node.js </h1>
 
         <div className="page_menu">

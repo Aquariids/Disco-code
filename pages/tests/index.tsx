@@ -3,7 +3,7 @@ import React from 'react';
 import { withLayout } from '../../layout/Layout';
 import AnimationContainer from '../../src/Components/AnimationContainers/AnimationContainer';
 import QuizCard from '../../src/Components/QuizCard/QuizCard';
-import UrlNav from '../../src/Components/UI/UrlNav/UrlNav';
+import UrlNav from '../../src/Components/Breadcrumbs/Breadcrumbs';
 import s from './tests.module.scss';
 
 const index = () => {

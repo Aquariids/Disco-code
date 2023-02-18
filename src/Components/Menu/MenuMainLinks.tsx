@@ -3,7 +3,7 @@ import s from './Menu.module.scss';
 import cn from 'classnames';
 import { IMenu } from './Menu.props';
 import { useRouter } from 'next/router';
-import UrlNav from '../UI/UrlNav/UrlNav';
+import UrlNav from '../Breadcrumbs/Breadcrumbs';
 import AnimationContainer from '../AnimationContainers/AnimationContainer';
 
 

@@ -4,7 +4,7 @@ import { withLayout } from "../../../layout/Layout";
 import Head from "next/head";
 import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
 import Link from "next/link";
-import UrlNav from "../../../src/Components/UI/UrlNav/UrlNav";
+import UrlNav from "../../../src/Components/Breadcrumbs/Breadcrumbs";
 
 const Home: NextPage = (): JSX.Element => {
   return (
