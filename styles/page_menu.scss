@@ -26,18 +26,8 @@ h4 {
 .page_content {
 	scroll-behavior: auto;
 
-	text-align: center;
 }
 
-.page_content h2 {
-	margin-bottom: 0;
-
-	font-size: 35px;
-}
-
-.page_content span {
-	font-size: 14px;
-}
 
 .page_menu {
 	display: grid;
@@ -102,9 +92,6 @@ h4 {
 
 
 @media screen and (max-width: #{$screen_mobile_785}) {
-	.page_content h2 {
-		margin-top: 50px;
-	}
 
 	.page_menu {
 		display: flex;

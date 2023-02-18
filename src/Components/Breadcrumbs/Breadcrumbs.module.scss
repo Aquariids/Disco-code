@@ -9,13 +9,13 @@
 
 
         &__content {
+            font-size: 13px;
             display: inline-block;
             text-align: left;
             
         }
 
         &__link {
-            font-size: 13px;
             color: #436ebd;
             
         
@@ -48,6 +48,11 @@
             font-size: 12px;
         }
     }
+
+    .slash {
+        font-size: 12px;
+    }
+    
 	
 
 	
@@ -58,10 +63,7 @@
     .breadcrumbs {
         margin-top: 20px;
         margin-bottom: 20px;
-        &__content {
-            display: flex;
-            flex-direction: column;
-        }
+       
     }
 	
 
