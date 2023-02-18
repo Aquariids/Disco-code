@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Highlight from 'react-highlight'
+import Highlight from 'react-highlight';
 import 'highlight.js/styles/github-dark-dimmed.css';
 import hljs from 'highlight.js';
 import javascript from 'highlight.js/lib/languages/javascript';
@@ -23,7 +23,7 @@ const QuizJs = ({ data, localKey }): JSX.Element => {
     const nextBtn = document.querySelector(`.${s.next__btn}`) as HTMLElement;
     const nekoText = document.querySelector(`.${s.neko__oval}`) as HTMLElement;
     useEffect(() => {
-        setAboutText(data[currentQuestion].about)
+        setAboutText(data[currentQuestion].about);
         if (disabledBtn === false && nextBtn != null) {
             nextBtn.classList.add(s.next__btn_active);
         } else {

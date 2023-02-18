@@ -34,4 +34,4 @@ export const Loading = (): JSX.Element | TODO_ANY => {
         </>
 
     );
-}
+};

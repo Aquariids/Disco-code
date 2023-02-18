@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import { AppContext } from "../../../../context/app.context";
 import { PostMeta } from "../../../../pages/api/api";
-import AnimationContainer from "../../AnimationContainers/AnimationContainer";
 import MenuMainLinks from "../MenuMainLinks";
 import { JsContextProps } from "./postsJs.props";
 
