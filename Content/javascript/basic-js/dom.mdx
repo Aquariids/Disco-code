@@ -88,7 +88,7 @@ const bg = document.getElementById('bg-id');
 
 console.log(bg);
 ```
-<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/getElementById.png) </span></div>
+<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/basic-js/dom/getElementById.png) </span></div>
 
 ### getElementsByTagName() ###
 getElementsByTagName() - получаем <span className = 'link_js'> [псевдомассив](/js/basic-js/arrays#псевдомассивы) </span> по тегу (Даже если будет один элемент, мы все равно получим псевдомассив)
@@ -96,7 +96,7 @@ getElementsByTagName() - получаем <span className = 'link_js'> [псев
 const btns = document.getElementsByTagName('button');
 console.log(btns); 
 ```
-<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/getElementsByTagName.png) </span></div>
+<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/basic-js/dom/getElementsByTagName.png) </span></div>
 
 Для получения нужного элемента указываем индекс.
 ```javaScript
@@ -105,7 +105,7 @@ console.log(btns);
 // или же указываем уже у готовой html коллекции при использовании console.log(btns[2]); 
 ```
 
-<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/getElementsByTagName[i].png) </span></div>
+<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/basic-js/dom/getElementsByTagName[i].png) </span></div>
 
 ### getElementsByClassName()
  getElementsByClassName() - получаем по имени класса    
@@ -114,7 +114,7 @@ console.log(btns);
 const className = document.getElementsByClassName('bg'); 
 console.log(className);
 ```
-<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/getElementsByClassName.png) </span></div>
+<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/basic-js/dom/getElementsByClassName.png) </span></div>
 
 
 ##  Современные способы получения элементов DOM  ###
@@ -126,7 +126,7 @@ console.log(className);
 const inSection = document.querySelectorAll('.bg');  // тут мы получаем через класс, здесь обязательно ставить точку
 const bgId = document.querySelectorAll('#bg-id'); // через решетку получаем id
 ```
-<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/querySelectorAll.png) </span></div>
+<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/basic-js/dom/querySelectorAll.png) </span></div>
 
 ###  querySelector() ###
 Все тоже самое, только получаем самый первый элемент который встретит (ПОЛУЧАЕМ ЭЛЕМЕНТ, НЕ ПСЕВДОМАССИВ!).
@@ -135,7 +135,7 @@ const inSectionOneElement = document.querySelector('.bg');
 console.log(inSectionOneElement); // получили самый первый bg
 ```
 
-<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/querySelector.png) </span></div>
+<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/basic-js/dom/querySelector.png) </span></div>
 
 Так же если нам нужно получить элемент внутри какого-то родителя, а этого родителя мы уже получили, то нам не обязательно использовать document<br/>
 Например:
@@ -157,12 +157,12 @@ console.dir(inSectionOneElement); // смотрим на элемент в ка�
 ```
 В консоли браузера мы с помощью этой команды можем увидеть все свойства этого элемента(все что можем с ним сделать!) 
 
-<div className='container-img'> <span className="img"> ![consoledir](/images/Content/Js/consoledir.png) </span></div>
+<div className='container-img'> <span className="img"> ![consoledir](/images/Content/Js/basic-js/dom/consoledir.png) </span></div>
 
 Так же мы можем узнать нужные стили, что бы поменять их. для этого ищем объект `style`, внутри этого объекта находятся все `css` свойства которые мы можем применить. Это все `inline` стили (`inline` стили самые важные!).<br/>
 `inline` стили перебивают остальные. Сделано это для того, что бы с помощью `js` мы могли манипулировать такими стилями.
 
-<div className='container-img'> <span className="img"> ![Style](/images/Content/Js/Style.png) </span></div>
+<div className='container-img'> <span className="img"> ![Style](/images/Content/Js/basic-js/dom/Style.png) </span></div>
 
 ###  Меняем css свойства ###
 Внутри объекта style находим нужные css свойства.
@@ -176,7 +176,7 @@ inSectionOneElement.style.backgroundColor = 'green';
 inSectionOneElement.style.width = '100px'; // указываем все строками и с четкими ед измерениями
 btns[0].style.borderRadius = '100%'; // выбираем нашу первую кнопочку из псевдо массива.. 
 ```
-<div className='container-img'> <span className="img"> ![Style](/images/Content/Js/cssStyle.png) </span></div>
+<div className='container-img'> <span className="img"> ![Style](/images/Content/Js/basic-js/dom/cssStyle.png) </span></div>
 
 #### cssText ####
 Так же с помощью свойства cssText, можно вставлять строки прямо в style.
@@ -200,7 +200,7 @@ btns.forEach(item => {
     item.style.backgroundColor ='green';
 });
 ```
-<div className='container-img'> <span className="img"> ![Style](/images/Content/Js/forEach.png) </span></div>
+<div className='container-img'> <span className="img"> ![Style](/images/Content/Js/basic-js/dom/forEach.png) </span></div>
 
 
 ##  Методы для создания своих элементов  ##                                                          
@@ -234,7 +234,7 @@ const div = document.createElement('div');
 div.classList.add('black');
 document.body.append(div); // в нашем случае мы в конец body кладем div который создали.
 ```
-<div className='container-img'> <span className="img"> ![Style](/images/Content/Js/append.png) </span></div>
+<div className='container-img'> <span className="img"> ![Style](/images/Content/Js/basic-js/dom/append.png) </span></div>
 
 Так же можем при получении родителя, добавить в него элемент.
 ```javaScript
@@ -247,7 +247,7 @@ const section = document.querySelector('.section');
 section.prepend(div);
 ```
 
-<div className='container-img'> <span className="img"> ![Style](/images/Content/Js/prepend.png) </span></div>
+<div className='container-img'> <span className="img"> ![Style](/images/Content/Js/basic-js/dom/prepend.png) </span></div>
 
 ### before и after ###
 `before()` и `after()` - говорим перед `before` каким элементом вставить наш элемент или после `after` какого.
@@ -260,7 +260,7 @@ const inSection = document.querySelectorAll('.bg');
 inSection[1].before(div); // ставим наш див перед 1 элементом (по индексу)
 inSection[2].after(div2); // ставим после 2 элемента наш див (все по индексу!) 
 ```
-<div className='container-img'> <span className="img"> ![Style](/images/Content/Js/beforAfter.png) </span></div>
+<div className='container-img'> <span className="img"> ![Style](/images/Content/Js/basic-js/dom/beforAfter.png) </span></div>
 
 ### remove() и replaceWith() ###
  `remove()` - удаляет элемент. <br/>
@@ -275,7 +275,7 @@ inSection.forEach(item => { // удалили все элементы из secti
 ```
 Так как в inSection находятся только div с классом bg которые мы получили, то кнопка которой мы заменили div осталась.
 
-<div className='container-img'> <span className="img"> ![Style](/images/Content/Js/removeandreplace.png) </span></div>
+<div className='container-img'> <span className="img"> ![Style](/images/Content/Js/basic-js/dom/removeandreplace.png) </span></div>
 
 
 ## Старые методы для добавления элементов в DOM! ##                                   
@@ -295,7 +295,7 @@ const section = document.querySelector('.section');
 div.innerHTML = '<h1> ПРивет </h1>'; // добавили в див h1 с текстом. Можно и просто без тега вставить текст.
 section.append(div);
 ```
-<div className='container-img'> <span className="img"> ![Style](/images/Content/Js/innerHTML.png) </span></div>
+<div className='container-img'> <span className="img"> ![Style](/images/Content/Js/basic-js/dom/innerHTML.png) </span></div>
 
  ###  textContent() ###
   `textContent` - Добавляет только текст 
@@ -315,5 +315,5 @@ const section = document.querySelector('.section');
 section.insertAdjacentHTML('afterbegin', '<h2> привет </h2>');
 ```
 
-<div className='container-img'> <span className="img"> ![Style](/images/Content/Js/insertAdjacentHTML.png) </span></div>
+<div className='container-img'> <span className="img"> ![Style](/images/Content/Js/basic-js/dom/insertAdjacentHTML.png) </span></div>
 

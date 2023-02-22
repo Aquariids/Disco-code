@@ -26,7 +26,7 @@ category: 'basic-js'
 console.log(document.documentElement);
 ```
 
-<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/documentElement.png) </span></div>
+<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/basic-js/dom-navigation/documentElement.png) </span></div>
 
 На скриншоте мы видим наше дерево, видим элементы, это все является узлами, но например текст не является элементом, но является узлом.
 "Каждая сущность в DOM будет узлом, но не каждый узел будет элементом." 
@@ -38,7 +38,7 @@ console.log(document.body.childNodes); // получаем узлы которы
 ```
 Мы получим такую коллекцию узлов:
 
-<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/childNodes.png) </span></div>
+<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/basic-js/dom-navigation/childNodes.png) </span></div>
 
 Под индексом `0` у нас узел `'text'` - это перенос строки, далее идет комментарий `'\<!-- body родитель section -->'`, потом опять перенос и так далее. Наши комментарии узлы, но не элементы.
 
@@ -52,7 +52,7 @@ console.log(document.body.firstChild); // первым получим перен
 console.log(document.body.lastChild); // последним будет файл подключения js
 ```
 
-<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/firstAndEnd.png) </span></div>
+<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/basic-js/dom-navigation/firstAndEnd.png) </span></div>
 
 ### parentNode ###
 `parentNode` - получаем родителя элемента.
@@ -61,7 +61,7 @@ const bg = document.querySelector('.bg').parentNode;
 console.log(bg);
 ```
 
-<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/parentNode.png) </span></div>
+<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/basic-js/dom-navigation/parentNode.png) </span></div>
 
 ### nextSibling ###
 `nextSibling` - позволяет получить соседа впереди.
@@ -91,6 +91,6 @@ for (let node of document.body.childNodes) { // используем for of, а 
   console.log(node); // в итоге в консоль мы получаем только элементы без текстовых узлов
 }
 ```
-<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/childNodesForOf.png) </span></div>
+<div className='container-img'> <span className="img"> ![getElementById](/images/Content/Js/basic-js/dom-navigation/childNodesForOf.png) </span></div>
 
 

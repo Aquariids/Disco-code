@@ -53,7 +53,7 @@ prev: '/node-js/basic-node-js/npm'
 Один поток работает с базой данных, другой с файловой системой, третий работает с сетью и так далее. 
 Так работают классические веб сервера на `java`.
 
-<div className='container-img'> <span className="img"> ![blocking](/images/Content/node-js/blocking-I-O.png) </span></div>
+<div className='container-img'> <span className="img"> ![blocking](/images/Content/node-js/basic-node-js/what-is-node-js/blocking-I-O.png) </span></div>
 
 У блокирующего ввода и вывода есть минусы: 
 * Потребление <b>большого </b> количества ресурсов и <b>сложность</b> в управлении потоками.
@@ -81,7 +81,7 @@ prev: '/node-js/basic-node-js/npm'
 Этот механизм называется <b>синхронным демультиплексором событий</b>.
 Он собирает и ставит в очередь события ввода-вывода, поступающие из набора отслеживаемых ресурсов, и блокирует их до тех пор, пока новые события не станут доступны для обработки.
 
-<div className='container-img'> <span className="img"> ![noneBlocking](/images/Content/node-js/noneBlocking-i-o.png) </span></div>
+<div className='container-img'> <span className="img"> ![noneBlocking](/images/Content/node-js/basic-node-js/what-is-node-js/noneBlocking-i-o.png) </span></div>
 
 И тут мы переходим к более подробному разбору `libuv`.
 
@@ -160,7 +160,7 @@ crypto.pbkdf2('qwerty', '5', 1000000, 64, 'sha512', () => {
 
 Вот как работает этот шаблон:
 
-<div className='container-img'> <span className="img"> ![reactor](/images/Content/node-js/reactor.png) </span></div>
+<div className='container-img'> <span className="img"> ![reactor](/images/Content/node-js/basic-node-js/what-is-node-js/reactor.png) </span></div>
 
 1. Приложение создает новую операцию ввода/вывода отправляя запрос в <b>демультиплексор событий</b>.
 Так же приложение указывает обработчик, который будет вызываться после завершения операции.
