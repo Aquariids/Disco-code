@@ -80,7 +80,7 @@ btn.addEventListener('click', () => {
 // События в js выполняются в порядке очереди!
 ```
 
-<div className='container-img'> <span className="img"> ![alt text](/images/Content/Js/addEventListener.png) </span></div>
+<div className='container-img'> <span className="img"> ![alt text](/images/Content/Js/basic-js/events/addEventListener.png) </span></div>
 
 ## Объект event ##
 Иногда нам нужно получать данные о том элементе с которым мы взаимодействуем, для этого у нас есть специальный объект `event`, этот объект передается как аргумент в колбек функцию (называть можем как угодно, но обычно это `event` или `e`).
@@ -133,7 +133,7 @@ btn.addEventListener('click', showElement);
 ```
 При нажатии на кнопку мы получим такую картину:
 
-<div className='container-img'> <span className="img"> ![alt text](/images/Content/Js/EventBubbling.png) </span></div>
+<div className='container-img'> <span className="img"> ![alt text](/images/Content/Js/basic-js/events/EventBubbling.png) </span></div>
 
 Сначала обработчик срабатывает на элементе вложеннее, а после по иерархии вверх, в нашем случае кнопка и `div` в котором она находится - это и называется всплытие событий.
 Мы можем немного изменить такое поведение с помощью свойства `currentTurget`.<br/>
@@ -141,7 +141,7 @@ btn.addEventListener('click', showElement);
 `currentTarget` -  используется, когда один и тот же обработчик события присваивается нескольким элементам ( `target` использует сам элемент, а `currentTarget` - его родителя)
 Если в коде выше мы поменяем `target` на `currentTarget`, то получим более наглядный пример.
 
-<div className='container-img'> <span className="img"> ![alt text](/images/Content/Js/currentTarget.png) </span></div>
+<div className='container-img'> <span className="img"> ![alt text](/images/Content/Js/basic-js/events/currentTarget.png) </span></div>
 
 Теперь мы наглядно получаем вторым элементом родителя.
 ## Отмена стандартного поведения браузера preventDefault()

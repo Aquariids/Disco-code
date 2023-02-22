@@ -146,7 +146,7 @@ module.exports = {
 ## Весь каталог проекта
 Вот как у меня все выглядит. Сам слайдер будет в файле `slider.js`, в папке `src` будет `index.js` в котором мы будем импортировать и вызывать слайдер. Тут же будет папка `scss` в ней файл `style.scss`. В папке `public` у нас находятся иконки и картинки.
 
-<div className='container-img'> <span className="img"> ![project slider](/images/Content/Js/project_slider.png) </span></div>
+<div className='container-img'> <span className="img"> ![project slider](/images/Content/Js/practice-js/slider-js/project_slider.png) </span></div>
 
 ### Смотрим на style.scss
 ```scss
@@ -266,7 +266,7 @@ export default slider; // экспортируем наш слайдер
 ```
 В итоге мы получим блок в котором видно будет все наши слайды горизонтально, ширина блока будет зависить от кол слайдеров и от ширины которую мы зададим самому слайдеру в нашем случае `650px`.
 
-<div className='container-img'> <span className="img"> ![project slider](/images/Content/Js/not-hidden-slider.png) </span></div>
+<div className='container-img'> <span className="img"> ![project slider](/images/Content/Js/practice-js/slider-js/not-hidden-slider.png) </span></div>
 
 Теперь нам нужно сделать так, что бы эти слайды были скрыты границами блока `slidesWrapper`.
 ```javaScript
@@ -276,7 +276,7 @@ export default slider; // экспортируем наш слайдер
 ```
 Вот и все, теперь мы видим первый слайд, а остальные скрыты.
 
-<div className='container-img'> <span className="img"> ![project slider](/images/Content/Js/hidden-slider.png) </span></div>
+<div className='container-img'> <span className="img"> ![project slider](/images/Content/Js/practice-js/slider-js/hidden-slider.png) </span></div>
 
 ### Реализцуем функцию deleteNotDigits
 Для прокрутки нам нужно будет работать с переменной `width` - в ней у нас хранится наша ширина из css свойтва, число там будет ввиде текста и припиской `px`, так же может быть с точкой `649.986px` - в моем случае так.

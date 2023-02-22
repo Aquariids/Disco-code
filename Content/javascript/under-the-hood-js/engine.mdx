@@ -40,12 +40,12 @@ next: '/js/under-the-hood-js/call-stack'
 * Компиляция: весь код сразу преобразуется в машинный код и записывается в переносной двоичный файл, который может быть выполнен на компьютере.
 При компиляции у нас есть два главных шага, первое это компиляция, а второе это выполнение кода. Сам запуск выполнения кода, может произойти намного позже компиляции.
 
-<div className='container-img'> <span className="img"> ![compilation](/images/Content/Js/compilation.png) </span></div>
+<div className='container-img'> <span className="img"> ![compilation](/images/Content/Js/under-the-hood-js/engine/compilation.png) </span></div>
 
 * Интерпретация: интерпретатор просматривает исходный код и выполняет его построчно. Исходный код преобразуется в машинный код,
 сразу перед выполнением кода, а не раньше.
 
-<div className='container-img'> <span className="img"> ![interpretation](/images/Content/Js/interpretation.png) </span></div>
+<div className='container-img'> <span className="img"> ![interpretation](/images/Content/Js/under-the-hood-js/engine/interpretation.png) </span></div>
 
 ## Компиляция на лету(JIT)
 Когда-то давно `js` был только интерпретируемым языком, но такие языки намного медленнее чем компилируемые. Тогда это было нормой, сейчас же когда на `js` пишутся полномасштабные приложения
@@ -53,7 +53,7 @@ next: '/js/under-the-hood-js/call-stack'
 
 * Компиляция на лету(JIT): Весь код сразу преобразуется в машинный код, а затем немедленно выполняется.
 
-<div className='container-img'> <span className="img"> ![JIT](/images/Content/Js/JIT.png) </span></div>
+<div className='container-img'> <span className="img"> ![JIT](/images/Content/Js/under-the-hood-js/engine/JIT.png) </span></div>
 
 ### Как работает JIT компиляция в Js
 Как только `js` код попадает в движок, первым делом происходит парсинг. Во время парсинга, код распознается как структуры данных `AST`(Abstract Syntax Tree), далее `AST` компилируется в машинный код и сразу выполняется.
@@ -67,7 +67,7 @@ next: '/js/under-the-hood-js/call-stack'
 const anime = 'hello';
 ```
 
-<div className='container-img'> <span className="img"> ![AST](/images/Content/Js/AST.png) </span></div>
+<div className='container-img'> <span className="img"> ![AST](/images/Content/Js/under-the-hood-js/engine/AST.png) </span></div>
 
 Или вот как это выглядит в `JSON` формате. Разбираться глубоко в этом не нужно, интуитивно и так более менее понятно, что тут написано.
 ```JSON
@@ -108,13 +108,13 @@ const anime = 'hello';
 ```
 Вот как на данном этапе все выглядит.
 
-<div className='container-img'> <span className="img"> ![JIY](/images/Content/Js/full_JIT.png) </span></div>
+<div className='container-img'> <span className="img"> ![JIY](/images/Content/Js/under-the-hood-js/engine/full_JIT.png) </span></div>
 
 Но это еще не все, `javaScript` имеет систему оптимизации. Сначала создается не оптимизированная версия машинного кода, что бы он мог запуститься как можно быстрее.
 И далее в фоновом режиме этот код оптимизируется и перекомпилируется, когда программа уже запущена.
 
 
-<div className='container-img'> <span className="img"> ![optimization_compilation](/images/Content/Js/optimization_compilation.png) </span></div>
+<div className='container-img'> <span className="img"> ![optimization_compilation](/images/Content/Js/under-the-hood-js/engine/optimization_compilation.png) </span></div>
 
 Такой процесс оптимизации может происходить несколько раз, после каждоый оптимизации, оптимизируемый код заменяет старый код. Такая оптимизация позволяет движкам быть очень быстрыми.
 
@@ -126,19 +126,19 @@ const anime = 'hello';
 
 * Главное в <b>`runtime`</b> это сам движок `js`.
 
-<div className='container-img'> <span className="img"> ![stack_heap](/images/Content/Js/stack_heap.png) </span></div>
+<div className='container-img'> <span className="img"> ![stack_heap](/images/Content/Js/under-the-hood-js/engine/stack_heap.png) </span></div>
 
 * Так же используются <b>`Web API`</b>. setTimeout например и так далее - это функциональность предоставляемая движку, доступная в объекте window. Сама эта функциональность не является частью `js`.
 
-<div className='container-img'> <span className="img"> ![web_api](/images/Content/Js/web_api.png) </span></div>
+<div className='container-img'> <span className="img"> ![web_api](/images/Content/Js/under-the-hood-js/engine/web_api.png) </span></div>
 
 * Так же `runtime` имеет <b>callback queue(колбек очередь)</b> - Это структура данных которая содрежит все `callback` функции готовые к выполнению.
 
-<div className='container-img'> <span className="img"> ![callback_queue](/images/Content/Js/callback_queue.png) </span></div>
+<div className='container-img'> <span className="img"> ![callback_queue](/images/Content/Js/under-the-hood-js/engine/callback_queue.png) </span></div>
 
 * И <b>`event loop`(цикл событий)</b> - Помещает из колбек очереди функции в стек вызовов. Допустим у нас есть например событие `click` и вот мы нажали и произошло событие клик,
 после этого, в колбек очередь попадает некая колбек функция. Далее когда стек вызовов очищается, то эта колбек функция передается в стек вызовов, что бы выполниться.  
 
-<div className='container-img'> <span className="img"> ![JRE](/images/Content/Js/JRE.png) </span></div>
+<div className='container-img'> <span className="img"> ![JRE](/images/Content/Js/under-the-hood-js/engine/JRE.png) </span></div>
 
 В последующих темах разберемся в каждом компоненте более подробно.
