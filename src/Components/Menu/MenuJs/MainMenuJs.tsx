@@ -56,13 +56,13 @@ const MainMenuJs = (): JSX.Element => {
           page="js"
         />
       )}
-      {path[3] === "interview-js" && (
+      {/* {path[3] === "interview-js" && (
         <MenuMainLinks
           posts={posts_Interview_Js}
           title="Собеседование"
           page="js"
         />
-      )}
+      )} */}
       </>
   );
 };

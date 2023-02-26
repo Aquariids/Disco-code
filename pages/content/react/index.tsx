@@ -44,13 +44,13 @@ const Home: NextPage = (): JSX.Element => {
                     Базовый React
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   {" "}
                   <Link href={"/content/react/interview-react"}>
                     {" "}
                     Собеседование
                   </Link>{" "}
-                </li>
+                </li> */}
               </ol>
             </div>
           </AnimationContainer>

@@ -19,7 +19,7 @@ const DropdownMenuJs = (): JSX.Element => {
             <DropdownMenuLinks posts={posts_Algorithms_Js} title="Алгоритмы" category='algorithms-js' page='js' />
             <DropdownMenuLinks posts={posts_Practice_Js} title="Практика & Webpack" category='practice-js' page='js' />
             <DropdownMenuLinks posts={posts_Under_The_Hood_Js} title="JavaScript под капотом" category='under-the-hood-js' page='js' />
-            <DropdownMenuLinks posts={posts_Interview_Js} title="Собеседование" category='interview-js' page='js' />
+            {/* <DropdownMenuLinks posts={posts_Interview_Js} title="Собеседование" category='interview-js' page='js' /> */}
         </>
     );
 };

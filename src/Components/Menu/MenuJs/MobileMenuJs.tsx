@@ -16,7 +16,7 @@ const MobileMenuJs = (): JSX.Element => {
                 <MenuMobileLinks posts={posts_Algorithms_Js} title="Алгоритмы" category='algorithms-js' page='js' />
                 <MenuMobileLinks posts={posts_Practice_Js} title="Практика & Webpack" category='practice-js' page='js' />
                 <MenuMobileLinks posts={posts_Under_The_Hood_Js} title="JavaScript под капотом" category='under-the-hood-js' page='js' />
-                <MenuMobileLinks posts={posts_Interview_Js} title="Собеседование" category='interview-js' page='js' />
+                {/* <MenuMobileLinks posts={posts_Interview_Js} title="Собеседование" category='interview-js' page='js' /> */}
             </>
         );
     

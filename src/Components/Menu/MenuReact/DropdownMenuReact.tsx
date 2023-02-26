@@ -14,7 +14,7 @@ const DropdownMenuReact = (): JSX.Element => {
             <>
                 
         <DropdownMenuLinks posts={posts_Basic_React} title='Базовые темы react' category='basic-react' page='react'/>
-        <DropdownMenuLinks posts={posts_Interview_React} title='Собеседование' category='interview-react' page='react'/>
+        {/* <DropdownMenuLinks posts={posts_Interview_React} title='Собеседование' category='interview-react' page='react'/> */}
             </>
         );
     

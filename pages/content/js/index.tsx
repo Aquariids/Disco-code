@@ -82,13 +82,13 @@ const Home: NextPage = (): JSX.Element => {
                   </Link>
                 </li>
 
-                <li>
+                {/* <li>
                   {" "}
                   <Link href={"/content/js/interview-js"}>
                     {" "}
                     Собеседование
                   </Link>{" "}
-                </li>
+                </li> */}
               </ol>
             </div>
           </AnimationContainer>

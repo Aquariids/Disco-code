@@ -27,14 +27,14 @@ const MainMenuReact = (): JSX.Element => {
           page="react"
         />
       )}
-      {path[3] === "interview-react" && (
+      {/* {path[3] === "interview-react" && (
         <MenuMainLinks
           posts={posts_Interview_React}
           title="Собеседование"
           category="interview-react"
           page="react"
         />
-      )}
+      )} */}
     </>
   );
 };

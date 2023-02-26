@@ -3,7 +3,7 @@ import s from './Menu.module.scss';
 import cn from 'classnames';
 import { IMenu } from './Menu.props';
 import { useRouter } from 'next/router';
-import UrlNav from '../Breadcrumbs/Breadcrumbs';
+import Breadcrumbs from '../Breadcrumbs/Breadcrumbs';
 import AnimationContainer from '../AnimationContainers/AnimationContainer';
 
 
@@ -17,7 +17,7 @@ const MenuMainLinks = ({ title, page,  posts, ...props }: IMenu): JSX.Element =>
         return (
             <>
                 <div className={s.main_menu} {...props}>
-                <UrlNav/>
+                <Breadcrumbs/>
                 <AnimationContainer>
                     <ol className={s.main_menu__list}>
                         {posts && posts.map((post, index: number) => (
