@@ -9,7 +9,6 @@
 	grid-template-columns: var(--grid_columns_wrapper);
 	height: 60px;
 	margin-right: calc(-1 *(100vw - 100%));
-
 	color: #FFF;
 	gap: var(--grid_gap);
 	
@@ -74,18 +73,16 @@
 
 	&__dropdown {
 		position: relative;
-
 		display: block;
 
 		&:hover &__content {
 			visibility: visible;
-
 			opacity: 1;
 		}
 
+		
 		&__content {
 			position: absolute;
-
 			visibility: hidden;
 
 			min-width: 100%;
@@ -126,7 +123,6 @@
 			text-align: center;
 			width: 100px;
 			
-
 			button {
 				color: #FFF;
 				border: none;
@@ -279,9 +275,10 @@
 
 
 .active { 
-	color: var(--main_color_links_pages);
+	// color: var(--main_color_links_pages);
+	color: rgb(110, 110, 110);
 
-	border-bottom: 3px solid var(--main_color_links_pages);
+	border-bottom: 3px solid #fff;
 	border-top: 3px solid transparent;
 
 }
@@ -340,3 +337,6 @@
 	color: #FFF;
 	background-color: var(--node_color_links_pages);
 }
+
+
+

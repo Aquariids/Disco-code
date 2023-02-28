@@ -10,6 +10,7 @@ const { header, header__link, header__content, header__logo, header__github } = 
 const HeaderMenu = ({ ...props }: HeaderProps): JSX.Element => {
     const router = useRouter();
     const r = router.asPath.split('/').length;
+    
 
     const logoCreat = () => {
         if (router.asPath.startsWith('/content/js')) {
