@@ -15,7 +15,7 @@
 	grid-template-columns: var(--grid_columns_wrapper);
 	min-height: 100vh;
 	gap: var(--grid_gap);
-	grid-template-rows: 60px 1fr;
+	grid-template-rows: auto 1fr;
 	grid-template-areas:
 		"header header header"
 		"sidebar body ."
@@ -35,6 +35,7 @@
 	}
 
 	.body {
+		margin-top: 60px;
 		grid-area: body;
 	}
 

@@ -1,6 +1,7 @@
 @import "../styles/variables@media.scss";
 
 .page {
+
 	display: grid;
 	justify-content: center;
 
@@ -19,8 +20,8 @@
 	}
 
 	&__welcome {
+		min-width: 485px;
 		min-height: 50vh;
-
 		&__title {
 			position: relative;
 			display: flex;
