@@ -182,10 +182,15 @@
 	}
 
 
-	@media screen and (max-width: #{$screen_mobile_785}) {
+	@media screen and (max-width: 1100px) {
 		&__dropdown__btn {
 			display: none;
 		}
+	}
+	
+
+	@media screen and (max-width: #{$screen_mobile_785}) {
+		
 		& {
 			grid-template-columns: var(--grid_columns_wrapper_mobile);
 			grid-template-rows: 60px;
