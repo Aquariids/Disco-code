@@ -9,6 +9,7 @@
 	grid-template-columns: var(--grid_columns_wrapper);
 	height: 60px;
 	margin-right: calc(-1 *(100vw - 100%));
+
 	color: #FFF;
 	gap: var(--grid_gap);
 	
@@ -25,6 +26,7 @@
 		}
 	}
 	&__content {
+		
 		display: flex;
 		align-items: center;
 

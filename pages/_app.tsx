@@ -103,7 +103,6 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
         <meta name="google-site-verification" content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel='preconnect' href='https://mc.yandex.ru' />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property='og:url' content={`discocode.ru${router.asPath}`} />
         <meta property='og:locale' content={'ru_RU'} />
       </Head>

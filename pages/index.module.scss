@@ -3,7 +3,6 @@
 .page {
 	display: grid;
 	justify-content: center;
-
 	text-align: center;
 
 	& h1 {
@@ -19,22 +18,21 @@
 	}
 
 	&__welcome {
-		min-width: 490px;
-		min-height: 50vh;
 		&__title {
 			position: relative;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			width: 100vw;
-			min-height: 50vh;
+			min-height: 450px;
+			
 			margin-left: calc(-50vw + 50%);
 			background-color: #000;
 			background-image: url(/images/animeBg/index.svg);
-
+			
 			background-repeat: no-repeat;
 			background-position: bottom right;
-			background-size: contain;
+			background-size: 500px;
 
 			&__items {
 				display: grid;
@@ -92,9 +90,8 @@
 			align-items: center;
 			justify-content: center;
 			line-height: 1.7;
-			min-height: 35vh;
+			min-height: 450px;
 			grid-template-rows: 1fr;
-			margin-bottom: 25px;
 
 			&__content {
 				display: grid;
