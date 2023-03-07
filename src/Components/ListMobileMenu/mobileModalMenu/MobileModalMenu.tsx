@@ -10,6 +10,7 @@ import MobileMenuReact from '../../Menu/MenuReact/MobileMenuReact';
 import MobileMenuNextJs from '../../Menu/MenuNextJs/MobileMenuNextJs';
 import MobileMenuHtmlCss from '../../Menu/MenuHtml&css/MobileMenuHtmlCss';
 import { MobileContext } from '../../../../context/app.context';
+import MobileMenuNodeJs from '../../Menu/MenuNodeJs/MobileMenuNodeJs';
 
 const mobileModalMenu = ({page}:mobileModalMenuProps) => {
     const [mobile, setMobile] = useState<boolean>(false);
@@ -27,6 +28,8 @@ const mobileModalMenu = ({page}:mobileModalMenuProps) => {
                 {page === 'next-js' && <MobileMenuNextJs/>}
                 {page === 'paradigms' && <MobileMenuParadigms/>}
                 {page === 'html-css' && <MobileMenuHtmlCss />}
+                {page === 'node-js' && <MobileMenuNodeJs />}
+
 
 
             </div>

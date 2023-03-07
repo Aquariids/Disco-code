@@ -1,8 +1,9 @@
 ---
-title: 'Контекст выполнения & Стек вызовов'
+title: 'Контекст выполнения, Стек вызовов & Лексическая среда'
 id: 1
 category: 'under-the-hood-js'
 date: '16.12.2022'
+prev: '/js/under-the-hood-js/engine'
 ---
 
 <div className = 'mdHead'>
@@ -16,28 +17,28 @@ date: '16.12.2022'
 
 </div>
 
-## Контекст выполнения
-Контекст выполнения - это абстрактная концепция. Среда, в который выполняется фрагмент кода внутри некоего контекста.
-Хранит в себе всю необходимую информацию для выполнения кода, например переменные, аргументы и так далее. 
+## Execution Context(Контекст выполнения)
+Execution Context(Контекст выполнения) - это абстрактная концепция. Среда, в который выполняется фрагмент кода внутри некоего контекста. Существует два типа контекстов выполнения: <b>Глобальный и локальный(контекст функций)</b>. 
 
-### Глобальный контекст выполнения
-После <span className = 'link_js'>[компиляции](/js/under-the-hood-js/engine#компиляция-и-интерпретация)</span>, наш код готов к выполнению. После этого создается <b>глобальный контекст выполнения</b> для кода верхнего уровня.
+* `Глобальный контекст выполнения` - создается при первом запуске кода. Это базовый контекст, ему принадлежит код верхнего уровня. То есть код который <b>не</b> находится в функции. Глобальный контекст может быть только один, по умолчанию созданный для кода верхнего уровня.
+* `Контекст выполнения функции` - создается, всякий раз когда вызывается функция.
 
-* Глобальный контекст выполнения это базовый контекст. Ему принадлежит код верхнего уровня.
-* Код верхнего уровня - это код который находится <b>не вунтри функций</b>. Функции будут выполняться тогда, когда будут вызваны.
+### Фазы контектса выполнения
+Перед созданием контекста выполнения существуют две фазы:
+1. Creation Phase(Фаза создания): Во время этой фазы создается контекст выполнения и определяются все переменные и функции.
+На этом этапе javaScript движок находится в фазе компиляции, что значит он сначала просматривает и анализирует код для последующего выполнения. Именно из за этой фазы и происходит такой механизм как `hoisting` о котором мы поговорим в другом уроке.
+2. Execution Phase(Фаза выполнения): Во время этой фазы javaScript выполняет код внутри контекста. Код построчно интерпретируется и выполняется JavaScript-движком.
 
-Глобальный контекст может быть только один, по умолчанию созданный для кода верхнего уровня. 
 
-<div className='container-img'> <span className="img"> ![execution_context](/images/Content/Js/execution_context.png) </span></div>
 
-Далее происходит выполнение кода верхнего уровня.
 
-<div className='container-img'> <span className="img"> ![execution_context](/images/Content/Js/run_global_context.png) </span></div>
 
-### Контекст выполнения функций
-А дальше создается контекст выполнения <b>функций и ожидание обратных вызовов(callbacks)</b>. Callback функцию в свою очередь предоставляет <b>event loop</b>.
+{/* <div className='container-img'> <span className="img"> ![execution_context](/images/Content/Js/under-the-hood-js/call-stack/execution_context.png) </span></div> */}
 
-<div className='container-img'> <span className="img"> ![execution_context](/images/Content/Js/context_functions.png) </span></div>
+
+{/* <div className='container-img'> <span className="img"> ![execution_context](/images/Content/Js/under-the-hood-js/call-stack/run_global_context.png) </span></div> */}
+
+{/* <div className='container-img'> <span className="img"> ![execution_context](/images/Content/Js/under-the-hood-js/call-stack/context_functions.png) </span></div> */}
 
 Для каждой функции создается <b>разный контекст выполнения</b>
 
@@ -47,63 +48,17 @@ date: '16.12.2022'
 
 ### Из чего состоит контекст выполнения
 
-1. Окружение переменных(variable environment) - <b>здесь находятся перменные, деклорации функций, объект `arguments` </b> который содержит в себе все аргументы которые мы передаем в функцию в контексте которой мы находимся.
+1. Лексическое окружение или среда (lexical environment) - Это структура, которая содержит сопоставление идентификатор-переменная. То есть это место, где хранятся переменные и ссылки на объекты.
 
-2. Цепь областей видимости(scope chain) - состоит из ссылок на переменные которые расположены снаружи функции. <b>Именно поэтому мы можем из функции обращаться к переменным из глобального контекста</b>.
+2. Окружение переменных(variable environment) - Здесь находятся все перменные `var` и `declaration functions`. Это тоже лексическая среда.
 
 3. Ключевое слово(переменная) this - в контексте выполнения функции значение `this` зависит от того, как именно была вызвана функция. В глоабальном контексте `this` ссылается на `window`. О том, в каком случае и что принимает `this` мы говорили <span className = 'link_js'> [тут](/js/basic-js/this)</span>.
 
-<div className='container-img'> <span className="img"> ![inside_context](/images/Content/Js/inside_context.png) </span></div>
-
-Все это создается во время "фазы создания", прямо перед выполнением кода.
-
-* Так же важно помнить что, в <b>стрелочных функциях нет ключевого `this` и объекта `arguments`</b>. Они используют `this` и `arguments` ближайшей функции родителя.
+{/* <div className='container-img'> <span className="img"> ![inside_context](/images/Content/Js/under-the-hood-js/call-stack/inside_context.png) </span></div> */}
 
 
-## Разберем пример работы контекста
-У нас будет такой код:
-```javaScript
-// Global
-const hello = 'hi';
-const foo = () => {
-    // foo
-    let x = 2;
-    const y = bar(2,2);
-
-    x += y;
-    return x;
-}
-
-function bar (a,b) {
-    // bar
-var z = 10;
-return z;
-}
-
-const n = foo();
-
-```
-
-* В <b>глобальном контексте</b> у нас есть:
-```
-hello = 'hi' - переменная с hi
-foo = <КОД ФУНКЦИИ> - переменная с функцией
-bar = <КОД ФУНКЦИИ> - переменная с функцией
-n = <unknown>  - результта работы функции foo
-```
-> <b> unknown </b> - значит, что мы будем только должны получить что либо, в нашем случае мы получим данные когда запустим `foo`.
-
-* Контекст функции <b> foo </b>
-```
-x = 2 - переменная с 2
-y = <unknown> - результат работы функции bar 
-```
-* Контекст функции <b>bar</b>
-```
-z = 10 - переменная с 10
-arguments = [2,2] - Объект с аргументами.
-```
-Технически все значения станут известы во время выполнения.
+## Lexical environment(Лексическое окружение)
+Лексическое окружение значит, место где код был написан во время компиляции.
 
 ## Call stack
 Теперь представим, что контекстов выполнения у нас десятки, а то и сотни.
@@ -111,7 +66,7 @@ arguments = [2,2] - Объект с аргументами.
 
 * `Call stack` - Это структура данных, место где контексты выполнения складываются друг на друга,  <b> что бы отслеживать где мы находимся в процессе выполнения</b>.
 
-<div className='container-img'> <span className="img"> ![call_stack_context](/images/Content/Js/call_stack_context.png) </span></div>
+<div className='container-img'> <span className="img"> ![call_stack_context](/images/Content/Js/under-the-hood-js/call-stack/call_stack_context.png) </span></div>
 
 Самый верхний контекст выполнения - это тот который <b> выполняется в данный момент, когда он выполнится, он будет удален из стека </b> и начнется выполнение следующего.<br/>
 Посмотрим как это работает:
@@ -143,25 +98,25 @@ console.log(n)
 
  * Сначала будет создан глобальный контекст. В котором находится весь код снаружи функций. Он помещается в call stack. Здесь у нас переменная `hello`, деклорация функции `foo`, деклорация `bar` и переменная `n` с вызовом функции `foo`.
 
-<div className='container-img'> <span className="img"> ![global_context](/images/Content/Js/global_context.png) </span></div>
+<div className='container-img'> <span className="img"> ![global_context](/images/Content/Js/under-the-hood-js/call-stack/global_context.png) </span></div>
 
  * Как только мы дошли до места вызова функции `foo`, создается новый контекст, что бы можно было запустить код который находится внутри функции `foo`. И контекст помещается в стек.
 
- <div className='container-img'> <span className="img"> ![foo_context](/images/Content/Js/foo_context.png) </span></div>
+ <div className='container-img'> <span className="img"> ![foo_context](/images/Content/Js/under-the-hood-js/call-stack/foo_context.png) </span></div>
 
 * Теперь у нас выполняется контекст `foo()`. Внутри у нас переменная `x`, далее опять идет вызов функции `bar` и опять создается новый контекст, который помещается в стек.
 
- <div className='container-img'> <span className="img"> ![bar_context](/images/Content/Js/bar_context.png) </span></div>
+ <div className='container-img'> <span className="img"> ![bar_context](/images/Content/Js/under-the-hood-js/call-stack/bar_context.png) </span></div>
 
 * И теперь мы вунтри контекста `bar`. Тут у нас переменная `z` и возвращение переменной `z`.
 Теперь у нас есть `return value` - это `10`. Функция bar закончила свое выполнение и удаляется(не во всех случаях, но об этом мы еще поговорим. Тут будет ссылка.)
 
- <div className='container-img'> <span className="img"> ![none_bar](/images/Content/Js/none_bar.png) </span></div>
+ <div className='container-img'> <span className="img"> ![none_bar](/images/Content/Js/under-the-hood-js/call-stack/none_bar.png) </span></div>
 
  * Теперь мы вернулись в функцию `foo` к тому месту где мы вызывали `bar` - она нам вернула значение `10`. В переменной `y` внутри `foo` у нас теперь 10.
 Далее мы прибавляем складываем `x += y`, что дает нам в `x = 12` и теперь возвращаем `x` из функции `foo` наше `return value` - `12` и с ним мы попадаем туда, где вызывали `foo`.
 
- <div className='container-img'> <span className="img"> ![none_foo](/images/Content/Js/none_foo.png) </span></div>
+ <div className='container-img'> <span className="img"> ![none_foo](/images/Content/Js/under-the-hood-js/call-stack/none_foo.png) </span></div>
 
  * Теперь мы находимся в переменной `n` в глобальном контексте. Мы получили `n = 12`. Далее мы встречаем `console.log(n)` Она тоже помещается в стек, выполнет свою работу.
  В консоли мы получаем наше значение `12`. И все, у нас закончился код. Глобальный контекст останется в стеке пока мы не закроем программу(Браузер в нашем случае) и на этом она завершает свое выполнение.

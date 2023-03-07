@@ -88,9 +88,15 @@ pre {
 	font-size: 15px;
 }
 code {
-	font-size: 15px;
-
+	font-size: 16px;
+	background-color: #6f6f6f4d;
 	border-radius: 10px;
+	font-weight: 600;
+	padding: 0 5px;
+}
+
+pre>code {
+	font-size:15px;
 }
 
 @media screen and (max-width: #{$screen_mobile_785}) {

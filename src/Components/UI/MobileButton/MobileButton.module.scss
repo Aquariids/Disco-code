@@ -62,11 +62,11 @@
 }
 
 .arrow_top_true svg {
-	transform: translate(0, 12px) rotate(-90deg);
+	transform: translate(0, 13px) rotate(-90deg);
 }
 
 .arrow_down_true svg {
-	transform: translate(0, -12px) rotate(90deg);
+	transform: translate(0, -13px) rotate(90deg);
 }
 
 .arrows {
@@ -88,4 +88,8 @@
 
 .arrows_ts svg {
 	fill: var(--ts_color_links_pages);
+}
+
+.arrows_node svg {
+	fill: var(--node_color_links_pages);
 }

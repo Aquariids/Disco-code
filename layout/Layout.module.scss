@@ -1,15 +1,21 @@
 @import "../styles/variables@media.scss";
 
+
+
 .wrapper {
 	position: relative;
 
+	
+	background-image: url(/images/animeBg/manga.svg);
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	background-size: 73%;
 	display: grid;
 	justify-content: center;
-
-	min-height: 100vh;
 	grid-template-columns: var(--grid_columns_wrapper);
+	min-height: 100vh;
 	gap: var(--grid_gap);
-	grid-template-rows: 60px 1fr;
+	grid-template-rows: auto 1fr;
 	grid-template-areas:
 		"header header header"
 		"sidebar body ."
@@ -24,14 +30,17 @@
 	}
 
 	.sidebar {
+		
 		grid-area: sidebar;
 	}
 
 	.body {
+		margin-top: 60px;
 		grid-area: body;
 	}
 
 	.content {
+		margin-bottom: 100px;
 		position: relative;
 
 		& h1 {
@@ -42,15 +51,35 @@
 	.footer {
 		grid-area: footer;
 	}
+	@media (max-width: 1200px) {
+		& {
+			background-size: 60em;
+		}
+	}
+	@media screen and (max-width: #{$screen_wrapper_without_right_side}) {
+		&.wrapper {
+			background-size: 0;
+		}
+	}
+	@media (max-width: 1065px) {
+		& {
+			background-position-x: 127%;
+		}
+	}
+	
+	
 
 	@media screen and (max-width: #{$screen_mobile_785}) {
 		& {
+			background-image: none;;
+
 			grid-template-columns: var(--grid_columns_wrapper_mobile);
 			grid-template-areas:
 				"header"
 				"body"
 				"footer";
 		}
+
 
 		.footer {
 			align-items: center;
@@ -72,38 +101,48 @@
 	}
 }
 
+
+
+
 .wrapperWithoutRightSide {
 	@media screen and (max-width: #{$screen_wrapper_without_right_side}) {
 		& {
+			background-size: 0;
 			grid-template-columns: var(--grid_columns_wrapper_without_right_side);
 		}
 
-		@media screen and  (max-width: #{$screen_mobile_785}) {
+	}
+
+	@media screen and  (max-width: #{$screen_mobile_785}) {
+		& {
+			grid-template-columns: var(--grid_columns_wrapper_mobile);
+			grid-template-areas:
+				"header"
+				"body"
+				"footer";
+		}
+
+		.footer {
+			align-items: center;
+
+			text-align: center;
+		}
+
+
+		.content {
+			margin: 0 14px;
+		}
+
+
+		@media screen and (max-width: 300px) {
 			& {
-				grid-template-columns: var(--grid_columns_wrapper_mobile);
-				grid-template-areas:
-					"header"
-					"body"
-					"footer";
-			}
-
-			.footer {
-				align-items: center;
-
-				text-align: center;
-			}
-
-
-			.content {
-				margin: 0 14px;
-			}
-
-
-			@media screen and (max-width: 300px) {
-				& {
-					overflow-x: hidden;
-				}
+				overflow-x: hidden;
 			}
 		}
 	}
+}
+
+
+.noneAnimeBgForQuiz {
+	background-image: none;
 }

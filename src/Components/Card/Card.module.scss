@@ -24,6 +24,7 @@
 
 		transition: all 0.2s;
 		transition: all 0.2s;
+		text-align: center;
 
 		color: #000;
 		border: 1px solid black;
@@ -116,7 +117,7 @@
 	}
 
 	.activeCardNodeJs {
-		background-color: #6da72a;
+		background-color: var(--node_color_links_pages);
 		background-image: url(/images/cards/nodejs_card_color.png);
 	}
 
@@ -130,10 +131,22 @@
 		background-image: url(/images/cards/basic_hover.png);
 	}
 
+	@media screen and (max-width: 1165px) {
+		&__container {
+			min-height: 180px;
+		}
+	}
+
+	@media screen and (max-width: 1000px) {
+		&__container {
+			min-height: 250px;
+		}
+	}
+
+
 	@media screen and (max-width: #{$screen_mobile_785}) {
 		&__container {
 			min-width: 350px;
-
 			background-color: var(--main_color_links_pages);
 			background-image: url(/images/cards/basic_hover.png);
 		}
@@ -160,6 +173,11 @@
 		&__container__html {
 			background-color: var(--main_color_links_pages);
 			background-image: url(/images/cards/htmlCss_card_color.png);
+		}
+
+		&__container__node {
+			background-color: var(--node_color_links_pages);
+			background-image: url(/images/cards/nodejs_card_color.png);
 		}
 
 

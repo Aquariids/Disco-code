@@ -1,3 +1,5 @@
+
+@import './variables@media.scss';
 :root {
 	--basic_color: #20232A;
 
@@ -23,9 +25,20 @@
 	--next_color_links_pages: #000;
 	--next_hover_color_links_pages: gray;
 
+	/* node js */
+	--node_color_links_pages: #6da72a;
+	--node_hover_color_links_pages: #3d5d19;
+	
+
+
+
 	/* layout */
-	--grid_gap: 0 30px;
-	--grid_columns_wrapper: 20% minmax(500px, 1180px) 20%;
-	--grid_columns_wrapper_without_right_side: 20% minmax(500px, 1180px); /* grid_columns_wrapper_mobile */
-	--grid_columns_wrapper_mobile: minmax(250px, 1180px); /* grid_index_page_columns_wrapper_mobile */
+	--sidebar300: 295px;
+	--sidebar250:250px;
+	--wrapperSides: 295px;
+	--wrapper:1180px;
+	--grid_gap: 0 15px;
+	--grid_columns_wrapper: var(--wrapperSides) minmax(490px, var(--wrapper)) var(--wrapperSides);
+	--grid_columns_wrapper_without_right_side: 250px minmax(45%, 1180px); 
+	--grid_columns_wrapper_mobile: minmax(250px, 800px); 
 }

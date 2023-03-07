@@ -14,12 +14,16 @@ const Sidebar = ({className, ...props}:SidebarProps):JSX.Element => {
     if(router.asPath.startsWith('/docs')) { // этой части на сайте нет, это для документации сайта
         return <MenuDocs/>;
     }
+    if(router.asPath.startsWith('/tests')) {
+        return(<></>);
+    }
 
-    if(r <= 3){
+    if(r <= 4){
         return(
             <></>
         );
     } 
+    
     else {
         return (
             <div className={cn(className, s.sidebar)} {...props}>

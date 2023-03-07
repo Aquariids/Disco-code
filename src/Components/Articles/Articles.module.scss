@@ -20,14 +20,17 @@
 		padding: 0;
 
 		text-align: center;
-
+		justify-content: center;
 		font-size: 30px;
 		font-weight: 500;
-		grid-template-columns: 1fr;
-		grid-template-rows: 150px;
+		margin-top: 38px;
+		grid-template-columns: minmax(var(--wrapperSides), var(--wrapper));
+
+		
+
 
 		span {
-			padding-bottom: 16px;
+			padding-bottom: 10px;
 
 			border-bottom: 1px solid #999;
 		}

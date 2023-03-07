@@ -1,11 +1,11 @@
 @import "../styles/variables@media.scss";
 
 .page {
+
 	display: grid;
 	justify-content: center;
 
 	text-align: center;
-	grid-template-columns: var(--grid_columns_wrapper_mobile);
 
 	& h1 {
 		display: flex;
@@ -16,33 +16,32 @@
 		color: #FFF;
 
 		font-size: 60px;
+	
 	}
 
 	&__welcome {
-		min-height: 100vh;
-
+		min-width: 490px;
+		min-height: 50vh;
 		&__title {
 			position: relative;
-
 			display: flex;
 			align-items: center;
 			justify-content: center;
-
 			width: 100vw;
-			min-height: 45vh;
+			min-height: 50vh;
 			margin-left: calc(-50vw + 50%);
-
 			background-color: #000;
 			background-image: url(/images/animeBg/index.svg);
 
 			background-repeat: no-repeat;
 			background-position: bottom right;
-			background-size: 23.3%;
+			background-size: contain;
 
 			&__items {
 				display: grid;
 				justify-content: center;
 				grid-template-columns: 1fr;
+				margin-bottom: 10px;
 			}
 
 			&__textcode {
@@ -69,7 +68,7 @@
 				width: 200px;
 				height: 40px;
 				margin: 0 auto;
-
+				margin-top: 10px;
 				cursor: pointer;
 				transition: all 0.3s;
 				font-size: 16px;
@@ -89,15 +88,14 @@
 		}
 
 		&__aboutSite {
+			grid-template-columns: minmax(var(--wrapperSides), var(--wrapper));
 			display: grid;
 			align-items: center;
 			justify-content: center;
 			line-height: 1.7;
-
-			min-height: 55vh;
-			margin-top: -15px;
+			min-height: 35vh;
 			grid-template-rows: 1fr;
-
+			margin-bottom: 25px;
 
 			&__content {
 				display: grid;
@@ -106,7 +104,7 @@
 
 			&__title {
 				margin-bottom: 20px;
-
+				margin-top: 20px;
 				text-align: center;
 
 				font-size: 28px;
@@ -114,7 +112,7 @@
 
 			&__text {
 				margin-top: 0;
-				margin-right: 15px;
+				margin-right: 10px;
 				margin-left: 10px;
 
 				text-align: left;
@@ -128,7 +126,6 @@
 	&__articles {
 		display: grid;
 
-		min-height: 60vh;
 	}
 
 	@media screen and (max-width: 1350px) {
@@ -149,6 +146,13 @@
 
 			text-align: left;
 		}
+		@media screen and (max-width:1065px) {
+			&__welcome__title {
+				background-position-x: 108%;
+			}
+		}
+
+
 
 		@media screen and (max-width: 985px) {
 			&__welcome__title {
@@ -169,15 +173,12 @@
 				}
 
 				&__welcome__aboutSite__text {
-					margin-top: 20px;
-
 					font-size: 16px;
 				}
 
 				&__welcome__aboutSite__paragraphAboutMe {
-					margin-top: 10px;
+					margin-top: 30px;
 					padding: 5px;
-
 					border-radius: 5px;
 					background-color: rgb(153 153 153 / 24.7%);
 				}
@@ -218,4 +219,13 @@
 			}
 		}
 	}
+}
+
+
+
+
+
+.tests {
+	width: 100%;
+	border: 1px solid black;
 }

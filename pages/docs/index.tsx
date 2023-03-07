@@ -25,6 +25,7 @@ const PostPage: NextPage<never> = ({ post }: { post: MDXPost }): JSX.Element => 
         <div className='page'>
             <Head>
                 <title> Документация по разработке сайта </title>
+                <meta name="robots" content="noindex"></meta>
             </Head>
 
                 <div className='mdTitle'>

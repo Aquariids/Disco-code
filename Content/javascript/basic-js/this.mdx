@@ -29,7 +29,7 @@ category: 'basic-js'
 Или `this` это переменная которая принимает в себя определенный контекст в зависимости от того где она вызывается.
 (В JS `this` зависит не от контекста создания функции, а от контекста ее вызова)
 Ниже разберем при каких условиях контекст будет изменяться.
-<span className = 'link_js'> [О том, что такое контекст говорим тут](/js/under-the-hood-js/call-stack)</span>.
+<span className = 'link_js'> [О том, что такое контекст говорим тут](content/js/under-the-hood-js/call-stack)</span>.
 
 ##  this такой разный.. ##
 В глобальном контексте вне функций, `this` равняется объекту `window`.
@@ -52,7 +52,7 @@ function showThis (){
 showThis(); // получим объект window
 ```
 
-<div className='container-img'> <span className="img"> ![this](/images/Content/Js/windowThis.png) </span></div>
+<div className='container-img'> <span className="img"> ![this](/images/Content/Js/basic-js/this/windowThis.png) </span></div>
 
 А что если внутри функции будет еще функция с `this`?
 ```javaScript
@@ -93,7 +93,7 @@ obj.sum()
 ```
 Важно понимать, что функция внутри метода не является методом.<br/>
 
-<div className='container-img'> <span className="img"> ![thisInObject](/images/Content/Js/thisInObject.png) </span></div>
+<div className='container-img'> <span className="img"> ![thisInObject](/images/Content/Js/basic-js/this/thisInObject.png) </span></div>
 
 ###  this в конструкторах и классах ###
 `this` в конструкторах и классах - это новый экземпляр объекта.
@@ -119,7 +119,7 @@ console.log(ivan);
 Немного рассказываю, что происходит. Мы создаем переменную `ivan`, в нее помещаем наш конструктор и указываем свойства. Внутри конструктора под `this` подставляется наш `ivan`
 И ему записываются свойства(значения из аргументов в функции) ivan.name = name. ivan.age = age и так далее, мы таким образом конструируем объект. Когда мы создадим dima, вместо this уже подставится dima и так далее.<br/>
 
-<div className='container-img'> <span className="img"> ![thisInClasses](/images/Content/Js/ivanThis.png) </span></div>
+<div className='container-img'> <span className="img"> ![thisInClasses](/images/Content/Js/basic-js/this/ivanThis.png) </span></div>
 
 ### this в событии с обычной функцией ###
 Если обработчик с обычной функцией, то `this` как и `event.target` будет сам элемент события.
@@ -180,7 +180,7 @@ f1.call(us, 'anime');// просто вызываем у функции мето
 ```
 Как видим контекст объект и мы можем использовать его свойства внутри функции с аргументами.
 
-<div className='container-img'> <span className="img"> ![call](/images/Content/Js/call.png) </span></div>
+<div className='container-img'> <span className="img"> ![call](/images/Content/Js/basic-js/this/call.png) </span></div>
 
 ### apply() ###
 Оба  метода делают одно и тоже, но у них разный синтаксис.

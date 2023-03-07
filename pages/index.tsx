@@ -1,11 +1,10 @@
 import type { NextPage } from "next";
 import { withLayout } from "../layout/Layout";
-import React, { useEffect, useRef } from "react";
-import Articles from "../src/Components/Articles/Articles";
+import React, { useRef } from "react";
 import s from "./index.module.scss";
 import Head from "next/head";
-import Link from "next/link";
 import News from "../src/Components/News/News";
+import Link from "next/link";
 
 const Home: NextPage = (): JSX.Element => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -14,9 +13,12 @@ const Home: NextPage = (): JSX.Element => {
   const scrollToMyRef = () => {
     const html = document.querySelector('html') as HTMLElement;
     html.style.scrollBehavior = 'smooth';
-    window.scrollTo(0, h2ref.current.clientHeight + h2ref.current.offsetTop - h2ref.current.offsetHeight + 165);
+    window.scrollTo(0, h2ref.current.clientHeight + h2ref.current.offsetTop - h2ref.current.offsetHeight + 50);
     html.style.scrollBehavior = 'auto';
   };
+
+
+
 
   return (
     <div className={s.page}>
@@ -50,50 +52,44 @@ const Home: NextPage = (): JSX.Element => {
         <meta property="og:site_name" content="DiscoCode" />
         <meta property="og:locale" content="ru_Ru"></meta>
       </Head>
-        <div className={s.page__welcome}>
-          <div className={s.page__welcome__title}>
-            <div className={s.page__welcome__title__items}>
-              <h1>
-                {" "}
-                &lt;Disco <span className={s.page__welcome__title__textcode}>Code/&gt;</span>{" "}
-              </h1>
-              <span className={s.page__welcome__title__subtitle}> В серость под диско</span>
-              <button onClick={scrollToMyRef} className={s.page__welcome__title__btnScroll}> Перейти к урокам </button>
-
-            </div>
-
-          </div>
-          <div className={s.page__welcome__aboutSite}>
-            <div className={s.page__welcome__aboutSite__content}>
-              <div className={s.page__welcome__aboutSite__paragraphAboutSite}>
-                <div className={s.page__welcome__aboutSite__text}>
-                  <div className={s.page__welcome__aboutSite__title}>О сайте</div>
-                  Этот сайт является местом где я выкладываю все, что изучил, изучаю и
-                  просто пишу о разных интересных мне технологиях в программировании.
-                  Здесь будут выкладываться различные руководства и учебные материалы,
-                  статьи и примеры.
-                </div>
-              </div>
-
-              <div className={s.page__welcome__aboutSite__paragraphAboutMe}>
-                <div className={s.page__welcome__aboutSite__text}>
-                  <div className={s.page__welcome__aboutSite__title}>Всем привет</div>В данных мной материалах,
-                  мои суждения и выводы могут быть ошибочны. Если вы где-то нашли ошибку или неточность, то буду рад вашим pull request запросам.
-                  Под каждой страницей есть ссылка для редактирования ее на github.
-                </div>
-              </div>
-            </div>
-
-
+      <div className={s.page__welcome}>
+        <div className={s.page__welcome__title}>
+          <div className={s.page__welcome__title__items}>
+            <h1>
+              {" "}
+              &lt;Disco <span className={s.page__welcome__title__textcode}>Code/&gt;</span>{" "}
+            </h1>
+            <span className={s.page__welcome__title__subtitle}> В серость под диско</span>
+            <Link href={"/content"}> <button className={s.page__welcome__title__btnScroll}>Перейти к урокам </button>  </Link>
+            <button onClick={scrollToMyRef} className={s.page__welcome__title__btnScroll}>Новости </button>
           </div>
 
         </div>
+        <div className={s.page__welcome__aboutSite}>
+          <div className={s.page__welcome__aboutSite__content}>
+            <div className={s.page__welcome__aboutSite__paragraphAboutSite}>
+              <div className={s.page__welcome__aboutSite__text}>
+                <div className={s.page__welcome__aboutSite__title}>О сайте</div>
+                Этот сайт является местом где я выкладываю все, что изучил, изучаю и
+                просто пишу о разных интересных мне технологиях в программировании.
+                Здесь будут выкладываться различные руководства и учебные материалы,
+                статьи и примеры.
+              </div>
+            </div>
 
-      <News/>
-        <div ref={h2ref} className={s.page__articles} >
-          <Articles category="js" />
-          <Articles category="other" />
+            <div className={s.page__welcome__aboutSite__paragraphAboutMe}>
+              <div className={s.page__welcome__aboutSite__text}>
+                <div className={s.page__welcome__aboutSite__title}>Всем привет</div>В данных мной материалах,
+                мои суждения и выводы могут быть ошибочны. Если вы где-то нашли ошибку или неточность, то буду рад вашим pull request запросам.
+                Под каждой страницей есть ссылка для редактирования ее на github.
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    <div ref={h2ref}>
+      <News />
+      </div>
 
     </div>
   );

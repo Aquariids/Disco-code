@@ -2,6 +2,7 @@
 @import "./markdown.scss";
 @import "./tags/tag_js.scss";
 @import "./tags/tag_ts.scss";
+@import "./tags/tag_node_js.scss";
 @import "./tags/tag_react.scss";
 @import "./tags/main_tags.scss";
 @import "./page_link_next_prev_edit.scss";
@@ -20,12 +21,7 @@ body {
 
 	margin: 0;
 	padding: 0;
-
-	background-image: url(/images/animeBg/manga.svg);
-	background-repeat: no-repeat;
-	background-position: bottom right;
-	background-size: 73%;
-
+	
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	font-size: 18px;
 	line-height: 1.5;
@@ -37,23 +33,8 @@ body {
 	}
 }
 
-@media (max-width: 1065px) {
-	body {
-		background-position-x: 127%;
-	}
-}
 
-@media (max-width: 1200px) {
-	body {
-		background-size: 60em;
-	}
-}
 
-@media (max-width: 985px) {
-	body {
-		background-size: 0;
-	}
-}
 
 a {
 	text-decoration: none;
@@ -66,16 +47,16 @@ a {
 }
 
 
-/* @media (prefers-color-scheme: dark) {
-	html {
-		color-scheme: dark;
-	}
 
-	body {
-		color: white;
-		background: black;
-	}
+// @media (prefers-color-scheme: dark) {
+// 	html {
+// 		color-scheme: dark;
+// 	}
 
-}
+// 	body {
+// 		color: white;
+// 		background: black;
+// 	}
 
-*/
+// }
+

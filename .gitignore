@@ -4,20 +4,20 @@
 /node_modules
 /.pnp
 .pnp.js
+/.vscode/
+
 
 # testing
-/coverage
+/,coverage
 # next.js
 /.next/
+/.vscode/
 /out/
+/.vscode/
 # production
 /build
-# да откуда взялись эти dist!!! aaaaaaaaaaaaaaaa
 /dist
-*/dist
-/src/*/dist
-/layout/*/dist
-/src/Components/*/dist
+*/dist 
 
 
 # misc
@@ -40,3 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 
 next-env.d.ts
+/test.js
+
+.vscode
+.sfdx/
+.vscode/
+config/

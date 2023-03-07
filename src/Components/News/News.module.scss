@@ -1,10 +1,9 @@
 .news {
-
+    margin-top: 10px;
     display: grid;
 	justify-content: center;
-
 	text-align: center;
-	grid-template-columns: var(--grid_columns_wrapper_mobile);
+    grid-template-columns: minmax(var(--wrapperSides), var(--wrapper));
 
     &__content {
         display: grid;
@@ -20,9 +19,9 @@
     &__item a {
         text-decoration: underline;
 
-        color: #999;
+        color: #436ebd;
 
-        font-weight: bold;
+    
     }
 
     &__item {
@@ -31,7 +30,7 @@
         text-align: left;
 
         & a:hover {
-            color: rgb(113 96 96);
+            color: rgb(67, 57, 57);
         }
     }
 

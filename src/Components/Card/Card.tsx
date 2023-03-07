@@ -72,13 +72,13 @@ const Card = ({ title, color, url }: ICard) => {
         
     }
 
-    useEffect(() => {
-        if(localStorage.getItem('preloadingCard') == 'loaded') {
-            return;
-        } else {
-            loadingCard();
-        }
-    },[]);
+    // useEffect(() => {
+    //     if(localStorage.getItem('preloadingCard') == 'loaded') {
+    //         return;
+    //     } else {
+    //         loadingCard();
+    //     }
+    // },[]);
     return (
         <div className={s.card}>
             <div className={card__title}>{title} </div>
