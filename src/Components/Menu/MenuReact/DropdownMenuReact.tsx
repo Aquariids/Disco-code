@@ -8,7 +8,7 @@ import { ReactContextProps } from './postsReact.props';
 const DropdownMenuReact = (): JSX.Element => {
 
     const { AllThemePosts } = useContext(AppContext);
-    const {posts_Basic_React,posts_Interview_React}:ReactContextProps<PostMeta[]> = AllThemePosts;
+    const {posts_Basic_React}:ReactContextProps<PostMeta[]> = AllThemePosts;
 
         return (
             <>
