@@ -36,7 +36,7 @@
 	}
 
 	.body {
-		margin-top: 55px;
+		margin-top: 60px;
 		grid-area: body;
 	}
 
@@ -81,6 +81,9 @@
 				"footer";
 		}
 
+		.body {
+			margin-top:55px;
+		}
 
 		.footer {
 			align-items: center;
