@@ -34,10 +34,8 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
                             <li className={s.footer__item}><Link href={'/content/node-js/basic-node-js'}>Базовый node.js</Link></li>
                             <li className={s.footer__item}><Link href={'/content/paradigms/style'}>Стили написания кода</Link></li>
                             <li className={s.footer__item}><Link href={'/content/web-request-response'}>Как работает web - request & response</Link></li>
-                            <li className={s.footer__item}><Link href={'/content/html-css'}>Коротко про html & css</Link></li>
+                            <li className={s.footer__item}><Link href={'/content/html-css/html'}>Коротко про html & css</Link></li>
                             <li className={s.footer__item}><Link href={'/tests'}>Тесты по javaScript</Link></li>
-
-
                         </ul>
                     </div>
 
@@ -52,7 +50,7 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
                         </ul>
                     </div>
 
-                    
+
 
 
                 </div>
@@ -61,7 +59,7 @@ const FooterMenu = ({ ...props }: FooterProps): JSX.Element => {
             <div className={s.footer__copyright}>
                 <span className={s.footer__doc}><Link href={'/docs'}>Документация по сайту</Link></span>
                 <span >
-                    {`© 2022 - ${format(new Date(), 'yyyy', )} Дмитрий Черномашенцев`}
+                    {`© 2022 - ${format(new Date(), 'yyyy',)} Дмитрий Черномашенцев`}
 
                 </span>
             </div>

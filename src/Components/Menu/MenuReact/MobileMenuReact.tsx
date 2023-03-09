@@ -15,7 +15,7 @@ const MobileMenuReact = (): JSX.Element => {
             <>
             
         <MenuMobileLinks posts={posts_Basic_React} title='Базовые темы react' category='basic-react' page='react'/>
-        <MenuMobileLinks posts={posts_Interview_React} title='Собеседование' category='interview-react' page='react'/>
+        {/* <MenuMobileLinks posts={posts_Interview_React} title='Собеседование' category='interview-react' page='react'/> */}
             </>
         );
     

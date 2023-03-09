@@ -3,11 +3,12 @@ import { useRouter } from "next/router";
 import s from './Breadcrumbs.module.scss';
 type props = {
     slug?: string;
-}
+};
 const Breadcrumbs = ({ slug }: props): JSX.Element => {
+    
     const router = useRouter();
     const path = router.asPath.split('/');
-
+    console.log(slug)
     if (path[2] === 'js') {
         return (
             <div className={s.breadcrumbs}>

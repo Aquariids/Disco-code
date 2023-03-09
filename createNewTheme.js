@@ -6,20 +6,18 @@ const fs = require('fs');
 const path = require('path');
 
 // Указываем названи еглавной темы например : Js,NextJs,React - на выходе у папок будет MenuJs, MenuNextJs, MenuReact.
-const theme = 'NestJs';  // если это файлы то на выходе будет DropdownMenuJs,DropdownMenuNextJs и так далее.
-const post = ['Basic_Nest_Js', 'Advanced_Nest_Js']; // посты которые получаем из контекста. на выходе будет posts_Basic_Nest_Js и тд
-const category = ['basic-nest-js', 'interview-nest-js']; // категория темы. Стоят на каждой mdx странице.
-const title = ['Базовые темы nestJs', 'Собеседование']; // тайтл для  подписки категории
-const page = 'nest-js'; // главная страница темы. Например js,react,next-js
-const idDynamicPage = 'nest'; // айдишник для динамических страниц на выходе у страниц выглядит так [nest]
+const theme = 'DimanLox';  // если это файлы то на выходе будет DropdownMenuJs,DropdownMenuNextJs и так далее.
+const post = ['Basic_Diman_Lox', 'Advanced_Diman_Lox']; // посты которые получаем из контекста. на выходе будет posts_Basic_Nest_Js и тд
+const category = ['basic-diman-lox', 'interview-diman-lox']; // категория темы. Стоят на каждой mdx странице.
+const title = ['Базовые темы по DimanLox', 'Продвинутые темы по DimanLox']; // тайтл для  подписки категории
+const page = 'diman-lox'; // главная страница темы. Например js,react,next-js
+const idDynamicPage = 'lox'; // айдишник для динамических страниц на выходе у страниц выглядит так [nest]
 // порядок путей постов очень важен. Первый будет отрисован в первой папке, второй во второй и так далее. Поэтому если у нас категория basic идет первой, значит и путь для этой котегории должен идти первым
-const pathPosts = ['POSTS_PATH_BASIC_NESTJS', 'POSTS_PATH_ADVANCED_NESTJS']; // пути до постов
+const pathPosts = ['POSTS_PATH_BASIC_DIMANLOX', 'POSTS_PATH_ADVANCED_DIMANLOX']; // пути до постов
 const urlPaths = [`/Content/${page}/${category[0]}`, `/Content/${page}/${category[1]}`]; // конкретный путь до контента, в итоге будет так  export const POSTS_PATH_BASIC_NESTJS = path.join(process.cwd(), '/Content/docs');
-const titleIndexPage = 'Онлайн руководство по NestJs';
+const titleIndexPage = 'Онлайн руководство по Диману лоху';
 const textIndexPage = ` 
-Познакомимся с таким javaScript фреймворком как next.js.
-Узнаем, что это за рендеринг такой SSR и SSG. Посмотрим как работают такие сайты как этот.
-Научимся получать данные на сервере, создавать удобные динамические маршруты и многому другому! 
+Познакомимся с таким лохом как диман, потому что диман лох. аххахахха я тупа угараю отвечаю.
 `;
 
 

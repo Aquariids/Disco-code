@@ -1,0 +1,1 @@
+export interface DimanLoxContextProps<T> {posts_Basic_Diman_Lox:T,posts_Advanced_Diman_Lox:T}
