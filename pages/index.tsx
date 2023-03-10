@@ -22,7 +22,7 @@ const Home: NextPage = (): JSX.Element => {
   useEffect(()=> {
 
     let deferredPrompt;
-  const addBtn = document.querySelector(".add-button");
+  const addBtn = document.querySelector(".add-button") as HTMLElement;
   if(addBtn != null) {
     addBtn.style.display = "none";
     window.addEventListener("beforeinstallprompt", (e) => {
