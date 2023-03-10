@@ -1,17 +1,13 @@
 {
-    "name": "Discocode",
-    "lang": "ru-Ru",
-    "start_url": "/",
-    "scope": "/",
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display":"standalone",
-    "icons": [
-        {
-          "src": "/favicon.ico",
-          "sizes": "64x64",
-          "type": "image/ico",
-          "purpose": "any"
-        }
-      ]
+  "background_color": "#fff",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "type": "image/ico"
+    }
+  ],
+  "name": "DiscoCode",
+  "short_name": "DC",
+  "start_url": "/pwa-examples/a2hs/index.html"
 }

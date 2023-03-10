@@ -5,22 +5,32 @@ type props = {
     slug?: string;
 };
 const Breadcrumbs = ({ slug }: props): JSX.Element => {
-    
+
+
+    const mapJs = [
+        { href: '/content/js/basic-js', title: 'Базовый JavaScript', category: 'basic-js' },
+        { href: '/content/js/advanced-js', title: 'Продвинутый JavaScript', category: 'advanced-js' },
+        { href: '/content/js/algorithms-js', title: 'Алгоритмы', category: 'algorithms-js' },
+        { href: '/content/js/practice-js', title: 'Практика & webpack', category: 'practice-js' },
+        { href: '/content/js/under-the-hood-js', title: 'JavaScript под капотом', category: 'under-the-hood-js' },
+        // { href:'/content/js/interview-js', title:'Базовый JavaScript', category:'interview-js'},
+
+    ];
     const router = useRouter();
     const path = router.asPath.split('/');
-    console.log(slug)
     if (path[2] === 'js') {
         return (
             <div className={s.breadcrumbs}>
                 <div className={s.breadcrumbs__content}>
                     <Link href={'/content'}><span className={s.breadcrumbs__link}>Уроки</span><span className={s.slash}> / </span></Link>
                     <Link href={'/content/js'}><span className={s.breadcrumbs__link}>JavaScript</span><span className={s.slash}> / </span></Link>
-                    {path[3] === 'basic-js' && <Link href={'/content/js/basic-js'}><span className={s.breadcrumbs__link}>Базовый JavaScript</span><span className={s.slash}> / </span></Link>}
-                    {path[3] === 'advanced-js' && <Link href={'/content/js/advanced-js'}><span className={s.breadcrumbs__link}>Продвинутый JavaScript</span><span className={s.slash}> / </span></Link>}
-                    {path[3] === 'algorithms-js' && <Link href={'/content/js/algorithms-js'}><span className={s.breadcrumbs__link}>Алгоритмы</span><span className={s.slash}> / </span></Link>}
-                    {path[3] === 'practice-js' && <Link href={'/content/js/practice-js'}><span className={s.breadcrumbs__link}>Практика & webpack</span><span className={s.slash}> / </span></Link>}
-                    {path[3] === 'under-the-hood-js' && <Link href={'/content/js/under-the-hood-js'}><span className={s.breadcrumbs__link}>JavaScript под капотом</span><span className={s.slash}> / </span></Link>}
-                    {path[3] === 'interview-js' && <Link href={'/content/js/interview-js'}><span className={s.breadcrumbs__link}>Собеседование</span><span className={s.slash}> / </span></Link>}
+                    {mapJs.map(item => {
+                        return (
+                            <>
+                                {path[3] === item.category && <Link href={item.href}><span className={s.breadcrumbs__link}>{item.title}</span><span className={s.slash}> / </span></Link>}
+                            </>
+                        );
+                    })}
                     {slug && <Link href={'#'}><span className={s.breadcrumbs__link}>{slug}</span></Link>}
                 </div>
             </div>

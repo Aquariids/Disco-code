@@ -45,16 +45,18 @@
     // Начало временной мертвой зоны
 
   
-    function do_something() {
-             var a = 1;
-             let b = 2;
-             while (true) {
-                 var c = 3;
-                 let d = 4;
-                 console.log(b);
-                 break;
-             }
-             console.log(d);
-          }
+    // function do_something() {
+    //          var a = 1;
+    //          let b = 2;
+    //          while (true) {
+    //              var c = 3;
+    //              let d = 4;
+    //              console.log(b);
+    //              break;
+    //          }
+    //          console.log(d);
+    //       }
         
-         do_something();
+    //      do_something();
+
+

@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import { LayoutProps } from "./Layout.props";
@@ -11,15 +11,21 @@ import { useRouter } from "next/router";
 import ListMobileMenu from "../src/Components/ListMobileMenu/ListMobileMenu";
 import { MDXPost } from "../pages/api/api";
 const Layout = ({ children, }: LayoutProps): JSX.Element => {
-    
+ 
+
+
+
     const router = useRouter();
-    const r = router.asPath.split('/').length;
+    const r = router.asPath.split('/').length - 1;
+    
+    
+   
     
     return (
         <>
 
             <div className={cn(wrapper, {
-                [s.wrapperWithoutRightSide]: (r >= 3 && router.asPath.split('/')[1] != 'tests'),
+                [s.wrapperWithoutRightSide]: (r < 10 && router.asPath.split('/')[1] != 'tests'),
                 [s.noneAnimeBgForQuiz]: router.asPath.startsWith('/tests'),
             })}>
                 <Header className={header} />
@@ -57,3 +63,4 @@ export const withLayout = <T extends Record<string, unknown> & IAppContext & pos
         );
     };
 };
+
