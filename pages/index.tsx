@@ -22,8 +22,9 @@ const Home: NextPage = (): JSX.Element => {
   useEffect(()=> {
 
     let deferredPrompt;
-const addBtn = document.querySelector(".add-button");
-addBtn.style.display = "none";
+  const addBtn = document.querySelector(".add-button");
+  if(addBtn != null) {
+    addBtn.style.display = "none";
     window.addEventListener("beforeinstallprompt", (e) => {
       // Prevent Chrome 67 and earlier from automatically showing the prompt
       e.preventDefault();
@@ -48,7 +49,9 @@ addBtn.style.display = "none";
         });
       });
     });
-  })
+  }
+    
+  });
 
 
   return (
