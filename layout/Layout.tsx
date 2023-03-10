@@ -18,6 +18,7 @@ const Layout = ({ children, }: LayoutProps): JSX.Element => {
     const router = useRouter();
     const r = router.asPath.split('/').length - 1;
     
+    console.log(r);
     
    
     
@@ -25,7 +26,7 @@ const Layout = ({ children, }: LayoutProps): JSX.Element => {
         <>
 
             <div className={cn(wrapper, {
-                [s.wrapperWithoutRightSide]: (r < 10 && router.asPath.split('/')[1] != 'tests'),
+                [s.wrapperWithoutRightSide]: (r > 3 && router.asPath.split('/')[1] != 'tests'),
                 [s.noneAnimeBgForQuiz]: router.asPath.startsWith('/tests'),
             })}>
                 <Header className={header} />

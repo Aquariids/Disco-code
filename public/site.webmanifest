@@ -4,10 +4,15 @@
   "icons": [
     {
       "src": "/favicon.ico",
-      "type": "image/ico"
+      "sizes": "64x64",
+      "type": "image/ico",
+      "purpose": "any"
     }
   ],
   "name": "DiscoCode",
-  "short_name": "DC",
-  "start_url": "/pwa-examples/a2hs/index.html"
+  "short_name": "Disco",
+  "lang": "ru-Ru",
+  "start_url": "/",
+  "scope": "/",
+  "theme_color": "#ffffff"
 }
