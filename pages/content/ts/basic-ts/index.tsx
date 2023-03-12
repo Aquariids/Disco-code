@@ -2,8 +2,11 @@ import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import React from "react";
 import { withLayout } from "../../../../layout/Layout";
+import Breadcrumbs from "../../../../src/Components/Breadcrumbs/Breadcrumbs";
+import { mapTs } from "../../../../src/Components/Breadcrumbs/BreadcrumbsMap";
 import MainMenuTs from "../../../../src/Components/Menu/MenuTs/MainMenuTs";
 import { getAllPosts } from "../../../api/api";
+import { TS } from "../../../api/pages";
 import { POSTS_PATH_BASIC_TS } from "../../../api/paths";
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -40,6 +43,7 @@ const Home: NextPage = (): JSX.Element => {
     
 
       <div className="page_body">
+      <Breadcrumbs map={mapTs} page={TS}  theme="TypeScript"/>
         <div className="page_menu">
           <MainMenuTs />
         </div>

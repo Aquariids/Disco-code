@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../../../context/app.context';
 import { PostMeta } from '../../../../pages/api/api';
+import { ADVANCED_JS, ALGORITHMS_JS, BASIC_JS, JS, PRACTICE_JS, UNDER_THE_HOOD_JS } from '../../../../pages/api/pages';
 import DropdownMenuLinks from '../DropdownMenuLinks';
 import { JsContextProps } from './postsJs.props';
 
@@ -14,12 +15,12 @@ const DropdownMenuJs = (): JSX.Element => {
 
     return (
         <>
-            <DropdownMenuLinks posts={posts_Basic_Js} category="basic-js" title="Базовый JavaScript" page='js' />
-            <DropdownMenuLinks posts={posts_Advanced_Js} category="advanced-js" title="Продвинутый JavaScript" page='js'/>
-            <DropdownMenuLinks posts={posts_Algorithms_Js} title="Алгоритмы" category='algorithms-js' page='js' />
-            <DropdownMenuLinks posts={posts_Practice_Js} title="Практика & Webpack" category='practice-js' page='js' />
-            <DropdownMenuLinks posts={posts_Under_The_Hood_Js} title="JavaScript под капотом" category='under-the-hood-js' page='js' />
-            {/* <DropdownMenuLinks posts={posts_Interview_Js} title="Собеседование" category='interview-js' page='js' /> */}
+            <DropdownMenuLinks posts={posts_Basic_Js}  title="Базовый JavaScript" category={BASIC_JS} page={JS} />
+            <DropdownMenuLinks posts={posts_Advanced_Js}  title="Продвинутый JavaScript" category={ADVANCED_JS} page={JS}/>
+            <DropdownMenuLinks posts={posts_Algorithms_Js} title="Алгоритмы" category={ALGORITHMS_JS} page={JS} />
+            <DropdownMenuLinks posts={posts_Practice_Js} title="Практика & Webpack" category={PRACTICE_JS} page={JS} />
+            <DropdownMenuLinks posts={posts_Under_The_Hood_Js} title="JavaScript под капотом" category={UNDER_THE_HOOD_JS} page={JS} />
+            {/* <DropdownMenuLinks posts={posts_Interview_Js} title="Собеседование" category='interview-js' page={JS} /> */}
         </>
     );
 };

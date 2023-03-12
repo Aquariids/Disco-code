@@ -5,6 +5,7 @@ import React from "react";
 import { withLayout } from "../../../layout/Layout";
 import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
 import Breadcrumbs from "../../../src/Components/Breadcrumbs/Breadcrumbs";
+import { BASIC_REACT, REACT } from "../../api/pages";
 
 const Home: NextPage = (): JSX.Element => {
   return (
@@ -30,7 +31,7 @@ const Home: NextPage = (): JSX.Element => {
       </Head>
 
       <div className="page_body">
-      <Breadcrumbs/>
+      <Breadcrumbs page={REACT} theme={"React"}/>
 
         <h1 className="page__title_main"> Онлайн руководство по React </h1>
         <div className="page_menu">
@@ -39,7 +40,7 @@ const Home: NextPage = (): JSX.Element => {
             <div className={"content_list"}>
               <ol>
                 <li>
-                  <Link href={"/content/react/basic-react"}>
+                  <Link href={`/content/${REACT}/${BASIC_REACT}`}>
                     {" "}
                     Базовый React
                   </Link>

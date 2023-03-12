@@ -5,6 +5,9 @@ import { getAllPosts } from "../../../api/api";
 import {POSTS_PATH_BASIC_NEXTJS } from "../../../api/paths";
 import Head from "next/head";
 import MainMenuNextJs from "../../../../src/Components/Menu/MenuNextJs/MainMenuNextJs";
+import Breadcrumbs from "../../../../src/Components/Breadcrumbs/Breadcrumbs";
+import { NEXT_JS } from "../../../api/pages";
+import { mapNextJs } from "../../../../src/Components/Breadcrumbs/BreadcrumbsMap";
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts_Basic_Next_Js = getAllPosts(POSTS_PATH_BASIC_NEXTJS).map((post) => post.meta);
@@ -52,6 +55,7 @@ const Home: NextPage = (): JSX.Element => {
       </Head>
 
       <div className="page_body">
+      <Breadcrumbs map={mapNextJs}  page={NEXT_JS} theme={"Next.js"}/>
 
         <div className="page_menu">
         <MainMenuNextJs />

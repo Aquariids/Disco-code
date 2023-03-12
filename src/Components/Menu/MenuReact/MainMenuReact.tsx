@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import { AppContext } from "../../../../context/app.context";
 import { PostMeta } from "../../../../pages/api/api";
+import { BASIC_REACT, REACT } from "../../../../pages/api/pages";
 import MenuMainLinks from "../MenuMainLinks";
 import { ReactContextProps } from "./postsReact.props";
 
@@ -19,12 +20,11 @@ const MainMenuReact = (): JSX.Element => {
 
   return (
     <>
-      {path[3] === "basic-react" && (
+      {path[3] === BASIC_REACT && (
         <MenuMainLinks
           posts={posts_Basic_React}
           title="Базовые темы react"
-          category="basic-react"
-          page="react"
+          page={REACT}
         />
       )}
       {/* {path[3] === "interview-react" && (

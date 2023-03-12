@@ -5,6 +5,7 @@ import cn from 'classnames';
 import { IMenu } from './Menu.props';
 import { useRouter } from 'next/router';
 import Button from '../UI/Button/Button';
+import { JS, REACT, TS } from '../../../pages/api/pages';
 
 
 const DropdownMenuLinks = ({ title, category, page,  posts, ...props }: IMenu): JSX.Element => {
@@ -39,9 +40,9 @@ const DropdownMenuLinks = ({ title, category, page,  posts, ...props }: IMenu): 
                             className={cn(s.link, {
                                 [s.active]: post.slug === checkActiveLink,
                                 ['active_scroll']: post.slug === checkActiveLink, // это надо, что бы к ссылке подкручивать скролл в сайдбаре
-                                [s.active_js]: post.slug === checkActiveLink && router.pathname.startsWith('/content/js'),
-                                [s.active_ts]: post.slug === checkActiveLink && router.pathname.startsWith('/content/ts'),
-                                [s.active_react]: post.slug === checkActiveLink && router.pathname.startsWith('/content/react'),
+                                [s.active_js]: post.slug === checkActiveLink && router.pathname.startsWith(`/content/${JS}`),
+                                [s.active_ts]: post.slug === checkActiveLink && router.pathname.startsWith(`/content/${TS}`),
+                                [s.active_react]: post.slug === checkActiveLink && router.pathname.startsWith(`/content/${REACT}`),
                                 [s.active_node]: post.slug === checkActiveLink && router.pathname.startsWith('/content/node-js'),
                             })} >
                             {router.pathname.startsWith(`/content/${page}`) && <Link href={`/content/${page}/${post.category}/${post.slug}`}>{post.title}</Link>}

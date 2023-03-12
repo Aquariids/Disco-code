@@ -5,6 +5,7 @@ import React from "react";
 import { withLayout } from "../../../layout/Layout";
 import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
 import Breadcrumbs from "../../../src/Components/Breadcrumbs/Breadcrumbs";
+import { TS } from "../../api/pages";
 
 const Home: NextPage = (): JSX.Element => {
   return (
@@ -26,7 +27,7 @@ const Home: NextPage = (): JSX.Element => {
       </Head>
 
       <div className="page_body">
-        <Breadcrumbs />
+        <Breadcrumbs page={TS} theme="TypeScript" />
         <h1 className="page__title_main"> Онлайн руководство по TypeScript </h1>
         <div className="page_menu">
           <div className="page__title">Содержание</div>

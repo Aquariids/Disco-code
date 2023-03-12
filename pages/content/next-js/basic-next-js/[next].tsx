@@ -20,6 +20,8 @@ import { POSTS_PATH_BASIC_NEXTJS} from "../../../api/paths";
 import Link from "next/link";
 import AnimationContainer from "../../../../src/Components/AnimationContainers/AnimationContainer";
 import Breadcrumbs from "../../../../src/Components/Breadcrumbs/Breadcrumbs";
+import { NEXT_JS } from "../../../api/pages";
+import { mapNextJs } from "../../../../src/Components/Breadcrumbs/BreadcrumbsMap";
 
 
 
@@ -61,7 +63,7 @@ const PostPage: NextPage<Props> = ({post}): JSX.Element => {
           <meta property="og:section" content="nextJs" />
           <meta property="og:tag" content="next, nextJs, js" />
         </Head>
-        <Breadcrumbs slug = {post.meta.title}/>
+        <Breadcrumbs map={mapNextJs} slug={post.meta.title} page={NEXT_JS} theme={"Next.js"}/>
 
         <AnimationContainer>
           <div className="mdTitle">

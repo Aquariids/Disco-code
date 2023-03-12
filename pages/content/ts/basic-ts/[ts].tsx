@@ -14,6 +14,8 @@ import s from './../pageTs.module.scss';
 import cn from 'classnames';
 import AnimationContainer from '../../../../src/Components/AnimationContainers/AnimationContainer';
 import Breadcrumbs from '../../../../src/Components/Breadcrumbs/Breadcrumbs';
+import { TS } from '../../../api/pages';
+import { mapTs } from '../../../../src/Components/Breadcrumbs/BreadcrumbsMap';
 
 interface Props { post: MDXPost}
 
@@ -33,7 +35,7 @@ const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
                 <meta property='og:description' content={'Уроки и разбор разных тем по typescript'} />
                 <meta property='og:type' content={'article'} />
             </Head>
-            <Breadcrumbs slug = {post.meta.title}/>
+            <Breadcrumbs map={mapTs} page={TS} slug={post.meta.title} theme="TypeScript"/>
 
             <AnimationContainer>
                 <div className='mdTitle'>

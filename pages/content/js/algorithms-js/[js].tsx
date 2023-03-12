@@ -15,6 +15,8 @@ import s from '../pageJs.module.scss';
 
 import AnimationContainer from '../../../../src/Components/AnimationContainers/AnimationContainer';
 import Breadcrumbs from '../../../../src/Components/Breadcrumbs/Breadcrumbs';
+import { mapJs } from '../../../../src/Components/Breadcrumbs/BreadcrumbsMap';
+import { JS } from '../../../api/pages';
 
 interface Props { post: MDXPost }
 
@@ -37,7 +39,7 @@ const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
                 <meta property="og:image:height" content="630" />
             </Head>
 
-            <Breadcrumbs slug = {post.meta.title}/>
+            <Breadcrumbs page={JS} theme="JavaScript" slug = {post.meta.title} map ={mapJs}/>
 
             <AnimationContainer>
             <div className='mdTitle'>

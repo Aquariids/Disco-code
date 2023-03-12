@@ -5,6 +5,7 @@ import Head from "next/head";
 import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
 import Link from "next/link";
 import Breadcrumbs from "../../../src/Components/Breadcrumbs/Breadcrumbs";
+import { NEXT_JS } from "../../api/pages";
 
 
 
@@ -22,11 +23,11 @@ const Home: NextPage = (): JSX.Element => {
         <meta name="yandex-verification" content="a99ae512e4f1c330" />
         <meta
             name="description"
-            content={"Основные темы в nextJs, маршрутизация, SSR, и многое другое."}
+            content={"Основные темы в next.js, маршрутизация, SSR, и многое другое."}
           />
           <meta
             property="og:description"
-            content={"Разбираемся в nextJs"}
+            content={"Разбираемся в next.js"}
           />
 
         <meta property="og:type" content="article" />
@@ -43,8 +44,9 @@ const Home: NextPage = (): JSX.Element => {
       </Head>
 
       <div className="page_body">
-        <Breadcrumbs />
-        <h1 className="page__title_main">Онлайн руководство по NextJs  </h1>
+      <Breadcrumbs   page={NEXT_JS} theme={"Next.js"}/>
+
+        <h1 className="page__title_main">Онлайн руководство по Next.js  </h1>
         <div className="page_menu">
           <div className="page__title">Содержание</div>
 

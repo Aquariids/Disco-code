@@ -5,6 +5,9 @@ import { getAllPosts } from "../../../api/api";
 import { POSTS_PATH_ALGORITHMS_JS } from "../../../api/paths";
 import Head from "next/head";
 import MainMenuJs from "../../../../src/Components/Menu/MenuJs/MainMenuJs";
+import Breadcrumbs from "../../../../src/Components/Breadcrumbs/Breadcrumbs";
+import { mapJs } from "../../../../src/Components/Breadcrumbs/BreadcrumbsMap";
+import { JS } from "../../../api/pages";
 
 
 
@@ -60,7 +63,7 @@ const Home: NextPage = (): JSX.Element => {
     
 
       <div className="page_body">
-
+      <Breadcrumbs page={JS} theme="JavaScript" map={mapJs}/>
     
         <div className="page_menu">
           <MainMenuJs />

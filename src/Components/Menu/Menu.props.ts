@@ -7,3 +7,4 @@ export interface IMenu extends  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>
     posts: PostMeta[]
 }
 
+

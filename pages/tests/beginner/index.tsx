@@ -4,13 +4,14 @@ import QuizTest from '../../../src/Components/Quiz/QuizTest/QuizTest';
 import Head from 'next/head';
 import s from './test.module.scss';
 import AnimationContainer from '../../../src/Components/AnimationContainers/AnimationContainer';
-import UrlNav from '../../../src/Components/Breadcrumbs/Breadcrumbs';
+import Breadcrumbs from '../../../src/Components/Breadcrumbs/Breadcrumbs';
+import { TESTS } from '../../api/pages';
 
 const index = () => {
 
     return (
         <>
-        <UrlNav/>
+        <Breadcrumbs page={TESTS} theme={'Beginner'} />
         <AnimationContainer>
             <div className={s.page}>
                 <Head>

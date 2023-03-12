@@ -5,7 +5,8 @@ import Head from "next/head";
 import Link from "next/link";
 import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
 import Breadcrumbs from "../../../src/Components/Breadcrumbs/Breadcrumbs";
-
+import { mapJs } from "../../../src/Components/Breadcrumbs/BreadcrumbsMap";
+import { JS } from "../../api/pages";
 const Home: NextPage = (): JSX.Element => {
   return (
     <div className="page_content">
@@ -42,7 +43,7 @@ const Home: NextPage = (): JSX.Element => {
       </Head>
 
       <div className="page_body">
-        <Breadcrumbs/>
+        <Breadcrumbs page={JS} theme="JavaScript"/>
         <h1 className="page__title_main"> Онлайн руководство по JavaScript</h1>
 
         <div className="page_menu">

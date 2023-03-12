@@ -14,6 +14,8 @@ import Link from 'next/link';
 import s from './../pageReact.module.scss';
 import AnimationContainer from '../../../../src/Components/AnimationContainers/AnimationContainer';
 import Breadcrumbs from '../../../../src/Components/Breadcrumbs/Breadcrumbs';
+import { REACT } from '../../../api/pages';
+import { mapReact } from '../../../../src/Components/Breadcrumbs/BreadcrumbsMap';
 
 interface Props { post: MDXPost }
 
@@ -32,7 +34,7 @@ const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
                 <meta property='og:description' content={'Уроки и разбор разных тем по javascript'} />
                 <meta property='og:type' content={'article'} />
             </Head>
-            <Breadcrumbs slug = {post.meta.title}/>
+            <Breadcrumbs map={mapReact} slug={post.meta.title} page={REACT} theme={'React'}/>
 
             <AnimationContainer>
                 <div className='mdTitle'>
