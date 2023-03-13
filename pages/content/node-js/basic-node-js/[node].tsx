@@ -22,6 +22,8 @@ import { POSTS_PATH_BASIC_NODEJS,} from "../../../api/paths";
 import Link from "next/link";
 import AnimationContainer from "../../../../src/Components/AnimationContainers/AnimationContainer";
 import Breadcrumbs from "../../../../src/Components/Breadcrumbs/Breadcrumbs";
+import { NODE_JS } from "../../../api/pages";
+import { mapNodeJs } from "../../../../src/Components/Breadcrumbs/BreadcrumbsMap";
 
 
 
@@ -63,7 +65,8 @@ const PostPage: NextPage<Props> = ({post}): JSX.Element => {
           <meta property="og:section" content="nodeJs" />
           <meta property="og:tag" content="node, nodeJs, js,javascript" />
         </Head>
-        <Breadcrumbs slug = {post.meta.title}/>
+        <Breadcrumbs page={NODE_JS} theme="Node.js" slug = {post.meta.title} map={mapNodeJs}/>
+
         <AnimationContainer>
           <div className="mdTitle">
             <h1>{post.meta.title}</h1>

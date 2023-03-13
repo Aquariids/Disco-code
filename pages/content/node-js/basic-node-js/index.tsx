@@ -5,6 +5,9 @@ import { getAllPosts } from "../../../api/api";
 import { POSTS_PATH_BASIC_NODEJS } from "../../../api/paths";
 import Head from "next/head";
 import MainMenuNodeJs from "../../../../src/Components/Menu/MenuNodeJs/MainMenuNodeJs";
+import Breadcrumbs from "../../../../src/Components/Breadcrumbs/Breadcrumbs";
+import { mapNodeJs } from "../../../../src/Components/Breadcrumbs/BreadcrumbsMap";
+import { NODE_JS } from "../../../api/pages";
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts_Basic_Node_Js = getAllPosts(POSTS_PATH_BASIC_NODEJS).map(
@@ -48,6 +51,8 @@ const Home: NextPage = (): JSX.Element => {
       </Head>
 
       <div className="page_body">
+      <Breadcrumbs page={NODE_JS} theme="Node.js" map={mapNodeJs}/>
+
         <div className="page_menu">
           <MainMenuNodeJs />
         </div>

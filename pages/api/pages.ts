@@ -40,6 +40,26 @@ export const NODE_JS = 'node-js';
 export const BASIC_NODE_JS = 'basic-node-js';
 
 
+//*  PARADIGMS
+export const PARADIGMS = 'paradigms';
+// category PARADIGMS
+export const PARADIGMS_STYLE = 'style';
+
+
+//*  HTML CSS
+export const HTML_CSS = 'html-css';
+// category PARADIGMS
+export const HTML = 'html';
+
+
+
+
+//*  WEB
+export const WEB = 'web-request-response';
+
+
+
+
 
 
 //*  TESTS

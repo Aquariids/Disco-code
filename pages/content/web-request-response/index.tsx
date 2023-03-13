@@ -17,6 +17,8 @@ import {
 import { POSTS_PATH_WEB } from "../../api/paths";
 import Link from "next/link";
 import Breadcrumbs from "../../../src/Components/Breadcrumbs/Breadcrumbs";
+import {WEB } from "../../api/pages";
+import { mapOther } from "../../../src/Components/Breadcrumbs/BreadcrumbsMap";
 
 interface Props { post: MDXPost }
 
@@ -58,7 +60,7 @@ const PostPage: NextPage<Props> = ({
         <meta property="og:tag" content="HTTP, js, web,request,response" />
         </Head>
 
-        <Breadcrumbs slug = {post.meta.title}/>
+        <Breadcrumbs map={mapOther} slug={post.meta.title} page={WEB} />
         
         <AnimationContainer>
           <div className="mdTitle">

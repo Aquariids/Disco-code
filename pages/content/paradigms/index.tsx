@@ -7,6 +7,8 @@ import Head from "next/head";
 import Link from "next/link";
 import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
 import Breadcrumbs from "../../../src/Components/Breadcrumbs/Breadcrumbs";
+import { PARADIGMS } from "../../api/pages";
+import { mapParadigms } from "../../../src/Components/Breadcrumbs/BreadcrumbsMap";
 
 export const getStaticProps: GetStaticProps = async () => {
   const post_Style_Paradigms = getAllPosts(POSTS_PATH_PARADIGMS_STYLE).map((post) => post.meta);
@@ -55,7 +57,8 @@ const Home: NextPage = (): JSX.Element => {
       </Head>
 
       <div className="page_body">
-      <Breadcrumbs />
+      <Breadcrumbs page={PARADIGMS} theme={"Парадигмы программирования"}/>
+
 
       <h1 className="page__title_main"> Парадигмы программирования </h1>
 

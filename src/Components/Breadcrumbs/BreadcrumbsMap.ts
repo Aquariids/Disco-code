@@ -1,4 +1,4 @@
-import { ADVANCED_JS, ALGORITHMS_JS, BASIC_JS, BASIC_NEXT_JS, BASIC_REACT, BASIC_TS, JS, NEXT_JS, PRACTICE_JS, REACT, TS, UNDER_THE_HOOD_JS } from "../../../pages/api/pages";
+import { ADVANCED_JS, ALGORITHMS_JS, BASIC_JS, BASIC_NEXT_JS, BASIC_NODE_JS, BASIC_REACT, BASIC_TS, HTML, HTML_CSS, JS, NEXT_JS, NODE_JS, OTHER, PARADIGMS, PARADIGMS_STYLE, PRACTICE_JS, REACT, TS, UNDER_THE_HOOD_JS, WEB } from "../../../pages/api/pages";
 import { mapProps } from "./Breadcrumbs.props";
 
 
@@ -28,5 +28,27 @@ const mapNextJs:mapProps[] = [
 
 ];
 
+const mapNodeJs:mapProps[] = [
+    { href2: `/content/${NODE_JS}`, href1: `/content/${NODE_JS}/${BASIC_NODE_JS}`, title: 'Базовый node.js', category: BASIC_NODE_JS},
 
-export {mapJs, mapReact,mapTs,mapNextJs};
+];
+
+const mapParadigms:mapProps[] = [
+    { href2: `/content/${PARADIGMS}`, href1: `/content/${PARADIGMS}/${PARADIGMS_STYLE}`, title: 'Стили написания', category: PARADIGMS_STYLE},
+
+];
+
+const mapHtmlCss:mapProps[] = [
+    { href2: `/content/${HTML_CSS}`, href1: `/content/${HTML_CSS}/${HTML}`, title: 'Html', category: HTML},
+
+];
+const mapOther:mapProps[] = [
+    { href2: `/content`, href1: `/content`, title: 'Web', category: WEB},
+
+];
+
+
+
+
+
+export {mapJs, mapReact,mapTs, mapNextJs, mapNodeJs, mapParadigms,mapOther,mapHtmlCss};

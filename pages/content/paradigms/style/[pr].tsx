@@ -19,6 +19,8 @@ import {
 import { POSTS_PATH_PARADIGMS_STYLE } from "../../../api/paths";
 import Link from "next/link";
 import Breadcrumbs from "../../../../src/Components/Breadcrumbs/Breadcrumbs";
+import { mapParadigms } from "../../../../src/Components/Breadcrumbs/BreadcrumbsMap";
+import { PARADIGMS } from "../../../api/pages";
 
 
 interface Props { post: MDXPost }
@@ -61,7 +63,7 @@ const PostPage: NextPage<Props> = ({
           <meta property="og:section" content="Paradigms" />
           <meta property="og:tag" content="OOP, js, paradigms" />
         </Head>
-        <Breadcrumbs slug = {post.meta.title}/>
+        <Breadcrumbs  slug = {post.meta.title} page={PARADIGMS} map={mapParadigms} theme={"Парадигмы программирования"}/>
 
         <AnimationContainer>
           <div className="mdTitle">

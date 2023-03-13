@@ -5,6 +5,7 @@ import Head from "next/head";
 import Link from "next/link";
 import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
 import Breadcrumbs from "../../../src/Components/Breadcrumbs/Breadcrumbs";
+import { NODE_JS } from "../../api/pages";
 
 const Home: NextPage = (): JSX.Element => {
   return (
@@ -34,7 +35,8 @@ const Home: NextPage = (): JSX.Element => {
       </Head>
 
       <div className="page_body">
-        <Breadcrumbs />
+      <Breadcrumbs page={NODE_JS} theme="Node.js" />
+
         <h1 className="page__title_main"> Онлайн руководство по node.js </h1>
 
         <div className="page_menu">

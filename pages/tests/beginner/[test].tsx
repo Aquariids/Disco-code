@@ -48,6 +48,7 @@ const test = ({ data }: any) => {
                 <meta property="og:section" content="nextJs" />
                 <meta property="og:tag" content="next, nextJs, js" />
             </Head>
+            
             <QuizJsListTest data={data} />
         </>);
 

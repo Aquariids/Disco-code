@@ -19,6 +19,8 @@ import {
 import { POSTS_PATH_HTML } from "../../../api/paths";
 import Link from "next/link";
 import Breadcrumbs from "../../../../src/Components/Breadcrumbs/Breadcrumbs";
+import { HTML_CSS } from "../../../api/pages";
+import { mapHtmlCss } from "../../../../src/Components/Breadcrumbs/BreadcrumbsMap";
 
 
 interface Props { post: MDXPost }
@@ -61,7 +63,8 @@ const PostPage: NextPage<Props> = ({
           <meta property="og:section" content="Html" />
           <meta property="og:tag" content="Html" />
         </Head>
-        <Breadcrumbs slug = {post.meta.title}/>
+        <Breadcrumbs page={HTML_CSS} theme="Html & Css" slug = {post.meta.title} map={mapHtmlCss}/>
+
 
         <AnimationContainer>
           <div className="mdTitle">

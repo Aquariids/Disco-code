@@ -5,6 +5,9 @@ import { getAllPosts } from "../../../api/api";
 import { POSTS_PATH_HTML } from "../../../api/paths";
 import Head from "next/head";
 import MainMenuHtmlCss from "../../../../src/Components/Menu/MenuHtml&css/MainMenuHtmlCss";
+import Breadcrumbs from "../../../../src/Components/Breadcrumbs/Breadcrumbs";
+import { mapHtmlCss } from "../../../../src/Components/Breadcrumbs/BreadcrumbsMap";
+import { HTML_CSS } from "../../../api/pages";
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts_Html = getAllPosts(POSTS_PATH_HTML).map((post) => post.meta);
@@ -53,6 +56,8 @@ const Home: NextPage = (): JSX.Element => {
       </Head>
 
       <div className="page_body">
+      <Breadcrumbs page={HTML_CSS} theme="Html & Css"  map={mapHtmlCss}/>
+
           <MainMenuHtmlCss />
         </div>
       </div>

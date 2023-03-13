@@ -4,7 +4,8 @@ import { withLayout } from "../../../layout/Layout";
 import Head from "next/head";
 import AnimationContainer from "../../../src/Components/AnimationContainers/AnimationContainer";
 import Link from "next/link";
-import UrlNav from "../../../src/Components/Breadcrumbs/Breadcrumbs";
+import Breadcrumbs from "../../../src/Components/Breadcrumbs/Breadcrumbs";
+import { HTML_CSS } from "../../api/pages";
 
 const Home: NextPage = (): JSX.Element => {
   return (
@@ -42,7 +43,8 @@ const Home: NextPage = (): JSX.Element => {
       </Head>
 
       <div className="page_body">
-      <UrlNav />
+      <Breadcrumbs page={HTML_CSS} theme="Html & Css" />
+
 
         <h1 className="page__title_main"> Мини руководство по Html & Css </h1>
 

@@ -2,7 +2,7 @@ export type props = {
     slug?: string;
     page:string,
     map?: mapProps[],
-    theme: string
+    theme?: string
 
 };
 
