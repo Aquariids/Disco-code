@@ -31,7 +31,7 @@ const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
                 <meta property='og:description' content={'Уроки и разбор разных тем по javascript'} />
                 <meta property='og:type' content={'article'} />
             </Head>
-            <Breadcrumbs slug = {post.meta.title}/>
+            {/* <Breadcrumbs slug = {post.meta.title}/> */}
 
             <AnimationContainer>
                 <div className='mdTitle'>
