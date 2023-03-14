@@ -32,7 +32,7 @@
 			
 			background-repeat: no-repeat;
 			background-position: bottom right;
-			background-size: 500px;
+			background-size: 469px;
 
 			&__items {
 				display: grid;
@@ -142,12 +142,25 @@
 
 			text-align: left;
 		}
-		@media screen and (max-width:1065px) {
+
+		@media screen and (max-width:1235px) {
 			&__welcome__title {
 				background-position-x: 108%;
 			}
 		}
+		@media screen and (max-width:1105px) {
+			&__welcome__title {
+				background-size:425px;
+				background-position-x: 110%;
+			}
+		}
 
+		@media screen and (max-width:1000px) {
+			&__welcome__title {
+				background-size:400px;
+
+			}
+		}
 
 
 		@media screen and (max-width: 985px) {

@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, useState } from "react";
+import React, { FunctionComponent } from "react";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import { LayoutProps } from "./Layout.props";
@@ -10,18 +10,13 @@ import cn from 'classnames';
 import { useRouter } from "next/router";
 import ListMobileMenu from "../src/Components/ListMobileMenu/ListMobileMenu";
 import { MDXPost } from "../pages/api/api";
+
+
+
 const Layout = ({ children, }: LayoutProps): JSX.Element => {
- 
-
-
-
     const router = useRouter();
     const r = router.asPath.split('/').length - 1;
-    
-    console.log(r);
-    
-   
-    
+
     return (
         <>
 
@@ -33,7 +28,7 @@ const Layout = ({ children, }: LayoutProps): JSX.Element => {
                 <Sidebar className={sidebar} />
                 <div className={body}>
                     <div className={content}>
-                    <ListMobileMenu />
+                        <ListMobileMenu />
                         {children}
 
                     </div>
@@ -51,10 +46,10 @@ interface post {
     post: MDXPost
 }
 
-export const withLayout = <T extends Record<string, unknown> & IAppContext & post> (Component: FunctionComponent<T>) => {
-    
+export const withLayout = <T extends Record<string, unknown> & IAppContext & post>(Component: FunctionComponent<T>) => {
+
     return function withLayoutComponent(props: T): JSX.Element {
-        
+
         return (
             <AppContextProvider AllThemePosts={props.AllThemePosts} >
                 <Layout>
