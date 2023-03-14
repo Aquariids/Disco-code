@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import React from "react";
 import s from './Breadcrumbs.module.scss';
 import { props } from './Breadcrumbs.props';
 const Breadcrumbs = ({ slug, page, map, theme }: props): JSX.Element => {
@@ -12,12 +13,12 @@ const Breadcrumbs = ({ slug, page, map, theme }: props): JSX.Element => {
                 <div className={s.breadcrumbs__content}>
                     <Link href={'/content'}><span className={s.breadcrumbs__link}>Уроки</span><span className={s.slash}> / </span></Link>
                     <Link href={path[3] != undefined ? `/content/${page}` : '/content'}><span className={s.breadcrumbs__link}>{theme}</span>{path[3] != undefined ? <span className={s.slash}> / </span> : ''}</Link>
-                    {map && map.map(item => {
+                    {map && map.map((item,i) => {
                         return (
-                            <>
+                            <React.Fragment key={i}>
                                 {path[3] === item.category && <Link href={slug != undefined ? item.href1 : item.href2}><span className={s.breadcrumbs__link}>{item.title}</span><span className={s.slash}> / </span></Link>}
-                                {path[3] === item.category || path[2] === item.category && slug ? <Link href={item.href1}><span className={s.breadcrumbs__link}>{slug}</span></Link> : ''}
-                            </>
+                                {path[3] === item.category || path[2] === item.category && slug ? <Link key={slug} href={item.href1}><span className={s.breadcrumbs__link}>{slug}</span></Link> : <></>}
+                            </React.Fragment>
                         );
                     })}
 

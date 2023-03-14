@@ -3,11 +3,13 @@
     display: grid;
 	justify-content: center;
 	text-align: center;
+   
     grid-template-columns: minmax(var(--wrapperSides), var(--wrapper));
 
     &__content {
         display: grid;
-
+        margin-left: 10px;
+        margin-right: 10px;
         min-height: 10vh;
         margin-top: 0;
         padding: 0;
