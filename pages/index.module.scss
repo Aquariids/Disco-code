@@ -24,15 +24,14 @@
 			align-items: center;
 			justify-content: center;
 			width: 100vw;
-			min-height: 450px;
-			
+			min-height: 50vh;	
 			margin-left: calc(-50vw + 50%);
 			background-color: #000;
 			background-image: url(/images/animeBg/index.svg);
 			
 			background-repeat: no-repeat;
 			background-position: bottom right;
-			background-size: 469px;
+			background-size: 425px;
 
 			&__items {
 				display: grid;
@@ -90,8 +89,8 @@
 			align-items: center;
 			justify-content: center;
 			line-height: 1.7;
-			min-height: 450px;
 			grid-template-rows: 1fr;
+
 
 			&__content {
 				display: grid;
