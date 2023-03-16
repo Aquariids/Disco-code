@@ -36,29 +36,24 @@ Execution Context(Контекст выполнения) - это абстрак
 2. Execution Phase(Фаза выполнения): Во время этой фазы javaScript выполняет код внутри контекста. Код построчно интерпретируется и выполняется JavaScript-движком. В этой фазе происходит основная работа в программе и результаты вычислений возвращаются пользователю.
 
 
-{/* <div className='container-img'> <span className="img"> ![execution_context](/images/Content/Js/under-the-hood-js/call-stack/execution_context.png) </span></div> */}
-
-
-{/* <div className='container-img'> <span className="img"> ![execution_context](/images/Content/Js/under-the-hood-js/call-stack/run_global_context.png) </span></div> */}
-
-{/* <div className='container-img'> <span className="img"> ![execution_context](/images/Content/Js/under-the-hood-js/call-stack/context_functions.png) </span></div> */}
+<div className='container-img'> <span className="img"> ![compilation](/images/Content/Js/under-the-hood-js/call-stack/compilation.png) </span></div>
 
 
 ### Из чего состоит контекст выполнения
+
 
 1. <b>Lexical environment</b> (Лексическое окружение или среда)  - это структура данных, которая содержит сопоставление идентификатор-переменная. Простыми словами это место, где хранятся переменные и ссылки на объекты.
 
 2. <b>variable environment</b> (Окружение переменных) - Эта структура относится только к переменным, созданным в рамках глобального контекста выполнения или контекста функций.То есть переменные, объявленные вне функции или в других областях, не включаются в variable environment рассматриваемой функции. По простому здесь будут содержаться все переменные `var` и функции `declaration`, а так же переменные `let` и `const` если они вне блоков кода, но обычно в примерах их не указывают. Далее я буду показывать разные вариации примеров. 
 
-3. Ключевое слово(переменная) this - в контексте выполнения функции значение `this` зависит от того, как именно была вызвана функция. В глоабальном контексте `this` ссылается на `window`. О том, в каком случае и что принимает `this` мы говорили <span className = 'link_js'> [тут](/js/basic-js/this)</span>.
+3. Ключевое слово(переменная) <b>this</b> - в контексте выполнения функции значение `this` зависит от того, как именно была вызвана функция. В глоабальном контексте `this` ссылается на `window`. О том, в каком случае и что принимает `this` мы говорили <span className = 'link_js'> [тут](/js/basic-js/this)</span>.
 
 <div className='container-img'> <span className="img"> ![inside_context](/images/Content/Js/under-the-hood-js/call-stack/inside_the_context.png) </span></div>
-
 
 ## Lexical environment(Лексическое окружение или среда)
 
 Лексическое окружение появляется при каждом новом создании контекста выполнения.
-Она хранит в себе информацию о переменных и функциях, объявленных внутри данной функции.
+Оно хранит в себе информацию о переменных и функциях, объявленных внутри данной функции.
 
 Лексическое окружение содержит в себе:
 
