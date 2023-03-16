@@ -36,12 +36,12 @@ const Home: NextPage = (): JSX.Element => {
         <meta name="yandex-verification" content="a99ae512e4f1c330" />
         <meta
           name="description"
-          content={"Уроки по javascript, задачи, алгоритмы.js статьи,"}
+          content={"Уроки по javascript. Разбираемся как рабоатет javascript под капотом"}
         />
         <meta property="og:title" content="Уроки по javascript" />
         <meta
           property="og:description"
-          content={"Онлайн руководство по javascript"}
+          content={"Разбираемся как работает javascript под капотом. Разберем движок, контекст, лексическое окружение, область видимости, this, hoisting"}
         />
 
         <meta property="og:type" content="article" />

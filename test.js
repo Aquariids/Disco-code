@@ -58,3 +58,12 @@
 //       }
 
 //      do_something();
+
+// global EC
+// let hi = 'hi';
+// console.log(name); // undefined
+// if (true) {
+//     var name = "Dima";
+//     let surname = "Lubimyi";
+// }
+// console.log(name); // Dima
