@@ -31,32 +31,30 @@
 //         while (true) {
 //             var c = 3;
 //             let d = 4;
-           
+
 //             break;
 //         }
 //         console.log(d);
 //      }
-    
+
 //      do_something();
 
 
 
-    // Заход в новую блочную область видимости
-    // Начало временной мертвой зоны
-
-  
-    // function do_something() {
-    //          var a = 1;
-    //          let b = 2;
-    //          while (true) {
-    //              var c = 3;
-    //              let d = 4;
-    //              console.log(b);
-    //              break;
-    //          }
-    //          console.log(d);
-    //       }
-        
-    //      do_something();
+// Заход в новую блочную область видимости
+// Начало временной мертвой зоны
 
 
+// function do_something() {
+//          var a = 1;
+//          let b = 2;
+//          while (true) {
+//              var c = 3;
+//              let d = 4;
+//              console.log(b);
+//              break;
+//          }
+//          console.log(d);
+//       }
+
+//      do_something();

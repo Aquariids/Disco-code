@@ -9,7 +9,6 @@ const logo = ({ path, src }: logoProps): JSX.Element => {
 
     const router = useRouter();
 
-
     if (router.pathname === path) {
         return (
             <AnimatePresence>
@@ -19,26 +18,29 @@ const logo = ({ path, src }: logoProps): JSX.Element => {
                     initial={{ x: -10, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                 >
-                    <Link href={'/'}><img alt='logo' style={{ width: '48px', height:'48px', cursor: 'pointer', borderRadius: '15px' }} src={src} /></Link>
+                    <Link href={'/'}><img alt='logo' style={{ width: '48px', height: '48px', cursor: 'pointer', borderRadius: '15px' }} src={src} /></Link>
                 </motion.div>
             </AnimatePresence>
         );
-    } else if (router.asPath.startsWith(path)) {
+    }
+
+    else if (router.asPath.startsWith(path) ) {
         return (
-            <div className={s.logo}><Link href={'/'}><img alt='logo' style={{ width: '48px', height:'48px', cursor: 'pointer',borderRadius: '15px' }} src={src} /></Link> </div>
+            <div className={s.logo}><Link href={'/'}><img alt='logo' style={{ width: '48px', height: '48px', cursor: 'pointer', borderRadius: '15px' }} src={src} /></Link> </div>
         );
-    } else {
+    } 
+    else {
         return (
             <AnimatePresence>
-            <motion.div className={s.logo}
-                transition={{ type: "spring", stiffness: 50 }}
-                key={router.pathname}
-                initial={{ x: -10, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-            >
-                <Link href={'/'}><img alt='logo'  style={{ width: '48px', height:'48px', cursor: 'pointer', borderRadius: '15px' }} src={src} /></Link>
-            </motion.div>
-        </AnimatePresence>
+                <motion.div className={s.logo}
+                    transition={{ type: "spring", stiffness: 50 }}
+                    key={router.pathname}
+                    initial={{ x: -10, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                >
+                    <Link href={'/'}><img alt='logo' style={{ width: '48px', height: '48px', cursor: 'pointer', borderRadius: '15px' }} src={src} /></Link>
+                </motion.div>
+            </AnimatePresence>
         );
 
     }
