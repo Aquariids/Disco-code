@@ -67,3 +67,36 @@
 //     let surname = "Lubimyi";
 // }
 // console.log(name); // Dima
+
+
+// hi()
+
+
+// let hi = function() {
+//     console.log('Привет красавчик:з');
+// };
+
+
+
+// hi();
+
+// var hi = () => {
+//     console.log('Привет красавчик:з');
+// };
+
+
+
+
+let c = 3;
+function a() {
+    let a = 1;
+    console.log(c); // 3
+    function b() {
+        let b = 2;
+        console.log(a); // 1
+    }
+
+    b();
+}
+
+a();
