@@ -87,16 +87,29 @@
 
 
 
-let c = 3;
-function a() {
-    let a = 1;
-    console.log(c); // 3
-    function b() {
-        let b = 2;
-        console.log(a); // 1
+// let c = 3;
+// function a() {
+//     let a = 1;
+//     console.log(c); // 3
+//     function b() {
+//         let b = 2;
+//         console.log(a); // 1
+//     }
+
+//     b();
+// }
+
+// a();\
+
+
+
+const obj = {
+    x: 10,
+    foo() {
+        setTimeout(() => {  // используем стрелочную функцию
+            console.log(this.x);  // this будет ссылаться на родительский объект obj, а не на window, как в обычной функции
+        }, 1000);
     }
+};
 
-    b();
-}
-
-a();
+obj.foo(); // выведет 10 через 1 секунду
