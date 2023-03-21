@@ -146,3 +146,28 @@
 
 
 // obj.getName(); // hello Dima 
+
+const arr = [1,2,3,4,5]
+function linearSearch(value, list) {
+    let found = false; // флаг, сигнализирующий о том, что значение найдено
+    let position = -1; // позиция, в которой значение найдено, или -1, если нет такого значения
+    let index = 0;
+ 
+    // пока значение не найдено или индекс меньше длины массива
+    while(!found && index < list.length)
+    {
+      // если значение найдено
+      if(list[index] == value) {
+        found = true;     // флаг = истина
+        position = index; // позиция равна индексу элемента в массиве
+      } else {
+        index += 1;
+      }
+    }
+
+    return position;
+}
+
+
+console.log(linearSearch(8,arr)); // -1
+console.log(linearSearch(3,arr)); // индекс 2
