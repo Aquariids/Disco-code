@@ -285,8 +285,18 @@
 // console.log(count); // 3
 
 
-let a = 1;
-let b = a;
-a = 2;
-console.log(a); // 2
-console.log(b); // 1
+// let a = 1;
+// let b = a;
+// a = 2;
+// console.log(a); // 2
+// console.log(b); // 1
+
+
+function fibonacci(n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+
+
+fibonacci(5);
