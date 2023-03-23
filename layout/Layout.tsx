@@ -16,7 +16,8 @@ import { MDXPost } from "../pages/api/api";
 const Layout = ({ children, }: LayoutProps): JSX.Element => {
     const router = useRouter();
     const r = router.asPath.split('/').length - 1;
-
+    console.log(r);
+    
     return (
         <>
 
