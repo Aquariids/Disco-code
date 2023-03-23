@@ -65,6 +65,7 @@ const Home: NextPage = (): JSX.Element => {
     
         <div className="page_menu">
           <MainMenuJs />
+          <span style={{fontSize:"14px"}}>Последний урок "Как хранятся значения и объекты в памяти heap & stack" пока еще пишется.</span>
         </div>
       </div>
     </div>
