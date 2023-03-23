@@ -95,6 +95,7 @@ const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
                     <Link href={`/content${post.meta.next}`}>{post.meta.next === 'none' ? <span></span> : 'Следующий урок'}</Link>
           </div>
           <span className="md_date">{post.meta.date}</span>
+          <span className="md_date">{post.meta.newDate && `Обновлено ${post.meta.newDate}`}</span>
         </AnimationContainer>
       </div>
     </>

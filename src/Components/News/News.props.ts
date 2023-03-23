@@ -83,5 +83,22 @@ export const newsData:INewsPost[]  = [
         link:"тесты для уровня beginner",
         src:"/tests/beginner",
         date:"12.01.2023"
+    },
+    {
+        id:12,
+        body:"Написал про",
+        link:"сложность алгоритмов. Нотация big O",
+        src:"/content/js/algorithms-js/bigO",
+        date:"22.03.2023"
+    },
+
+    {
+        id:13,
+        body:"Закончил руководство по тому",
+        link:"как работает javascript",
+        src:"/content/js/algorithms-js/bigO",
+        date:"22.03.2023"
     }
+
+
 ];
