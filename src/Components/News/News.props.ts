@@ -94,11 +94,10 @@ export const newsData:INewsPost[]  = [
 
     {
         id:13,
-        body:"Закончил руководство по тому",
+        body:"Обновил руководство по теме",
         link:"как работает javascript",
-        src:"/content/js/algorithms-js/bigO",
+        src:"/content/js/under-the-hood-js",
         date:"22.03.2023"
     }
-
 
 ];
