@@ -268,7 +268,7 @@
 
 //       return position; // и возвращаем индекс нашего искомого элемента.
 //     }
-    
+
 //     if (item < array[middle]) { // если искомый элемент меньше чем элемент под индексом middle(наша середина)
 //       end = middle - 1; // то мы в переменную где находится конец массива присваиваем нашу середину и отнимаем 1.
 //     } 
@@ -276,7 +276,7 @@
 //       start = middle + 1;
 //     }
 //   }
-  
+
 //   return position; // Возвращаем из функции позицию
 // }
 
@@ -292,11 +292,12 @@
 // console.log(b); // 1
 
 
-function fibonacci(n) {
-    if (n <= 1) return n;
-    return fibonacci(n - 1) + fibonacci(n - 2);
-}
+// function fibonacci(n) {
+//     if (n <= 1) return n;
+//     return fibonacci(n - 1) + fibonacci(n - 2);
+// }
 
 
 
-fibonacci(5);
+// fibonacci(5);
+
