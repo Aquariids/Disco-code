@@ -301,3 +301,11 @@
 
 // fibonacci(5);
 
+
+// const names = ["dima","sasha","alexander","shrek"];
+
+// const longNames = names.filter(name => {
+// 	return name.length > 5;
+// });
+
+// console.log(longNames);
