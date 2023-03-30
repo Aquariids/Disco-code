@@ -372,20 +372,6 @@
 // bar.call( obj2 ); // 2, not 3!
 
 
-// var obj1 = { a: 2 };
-// var obj2 = { a: 3 };
-
-// function h1i() {
-//   return (a) => {
-//     console.log(this.a);
-//   };
-
-  
-// }
-
-// let c = h1i.call(obj1);
-// c.call(obj2);
-
 
 
 
@@ -413,15 +399,47 @@
 // sayName.call(us, 'anime');// просто вызываем у функции метод.
 
 
-const obj = {
-    x: 10,
-    foo() {
-        setTimeout(() => {  // используем стрелочную функцию
-            console.log((() => {
-                return this.x
-            })());  // this будет ссылаться на родительский объект obj
-        }, 1000);
-    }
-};
+// const obj = {
+//     x: 10,
+//     foo() {
+//         setTimeout(() => {  // используем стрелочную функцию
+//             console.log((() => {
+//                 return this.x
+//             })());  // this будет ссылаться на родительский объект obj
+//         }, 1000);
+//     }
+// };
 
-obj.foo(); // выведет 10 через 1 секунду
+// obj.foo(); // выведет 10 через 1 секунду
+
+
+// const a = {c:1};
+// const b = {c:2};
+
+// function hi() {
+//     return function () {
+//         console.log(this.c); // берет this у функции hi
+//     };
+
+// }
+
+// const hello = hi.call(a); // значение this в контексте hi бдует объект a
+
+// hello.call(b); // теперь мы задаем  
+
+
+const a = {c:1};
+const b = {c:2};
+
+function hi() {
+    return  () => {
+        return () => {
+            return () => {
+                console.log(this.c)
+            }
+        }
+    };
+}
+
+const hello = hi.call(a); // явно указали, что this в контексте hi будет объект a
+hello.call(b); // Тут мы ссылаемся на нашу стрелочную анонимную функцию и пытаемся изменить this
