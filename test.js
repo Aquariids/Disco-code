@@ -3,6 +3,8 @@
 // // // // // outer: null
 // // // // console.log(hi);
 
+// const { fi, hi } = require("date-fns/locale");
+
 // // // // function hi () {
 // // // //     // лексическое окружение функции
 // // // //     // hello:'hello'
@@ -309,3 +311,117 @@
 // });
 
 // console.log(longNames);
+
+
+
+// let a = {
+
+//     a:1
+// };
+
+// let b = a;
+// a = 100;
+
+
+// console.log(a);
+// console.log(b);
+
+
+
+// const x = 0;
+
+// const obj = {
+//   x: 10,
+//   foo: function() {
+//     return console.log(this.x);
+//   }
+// }
+
+// obj.foo();// вернёт 10 т.к. слева от скобок ReferenceType свойство base которого указывает на объект obj
+
+// const test = obj.foo;// присвоим метод объекта в глобальную переменную
+
+// test();// вернёт 0 т.к. вызов test() эквивалентен вызову ГО.test(),т.е. свойство base укажет на глобальный объект, а в глобальном объекте х присвоено 0.
+
+
+// let x = 1;
+
+// let obj = {
+
+
+
+//     x: hi = () => {
+//     console.log(this.x);
+//   }
+
+
+// }
+
+// obj.x()\
+
+
+// function foo() {
+//   // return an arrow function
+//   return (a) => {
+//   // `this` here is lexically inherited from `foo()`
+// };
+// }
+
+
+// var bar = foo.call(obj1);
+// bar.call( obj2 ); // 2, not 3!
+
+
+// var obj1 = { a: 2 };
+// var obj2 = { a: 3 };
+
+// function h1i() {
+//   return (a) => {
+//     console.log(this.a);
+//   };
+
+  
+// }
+
+// let c = h1i.call(obj1);
+// c.call(obj2);
+
+
+
+
+// const hi = () => {
+//   return console.log('hi');
+// }
+
+// hi();
+
+
+// console.log([1,10,100].map(parseInt));
+
+
+// function sayName(surname) {
+//     console.log(this);
+//     console.log(surname);
+
+// }
+
+// let us = {
+//     name: 'dima',
+//     age: 10
+// }
+
+// sayName.call(us, 'anime');// просто вызываем у функции метод.
+
+
+const obj = {
+    x: 10,
+    foo() {
+        setTimeout(() => {  // используем стрелочную функцию
+            console.log((() => {
+                return this.x
+            })());  // this будет ссылаться на родительский объект obj
+        }, 1000);
+    }
+};
+
+obj.foo(); // выведет 10 через 1 секунду
