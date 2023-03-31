@@ -5,7 +5,6 @@ import s from "./index.module.scss";
 import Head from "next/head";
 import News from "../src/Components/News/News";
 import Link from "next/link";
-import Hi from "../Content/javascript/under-the-hood-js/Hi";
 
 const Home: NextPage = (): JSX.Element => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
