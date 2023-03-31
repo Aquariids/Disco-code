@@ -21,9 +21,9 @@
 
 
 
-// // // // // foo();
-// // // // console.log(foo);
-// // // // var foo = function () {
+// // // // // f1();
+// // // // console.log(f1);
+// // // // var f1 = function () {
 // // // //     console.log('hi');
 // // // // }
 
@@ -109,14 +109,14 @@
 
 // // // // const obj = {
 // // // //     x: 10,
-// // // //     foo() {
+// // // //     f1() {
 // // // //         setTimeout(() => {  // используем стрелочную функцию
 // // // //             console.log(this.x);  // this будет ссылаться на родительский объект obj, а не на window, как в обычной функции
 // // // //         }, 1000);
 // // // //     }
 // // // // };
 
-// // // // obj.foo(); // выведет 10 через 1 секунду
+// // // // obj.f1(); // выведет 10 через 1 секунду
 
 
 
@@ -332,14 +332,14 @@
 
 // const obj = {
 //   x: 10,
-//   foo: function() {
+//   f1: function() {
 //     return console.log(this.x);
 //   }
 // }
 
-// obj.foo();// вернёт 10 т.к. слева от скобок ReferenceType свойство base которого указывает на объект obj
+// obj.f1();// вернёт 10 т.к. слева от скобок ReferenceType свойство base которого указывает на объект obj
 
-// const test = obj.foo;// присвоим метод объекта в глобальную переменную
+// const test = obj.f1;// присвоим метод объекта в глобальную переменную
 
 // test();// вернёт 0 т.к. вызов test() эквивалентен вызову ГО.test(),т.е. свойство base укажет на глобальный объект, а в глобальном объекте х присвоено 0.
 
@@ -360,15 +360,15 @@
 // obj.x()\
 
 
-// function foo() {
+// function f1() {
 //   // return an arrow function
 //   return (a) => {
-//   // `this` here is lexically inherited from `foo()`
+//   // `this` here is lexically inherited from `f1()`
 // };
 // }
 
 
-// var bar = foo.call(obj1);
+// var bar = f1.call(obj1);
 // bar.call( obj2 ); // 2, not 3!
 
 
@@ -401,7 +401,7 @@
 
 // const obj = {
 //     x: 10,
-//     foo() {
+//     f1() {
 //         setTimeout(() => {  // используем стрелочную функцию
 //             console.log((() => {
 //                 return this.x
@@ -410,7 +410,7 @@
 //     }
 // };
 
-// obj.foo(); // выведет 10 через 1 секунду
+// obj.f1(); // выведет 10 через 1 секунду
 
 
 // const a = {c:1};
@@ -473,8 +473,74 @@
 //     name: "John",
 //     hi() { console.log(this.name); }
 //   };
-  
+
 //   let hi = user.hi;
 //   hi(); // undefined
+
+
+
+
+// const btnThis = document.querySelector('.btn-this');
+
+// btnThis.addEventListener('click', function () {
+//         this.style.backgroundColor = 'red'; // при нажатии перекрасим кнопку в красный, так как this - элемент события
+// });
+
+
+
+// const x = 0;
+
+// conj.f1)(); //не сработают, данный вызов эквивалентен предыдущему, GetValue не отрабатывает
+
+// // операторы || или иные операторы сравнения, тернарный оператор и т.д.?
+// (obj.f1 || obj.f1)();//вернёт 0 по тем же причинам, что и предыдущий пример
+
+// //инициализатор массива
+// [obj.f1][0]();//вернёт 0 по тем же причинам, что и предыдущий пример
+// //и т.д.st obj = {
+//         x: 1,
+//         f1: function () {
+//                 return console.log(this.x);
+//         }
+// }
+
+// obj.f1();
+// //приведём вызов этого метод объекта в зону выражения
+// //сработают ли скобки?
+// (ob
+
+
+// const user = {
+//         name: "Dimasik",
+//         hi() { console.log(this); }
+//     };
+    
+//     const hello = user.hi; 
+    
+//     hello(); // undefined || TypError
+
+// const x = 1;
+// const obj = {
+//         x:1,
+//         f1: function () {
+//                 return console.log(this.x);
+//         }
+// }
+
+// obj.f1(); // 1
+// (obj.f1 = obj.f1)(); 
+// В зоне выражения. поэтому результатом будет тип Fuction, а не ReferenceType, следовательно вернёт 0 из глобального объекта
+// eslint-disable-next-line no-self-assign
+
+
+// // операторы || или иные операторы сравнения, тернарный оператор и т.д. все зоны выражения.
+// (obj.f1 || obj.f1)(); // 0 
+
+// //инициализатор массива
+// [obj.f1][0]();//вернёт 0 по тем же причинам
+// //и т.д.
+
+// // запятые
+// (obj.f1, obj.f1)(); // 0
 
 
