@@ -428,18 +428,53 @@
 // hello.call(b); // теперь мы задаем  
 
 
-const a = {c:1};
-const b = {c:2};
+// const a = {c:1};
+// const b = {c:2};
 
-function hi() {
-    return  () => {
-        return () => {
-            return () => {
-                console.log(this.c)
-            }
-        }
-    };
-}
+// function hi() {
+//     return  () => {
+//         return () => {
+//             return () => {
+//                 console.log(this.c)
+//             }
+//         }
+//     };
+// }
 
-const hello = hi.call(a); // явно указали, что this в контексте hi будет объект a
-hello.call(b); // Тут мы ссылаемся на нашу стрелочную анонимную функцию и пытаемся изменить this
+// const hello = hi.call(a); // явно указали, что this в контексте hi будет объект a
+// hello.call(b); // Тут мы ссылаемся на нашу стрелочную анонимную функцию и пытаемся изменить this
+
+
+// setTimeout(() => {
+//     console.log('стрелочная функция');
+// },0);
+
+
+// const user = {
+//     name: "Dimasik",
+//     hi() { console.log(this.name) }
+//   };
+
+//   user.hi(); // Dimasik
+
+
+// const user = {
+//     name: "Dimasik",
+//     hi() { console.log(this.name); }
+// };
+
+// const hello = user.hi;
+
+// hello(); // undefined
+
+
+
+// let user = {
+//     name: "John",
+//     hi() { console.log(this.name); }
+//   };
+  
+//   let hi = user.hi;
+//   hi(); // undefined
+
+
