@@ -3,7 +3,7 @@ title: 'this и все его воплощения'
 id: 4
 prev: '/js/under-the-hood-js/scope'
 next: '/js/under-the-hood-js/'
-newDate: '21.03.2023'
+newDate: '31.03.2023'
 category: 'under-the-hood-js'
 ---
 
@@ -13,15 +13,24 @@ category: 'under-the-hood-js'
 #### Теги
 <div className = 'tag_js'> [Что такое this](#что-такое-this) </div><br/>
 <div className = 'tag_js'> [this такой разный](#this-такой-разный) </div>
-<div className = 'mini_tag_js'> [this в обычной функции,]() </div>
-<div className = 'mini_tag_js'> [Контекст у методов объекта,]() </div>
-<div className = 'mini_tag_js'> [this в конструкторах и классах,]() </div>
-<div className = 'mini_tag_js'> [this в событии с обычной функцией,]() </div>
-<div className = 'mini_tag_js'> [Стрелочные функции и this]() </div> <br/>
-<div className = 'tag_js'> [Ручная привязка контекста к функции:]() </div>
-<div className = 'mini_tag_js'> [call](#call) </div>
-<div className = 'mini_tag_js'> [apply](#apply) </div>
-<div className = 'mini_tag_js'> [bind](#bind) </div>
+<div className = 'mini_tag_js'> [this в обычной функции,](#this-в-обычной-функции) </div>
+<div className = 'mini_tag_js'> [this у методов объекта,](#this-у-методов-объекта) </div>
+<div className = 'mini_tag_js'> [this в конструкторах и классах,](#this-в-конструкторах-и-классах) </div>
+<div className = 'mini_tag_js'> [стрелочные функции и this](#стрелочные-функции-и-this) </div>
+<div className = 'mini_tag_js'> [this в событии с обычной функцией,](#this-в-событии-с-обычной-функцией) </div>  <br/>
+<div className = 'tag_js'> [Ручная привязка значения this:](#ручная-привязка-значения-this) </div>
+<div className = 'mini_tag_js'> [call,](#call) </div>
+<div className = 'mini_tag_js'> [apply,](#apply) </div>
+<div className = 'mini_tag_js'> [bind,](#bind) </div>
+<div className = 'mini_tag_js'> [еще немного стрелочных функций.](#bind) </div> <br/>
+<div className = 'tag_js'> [ReferenceType & this:](#referencetype--this) </div>
+<div className = 'mini_tag_js'> [функциональные выражения. GetValue.](#функциональные-выражения-getvalue) </div><br/>
+<div className = 'tag_js'> [\[\[construct\]\] & \[\[call\]\]. Конструкторы.](#construct--call-конструкторы) </div>
+
+
+
+
+
 
 </div>
 
@@ -182,7 +191,7 @@ obj.getName(); // hello Dima
 ```
 В этом примере мы получили `undefined` потому что родитель объекта `obj` это глобальная область и тут как мы помним `this` будет  `undefined` в строгом режиме.
 
-### this в событии с обычной функцией ###
+### this в событии с обычной функцией
 
 Если обработчик с обычной функцией, то `this` как и `event.target` будет сам элемент события.
 ```javaScript
@@ -329,8 +338,7 @@ hello(); // undefined || TypError
 
 * GetValue - это встроенный метод ReferenceType. Он возвращает истинный тип получаемого через ReferenceType объекта. То есть если это функция, то вернется `Function`. GetValue всегда срабатывает в зоне выражения.
 
-* Зона выражения - это часть в контексте выполенния где мы ожидаем выражение. Или это часть где что-то может быть вычеслено в значение. То есть все наши выражения создают зону вырожения это: присваивание`=,` операторы `||` или другие логические операторы, тернарный оператор, перечисление через запятую и тому подобное.
-
+* Зона выражения - это часть в контексте выполнения, где мы ожидаем выражение. Или это часть, где что-то может быть вычислено в значение. То есть все наши выражения создают зону выражения: присваивание `=,` операторы `||` или другие логические операторы, тернарный оператор, перечисление через запятую и тому подобное.
 ```javascript
 "use strict";
 // вместо ReferenceType мы получим Function. Вспоминаем, что если !ReferenceType, то this будет undefiend или window
@@ -359,7 +367,8 @@ obj.f1(); // 1
 (obj.f1, obj.f1)(); // 10
 ```
 Так как я использовал `var` то эта переменная станет частью объекта window. Поэтому мы ее и получим. 
-## [[construct]] и [[call]]. Конструкторы.
+
+## \[\[construct\]\] & \[\[call\]\]. Конструкторы.
 
 Теперь немного взглянем что происходит с `this` в конструкторах. Конструктором является та функция которую мы вызываем оператором `new`.
 
