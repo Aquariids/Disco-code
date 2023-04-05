@@ -570,14 +570,15 @@
 // }
 
 
-const anime = {
-    name: 'gintama',
-    seasons: 8
-};
+// const anime = {
+//     name: 'gintama',
+//     seasons: 8
+// };
 
-const newAnime = anime;
-newAnime.name = 'trigun';
+// const newAnime = anime;
+// newAnime.name = 'trigun';
 
 
-console.log(anime.name); // trigun
-console.log(newAnime.name); // trigun
+// console.log(anime.name); // trigun
+// console.log(newAnime.name); // trigun
+
