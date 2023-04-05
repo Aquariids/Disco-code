@@ -27,6 +27,9 @@ category: 'under-the-hood-js'
 <div className = 'mini_tag_js'> [функциональные выражения. GetValue.](#функциональные-выражения-getvalue) </div><br/>
 <div className = 'tag_js'> [\[\[construct\]\] & \[\[call\]\]. Конструкторы.](#construct--call-конструкторы) </div>
 
+<h5> Интересные ссылки </h5>
+
+<div className = 'mini_tag_js'><a target={"_blank"}  href="https://tc39.es/ecma262/multipage/ordinary-and-exotic-objects-behaviours.html#sec-ordinarycallbindthis">Про привязку значений this(осторожно это для сверхумов)</a></div><br/> 
 
 
 
@@ -192,8 +195,7 @@ obj.getName(); // hello Dima
 В этом примере мы получили `undefined` потому что родитель объекта `obj` это глобальная область и тут как мы помним `this` будет  `undefined` в строгом режиме.
 
 ### this в событии с обычной функцией
-
-Если обработчик с обычной функцией, то `this` как и `event.target` будет сам элемент события.
+При работе с `DOM` это `api` устанавливает значение `this` в значение элемента к которому привязано событие. То есть если обработчик с обычной функцией, то `this` как и `event.target` будет сам элемент события.
 ```javaScript
 const btnThis = document.querySelector('.btn-this');
 

@@ -556,9 +556,28 @@
 
 // хотя и тут можно схитрить
 
-const arr = [1];
-arr[1] = 2;
-arr['abc'] = 3;
+// const arr = [1];
+// arr[1] = 2;
+// arr['abc'] = 3;
 
-console.log(arr.length) // 2
-console.log(arr) // [ 1, 2, abc: 3 ]
+// console.log(arr.length) // 2
+// console.log(arr) // [ 1, 2, abc: 3 ]
+
+
+// const anime = {
+//     name:'gintama',
+//     seasons: 8
+// }
+
+
+const anime = {
+    name: 'gintama',
+    seasons: 8
+};
+
+const newAnime = anime;
+newAnime.name = 'trigun';
+
+
+console.log(anime.name); // trigun
+console.log(newAnime.name); // trigun

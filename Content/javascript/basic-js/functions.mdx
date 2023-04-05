@@ -134,8 +134,7 @@ return 'ANONYMOUS';
 };
 ```
 ## Самовызывающаяся функция  ##
-`IIFE` - расшифровываетяс как -  Immediately Invoked Function Expression - переводится как - мгновенно выполняющиеся функциональное выражение.<br/>
-Это функция которая вызывается сразу и на месте.
+Это обычная функция exspression, но которая вызывается внутри скобок `()` поэтому она вызывается сразу и на месте.
 ```javaScript
 (function () { // это анонимная функция внутри скобок
   console.log('hi');
@@ -149,3 +148,4 @@ let myName = (function () {
 
 console.log(myName); // Dima
 ```
+Часто это называют `IIFE - immediately invoked function expression` - что не очень верно, если хотите поумничать говорите лучше так: `function expression` которая является частью `CallExpression`.
