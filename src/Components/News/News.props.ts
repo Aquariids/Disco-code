@@ -102,7 +102,7 @@ export const newsData:INewsPost[]  = [
     {
         id:14,
         body:"Закончил урок о",
-        link:"работе значений и ссылок в javascript",
+        link:"работе ссылок в javascript",
         src:"/content/js/under-the-hood-js/stack-heap",
         date:"05.04.2023"
     }
