@@ -98,6 +98,13 @@ export const newsData:INewsPost[]  = [
         link:"как работает javascript",
         src:"/content/js/under-the-hood-js",
         date:"22.03.2023"
+    },
+    {
+        id:14,
+        body:"Закончил урок о",
+        link:"работе значений и ссылок в javascript",
+        src:"/content/js/under-the-hood-js/stack-heap",
+        date:"05.04.2023"
     }
 
 ];

@@ -70,7 +70,7 @@ const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
             <a
               target="_blank"
               rel="noopener"
-              href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/basic-js/${post.meta.slug}.mdx`}
+              href={`https://github.com/Aquariids/Disco-code/blob/main/Content/javascript/under-the-hood-js/${post.meta.slug}.mdx`}
             >
               {" "}
               Отредактировать эту страницу
