@@ -12,13 +12,11 @@ import ListMobileMenu from "../src/Components/ListMobileMenu/ListMobileMenu";
 import { MDXPost } from "../pages/api/api";
 
 
-
 const Layout = ({ children, }: LayoutProps): JSX.Element => {
     const router = useRouter();
     const r = router.asPath.split('/').length - 1;
     return (
         <>
-
             <div className={cn(wrapper, {
                 [s.wrapperWithoutRightSide]: (r > 3 && router.asPath.split('/')[1] != 'tests'),
                 [s.noneAnimeBgForQuiz]: router.asPath.startsWith('/tests'),

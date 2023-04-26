@@ -24,7 +24,6 @@ const Error404 = (): JSX.Element => {
     </div>
   </div>
 
- 
   </>
   );
 };
