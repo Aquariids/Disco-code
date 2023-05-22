@@ -90,7 +90,7 @@
 			justify-content: center;
 			line-height: 1.7;
 			grid-template-rows: 1fr;
-
+			min-height: 42vh;
 
 			&__content {
 				display: grid;
@@ -98,8 +98,8 @@
 			}
 
 			&__title {
-				margin-bottom: 20px;
-				margin-top: 20px;
+				margin-bottom: 10px;
+				margin-top: 10px;
 				text-align: center;
 
 				font-size: 28px;
@@ -123,22 +123,29 @@
 
 	}
 
+
+	@media screen and (min-width: 3000px) {
+		&__welcome__aboutSite {
+			min-height: 0vh;
+		}
+	}
 	@media screen and (max-width: 1350px) {
+		&__welcome__aboutSite {
+			min-height: 0vh;
+		}
 		&__welcome__aboutSite__text {
 			font-size: 16px;
+		
 		}
 
 		&__welcome__aboutSite__content {
 			display: flex;
 			flex-direction: column;
-
-			margin-top: 10px;
-			margin-bottom: 10px;
 		}
 
 		&__welcome__aboutSite__title {
-			padding-top: 20px;
-
+			margin-top: 5px;
+			margin-bottom: 0px;
 			text-align: left;
 		}
 
@@ -146,12 +153,21 @@
 			&__welcome__title {
 				background-position-x: 108%;
 			}
+
+			
 		}
 		@media screen and (max-width:1105px) {
 			&__welcome__title {
 				background-size:425px;
 				background-position-x: 110%;
 			}
+
+			&__welcome__aboutSite__title {
+				margin-top: 30px;
+
+					}
+	
+
 		}
 
 		@media screen and (max-width:1000px) {
@@ -170,6 +186,7 @@
 			@media screen and (max-width: #{$screen_mobile_785}) {
 				&__welcome {
 					min-height: auto;
+					
 				}
 
 				&__welcome__title {
@@ -203,6 +220,13 @@
 				&__welcome__aboutSite__title {
 					padding-top: 0;
 				}
+
+				&__welcome__aboutSite__content {
+					margin-top: 25px;
+
+					padding-top: 0;
+				}
+
 
 				@media screen and (max-width: #{$screen_mobile_500}) {
 					& h1 {
