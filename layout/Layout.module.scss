@@ -38,6 +38,7 @@
 	.body {
 		margin-top: 60px;
 		grid-area: body;
+		margin-bottom: 100px;
 	}
 
 	.content {
@@ -50,6 +51,7 @@
 	}
 
 	.footer {
+		
 		grid-area: footer;
 	}
 	@media (max-width: 1200px) {
