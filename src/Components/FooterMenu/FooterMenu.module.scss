@@ -6,6 +6,7 @@
 	justify-content: center;
 	text-align: right;
 	color: #FFF;
+	margin-right: calc(-1 *(100vw - 100%));
 	grid-template-columns: var(--grid_columns_wrapper);
 	font-size: 15px;
 	grid-template-areas: ". footer .";
