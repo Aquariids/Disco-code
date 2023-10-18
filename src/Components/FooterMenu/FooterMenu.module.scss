@@ -4,8 +4,6 @@
 	display: grid;
 	align-items: center;
 	justify-content: center;
-	margin-right: calc(-1 *(100vw - 100%));
-
 	text-align: right;
 	color: #FFF;
 	grid-template-columns: var(--grid_columns_wrapper);

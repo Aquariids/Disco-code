@@ -3,9 +3,7 @@
 
 
 .wrapper {
-	position: relative;
 
-	
 	background-image: url(/images/animeBg/manga.svg);
 	background-repeat: no-repeat;
 	background-position: bottom right;
@@ -51,7 +49,7 @@
 	}
 
 	.footer {
-		
+	
 		grid-area: footer;
 	}
 	@media (max-width: 1200px) {
