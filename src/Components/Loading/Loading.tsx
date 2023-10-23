@@ -30,7 +30,7 @@ export const Loading = (): JSX.Element | TODO_ANY => {
 
     return loading && (
         <>
-            <span className={cn(s.loader,s.fade)}> </span>
+            {/* <span className={cn(s.loader,s.fade)}> </span> */}
         </>
 
     );
