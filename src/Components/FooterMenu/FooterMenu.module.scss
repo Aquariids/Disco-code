@@ -4,10 +4,9 @@
 	display: grid;
 	align-items: center;
 	justify-content: center;
-	margin-right: calc(-1 *(100vw - 100%));
-
 	text-align: right;
 	color: #FFF;
+	margin-right: calc(-1 *(100vw - 100%));
 	grid-template-columns: var(--grid_columns_wrapper);
 	font-size: 15px;
 	grid-template-areas: ". footer .";
@@ -36,7 +35,7 @@
 	&__heading {
 		margin-top: 0;
 		margin-bottom: 0;
-		padding-top: 40px;
+		padding-top: 60px;
 
 		color: #999;
 
