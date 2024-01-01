@@ -31,7 +31,7 @@
 			
 			background-repeat: no-repeat;
 			background-position: bottom right;
-			background-size: 425px;
+			background-size: contain;
 
 			&__items {
 				display: grid;
@@ -90,6 +90,7 @@
 			justify-content: center;
 			line-height: 1.7;
 			grid-template-rows: 1fr;
+			font-size: 18px;
 
 
 			&__content {
@@ -112,7 +113,7 @@
 
 				text-align: left;
 
-				font-size: 20px;
+				font-size: 18px;
 				font-weight: 400;
 			}
 		}
@@ -123,49 +124,39 @@
 
 	}
 
-	@media screen and (max-width: 1350px) {
-		&__welcome__aboutSite__text {
-			font-size: 16px;
-		}
 
+	
+	@media screen and (max-width: 1350px) {
+		
+		
 		&__welcome__aboutSite__content {
 			display: flex;
 			flex-direction: column;
 
-			margin-top: 10px;
+			margin-top: 11px;
 			margin-bottom: 10px;
 		}
 
 		&__welcome__aboutSite__title {
-			padding-top: 20px;
-
+	
 			text-align: left;
 		}
 
-		@media screen and (max-width:1235px) {
-			&__welcome__title {
-				background-position-x: 108%;
+		@media screen and (max-width: 1100px) {
+			&__welcome__aboutSite__text {
+				
+				font-size: 14px;
+			}
+			&__welcome__aboutSite__title {
+				margin-top: 10px;
+				font-size: 22px;
 			}
 		}
-		@media screen and (max-width:1105px) {
-			&__welcome__title {
-				background-size:425px;
-				background-position-x: 110%;
-			}
-		}
-
-		@media screen and (max-width:1000px) {
-			&__welcome__title {
-				background-size:400px;
-
-			}
-		}
-
-
 		@media screen and (max-width: 985px) {
 			&__welcome__title {
 				background-image: none;
 			}
+			
 
 			@media screen and (max-width: #{$screen_mobile_785}) {
 				&__welcome {
@@ -180,10 +171,7 @@
 					display: none;
 				}
 
-				&__welcome__aboutSite__text {
-					font-size: 16px;
-				}
-
+				
 				&__welcome__aboutSite__paragraphAboutMe {
 					margin-top: 30px;
 					padding: 5px;
@@ -232,8 +220,3 @@
 
 
 
-
-.tests {
-	width: 100%;
-	border: 1px solid black;
-}
