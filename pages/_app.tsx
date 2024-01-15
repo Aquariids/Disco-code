@@ -108,7 +108,9 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
         <meta property='og:url' content={`discocode.ru${router.asPath}`} />
         <meta property='og:locale' content={'ru_RU'} />
       </Head>
+      
       <YMInitializer
+      
         accounts={[]}
         options={{ webvisor: false, defer: true }}
         version="2"
