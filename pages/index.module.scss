@@ -160,7 +160,7 @@
 
 			@media screen and (max-width: #{$screen_mobile_785}) {
 				&__welcome {
-					min-height: 75svh;
+					min-height: auto;
 				}
 
 				&__welcome__title {
@@ -204,6 +204,10 @@
 					&__welcome__aboutSite {
 						margin-top: 0;
 					}
+					&__welcome__title {
+						min-height: 40svh;
+					}
+	
 
 
 					@media screen and (max-width: 320px) {
