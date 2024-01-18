@@ -160,11 +160,11 @@
 
 			@media screen and (max-width: #{$screen_mobile_785}) {
 				&__welcome {
-					min-height: auto;
+					min-height: 75svh;
 				}
 
 				&__welcome__title {
-					min-height: 45vh;
+					min-height: 25svh;
 				}
 
 				&__welcome__title__btnScroll {
@@ -173,7 +173,7 @@
 
 				
 				&__welcome__aboutSite__paragraphAboutMe {
-					margin-top: 30px;
+					margin-top: 10px;
 					padding: 5px;
 					border-radius: 5px;
 					background-color: rgb(153 153 153 / 24.7%);
