@@ -20,17 +20,17 @@
 	&__welcome {
 		min-height: 95svh;	
 		
+		
 		&__title {
 			position: relative;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			width: 100vw;
-			min-height: 50vh;	
+			min-height: 50svh;	
 			margin-left: calc(-50vw + 50%);
 			background-color: #000;
 			background-image: url(/images/animeBg/index.svg);
-			
 			background-repeat: no-repeat;
 			background-position: bottom right;
 			background-size: contain;
@@ -86,6 +86,7 @@
 		}
 
 		&__aboutSite {
+			margin-top: 20px;
 			grid-template-columns: minmax(var(--wrapperSides), var(--wrapper));
 			display: grid;
 			align-items: center;
@@ -98,6 +99,7 @@
 			&__content {
 				display: grid;
 				grid-template-columns: 1fr 1fr;
+				
 			}
 
 			&__title {
@@ -131,6 +133,7 @@
 	@media screen and (max-width: 1350px) {
 		
 		&__welcome__aboutSite__content {
+
 			display: flex;
 			flex-direction: column;
 
@@ -147,9 +150,11 @@
 		
 			&__welcome__aboutSite__text {
 				
+
 				font-size: 14px;
 			}
 			&__welcome__aboutSite__title {
+				
 				margin-top: 10px;
 				font-size: 22px;
 			}
