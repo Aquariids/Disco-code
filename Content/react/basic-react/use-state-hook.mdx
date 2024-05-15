@@ -21,7 +21,12 @@ category: 'basic-react'
 ## useState
 С помощью `useState` мы создаем `переменную состояния`. В общем это обычная переменная, но только она не будет обновляться после выхода из функции, ее сохранаяет `react`.
 Для изменения переменной состояния у нас есть функция которая находится в `useState`.
-```javaScript
+
+
+<SandpackComponent>
+
+{`
+
 import React,{useState} from "react"; // импортируем функцию useState и сам React
 const Counter = () => { // создаем наш компонент
         // useState принимает в себя наше значение с которым мы будем работать и функцию, которая это значение будет менять.
@@ -57,21 +62,23 @@ const Counter = () => { // создаем наш компонент
 
 export default Counter;
 
-```
+`}
+
+</SandpackComponent>
+
+
+
 В итоге мы имеем состояние с именем`(name)` и состояние с числом`(likes)` которое будет изменяться при клике. Начальное состояние имени у нас `dima`, при клике меняем на `pepe`.
 Начальное состояние `likes` у нас `0` и мы сделали две функции для изменения этого состояния на `+1` и `-1`.
 
-<div className="container-app">
-<iframe className="content-app-react" src="https://disco-code-app.vercel.app/Counter" ></iframe>
-</div>
+
+
 
 
 ## Управляемый компонент
 Управляемый компонент - это когда мы обновляем `state` и он сразу обновляет нам `UI` то есть наш компонент, то что мы видим. Они синхронизированны по сути.
 
-
-
-<SandpackComponent options={{ height: 300 }}>
+<SandpackComponent>
 
 
   {`
@@ -130,7 +137,3 @@ export default Input;
 } 
 ```
 Сам способ называется двухсторонним связыванием. Мы связязали значение внутри инпута с состоянием. Подобные компоненты называются управляемыми, так как мы можем изменить значение компонента изменив состояние.
-
-<div className="container-app">
-<iframe className="content-app-react" src="https://disco-code-app.vercel.app/Input" > </iframe>
-</div>
