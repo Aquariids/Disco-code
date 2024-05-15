@@ -5,7 +5,6 @@ import s from "./index.module.scss";
 import Head from "next/head";
 import News from "../src/Components/News/News";
 import Link from "next/link";
-
 const Home: NextPage = (): JSX.Element => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const h2ref = useRef<number | any>(null);
@@ -74,6 +73,7 @@ const Home: NextPage = (): JSX.Element => {
                 просто пишу о разных интересных мне технологиях в программировании.
                 Здесь будут выкладываться различные руководства и учебные материалы,
                 статьи и примеры.
+                
               </div>
             </div>
 

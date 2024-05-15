@@ -16,11 +16,9 @@ import AnimationContainer from '../../../../src/Components/AnimationContainers/A
 import Breadcrumbs from '../../../../src/Components/Breadcrumbs/Breadcrumbs';
 import { REACT } from '../../../api/pages';
 import { mapReact } from '../../../../src/Components/Breadcrumbs/BreadcrumbsMap';
-
 interface Props { post: MDXPost }
 
 const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
-
 
 
     return (
@@ -40,8 +38,9 @@ const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
                 <div className='mdTitle'>
                     <h1>{post.meta.title}</h1>
                 </div>
-                <MDXRemote  {...post.source} />
-
+              
+                <MDXRemote {...post.source} />
+                
             </AnimationContainer>
 
             <div className={cn(s.edit, 'page_edit')}><a target='_blank' rel='noopener' href={`https://github.com/Aquariids/Disco-code/blob/main/Content/react/basic-react/${post.meta.slug}.mdx`}> Отредактировать эту страницу</a><img style={{ width: '30px', height: "30px", paddingLeft: '5px' }} src='/edit.svg' /></div>

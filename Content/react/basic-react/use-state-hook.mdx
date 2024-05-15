@@ -68,49 +68,52 @@ export default Counter;
 
 ## Управляемый компонент
 Управляемый компонент - это когда мы обновляем `state` и он сразу обновляет нам `UI` то есть наш компонент, то что мы видим. Они синхронизированны по сути.
-```jsx
-import React,{useState} from "react";
+
+
+
+<SandpackComponent options={{ height: 300 }}>
+
+
+  {`
+  
+import React, { useState } from "react";
 const Input = () => {
 
-   const [name,setName] = useState('Dima');
-   const [value,setValue] = useState(''); // задаем стейт пустой строкой для инпута.
+  const [name, setName] = useState('Dima');
+  const [value, setValue] = useState(''); // задаем стейт пустой строкой для инпута.
 
-    const click = (e) => {
-        setName('Sanek');
-        if (name == 'Sanek') {
-            setName('Dima');
-        }
+  const click = () => {
+    setName('Sanek');
+    if (name === 'Sanek') {
+      setName('Dima');
     }
-    let contentButton = () => {
-        if(name == 'Dima') return 'Sanek';
-        if(name == 'Sanek') return 'Dima';
-    }
+  }
+  const contentButton = () => {
+    if (name === 'Dima') return 'Sanek';
+    if (name === 'Sanek') return 'Dima';
+  }
 
-    return(
-        <div>
-            <div>
-                <h2>Управляемый компонент</h2>
-                <button onClick={click}>{contentButton()}</button>
-                </div>
-        
-                <div>
-                    <p>{`${name}: ${value}`}</p>
-                <input 
-                    type= 'text'
-                    onChange={event => setValue(event.target.value)}
-                    value={value}>
-                </input> 
-
-            </div>
-        
-        </div>
-    )
-    
+  return (
+    <div>
+      <h2>Управляемый компонент</h2>
+      <button onClick={click}>{contentButton()}</button>
+      <p>{\`\${name}: \${value}\`}</p>
+      <input 
+        type="text"
+        onChange={event => setValue(event.target.value)}
+        value={value}
+      />
+    </div>
+  );
 }
 
-
 export default Input;
-```
+  `}
+
+</SandpackComponent>
+
+<br/>
+
 Разберем `input`.<br/>
 В теге `<p>` Мы будем отображать содержимое
 ```jsx
