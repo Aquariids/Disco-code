@@ -108,8 +108,8 @@ export const newsData:INewsPost[]  = [
     },
     {
         id:15,
-        body:"Обновил первый урок по React",
-        link:"работе ссылок в javascript",
+        body:"Обновил первый",
+        link:"урок по React",
         src:"/content/react/basic-react/react-single-page-app",
         date:"16.05.2024"
     }
