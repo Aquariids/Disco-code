@@ -6,7 +6,7 @@ import rehypeSlug from 'rehype-slug';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import Head from 'next/head';
-import "highlight.js/styles/nord.css";
+import "highlight.js/styles/night-owl.css";
 import cn from 'classnames';
 import { getAllPosts, getPostFromSlug, getSlugs, MDXPost } from '../../../api/api';
 import { POSTS_PATH_BASIC_REACT, POSTS_PATH_INTERVIEW_REACT } from '../../../api/paths';
@@ -48,6 +48,8 @@ const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
             <Link href={`/content${post.meta.prev}`}>{post.meta.prev === 'none' ? <span></span> : 'Предыдущая тема'}</Link>
                     <Link href={`/content${post.meta.next}`}>{post.meta.next === 'none' ? <span></span> : 'Следующая тема'}</Link>
             </div>
+            <span className="md_date">{post.meta.date}</span>
+            <span className="md_date">{post.meta.newDate && `Обновлено ${post.meta.newDate}`}</span>
         </div>
     );
 

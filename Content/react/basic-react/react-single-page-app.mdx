@@ -1,0 +1,286 @@
+---
+title: 'Знакомство с библиотекой React. JSX, create react app'
+id: 0
+next: '/react/basic-react/use-state-hook'
+category: 'basic-react'
+newDate: '05.16.2024'
+---
+
+<div className='mdHead'>
+
+#### Теги
+
+<div className = 'tag_react'>[Что такое react](#react)</div> <br/>
+<div className = 'tag_react'>[Что такое single page application](#single-page-application)</div> <br/>
+<div className = 'tag_react'>[Начало работы с React](#начало-работы-с-react)</div> <br/>
+<div className = 'tag_react'>[Важные файлы внутри проекта](#важные-файлы-внутри-проекта)</div>
+<div className = 'mini_tag_react'>[index.html,](#index-html)</div>
+<div className = 'mini_tag_react'>[App.js,](#app-js)</div>
+<div className = 'mini_tag_react'>[index.js.](#index-js)</div><br/>
+<div className = 'tag_react'>[Что такое JSX](#что-такое-jsx)</div>
+
+</div>
+
+## REACT ##
+        
+`REACT` - это библиотека для создания пользовательских интерфейсов. Использует в себе компонентный подход. Например, мы делаем кнопку и используем ее где нам удобно и не нужно каждый раз писать везде новые кнопки. Различаться будут только входные данные(пропсы). `React` независим от браузера, за отрисовку компонент в браузере отвечает библиотека `React DOM`.
+Также на `React` можно создавать мобильные приложения с помощью библиотеки `React Native`.
+
+### Single page application ### 
+В классических `Multi Page Application (MPA)` нужно создавать несколько `HTML` файлов и загружать их отдельно, что может привести к большому размеру файлов и постоянным перезагрузкам страницы. `Single Page Application (SPA)` загружает только один `HTML` файл - `index.html`, в который монтируется компонент App с помощью библиотеки React DOM. Так мы создаем всё приложение с помощью `JavaScript`, используя только один `HTML` файл, а верстка создается с помощью `JSX`, который компилируется в обычный `JavaScript`.
+
+
+## Начало работы с React ##
+
+Здесь мы разберемся как начать работать с `React`, как создать приложение на `React` или как его использовать в обычной `HTML` страничке.
+
+### Подключение React через script ###
+
+Мы можем подключить `React` в готовый проект, добавив несколько строчек в `HTML`. Желательно конечно создавать проект с нуля, но в учебных целях  разберем и этот вариант тоже. В целом, все, что тут будет, доступно в старой официальной документации по `React`.
+
+Сделаем `HTML` страничку и подключим скрипты.
+```html
+<html>
+  <head>
+      <!-- Те самые скрипты -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script> <!-- Сам реакт для созданий компонент-->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script> <!-- ReactDom он посзволяет вмонтировать наш компонент в приложение -->
+
+    <meta charset="UTF-8" />
+    <title>Реакт страничка</title>
+  </head>
+  <body>
+    <h2>Добавляем React на страницу</h2>
+    <div id="root"></div>
+  </body>
+</html>
+```
+Далее внутри тега `<body>` мы добавим свой скрипт, который уже будет отрисовывать наше приложение.
+Мы сделаем переменную `root` в которой будет отрисовываться наше приложение и напишем первый кореной компонент.
+```html
+<body>
+  <h2>Добавляем React на страницу</h2>
+  <div id="root"></div>
+    <script>
+      // напишем наш корневой компонент
+        function App() { 
+          // с помощью createElement создаем новый элемент
+            return React.createElement('button', {}, 'hello world')
+          }
+          // создаем переменную root. ReactDom это то, что мы как раз подключали выше.
+          // получаем наш div с id root и передаем его в функцию createRoot
+          const root = ReactDOM.createRoot(document.getElementById('root')); 
+          // далее используем метод render и на основе App создаем первый главный компонент
+          root.render(React.createElement(App)) 
+    </script>
+</body>
+```
+В итоге мы должны увидеть такую картину:
+
+<div className='container-img'> <span className="img"> ![reactHelloWorld](/images/Content/react/basic-react/react-single-page-app/reactHelloWorld.png) </span></div>
+
+Если вы видете тоже самое, значит все сработало. Сейчас мы использовали чистый `React`. Но есть такая интересная вещь как `jsx`. Подробнее мы об этом поговорим дальше, а сейчас лишь скажу, что с помощью `jsx` можно использовать `HTML` вунтрим `javascript`. Добавим в наш `HTML` файл еще одну строчку и кое-что изменим.
+```html
+<html>
+  <head>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> <!-- В реальном проекте так не делайте! -->
+    <meta charset="UTF-8" />
+    <title>Реакт страничка</title>
+  </head>
+  <body>
+    <h2>Добавляем React на страницу</h2>
+    <div id="root"></div>
+    <script type="text/babel">  // тут добавляем type
+      function App() {
+            return <button> hello world </button> // тут смотрите что, обычная кнопка как в html
+          }
+          
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App/>); // тут уже без всяких функций передаем app как будто бы это html элемент
+    </script>
+  </body>
+</html>
+```
+В браузере вы увидете тоже самое, что и до этого, но теперь нет никакх `React.createElement` и бла бла. В целом вы могли заметить, что это похоже на то, как мы создаем элементы в `javascript`, так оно и есть и если нам нужно будет сделать большую верстку, то там будет ужас ужасный, тут нас и спасает `jsx`.
+
+### Что такое JSX 
+Jsx - это специальный синтаксис для написания `HTML`-кода внутри `javaScrip`.
+Мы в компоненте используем обычный `HTML` код, в свою очередь он компилируется в почти обычный `js`, тот самый `React.createElement`, только в `js` это будет`document.createElement`.
+
+Сделаем внутри нашего App компонента `div` и внутри него кнопку.
+
+```javascript
+// Вот как удобно это с jsx
+ function App() {
+  return (
+    <div>
+      <button> Привет </button> 
+    </div>
+  ) 
+}
+
+```
+А так бы это выглядело без `jsx`:
+```javascript
+// Вот как удобно это с jsx
+ function App() {
+  return (
+    React.createElement('div', {}, // создаем див
+    React.createElement('button', {}, 'привет')) // и внутри кнопку
+  ) 
+}
+
+```
+Результат один, но в первом случае это намного удобнее.
+
+
+
+### Create react app ###
+Давайте теперь с нуля создим проект, для этого нужно ввести в консоли `ide` или просто в консоли в какой нибудь папке:
+```javaScript
+// my-app - это название проекта
+npx create-react-app my-app
+```
+После этого начнется установка проекта.
+Для запуска проекта используется такая команда `npm start` об этом вам сообщат так же в кносоли после установки.
+```javaScript
+We suggest that you begin by typing:
+  cd my-app // перейти в каталог
+  npm start // запустить проект
+```
+Теперь разберем, что есть внутри проекта.
+### Важные файлы внутри проекта ###
+#### index html ####
+После установки проекта в папке `public` мы увидим `index.html`. Это единственный `HTML` файл, который загружается при работе приложения. `React` наполняет его контентом с помощью `JavaScript`.
+
+Внутри будет такая картина:
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the br/owser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
+```
+Здесь мы видим разные мета теги, иконочка, комментариии. Все это можно удалить и оставить главные теги.
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>React app</title>
+     </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+       <!-- Мы уже знаем, что здесь будет помещаться наше REACT приложение-->
+    </div>
+  
+  </body>
+</html>
+```
+
+
+#### App js
+В папке `src` мы увидим наши компоненты:<br/>
+
+<div className='container-img'> <span className="img"> ![src](/images/Content/react/basic-react/jsx-index-js-app/src.png) </span></div>
+
+Как мы помним именно `App.js` будет помещаться в нашем `index.html` внутри дива с `id root`. Это наш корневой компонент.
+
+Здесь мы можем все удалить кроме `App.js` и `index.js`.<br/>
+Внутри `App.js` удаляем все ненужное и импортируем сам реакт. Реакт импортируется там, где используются компоненты.(Так было раньше, сейчас не обязательно) <br/>
+Так без лишних вещей будет выглядеть `App.js:`<br/>
+```jsx
+import React from 'react';
+
+function App() {
+  return(
+    <div className='App'>
+
+    </div>
+  )
+}
+
+export default App;
+```
+#### index js
+Внутри `index.js` так же удаляем ненужное:<br/>
+```jsx
+import React from 'react'; // импорт самого реакта
+import ReactDOM from 'react-dom'; // здесь мы импортируем реакт дом, как мы помним он посзволяет вмонтировать наш компонент в приложение
+import App from './App';
+
+
+const root = ReactDOM.createRoot(document.getElementById('root')); // все так же как мы делали вначале.
+root.render(  // наш главный элемент рендерит внутри себя корневой компонент
+  <React.StrictMode> 
+    <App />
+  </React.StrictMode>
+);
+// то есть мы импортируем App сюда в index, здесь мы этот компонент и помещаем в наш index.html с помощью ReactDOM.render.
+```
+Вот так от компонента к компоненту и создается react приложение. Далее мы научимся использовать состояние и создадим свой компонент.
+
+Можете немного поиграть с `JSX`
+<SandpackComponent>
+
+{`
+
+import React from 'react';
+
+function App() {
+
+  return(
+
+    <div style={{background:'gray', maxWidth: '180px'}} className='App'>
+        <div style={{color:'#fff'}}> Привет прекрасный мир </div>
+    </div>
+  )
+}
+
+export default App;
+
+`}
+
+</SandpackComponent>
