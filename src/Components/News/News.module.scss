@@ -1,21 +1,25 @@
+@import "../../../styles/variables@media.scss";
 .news {
     margin-top: 10px;
     display: grid;
 	justify-content: center;
 	text-align: center;
-   
+    
     grid-template-columns: minmax(var(--wrapperSides), var(--wrapper));
 
     &__content {
+        overflow-y: scroll;
+        height: 565px;
         display: grid;
         margin-left: 10px;
         margin-right: 10px;
         min-height: 10vh;
         margin-top: 0;
         padding: 0;
-
+        scrollbar-width: thin;
         list-style-type: none;
         grid-template-columns: 1fr;
+        border-bottom: 1px solid gainsboro;
     }
 
     &__item a {
@@ -64,4 +68,13 @@
 
         font-size: 12px;
     }
+}
+
+
+@media screen and (max-width: #{$screen_mobile_500}) {
+		
+.news {
+
+    font-size: 14px;
+}
 }

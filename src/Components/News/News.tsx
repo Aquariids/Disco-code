@@ -41,7 +41,7 @@ const News = () => {
             <span className={s.news__title}> <h3>Что нового</h3> </span>
             <ul className={s.news__content}>
                 {
-                    newsData && newsData.slice(newsData.length - 7, newsData.length).map((post) => { // моя гениальная идея удалять первый элемент, при заполнении
+                    newsData && newsData.reverse().map((post) => { // моя гениальная идея удалять первый элемент, при заполнении
                         return (
                             <li key={post.id} className={s.news__item}>{post.body} <Link href={post.src}>{post.link}</Link><span className={s.news__date}>{post.date}</span></li>
                         );
