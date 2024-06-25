@@ -1,13 +1,14 @@
 @import "../../../styles/variables@media.scss";
 
 .articles {
+
 	&__article {
 		display: grid;
 		justify-content: center;
 
 		max-height: 50%;
 		margin-bottom: 50px;
-		gap: 30px;
+		gap: 45px;
 		grid-template-columns: repeat(2, minmax(245px, 450px));
 		grid-template-rows: 1fr 1fr;
 	}
@@ -26,9 +27,6 @@
 		margin-top: 38px;
 		grid-template-columns: minmax(var(--wrapperSides), var(--wrapper));
 
-		
-
-
 		span {
 			padding-bottom: 10px;
 
@@ -36,17 +34,25 @@
 		}
 	}
 
+	
+	
+
+
 	@media screen and  (max-width: 1000px) {
 		&__article {
 			align-items: center;
 			justify-content: center;
 			grid-template-columns: repeat(1, minmax(245px, 450px));
+			
 		}
 
 		@media screen and  (max-width: #{$screen_mobile_400}) {
 			&__title {
 				font-size: 25px;
+				
 			}
 		}
 	}
+
+		
 }
