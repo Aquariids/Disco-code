@@ -40,6 +40,7 @@ export interface PostMeta {
   category?: string;
   date?: string;
   newDate?:string;
+  metaDescription:string
 }
 export const getPostFromSlug = (slug: string, url: string): Post => {
 
@@ -58,6 +59,7 @@ export const getPostFromSlug = (slug: string, url: string): Post => {
       prev: data.prev ?? "none",
       next: data.next ?? "none",
       category: data.category ?? "none",
+      metaDescription: data.metaDescription ?? "none"
     },
   };
 };

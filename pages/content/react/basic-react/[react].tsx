@@ -27,9 +27,9 @@ const PostPage: NextPage<Props> = ({ post }): JSX.Element => {
                 <title>{post.meta.title}</title>
                 <meta name="google-site-verification" content="ArMplWlyr69JYGz_vTfAjA8HzzYLdXm-p5gHjqgDihY" />
                 <meta name="yandex-verification" content="a99ae512e4f1c330" />
-                <meta name='description' content={'Уроки по react, reactjs, react статьи,'} />
+                <meta name='description' content={post.meta.metaDescription} />\
                 <meta property='og:title' content={post.meta.title} />
-                <meta property='og:description' content={'Уроки и разбор разных тем по javascript'} />
+                <meta property='og:description' content={post.meta.metaDescription} />
                 <meta property='og:type' content={'article'} />
             </Head>
             <Breadcrumbs map={mapReact} slug={post.meta.title} page={REACT} theme={'React'}/>
